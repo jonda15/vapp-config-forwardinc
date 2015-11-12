@@ -12,6 +12,13 @@
   "objects": [
     {
       "apiVersion": "v1",
+      "kind": "Namespace",
+      "metadata": {
+        "name": "${SOLUTION_NAMESPACE}"
+      }
+    },
+    {
+      "apiVersion": "v1",
       "kind": "ReplicationController",
       "metadata": {
         "name": "database"
@@ -37,8 +44,12 @@
                     "value": "/solution"
                   },
                   {
+                    "name": "GITHUB_TOKEN",
+                    "value": "${OAUTH_TOKEN}"
+                  },
+                  {
                     "name": "SOURCE",
-                    "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
+                    "value": "${SOLUTION_CONFIGURATION}"
                   }
                 ],
                 "image": "store.vapp-security.solutions/vapp/sidecar-configsvc:latest",
@@ -111,8 +122,12 @@
                     "value": "/solution"
                   },
                   {
+                    "name": "GITHUB_TOKEN",
+                    "value": "${OAUTH_TOKEN}"
+                  },
+                  {
                     "name": "SOURCE",
-                    "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
+                    "value": "${SOLUTION_CONFIGURATION}"
                   }
                 ],
                 "image": "store.vapp-security.solutions/vapp/sidecar-configsvc:latest",
@@ -209,8 +224,12 @@
                     "value": "/solution"
                   },
                   {
+                    "name": "GITHUB_TOKEN",
+                    "value": "${OAUTH_TOKEN}"
+                  },
+                  {
                     "name": "SOURCE",
-                    "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
+                    "value": "${SOLUTION_CONFIGURATION}"
                   }
                 ],
                 "image": "store.vapp-security.solutions/vapp/sidecar-configsvc:latest",
@@ -293,8 +312,12 @@
                     "value": "/solution"
                   },
                   {
+                    "name": "GITHUB_TOKEN",
+                    "value": "${OAUTH_TOKEN}"
+                  },
+                  {
                     "name": "SOURCE",
-                    "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
+                    "value": "${SOLUTION_CONFIGURATION}"
                   }
                 ],
                 "image": "store.vapp-security.solutions/vapp/sidecar-configsvc:latest",
@@ -313,7 +336,7 @@
                     "value": "forwardinc/provdir"
                   }
                 ],
-                "image": "store.vapp-security.solutions/directory/dxgrid:latest",
+                "image": "store.vapp-security.solutions/directory/dxgrid:12.0.15.ga",
                 "name": "provdir",
                 "ports": [
                   {
@@ -376,8 +399,12 @@
                     "value": "/solution"
                   },
                   {
+                    "name": "GITHUB_TOKEN",
+                    "value": "${OAUTH_TOKEN}"
+                  },
+                  {
                     "name": "SOURCE",
-                    "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
+                    "value": "${SOLUTION_CONFIGURATION}"
                   }
                 ],
                 "image": "store.vapp-security.solutions/vapp/sidecar-configsvc:latest",
@@ -454,8 +481,12 @@
                     "value": "/solution"
                   },
                   {
+                    "name": "GITHUB_TOKEN",
+                    "value": "${OAUTH_TOKEN}"
+                  },
+                  {
                     "name": "SOURCE",
-                    "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
+                    "value": "${SOLUTION_CONFIGURATION}"
                   }
                 ],
                 "image": "store.vapp-security.solutions/vapp/sidecar-configsvc:latest",
@@ -688,6 +719,18 @@
           "ca.com/im": "userstore"
         }
       }
+    }
+  ],
+  "parameters": [
+    {
+      "description": "The OAuth token is used to access your configuration in, say, Github. Change this token to a valid token to your configuration server if it requires OAuth authentication to access your custom configuration.",
+      "name": "OAUTH_TOKEN",
+      "value": ""
+    },
+    {
+      "description": "The URL of your configuration.  Change this URL to use a custom configuration.",
+      "name": "SOLUTION_CONFIGURATION",
+      "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
     }
   ]
 }

@@ -115,6 +115,7 @@ then
 	exit 1
 fi
 
+############# Don't wait for Connector Server ###########
 #retval=1
 #_checkConnSrvConn
 #if [ $retval -eq 1 ]

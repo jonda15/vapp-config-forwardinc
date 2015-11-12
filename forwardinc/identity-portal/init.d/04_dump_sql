@@ -1,2 +1,18 @@
-echo "Dumping of data for IM connector..."
-mysql -h database -u sigma -pHelloWorld sigma < /solution/$CONFIG/data/sigma.sql
+if [ ! -z "$IG_DB_VENDOR"   -a  ! -z "$IG_DB_HOST"  -a  ! -z "$IG_DB_USER"  -a  ! -z "$IG_DB_PASSWORD" ]; then
+  retval=1
+  while [ $retval -eq 1 ]; do
+    curl --output /dev/null --silent --head --fail http://ig-ui:80/eurekify
+    if [ $? -eq 0 ]; then
+      retval=0
+    fi
+    echo "Sleeping for 10 seconds...waiting for ig container to start"
+    sleep 10
+  done
+  echo "Dumping of data for IM connector & GM connector ..."
+  mysql -h database -u sigma -pHelloWorld sigma < /solution/$CONFIG/data/im_gm_sigma.sql
+else
+  echo "No Out of Box GM connector, but only IM connector"
+  echo "Dumping of data for IM connector..."
+  mysql -h database -u sigma -pHelloWorld sigma < /solution/$CONFIG/data/im_sigma.sql
+fi
+

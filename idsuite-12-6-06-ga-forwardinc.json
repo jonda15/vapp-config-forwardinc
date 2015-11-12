@@ -12,6 +12,13 @@
   "objects": [
     {
       "apiVersion": "v1",
+      "kind": "Namespace",
+      "metadata": {
+        "name": "${SOLUTION_NAMESPACE}"
+      }
+    },
+    {
+      "apiVersion": "v1",
       "kind": "ReplicationController",
       "metadata": {
         "name": "database"
@@ -37,8 +44,12 @@
                     "value": "/solution"
                   },
                   {
+                    "name": "GITHUB_TOKEN",
+                    "value": "${OAUTH_TOKEN}"
+                  },
+                  {
                     "name": "SOURCE",
-                    "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
+                    "value": "${SOLUTION_CONFIGURATION}"
                   }
                 ],
                 "image": "store.vapp-security.solutions/vapp/sidecar-configsvc:latest",
@@ -111,8 +122,12 @@
                     "value": "/solution"
                   },
                   {
+                    "name": "GITHUB_TOKEN",
+                    "value": "${OAUTH_TOKEN}"
+                  },
+                  {
                     "name": "SOURCE",
-                    "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
+                    "value": "${SOLUTION_CONFIGURATION}"
                   }
                 ],
                 "image": "store.vapp-security.solutions/vapp/sidecar-configsvc:latest",
@@ -205,8 +220,12 @@
               {
                 "env": [
                   {
+                    "name": "GITHUB_TOKEN",
+                    "value": "${OAUTH_TOKEN}"
+                  },
+                  {
                     "name": "SOURCE",
-                    "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
+                    "value": "${SOLUTION_CONFIGURATION}"
                   },
                   {
                     "name": "DESTINATION",
@@ -227,6 +246,26 @@
                   {
                     "name": "CONFIG",
                     "value": "forwardinc/identity-portal"
+                  },
+                  {
+                    "name": "IG_DB_HOST",
+                    "value": "${IG_DB_HOST}"
+                  },
+                  {
+                    "name": "IG_DB_USER",
+                    "value": "${IG_DB_USER}"
+                  },
+                  {
+                    "name": "IG_DB_PASSWORD",
+                    "value": "${IG_DB_PASSWORD}"
+                  },
+                  {
+                    "name": "IG_DB_PORT",
+                    "value": "${IG_DB_PORT}"
+                  },
+                  {
+                    "name": "IG_DB_VENDOR",
+                    "value": "${IG_DB_VENDOR}"
                   }
                 ],
                 "image": "store.vapp-security.solutions/identityportal/identity-portal-server:12.6.06.ga",
@@ -239,6 +278,120 @@
                     "containerPort": 8443
                   }
                 ],
+                "volumeMounts": [
+                  {
+                    "mountPath": "/solution",
+                    "name": "configuration"
+                  }
+                ]
+              }
+            ],
+            "dnsPolicy": "ClusterFirst",
+            "restartPolicy": "Always",
+            "volumes": [
+              {
+                "name": "configuration",
+                "emptyDir": {}
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "ReplicationController",
+      "metadata": {
+        "name": "ig-server"
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "ca.com/im": "ig-server"
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "ca.com/im": "ig-server"
+            },
+            "name": "ig-server"
+          },
+          "spec": {
+            "containers": [
+              {
+                "env": [
+                  {
+                    "name": "DESTINATION",
+                    "value": "/solution"
+                  },
+                  {
+                    "name": "GITHUB_TOKEN",
+                    "value": "${OAUTH_TOKEN}"
+                  },
+                  {
+                    "name": "SOURCE",
+                    "value": "${SOLUTION_CONFIGURATION}"
+                  }
+                ],
+                "image": "store.vapp-security.solutions/vapp/sidecar-configsvc:latest",
+                "name": "configuration",
+                "volumeMounts": [
+                  {
+                    "mountPath": "/solution",
+                    "name": "configuration"
+                  }
+                ]
+              },
+              {
+                "env": [
+                  {
+                    "name": "CONFIG",
+                    "value": "forwardinc/igserver"
+                  },
+                  {
+                    "name": "IG_DB_HOST",
+                    "value": "${IG_DB_HOST}"
+                  },
+                  {
+                    "name": "IG_DB_USER",
+                    "value": "${IG_DB_USER}"
+                  },
+                  {
+                    "name": "IG_DB_PASSWORD",
+                    "value": "${IG_DB_PASSWORD}"
+                  },
+                  {
+                    "name": "IG_DB_PORT",
+                    "value": "${IG_DB_PORT}"
+                  },
+                  {
+                    "name": "IG_DB_VENDOR",
+                    "value": "${IG_DB_VENDOR}"
+                  },
+                  {
+                    "name": "IG_DBS_PASSWORDS",
+                    "value": "${IG_DBS_PASSWORDS}"
+                  }
+                ],
+                "image": "store.vapp-security.solutions/imag/ig-server:latest",
+                "name": "ig-server",
+                "ports": [
+                  {
+                    "containerPort": 8080
+                  },
+                  {
+                    "containerPort": 8443
+                  }
+                ],
+                "readinessProbe": {
+                  "exec": {
+                    "command": [
+                      "echo",
+                      "test"
+                    ]
+                  },
+                  "initialDelaySeconds": 300
+                },
                 "volumeMounts": [
                   {
                     "mountPath": "/solution",
@@ -286,8 +439,12 @@
                     "value": "/solution"
                   },
                   {
+                    "name": "GITHUB_TOKEN",
+                    "value": "${OAUTH_TOKEN}"
+                  },
+                  {
                     "name": "SOURCE",
-                    "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
+                    "value": "${SOLUTION_CONFIGURATION}"
                   }
                 ],
                 "image": "store.vapp-security.solutions/vapp/sidecar-configsvc:latest",
@@ -370,8 +527,12 @@
                     "value": "/solution"
                   },
                   {
+                    "name": "GITHUB_TOKEN",
+                    "value": "${OAUTH_TOKEN}"
+                  },
+                  {
                     "name": "SOURCE",
-                    "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
+                    "value": "${SOLUTION_CONFIGURATION}"
                   }
                 ],
                 "image": "store.vapp-security.solutions/vapp/sidecar-configsvc:latest",
@@ -390,7 +551,7 @@
                     "value": "forwardinc/provdir"
                   }
                 ],
-                "image": "store.vapp-security.solutions/directory/dxgrid:latest",
+                "image": "store.vapp-security.solutions/directory/dxgrid:12.0.15.ga",
                 "name": "provdir",
                 "ports": [
                   {
@@ -453,8 +614,12 @@
                     "value": "/solution"
                   },
                   {
+                    "name": "GITHUB_TOKEN",
+                    "value": "${OAUTH_TOKEN}"
+                  },
+                  {
                     "name": "SOURCE",
-                    "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
+                    "value": "${SOLUTION_CONFIGURATION}"
                   }
                 ],
                 "image": "store.vapp-security.solutions/vapp/sidecar-configsvc:latest",
@@ -531,8 +696,12 @@
                     "value": "/solution"
                   },
                   {
+                    "name": "GITHUB_TOKEN",
+                    "value": "${OAUTH_TOKEN}"
+                  },
+                  {
                     "name": "SOURCE",
-                    "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
+                    "value": "${SOLUTION_CONFIGURATION}"
                   }
                 ],
                 "image": "store.vapp-security.solutions/vapp/sidecar-configsvc:latest",
@@ -551,7 +720,7 @@
                     "value": "forwardinc/userstore"
                   }
                 ],
-                "image": "store.vapp-security.solutions/directory/dxgrid:latest",
+                "image": "store.vapp-security.solutions/directory/dxgrid:12.0.15.ga",
                 "name": "userstore",
                 "ports": [
                   {
@@ -676,6 +845,35 @@
       "kind": "Service",
       "metadata": {
         "annotations": {
+          "ca.com/cluster-public-hostname": "forwardinc-ig.ca.local",
+          "ca.com/cluster-public-url": "/eurekify/portal/login",
+          "ca.com/cluster-public-urlpath": "/eurekify",
+          "ca.com/cluster-public-urlpath-backend": "/eurekify",
+          "ca.com/cluster-public-urltext": "Identity Governance Environment"
+        },
+        "labels": {
+          "ca.com/cluster-public-service": "http"
+        },
+        "name": "ig-ui"
+      },
+      "spec": {
+        "ports": [
+          {
+            "port": 80,
+            "targetPort": 8080
+          }
+        ],
+        "selector": {
+          "ca.com/im": "ig-server"
+        },
+        "sessionAffinity": "ClientIP"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "annotations": {
           "ca.com/cluster-public-url": "/sigma/admin",
           "ca.com/cluster-public-urltext": "Identity Portal Admin"
         },
@@ -779,7 +977,6 @@
       "kind": "Service",
       "metadata": {
         "annotations": {
-          "ca.com/cluster-public-hostname": "forwardinc-im.ca.local",
           "ca.com/cluster-public-url": "/iam/im/forwardinc",
           "ca.com/cluster-public-urlpath": "/iam/im",
           "ca.com/cluster-public-urlpath-backend": "/iam/im",
@@ -820,6 +1017,48 @@
           "ca.com/im": "userstore"
         }
       }
+    }
+  ],
+  "parameters": [
+    {
+      "description": "The Github OAuth token used to access your configuration.  Change this token if you use OAuth to access your custom configuration.",
+      "name": "OAUTH_TOKEN",
+      "value": ""
+    },
+    {
+      "description": "The URL of your configuration.  Change this URL to use a custom configuration.",
+      "name": "SOLUTION_CONFIGURATION",
+      "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/12.6.06.ga.zip"
+    },
+    {
+      "description": "Provide a Database Vendor name.  The Database Vendor should be sqlserver or oracle",
+      "name": "IG_DB_VENDOR",
+      "value": ""
+    },
+    {
+      "description": "Provide a Database Host name which is used to store the data for Identity Governance",
+      "name": "IG_DB_HOST",
+      "value": ""
+    },
+    {
+      "description": "Provide a Database Port number. If the value is not provided, the default port is 1433 for sqlserver and 1521 for oracle",
+      "name": "IG_DB_PORT",
+      "value": ""
+    },
+    {
+      "description": "Provide a Database User name to connect to the Identity Governance Database Server",
+      "name": "IG_DB_USER",
+      "value": ""
+    },
+    {
+      "description": "Provide a Database Password to connect to the Identity Governance Database Server",
+      "name": "IG_DB_PASSWORD",
+      "value": ""
+    },
+    {
+      "description": "Provide a Password for Oracle Databases i.e SDB_DB, TMS_DB, REPORT_DB and WPDS_DB. The password will be used to connect the above Databases.",
+      "name": "IG_DBS_PASSWORDS",
+      "value": ""
     }
   ]
 }

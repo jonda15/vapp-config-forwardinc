@@ -1,0 +1,148 @@
+# set -e indicates that we should exit immediately on any non-zero status
+# return of any command
+set -e
+echo "starting..."
+ENV_PROP_FILE=/solution/${CONFIG}/data/ig.properties
+STANDALONE_CONFIG=${JBOSS_CONFIGURATION_DIR}/standalone-full-ca-gm.xml
+
+SDB_DB_NAME=$(grep -Po "(?<=^db.sdb.name=).*" $ENV_PROP_FILE)
+TMS_DB_NAME=$(grep -Po "(?<=^db.ticketdb.name=).*" $ENV_PROP_FILE)
+REPORT_DB_NAME=$(grep -Po "(?<=^db.reportdb.name=).*" $ENV_PROP_FILE)
+WPDS_DB_NAME=$(grep -Po "(?<=^db.wpds.name=).*" $ENV_PROP_FILE)
+ORC_SRV=$(grep -Po "(?<=^db.oracle.service_name=).*" $ENV_PROP_FILE)
+
+# Validating the informaiton provided by the user.
+if [ -z "$IG_DB_VENDOR" ]; then
+	echo "WARN: Database host variable \$ IG_DB_VENDOR not provided.  Identity Governance will not be available.";
+	tail -f /dev/null;
+fi
+
+if [ -z "$IG_DB_HOST" ]; then
+	echo "WARN: Database host variable \$ IG_DB_HOST not provided.  Identity Governance will not be available.";
+	tail -f /dev/null;
+fi
+
+if [ -z "$IG_DB_USER" ]; then
+	echo "WARN: Database host variable \$ IG_DB_USER not provided.  Identity Governance will not be available.";
+	tail -f /dev/null;
+fi
+
+if [ -z "$IG_DB_PASSWORD" ]; then
+	echo "WARN: Database host variable \$ IG_DB_PASSWORD not provided.  Identity Governance will not be available.";
+	tail -f /dev/null;
+fi
+	
+
+if [ $IG_DB_VENDOR == oracle ]; then
+   if [ -z "$IG_DB_PORT" ]; then
+      echo "WARNING: The Oracle DB port has not provided. Using the Default port number 1521.";
+	  ORACLE_PORT="1521";
+   else
+	  ORACLE_PORT="$IG_DB_PORT";
+   fi
+   
+   if [ -z "$IG_DBS_PASSWORDS" ]; then
+	IG_DBS_PASSWORDS="$IG_DB_PASSWORD";
+   fi
+   
+    
+    sed -i "s/<!--@@ora_remove_me//g" $STANDALONE_CONFIG
+	sed -i "s/@@ora_remove_me-->//g" $STANDALONE_CONFIG
+	sed -i "s/@db.type@/Oracle/g" $JBOSS_HOME/bin/ca-gm-run.sh	
+	sed -i "s/@quartz.db.type@/-oracle/g" $JBOSS_HOME/bin/ca-gm-run.sh		
+    	sed -i "s/@db.host.name@/$IG_DB_HOST/g" $STANDALONE_CONFIG
+    	sed -i "s/@db.oracle.port@/$ORACLE_PORT/g" $STANDALONE_CONFIG
+	sed -i "s/@db.oracle.service_name@/$ORC_SRV/g" $STANDALONE_CONFIG
+	sed -i "s/@db.sdb.name@/$SDB_DB_NAME/g" $STANDALONE_CONFIG
+	sed -i "s/@db.ticketdb.name@/$TMS_DB_NAME/g" $STANDALONE_CONFIG
+	sed -i "s/@db.reportdb.name@/$REPORT_DB_NAME/g" $STANDALONE_CONFIG
+	sed -i "s/@db.wpds.name@/$WPDS_DB_NAME/g" $STANDALONE_CONFIG
+	
+	sed -i "s/@db.oracle_sdb.password@/$IG_DBS_PASSWORDS/g" $STANDALONE_CONFIG
+	sed -i "s/@db.oracle_ticketdb.password@/$IG_DBS_PASSWORDS/g" $STANDALONE_CONFIG
+	sed -i "s/@db.oracle_reportdb.password@/$IG_DBS_PASSWORDS/g" $STANDALONE_CONFIG
+	sed -i "s/@db.oracle_wpds.password@/$IG_DBS_PASSWORDS/g" $STANDALONE_CONFIG
+
+	sed -i "s/@@jdbcurl/jdbc:oracle:thin:@$IG_DB_HOST:$ORACLE_PORT\/$ORC_SRV/g" $JBOSS_HOME/Workpoint/WorkPointDesigner/install/CreateDatabase.properties
+	sed -i "s/@@user/$WPDS_DB_NAME/g" $JBOSS_HOME/Workpoint/WorkPointDesigner/install/CreateDatabase.properties
+	sed -i "s/@@pword/$IG_DBS_PASSWORDS/g" $JBOSS_HOME/Workpoint/WorkPointDesigner/install/CreateDatabase.properties
+	sed -i "s/@@dbname/$WPDS_DB_NAME/g" $JBOSS_HOME/Workpoint/WorkPointDesigner/install/CreateDatabase.properties
+	sed -i "s/@@driver/oracle.jdbc.driver.OracleDriver/g" $JBOSS_HOME/Workpoint/WorkPointDesigner/install/CreateDatabase.properties  
+	sed -i "s/@@database/Oracle/g" $JBOSS_HOME/Workpoint/WorkPointDesigner/install/CreateDatabase.properties
+		
+	
+	\cp $JBOSS_DEPLOYMENTS_DIR/eurekify.war/WEB-INF/classes/META-INF/quartz-oracle.properties  $JBOSS_DEPLOYMENTS_DIR/eurekify.war/WEB-INF/classes/META-INF/quartz.properties
+	\cp $JBOSS_DEPLOYMENTS_DIR/eurekify.war/WEB-INF/classes/META-INF/quartz-clustered-oracle.properties  $JBOSS_DEPLOYMENTS_DIR/eurekify.war/WEB-INF/classes/META-INF/quartz-clustered.properties
+   
+elif [ $IG_DB_VENDOR == sqlserver ]; then
+	echo "IN SQL"
+	if [ -z "$IG_DB_PORT" ]; then
+      echo "WARNING: The Oracle DB port has not provided. Using the Default port number 1433.";
+	  MSSQL_PORT="1433";
+   else
+	  MSSQL_PORT="$IG_DB_PORT";
+   fi	
+    
+	sed -i "s/@db.type@/MSSQL/g" $JBOSS_HOME/bin/ca-gm-run.sh
+	sed -i "s/@quartz.db.type@//g" $JBOSS_HOME/bin/ca-gm-run.sh
+	sed -i "s/<!--@@sql_remove_me//g" $STANDALONE_CONFIG
+	sed -i "s/@@sql_remove_me-->//g" $STANDALONE_CONFIG
+    sed -i "s/@db.host.name@/$IG_DB_HOST/g" $STANDALONE_CONFIG
+    sed -i "s/@db.mssql.port@/$MSSQL_PORT/g" $STANDALONE_CONFIG
+	sed -i "s/@db.sdb.name@/$SDB_DB_NAME/g" $STANDALONE_CONFIG
+	sed -i "s/@db.mssql.user@/$IG_DB_USER/g" $STANDALONE_CONFIG
+	sed -i "s/@db.mssql.password@/$IG_DB_PASSWORD/g" $STANDALONE_CONFIG
+	sed -i "s/@db.ticketdb.name@/$TMS_DB_NAME/g" $STANDALONE_CONFIG
+	sed -i "s/@db.reportdb.name@/$REPORT_DB_NAME/g" $STANDALONE_CONFIG
+	sed -i "s/@db.wpds.name@/$WPDS_DB_NAME/g" $STANDALONE_CONFIG
+
+	sed -i "s/@@jdbcurl/jdbc:sqlserver:\/\/$IG_DB_HOST:$MSSQL_PORT;DatabaseName=$WPDS_DB_NAME/g" $JBOSS_HOME/Workpoint/WorkPointDesigner/install/CreateDatabase.properties
+	sed -i "s/@@user/$IG_DB_USER/g" $JBOSS_HOME/Workpoint/WorkPointDesigner/install/CreateDatabase.properties
+	sed -i "s/@@pword/$IG_DB_PASSWORD/g" $JBOSS_HOME/Workpoint/WorkPointDesigner/install/CreateDatabase.properties
+	sed -i "s/@@dbname/$WPDS_DB_NAME/g" $JBOSS_HOME/Workpoint/WorkPointDesigner/install/CreateDatabase.properties
+	sed -i "s/@@driver/com.microsoft.sqlserver.jdbc.SQLServerDriver/g" $JBOSS_HOME/Workpoint/WorkPointDesigner/install/CreateDatabase.properties
+	sed -i "s/@@database/SQL Server/g" $JBOSS_HOME/Workpoint/WorkPointDesigner/install/CreateDatabase.properties
+else
+	echo "WARN: Provided Database Vendor Value is incorrect. Identity Governance will not be available.";
+	tail -f /dev/null;
+fi
+
+sed -i 's/scan-interval="5000">/scan-interval="5000" auto-deploy-zipped="true" auto-deploy-exploded="true">/g' $STANDALONE_CONFIG
+
+
+JCS_CONFIG=${JBOSS_HOME}/conf/eurekify.properties
+
+JCS_HOST=$(grep -Po "(?<=^jcs.ui.host=).*" $ENV_PROP_FILE)
+JCS_PORT=$(grep -Po "(?<=^jcs.ui.port=).*" $ENV_PROP_FILE)
+JCS_PASS=$(grep -Po "(?<=^jcs.ui.password=).*" $ENV_PROP_FILE)
+JCS_ENABLE=$(grep -Po "(?<=^jcs.ui.enabled=).*" $ENV_PROP_FILE)
+JCS_USER=$(grep -Po "(?<=^jcs.ui.username=).*" $ENV_PROP_FILE)
+
+sed -i "s/localhost:20080/$JCS_HOST:$JCS_PORT/g" $JCS_CONFIG
+sed -i "s/jcs.ui.username=admin/jcs.ui.username=$JCS_USER/g" $JCS_CONFIG
+sed -i "s/jcs.ui.password=/jcs.ui.password=$JCS_PASS/g" $JCS_CONFIG
+
+IM_SERVER=$(grep -Po "(?<=^connector.default.im.host=).*" $ENV_PROP_FILE)
+IM_PORT=$(grep -Po "(?<=^connector.default.im.port=).*" $ENV_PROP_FILE)
+IM_LOGIN=$(grep -Po "(?<=^connector.default.im.login=).*" $ENV_PROP_FILE)
+IM_ENV=$(grep -Po "(?<=^connector.default.im.env=).*" $ENV_PROP_FILE)
+IM_SECURE=$(grep -Po "(?<=^connector.default.im.secured=).*" $ENV_PROP_FILE)
+IM_UNIVERSE=$(grep -Po "(?<=^connector.default.im.universe=).*" $ENV_PROP_FILE)
+IM_PASSWORD=$(grep -Po "(?<=^connector.default.im.password=).*" $ENV_PROP_FILE)
+
+
+sed -i "s/#connector.default.im.host=/connector.default.im.host=$IM_SERVER/g" $JCS_CONFIG
+sed -i "s/#connector.default.im.port=/connector.default.im.port=$IM_PORT/g" $JCS_CONFIG
+sed -i "s/#connector.default.im.login=/connector.default.im.login=$IM_LOGIN/g" $JCS_CONFIG
+sed -i "s/#connector.default.im.env=/connector.default.im.env=$IM_ENV/g" $JCS_CONFIG
+sed -i "s/#connector.default.im.secured=/connector.default.im.secured=$IM_SECURE/g" $JCS_CONFIG
+sed -i "s/#connector.default.im.universe=/connector.default.im.universe=$IM_UNIVERSE/g" $JCS_CONFIG
+sed -i "s/#connector.default.im.password=/connector.default.im.password=$IM_PASSWORD/g" $JCS_CONFIG
+
+EUR_COM_CONFIG=${JBOSS_HOME}/conf/eurekifyCommon.properties
+sed -i "s/buildingBlockService.password = eurekify/buildingBlockService.password = CAdemo123/g" $EUR_COM_CONFIG
+
+sed -i "s/<!--@@dockercontext-->/classpath:\/META-INF\/dockerContext.xml/g" $JBOSS_DEPLOYMENTS_DIR/eurekify.war/WEB-INF/web.xml
+touch $JBOSS_DEPLOYMENTS_DIR/eurekify.war.dodeploy
+
+

@@ -1,0 +1,4 @@
+sleep 10
+rm -rf /tmp/*.sql
+cd ${JBOSS_HOME}/bin/
+. ca-gm-run.sh
