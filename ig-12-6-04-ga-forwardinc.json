@@ -319,7 +319,7 @@
     {
       "description": "The URL of your configuration.  Change this URL to use a custom configuration.",
       "name": "SOLUTION_CONFIGURATION",
-      "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/IG-12.6.04.zip"
+      "value": "https://github.com/ca-imag/vapp-config-forwardinc/archive/IG-12.6.04.ga.zip"
     },
     {
       "description": "Provide a Database Vendor name.  The Database Vendor should be sqlserver or oracle",
