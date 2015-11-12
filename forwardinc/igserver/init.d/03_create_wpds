@@ -1,0 +1,14 @@
+#WPDSMSG=$(cat test.log)
+MSG="Workpoint db already exists..."
+#WPDSMSG=$(cat test.log | grep "$MSG")
+echo $WPDSMSG
+echo $MSG
+if grep -q "$MSG" test.log;
+        then
+		echo "DB Already Exists"
+	else
+                cd $JBOSS_HOME/Workpoint/WorkPointDesigner/install/
+                sh CreateDatabase.sh CreateDatabase.properties
+fi
+echo "done with wp db"
+
