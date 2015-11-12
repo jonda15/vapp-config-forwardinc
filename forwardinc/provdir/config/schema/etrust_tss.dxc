@@ -1,0 +1,6350 @@
+schema set oid-prefix etrust-admin-TSS-attr = (1.3.6.1.4.1.791.2.3.5.3.5150.1);
+schema set oid-prefix etrust-admin-TSS-oc = (1.3.6.1.4.1.791.2.3.5.3.5150.2);
+schema set oid-prefix etrust-admin-TSS-nb = (1.3.6.1.4.1.791.2.3.5.3.5150.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-TSS-attr:1 = {
+    name = eTTSSDirectoryName
+    ldap-names = eTTSSDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:2 = {
+    name = eTTSSAcidAction
+    ldap-names = eTTSSAcidAction
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:3 = {
+    name = eTTSSDateFormat
+    ldap-names = eTTSSDateFormat
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:230 = {
+    name = eTTSSVersion
+    ldap-names = eTTSSVersion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:229 = {
+    name = eTTSSSystemInfoName
+    ldap-names = eTTSSSystemInfoName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:314 = {
+    name = eTTSStssDefaultOMVSUser
+    ldap-names = eTTSStssDefaultOMVSUser
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:313 = {
+    name = eTTSStssDefaultOMVSGroup
+    ldap-names = eTTSStssDefaultOMVSGroup
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:315 = {
+    name = eTTSStssDefaultUIDRange
+    ldap-names = eTTSStssDefaultUIDRange
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:312 = {
+    name = eTTSStssDefaultGIDRange
+    ldap-names = eTTSStssDefaultGIDRange
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:311 = {
+    name = eTTSStssMinDaysForChg
+    ldap-names = eTTSStssMinDaysForChg
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:316 = {
+    name = eTTSStssOnlyMin
+    ldap-names = eTTSStssOnlyMin
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:300 = {
+    name = eTTSSsecPreventPswdChgDuringLogon
+    ldap-names = eTTSSsecPreventPswdChgDuringLogon
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:322 = {
+    name = eTTSStssVowelNotAllowed
+    ldap-names = eTTSStssVowelNotAllowed
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:310 = {
+    name = eTTSStssGenNewPswd
+    ldap-names = eTTSStssGenNewPswd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:317 = {
+    name = eTTSStssPreventSimilar
+    ldap-names = eTTSStssPreventSimilar
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:319 = {
+    name = eTTSStssPswdMask
+    ldap-names = eTTSStssPswdMask
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:318 = {
+    name = eTTSStssPswdExpInterval
+    ldap-names = eTTSStssPswdExpInterval
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:320 = {
+    name = eTTSStssPswdMaxVio
+    ldap-names = eTTSStssPswdMaxVio
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:321 = {
+    name = eTTSStssPswdViewable
+    ldap-names = eTTSStssPswdViewable
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:309 = {
+    name = eTTSStssAllowMSCASuspend
+    ldap-names = eTTSStssAllowMSCASuspend
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:295 = {
+    name = eTTSSsecDateFormat
+    ldap-names = eTTSSsecDateFormat
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:296 = {
+    name = eTTSSsecExpireWarningDays
+    ldap-names = eTTSSsecExpireWarningDays
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:297 = {
+    name = eTTSSsecLDS
+    ldap-names = eTTSSsecLDS
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:298 = {
+    name = eTTSSsecLogonInvalidCount
+    ldap-names = eTTSSsecLogonInvalidCount
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:299 = {
+    name = eTTSSsecMode
+    ldap-names = eTTSSsecMode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:301 = {
+    name = eTTSSsecPreventUserIdAsPswd
+    ldap-names = eTTSSsecPreventUserIdAsPswd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:302 = {
+    name = eTTSSsecPswdChkAllNumeric
+    ldap-names = eTTSSsecPswdChkAllNumeric
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:303 = {
+    name = eTTSSsecPswdChkReserved
+    ldap-names = eTTSSsecPswdChkReserved
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:304 = {
+    name = eTTSSsecPswdHistory
+    ldap-names = eTTSSsecPswdHistory
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:305 = {
+    name = eTTSSsecPswdMinLength
+    ldap-names = eTTSSsecPswdMinLength
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:306 = {
+    name = eTTSSsecPswdRepeatingChars
+    ldap-names = eTTSSsecPswdRepeatingChars
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:307 = {
+    name = eTTSSsecRequireNationalChar
+    ldap-names = eTTSSsecRequireNationalChar
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:308 = {
+    name = eTTSSsecVersion
+    ldap-names = eTTSSsecVersion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:290 = {
+    name = eTTSSUserDefName
+    ldap-names = eTTSSUserDefName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:323 = {
+    name = eTTSSuserdef
+    ldap-names = eTTSSuserdef
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:324 = {
+    name = eTTSSudef-type
+    ldap-names = eTTSSudef-type
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:325 = {
+    name = eTTSSudef-length
+    ldap-names = eTTSSudef-length
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:326 = {
+    name = eTTSSudef-display
+    ldap-names = eTTSSudef-display
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:327 = {
+    name = eTTSSudef-mixed
+    ldap-names = eTTSSudef-mixed
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:328 = {
+    name = eTTSSudef-single
+    ldap-names = eTTSSudef-single
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:4 = {
+    name = eTTSSAcidContainerName
+    ldap-names = eTTSSAcidContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:5 = {
+    name = eTTSSAcidName
+    ldap-names = eTTSSAcidName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:283 = {
+    name = eTTSSAbstracts
+    ldap-names = eTTSSAbstracts
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:6 = {
+    name = eTTSSUserDefFields
+    ldap-names = eTTSSUserDefFields
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:7 = {
+    name = eTTSSUsing-Acid
+    ldap-names = eTTSSUsing-Acid
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:8 = {
+    name = eTTSSFullName
+    ldap-names = eTTSSFullName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:9 = {
+    name = eTTSSDepartment
+    ldap-names = eTTSSDepartment
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:10 = {
+    name = eTTSSDivision
+    ldap-names = eTTSSDivision
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:11 = {
+    name = eTTSSZone
+    ldap-names = eTTSSZone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:12 = {
+    name = eTTSSUser-Type
+    ldap-names = eTTSSUser-Type
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:13 = {
+    name = eTTSSInstallation-Data
+    ldap-names = eTTSSInstallation-Data
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:14 = {
+    name = eTTSSTime-Zone
+    ldap-names = eTTSSTime-Zone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:15 = {
+    name = eTTSSTarget-Nodes-for-Cmds
+    ldap-names = eTTSSTarget-Nodes-for-Cmds
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:16 = {
+    name = eTTSSUser-Suspend
+    ldap-names = eTTSSUser-Suspend
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:272 = {
+    name = eTTSSRefresh
+    ldap-names = eTTSSRefresh
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:345 = {
+    name = eTTSSCustomAttribute001
+    ldap-names = eTTSSCustomAttribute001
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:346 = {
+    name = eTTSSCustomAttribute002
+    ldap-names = eTTSSCustomAttribute002
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:347 = {
+    name = eTTSSCustomAttribute003
+    ldap-names = eTTSSCustomAttribute003
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:348 = {
+    name = eTTSSCustomAttribute004
+    ldap-names = eTTSSCustomAttribute004
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:349 = {
+    name = eTTSSCustomAttribute005
+    ldap-names = eTTSSCustomAttribute005
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:350 = {
+    name = eTTSSCustomAttribute006
+    ldap-names = eTTSSCustomAttribute006
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:351 = {
+    name = eTTSSCustomAttribute007
+    ldap-names = eTTSSCustomAttribute007
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:352 = {
+    name = eTTSSCustomAttribute008
+    ldap-names = eTTSSCustomAttribute008
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:353 = {
+    name = eTTSSCustomAttribute009
+    ldap-names = eTTSSCustomAttribute009
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:354 = {
+    name = eTTSSCustomAttribute010
+    ldap-names = eTTSSCustomAttribute010
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:355 = {
+    name = eTTSSCustomAttribute011
+    ldap-names = eTTSSCustomAttribute011
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:356 = {
+    name = eTTSSCustomAttribute012
+    ldap-names = eTTSSCustomAttribute012
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:357 = {
+    name = eTTSSCustomAttribute013
+    ldap-names = eTTSSCustomAttribute013
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:358 = {
+    name = eTTSSCustomAttribute014
+    ldap-names = eTTSSCustomAttribute014
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:359 = {
+    name = eTTSSCustomAttribute015
+    ldap-names = eTTSSCustomAttribute015
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:360 = {
+    name = eTTSSCustomAttribute016
+    ldap-names = eTTSSCustomAttribute016
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:361 = {
+    name = eTTSSCustomAttribute017
+    ldap-names = eTTSSCustomAttribute017
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:362 = {
+    name = eTTSSCustomAttribute018
+    ldap-names = eTTSSCustomAttribute018
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:363 = {
+    name = eTTSSCustomAttribute019
+    ldap-names = eTTSSCustomAttribute019
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:364 = {
+    name = eTTSSCustomAttribute020
+    ldap-names = eTTSSCustomAttribute020
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:365 = {
+    name = eTTSSCustomAttributeName001
+    ldap-names = eTTSSCustomAttributeName001
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:366 = {
+    name = eTTSSCustomAttributeName002
+    ldap-names = eTTSSCustomAttributeName002
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:367 = {
+    name = eTTSSCustomAttributeName003
+    ldap-names = eTTSSCustomAttributeName003
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:368 = {
+    name = eTTSSCustomAttributeName004
+    ldap-names = eTTSSCustomAttributeName004
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:369 = {
+    name = eTTSSCustomAttributeName005
+    ldap-names = eTTSSCustomAttributeName005
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:370 = {
+    name = eTTSSCustomAttributeName006
+    ldap-names = eTTSSCustomAttributeName006
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:371 = {
+    name = eTTSSCustomAttributeName007
+    ldap-names = eTTSSCustomAttributeName007
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:372 = {
+    name = eTTSSCustomAttributeName008
+    ldap-names = eTTSSCustomAttributeName008
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:373 = {
+    name = eTTSSCustomAttributeName009
+    ldap-names = eTTSSCustomAttributeName009
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:374 = {
+    name = eTTSSCustomAttributeName010
+    ldap-names = eTTSSCustomAttributeName010
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:375 = {
+    name = eTTSSCustomAttributeName011
+    ldap-names = eTTSSCustomAttributeName011
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:376 = {
+    name = eTTSSCustomAttributeName012
+    ldap-names = eTTSSCustomAttributeName012
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:377 = {
+    name = eTTSSCustomAttributeName013
+    ldap-names = eTTSSCustomAttributeName013
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:378 = {
+    name = eTTSSCustomAttributeName014
+    ldap-names = eTTSSCustomAttributeName014
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:379 = {
+    name = eTTSSCustomAttributeName015
+    ldap-names = eTTSSCustomAttributeName015
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:380 = {
+    name = eTTSSCustomAttributeName016
+    ldap-names = eTTSSCustomAttributeName016
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:381 = {
+    name = eTTSSCustomAttributeName017
+    ldap-names = eTTSSCustomAttributeName017
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:382 = {
+    name = eTTSSCustomAttributeName018
+    ldap-names = eTTSSCustomAttributeName018
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:383 = {
+    name = eTTSSCustomAttributeName019
+    ldap-names = eTTSSCustomAttributeName019
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:384 = {
+    name = eTTSSCustomAttributeName020
+    ldap-names = eTTSSCustomAttributeName020
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:17 = {
+    name = eTTSSSuspend-Until
+    ldap-names = eTTSSSuspend-Until
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:18 = {
+    name = eTTSSUntil-Date
+    ldap-names = eTTSSUntil-Date
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:19 = {
+    name = eTTSSPasswordInterval
+    ldap-names = eTTSSPasswordInterval
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:20 = {
+    name = eTTSSExpireNow
+    ldap-names = eTTSSExpireNow
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:21 = {
+    name = eTTSSExpirePswd
+    ldap-names = eTTSSExpirePswd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:22 = {
+    name = eTTSSTerminal-Lock-Time
+    ldap-names = eTTSSTerminal-Lock-Time
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:23 = {
+    name = eTTSSLast-Access-Count
+    ldap-names = eTTSSLast-Access-Count
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:24 = {
+    name = eTTSSLast-Used-Date
+    ldap-names = eTTSSLast-Used-Date
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:25 = {
+    name = eTTSSLast-Used-Time
+    ldap-names = eTTSSLast-Used-Time
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:26 = {
+    name = eTTSSLast-Accessed-From-CPU
+    ldap-names = eTTSSLast-Accessed-From-CPU
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:27 = {
+    name = eTTSSLast-Used-Facility
+    ldap-names = eTTSSLast-Used-Facility
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:28 = {
+    name = eTTSSCreated-Date
+    ldap-names = eTTSSCreated-Date
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:29 = {
+    name = eTTSSModified-Date
+    ldap-names = eTTSSModified-Date
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:30 = {
+    name = eTTSSModified-Time
+    ldap-names = eTTSSModified-Time
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:31 = {
+    name = eTTSSOperating-Mode
+    ldap-names = eTTSSOperating-Mode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:275 = {
+    name = eTTSSAccessVioSuspension
+    ldap-names = eTTSSAccessVioSuspension
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:276 = {
+    name = eTTSSInstallationExitSuspension
+    ldap-names = eTTSSInstallationExitSuspension
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:338 = {
+    name = eTTSSCreated-Time
+    ldap-names = eTTSSCreated-Time
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:339 = {
+    name = eTTSSPasswordPhraseInterval
+    ldap-names = eTTSSPasswordPhraseInterval
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:340 = {
+    name = eTTSSPWPhrase
+    ldap-names = eTTSSPWPhrase
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:341 = {
+    name = eTTSSPWPhraseDate
+    ldap-names = eTTSSPWPhraseDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:342 = {
+    name = eTTSSAllowLocalPWPhrase
+    ldap-names = eTTSSAllowLocalPWPhrase
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:32 = {
+    name = eTTSSConsole-Auth
+    ldap-names = eTTSSConsole-Auth
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:33 = {
+    name = eTTSSDUF-Extract
+    ldap-names = eTTSSDUF-Extract
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:34 = {
+    name = eTTSSDUF-Update
+    ldap-names = eTTSSDUF-Update
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:35 = {
+    name = eTTSSMRO-Signon
+    ldap-names = eTTSSMRO-Signon
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:36 = {
+    name = eTTSSNo-Automatic-Terminal-Signon
+    ldap-names = eTTSSNo-Automatic-Terminal-Signon
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:37 = {
+    name = eTTSSNo-Automatic-Dsn-Protection
+    ldap-names = eTTSSNo-Automatic-Dsn-Protection
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:38 = {
+    name = eTTSSNo-Automatic-Permit-Access
+    ldap-names = eTTSSNo-Automatic-Permit-Access
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:39 = {
+    name = eTTSSMultiple-Passwords
+    ldap-names = eTTSSMultiple-Passwords
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:40 = {
+    name = eTTSSNo-OMVS-Default-User
+    ldap-names = eTTSSNo-OMVS-Default-User
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:41 = {
+    name = eTTSSLanguage-Pref
+    ldap-names = eTTSSLanguage-Pref
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:42 = {
+    name = eTTSSPhysical-Security-Key
+    ldap-names = eTTSSPhysical-Security-Key
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:43 = {
+    name = eTTSSBypass-Dsn-Check
+    ldap-names = eTTSSBypass-Dsn-Check
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:44 = {
+    name = eTTSSNo-Password-Chg
+    ldap-names = eTTSSNo-Password-Chg
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:45 = {
+    name = eTTSSBypass-Minidisklink-Check
+    ldap-names = eTTSSBypass-Minidisklink-Check
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:46 = {
+    name = eTTSSBypass-Job-Submission-Check
+    ldap-names = eTTSSBypass-Job-Submission-Check
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:47 = {
+    name = eTTSSNo-Vthresh-Suspend
+    ldap-names = eTTSSNo-Vthresh-Suspend
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:48 = {
+    name = eTTSSBypass-LCF-Check
+    ldap-names = eTTSSBypass-LCF-Check
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:49 = {
+    name = eTTSSBypass-Resource-Check
+    ldap-names = eTTSSBypass-Resource-Check
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:50 = {
+    name = eTTSSBypass-Volume-Check
+    ldap-names = eTTSSBypass-Volume-Check
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:51 = {
+    name = eTTSSAudit-Attr
+    ldap-names = eTTSSAudit-Attr
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:52 = {
+    name = eTTSSTrace-ACID-Activity
+    ldap-names = eTTSSTrace-ACID-Activity
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:53 = {
+    name = eTTSSMaster-Facility
+    ldap-names = eTTSSMaster-Facility
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:273 = {
+    name = eTTSSLDS
+    ldap-names = eTTSSLDS
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:274 = {
+    name = eTTSSLDAPDest
+    ldap-names = eTTSSLDAPDest
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:54 = {
+    name = eTTSSAcid-All
+    ldap-names = eTTSSAcid-All
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:55 = {
+    name = eTTSSAcid-Audit
+    ldap-names = eTTSSAcid-Audit
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:56 = {
+    name = eTTSSAcid-Create
+    ldap-names = eTTSSAcid-Create
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:57 = {
+    name = eTTSSAcid-Defnode
+    ldap-names = eTTSSAcid-Defnode
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:58 = {
+    name = eTTSSAcid-Info
+    ldap-names = eTTSSAcid-Info
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:59 = {
+    name = eTTSSAcid-Maintain
+    ldap-names = eTTSSAcid-Maintain
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:60 = {
+    name = eTTSSAcid-Report
+    ldap-names = eTTSSAcid-Report
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:61 = {
+    name = eTTSSAcid-XAuth
+    ldap-names = eTTSSAcid-XAuth
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:62 = {
+    name = eTTSSM1-All
+    ldap-names = eTTSSM1-All
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:63 = {
+    name = eTTSSM1-LCF
+    ldap-names = eTTSSM1-LCF
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:64 = {
+    name = eTTSSM1-LTime
+    ldap-names = eTTSSM1-LTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:65 = {
+    name = eTTSSM1-RDT
+    ldap-names = eTTSSM1-RDT
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:66 = {
+    name = eTTSSM1-Noats
+    ldap-names = eTTSSM1-Noats
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:67 = {
+    name = eTTSSM1-Suspend
+    ldap-names = eTTSSM1-Suspend
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:68 = {
+    name = eTTSSM1-Instdata
+    ldap-names = eTTSSM1-Instdata
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:69 = {
+    name = eTTSSM1-TSSSim
+    ldap-names = eTTSSM1-TSSSim
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:70 = {
+    name = eTTSSM1-User
+    ldap-names = eTTSSM1-User
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:71 = {
+    name = eTTSSM2-All
+    ldap-names = eTTSSM2-All
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:72 = {
+    name = eTTSSM2-APPCLU
+    ldap-names = eTTSSM2-APPCLU
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:73 = {
+    name = eTTSSM2-DLF
+    ldap-names = eTTSSM2-DLF
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:74 = {
+    name = eTTSSM2-NDT
+    ldap-names = eTTSSM2-NDT
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:76 = {
+    name = eTTSSM2-SMS
+    ldap-names = eTTSSM2-SMS
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:77 = {
+    name = eTTSSM2-Target
+    ldap-names = eTTSSM2-Target
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:78 = {
+    name = eTTSSM2-TSO
+    ldap-names = eTTSSM2-TSO
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:79 = {
+    name = eTTSSM2-WorkAttr
+    ldap-names = eTTSSM2-WorkAttr
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:80 = {
+    name = eTTSSM9-All
+    ldap-names = eTTSSM9-All
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:81 = {
+    name = eTTSSM9-Bypass
+    ldap-names = eTTSSM9-Bypass
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:82 = {
+    name = eTTSSM9-Console
+    ldap-names = eTTSSM9-Console
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:83 = {
+    name = eTTSSM9-Generic
+    ldap-names = eTTSSM9-Generic
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:84 = {
+    name = eTTSSM9-Global
+    ldap-names = eTTSSM9-Global
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:85 = {
+    name = eTTSSM9-Mastfac
+    ldap-names = eTTSSM9-Mastfac
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:86 = {
+    name = eTTSSM9-Mode
+    ldap-names = eTTSSM9-Mode
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:87 = {
+    name = eTTSSM9-STC
+    ldap-names = eTTSSM9-STC
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:88 = {
+    name = eTTSSM9-Trace
+    ldap-names = eTTSSM9-Trace
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:89 = {
+    name = eTTSSListData-Acids
+    ldap-names = eTTSSListData-Acids
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:90 = {
+    name = eTTSSListData-All
+    ldap-names = eTTSSListData-All
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:91 = {
+    name = eTTSSListData-Admin
+    ldap-names = eTTSSListData-Admin
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:92 = {
+    name = eTTSSListData-Basic
+    ldap-names = eTTSSListData-Basic
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:93 = {
+    name = eTTSSListData-Cics
+    ldap-names = eTTSSListData-Cics
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:94 = {
+    name = eTTSSListData-Instdata
+    ldap-names = eTTSSListData-Instdata
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:95 = {
+    name = eTTSSListData-LCF
+    ldap-names = eTTSSListData-LCF
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:96 = {
+    name = eTTSSListData-Names
+    ldap-names = eTTSSListData-Names
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:97 = {
+    name = eTTSSListData-Password
+    ldap-names = eTTSSListData-Password
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:99 = {
+    name = eTTSSListData-Profile
+    ldap-names = eTTSSListData-Profile
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:100 = {
+    name = eTTSSListData-PWVIEW
+    ldap-names = eTTSSListData-PWVIEW
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:101 = {
+    name = eTTSSListData-Resource
+    ldap-names = eTTSSListData-Resource
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:102 = {
+    name = eTTSSListData-SessKey
+    ldap-names = eTTSSListData-SessKey
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:103 = {
+    name = eTTSSListData-SMS
+    ldap-names = eTTSSListData-SMS
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:104 = {
+    name = eTTSSListData-Source
+    ldap-names = eTTSSListData-Source
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:105 = {
+    name = eTTSSListData-Tso
+    ldap-names = eTTSSListData-Tso
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:106 = {
+    name = eTTSSListData-WorkAttr
+    ldap-names = eTTSSListData-WorkAttr
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:107 = {
+    name = eTTSSListData-XAuth
+    ldap-names = eTTSSListData-XAuth
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:108 = {
+    name = eTTSSM8-All
+    ldap-names = eTTSSM8-All
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:109 = {
+    name = eTTSSM8-ListRDT
+    ldap-names = eTTSSM8-ListRDT
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:110 = {
+    name = eTTSSM8-ListSDT
+    ldap-names = eTTSSM8-ListSDT
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:111 = {
+    name = eTTSSM8-ListSTC
+    ldap-names = eTTSSM8-ListSTC
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:112 = {
+    name = eTTSSM8-MCS
+    ldap-names = eTTSSM8-MCS
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:113 = {
+    name = eTTSSM8-Remasusp
+    ldap-names = eTTSSM8-Remasusp
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:254 = {
+    name = eTTSSM8-LISTAPLU
+    ldap-names = eTTSSM8-LISTAPLU
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:255 = {
+    name = eTTSSM8-NOMVSDF
+    ldap-names = eTTSSM8-NOMVSDF
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:256 = {
+    name = eTTSSM8-PWMAINT
+    ldap-names = eTTSSM8-PWMAINT
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:261 = {
+    name = eTTSSM3-ALL
+    ldap-names = eTTSSM3-ALL
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:262 = {
+    name = eTTSSM3-SDT
+    ldap-names = eTTSSM3-SDT
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:263 = {
+    name = eTTSSM4-ALL
+    ldap-names = eTTSSM4-ALL
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:264 = {
+    name = eTTSSM4-CERTUSER
+    ldap-names = eTTSSM4-CERTUSER
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:265 = {
+    name = eTTSSM4-CERTAUTH
+    ldap-names = eTTSSM4-CERTAUTH
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:266 = {
+    name = eTTSSM4-CERTSITE
+    ldap-names = eTTSSM4-CERTSITE
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:267 = {
+    name = eTTSSM4-CERTLIST
+    ldap-names = eTTSSM4-CERTLIST
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:268 = {
+    name = eTTSSM4-CERTGEN
+    ldap-names = eTTSSM4-CERTGEN
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:269 = {
+    name = eTTSSM4-CERTEXPO
+    ldap-names = eTTSSM4-CERTEXPO
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:270 = {
+    name = eTTSSM4-CERTCHEK
+    ldap-names = eTTSSM4-CERTCHEK
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:271 = {
+    name = eTTSSM4-KERBUSER
+    ldap-names = eTTSSM4-KERBUSER
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:284 = {
+    name = eTTSSAdminMisc5
+    ldap-names = eTTSSAdminMisc5
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:336 = {
+    name = eTTSSAdminMisc7
+    ldap-names = eTTSSAdminMisc7
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:114 = {
+    name = eTTSSCICS-Auto-Transaction
+    ldap-names = eTTSSCICS-Auto-Transaction
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:115 = {
+    name = eTTSSCICS-Oper-Class
+    ldap-names = eTTSSCICS-Oper-Class
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:116 = {
+    name = eTTSSCICS-Oper-Identification
+    ldap-names = eTTSSCICS-Oper-Identification
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:117 = {
+    name = eTTSSCICS-Oper-Priority
+    ldap-names = eTTSSCICS-Oper-Priority
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:118 = {
+    name = eTTSSCICS-Security-Key
+    ldap-names = eTTSSCICS-Security-Key
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:289 = {
+    name = eTTSSCICS-Time-Out
+    ldap-names = eTTSSCICS-Time-Out
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:119 = {
+    name = eTTSSTSO-Logon-Proc
+    ldap-names = eTTSSTSO-Logon-Proc
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:120 = {
+    name = eTTSSTSO-Region-Size
+    ldap-names = eTTSSTSO-Region-Size
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:121 = {
+    name = eTTSSTSO-Max-Region-Size
+    ldap-names = eTTSSTSO-Max-Region-Size
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:122 = {
+    name = eTTSSTSO-Performance-Grp
+    ldap-names = eTTSSTSO-Performance-Grp
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:123 = {
+    name = eTTSSTSO-Options
+    ldap-names = eTTSSTSO-Options
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:124 = {
+    name = eTTSSTSO-Hold-Class
+    ldap-names = eTTSSTSO-Hold-Class
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:125 = {
+    name = eTTSSTSO-Job-Class
+    ldap-names = eTTSSTSO-Job-Class
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:126 = {
+    name = eTTSSTSO-Message-Class
+    ldap-names = eTTSSTSO-Message-Class
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:127 = {
+    name = eTTSSTSO-Sysout-Class
+    ldap-names = eTTSSTSO-Sysout-Class
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:128 = {
+    name = eTTSSTSO-Output-Destination
+    ldap-names = eTTSSTSO-Output-Destination
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:129 = {
+    name = eTTSSTSO-Unit
+    ldap-names = eTTSSTSO-Unit
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:130 = {
+    name = eTTSSTSO-User-Data
+    ldap-names = eTTSSTSO-User-Data
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:131 = {
+    name = eTTSSTSO-Logon-Account
+    ldap-names = eTTSSTSO-Logon-Account
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:132 = {
+    name = eTTSSTSO-Logon-Command
+    ldap-names = eTTSSTSO-Logon-Command
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:133 = {
+    name = eTTSSTSO-Muliple-Passwords
+    ldap-names = eTTSSTSO-Muliple-Passwords
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:134 = {
+    name = eTTSSSMS-Application-ID
+    ldap-names = eTTSSSMS-Application-ID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:135 = {
+    name = eTTSSSMS-Data-Class
+    ldap-names = eTTSSSMS-Data-Class
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:136 = {
+    name = eTTSSSMS-Mgmt-Class
+    ldap-names = eTTSSSMS-Mgmt-Class
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:137 = {
+    name = eTTSSSMS-Storage-Class
+    ldap-names = eTTSSSMS-Storage-Class
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:138 = {
+    name = eTTSSAPPC-Sysout-Name
+    ldap-names = eTTSSAPPC-Sysout-Name
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:139 = {
+    name = eTTSSAPPC-Sysout-AcctNum
+    ldap-names = eTTSSAPPC-Sysout-AcctNum
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:140 = {
+    name = eTTSSAPPC-Sysout-Bldg
+    ldap-names = eTTSSAPPC-Sysout-Bldg
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:141 = {
+    name = eTTSSAPPC-Sysout-Dept
+    ldap-names = eTTSSAPPC-Sysout-Dept
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:142 = {
+    name = eTTSSAPPC-Sysout-Room
+    ldap-names = eTTSSAPPC-Sysout-Room
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:143 = {
+    name = eTTSSAPPC-Sysout-Addr1
+    ldap-names = eTTSSAPPC-Sysout-Addr1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:144 = {
+    name = eTTSSAPPC-Sysout-Addr2
+    ldap-names = eTTSSAPPC-Sysout-Addr2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:145 = {
+    name = eTTSSAPPC-Sysout-Addr3
+    ldap-names = eTTSSAPPC-Sysout-Addr3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:146 = {
+    name = eTTSSAPPC-Sysout-Addr4
+    ldap-names = eTTSSAPPC-Sysout-Addr4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:147 = {
+    name = eTTSSOMVS-Dflt-Group
+    ldap-names = eTTSSOMVS-Dflt-Group
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:148 = {
+    name = eTTSSOMVS-Group-ID
+    ldap-names = eTTSSOMVS-Group-ID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:149 = {
+    name = eTTSSOMVS-Home-Subdir
+    ldap-names = eTTSSOMVS-Home-Subdir
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:150 = {
+    name = eTTSSOMVS-Program
+    ldap-names = eTTSSOMVS-Program
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:151 = {
+    name = eTTSSOMVS-User-ID
+    ldap-names = eTTSSOMVS-User-ID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:258 = {
+    name = eTTSSLotusName
+    ldap-names = eTTSSLotusName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:259 = {
+    name = eTTSSNovellName
+    ldap-names = eTTSSNovellName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:260 = {
+    name = eTTSSLinuxName
+    ldap-names = eTTSSLinuxName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:277 = {
+    name = eTTSSMaxCPUTime
+    ldap-names = eTTSSMaxCPUTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:278 = {
+    name = eTTSSMaxAddrSpaceSize
+    ldap-names = eTTSSMaxAddrSpaceSize
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:279 = {
+    name = eTTSSMaxFilesPerProcess
+    ldap-names = eTTSSMaxFilesPerProcess
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:280 = {
+    name = eTTSSMaxProcesses
+    ldap-names = eTTSSMaxProcesses
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:281 = {
+    name = eTTSSMaxPthreadsCreated
+    ldap-names = eTTSSMaxPthreadsCreated
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:282 = {
+    name = eTTSSMaxDataSpacePages
+    ldap-names = eTTSSMaxDataSpacePages
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:287 = {
+    name = eTTSSEIMProfile
+    ldap-names = eTTSSEIMProfile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:285 = {
+    name = eTTSSMLSSecLabel
+    ldap-names = eTTSSMLSSecLabel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:286 = {
+    name = eTTSSMLSDfltSecLabel
+    ldap-names = eTTSSMLSDfltSecLabel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:337 = {
+    name = eTTSSRestrictedAccess
+    ldap-names = eTTSSRestrictedAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:152 = {
+    name = eTTSSMCS-Alternate-Grp
+    ldap-names = eTTSSMCS-Alternate-Grp
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:153 = {
+    name = eTTSSMCS-Authorized-Cmds
+    ldap-names = eTTSSMCS-Authorized-Cmds
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:154 = {
+    name = eTTSSMCS-Auto-Cmds
+    ldap-names = eTTSSMCS-Auto-Cmds
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:155 = {
+    name = eTTSSMCS-Cmd-Target-System
+    ldap-names = eTTSSMCS-Cmd-Target-System
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:156 = {
+    name = eTTSSMCS-Delete-Oper-Cmds
+    ldap-names = eTTSSMCS-Delete-Oper-Cmds
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:157 = {
+    name = eTTSSMCS-Keyword
+    ldap-names = eTTSSMCS-Keyword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:158 = {
+    name = eTTSSMCS-Msgs-Received
+    ldap-names = eTTSSMCS-Msgs-Received
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:159 = {
+    name = eTTSSMCS-Log-Cmds
+    ldap-names = eTTSSMCS-Log-Cmds
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:160 = {
+    name = eTTSSMCS-Display-Format
+    ldap-names = eTTSSMCS-Display-Format
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:161 = {
+    name = eTTSSMCS-Migration-ID
+    ldap-names = eTTSSMCS-Migration-ID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:162 = {
+    name = eTTSSMCS-Monitor
+    ldap-names = eTTSSMCS-Monitor
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:163 = {
+    name = eTTSSMCS-Routing-Code
+    ldap-names = eTTSSMCS-Routing-Code
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:164 = {
+    name = eTTSSMCS-Msgs-Queue-Storage
+    ldap-names = eTTSSMCS-Msgs-Queue-Storage
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:165 = {
+    name = eTTSSMCS-Undelivered-Msgs
+    ldap-names = eTTSSMCS-Undelivered-Msgs
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:292 = {
+    name = eTTSSMCS-Receive-HardCopy-Messages
+    ldap-names = eTTSSMCS-Receive-HardCopy-Messages
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:293 = {
+    name = eTTSSMCS-Receive-ConsoleIdZero-Messages
+    ldap-names = eTTSSMCS-Receive-ConsoleIdZero-Messages
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:294 = {
+    name = eTTSSMCS-Receive-Unknown-ConsoleID-Messages
+    ldap-names = eTTSSMCS-Receive-Unknown-ConsoleID-Messages
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:243 = {
+    name = eTTSSUniqueMember
+    ldap-names = eTTSSUniqueMember
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:252 = {
+    name = eTTSSmemberOf
+    ldap-names = eTTSSmemberOf
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:253 = {
+    name = eTTSSgroupmemberOf
+    ldap-names = eTTSSgroupmemberOf
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:170 = {
+    name = eTTSSPolicy-Profiles
+    ldap-names = eTTSSPolicy-Profiles
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:291 = {
+    name = eTTSSGroups
+    ldap-names = eTTSSGroups
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:231 = {
+    name = eTTSSFacilityContainerName
+    ldap-names = eTTSSFacilityContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:232 = {
+    name = eTTSSPermissionContainerName
+    ldap-names = eTTSSPermissionContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:233 = {
+    name = eTTSSOwnershipContainerName
+    ldap-names = eTTSSOwnershipContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:234 = {
+    name = eTTSSProfListContainerName
+    ldap-names = eTTSSProfListContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:235 = {
+    name = eTTSSAdminFacContainerName
+    ldap-names = eTTSSAdminFacContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:236 = {
+    name = eTTSSAdminResContainerName
+    ldap-names = eTTSSAdminResContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:237 = {
+    name = eTTSSAdminScpContainerName
+    ldap-names = eTTSSAdminScpContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:238 = {
+    name = eTTSSAdminFacilityName
+    ldap-names = eTTSSAdminFacilityName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:239 = {
+    name = eTTSSAdminResourceName
+    ldap-names = eTTSSAdminResourceName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:240 = {
+    name = eTTSSAdminResAuth
+    ldap-names = eTTSSAdminResAuth
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:241 = {
+    name = eTTSSAdminResAccess
+    ldap-names = eTTSSAdminResAccess
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:242 = {
+    name = eTTSSAdminScopeName
+    ldap-names = eTTSSAdminScopeName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:172 = {
+    name = eTTSSFacilityName
+    ldap-names = eTTSSFacilityName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:173 = {
+    name = eTTSSFacility-Lock-Time
+    ldap-names = eTTSSFacility-Lock-Time
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:174 = {
+    name = eTTSSFacility-Access-Days
+    ldap-names = eTTSSFacility-Access-Days
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:175 = {
+    name = eTTSSFacility-Access-Actions
+    ldap-names = eTTSSFacility-Access-Actions
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:176 = {
+    name = eTTSSFacility-Until-Date
+    ldap-names = eTTSSFacility-Until-Date
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:177 = {
+    name = eTTSSFacility-For-Days
+    ldap-names = eTTSSFacility-For-Days
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:178 = {
+    name = eTTSSFacility-Times
+    ldap-names = eTTSSFacility-Times
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:179 = {
+    name = eTTSSFacility-Sysid
+    ldap-names = eTTSSFacility-Sysid
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:180 = {
+    name = eTTSSFacility-Calendar
+    ldap-names = eTTSSFacility-Calendar
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:181 = {
+    name = eTTSSFacility-Timerec
+    ldap-names = eTTSSFacility-Timerec
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:182 = {
+    name = eTTSSOwnershipName
+    ldap-names = eTTSSOwnershipName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:183 = {
+    name = eTTSSOwnedNameName
+    ldap-names = eTTSSOwnedNameName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:184 = {
+    name = eTTSSResource-Undercut-Ownership
+    ldap-names = eTTSSResource-Undercut-Ownership
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:185 = {
+    name = eTTSSResource-Nopermit-Ownership
+    ldap-names = eTTSSResource-Nopermit-Ownership
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:186 = {
+    name = eTTSSResClassName
+    ldap-names = eTTSSResClassName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:187 = {
+    name = eTTSSResNameName
+    ldap-names = eTTSSResNameName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:188 = {
+    name = eTTSSResource-Access-Days
+    ldap-names = eTTSSResource-Access-Days
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:189 = {
+    name = eTTSSResource-Time
+    ldap-names = eTTSSResource-Time
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:330 = {
+    name = eTTSSResource-Times
+    ldap-names = eTTSSResource-Times
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:190 = {
+    name = eTTSSResource-Access-Actions
+    ldap-names = eTTSSResource-Access-Actions
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:331 = {
+    name = eTTSSResource-Actions
+    ldap-names = eTTSSResource-Actions
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:191 = {
+    name = eTTSSResource-Until-Date
+    ldap-names = eTTSSResource-Until-Date
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:192 = {
+    name = eTTSSResource-For-Days
+    ldap-names = eTTSSResource-For-Days
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:193 = {
+    name = eTTSSResource-Access-Level1
+    ldap-names = eTTSSResource-Access-Level1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:194 = {
+    name = eTTSSResource-Access-Level2
+    ldap-names = eTTSSResource-Access-Level2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:195 = {
+    name = eTTSSResource-Access-Level3
+    ldap-names = eTTSSResource-Access-Level3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:196 = {
+    name = eTTSSResource-Access-Level4
+    ldap-names = eTTSSResource-Access-Level4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:197 = {
+    name = eTTSSResource-Access-Level5
+    ldap-names = eTTSSResource-Access-Level5
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:332 = {
+    name = eTTSSResource-Access-Level
+    ldap-names = eTTSSResource-Access-Level
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:198 = {
+    name = eTTSSResource-Facility1
+    ldap-names = eTTSSResource-Facility1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:199 = {
+    name = eTTSSResource-Facility2
+    ldap-names = eTTSSResource-Facility2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:200 = {
+    name = eTTSSResource-Facility3
+    ldap-names = eTTSSResource-Facility3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:201 = {
+    name = eTTSSResource-Facility4
+    ldap-names = eTTSSResource-Facility4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:202 = {
+    name = eTTSSResource-Facility5
+    ldap-names = eTTSSResource-Facility5
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:333 = {
+    name = eTTSSResource-Facilities
+    ldap-names = eTTSSResource-Facilities
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:203 = {
+    name = eTTSSResource-Privileged-Program1
+    ldap-names = eTTSSResource-Privileged-Program1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:204 = {
+    name = eTTSSResource-Privileged-Program2
+    ldap-names = eTTSSResource-Privileged-Program2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:205 = {
+    name = eTTSSResource-Privileged-Program3
+    ldap-names = eTTSSResource-Privileged-Program3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:206 = {
+    name = eTTSSResource-Privileged-Program4
+    ldap-names = eTTSSResource-Privileged-Program4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:207 = {
+    name = eTTSSResource-Privileged-Program5
+    ldap-names = eTTSSResource-Privileged-Program5
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:334 = {
+    name = eTTSSResource-Privileged-Programs
+    ldap-names = eTTSSResource-Privileged-Programs
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:208 = {
+    name = eTTSSResource-Library1
+    ldap-names = eTTSSResource-Library1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:209 = {
+    name = eTTSSResource-Library2
+    ldap-names = eTTSSResource-Library2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:210 = {
+    name = eTTSSResource-Library3
+    ldap-names = eTTSSResource-Library3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:335 = {
+    name = eTTSSResource-Libraries
+    ldap-names = eTTSSResource-Libraries
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:211 = {
+    name = eTTSSResource-Sysid
+    ldap-names = eTTSSResource-Sysid
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:212 = {
+    name = eTTSSResource-Calendar-Name
+    ldap-names = eTTSSResource-Calendar-Name
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:329 = {
+    name = eTTSSResource-Calendar
+    ldap-names = eTTSSResource-Calendar
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:213 = {
+    name = eTTSSResource-TimeRecord
+    ldap-names = eTTSSResource-TimeRecord
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:214 = {
+    name = eTTSSResource-MapRecord-Name
+    ldap-names = eTTSSResource-MapRecord-Name
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:215 = {
+    name = eTTSSResource-MaskRecord-Name
+    ldap-names = eTTSSResource-MaskRecord-Name
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:216 = {
+    name = eTTSSResource-SelIn
+    ldap-names = eTTSSResource-SelIn
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:217 = {
+    name = eTTSSResource-SelOut
+    ldap-names = eTTSSResource-SelOut
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:218 = {
+    name = eTTSSResource-Mode
+    ldap-names = eTTSSResource-Mode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:219 = {
+    name = eTTSSProfListName
+    ldap-names = eTTSSProfListName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:220 = {
+    name = eTTSSProfile-Until-Date
+    ldap-names = eTTSSProfile-Until-Date
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:221 = {
+    name = eTTSSProfile-After
+    ldap-names = eTTSSProfile-After
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:222 = {
+    name = eTTSSProfile-Before
+    ldap-names = eTTSSProfile-Before
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:223 = {
+    name = eTTSSProfileContainerName
+    ldap-names = eTTSSProfileContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:224 = {
+    name = eTTSSProfileName
+    ldap-names = eTTSSProfileName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:288 = {
+    name = eTTSSGlobally-Admin-Profile
+    ldap-names = eTTSSGlobally-Admin-Profile
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:244 = {
+    name = eTTSSDeptContainerName
+    ldap-names = eTTSSDeptContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:245 = {
+    name = eTTSSDeptName
+    ldap-names = eTTSSDeptName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:246 = {
+    name = eTTSSDivContainerName
+    ldap-names = eTTSSDivContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:247 = {
+    name = eTTSSDivName
+    ldap-names = eTTSSDivName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:248 = {
+    name = eTTSSZoneContainerName
+    ldap-names = eTTSSZoneContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:249 = {
+    name = eTTSSZoneName
+    ldap-names = eTTSSZoneName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:250 = {
+    name = eTTSSGroupContainerName
+    ldap-names = eTTSSGroupContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:251 = {
+    name = eTTSSGroupName
+    ldap-names = eTTSSGroupName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:227 = {
+    name = eTTSSPolicyContainerName
+    ldap-names = eTTSSPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-TSS-attr:228 = {
+    name = eTTSSPolicyName
+    ldap-names = eTTSSPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-TSS-oc:1 = {
+    name = eTTSSDirectory
+    subclass-of Top
+    must-contain
+        eTTSSDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTZOSLDAPIPAddress,
+        eTZOSLDAPPort,
+        eTZOSLDAPSuffix,
+        eTZOSLDAPUseSSL,
+        eTSelfAdminID,
+        eTSelfAdminPassword,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTAccountUnlockable,
+        eTUseAdminCreds,
+        eTSawiUseProxy,
+        eTTSSAcidAction,
+        eTTSSDateFormat,
+        eTTSSVersion
+};
+
+schema set object-class etrust-admin-TSS-oc:17 = {
+    name = eTTSSSystemInfo
+    subclass-of Top
+    must-contain
+        eTTSSSystemInfoName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTTSStssDefaultOMVSUser,
+        eTTSStssDefaultOMVSGroup,
+        eTTSStssDefaultUIDRange,
+        eTTSStssDefaultGIDRange,
+        eTTSStssMinDaysForChg,
+        eTTSStssOnlyMin,
+        eTTSSsecPreventPswdChgDuringLogon,
+        eTTSStssVowelNotAllowed,
+        eTTSStssGenNewPswd,
+        eTTSStssPreventSimilar,
+        eTTSStssPswdMask,
+        eTTSStssPswdExpInterval,
+        eTTSStssPswdMaxVio,
+        eTTSStssPswdViewable,
+        eTTSStssAllowMSCASuspend,
+        eTTSSsecDateFormat,
+        eTTSSsecExpireWarningDays,
+        eTTSSsecLDS,
+        eTTSSsecLogonInvalidCount,
+        eTTSSsecMode,
+        eTTSSsecPreventUserIdAsPswd,
+        eTTSSsecPswdChkAllNumeric,
+        eTTSSsecPswdChkReserved,
+        eTTSSsecPswdHistory,
+        eTTSSsecPswdMinLength,
+        eTTSSsecPswdRepeatingChars,
+        eTTSSsecRequireNationalChar,
+        eTTSSsecVersion
+};
+
+schema set object-class etrust-admin-TSS-oc:36 = {
+    name = eTTSSUserDef
+    subclass-of Top
+    must-contain
+        eTTSSUserDefName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTTSSuserdef,
+        eTTSSudef-type,
+        eTTSSudef-length,
+        eTTSSudef-display,
+        eTTSSudef-mixed,
+        eTTSSudef-single
+};
+
+schema set object-class etrust-admin-TSS-oc:2 = {
+    name = eTTSSAcidContainer
+    subclass-of Top
+    must-contain
+        eTTSSAcidContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:3 = {
+    name = eTTSSAcid
+    subclass-of Top
+    must-contain
+        eTTSSAcidName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSelfChange,
+        eTLastLoginDTS,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTLocked,
+        eTTSSAbstracts,
+        eTTSSUserDefFields,
+        eTTSSUsing-Acid,
+        eTTSSFullName,
+        eTTSSDepartment,
+        eTTSSDivision,
+        eTTSSZone,
+        eTTSSUser-Type,
+        eTTSSInstallation-Data,
+        eTTSSTime-Zone,
+        eTTSSTarget-Nodes-for-Cmds,
+        eTTSSUser-Suspend,
+        eTTSSRefresh,
+        eTTSSCustomAttribute001,
+        eTTSSCustomAttribute002,
+        eTTSSCustomAttribute003,
+        eTTSSCustomAttribute004,
+        eTTSSCustomAttribute005,
+        eTTSSCustomAttribute006,
+        eTTSSCustomAttribute007,
+        eTTSSCustomAttribute008,
+        eTTSSCustomAttribute009,
+        eTTSSCustomAttribute010,
+        eTTSSCustomAttribute011,
+        eTTSSCustomAttribute012,
+        eTTSSCustomAttribute013,
+        eTTSSCustomAttribute014,
+        eTTSSCustomAttribute015,
+        eTTSSCustomAttribute016,
+        eTTSSCustomAttribute017,
+        eTTSSCustomAttribute018,
+        eTTSSCustomAttribute019,
+        eTTSSCustomAttribute020,
+        eTTSSCustomAttributeName001,
+        eTTSSCustomAttributeName002,
+        eTTSSCustomAttributeName003,
+        eTTSSCustomAttributeName004,
+        eTTSSCustomAttributeName005,
+        eTTSSCustomAttributeName006,
+        eTTSSCustomAttributeName007,
+        eTTSSCustomAttributeName008,
+        eTTSSCustomAttributeName009,
+        eTTSSCustomAttributeName010,
+        eTTSSCustomAttributeName011,
+        eTTSSCustomAttributeName012,
+        eTTSSCustomAttributeName013,
+        eTTSSCustomAttributeName014,
+        eTTSSCustomAttributeName015,
+        eTTSSCustomAttributeName016,
+        eTTSSCustomAttributeName017,
+        eTTSSCustomAttributeName018,
+        eTTSSCustomAttributeName019,
+        eTTSSCustomAttributeName020,
+        eTTSSSuspend-Until,
+        eTTSSUntil-Date,
+        eTTSSPasswordInterval,
+        eTTSSExpireNow,
+        eTTSSExpirePswd,
+        eTTSSTerminal-Lock-Time,
+        eTTSSLast-Access-Count,
+        eTTSSLast-Used-Date,
+        eTTSSLast-Used-Time,
+        eTTSSLast-Accessed-From-CPU,
+        eTTSSLast-Used-Facility,
+        eTTSSCreated-Date,
+        eTTSSModified-Date,
+        eTTSSModified-Time,
+        eTTSSOperating-Mode,
+        eTTSSAccessVioSuspension,
+        eTTSSInstallationExitSuspension,
+        eTTSSCreated-Time,
+        eTTSSPasswordPhraseInterval,
+        eTTSSPWPhrase,
+        eTTSSPWPhraseDate,
+        eTTSSAllowLocalPWPhrase,
+        eTTSSConsole-Auth,
+        eTTSSDUF-Extract,
+        eTTSSDUF-Update,
+        eTTSSMRO-Signon,
+        eTTSSNo-Automatic-Terminal-Signon,
+        eTTSSNo-Automatic-Dsn-Protection,
+        eTTSSNo-Automatic-Permit-Access,
+        eTTSSMultiple-Passwords,
+        eTTSSNo-OMVS-Default-User,
+        eTTSSLanguage-Pref,
+        eTTSSPhysical-Security-Key,
+        eTTSSBypass-Dsn-Check,
+        eTTSSNo-Password-Chg,
+        eTTSSBypass-Minidisklink-Check,
+        eTTSSBypass-Job-Submission-Check,
+        eTTSSNo-Vthresh-Suspend,
+        eTTSSBypass-LCF-Check,
+        eTTSSBypass-Resource-Check,
+        eTTSSBypass-Volume-Check,
+        eTTSSAudit-Attr,
+        eTTSSTrace-ACID-Activity,
+        eTTSSMaster-Facility,
+        eTTSSLDS,
+        eTTSSLDAPDest,
+        eTTSSAcid-All,
+        eTTSSAcid-Audit,
+        eTTSSAcid-Create,
+        eTTSSAcid-Defnode,
+        eTTSSAcid-Info,
+        eTTSSAcid-Maintain,
+        eTTSSAcid-Report,
+        eTTSSAcid-XAuth,
+        eTTSSM1-All,
+        eTTSSM1-LCF,
+        eTTSSM1-LTime,
+        eTTSSM1-RDT,
+        eTTSSM1-Noats,
+        eTTSSM1-Suspend,
+        eTTSSM1-Instdata,
+        eTTSSM1-TSSSim,
+        eTTSSM1-User,
+        eTTSSM2-All,
+        eTTSSM2-APPCLU,
+        eTTSSM2-DLF,
+        eTTSSM2-NDT,
+        eTTSSM2-SMS,
+        eTTSSM2-Target,
+        eTTSSM2-TSO,
+        eTTSSM2-WorkAttr,
+        eTTSSM9-All,
+        eTTSSM9-Bypass,
+        eTTSSM9-Console,
+        eTTSSM9-Generic,
+        eTTSSM9-Global,
+        eTTSSM9-Mastfac,
+        eTTSSM9-Mode,
+        eTTSSM9-STC,
+        eTTSSM9-Trace,
+        eTTSSListData-Acids,
+        eTTSSListData-All,
+        eTTSSListData-Admin,
+        eTTSSListData-Basic,
+        eTTSSListData-Cics,
+        eTTSSListData-Instdata,
+        eTTSSListData-LCF,
+        eTTSSListData-Names,
+        eTTSSListData-Password,
+        eTTSSListData-Profile,
+        eTTSSListData-PWVIEW,
+        eTTSSListData-Resource,
+        eTTSSListData-SessKey,
+        eTTSSListData-SMS,
+        eTTSSListData-Source,
+        eTTSSListData-Tso,
+        eTTSSListData-WorkAttr,
+        eTTSSListData-XAuth,
+        eTTSSM8-All,
+        eTTSSM8-ListRDT,
+        eTTSSM8-ListSDT,
+        eTTSSM8-ListSTC,
+        eTTSSM8-MCS,
+        eTTSSM8-Remasusp,
+        eTTSSM8-LISTAPLU,
+        eTTSSM8-NOMVSDF,
+        eTTSSM8-PWMAINT,
+        eTTSSM3-ALL,
+        eTTSSM3-SDT,
+        eTTSSM4-ALL,
+        eTTSSM4-CERTUSER,
+        eTTSSM4-CERTAUTH,
+        eTTSSM4-CERTSITE,
+        eTTSSM4-CERTLIST,
+        eTTSSM4-CERTGEN,
+        eTTSSM4-CERTEXPO,
+        eTTSSM4-CERTCHEK,
+        eTTSSM4-KERBUSER,
+        eTTSSAdminMisc5,
+        eTTSSAdminMisc7,
+        eTTSSCICS-Auto-Transaction,
+        eTTSSCICS-Oper-Class,
+        eTTSSCICS-Oper-Identification,
+        eTTSSCICS-Oper-Priority,
+        eTTSSCICS-Security-Key,
+        eTTSSCICS-Time-Out,
+        eTTSSTSO-Logon-Proc,
+        eTTSSTSO-Region-Size,
+        eTTSSTSO-Max-Region-Size,
+        eTTSSTSO-Performance-Grp,
+        eTTSSTSO-Options,
+        eTTSSTSO-Hold-Class,
+        eTTSSTSO-Job-Class,
+        eTTSSTSO-Message-Class,
+        eTTSSTSO-Sysout-Class,
+        eTTSSTSO-Output-Destination,
+        eTTSSTSO-Unit,
+        eTTSSTSO-User-Data,
+        eTTSSTSO-Logon-Account,
+        eTTSSTSO-Logon-Command,
+        eTTSSTSO-Muliple-Passwords,
+        eTTSSSMS-Application-ID,
+        eTTSSSMS-Data-Class,
+        eTTSSSMS-Mgmt-Class,
+        eTTSSSMS-Storage-Class,
+        eTTSSAPPC-Sysout-Name,
+        eTTSSAPPC-Sysout-AcctNum,
+        eTTSSAPPC-Sysout-Bldg,
+        eTTSSAPPC-Sysout-Dept,
+        eTTSSAPPC-Sysout-Room,
+        eTTSSAPPC-Sysout-Addr1,
+        eTTSSAPPC-Sysout-Addr2,
+        eTTSSAPPC-Sysout-Addr3,
+        eTTSSAPPC-Sysout-Addr4,
+        eTTSSOMVS-Dflt-Group,
+        eTTSSOMVS-Group-ID,
+        eTTSSOMVS-Home-Subdir,
+        eTTSSOMVS-Program,
+        eTTSSOMVS-User-ID,
+        eTTSSLotusName,
+        eTTSSNovellName,
+        eTTSSLinuxName,
+        eTTSSMaxCPUTime,
+        eTTSSMaxAddrSpaceSize,
+        eTTSSMaxFilesPerProcess,
+        eTTSSMaxProcesses,
+        eTTSSMaxPthreadsCreated,
+        eTTSSMaxDataSpacePages,
+        eTTSSEIMProfile,
+        eTTSSMLSSecLabel,
+        eTTSSMLSDfltSecLabel,
+        eTTSSRestrictedAccess,
+        eTTSSMCS-Alternate-Grp,
+        eTTSSMCS-Authorized-Cmds,
+        eTTSSMCS-Auto-Cmds,
+        eTTSSMCS-Cmd-Target-System,
+        eTTSSMCS-Delete-Oper-Cmds,
+        eTTSSMCS-Keyword,
+        eTTSSMCS-Msgs-Received,
+        eTTSSMCS-Log-Cmds,
+        eTTSSMCS-Display-Format,
+        eTTSSMCS-Migration-ID,
+        eTTSSMCS-Monitor,
+        eTTSSMCS-Routing-Code,
+        eTTSSMCS-Msgs-Queue-Storage,
+        eTTSSMCS-Undelivered-Msgs,
+        eTTSSMCS-Receive-HardCopy-Messages,
+        eTTSSMCS-Receive-ConsoleIdZero-Messages,
+        eTTSSMCS-Receive-Unknown-ConsoleID-Messages,
+        eTTSSUniqueMember,
+        eTTSSmemberOf,
+        eTTSSgroupmemberOf,
+        eTTSSPolicy-Profiles,
+        eTTSSGroups
+};
+
+schema set object-class etrust-admin-TSS-oc:18 = {
+    name = eTTSSFacilityContainer
+    subclass-of Top
+    must-contain
+        eTTSSFacilityContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:19 = {
+    name = eTTSSPermissionContainer
+    subclass-of Top
+    must-contain
+        eTTSSPermissionContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:20 = {
+    name = eTTSSOwnershipContainer
+    subclass-of Top
+    must-contain
+        eTTSSOwnershipContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:21 = {
+    name = eTTSSProfListContainer
+    subclass-of Top
+    must-contain
+        eTTSSProfListContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:22 = {
+    name = eTTSSAdminFacContainer
+    subclass-of Top
+    must-contain
+        eTTSSAdminFacContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:23 = {
+    name = eTTSSAdminResContainer
+    subclass-of Top
+    must-contain
+        eTTSSAdminResContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:24 = {
+    name = eTTSSAdminScpContainer
+    subclass-of Top
+    must-contain
+        eTTSSAdminScpContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:25 = {
+    name = eTTSSAdminFacility
+    subclass-of Top
+    must-contain
+        eTTSSAdminFacilityName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:26 = {
+    name = eTTSSAdminResource
+    subclass-of Top
+    must-contain
+        eTTSSAdminResourceName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTTSSAdminResAuth,
+        eTTSSAdminResAccess
+};
+
+schema set object-class etrust-admin-TSS-oc:27 = {
+    name = eTTSSAdminScope
+    subclass-of Top
+    must-contain
+        eTTSSAdminScopeName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:5 = {
+    name = eTTSSFacility
+    subclass-of Top
+    must-contain
+        eTTSSFacilityName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTTSSFacility-Lock-Time,
+        eTTSSFacility-Access-Days,
+        eTTSSFacility-Access-Actions,
+        eTTSSFacility-Until-Date,
+        eTTSSFacility-For-Days,
+        eTTSSFacility-Times,
+        eTTSSFacility-Sysid,
+        eTTSSFacility-Calendar,
+        eTTSSFacility-Timerec
+};
+
+schema set object-class etrust-admin-TSS-oc:6 = {
+    name = eTTSSOwned
+    subclass-of Top
+    must-contain
+        eTTSSOwnershipName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:7 = {
+    name = eTTSSOwnedName
+    subclass-of Top
+    must-contain
+        eTTSSOwnedNameName,
+        objectclass
+    may-contain
+        eTTSSOwnershipName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTTSSResource-Undercut-Ownership,
+        eTTSSResource-Nopermit-Ownership
+};
+
+schema set object-class etrust-admin-TSS-oc:8 = {
+    name = eTTSSResClass
+    subclass-of Top
+    must-contain
+        eTTSSResClassName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:9 = {
+    name = eTTSSResName
+    subclass-of Top
+    must-contain
+        eTTSSResNameName,
+        objectclass
+    may-contain
+        eTTSSResClassName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTTSSResource-Access-Days,
+        eTTSSResource-Time,
+        eTTSSResource-Times,
+        eTTSSResource-Access-Actions,
+        eTTSSResource-Actions,
+        eTTSSResource-Until-Date,
+        eTTSSResource-For-Days,
+        eTTSSResource-Access-Level1,
+        eTTSSResource-Access-Level2,
+        eTTSSResource-Access-Level3,
+        eTTSSResource-Access-Level4,
+        eTTSSResource-Access-Level5,
+        eTTSSResource-Access-Level,
+        eTTSSResource-Facility1,
+        eTTSSResource-Facility2,
+        eTTSSResource-Facility3,
+        eTTSSResource-Facility4,
+        eTTSSResource-Facility5,
+        eTTSSResource-Facilities,
+        eTTSSResource-Privileged-Program1,
+        eTTSSResource-Privileged-Program2,
+        eTTSSResource-Privileged-Program3,
+        eTTSSResource-Privileged-Program4,
+        eTTSSResource-Privileged-Program5,
+        eTTSSResource-Privileged-Programs,
+        eTTSSResource-Library1,
+        eTTSSResource-Library2,
+        eTTSSResource-Library3,
+        eTTSSResource-Libraries,
+        eTTSSResource-Sysid,
+        eTTSSResource-Calendar-Name,
+        eTTSSResource-Calendar,
+        eTTSSResource-TimeRecord,
+        eTTSSResource-MapRecord-Name,
+        eTTSSResource-MaskRecord-Name,
+        eTTSSResource-SelIn,
+        eTTSSResource-SelOut,
+        eTTSSResource-Mode
+};
+
+schema set object-class etrust-admin-TSS-oc:10 = {
+    name = eTTSSProfList
+    subclass-of Top
+    must-contain
+        eTTSSProfListName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTTSSProfile-Until-Date,
+        eTTSSProfile-After,
+        eTTSSProfile-Before
+};
+
+schema set object-class etrust-admin-TSS-oc:11 = {
+    name = eTTSSProfileContainer
+    subclass-of Top
+    must-contain
+        eTTSSProfileContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:12 = {
+    name = eTTSSProfile
+    subclass-of Top
+    must-contain
+        eTTSSProfileName,
+        objectclass
+    may-contain
+        eTTSSGlobally-Admin-Profile,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTTSSUsing-Acid,
+        eTTSSFullName,
+        eTTSSDepartment,
+        eTTSSDivision,
+        eTTSSZone,
+        eTTSSUser-Type,
+        eTTSSInstallation-Data,
+        eTTSSTime-Zone,
+        eTTSSTarget-Nodes-for-Cmds,
+        eTTSSUser-Suspend,
+        eTTSSRefresh,
+        eTTSSSuspend-Until,
+        eTTSSUntil-Date,
+        eTTSSPasswordInterval,
+        eTTSSExpireNow,
+        eTTSSExpirePswd,
+        eTTSSTerminal-Lock-Time,
+        eTTSSLast-Access-Count,
+        eTTSSLast-Used-Date,
+        eTTSSLast-Used-Time,
+        eTTSSLast-Accessed-From-CPU,
+        eTTSSLast-Used-Facility,
+        eTTSSCreated-Date,
+        eTTSSModified-Date,
+        eTTSSModified-Time,
+        eTTSSOperating-Mode,
+        eTTSSAccessVioSuspension,
+        eTTSSInstallationExitSuspension,
+        eTTSSCreated-Time,
+        eTTSSPasswordPhraseInterval,
+        eTTSSPWPhrase,
+        eTTSSPWPhraseDate,
+        eTTSSAllowLocalPWPhrase,
+        eTTSSConsole-Auth,
+        eTTSSDUF-Extract,
+        eTTSSDUF-Update,
+        eTTSSMRO-Signon,
+        eTTSSNo-Automatic-Terminal-Signon,
+        eTTSSNo-Automatic-Dsn-Protection,
+        eTTSSNo-Automatic-Permit-Access,
+        eTTSSMultiple-Passwords,
+        eTTSSNo-OMVS-Default-User,
+        eTTSSLanguage-Pref,
+        eTTSSPhysical-Security-Key,
+        eTTSSBypass-Dsn-Check,
+        eTTSSNo-Password-Chg,
+        eTTSSBypass-Minidisklink-Check,
+        eTTSSBypass-Job-Submission-Check,
+        eTTSSNo-Vthresh-Suspend,
+        eTTSSBypass-LCF-Check,
+        eTTSSBypass-Resource-Check,
+        eTTSSBypass-Volume-Check,
+        eTTSSAudit-Attr,
+        eTTSSTrace-ACID-Activity,
+        eTTSSMaster-Facility,
+        eTTSSLDS,
+        eTTSSLDAPDest,
+        eTTSSAcid-All,
+        eTTSSAcid-Audit,
+        eTTSSAcid-Create,
+        eTTSSAcid-Defnode,
+        eTTSSAcid-Info,
+        eTTSSAcid-Maintain,
+        eTTSSAcid-Report,
+        eTTSSAcid-XAuth,
+        eTTSSM1-All,
+        eTTSSM1-LCF,
+        eTTSSM1-LTime,
+        eTTSSM1-RDT,
+        eTTSSM1-Noats,
+        eTTSSM1-Suspend,
+        eTTSSM1-Instdata,
+        eTTSSM1-TSSSim,
+        eTTSSM1-User,
+        eTTSSM2-All,
+        eTTSSM2-APPCLU,
+        eTTSSM2-DLF,
+        eTTSSM2-NDT,
+        eTTSSM2-SMS,
+        eTTSSM2-Target,
+        eTTSSM2-TSO,
+        eTTSSM2-WorkAttr,
+        eTTSSM9-All,
+        eTTSSM9-Bypass,
+        eTTSSM9-Console,
+        eTTSSM9-Generic,
+        eTTSSM9-Global,
+        eTTSSM9-Mastfac,
+        eTTSSM9-Mode,
+        eTTSSM9-STC,
+        eTTSSM9-Trace,
+        eTTSSListData-Acids,
+        eTTSSListData-All,
+        eTTSSListData-Admin,
+        eTTSSListData-Basic,
+        eTTSSListData-Cics,
+        eTTSSListData-Instdata,
+        eTTSSListData-LCF,
+        eTTSSListData-Names,
+        eTTSSListData-Password,
+        eTTSSListData-Profile,
+        eTTSSListData-PWVIEW,
+        eTTSSListData-Resource,
+        eTTSSListData-SessKey,
+        eTTSSListData-SMS,
+        eTTSSListData-Source,
+        eTTSSListData-Tso,
+        eTTSSListData-WorkAttr,
+        eTTSSListData-XAuth,
+        eTTSSM8-All,
+        eTTSSM8-ListRDT,
+        eTTSSM8-ListSDT,
+        eTTSSM8-ListSTC,
+        eTTSSM8-MCS,
+        eTTSSM8-Remasusp,
+        eTTSSM8-LISTAPLU,
+        eTTSSM8-NOMVSDF,
+        eTTSSM8-PWMAINT,
+        eTTSSM3-ALL,
+        eTTSSM3-SDT,
+        eTTSSM4-ALL,
+        eTTSSM4-CERTUSER,
+        eTTSSM4-CERTAUTH,
+        eTTSSM4-CERTSITE,
+        eTTSSM4-CERTLIST,
+        eTTSSM4-CERTGEN,
+        eTTSSM4-CERTEXPO,
+        eTTSSM4-CERTCHEK,
+        eTTSSM4-KERBUSER,
+        eTTSSAdminMisc5,
+        eTTSSAdminMisc7,
+        eTTSSCICS-Auto-Transaction,
+        eTTSSCICS-Oper-Class,
+        eTTSSCICS-Oper-Identification,
+        eTTSSCICS-Oper-Priority,
+        eTTSSCICS-Security-Key,
+        eTTSSCICS-Time-Out,
+        eTTSSTSO-Logon-Proc,
+        eTTSSTSO-Region-Size,
+        eTTSSTSO-Max-Region-Size,
+        eTTSSTSO-Performance-Grp,
+        eTTSSTSO-Options,
+        eTTSSTSO-Hold-Class,
+        eTTSSTSO-Job-Class,
+        eTTSSTSO-Message-Class,
+        eTTSSTSO-Sysout-Class,
+        eTTSSTSO-Output-Destination,
+        eTTSSTSO-Unit,
+        eTTSSTSO-User-Data,
+        eTTSSTSO-Logon-Account,
+        eTTSSTSO-Logon-Command,
+        eTTSSTSO-Muliple-Passwords,
+        eTTSSSMS-Application-ID,
+        eTTSSSMS-Data-Class,
+        eTTSSSMS-Mgmt-Class,
+        eTTSSSMS-Storage-Class,
+        eTTSSAPPC-Sysout-Name,
+        eTTSSAPPC-Sysout-AcctNum,
+        eTTSSAPPC-Sysout-Bldg,
+        eTTSSAPPC-Sysout-Dept,
+        eTTSSAPPC-Sysout-Room,
+        eTTSSAPPC-Sysout-Addr1,
+        eTTSSAPPC-Sysout-Addr2,
+        eTTSSAPPC-Sysout-Addr3,
+        eTTSSAPPC-Sysout-Addr4,
+        eTTSSOMVS-Dflt-Group,
+        eTTSSOMVS-Group-ID,
+        eTTSSOMVS-Home-Subdir,
+        eTTSSOMVS-Program,
+        eTTSSOMVS-User-ID,
+        eTTSSLotusName,
+        eTTSSNovellName,
+        eTTSSLinuxName,
+        eTTSSMaxCPUTime,
+        eTTSSMaxAddrSpaceSize,
+        eTTSSMaxFilesPerProcess,
+        eTTSSMaxProcesses,
+        eTTSSMaxPthreadsCreated,
+        eTTSSMaxDataSpacePages,
+        eTTSSEIMProfile,
+        eTTSSMLSSecLabel,
+        eTTSSMLSDfltSecLabel,
+        eTTSSRestrictedAccess,
+        eTTSSMCS-Alternate-Grp,
+        eTTSSMCS-Authorized-Cmds,
+        eTTSSMCS-Auto-Cmds,
+        eTTSSMCS-Cmd-Target-System,
+        eTTSSMCS-Delete-Oper-Cmds,
+        eTTSSMCS-Keyword,
+        eTTSSMCS-Msgs-Received,
+        eTTSSMCS-Log-Cmds,
+        eTTSSMCS-Display-Format,
+        eTTSSMCS-Migration-ID,
+        eTTSSMCS-Monitor,
+        eTTSSMCS-Routing-Code,
+        eTTSSMCS-Msgs-Queue-Storage,
+        eTTSSMCS-Undelivered-Msgs,
+        eTTSSMCS-Receive-HardCopy-Messages,
+        eTTSSMCS-Receive-ConsoleIdZero-Messages,
+        eTTSSMCS-Receive-Unknown-ConsoleID-Messages,
+        eTTSSUniqueMember,
+        eTTSSmemberOf,
+        eTTSSgroupmemberOf
+};
+
+schema set object-class etrust-admin-TSS-oc:28 = {
+    name = eTTSSDeptContainer
+    subclass-of Top
+    must-contain
+        eTTSSDeptContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:29 = {
+    name = eTTSSDept
+    subclass-of Top
+    must-contain
+        eTTSSDeptName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTTSSUsing-Acid,
+        eTTSSFullName,
+        eTTSSDepartment,
+        eTTSSDivision,
+        eTTSSZone,
+        eTTSSUser-Type,
+        eTTSSInstallation-Data,
+        eTTSSTime-Zone,
+        eTTSSTarget-Nodes-for-Cmds,
+        eTTSSUser-Suspend,
+        eTTSSRefresh,
+        eTTSSSuspend-Until,
+        eTTSSUntil-Date,
+        eTTSSPasswordInterval,
+        eTTSSExpireNow,
+        eTTSSExpirePswd,
+        eTTSSTerminal-Lock-Time,
+        eTTSSLast-Access-Count,
+        eTTSSLast-Used-Date,
+        eTTSSLast-Used-Time,
+        eTTSSLast-Accessed-From-CPU,
+        eTTSSLast-Used-Facility,
+        eTTSSCreated-Date,
+        eTTSSModified-Date,
+        eTTSSModified-Time,
+        eTTSSOperating-Mode,
+        eTTSSAccessVioSuspension,
+        eTTSSInstallationExitSuspension,
+        eTTSSCreated-Time,
+        eTTSSPasswordPhraseInterval,
+        eTTSSPWPhrase,
+        eTTSSPWPhraseDate,
+        eTTSSAllowLocalPWPhrase,
+        eTTSSConsole-Auth,
+        eTTSSDUF-Extract,
+        eTTSSDUF-Update,
+        eTTSSMRO-Signon,
+        eTTSSNo-Automatic-Terminal-Signon,
+        eTTSSNo-Automatic-Dsn-Protection,
+        eTTSSNo-Automatic-Permit-Access,
+        eTTSSMultiple-Passwords,
+        eTTSSNo-OMVS-Default-User,
+        eTTSSLanguage-Pref,
+        eTTSSPhysical-Security-Key,
+        eTTSSBypass-Dsn-Check,
+        eTTSSNo-Password-Chg,
+        eTTSSBypass-Minidisklink-Check,
+        eTTSSBypass-Job-Submission-Check,
+        eTTSSNo-Vthresh-Suspend,
+        eTTSSBypass-LCF-Check,
+        eTTSSBypass-Resource-Check,
+        eTTSSBypass-Volume-Check,
+        eTTSSAudit-Attr,
+        eTTSSTrace-ACID-Activity,
+        eTTSSMaster-Facility,
+        eTTSSLDS,
+        eTTSSLDAPDest,
+        eTTSSAcid-All,
+        eTTSSAcid-Audit,
+        eTTSSAcid-Create,
+        eTTSSAcid-Defnode,
+        eTTSSAcid-Info,
+        eTTSSAcid-Maintain,
+        eTTSSAcid-Report,
+        eTTSSAcid-XAuth,
+        eTTSSM1-All,
+        eTTSSM1-LCF,
+        eTTSSM1-LTime,
+        eTTSSM1-RDT,
+        eTTSSM1-Noats,
+        eTTSSM1-Suspend,
+        eTTSSM1-Instdata,
+        eTTSSM1-TSSSim,
+        eTTSSM1-User,
+        eTTSSM2-All,
+        eTTSSM2-APPCLU,
+        eTTSSM2-DLF,
+        eTTSSM2-NDT,
+        eTTSSM2-SMS,
+        eTTSSM2-Target,
+        eTTSSM2-TSO,
+        eTTSSM2-WorkAttr,
+        eTTSSM9-All,
+        eTTSSM9-Bypass,
+        eTTSSM9-Console,
+        eTTSSM9-Generic,
+        eTTSSM9-Global,
+        eTTSSM9-Mastfac,
+        eTTSSM9-Mode,
+        eTTSSM9-STC,
+        eTTSSM9-Trace,
+        eTTSSListData-Acids,
+        eTTSSListData-All,
+        eTTSSListData-Admin,
+        eTTSSListData-Basic,
+        eTTSSListData-Cics,
+        eTTSSListData-Instdata,
+        eTTSSListData-LCF,
+        eTTSSListData-Names,
+        eTTSSListData-Password,
+        eTTSSListData-Profile,
+        eTTSSListData-PWVIEW,
+        eTTSSListData-Resource,
+        eTTSSListData-SessKey,
+        eTTSSListData-SMS,
+        eTTSSListData-Source,
+        eTTSSListData-Tso,
+        eTTSSListData-WorkAttr,
+        eTTSSListData-XAuth,
+        eTTSSM8-All,
+        eTTSSM8-ListRDT,
+        eTTSSM8-ListSDT,
+        eTTSSM8-ListSTC,
+        eTTSSM8-MCS,
+        eTTSSM8-Remasusp,
+        eTTSSM8-LISTAPLU,
+        eTTSSM8-NOMVSDF,
+        eTTSSM8-PWMAINT,
+        eTTSSM3-ALL,
+        eTTSSM3-SDT,
+        eTTSSM4-ALL,
+        eTTSSM4-CERTUSER,
+        eTTSSM4-CERTAUTH,
+        eTTSSM4-CERTSITE,
+        eTTSSM4-CERTLIST,
+        eTTSSM4-CERTGEN,
+        eTTSSM4-CERTEXPO,
+        eTTSSM4-CERTCHEK,
+        eTTSSM4-KERBUSER,
+        eTTSSAdminMisc5,
+        eTTSSAdminMisc7,
+        eTTSSCICS-Auto-Transaction,
+        eTTSSCICS-Oper-Class,
+        eTTSSCICS-Oper-Identification,
+        eTTSSCICS-Oper-Priority,
+        eTTSSCICS-Security-Key,
+        eTTSSCICS-Time-Out,
+        eTTSSTSO-Logon-Proc,
+        eTTSSTSO-Region-Size,
+        eTTSSTSO-Max-Region-Size,
+        eTTSSTSO-Performance-Grp,
+        eTTSSTSO-Options,
+        eTTSSTSO-Hold-Class,
+        eTTSSTSO-Job-Class,
+        eTTSSTSO-Message-Class,
+        eTTSSTSO-Sysout-Class,
+        eTTSSTSO-Output-Destination,
+        eTTSSTSO-Unit,
+        eTTSSTSO-User-Data,
+        eTTSSTSO-Logon-Account,
+        eTTSSTSO-Logon-Command,
+        eTTSSTSO-Muliple-Passwords,
+        eTTSSSMS-Application-ID,
+        eTTSSSMS-Data-Class,
+        eTTSSSMS-Mgmt-Class,
+        eTTSSSMS-Storage-Class,
+        eTTSSAPPC-Sysout-Name,
+        eTTSSAPPC-Sysout-AcctNum,
+        eTTSSAPPC-Sysout-Bldg,
+        eTTSSAPPC-Sysout-Dept,
+        eTTSSAPPC-Sysout-Room,
+        eTTSSAPPC-Sysout-Addr1,
+        eTTSSAPPC-Sysout-Addr2,
+        eTTSSAPPC-Sysout-Addr3,
+        eTTSSAPPC-Sysout-Addr4,
+        eTTSSOMVS-Dflt-Group,
+        eTTSSOMVS-Group-ID,
+        eTTSSOMVS-Home-Subdir,
+        eTTSSOMVS-Program,
+        eTTSSOMVS-User-ID,
+        eTTSSLotusName,
+        eTTSSNovellName,
+        eTTSSLinuxName,
+        eTTSSMaxCPUTime,
+        eTTSSMaxAddrSpaceSize,
+        eTTSSMaxFilesPerProcess,
+        eTTSSMaxProcesses,
+        eTTSSMaxPthreadsCreated,
+        eTTSSMaxDataSpacePages,
+        eTTSSEIMProfile,
+        eTTSSMLSSecLabel,
+        eTTSSMLSDfltSecLabel,
+        eTTSSRestrictedAccess,
+        eTTSSMCS-Alternate-Grp,
+        eTTSSMCS-Authorized-Cmds,
+        eTTSSMCS-Auto-Cmds,
+        eTTSSMCS-Cmd-Target-System,
+        eTTSSMCS-Delete-Oper-Cmds,
+        eTTSSMCS-Keyword,
+        eTTSSMCS-Msgs-Received,
+        eTTSSMCS-Log-Cmds,
+        eTTSSMCS-Display-Format,
+        eTTSSMCS-Migration-ID,
+        eTTSSMCS-Monitor,
+        eTTSSMCS-Routing-Code,
+        eTTSSMCS-Msgs-Queue-Storage,
+        eTTSSMCS-Undelivered-Msgs,
+        eTTSSMCS-Receive-HardCopy-Messages,
+        eTTSSMCS-Receive-ConsoleIdZero-Messages,
+        eTTSSMCS-Receive-Unknown-ConsoleID-Messages,
+        eTTSSUniqueMember,
+        eTTSSmemberOf,
+        eTTSSgroupmemberOf
+};
+
+schema set object-class etrust-admin-TSS-oc:30 = {
+    name = eTTSSDivContainer
+    subclass-of Top
+    must-contain
+        eTTSSDivContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:31 = {
+    name = eTTSSDiv
+    subclass-of Top
+    must-contain
+        eTTSSDivName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTTSSUsing-Acid,
+        eTTSSFullName,
+        eTTSSDepartment,
+        eTTSSDivision,
+        eTTSSZone,
+        eTTSSUser-Type,
+        eTTSSInstallation-Data,
+        eTTSSTime-Zone,
+        eTTSSTarget-Nodes-for-Cmds,
+        eTTSSUser-Suspend,
+        eTTSSRefresh,
+        eTTSSSuspend-Until,
+        eTTSSUntil-Date,
+        eTTSSPasswordInterval,
+        eTTSSExpireNow,
+        eTTSSExpirePswd,
+        eTTSSTerminal-Lock-Time,
+        eTTSSLast-Access-Count,
+        eTTSSLast-Used-Date,
+        eTTSSLast-Used-Time,
+        eTTSSLast-Accessed-From-CPU,
+        eTTSSLast-Used-Facility,
+        eTTSSCreated-Date,
+        eTTSSModified-Date,
+        eTTSSModified-Time,
+        eTTSSOperating-Mode,
+        eTTSSAccessVioSuspension,
+        eTTSSInstallationExitSuspension,
+        eTTSSCreated-Time,
+        eTTSSPasswordPhraseInterval,
+        eTTSSPWPhrase,
+        eTTSSPWPhraseDate,
+        eTTSSAllowLocalPWPhrase,
+        eTTSSConsole-Auth,
+        eTTSSDUF-Extract,
+        eTTSSDUF-Update,
+        eTTSSMRO-Signon,
+        eTTSSNo-Automatic-Terminal-Signon,
+        eTTSSNo-Automatic-Dsn-Protection,
+        eTTSSNo-Automatic-Permit-Access,
+        eTTSSMultiple-Passwords,
+        eTTSSNo-OMVS-Default-User,
+        eTTSSLanguage-Pref,
+        eTTSSPhysical-Security-Key,
+        eTTSSBypass-Dsn-Check,
+        eTTSSNo-Password-Chg,
+        eTTSSBypass-Minidisklink-Check,
+        eTTSSBypass-Job-Submission-Check,
+        eTTSSNo-Vthresh-Suspend,
+        eTTSSBypass-LCF-Check,
+        eTTSSBypass-Resource-Check,
+        eTTSSBypass-Volume-Check,
+        eTTSSAudit-Attr,
+        eTTSSTrace-ACID-Activity,
+        eTTSSMaster-Facility,
+        eTTSSLDS,
+        eTTSSLDAPDest,
+        eTTSSAcid-All,
+        eTTSSAcid-Audit,
+        eTTSSAcid-Create,
+        eTTSSAcid-Defnode,
+        eTTSSAcid-Info,
+        eTTSSAcid-Maintain,
+        eTTSSAcid-Report,
+        eTTSSAcid-XAuth,
+        eTTSSM1-All,
+        eTTSSM1-LCF,
+        eTTSSM1-LTime,
+        eTTSSM1-RDT,
+        eTTSSM1-Noats,
+        eTTSSM1-Suspend,
+        eTTSSM1-Instdata,
+        eTTSSM1-TSSSim,
+        eTTSSM1-User,
+        eTTSSM2-All,
+        eTTSSM2-APPCLU,
+        eTTSSM2-DLF,
+        eTTSSM2-NDT,
+        eTTSSM2-SMS,
+        eTTSSM2-Target,
+        eTTSSM2-TSO,
+        eTTSSM2-WorkAttr,
+        eTTSSM9-All,
+        eTTSSM9-Bypass,
+        eTTSSM9-Console,
+        eTTSSM9-Generic,
+        eTTSSM9-Global,
+        eTTSSM9-Mastfac,
+        eTTSSM9-Mode,
+        eTTSSM9-STC,
+        eTTSSM9-Trace,
+        eTTSSListData-Acids,
+        eTTSSListData-All,
+        eTTSSListData-Admin,
+        eTTSSListData-Basic,
+        eTTSSListData-Cics,
+        eTTSSListData-Instdata,
+        eTTSSListData-LCF,
+        eTTSSListData-Names,
+        eTTSSListData-Password,
+        eTTSSListData-Profile,
+        eTTSSListData-PWVIEW,
+        eTTSSListData-Resource,
+        eTTSSListData-SessKey,
+        eTTSSListData-SMS,
+        eTTSSListData-Source,
+        eTTSSListData-Tso,
+        eTTSSListData-WorkAttr,
+        eTTSSListData-XAuth,
+        eTTSSM8-All,
+        eTTSSM8-ListRDT,
+        eTTSSM8-ListSDT,
+        eTTSSM8-ListSTC,
+        eTTSSM8-MCS,
+        eTTSSM8-Remasusp,
+        eTTSSM8-LISTAPLU,
+        eTTSSM8-NOMVSDF,
+        eTTSSM8-PWMAINT,
+        eTTSSM3-ALL,
+        eTTSSM3-SDT,
+        eTTSSM4-ALL,
+        eTTSSM4-CERTUSER,
+        eTTSSM4-CERTAUTH,
+        eTTSSM4-CERTSITE,
+        eTTSSM4-CERTLIST,
+        eTTSSM4-CERTGEN,
+        eTTSSM4-CERTEXPO,
+        eTTSSM4-CERTCHEK,
+        eTTSSM4-KERBUSER,
+        eTTSSAdminMisc5,
+        eTTSSAdminMisc7,
+        eTTSSCICS-Auto-Transaction,
+        eTTSSCICS-Oper-Class,
+        eTTSSCICS-Oper-Identification,
+        eTTSSCICS-Oper-Priority,
+        eTTSSCICS-Security-Key,
+        eTTSSCICS-Time-Out,
+        eTTSSTSO-Logon-Proc,
+        eTTSSTSO-Region-Size,
+        eTTSSTSO-Max-Region-Size,
+        eTTSSTSO-Performance-Grp,
+        eTTSSTSO-Options,
+        eTTSSTSO-Hold-Class,
+        eTTSSTSO-Job-Class,
+        eTTSSTSO-Message-Class,
+        eTTSSTSO-Sysout-Class,
+        eTTSSTSO-Output-Destination,
+        eTTSSTSO-Unit,
+        eTTSSTSO-User-Data,
+        eTTSSTSO-Logon-Account,
+        eTTSSTSO-Logon-Command,
+        eTTSSTSO-Muliple-Passwords,
+        eTTSSSMS-Application-ID,
+        eTTSSSMS-Data-Class,
+        eTTSSSMS-Mgmt-Class,
+        eTTSSSMS-Storage-Class,
+        eTTSSAPPC-Sysout-Name,
+        eTTSSAPPC-Sysout-AcctNum,
+        eTTSSAPPC-Sysout-Bldg,
+        eTTSSAPPC-Sysout-Dept,
+        eTTSSAPPC-Sysout-Room,
+        eTTSSAPPC-Sysout-Addr1,
+        eTTSSAPPC-Sysout-Addr2,
+        eTTSSAPPC-Sysout-Addr3,
+        eTTSSAPPC-Sysout-Addr4,
+        eTTSSOMVS-Dflt-Group,
+        eTTSSOMVS-Group-ID,
+        eTTSSOMVS-Home-Subdir,
+        eTTSSOMVS-Program,
+        eTTSSOMVS-User-ID,
+        eTTSSLotusName,
+        eTTSSNovellName,
+        eTTSSLinuxName,
+        eTTSSMaxCPUTime,
+        eTTSSMaxAddrSpaceSize,
+        eTTSSMaxFilesPerProcess,
+        eTTSSMaxProcesses,
+        eTTSSMaxPthreadsCreated,
+        eTTSSMaxDataSpacePages,
+        eTTSSEIMProfile,
+        eTTSSMLSSecLabel,
+        eTTSSMLSDfltSecLabel,
+        eTTSSRestrictedAccess,
+        eTTSSMCS-Alternate-Grp,
+        eTTSSMCS-Authorized-Cmds,
+        eTTSSMCS-Auto-Cmds,
+        eTTSSMCS-Cmd-Target-System,
+        eTTSSMCS-Delete-Oper-Cmds,
+        eTTSSMCS-Keyword,
+        eTTSSMCS-Msgs-Received,
+        eTTSSMCS-Log-Cmds,
+        eTTSSMCS-Display-Format,
+        eTTSSMCS-Migration-ID,
+        eTTSSMCS-Monitor,
+        eTTSSMCS-Routing-Code,
+        eTTSSMCS-Msgs-Queue-Storage,
+        eTTSSMCS-Undelivered-Msgs,
+        eTTSSMCS-Receive-HardCopy-Messages,
+        eTTSSMCS-Receive-ConsoleIdZero-Messages,
+        eTTSSMCS-Receive-Unknown-ConsoleID-Messages,
+        eTTSSUniqueMember,
+        eTTSSmemberOf,
+        eTTSSgroupmemberOf
+};
+
+schema set object-class etrust-admin-TSS-oc:32 = {
+    name = eTTSSZoneContainer
+    subclass-of Top
+    must-contain
+        eTTSSZoneContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:33 = {
+    name = eTTSSAcidZone
+    subclass-of Top
+    must-contain
+        eTTSSZoneName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTTSSUsing-Acid,
+        eTTSSFullName,
+        eTTSSDepartment,
+        eTTSSDivision,
+        eTTSSZone,
+        eTTSSUser-Type,
+        eTTSSInstallation-Data,
+        eTTSSTime-Zone,
+        eTTSSTarget-Nodes-for-Cmds,
+        eTTSSUser-Suspend,
+        eTTSSRefresh,
+        eTTSSSuspend-Until,
+        eTTSSUntil-Date,
+        eTTSSPasswordInterval,
+        eTTSSExpireNow,
+        eTTSSExpirePswd,
+        eTTSSTerminal-Lock-Time,
+        eTTSSLast-Access-Count,
+        eTTSSLast-Used-Date,
+        eTTSSLast-Used-Time,
+        eTTSSLast-Accessed-From-CPU,
+        eTTSSLast-Used-Facility,
+        eTTSSCreated-Date,
+        eTTSSModified-Date,
+        eTTSSModified-Time,
+        eTTSSOperating-Mode,
+        eTTSSAccessVioSuspension,
+        eTTSSInstallationExitSuspension,
+        eTTSSCreated-Time,
+        eTTSSPasswordPhraseInterval,
+        eTTSSPWPhrase,
+        eTTSSPWPhraseDate,
+        eTTSSAllowLocalPWPhrase,
+        eTTSSConsole-Auth,
+        eTTSSDUF-Extract,
+        eTTSSDUF-Update,
+        eTTSSMRO-Signon,
+        eTTSSNo-Automatic-Terminal-Signon,
+        eTTSSNo-Automatic-Dsn-Protection,
+        eTTSSNo-Automatic-Permit-Access,
+        eTTSSMultiple-Passwords,
+        eTTSSNo-OMVS-Default-User,
+        eTTSSLanguage-Pref,
+        eTTSSPhysical-Security-Key,
+        eTTSSBypass-Dsn-Check,
+        eTTSSNo-Password-Chg,
+        eTTSSBypass-Minidisklink-Check,
+        eTTSSBypass-Job-Submission-Check,
+        eTTSSNo-Vthresh-Suspend,
+        eTTSSBypass-LCF-Check,
+        eTTSSBypass-Resource-Check,
+        eTTSSBypass-Volume-Check,
+        eTTSSAudit-Attr,
+        eTTSSTrace-ACID-Activity,
+        eTTSSMaster-Facility,
+        eTTSSLDS,
+        eTTSSLDAPDest,
+        eTTSSAcid-All,
+        eTTSSAcid-Audit,
+        eTTSSAcid-Create,
+        eTTSSAcid-Defnode,
+        eTTSSAcid-Info,
+        eTTSSAcid-Maintain,
+        eTTSSAcid-Report,
+        eTTSSAcid-XAuth,
+        eTTSSM1-All,
+        eTTSSM1-LCF,
+        eTTSSM1-LTime,
+        eTTSSM1-RDT,
+        eTTSSM1-Noats,
+        eTTSSM1-Suspend,
+        eTTSSM1-Instdata,
+        eTTSSM1-TSSSim,
+        eTTSSM1-User,
+        eTTSSM2-All,
+        eTTSSM2-APPCLU,
+        eTTSSM2-DLF,
+        eTTSSM2-NDT,
+        eTTSSM2-SMS,
+        eTTSSM2-Target,
+        eTTSSM2-TSO,
+        eTTSSM2-WorkAttr,
+        eTTSSM9-All,
+        eTTSSM9-Bypass,
+        eTTSSM9-Console,
+        eTTSSM9-Generic,
+        eTTSSM9-Global,
+        eTTSSM9-Mastfac,
+        eTTSSM9-Mode,
+        eTTSSM9-STC,
+        eTTSSM9-Trace,
+        eTTSSListData-Acids,
+        eTTSSListData-All,
+        eTTSSListData-Admin,
+        eTTSSListData-Basic,
+        eTTSSListData-Cics,
+        eTTSSListData-Instdata,
+        eTTSSListData-LCF,
+        eTTSSListData-Names,
+        eTTSSListData-Password,
+        eTTSSListData-Profile,
+        eTTSSListData-PWVIEW,
+        eTTSSListData-Resource,
+        eTTSSListData-SessKey,
+        eTTSSListData-SMS,
+        eTTSSListData-Source,
+        eTTSSListData-Tso,
+        eTTSSListData-WorkAttr,
+        eTTSSListData-XAuth,
+        eTTSSM8-All,
+        eTTSSM8-ListRDT,
+        eTTSSM8-ListSDT,
+        eTTSSM8-ListSTC,
+        eTTSSM8-MCS,
+        eTTSSM8-Remasusp,
+        eTTSSM8-LISTAPLU,
+        eTTSSM8-NOMVSDF,
+        eTTSSM8-PWMAINT,
+        eTTSSM3-ALL,
+        eTTSSM3-SDT,
+        eTTSSM4-ALL,
+        eTTSSM4-CERTUSER,
+        eTTSSM4-CERTAUTH,
+        eTTSSM4-CERTSITE,
+        eTTSSM4-CERTLIST,
+        eTTSSM4-CERTGEN,
+        eTTSSM4-CERTEXPO,
+        eTTSSM4-CERTCHEK,
+        eTTSSM4-KERBUSER,
+        eTTSSAdminMisc5,
+        eTTSSAdminMisc7,
+        eTTSSCICS-Auto-Transaction,
+        eTTSSCICS-Oper-Class,
+        eTTSSCICS-Oper-Identification,
+        eTTSSCICS-Oper-Priority,
+        eTTSSCICS-Security-Key,
+        eTTSSCICS-Time-Out,
+        eTTSSTSO-Logon-Proc,
+        eTTSSTSO-Region-Size,
+        eTTSSTSO-Max-Region-Size,
+        eTTSSTSO-Performance-Grp,
+        eTTSSTSO-Options,
+        eTTSSTSO-Hold-Class,
+        eTTSSTSO-Job-Class,
+        eTTSSTSO-Message-Class,
+        eTTSSTSO-Sysout-Class,
+        eTTSSTSO-Output-Destination,
+        eTTSSTSO-Unit,
+        eTTSSTSO-User-Data,
+        eTTSSTSO-Logon-Account,
+        eTTSSTSO-Logon-Command,
+        eTTSSTSO-Muliple-Passwords,
+        eTTSSSMS-Application-ID,
+        eTTSSSMS-Data-Class,
+        eTTSSSMS-Mgmt-Class,
+        eTTSSSMS-Storage-Class,
+        eTTSSAPPC-Sysout-Name,
+        eTTSSAPPC-Sysout-AcctNum,
+        eTTSSAPPC-Sysout-Bldg,
+        eTTSSAPPC-Sysout-Dept,
+        eTTSSAPPC-Sysout-Room,
+        eTTSSAPPC-Sysout-Addr1,
+        eTTSSAPPC-Sysout-Addr2,
+        eTTSSAPPC-Sysout-Addr3,
+        eTTSSAPPC-Sysout-Addr4,
+        eTTSSOMVS-Dflt-Group,
+        eTTSSOMVS-Group-ID,
+        eTTSSOMVS-Home-Subdir,
+        eTTSSOMVS-Program,
+        eTTSSOMVS-User-ID,
+        eTTSSLotusName,
+        eTTSSNovellName,
+        eTTSSLinuxName,
+        eTTSSMaxCPUTime,
+        eTTSSMaxAddrSpaceSize,
+        eTTSSMaxFilesPerProcess,
+        eTTSSMaxProcesses,
+        eTTSSMaxPthreadsCreated,
+        eTTSSMaxDataSpacePages,
+        eTTSSEIMProfile,
+        eTTSSMLSSecLabel,
+        eTTSSMLSDfltSecLabel,
+        eTTSSRestrictedAccess,
+        eTTSSMCS-Alternate-Grp,
+        eTTSSMCS-Authorized-Cmds,
+        eTTSSMCS-Auto-Cmds,
+        eTTSSMCS-Cmd-Target-System,
+        eTTSSMCS-Delete-Oper-Cmds,
+        eTTSSMCS-Keyword,
+        eTTSSMCS-Msgs-Received,
+        eTTSSMCS-Log-Cmds,
+        eTTSSMCS-Display-Format,
+        eTTSSMCS-Migration-ID,
+        eTTSSMCS-Monitor,
+        eTTSSMCS-Routing-Code,
+        eTTSSMCS-Msgs-Queue-Storage,
+        eTTSSMCS-Undelivered-Msgs,
+        eTTSSMCS-Receive-HardCopy-Messages,
+        eTTSSMCS-Receive-ConsoleIdZero-Messages,
+        eTTSSMCS-Receive-Unknown-ConsoleID-Messages,
+        eTTSSUniqueMember,
+        eTTSSmemberOf,
+        eTTSSgroupmemberOf
+};
+
+schema set object-class etrust-admin-TSS-oc:34 = {
+    name = eTTSSGroupContainer
+    subclass-of Top
+    must-contain
+        eTTSSGroupContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:35 = {
+    name = eTTSSGroup
+    subclass-of Top
+    must-contain
+        eTTSSGroupName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTTSSUsing-Acid,
+        eTTSSFullName,
+        eTTSSDepartment,
+        eTTSSDivision,
+        eTTSSZone,
+        eTTSSUser-Type,
+        eTTSSInstallation-Data,
+        eTTSSTime-Zone,
+        eTTSSTarget-Nodes-for-Cmds,
+        eTTSSUser-Suspend,
+        eTTSSRefresh,
+        eTTSSSuspend-Until,
+        eTTSSUntil-Date,
+        eTTSSPasswordInterval,
+        eTTSSExpireNow,
+        eTTSSExpirePswd,
+        eTTSSTerminal-Lock-Time,
+        eTTSSLast-Access-Count,
+        eTTSSLast-Used-Date,
+        eTTSSLast-Used-Time,
+        eTTSSLast-Accessed-From-CPU,
+        eTTSSLast-Used-Facility,
+        eTTSSCreated-Date,
+        eTTSSModified-Date,
+        eTTSSModified-Time,
+        eTTSSOperating-Mode,
+        eTTSSAccessVioSuspension,
+        eTTSSInstallationExitSuspension,
+        eTTSSCreated-Time,
+        eTTSSPasswordPhraseInterval,
+        eTTSSPWPhrase,
+        eTTSSPWPhraseDate,
+        eTTSSAllowLocalPWPhrase,
+        eTTSSConsole-Auth,
+        eTTSSDUF-Extract,
+        eTTSSDUF-Update,
+        eTTSSMRO-Signon,
+        eTTSSNo-Automatic-Terminal-Signon,
+        eTTSSNo-Automatic-Dsn-Protection,
+        eTTSSNo-Automatic-Permit-Access,
+        eTTSSMultiple-Passwords,
+        eTTSSNo-OMVS-Default-User,
+        eTTSSLanguage-Pref,
+        eTTSSPhysical-Security-Key,
+        eTTSSBypass-Dsn-Check,
+        eTTSSNo-Password-Chg,
+        eTTSSBypass-Minidisklink-Check,
+        eTTSSBypass-Job-Submission-Check,
+        eTTSSNo-Vthresh-Suspend,
+        eTTSSBypass-LCF-Check,
+        eTTSSBypass-Resource-Check,
+        eTTSSBypass-Volume-Check,
+        eTTSSAudit-Attr,
+        eTTSSTrace-ACID-Activity,
+        eTTSSMaster-Facility,
+        eTTSSLDS,
+        eTTSSLDAPDest,
+        eTTSSAcid-All,
+        eTTSSAcid-Audit,
+        eTTSSAcid-Create,
+        eTTSSAcid-Defnode,
+        eTTSSAcid-Info,
+        eTTSSAcid-Maintain,
+        eTTSSAcid-Report,
+        eTTSSAcid-XAuth,
+        eTTSSM1-All,
+        eTTSSM1-LCF,
+        eTTSSM1-LTime,
+        eTTSSM1-RDT,
+        eTTSSM1-Noats,
+        eTTSSM1-Suspend,
+        eTTSSM1-Instdata,
+        eTTSSM1-TSSSim,
+        eTTSSM1-User,
+        eTTSSM2-All,
+        eTTSSM2-APPCLU,
+        eTTSSM2-DLF,
+        eTTSSM2-NDT,
+        eTTSSM2-SMS,
+        eTTSSM2-Target,
+        eTTSSM2-TSO,
+        eTTSSM2-WorkAttr,
+        eTTSSM9-All,
+        eTTSSM9-Bypass,
+        eTTSSM9-Console,
+        eTTSSM9-Generic,
+        eTTSSM9-Global,
+        eTTSSM9-Mastfac,
+        eTTSSM9-Mode,
+        eTTSSM9-STC,
+        eTTSSM9-Trace,
+        eTTSSListData-Acids,
+        eTTSSListData-All,
+        eTTSSListData-Admin,
+        eTTSSListData-Basic,
+        eTTSSListData-Cics,
+        eTTSSListData-Instdata,
+        eTTSSListData-LCF,
+        eTTSSListData-Names,
+        eTTSSListData-Password,
+        eTTSSListData-Profile,
+        eTTSSListData-PWVIEW,
+        eTTSSListData-Resource,
+        eTTSSListData-SessKey,
+        eTTSSListData-SMS,
+        eTTSSListData-Source,
+        eTTSSListData-Tso,
+        eTTSSListData-WorkAttr,
+        eTTSSListData-XAuth,
+        eTTSSM8-All,
+        eTTSSM8-ListRDT,
+        eTTSSM8-ListSDT,
+        eTTSSM8-ListSTC,
+        eTTSSM8-MCS,
+        eTTSSM8-Remasusp,
+        eTTSSM8-LISTAPLU,
+        eTTSSM8-NOMVSDF,
+        eTTSSM8-PWMAINT,
+        eTTSSM3-ALL,
+        eTTSSM3-SDT,
+        eTTSSM4-ALL,
+        eTTSSM4-CERTUSER,
+        eTTSSM4-CERTAUTH,
+        eTTSSM4-CERTSITE,
+        eTTSSM4-CERTLIST,
+        eTTSSM4-CERTGEN,
+        eTTSSM4-CERTEXPO,
+        eTTSSM4-CERTCHEK,
+        eTTSSM4-KERBUSER,
+        eTTSSAdminMisc5,
+        eTTSSAdminMisc7,
+        eTTSSCICS-Auto-Transaction,
+        eTTSSCICS-Oper-Class,
+        eTTSSCICS-Oper-Identification,
+        eTTSSCICS-Oper-Priority,
+        eTTSSCICS-Security-Key,
+        eTTSSCICS-Time-Out,
+        eTTSSTSO-Logon-Proc,
+        eTTSSTSO-Region-Size,
+        eTTSSTSO-Max-Region-Size,
+        eTTSSTSO-Performance-Grp,
+        eTTSSTSO-Options,
+        eTTSSTSO-Hold-Class,
+        eTTSSTSO-Job-Class,
+        eTTSSTSO-Message-Class,
+        eTTSSTSO-Sysout-Class,
+        eTTSSTSO-Output-Destination,
+        eTTSSTSO-Unit,
+        eTTSSTSO-User-Data,
+        eTTSSTSO-Logon-Account,
+        eTTSSTSO-Logon-Command,
+        eTTSSTSO-Muliple-Passwords,
+        eTTSSSMS-Application-ID,
+        eTTSSSMS-Data-Class,
+        eTTSSSMS-Mgmt-Class,
+        eTTSSSMS-Storage-Class,
+        eTTSSAPPC-Sysout-Name,
+        eTTSSAPPC-Sysout-AcctNum,
+        eTTSSAPPC-Sysout-Bldg,
+        eTTSSAPPC-Sysout-Dept,
+        eTTSSAPPC-Sysout-Room,
+        eTTSSAPPC-Sysout-Addr1,
+        eTTSSAPPC-Sysout-Addr2,
+        eTTSSAPPC-Sysout-Addr3,
+        eTTSSAPPC-Sysout-Addr4,
+        eTTSSOMVS-Dflt-Group,
+        eTTSSOMVS-Group-ID,
+        eTTSSOMVS-Home-Subdir,
+        eTTSSOMVS-Program,
+        eTTSSOMVS-User-ID,
+        eTTSSLotusName,
+        eTTSSNovellName,
+        eTTSSLinuxName,
+        eTTSSMaxCPUTime,
+        eTTSSMaxAddrSpaceSize,
+        eTTSSMaxFilesPerProcess,
+        eTTSSMaxProcesses,
+        eTTSSMaxPthreadsCreated,
+        eTTSSMaxDataSpacePages,
+        eTTSSEIMProfile,
+        eTTSSMLSSecLabel,
+        eTTSSMLSDfltSecLabel,
+        eTTSSRestrictedAccess,
+        eTTSSMCS-Alternate-Grp,
+        eTTSSMCS-Authorized-Cmds,
+        eTTSSMCS-Auto-Cmds,
+        eTTSSMCS-Cmd-Target-System,
+        eTTSSMCS-Delete-Oper-Cmds,
+        eTTSSMCS-Keyword,
+        eTTSSMCS-Msgs-Received,
+        eTTSSMCS-Log-Cmds,
+        eTTSSMCS-Display-Format,
+        eTTSSMCS-Migration-ID,
+        eTTSSMCS-Monitor,
+        eTTSSMCS-Routing-Code,
+        eTTSSMCS-Msgs-Queue-Storage,
+        eTTSSMCS-Undelivered-Msgs,
+        eTTSSMCS-Receive-HardCopy-Messages,
+        eTTSSMCS-Receive-ConsoleIdZero-Messages,
+        eTTSSMCS-Receive-Unknown-ConsoleID-Messages,
+        eTTSSUniqueMember,
+        eTTSSmemberOf,
+        eTTSSgroupmemberOf
+};
+
+schema set object-class etrust-admin-TSS-oc:15 = {
+    name = eTTSSPolicyContainer
+    subclass-of Top
+    must-contain
+        eTTSSPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-TSS-oc:16 = {
+    name = eTTSSPolicy
+    subclass-of Top
+    must-contain
+        eTTSSPolicyName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTTSSAcidName,
+        eTTSSPolicy-Profiles,
+        eTTSSGroups,
+        eTTSSUserDefFields,
+        eTTSSAbstracts,
+        eTTSSUsing-Acid,
+        eTTSSFullName,
+        eTTSSDepartment,
+        eTTSSDivision,
+        eTTSSZone,
+        eTTSSUser-Type,
+        eTTSSInstallation-Data,
+        eTTSSTime-Zone,
+        eTTSSTarget-Nodes-for-Cmds,
+        eTTSSUser-Suspend,
+        eTTSSRefresh,
+        eTTSSCustomAttribute001,
+        eTTSSCustomAttribute002,
+        eTTSSCustomAttribute003,
+        eTTSSCustomAttribute004,
+        eTTSSCustomAttribute005,
+        eTTSSCustomAttribute006,
+        eTTSSCustomAttribute007,
+        eTTSSCustomAttribute008,
+        eTTSSCustomAttribute009,
+        eTTSSCustomAttribute010,
+        eTTSSCustomAttribute011,
+        eTTSSCustomAttribute012,
+        eTTSSCustomAttribute013,
+        eTTSSCustomAttribute014,
+        eTTSSCustomAttribute015,
+        eTTSSCustomAttribute016,
+        eTTSSCustomAttribute017,
+        eTTSSCustomAttribute018,
+        eTTSSCustomAttribute019,
+        eTTSSCustomAttribute020,
+        eTTSSCustomAttributeName001,
+        eTTSSCustomAttributeName002,
+        eTTSSCustomAttributeName003,
+        eTTSSCustomAttributeName004,
+        eTTSSCustomAttributeName005,
+        eTTSSCustomAttributeName006,
+        eTTSSCustomAttributeName007,
+        eTTSSCustomAttributeName008,
+        eTTSSCustomAttributeName009,
+        eTTSSCustomAttributeName010,
+        eTTSSCustomAttributeName011,
+        eTTSSCustomAttributeName012,
+        eTTSSCustomAttributeName013,
+        eTTSSCustomAttributeName014,
+        eTTSSCustomAttributeName015,
+        eTTSSCustomAttributeName016,
+        eTTSSCustomAttributeName017,
+        eTTSSCustomAttributeName018,
+        eTTSSCustomAttributeName019,
+        eTTSSCustomAttributeName020,
+        eTTSSSuspend-Until,
+        eTTSSUntil-Date,
+        eTTSSPasswordInterval,
+        eTTSSExpireNow,
+        eTTSSExpirePswd,
+        eTTSSTerminal-Lock-Time,
+        eTTSSLast-Access-Count,
+        eTTSSLast-Used-Date,
+        eTTSSLast-Used-Time,
+        eTTSSLast-Accessed-From-CPU,
+        eTTSSLast-Used-Facility,
+        eTTSSCreated-Date,
+        eTTSSModified-Date,
+        eTTSSModified-Time,
+        eTTSSOperating-Mode,
+        eTTSSCreated-Time,
+        eTTSSPasswordPhraseInterval,
+        eTTSSPWPhrase,
+        eTTSSPWPhraseDate,
+        eTTSSAllowLocalPWPhrase,
+        eTTSSConsole-Auth,
+        eTTSSDUF-Extract,
+        eTTSSDUF-Update,
+        eTTSSMRO-Signon,
+        eTTSSNo-Automatic-Terminal-Signon,
+        eTTSSNo-Automatic-Dsn-Protection,
+        eTTSSNo-Automatic-Permit-Access,
+        eTTSSMultiple-Passwords,
+        eTTSSNo-OMVS-Default-User,
+        eTTSSLanguage-Pref,
+        eTTSSPhysical-Security-Key,
+        eTTSSBypass-Dsn-Check,
+        eTTSSNo-Password-Chg,
+        eTTSSBypass-Minidisklink-Check,
+        eTTSSBypass-Job-Submission-Check,
+        eTTSSNo-Vthresh-Suspend,
+        eTTSSBypass-LCF-Check,
+        eTTSSBypass-Resource-Check,
+        eTTSSBypass-Volume-Check,
+        eTTSSAudit-Attr,
+        eTTSSTrace-ACID-Activity,
+        eTTSSMaster-Facility,
+        eTTSSLDS,
+        eTTSSLDAPDest,
+        eTTSSAcid-All,
+        eTTSSAcid-Audit,
+        eTTSSAcid-Create,
+        eTTSSAcid-Defnode,
+        eTTSSAcid-Info,
+        eTTSSAcid-Maintain,
+        eTTSSAcid-Report,
+        eTTSSAcid-XAuth,
+        eTTSSM1-All,
+        eTTSSM1-LCF,
+        eTTSSM1-LTime,
+        eTTSSM1-RDT,
+        eTTSSM1-Noats,
+        eTTSSM1-Suspend,
+        eTTSSM1-Instdata,
+        eTTSSM1-TSSSim,
+        eTTSSM1-User,
+        eTTSSM2-All,
+        eTTSSM2-APPCLU,
+        eTTSSM2-DLF,
+        eTTSSM2-NDT,
+        eTTSSM2-SMS,
+        eTTSSM2-Target,
+        eTTSSM2-TSO,
+        eTTSSM2-WorkAttr,
+        eTTSSM9-All,
+        eTTSSM9-Bypass,
+        eTTSSM9-Console,
+        eTTSSM9-Generic,
+        eTTSSM9-Global,
+        eTTSSM9-Mastfac,
+        eTTSSM9-Mode,
+        eTTSSM9-STC,
+        eTTSSM9-Trace,
+        eTTSSListData-Acids,
+        eTTSSListData-All,
+        eTTSSListData-Admin,
+        eTTSSListData-Basic,
+        eTTSSListData-Cics,
+        eTTSSListData-Instdata,
+        eTTSSListData-LCF,
+        eTTSSListData-Names,
+        eTTSSListData-Password,
+        eTTSSListData-Profile,
+        eTTSSListData-PWVIEW,
+        eTTSSListData-Resource,
+        eTTSSListData-SessKey,
+        eTTSSListData-SMS,
+        eTTSSListData-Source,
+        eTTSSListData-Tso,
+        eTTSSListData-WorkAttr,
+        eTTSSListData-XAuth,
+        eTTSSM8-All,
+        eTTSSM8-ListRDT,
+        eTTSSM8-ListSDT,
+        eTTSSM8-ListSTC,
+        eTTSSM8-MCS,
+        eTTSSM8-Remasusp,
+        eTTSSM8-LISTAPLU,
+        eTTSSM8-NOMVSDF,
+        eTTSSM8-PWMAINT,
+        eTTSSM3-ALL,
+        eTTSSM3-SDT,
+        eTTSSM4-ALL,
+        eTTSSM4-CERTUSER,
+        eTTSSM4-CERTAUTH,
+        eTTSSM4-CERTSITE,
+        eTTSSM4-CERTLIST,
+        eTTSSM4-CERTGEN,
+        eTTSSM4-CERTEXPO,
+        eTTSSM4-CERTCHEK,
+        eTTSSM4-KERBUSER,
+        eTTSSAdminMisc5,
+        eTTSSAdminMisc7,
+        eTTSSCICS-Auto-Transaction,
+        eTTSSCICS-Oper-Class,
+        eTTSSCICS-Oper-Identification,
+        eTTSSCICS-Oper-Priority,
+        eTTSSCICS-Security-Key,
+        eTTSSCICS-Time-Out,
+        eTTSSTSO-Logon-Proc,
+        eTTSSTSO-Region-Size,
+        eTTSSTSO-Max-Region-Size,
+        eTTSSTSO-Performance-Grp,
+        eTTSSTSO-Options,
+        eTTSSTSO-Hold-Class,
+        eTTSSTSO-Job-Class,
+        eTTSSTSO-Message-Class,
+        eTTSSTSO-Sysout-Class,
+        eTTSSTSO-Output-Destination,
+        eTTSSTSO-Unit,
+        eTTSSTSO-User-Data,
+        eTTSSTSO-Logon-Account,
+        eTTSSTSO-Logon-Command,
+        eTTSSTSO-Muliple-Passwords,
+        eTTSSSMS-Application-ID,
+        eTTSSSMS-Data-Class,
+        eTTSSSMS-Mgmt-Class,
+        eTTSSSMS-Storage-Class,
+        eTTSSAPPC-Sysout-Name,
+        eTTSSAPPC-Sysout-AcctNum,
+        eTTSSAPPC-Sysout-Bldg,
+        eTTSSAPPC-Sysout-Dept,
+        eTTSSAPPC-Sysout-Room,
+        eTTSSAPPC-Sysout-Addr1,
+        eTTSSAPPC-Sysout-Addr2,
+        eTTSSAPPC-Sysout-Addr3,
+        eTTSSAPPC-Sysout-Addr4,
+        eTTSSOMVS-Dflt-Group,
+        eTTSSOMVS-Group-ID,
+        eTTSSOMVS-Home-Subdir,
+        eTTSSOMVS-Program,
+        eTTSSOMVS-User-ID,
+        eTTSSLotusName,
+        eTTSSNovellName,
+        eTTSSLinuxName,
+        eTTSSMaxCPUTime,
+        eTTSSMaxAddrSpaceSize,
+        eTTSSMaxFilesPerProcess,
+        eTTSSMaxProcesses,
+        eTTSSMaxPthreadsCreated,
+        eTTSSMaxDataSpacePages,
+        eTTSSEIMProfile,
+        eTTSSMLSSecLabel,
+        eTTSSMLSDfltSecLabel,
+        eTTSSRestrictedAccess,
+        eTTSSMCS-Alternate-Grp,
+        eTTSSMCS-Authorized-Cmds,
+        eTTSSMCS-Auto-Cmds,
+        eTTSSMCS-Cmd-Target-System,
+        eTTSSMCS-Delete-Oper-Cmds,
+        eTTSSMCS-Keyword,
+        eTTSSMCS-Msgs-Received,
+        eTTSSMCS-Log-Cmds,
+        eTTSSMCS-Display-Format,
+        eTTSSMCS-Migration-ID,
+        eTTSSMCS-Monitor,
+        eTTSSMCS-Routing-Code,
+        eTTSSMCS-Msgs-Queue-Storage,
+        eTTSSMCS-Undelivered-Msgs,
+        eTTSSMCS-Receive-HardCopy-Messages,
+        eTTSSMCS-Receive-ConsoleIdZero-Messages,
+        eTTSSMCS-Receive-Unknown-ConsoleID-Messages
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-TSS-nb:1 = {
+    name = eTTSSDirectory-eTNamespace
+    eTTSSDirectory allowable-parent eTNamespace
+    named-by eTTSSDirectoryName
+};
+
+schema set name-binding etrust-admin-TSS-nb:2 = {
+    name = eTTSSPolicyContainer-eTNamespace
+    eTTSSPolicyContainer allowable-parent eTNamespace
+    named-by eTTSSPolicyContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:19 = {
+    name = eTTSSSystemInfo-eTTSSDirectory
+    eTTSSSystemInfo allowable-parent eTTSSDirectory
+    named-by eTTSSSystemInfoName
+};
+
+schema set name-binding etrust-admin-TSS-nb:48 = {
+    name = eTTSSUserDef-eTTSSDirectory
+    eTTSSUserDef allowable-parent eTTSSDirectory
+    named-by eTTSSUserDefName
+};
+
+schema set name-binding etrust-admin-TSS-nb:3 = {
+    name = eTTSSAcidContainer-eTTSSDirectory
+    eTTSSAcidContainer allowable-parent eTTSSDirectory
+    named-by eTTSSAcidContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:4 = {
+    name = eTTSSProfileContainer-eTTSSDirectory
+    eTTSSProfileContainer allowable-parent eTTSSDirectory
+    named-by eTTSSProfileContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:28 = {
+    name = eTTSSDeptContainer-eTTSSDirectory
+    eTTSSDeptContainer allowable-parent eTTSSDirectory
+    named-by eTTSSDeptContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:29 = {
+    name = eTTSSDivContainer-eTTSSDirectory
+    eTTSSDivContainer allowable-parent eTTSSDirectory
+    named-by eTTSSDivContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:30 = {
+    name = eTTSSZoneContainer-eTTSSDirectory
+    eTTSSZoneContainer allowable-parent eTTSSDirectory
+    named-by eTTSSZoneContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:31 = {
+    name = eTTSSGroupContainer-eTTSSDirectory
+    eTTSSGroupContainer allowable-parent eTTSSDirectory
+    named-by eTTSSGroupContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:5 = {
+    name = eTTSSAcid-eTTSSAcidContainer
+    eTTSSAcid allowable-parent eTTSSAcidContainer
+    named-by eTTSSAcidName
+};
+
+schema set name-binding etrust-admin-TSS-nb:20 = {
+    name = eTTSSFacilityContainer-eTTSSAcid
+    eTTSSFacilityContainer allowable-parent eTTSSAcid
+    named-by eTTSSFacilityContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:21 = {
+    name = eTTSSPermissionContainer-eTTSSAcid
+    eTTSSPermissionContainer allowable-parent eTTSSAcid
+    named-by eTTSSPermissionContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:22 = {
+    name = eTTSSOwnershipContainer-eTTSSAcid
+    eTTSSOwnershipContainer allowable-parent eTTSSAcid
+    named-by eTTSSOwnershipContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:23 = {
+    name = eTTSSProfListContainer-eTTSSAcid
+    eTTSSProfListContainer allowable-parent eTTSSAcid
+    named-by eTTSSProfListContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:32 = {
+    name = eTTSSAdminFacContainer-eTTSSAcid
+    eTTSSAdminFacContainer allowable-parent eTTSSAcid
+    named-by eTTSSAdminFacContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:33 = {
+    name = eTTSSAdminResContainer-eTTSSAcid
+    eTTSSAdminResContainer allowable-parent eTTSSAcid
+    named-by eTTSSAdminResContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:34 = {
+    name = eTTSSAdminScpContainer-eTTSSAcid
+    eTTSSAdminScpContainer allowable-parent eTTSSAcid
+    named-by eTTSSAdminScpContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:24 = {
+    name = eTTSSFacility-eTTSSFacilityContainer
+    eTTSSFacility allowable-parent eTTSSFacilityContainer
+    named-by eTTSSFacilityName
+};
+
+schema set name-binding etrust-admin-TSS-nb:25 = {
+    name = eTTSSResClass-eTTSSPermissionContainer
+    eTTSSResClass allowable-parent eTTSSPermissionContainer
+    named-by eTTSSResClassName
+};
+
+schema set name-binding etrust-admin-TSS-nb:26 = {
+    name = eTTSSOwned-eTTSSOwnershipContainer
+    eTTSSOwned allowable-parent eTTSSOwnershipContainer
+    named-by eTTSSOwnershipName
+};
+
+schema set name-binding etrust-admin-TSS-nb:27 = {
+    name = eTTSSProfList-eTTSSProfListContainer
+    eTTSSProfList allowable-parent eTTSSProfListContainer
+    named-by eTTSSProfListName
+};
+
+schema set name-binding etrust-admin-TSS-nb:35 = {
+    name = eTTSSAdminFacility-eTTSSAdminFacContainer
+    eTTSSAdminFacility allowable-parent eTTSSAdminFacContainer
+    named-by eTTSSAdminFacilityName
+};
+
+schema set name-binding etrust-admin-TSS-nb:36 = {
+    name = eTTSSAdminResource-eTTSSAdminResContainer
+    eTTSSAdminResource allowable-parent eTTSSAdminResContainer
+    named-by eTTSSAdminResourceName
+};
+
+schema set name-binding etrust-admin-TSS-nb:37 = {
+    name = eTTSSAdminScope-eTTSSAdminScpContainer
+    eTTSSAdminScope allowable-parent eTTSSAdminScpContainer
+    named-by eTTSSAdminScopeName
+};
+
+schema set name-binding etrust-admin-TSS-nb:11 = {
+    name = eTTSSOwnedName-eTTSSOwned
+    eTTSSOwnedName allowable-parent eTTSSOwned
+    named-by eTTSSOwnedNameName
+};
+
+schema set name-binding etrust-admin-TSS-nb:12 = {
+    name = eTTSSResName-eTTSSResClass
+    eTTSSResName allowable-parent eTTSSResClass
+    named-by eTTSSResNameName
+};
+
+schema set name-binding etrust-admin-TSS-nb:13 = {
+    name = eTTSSProfile-eTTSSProfileContainer
+    eTTSSProfile allowable-parent eTTSSProfileContainer
+    named-by eTTSSProfileName
+};
+
+schema set name-binding etrust-admin-TSS-nb:38 = {
+    name = eTTSSFacilityContainer-eTTSSProfile
+    eTTSSFacilityContainer allowable-parent eTTSSProfile
+    named-by eTTSSFacilityContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:39 = {
+    name = eTTSSPermissionContainer-eTTSSProfile
+    eTTSSPermissionContainer allowable-parent eTTSSProfile
+    named-by eTTSSPermissionContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:40 = {
+    name = eTTSSOwnershipContainer-eTTSSProfile
+    eTTSSOwnershipContainer allowable-parent eTTSSProfile
+    named-by eTTSSOwnershipContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:41 = {
+    name = eTTSSDept-eTTSSDeptContainer
+    eTTSSDept allowable-parent eTTSSDeptContainer
+    named-by eTTSSDeptName
+};
+
+schema set name-binding etrust-admin-TSS-nb:42 = {
+    name = eTTSSOwnershipContainer-eTTSSDept
+    eTTSSOwnershipContainer allowable-parent eTTSSDept
+    named-by eTTSSOwnershipContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:43 = {
+    name = eTTSSDiv-eTTSSDivContainer
+    eTTSSDiv allowable-parent eTTSSDivContainer
+    named-by eTTSSDivName
+};
+
+schema set name-binding etrust-admin-TSS-nb:44 = {
+    name = eTTSSOwnershipContainer-eTTSSDiv
+    eTTSSOwnershipContainer allowable-parent eTTSSDiv
+    named-by eTTSSOwnershipContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:45 = {
+    name = eTTSSAcidZone-eTTSSZoneContainer
+    eTTSSAcidZone allowable-parent eTTSSZoneContainer
+    named-by eTTSSZoneName
+};
+
+schema set name-binding etrust-admin-TSS-nb:46 = {
+    name = eTTSSOwnershipContainer-eTTSSAcidZone
+    eTTSSOwnershipContainer allowable-parent eTTSSAcidZone
+    named-by eTTSSOwnershipContainerName
+};
+
+schema set name-binding etrust-admin-TSS-nb:47 = {
+    name = eTTSSGroup-eTTSSGroupContainer
+    eTTSSGroup allowable-parent eTTSSGroupContainer
+    named-by eTTSSGroupName
+};
+
+schema set name-binding etrust-admin-TSS-nb:18 = {
+    name = eTTSSPolicy-eTTSSPolicyContainer
+    eTTSSPolicy allowable-parent eTTSSPolicyContainer
+    named-by eTTSSPolicyName
+};
+

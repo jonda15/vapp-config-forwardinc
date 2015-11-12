@@ -1,1 +1,5 @@
+mkdir -p $DXHOME/data
+echo "Creation of data folder done..."
 dxloaddb -s ForwardInc /solution/$CONFIG/ldif/ForwardInc.ldif
+echo "Data loaded into DSA ..."
+dxserver start ForwardInc

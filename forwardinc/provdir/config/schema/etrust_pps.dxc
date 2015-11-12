@@ -1,0 +1,2265 @@
+schema set oid-prefix etrust-admin-PPS-attr = (1.3.6.1.4.1.791.2.3.5.3.5470.1);
+schema set oid-prefix etrust-admin-PPS-oc = (1.3.6.1.4.1.791.2.3.5.3.5470.2);
+schema set oid-prefix etrust-admin-PPS-nb = (1.3.6.1.4.1.791.2.3.5.3.5470.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-PPS-attr:1 = {
+    name = eTPPSDirectoryName
+    ldap-names = eTPPSDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:2 = {
+    name = eTPPSServerName
+    ldap-names = eTPPSServerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:3 = {
+    name = eTPPSServerPort
+    ldap-names = eTPPSServerPort
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:4 = {
+    name = eTPPSDirUser
+    ldap-names = eTPPSDirUser
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:5 = {
+    name = eTPPSDirUserPwd
+    ldap-names = eTPPSDirUserPwd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:176 = {
+    name = eTPPSNumDeadlockRetries
+    ldap-names = eTPPSNumDeadlockRetries
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:177 = {
+    name = eTPPSConnectTimeout
+    ldap-names = eTPPSConnectTimeout
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:181 = {
+    name = eTPPSPasswordExpireDays
+    ldap-names = eTPPSPasswordExpireDays
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:6 = {
+    name = eTPPSUserContainerName
+    ldap-names = eTPPSUserContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:7 = {
+    name = eTPPSUserID
+    ldap-names = eTPPSUserID
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:8 = {
+    name = eTPPSUserDescription
+    ldap-names = eTPPSUserDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:9 = {
+    name = eTPPSSymbolicID
+    ldap-names = eTPPSSymbolicID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:13 = {
+    name = eTPPSExpirePassword
+    ldap-names = eTPPSExpirePassword
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:14 = {
+    name = eTPPSUserIDAlias
+    ldap-names = eTPPSUserIDAlias
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:15 = {
+    name = eTPPSEmailAddresses
+    ldap-names = eTPPSEmailAddresses
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:16 = {
+    name = eTPPSLanguageCode
+    ldap-names = eTPPSLanguageCode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:17 = {
+    name = eTPPSCurrencyCode
+    ldap-names = eTPPSCurrencyCode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:18 = {
+    name = eTPPSDefaultMobilePage
+    ldap-names = eTPPSDefaultMobilePage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:19 = {
+    name = eTPPSExpertEntry
+    ldap-names = eTPPSExpertEntry
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:20 = {
+    name = eTPPSAllowSwitchUser
+    ldap-names = eTPPSAllowSwitchUser
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:21 = {
+    name = eTPPSNavigatorHomePermissionList
+    ldap-names = eTPPSNavigatorHomePermissionList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:22 = {
+    name = eTPPSProcessProfilePermissionList
+    ldap-names = eTPPSProcessProfilePermissionList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:23 = {
+    name = eTPPSPrimaryPermissionList
+    ldap-names = eTPPSPrimaryPermissionList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:24 = {
+    name = eTPPSRowSecurityPermissionList
+    ldap-names = eTPPSRowSecurityPermissionList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:25 = {
+    name = eTPPSIDTypes
+    ldap-names = eTPPSIDTypes
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:26 = {
+    name = eTPPSUserProfileRoles
+    ldap-names = eTPPSUserProfileRoles
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:27 = {
+    name = eTPPSAlternateUserID
+    ldap-names = eTPPSAlternateUserID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:28 = {
+    name = eTPPSEffectiveDateFrom
+    ldap-names = eTPPSEffectiveDateFrom
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:29 = {
+    name = eTPPSEffectiveDateTo
+    ldap-names = eTPPSEffectiveDateTo
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:30 = {
+    name = eTPPSSupervisingUserID
+    ldap-names = eTPPSSupervisingUserID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:31 = {
+    name = eTPPSWorklistUser
+    ldap-names = eTPPSWorklistUser
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:32 = {
+    name = eTPPSEmailUser
+    ldap-names = eTPPSEmailUser
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:33 = {
+    name = eTPPSReassignWork
+    ldap-names = eTPPSReassignWork
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:34 = {
+    name = eTPPSReassignUserID
+    ldap-names = eTPPSReassignUserID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:35 = {
+    name = eTPPSWorklistEntriesCount
+    ldap-names = eTPPSWorklistEntriesCount
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:179 = {
+    name = eTPPSDuplicateCopyUserID
+    ldap-names = eTPPSDuplicateCopyUserID
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:180 = {
+    name = eTPPSCorrelatePrimaryEmail
+    ldap-names = eTPPSCorrelatePrimaryEmail
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:178 = {
+    name = eTPPSDuplicateOriginalName
+    ldap-names = eTPPSDuplicateOriginalName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:36 = {
+    name = eTPPSRoleContainerName
+    ldap-names = eTPPSRoleContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:37 = {
+    name = eTPPSRoleName
+    ldap-names = eTPPSRoleName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:38 = {
+    name = eTPPSRoleDescription
+    ldap-names = eTPPSRoleDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:39 = {
+    name = eTPPSLongDescription
+    ldap-names = eTPPSLongDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:40 = {
+    name = eTPPSRolePermissionLists
+    ldap-names = eTPPSRolePermissionLists
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:41 = {
+    name = eTPPSMembers
+    ldap-names = eTPPSMembers
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:42 = {
+    name = eTPPSDynamicMembers
+    ldap-names = eTPPSDynamicMembers
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:43 = {
+    name = eTPPSRoleQueryRuleOn
+    ldap-names = eTPPSRoleQueryRuleOn
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:44 = {
+    name = eTPPSRolePcodeRuleOn
+    ldap-names = eTPPSRolePcodeRuleOn
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:45 = {
+    name = eTPPSRoleLdapRuleOn
+    ldap-names = eTPPSRoleLdapRuleOn
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:46 = {
+    name = eTPPSRoleQuery
+    ldap-names = eTPPSRoleQuery
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:47 = {
+    name = eTPPSPCRuleRecord
+    ldap-names = eTPPSPCRuleRecord
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:48 = {
+    name = eTPPSPCRuleField
+    ldap-names = eTPPSPCRuleField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:49 = {
+    name = eTPPSPCRuleEvent
+    ldap-names = eTPPSPCRuleEvent
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:50 = {
+    name = eTPPSPCRuleFunction
+    ldap-names = eTPPSPCRuleFunction
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:51 = {
+    name = eTPPSLdapRule
+    ldap-names = eTPPSLdapRule
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:52 = {
+    name = eTPPSAllowNotify
+    ldap-names = eTPPSAllowNotify
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:53 = {
+    name = eTPPSAllowLookup
+    ldap-names = eTPPSAllowLookup
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:54 = {
+    name = eTPPSRoleType
+    ldap-names = eTPPSRoleType
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:55 = {
+    name = eTPPSRouteQuery
+    ldap-names = eTPPSRouteQuery
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:56 = {
+    name = eTPPSRoleCanGrant
+    ldap-names = eTPPSRoleCanGrant
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:57 = {
+    name = eTPPSRoleGrantor
+    ldap-names = eTPPSRoleGrantor
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:58 = {
+    name = eTPPSPermissionListContainerName
+    ldap-names = eTPPSPermissionListContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:59 = {
+    name = eTPPSPermListName
+    ldap-names = eTPPSPermListName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:60 = {
+    name = eTPPSPermListDescription
+    ldap-names = eTPPSPermListDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:61 = {
+    name = eTPPSPermListNavHomePage
+    ldap-names = eTPPSPermListNavHomePage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:62 = {
+    name = eTPPSStartAppServer
+    ldap-names = eTPPSStartAppServer
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:63 = {
+    name = eTPPSAllowPswdEmail
+    ldap-names = eTPPSAllowPswdEmail
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:64 = {
+    name = eTPPSTimeoutCD
+    ldap-names = eTPPSTimeoutCD
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:65 = {
+    name = eTPPSTimeoutMinutes
+    ldap-names = eTPPSTimeoutMinutes
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:66 = {
+    name = eTPPSPermListMobilePage
+    ldap-names = eTPPSPermListMobilePage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:67 = {
+    name = eTPPSMenus
+    ldap-names = eTPPSMenus
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:68 = {
+    name = eTPPSAppDesAccess
+    ldap-names = eTPPSAppDesAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:69 = {
+    name = eTPPSAppDesObjActivityName
+    ldap-names = eTPPSAppDesObjActivityName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:171 = {
+    name = eTPPSAppDesObjAnalyticModel
+    ldap-names = eTPPSAppDesObjAnalyticModel
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:70 = {
+    name = eTPPSAppDesObjAppEngineProgram
+    ldap-names = eTPPSAppDesObjAppEngineProgram
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:71 = {
+    name = eTPPSAppDesObjAppPackage
+    ldap-names = eTPPSAppDesObjAppPackage
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:72 = {
+    name = eTPPSAppDesObjApprovalRuleSet
+    ldap-names = eTPPSAppDesObjApprovalRuleSet
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:73 = {
+    name = eTPPSAppDesObjInterfaceObject
+    ldap-names = eTPPSAppDesObjInterfaceObject
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:74 = {
+    name = eTPPSAppDesObjBusinessProcess
+    ldap-names = eTPPSAppDesObjBusinessProcess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:75 = {
+    name = eTPPSAppDesObjComponent
+    ldap-names = eTPPSAppDesObjComponent
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:76 = {
+    name = eTPPSAppDesObjComponentInterface
+    ldap-names = eTPPSAppDesObjComponentInterface
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:77 = {
+    name = eTPPSAppDesObjField
+    ldap-names = eTPPSAppDesObjField
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:78 = {
+    name = eTPPSAppDesObjFileLayout
+    ldap-names = eTPPSAppDesObjFileLayout
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:79 = {
+    name = eTPPSAppDesObjFileReference
+    ldap-names = eTPPSAppDesObjFileReference
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:80 = {
+    name = eTPPSAppDesObjHTML
+    ldap-names = eTPPSAppDesObjHTML
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:81 = {
+    name = eTPPSAppDesObjImage
+    ldap-names = eTPPSAppDesObjImage
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:82 = {
+    name = eTPPSAppDesObjMenu
+    ldap-names = eTPPSAppDesObjMenu
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:83 = {
+    name = eTPPSAppDesObjMessage
+    ldap-names = eTPPSAppDesObjMessage
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:172 = {
+    name = eTPPSAppDesObjMerge
+    ldap-names = eTPPSAppDesObjMerge
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:84 = {
+    name = eTPPSAppDesObjMessageChannel
+    ldap-names = eTPPSAppDesObjMessageChannel
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:85 = {
+    name = eTPPSAppDesObjMessageNode
+    ldap-names = eTPPSAppDesObjMessageNode
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:86 = {
+    name = eTPPSAppDesObjMobilePages
+    ldap-names = eTPPSAppDesObjMobilePages
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:87 = {
+    name = eTPPSAppDesObjPage
+    ldap-names = eTPPSAppDesObjPage
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:173 = {
+    name = eTPPSAppDesObjPcodeWIP
+    ldap-names = eTPPSAppDesObjPcodeWIP
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:88 = {
+    name = eTPPSAppDesObjProblemType
+    ldap-names = eTPPSAppDesObjProblemType
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:89 = {
+    name = eTPPSAppDesObjProject
+    ldap-names = eTPPSAppDesObjProject
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:90 = {
+    name = eTPPSAppDesObjRecord
+    ldap-names = eTPPSAppDesObjRecord
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:91 = {
+    name = eTPPSAppDesObjStyleSheet
+    ldap-names = eTPPSAppDesObjStyleSheet
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:92 = {
+    name = eTPPSAppDesObjTypeCode
+    ldap-names = eTPPSAppDesObjTypeCode
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:174 = {
+    name = eTPPSAppDesObjVisualMergePage
+    ldap-names = eTPPSAppDesObjVisualMergePage
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:93 = {
+    name = eTPPSAppDesToolsDataAdmin
+    ldap-names = eTPPSAppDesToolsDataAdmin
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:94 = {
+    name = eTPPSAppDesToolsChangeControl
+    ldap-names = eTPPSAppDesToolsChangeControl
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:95 = {
+    name = eTPPSAppDesToolsLanguageTranslations
+    ldap-names = eTPPSAppDesToolsLanguageTranslations
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:96 = {
+    name = eTPPSAppDesToolsPeopleCodeDebugger
+    ldap-names = eTPPSAppDesToolsPeopleCodeDebugger
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:97 = {
+    name = eTPPSAppDesToolsSQLEditor
+    ldap-names = eTPPSAppDesToolsSQLEditor
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:98 = {
+    name = eTPPSAppDesToolsUpgrade
+    ldap-names = eTPPSAppDesToolsUpgrade
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:99 = {
+    name = eTPPSAppDesMiscAccessProfile
+    ldap-names = eTPPSAppDesMiscAccessProfile
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:100 = {
+    name = eTPPSAppDesMiscColor
+    ldap-names = eTPPSAppDesMiscColor
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:101 = {
+    name = eTPPSAppDesMiscFieldFormat
+    ldap-names = eTPPSAppDesMiscFieldFormat
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:102 = {
+    name = eTPPSAppDesMiscStyle
+    ldap-names = eTPPSAppDesMiscStyle
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:103 = {
+    name = eTPPSAppDesMiscToolbar
+    ldap-names = eTPPSAppDesMiscToolbar
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:104 = {
+    name = eTPPSDataMoverCheck
+    ldap-names = eTPPSDataMoverCheck
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:105 = {
+    name = eTPPSDefSecCheck
+    ldap-names = eTPPSDefSecCheck
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:106 = {
+    name = eTPPSQueryCheck
+    ldap-names = eTPPSQueryCheck
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:107 = {
+    name = eTPPSPPMICheck
+    ldap-names = eTPPSPPMICheck
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:108 = {
+    name = eTPPSRealtimeEventNotMCFAgent
+    ldap-names = eTPPSRealtimeEventNotMCFAgent
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:109 = {
+    name = eTPPSRealtimeEventNotMCFCTIServer
+    ldap-names = eTPPSRealtimeEventNotMCFCTIServer
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:110 = {
+    name = eTPPSRealtimeEventNotMCFCustomer
+    ldap-names = eTPPSRealtimeEventNotMCFCustomer
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:111 = {
+    name = eTPPSRealtimeEventNotMCFLogger
+    ldap-names = eTPPSRealtimeEventNotMCFLogger
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:112 = {
+    name = eTPPSRealtimeEventNotMCFNotify
+    ldap-names = eTPPSRealtimeEventNotMCFNotify
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:113 = {
+    name = eTPPSRealtimeEventNotMCFSupervisor
+    ldap-names = eTPPSRealtimeEventNotMCFSupervisor
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:114 = {
+    name = eTPPSRealtimeEventNotMCFUQServer
+    ldap-names = eTPPSRealtimeEventNotMCFUQServer
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:115 = {
+    name = eTPPSRealtimeEventNotOptimization
+    ldap-names = eTPPSRealtimeEventNotOptimization
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:116 = {
+    name = eTPPSRealtimeEventNotReporting
+    ldap-names = eTPPSRealtimeEventNotReporting
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:117 = {
+    name = eTPPSGenerateSQL
+    ldap-names = eTPPSGenerateSQL
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:118 = {
+    name = eTPPSRunSQL
+    ldap-names = eTPPSRunSQL
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:119 = {
+    name = eTPPSEditSQL
+    ldap-names = eTPPSEditSQL
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:120 = {
+    name = eTPPSPurgeAudit
+    ldap-names = eTPPSPurgeAudit
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:121 = {
+    name = eTPPSProcessGroups
+    ldap-names = eTPPSProcessGroups
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:122 = {
+    name = eTPPSServerDestFile
+    ldap-names = eTPPSServerDestFile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:123 = {
+    name = eTPPSServerDestPrinter
+    ldap-names = eTPPSServerDestPrinter
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:124 = {
+    name = eTPPSMVSJobName
+    ldap-names = eTPPSMVSJobName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:125 = {
+    name = eTPPSMVSJobAccount
+    ldap-names = eTPPSMVSJobAccount
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:126 = {
+    name = eTPPSAllowProcReqViewBy
+    ldap-names = eTPPSAllowProcReqViewBy
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:127 = {
+    name = eTPPSAllowProcReqUpdateBy
+    ldap-names = eTPPSAllowProcReqUpdateBy
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:128 = {
+    name = eTPPSViewServerStatus
+    ldap-names = eTPPSViewServerStatus
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:129 = {
+    name = eTPPSUpdateServerStatus
+    ldap-names = eTPPSUpdateServerStatus
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:130 = {
+    name = eTPPSOverrideOutDestn
+    ldap-names = eTPPSOverrideOutDestn
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:131 = {
+    name = eTPPSOverrideSrvrParms
+    ldap-names = eTPPSOverrideSrvrParms
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:132 = {
+    name = eTPPSEnableRecurSel
+    ldap-names = eTPPSEnableRecurSel
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:133 = {
+    name = eTPPSSignonTimes
+    ldap-names = eTPPSSignonTimes
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:134 = {
+    name = eTPPSComponentInterfaces
+    ldap-names = eTPPSComponentInterfaces
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:135 = {
+    name = eTPPSChannelPermissions
+    ldap-names = eTPPSChannelPermissions
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:136 = {
+    name = eTPPSWebLibraries
+    ldap-names = eTPPSWebLibraries
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:175 = {
+    name = eTPPSWebServices
+    ldap-names = eTPPSWebServices
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:137 = {
+    name = eTPPSPersonalizationOptions
+    ldap-names = eTPPSPersonalizationOptions
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:138 = {
+    name = eTPPSAccessGroups
+    ldap-names = eTPPSAccessGroups
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:139 = {
+    name = eTPPSRunQueryOnly
+    ldap-names = eTPPSRunQueryOnly
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:140 = {
+    name = eTPPSAllowCreatePublicQuery
+    ldap-names = eTPPSAllowCreatePublicQuery
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:141 = {
+    name = eTPPSAllowCreateWflowQuery
+    ldap-names = eTPPSAllowCreateWflowQuery
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:142 = {
+    name = eTPPSMaxRowsFetched
+    ldap-names = eTPPSMaxRowsFetched
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:143 = {
+    name = eTPPSMaxRunMinutes
+    ldap-names = eTPPSMaxRunMinutes
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:144 = {
+    name = eTPPSRunQryOut
+    ldap-names = eTPPSRunQryOut
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:145 = {
+    name = eTPPSRunQryOutToExcel
+    ldap-names = eTPPSRunQryOutToExcel
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:146 = {
+    name = eTPPSRunQryOutToCrystal
+    ldap-names = eTPPSRunQryOutToCrystal
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:147 = {
+    name = eTPPSAllowDistinct
+    ldap-names = eTPPSAllowDistinct
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:148 = {
+    name = eTPPSAllowAnyJoin
+    ldap-names = eTPPSAllowAnyJoin
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:149 = {
+    name = eTPPSAllowSubquery
+    ldap-names = eTPPSAllowSubquery
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:150 = {
+    name = eTPPSAllowUnion
+    ldap-names = eTPPSAllowUnion
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:151 = {
+    name = eTPPSAllowExpressions
+    ldap-names = eTPPSAllowExpressions
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:155 = {
+    name = eTPPSMaxJoinsAllowed
+    ldap-names = eTPPSMaxJoinsAllowed
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:152 = {
+    name = eTPPSMaxInTreeCriteria
+    ldap-names = eTPPSMaxInTreeCriteria
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:153 = {
+    name = eTPPSMassChangeTemplateID
+    ldap-names = eTPPSMassChangeTemplateID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:154 = {
+    name = eTPPSOkToExecuteOnline
+    ldap-names = eTPPSOkToExecuteOnline
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:156 = {
+    name = eTPPSObjectContainerName
+    ldap-names = eTPPSObjectContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:157 = {
+    name = eTPPSObjectName
+    ldap-names = eTPPSObjectName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:158 = {
+    name = eTPPSObjectDescription
+    ldap-names = eTPPSObjectDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:159 = {
+    name = eTPPSObjectToSearch
+    ldap-names = eTPPSObjectToSearch
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:160 = {
+    name = eTPPSParam1Name
+    ldap-names = eTPPSParam1Name
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:161 = {
+    name = eTPPSParam1Value
+    ldap-names = eTPPSParam1Value
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:162 = {
+    name = eTPPSParam2Name
+    ldap-names = eTPPSParam2Name
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:163 = {
+    name = eTPPSParam2Value
+    ldap-names = eTPPSParam2Value
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:164 = {
+    name = eTPPSParam3Name
+    ldap-names = eTPPSParam3Name
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:165 = {
+    name = eTPPSParam3Value
+    ldap-names = eTPPSParam3Value
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:166 = {
+    name = eTPPSReturnAttr1Value
+    ldap-names = eTPPSReturnAttr1Value
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:167 = {
+    name = eTPPSReturnAttr2Value
+    ldap-names = eTPPSReturnAttr2Value
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:168 = {
+    name = eTPPSReturnAttr3Value
+    ldap-names = eTPPSReturnAttr3Value
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:169 = {
+    name = eTPPSReturnAttr4Value
+    ldap-names = eTPPSReturnAttr4Value
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:170 = {
+    name = eTPPSReturnAttr5Value
+    ldap-names = eTPPSReturnAttr5Value
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:10 = {
+    name = eTPPSPolicyContainerName
+    ldap-names = eTPPSPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:11 = {
+    name = eTPPSPolicyName
+    ldap-names = eTPPSPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-PPS-attr:12 = {
+    name = eTPPSPolicyDirectory
+    ldap-names = eTPPSPolicyDirectory
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-PPS-oc:1 = {
+    name = eTPPSDirectory
+    subclass-of Top
+    must-contain
+        eTPPSDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTAgentNamespaceClass,
+        eTPPSServerName,
+        eTPPSServerPort,
+        eTPPSDirUser,
+        eTPPSDirUserPwd,
+        eTPPSNumDeadlockRetries,
+        eTPPSConnectTimeout,
+        eTPPSPasswordExpireDays
+};
+
+schema set object-class etrust-admin-PPS-oc:2 = {
+    name = eTPPSNamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL,
+        eTValidateCredentials,
+        eTMetaData,
+        eTOpBindingsMetaData
+};
+
+schema set object-class etrust-admin-PPS-oc:3 = {
+    name = eTPPSUserContainer
+    subclass-of Top
+    must-contain
+        eTPPSUserContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-PPS-oc:4 = {
+    name = eTPPSUser
+    subclass-of Top
+    must-contain
+        eTPPSUserID,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTPPSUserDescription,
+        eTPPSSymbolicID,
+        eTPPSExpirePassword,
+        eTPPSUserIDAlias,
+        eTPPSEmailAddresses,
+        eTPPSLanguageCode,
+        eTPPSCurrencyCode,
+        eTPPSDefaultMobilePage,
+        eTPPSExpertEntry,
+        eTPPSAllowSwitchUser,
+        eTPPSNavigatorHomePermissionList,
+        eTPPSProcessProfilePermissionList,
+        eTPPSPrimaryPermissionList,
+        eTPPSRowSecurityPermissionList,
+        eTPPSIDTypes,
+        eTPPSUserProfileRoles,
+        eTPPSAlternateUserID,
+        eTPPSEffectiveDateFrom,
+        eTPPSEffectiveDateTo,
+        eTPPSSupervisingUserID,
+        eTPPSWorklistUser,
+        eTPPSEmailUser,
+        eTPPSReassignWork,
+        eTPPSReassignUserID,
+        eTPPSWorklistEntriesCount,
+        eTPPSDuplicateCopyUserID,
+        eTPPSCorrelatePrimaryEmail,
+        eTPPSDuplicateOriginalName
+};
+
+schema set object-class etrust-admin-PPS-oc:7 = {
+    name = eTPPSRoleContainer
+    subclass-of Top
+    must-contain
+        eTPPSRoleContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-PPS-oc:8 = {
+    name = eTPPSRole
+    subclass-of Top
+    must-contain
+        eTPPSRoleName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPPSRoleDescription,
+        eTPPSLongDescription,
+        eTPPSRolePermissionLists,
+        eTPPSMembers,
+        eTPPSDynamicMembers,
+        eTPPSRoleQueryRuleOn,
+        eTPPSRolePcodeRuleOn,
+        eTPPSRoleLdapRuleOn,
+        eTPPSRoleQuery,
+        eTPPSPCRuleRecord,
+        eTPPSPCRuleField,
+        eTPPSPCRuleEvent,
+        eTPPSPCRuleFunction,
+        eTPPSLdapRule,
+        eTPPSAllowNotify,
+        eTPPSAllowLookup,
+        eTPPSRoleType,
+        eTPPSRouteQuery,
+        eTPPSRoleCanGrant,
+        eTPPSRoleGrantor,
+        eTPPSDuplicateOriginalName
+};
+
+schema set object-class etrust-admin-PPS-oc:9 = {
+    name = eTPPSPermissionListContainer
+    subclass-of Top
+    must-contain
+        eTPPSPermissionListContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-PPS-oc:10 = {
+    name = eTPPSPermissionList
+    subclass-of Top
+    must-contain
+        eTPPSPermListName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPPSPermListDescription,
+        eTPPSPermListNavHomePage,
+        eTPPSStartAppServer,
+        eTPPSAllowPswdEmail,
+        eTPPSTimeoutCD,
+        eTPPSTimeoutMinutes,
+        eTPPSPermListMobilePage,
+        eTPPSMenus,
+        eTPPSAppDesAccess,
+        eTPPSAppDesObjActivityName,
+        eTPPSAppDesObjAnalyticModel,
+        eTPPSAppDesObjAppEngineProgram,
+        eTPPSAppDesObjAppPackage,
+        eTPPSAppDesObjApprovalRuleSet,
+        eTPPSAppDesObjInterfaceObject,
+        eTPPSAppDesObjBusinessProcess,
+        eTPPSAppDesObjComponent,
+        eTPPSAppDesObjComponentInterface,
+        eTPPSAppDesObjField,
+        eTPPSAppDesObjFileLayout,
+        eTPPSAppDesObjFileReference,
+        eTPPSAppDesObjHTML,
+        eTPPSAppDesObjImage,
+        eTPPSAppDesObjMenu,
+        eTPPSAppDesObjMessage,
+        eTPPSAppDesObjMerge,
+        eTPPSAppDesObjMessageChannel,
+        eTPPSAppDesObjMessageNode,
+        eTPPSAppDesObjMobilePages,
+        eTPPSAppDesObjPage,
+        eTPPSAppDesObjPcodeWIP,
+        eTPPSAppDesObjProblemType,
+        eTPPSAppDesObjProject,
+        eTPPSAppDesObjRecord,
+        eTPPSAppDesObjStyleSheet,
+        eTPPSAppDesObjTypeCode,
+        eTPPSAppDesObjVisualMergePage,
+        eTPPSAppDesToolsDataAdmin,
+        eTPPSAppDesToolsChangeControl,
+        eTPPSAppDesToolsLanguageTranslations,
+        eTPPSAppDesToolsPeopleCodeDebugger,
+        eTPPSAppDesToolsSQLEditor,
+        eTPPSAppDesToolsUpgrade,
+        eTPPSAppDesMiscAccessProfile,
+        eTPPSAppDesMiscColor,
+        eTPPSAppDesMiscFieldFormat,
+        eTPPSAppDesMiscStyle,
+        eTPPSAppDesMiscToolbar,
+        eTPPSDataMoverCheck,
+        eTPPSDefSecCheck,
+        eTPPSQueryCheck,
+        eTPPSPPMICheck,
+        eTPPSRealtimeEventNotMCFAgent,
+        eTPPSRealtimeEventNotMCFCTIServer,
+        eTPPSRealtimeEventNotMCFCustomer,
+        eTPPSRealtimeEventNotMCFLogger,
+        eTPPSRealtimeEventNotMCFNotify,
+        eTPPSRealtimeEventNotMCFSupervisor,
+        eTPPSRealtimeEventNotMCFUQServer,
+        eTPPSRealtimeEventNotOptimization,
+        eTPPSRealtimeEventNotReporting,
+        eTPPSGenerateSQL,
+        eTPPSRunSQL,
+        eTPPSEditSQL,
+        eTPPSPurgeAudit,
+        eTPPSProcessGroups,
+        eTPPSServerDestFile,
+        eTPPSServerDestPrinter,
+        eTPPSMVSJobName,
+        eTPPSMVSJobAccount,
+        eTPPSAllowProcReqViewBy,
+        eTPPSAllowProcReqUpdateBy,
+        eTPPSViewServerStatus,
+        eTPPSUpdateServerStatus,
+        eTPPSOverrideOutDestn,
+        eTPPSOverrideSrvrParms,
+        eTPPSEnableRecurSel,
+        eTPPSSignonTimes,
+        eTPPSComponentInterfaces,
+        eTPPSChannelPermissions,
+        eTPPSWebLibraries,
+        eTPPSWebServices,
+        eTPPSPersonalizationOptions,
+        eTPPSAccessGroups,
+        eTPPSRunQueryOnly,
+        eTPPSAllowCreatePublicQuery,
+        eTPPSAllowCreateWflowQuery,
+        eTPPSMaxRowsFetched,
+        eTPPSMaxRunMinutes,
+        eTPPSRunQryOut,
+        eTPPSRunQryOutToExcel,
+        eTPPSRunQryOutToCrystal,
+        eTPPSAllowDistinct,
+        eTPPSAllowAnyJoin,
+        eTPPSAllowSubquery,
+        eTPPSAllowUnion,
+        eTPPSAllowExpressions,
+        eTPPSMaxJoinsAllowed,
+        eTPPSMaxInTreeCriteria,
+        eTPPSMassChangeTemplateID,
+        eTPPSOkToExecuteOnline,
+        eTPPSDuplicateOriginalName
+};
+
+schema set object-class etrust-admin-PPS-oc:11 = {
+    name = eTPPSObjectContainer
+    subclass-of Top
+    must-contain
+        eTPPSObjectContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-PPS-oc:12 = {
+    name = eTPPSObject
+    subclass-of Top
+    must-contain
+        eTPPSObjectName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPPSObjectDescription,
+        eTPPSObjectToSearch,
+        eTPPSParam1Name,
+        eTPPSParam1Value,
+        eTPPSParam2Name,
+        eTPPSParam2Value,
+        eTPPSParam3Name,
+        eTPPSParam3Value,
+        eTPPSReturnAttr1Value,
+        eTPPSReturnAttr2Value,
+        eTPPSReturnAttr3Value,
+        eTPPSReturnAttr4Value,
+        eTPPSReturnAttr5Value
+};
+
+schema set object-class etrust-admin-PPS-oc:5 = {
+    name = eTPPSPolicyContainer
+    subclass-of Top
+    must-contain
+        eTPPSPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-PPS-oc:6 = {
+    name = eTPPSPolicy
+    subclass-of Top
+    must-contain
+        eTPPSPolicyName,
+        objectclass
+    may-contain
+        eTPPSUserID,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTPPSUserDescription,
+        eTPPSSymbolicID,
+        eTPPSPolicyDirectory,
+        eTPPSExpirePassword,
+        eTPPSUserIDAlias,
+        eTPPSEmailAddresses,
+        eTPPSLanguageCode,
+        eTPPSCurrencyCode,
+        eTPPSDefaultMobilePage,
+        eTPPSExpertEntry,
+        eTPPSAllowSwitchUser,
+        eTPPSNavigatorHomePermissionList,
+        eTPPSProcessProfilePermissionList,
+        eTPPSPrimaryPermissionList,
+        eTPPSRowSecurityPermissionList,
+        eTPPSIDTypes,
+        eTPPSUserProfileRoles,
+        eTPPSAlternateUserID,
+        eTPPSEffectiveDateFrom,
+        eTPPSEffectiveDateTo,
+        eTPPSSupervisingUserID,
+        eTPPSWorklistUser,
+        eTPPSEmailUser,
+        eTPPSReassignWork,
+        eTPPSReassignUserID,
+        eTPPSWorklistEntriesCount
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-PPS-nb:1 = {
+    name = eTPPSDirectory-eTNamespace
+    eTPPSDirectory allowable-parent eTNamespace
+    named-by eTPPSDirectoryName
+};
+
+schema set name-binding etrust-admin-PPS-nb:2 = {
+    name = eTPPSPolicyContainer-eTNamespace
+    eTPPSPolicyContainer allowable-parent eTNamespace
+    named-by eTPPSPolicyContainerName
+};
+
+schema set name-binding etrust-admin-PPS-nb:3 = {
+    name = eTPPSNamespace-eTPPSDirectory
+    eTPPSNamespace allowable-parent eTPPSDirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-PPS-nb:4 = {
+    name = eTPPSUserContainer-eTPPSDirectory
+    eTPPSUserContainer allowable-parent eTPPSDirectory
+    named-by eTPPSUserContainerName
+};
+
+schema set name-binding etrust-admin-PPS-nb:7 = {
+    name = eTPPSRoleContainer-eTPPSDirectory
+    eTPPSRoleContainer allowable-parent eTPPSDirectory
+    named-by eTPPSRoleContainerName
+};
+
+schema set name-binding etrust-admin-PPS-nb:9 = {
+    name = eTPPSPermissionListContainer-eTPPSDirectory
+    eTPPSPermissionListContainer allowable-parent eTPPSDirectory
+    named-by eTPPSPermissionListContainerName
+};
+
+schema set name-binding etrust-admin-PPS-nb:11 = {
+    name = eTPPSObjectContainer-eTPPSDirectory
+    eTPPSObjectContainer allowable-parent eTPPSDirectory
+    named-by eTPPSObjectContainerName
+};
+
+schema set name-binding etrust-admin-PPS-nb:5 = {
+    name = eTPPSUser-eTPPSUserContainer
+    eTPPSUser allowable-parent eTPPSUserContainer
+    named-by eTPPSUserID
+};
+
+schema set name-binding etrust-admin-PPS-nb:8 = {
+    name = eTPPSRole-eTPPSRoleContainer
+    eTPPSRole allowable-parent eTPPSRoleContainer
+    named-by eTPPSRoleName
+};
+
+schema set name-binding etrust-admin-PPS-nb:10 = {
+    name = eTPPSPermissionList-eTPPSPermissionListContainer
+    eTPPSPermissionList allowable-parent eTPPSPermissionListContainer
+    named-by eTPPSPermListName
+};
+
+schema set name-binding etrust-admin-PPS-nb:12 = {
+    name = eTPPSObject-eTPPSObjectContainer
+    eTPPSObject allowable-parent eTPPSObjectContainer
+    named-by eTPPSObjectName
+};
+
+schema set name-binding etrust-admin-PPS-nb:6 = {
+    name = eTPPSPolicy-eTPPSPolicyContainer
+    eTPPSPolicy allowable-parent eTPPSPolicyContainer
+    named-by eTPPSPolicyName
+};
+

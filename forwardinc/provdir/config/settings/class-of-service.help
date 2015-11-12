@@ -1,0 +1,47 @@
+# ---------------------------------------------------------------------------- #
+# CA Directory CLASS-OF-SERVICE Configuration Help File                        #
+# ---------------------------------------------------------------------------- #
+
+The settings configuration directory is used to store class-of-service
+definitions.
+
+An example class of service definition is given below.
+
+
+# Clear any previously defined Class of Service templates
+clear class-of-service;
+
+# Set a class of service definition with 
+#    a label of: mooroolbark
+# Note: The cos-attr must be a MUST or MAY contain attribute of the object
+#       class. The cos-attr must be a single-valued attribute
+# Note: If an entry returned in a search response contains the cos-attr
+#	(employeeNumber) with a value of the cos-value (Mooroolbark) then 
+#	the attribute values in the class of service definition will be 
+#	added to the entry in the search result.
+set class-of-service mooroolbark = {
+    object-class = inetOrgPerson
+    cos-attr = employeeNumber
+    cos-value = Mooroolbark
+    attribute-values = {
+	( type = facsimileTelephoneNumber
+	  value = "03 9727 3941"
+	  disposition = default ),
+
+	( type = stateOrProvinceName
+	  value = "Victoria"
+	  disposition = default ),
+
+	( type = postalCode
+	  value = "3138"
+	  disposition = default ),
+
+	( type = streetAddress
+	  value = "266-268 Maroondah Highway"
+	  disposition = default )
+    }
+};
+
+#
+# Further details can be found in the CA Directory Administrator Guide.
+#

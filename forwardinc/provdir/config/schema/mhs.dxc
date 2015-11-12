@@ -1,0 +1,687 @@
+# 
+# Computer Associates 
+#
+# config/schema/mhs.dxc ($Revision: 4.8 $)
+#
+# MHS defined attributes and object classes.
+# These definitions where derived from IETF Schema Release 1, 19-Sep-94.
+#
+# All Attributes and Object Classes are EXPERIMENTAL.
+#
+# oid-prefix ::= iso(1).identifiedOrganization(3).dod(6).internet(1).private(4).
+#		 enterprises(1).isode-consortium(453).mhs-ds(7).
+#								mhs-ds-tables(1)
+#								mhs-ds-tree(2)
+#								mhs-ds-routing(3)
+#								mhs-ds-mapping(4)
+#								mhs-ds-list(5)
+#								mhs-ds-rfc-822(6)
+#
+# Requires definitions in x500.dxc
+# Requires definitions in cosine.dxc (cosineManager, cosineDomain)
+#
+schema set oid-prefix mhs-ds-tables-at  = (1.3.6.1.4.1.453.7.1.2);
+schema set oid-prefix mhs-ds-tree-at    = (1.3.6.1.4.1.453.7.2.2);
+schema set oid-prefix mhs-ds-routing-at = (1.3.6.1.4.1.453.7.3.2);
+schema set oid-prefix mhs-ds-mapping-at = (1.3.6.1.4.1.453.7.4.2);
+schema set oid-prefix mhs-ds-list-at    = (1.3.6.1.4.1.453.7.5.2);
+schema set oid-prefix mhs-ds-rfc-822-at = (1.3.6.1.4.1.453.7.6.2);
+schema set oid-prefix mhsAttributeType  = (2.6.5.2);
+
+#
+# Attribute Definitions.
+#
+schema set attribute mhs-ds-tables-at:1 = {
+        name   = mhsTextTableKey
+        syntax = caseIgnoreString
+};
+
+schema set attribute mhs-ds-tables-at:2 = {
+        name   = mhsTextTableValue
+        syntax = caseIgnoreString
+};
+
+schema set attribute mhs-ds-tables-at:3 = {
+        name   = mhsDistinguishedNameTableKey
+        syntax = distinguishedName
+};
+
+schema set attribute mhs-ds-tree-at:1 = {
+        name   = mhsADMDName
+        syntax = caseIgnoreString
+};
+
+schema set attribute mhs-ds-tree-at:2 = {
+        name   = mhsCN
+        syntax = caseIgnoreString
+};
+
+schema set attribute mhs-ds-tree-at:3 = {
+        name   = mHS-DDA
+        syntax = caseIgnoreString
+};
+
+schema set attribute mhs-ds-tree-at:4 = {
+        name   = mHS-DDV
+        syntax = caseIgnoreString
+};
+
+schema set attribute mhs-ds-tree-at:5 = {
+        name   = mhsNumericCountryName
+        syntax = numericString
+};
+
+schema set attribute mhs-ds-tree-at:6 = {
+        name   = mHS-O
+        syntax = caseIgnoreString
+};
+
+schema set attribute mhs-ds-tree-at:7 = {
+        name   = mHS-OU
+        syntax = caseIgnoreString
+};
+
+schema set attribute mhs-ds-tree-at:8 = {
+        name   = mHSX121Address
+        syntax = caseIgnoreString
+};
+
+schema set attribute mhs-ds-tree-at:9 = {
+        name   = mhsPn
+        syntax = caseIgnoreString
+};
+
+schema set attribute mhs-ds-tree-at:10 = {
+        name   = mhsPRMDName
+        syntax = caseIgnoreString
+};
+
+schema set attribute mhs-ds-routing-at:1 = {
+        name   = mhsAccessMD
+        syntax = distinguishedName
+};
+
+schema set attribute mhs-ds-routing-at:2 = {
+        name   = mhsAccessUnitsUsed
+        syntax = mhsSelectedAccessUnitsSyntax		# SelectedAccessUnits
+};
+
+schema set attribute mhs-ds-routing-at:3 = {
+        name   = mhsAuthoritativeAddress
+	ldap-names = authoritativeAddress
+        syntax = mhsAddressAuthoritySyntax		# AddressAuthority
+};
+
+schema set attribute mhs-ds-routing-at:4 = {
+        name   = mhsBadAddressSearchPoint
+        syntax = distinguishedName
+};
+
+schema set attribute mhs-ds-routing-at:5 = {
+        name   = mhsBadAddressSearchAttributes
+        syntax = mhsAttributeTypeSyntax			# AttributeType
+};
+
+schema set attribute mhs-ds-routing-at:6 = {
+        name   = mhsBodyPartConversionService
+        syntax = mhsGeneralExplicitConversionSyntax	# GeneralExplicitConversion
+};
+
+schema set attribute mhs-ds-routing-at:7 = {
+        name   = mhsCallingSelectorValidity
+        syntax = mhsCallingSelectorValiditySyntax	# CallingSelectorValidity
+};
+
+schema set attribute mhs-ds-routing-at:8 = {
+        name   = mhsContentConversionService
+        syntax = mhsContentConversionSyntax		# ContentConversion
+};
+
+schema set attribute mhs-ds-routing-at:9 = {
+        name   = mhsFilteredRedirect
+        syntax = mhsFilteredRedirectSyntax		# FilteredRedirect
+};
+
+schema set attribute mhs-ds-routing-at:10 = {
+        name   = mhsGlobalDomainID
+        syntax = mhsGlobalDomainIdentifierSyntax	# GlobalDomainIdentifier
+};
+
+schema set attribute mhs-ds-routing-at:11 = {
+        name   = mhsInitiatingRTSCredentials
+        syntax = mhsRTSCredentialsSyntax		# RTSCredentials
+};
+
+schema set attribute mhs-ds-routing-at:12 = {
+        name   = mhsInitiatorAuthenticationRequirements
+        syntax = mhsAuthenticationRequirementsSyntax	# AuthenticationRequirements
+};
+
+schema set attribute mhs-ds-routing-at:13 = {
+        name   = mhsInitiatorP1Mode
+        syntax = mhsP1ModeSyntax			# P1Mode
+};
+
+schema set attribute mhs-ds-routing-at:14 = {
+        name   = mhsInitiatorPullingAuthenticationRequirements
+        syntax = mhsAuthenticationRequirementsSyntax	# AuthenticationRequirements
+};
+
+schema set attribute mhs-ds-routing-at:15 = {
+        name   = mhsLocalAccessUnit
+        syntax = mhsAccessUnitTypeSyntax		# AccessUnitType
+};
+
+schema set attribute mhs-ds-routing-at:16 = {
+        name   = mhsMandatoryRedirect
+        syntax = distinguishedName
+};
+
+schema set attribute mhs-ds-routing-at:18 = {
+        name   = mhsMTAInfo
+        syntax = mhsMTAInfoSyntax			# MTAInfo
+};
+
+schema set attribute mhs-ds-routing-at:19 = {
+        name   = mhsMTAName
+        syntax = caseIgnoreIA5String
+};
+
+schema set attribute mhs-ds-routing-at:20 = {
+        name   = mhsMTAUsedForConversion
+        syntax = distinguishedName
+};
+
+schema set attribute mhs-ds-routing-at:21 = {
+        name   = mhsMTAWillRoute
+        syntax = mhsMTAWillRouteSyntax			# MTAWillRoute
+};
+
+schema set attribute mhs-ds-routing-at:22 = {
+        name   = mhsCallingPresentationAddress
+        syntax = presentationAddress
+};
+
+schema set attribute mhs-ds-routing-at:23 = {
+        name   = mhsResponderAuthenticationRequirements
+        syntax = mhsAuthenticationRequirementsSyntax	# AuthenticationRequirments
+};
+
+schema set attribute mhs-ds-routing-at:24 = {
+        name   = mhsResponderP1Mode
+        syntax = mhsP1ModeSyntax			# P1Mode
+};
+
+schema set attribute mhs-ds-routing-at:25 = {
+        name   = mhsResponderPullingAuthenticationRequirements
+        syntax = mhsAuthenticationRequirementsSyntax	# AuthenticationRequirments
+};
+
+schema set attribute mhs-ds-routing-at:26 = {
+        name   = mhsRespondingRTSCredentials
+        syntax = mhsRTSCredentialsSyntax		# RTSCredentials
+};
+
+schema set attribute mhs-ds-routing-at:27 = {
+        name   = mhsRoutingFailureAction
+        syntax = mhsRoutingFailureActionSyntax		# RoutingFailureAction
+};
+
+schema set attribute mhs-ds-routing-at:28 = {
+        name   = mhsRoutingFilter
+        syntax = mhsRoutingFilterSyntax			# RoutingFilter
+};
+
+schema set attribute mhs-ds-routing-at:29 = {
+        name   = mhsRoutingTreeList
+        syntax = mhsRoutingTreeListSyntax		# RoutingTreeList
+};
+
+schema set attribute mhs-ds-routing-at:30 = {
+        name   = mhsSubtreeDeliverableContentLength
+        syntax = integer
+};
+
+schema set attribute mhs-ds-routing-at:31 = {
+        name   = mhsSubtreeDeliverableContentTypes
+        syntax = objectIdentifier			# OID
+};
+
+schema set attribute mhs-ds-routing-at:32 = {
+        name   = mhsSubtreeDeliverableEITs
+        syntax = objectIdentifier			# OID
+};
+
+schema set attribute mhs-ds-routing-at:33 = {
+        name   = mhsSupportingMTA
+        syntax = distinguishedName
+};
+
+schema set attribute mhs-ds-routing-at:34 = {
+        name   = mhsTransportCommunity
+        syntax = objectIdentifier			# OID
+};
+
+schema set attribute mhs-ds-routing-at:35 = {
+        name   = mhsUAName
+        syntax = distinguishedName
+};
+
+schema set attribute mhs-ds-routing-at:36 = {
+        name   = mhsNonDeliveryInfo
+        syntax = mhsNonDeliveryInfoSyntax		# NonDeliveryInfo
+};
+
+schema set attribute mhs-ds-routing-at:37 = {
+        name   = mhsPolledMTAs
+        syntax = mhsPolledMTAsSyntax			# PolledMTAs
+};
+
+schema set attribute mhs-ds-rfc-822-at:1 = {
+        name   = mhsX400Domain
+        syntax = mhsX400DomainTypeSyntax		# X400DomainType
+};
+
+schema set attribute mhs-ds-rfc-822-at:2 = {
+        name   = mhsJNTMailSupport
+        syntax = mhsJNTMailSupportSyntax		# JNTMailSupport
+};
+
+schema set attribute mhs-ds-mapping-at:1 = {
+        name   = mhsAssociatedORAddress
+        syntax = mhsORAddress				# ORAddress
+};
+
+schema set attribute mhs-ds-mapping-at:2 = {
+        name   = mhsNonAuthoritativeAssociatedORAddress
+        syntax = mhsORAddress				# ORAddress
+};
+
+schema set attribute mhs-ds-mapping-at:3 = {
+        name   = mhsAssociatedX400Gateway
+        syntax = mhsORAddress				# ORAddress
+};
+
+schema set attribute mhs-ds-mapping-at:4 = {
+        name   = mhsAssociatedDomainSyntax
+        syntax = caseIgnoreIA5String
+};
+
+schema set attribute mhs-ds-mapping-at:5 = {
+        name   = mhsNonAuthoritativeAssociatedDomain
+        syntax = caseIgnoreIA5String
+};
+
+schema set attribute mhs-ds-list-at:1 = {
+        name   = mhsDistributionListName
+        syntax = distinguishedName
+};
+
+schema set attribute mhs-ds-list-at:2 = {
+        name   = mhsDlErrorsToName
+        syntax = mhs-or-name-syntax
+};
+
+schema set attribute mhs-ds-list-at:3 = {
+        name   = mhsDlPolicy
+        syntax = mhsExDlPolicySyntax			# ExDlPolicy
+};
+
+schema set attribute mhs-ds-list-at:4 = {
+        name   = mhsDlDynamicMembers
+        syntax = mhsDLDynamicMembersSyntax		# DLDynamicMembers
+};
+
+schema set attribute mhs-ds-list-at:5 = {
+        name   = mhsDlAccessControl
+        syntax = mhsDLSubscriptionContolSyntax		# DLSubscriptionControl
+};
+
+schema set attribute mhs-ds-list-at:6 = {
+        name   = mhsDlDynamicExclusions
+        syntax = distinguishedName
+};
+
+schema set attribute mhsAttributeType:0 = {
+        name   = mhsDeliverableContentLength
+        syntax = integer
+};
+
+schema set attribute mhsAttributeType:1 = {
+        name   = mhsDeliverableContentTypes
+        syntax = objectIdentifier			# OID
+};
+
+schema set attribute mhsAttributeType:2 = {
+        name   = mhsDeliverableEits
+        syntax = objectIdentifier			# OID
+};
+
+schema set attribute mhsAttributeType:3 = {
+        name   = mhsDLMembers
+        syntax = mhsORName				# ORName
+};
+
+schema set attribute mhsAttributeType:4 = {
+        name   = mhsDLSubmitPermissions
+        ldap-names = mhs-dl-submit-permissions
+        syntax = mhsDLSubmitPermission                  # DLSubmitPermission
+};
+
+schema set attribute mhsAttributeType:5 = {
+        name   = mhsMessageStoreName
+        syntax = distinguishedName
+};
+
+schema set attribute mhsAttributeType:6 = {
+        name   = mhsORAddresses
+	ldap-names = mhs-or-addresses
+        syntax = mhsORAddress				# ORAddress
+};
+
+schema set attribute mhsAttributeType:7 = {
+        name   = mhsPreferredDeliveryMethods
+        syntax = preferredDelivery			# DeliveryMethod
+};
+
+schema set attribute mhsAttributeType:8 = {
+        name   = mhsSupportedAutomaticActions
+        syntax = objectIdentifier			# OID
+};
+
+schema set attribute mhsAttributeType:9 = {
+        name   = mhsSupportedContentTypes
+        syntax = objectIdentifier			# OID
+};
+
+schema set attribute mhsAttributeType:10 = {
+        name   = mhsSupportedOptionalAttributes
+        syntax = objectIdentifier			# OID
+};
+
+
+#
+# Object Class Definitions.
+#
+schema set oid-prefix mhs-ds-routing-oc = (1.3.6.1.4.1.453.7.3.1);
+schema set oid-prefix mhs-ds-tables-oc = (1.3.6.1.4.1.453.7.1.1);
+schema set oid-prefix mhs-ds-tree-oc = (1.3.6.1.4.1.453.7.2.1);
+schema set oid-prefix mhs-ds-rfc-822-oc = (1.3.6.1.4.1.453.7.6.1);
+schema set oid-prefix mhs-ds-mapping-oc = (1.3.6.1.4.1.453.7.4.1);
+schema set oid-prefix mhs-ds-list-oc = (1.3.6.1.4.1.453.7.5.1);
+schema set oid-prefix mhsObjectClass = (2.6.5.1);
+
+schema set object-class mhs-ds-routing-oc:3 = {
+        name   = mhsRoutingInformation
+	ldap-names = routingInformation
+        subclass-of top
+        may-contain
+            mhsAuthoritativeAddress,
+            mhsRoutingFilter,
+            mhsRoutingFailureAction,
+	    mhsMTAInfo,
+            mhsAccessMD,
+            mhsNonDeliveryInfo,
+            mhsBadAddressSearchPoint,
+	    mhsBadAddressSearchAttributes
+};
+
+schema set object-class mhs-ds-tables-oc:1 = {
+        name   = mhsSubtree
+        subclass-of top
+        must-contain
+            cn
+        may-contain
+            cosineManager
+};
+
+schema set object-class mhs-ds-tables-oc:2 = {
+        name   = mhsTable
+        subclass-of top
+        must-contain
+            cn
+        may-contain
+            cosineManager
+};
+
+schema set object-class mhs-ds-tables-oc:3 = {
+        name   = mhsTableEntry
+        subclass-of top
+        may-contain
+            description
+};
+
+schema set object-class mhs-ds-tables-oc:4 = {
+        name   = mhsTextTableEntry
+        subclass-of mhsTableEntry
+        must-contain
+            mhsTextTableKey
+        may-contain
+            mhsTextTableValue
+};
+
+schema set object-class mhs-ds-tree-oc:1 = {
+        name   = mhsADMD
+        subclass-of top
+        must-contain
+            mhsADMDName
+};
+
+schema set object-class mhs-ds-tree-oc:2 = {
+        name   = mhsCountry
+        subclass-of country
+        may-contain
+            countryName,
+            mHSNumericCountryName
+};
+
+schema set object-class mhs-ds-tree-oc:3 = {
+        name   = mHSDomainDefinedAttribute
+        subclass-of top
+        must-contain
+            mHS-DDA,
+            mHS-DDV
+};
+
+schema set object-class mhs-ds-tree-oc:4 = {
+        name   = mHSNamedObject
+        subclass-of top
+        must-contain
+            mhsCN
+};
+
+schema set object-class mhs-ds-tree-oc:5 = {
+        name   = mHSOrganisation
+        subclass-of top
+        must-contain
+            mHS-O
+};
+
+schema set object-class mhs-ds-tree-oc:6 = {
+        name   = mHSOrganisationUnit
+        subclass-of top
+        must-contain
+            mHS-OU
+};
+
+schema set object-class mhs-ds-tree-oc:7 = {
+        name   = mHSPerson
+        subclass-of top
+        must-contain
+            cn
+};
+
+schema set object-class mhs-ds-tree-oc:8 = {
+        name   = mHSX121
+        subclass-of top
+        must-contain
+            mHSX121Address
+};
+
+schema set object-class mhs-ds-tree-oc:9 = {
+        name   = mhsPRMD
+        subclass-of top
+        must-contain
+            mhsPRMDName
+};
+
+schema set object-class mhs-ds-routing-oc:5 = {
+        name   = mhsRoutedUA
+        subclass-of routingInformation
+        may-contain
+            mhsDeliverableContentLength,
+            mhsDeliverableContentTypes,
+            mhsDeliverableEits,
+            mhsMessageStoreName,
+            mhsPreferredDeliveryMethods,
+	    mhsMandatoryRedirect,
+            mhsSupportingMta,
+            mhsFilteredRedirect,
+            mhsUAName,
+            mhsNonDeliveryInfo
+};
+
+schema set object-class mhs-ds-routing-oc:6 = {
+        name   = mhsRoutingTreeRoot
+        subclass-of mhsRoutingInformation			# ,subtree
+};
+
+# This object class has been commented out as the
+# object class mTA is not defined.
+#
+# schema set object-class mhs-ds-routing-oc:2 = {
+#         name   = mTABilateralTableEntry
+#         subclass-of mTA					# ,distinguishedNameTableEntry
+# };
+
+schema set object-class mhs-ds-routing-oc:4 = {
+        name   = mhsRestrictedSubtree
+        subclass-of top
+        may-contain
+            mhsSubtreeDeliverableContentLength,
+	    mhsSubtreeDeliverableContentTypes,
+	    mhsSubtreeDeliverableEITs
+};
+
+schema set object-class mhs-ds-rfc-822-oc:1 = {
+        name   = mhsNode822
+        subclass-of cosineDomain
+        may-contain
+            mhsAuthoritativeAddress,
+            mhsX400Domain,
+	    mhsBadAddressSearchPoint,
+	    mhsBadAddressSearchAttributes
+};
+
+schema set object-class mhs-ds-rfc-822-oc:2 = {
+        name   = mhsJNTMailNode
+        subclass-of mhsNode822
+        may-contain
+            mhsJntMailSupport
+};
+
+schema set object-class mhs-ds-mapping-oc:1 = {
+        name   = mhsRFC822toX400Mapping
+        subclass-of cosineDomain
+        may-contain
+            mhsAssociatedORAddress,
+            mhsNonAuthoritativeAssociatedORAddress,
+	    mhsAssociatedX400Gateway
+};
+
+schema set object-class mhsObjectClass:0 = {
+        name   = mhsDistributionList
+        subclass-of top
+        must-contain
+            cn,
+            mhsDLSubmitPermissions,
+            mhsORAddresses
+        may-contain
+            description,
+            o,
+            ou,
+            owner,
+            seeAlso,
+            mhsDeliverableContentTypes,
+            mhsDeliverableEits,
+            mhsDLMembers,
+            mhsPreferredDeliveryMethods
+};
+
+schema set object-class mhs-ds-list-oc:1 = {
+        name   = mhsListUA
+        subclass-of mhsRoutedUA
+        must-contain
+            mhsDistributionListName
+};
+
+schema set object-class mhs-ds-list-oc:2 = {
+        name   = mhsDistributionList2
+        subclass-of mhsDistributionList
+        may-contain
+            mhsDlPolicy,
+            mhsDlErrorsToName,
+            mhsDlDynamicMembers
+};
+
+schema set object-class mhsObjectClass:1 = {
+        name   = mhsMessageStore
+        subclass-of applicationEntity
+        may-contain
+            description,
+            owner,
+            mhsSupportedOptionalAttributes,
+            mhsSupportedAutomaticActions,
+            mhsSupportedContentTypes
+};
+
+schema set object-class mhsObjectClass:2 = {
+        name   = mhsMessageTransferAgent
+        subclass-of applicationEntity
+        may-contain
+            description,
+            owner,
+            mhsDeliverableContentLength
+};
+
+schema set object-class mhsObjectClass:3 = {
+        name   = mhsOrganizationalUser
+	ldap-names = mhsUser
+        subclass-of top
+        must-contain
+            mhsORAddresses
+        may-contain
+            mhsDeliverableContentLength,
+            mhsDeliverableContentTypes,
+	    mhsDeliverableEits,
+            mhsMessageStoreName,
+            mhsPreferredDeliveryMethods
+};
+
+schema set object-class mhsObjectClass:4 = {
+        name   = mhsUserAgent
+        subclass-of applicationEntity
+        may-contain
+            mhsDeliverableContentLength,
+            mhsDeliverableContentTypes,
+	    mhsDeliverableEits,
+            mhsORAddresses,
+            owner
+};
+
+
+#
+# Name Bindings.
+#
+schema set name-binding (2.6.5.99.1) = {
+	name = mhsUser-o
+	mhsUser allowable-parent organization
+	named-by commonName
+	};
+
+schema set name-binding (2.6.5.99.2) = {
+	name = mhsUser-ou
+	mhsUser allowable-parent organizationalUnit
+	named-by commonName
+	};
+

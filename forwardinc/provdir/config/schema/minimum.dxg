@@ -1,0 +1,10 @@
+#
+# Computer Associates
+#
+# config/schema/default.dxg ($Revision: 4.2 $)
+#
+# Minimum schema definitions
+#
+#
+source "x500.dxc";
+source "dxserver.dxc";

@@ -1,0 +1,139 @@
+# 
+# Computer Associates 
+#
+# config/schema/nsroaming.dxc ($Revision: 4.5 $)
+#
+# Netscape Roaming Directory Schema.
+# 
+schema set oid-prefix netscapeAttributeType = (2.16.840.1.113730.3.1);
+schema set oid-prefix netscapeObjectclass = (2.16.840.1.113730.3.2);
+schema set oid-prefix netscapeNameBinding = (2.16.840.1.113730.3.3);
+
+#
+# Attribute Definitions.
+#
+schema set attribute netscapeAttributeType:399 = {
+	name = nsLIPtrURL
+	syntax = caseExactString
+};
+
+schema set attribute netscapeAttributeType:400 = {
+	name = nsLIPrefs
+	syntax = caseExactString
+};
+
+schema set attribute netscapeAttributeType:401 = {
+	name = nsLIProfileName
+	syntax = caseIgnoreString
+};
+
+schema set attribute netscapeAttributeType:402 = {
+	name = nsLIData
+	syntax = octetString
+};
+
+schema set attribute netscapeAttributeType:403 = {
+	name = nsLIElementType
+	syntax = caseIgnoreString
+};
+
+schema set attribute netscapeAttributeType:404 = {
+	name = nsLIServerType
+	syntax = caseIgnoreString
+};
+
+schema set attribute netscapeAttributeType:405 = {
+	name = nsLIVersion
+	syntax = integer
+};
+
+schema set attribute netscapeAttributeType:280 = {
+	name = nsServerPort
+	syntax = caseIgnoreString
+};
+
+
+#
+# Object Class Definitions.
+#
+schema set object-class netscapeObjectclass :75 = {
+	name = nsLIProfile
+	subclass-of top
+	must-contain
+		nsLIProfileName
+	may-contain
+		nsLIPrefs,
+		uid,
+		owner
+};		
+
+schema set object-class netscapeObjectclass :76 = {
+	name = nsLIProfileElement
+	subclass-of top
+	must-contain
+		nsLIElementType
+	may-contain
+		owner,
+		nsLIData,
+		nsLIVersion
+};
+
+
+#
+# Name Bindings.
+#
+schema set name-binding netscapeNameBinding:1 =  {
+      name = nsLIProfile-top
+      nsLIProfile allowable-parent top
+      named-by nsLIProfileName
+      };
+      
+schema set name-binding netscapeNameBinding:2 =  {
+      name = nsLIProfile-country
+      nsLIProfile allowable-parent country
+      named-by nsLIProfileName
+      };
+
+schema set name-binding netscapeNameBinding:3 =  {
+      name = nsLIProfile-o
+      nsLIProfile allowable-parent organization
+      named-by nsLIProfileName
+      };
+      
+schema set name-binding netscapeNameBinding:4 =  {
+      name = nsLIProfile-ou
+      nsLIProfile allowable-parent organizationalUnit
+      named-by nsLIProfileName
+      };
+
+schema set name-binding netscapeNameBinding:5 =  {
+      name = nsLIProfileElement-top
+      nsLIProfileElement allowable-parent top
+      named-by nsLIElementType
+      };
+      
+schema set name-binding netscapeNameBinding:6 =  {
+      name = nsLIProfileElement-country
+      nsLIProfileElement allowable-parent country
+      named-by nsLIElementType
+      };
+      
+schema set name-binding netscapeNameBinding:7 =  {
+      name = nsLIProfileElement-o
+      nsLIProfileElement allowable-parent organization
+      named-by nsLIElementType
+      };
+      
+      
+schema set name-binding netscapeNameBinding:8 =  {
+      name = nsLIProfileElement-ou
+      nsLIProfileElement allowable-parent organizationalUnit
+      named-by nsLIElementType
+      };
+
+schema set name-binding netscapeNameBinding:9 =  {
+      name = nsLIProfileElement-nsliprofile
+      nsLIProfileElement allowable-parent nsliprofile
+      named-by nsLIElementType
+      };
+

@@ -1,0 +1,9 @@
+# Computer Associates DXserver/config/access
+# $RCSfile: default.dxc,v $ $Revision: 4.3 $
+# This is a read-only default configuration file. If you need to make changes, 
+# copy this file and reference the new file from servers/<dsa>.dxi
+#
+
+# static access controls
+set access-controls = false;
+

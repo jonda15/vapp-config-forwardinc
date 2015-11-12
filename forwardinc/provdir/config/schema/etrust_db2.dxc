@@ -1,0 +1,909 @@
+schema set oid-prefix etrust-admin-DB2-attr = (1.3.6.1.4.1.791.2.3.5.3.5230.1);
+schema set oid-prefix etrust-admin-DB2-oc = (1.3.6.1.4.1.791.2.3.5.3.5230.2);
+schema set oid-prefix etrust-admin-DB2-nb = (1.3.6.1.4.1.791.2.3.5.3.5230.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-DB2-attr:1 = {
+    name = eTDB2DirectoryName
+    ldap-names = eTDB2DirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:2 = {
+    name = eTDB2Version
+    ldap-names = eTDB2Version
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:3 = {
+    name = eTDB2DirectoryAlias
+    ldap-names = eTDB2DirectoryAlias
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:4 = {
+    name = eTDB2DirectoryServer
+    ldap-names = eTDB2DirectoryServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:5 = {
+    name = eTDB2DirectoryInstance
+    ldap-names = eTDB2DirectoryInstance
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:6 = {
+    name = eTDB2DirectoryProtocol
+    ldap-names = eTDB2DirectoryProtocol
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:7 = {
+    name = eTDB2DirectoryHost
+    ldap-names = eTDB2DirectoryHost
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:8 = {
+    name = eTDB2DirectoryService
+    ldap-names = eTDB2DirectoryService
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:9 = {
+    name = eTDB2DirectoryDatabase
+    ldap-names = eTDB2DirectoryDatabase
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:10 = {
+    name = eTDB2DirectoryUID
+    ldap-names = eTDB2DirectoryUID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:11 = {
+    name = eTDB2DirectoryPWD
+    ldap-names = eTDB2DirectoryPWD
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:24 = {
+    name = eTDB2Schemas
+    ldap-names = eTDB2Schemas
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:25 = {
+    name = eTDB2Tables
+    ldap-names = eTDB2Tables
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:26 = {
+    name = eTDB2Indexes
+    ldap-names = eTDB2Indexes
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:27 = {
+    name = eTDB2Views
+    ldap-names = eTDB2Views
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:28 = {
+    name = eTDB2Tablespaces
+    ldap-names = eTDB2Tablespaces
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:32 = {
+    name = eTDB2DCSFlag
+    ldap-names = eTDB2DCSFlag
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:34 = {
+    name = eTDB2Databases
+    ldap-names = eTDB2Databases
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:35 = {
+    name = eTDB2Subsystems
+    ldap-names = eTDB2Subsystems
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:36 = {
+    name = eTDB2Bufferpools
+    ldap-names = eTDB2Bufferpools
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:37 = {
+    name = eTDB2Storagegroups
+    ldap-names = eTDB2Storagegroups
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:38 = {
+    name = eTDB2Collections
+    ldap-names = eTDB2Collections
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:39 = {
+    name = eTDB2Packages
+    ldap-names = eTDB2Packages
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:40 = {
+    name = eTDB2Plans
+    ldap-names = eTDB2Plans
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:41 = {
+    name = eTDB2Procedures
+    ldap-names = eTDB2Procedures
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:42 = {
+    name = eTDB2UserDefinedFunctions
+    ldap-names = eTDB2UserDefinedFunctions
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:43 = {
+    name = eTDB2UserDefinedTypes
+    ldap-names = eTDB2UserDefinedTypes
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:12 = {
+    name = eTDB2AccountContainerName
+    ldap-names = eTDB2AccountContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:13 = {
+    name = eTDB2AccountName
+    ldap-names = eTDB2AccountName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:18 = {
+    name = eTDB2DatabaseAuthorities
+    ldap-names = eTDB2DatabaseAuthorities
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:19 = {
+    name = eTDB2SchemaPrivileges
+    ldap-names = eTDB2SchemaPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:20 = {
+    name = eTDB2TablePrivileges
+    ldap-names = eTDB2TablePrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:21 = {
+    name = eTDB2IndexPrivileges
+    ldap-names = eTDB2IndexPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:22 = {
+    name = eTDB2ViewPrivileges
+    ldap-names = eTDB2ViewPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:23 = {
+    name = eTDB2TablespacePrivileges
+    ldap-names = eTDB2TablespacePrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:33 = {
+    name = eTDB2DCSDatabaseAuthorities
+    ldap-names = eTDB2DCSDatabaseAuthorities
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:44 = {
+    name = eTDB2DCSSubsystemAuthorities
+    ldap-names = eTDB2DCSSubsystemAuthorities
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:45 = {
+    name = eTDB2DCSBufferpoolPrivileges
+    ldap-names = eTDB2DCSBufferpoolPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:46 = {
+    name = eTDB2DCSStoragegroupPrivileges
+    ldap-names = eTDB2DCSStoragegroupPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:47 = {
+    name = eTDB2DCSCollectionPrivileges
+    ldap-names = eTDB2DCSCollectionPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:48 = {
+    name = eTDB2DCSPackagePrivileges
+    ldap-names = eTDB2DCSPackagePrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:49 = {
+    name = eTDB2DCSPlanPrivileges
+    ldap-names = eTDB2DCSPlanPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:50 = {
+    name = eTDB2DCSProdecurePrivileges
+    ldap-names = eTDB2DCSProdecurePrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:51 = {
+    name = eTDB2DCSUserDefinedFunctionPrivileges
+    ldap-names = eTDB2DCSUserDefinedFunctionPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:52 = {
+    name = eTDB2DCSUserDefinedTypePrivileges
+    ldap-names = eTDB2DCSUserDefinedTypePrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:14 = {
+    name = eTDB2GroupContainerName
+    ldap-names = eTDB2GroupContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:15 = {
+    name = eTDB2GroupName
+    ldap-names = eTDB2GroupName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:16 = {
+    name = eTDB2PolicyContainerName
+    ldap-names = eTDB2PolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DB2-attr:17 = {
+    name = eTDB2PolicyName
+    ldap-names = eTDB2PolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-DB2-oc:1 = {
+    name = eTDB2Directory
+    subclass-of Top
+    must-contain
+        eTDB2DirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTAgentNamespaceClass,
+        eTDB2Version,
+        eTDB2DirectoryAlias,
+        eTDB2DirectoryServer,
+        eTDB2DirectoryInstance,
+        eTDB2DirectoryProtocol,
+        eTDB2DirectoryHost,
+        eTDB2DirectoryService,
+        eTDB2DirectoryDatabase,
+        eTDB2DirectoryUID,
+        eTDB2DirectoryPWD,
+        eTDB2Schemas,
+        eTDB2Tables,
+        eTDB2Indexes,
+        eTDB2Views,
+        eTDB2Tablespaces,
+        eTDB2DCSFlag,
+        eTDB2Databases,
+        eTDB2Subsystems,
+        eTDB2Bufferpools,
+        eTDB2Storagegroups,
+        eTDB2Collections,
+        eTDB2Packages,
+        eTDB2Plans,
+        eTDB2Procedures,
+        eTDB2UserDefinedFunctions,
+        eTDB2UserDefinedTypes
+};
+
+schema set object-class etrust-admin-DB2-oc:2 = {
+    name = eTDB2Namespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL,
+        eTValidateCredentials
+};
+
+schema set object-class etrust-admin-DB2-oc:3 = {
+    name = eTDB2AccountContainer
+    subclass-of Top
+    must-contain
+        eTDB2AccountContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-DB2-oc:4 = {
+    name = eTDB2Account
+    subclass-of Top
+    must-contain
+        eTDB2AccountName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTDB2DatabaseAuthorities,
+        eTDB2SchemaPrivileges,
+        eTDB2TablePrivileges,
+        eTDB2IndexPrivileges,
+        eTDB2ViewPrivileges,
+        eTDB2TablespacePrivileges,
+        eTDB2DCSDatabaseAuthorities,
+        eTDB2DCSSubsystemAuthorities,
+        eTDB2DCSBufferpoolPrivileges,
+        eTDB2DCSStoragegroupPrivileges,
+        eTDB2DCSCollectionPrivileges,
+        eTDB2DCSPackagePrivileges,
+        eTDB2DCSPlanPrivileges,
+        eTDB2DCSProdecurePrivileges,
+        eTDB2DCSUserDefinedFunctionPrivileges,
+        eTDB2DCSUserDefinedTypePrivileges
+};
+
+schema set object-class etrust-admin-DB2-oc:5 = {
+    name = eTDB2GroupContainer
+    subclass-of Top
+    must-contain
+        eTDB2GroupContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-DB2-oc:6 = {
+    name = eTDB2Group
+    subclass-of Top
+    must-contain
+        eTDB2GroupName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDB2DatabaseAuthorities,
+        eTDB2SchemaPrivileges,
+        eTDB2TablePrivileges,
+        eTDB2IndexPrivileges,
+        eTDB2ViewPrivileges,
+        eTDB2TablespacePrivileges,
+        eTDB2DCSDatabaseAuthorities,
+        eTDB2DCSSubsystemAuthorities,
+        eTDB2DCSBufferpoolPrivileges,
+        eTDB2DCSStoragegroupPrivileges,
+        eTDB2DCSCollectionPrivileges,
+        eTDB2DCSPackagePrivileges,
+        eTDB2DCSPlanPrivileges,
+        eTDB2DCSProdecurePrivileges,
+        eTDB2DCSUserDefinedFunctionPrivileges,
+        eTDB2DCSUserDefinedTypePrivileges
+};
+
+schema set object-class etrust-admin-DB2-oc:7 = {
+    name = eTDB2PolicyContainer
+    subclass-of Top
+    must-contain
+        eTDB2PolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-DB2-oc:8 = {
+    name = eTDB2Policy
+    subclass-of Top
+    must-contain
+        eTDB2PolicyName,
+        objectclass
+    may-contain
+        eTDB2AccountName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTDB2DatabaseAuthorities,
+        eTDB2SchemaPrivileges,
+        eTDB2TablePrivileges,
+        eTDB2IndexPrivileges,
+        eTDB2ViewPrivileges,
+        eTDB2TablespacePrivileges,
+        eTDB2DCSDatabaseAuthorities,
+        eTDB2DCSSubsystemAuthorities,
+        eTDB2DCSBufferpoolPrivileges,
+        eTDB2DCSStoragegroupPrivileges,
+        eTDB2DCSCollectionPrivileges,
+        eTDB2DCSPackagePrivileges,
+        eTDB2DCSPlanPrivileges,
+        eTDB2DCSProdecurePrivileges,
+        eTDB2DCSUserDefinedFunctionPrivileges,
+        eTDB2DCSUserDefinedTypePrivileges,
+        eTDB2DCSFlag
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-DB2-nb:1 = {
+    name = eTDB2Directory-eTNamespace
+    eTDB2Directory allowable-parent eTNamespace
+    named-by eTDB2DirectoryName
+};
+
+schema set name-binding etrust-admin-DB2-nb:2 = {
+    name = eTDB2PolicyContainer-eTNamespace
+    eTDB2PolicyContainer allowable-parent eTNamespace
+    named-by eTDB2PolicyContainerName
+};
+
+schema set name-binding etrust-admin-DB2-nb:3 = {
+    name = eTDB2Namespace-eTDB2Directory
+    eTDB2Namespace allowable-parent eTDB2Directory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-DB2-nb:4 = {
+    name = eTDB2AccountContainer-eTDB2Directory
+    eTDB2AccountContainer allowable-parent eTDB2Directory
+    named-by eTDB2AccountContainerName
+};
+
+schema set name-binding etrust-admin-DB2-nb:5 = {
+    name = eTDB2GroupContainer-eTDB2Directory
+    eTDB2GroupContainer allowable-parent eTDB2Directory
+    named-by eTDB2GroupContainerName
+};
+
+schema set name-binding etrust-admin-DB2-nb:6 = {
+    name = eTDB2Account-eTDB2AccountContainer
+    eTDB2Account allowable-parent eTDB2AccountContainer
+    named-by eTDB2AccountName
+};
+
+schema set name-binding etrust-admin-DB2-nb:7 = {
+    name = eTDB2Group-eTDB2GroupContainer
+    eTDB2Group allowable-parent eTDB2GroupContainer
+    named-by eTDB2GroupName
+};
+
+schema set name-binding etrust-admin-DB2-nb:8 = {
+    name = eTDB2Policy-eTDB2PolicyContainer
+    eTDB2Policy allowable-parent eTDB2PolicyContainer
+    named-by eTDB2PolicyName
+};
+

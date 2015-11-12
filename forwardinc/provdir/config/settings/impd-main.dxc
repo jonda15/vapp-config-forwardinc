@@ -1,0 +1,7 @@
+# CA Directory DXserver/config/settings
+
+set cache-index-all-except = eTPassword,eTINGpwd,eTVMSSecondPassword,eTSBLDirUserPwd,eTLNDDirAuthPassword,eTSQLAdminPwd,eTFNDDirectoryPassword,eTFNDDirFndPassword,eTFNDDirFndSecurityContext,eTFNDDescription,eTUPOExitPayload,eTUPOExitCustomData,eTUPOEtaPassword,eTSAPPassword,eTSAPModPwd,
+                             eTORAUserPwdConf,eTORADirectoryPWD,eTDB2DirectoryPWD,eTPLSAdminPWD,eTDBZDirectoryPWD;
+                             
+# Define preferred write master
+set write-precedence = @hostname@-impd-main;

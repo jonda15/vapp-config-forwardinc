@@ -1,0 +1,549 @@
+#
+# Computer Associates
+#
+# config/schema/cosine.dxc ($Revision: 4.9 $)
+#
+# COSINE and Internet defined attributes and object classes
+# These definitions where derived from IETF Schema Release 1, 19-Sep-94.
+#
+# Attributes [11-15,25,26,37,38,50-52,56,59] are EXPERIMENTAL
+# Object Classes [5,6,9,13,15,17,23] are EXPERIMENTAL
+#
+# oid-prefix ::= ccitt(0).data(9).pss(2342).ucl(19200300).pilot(100)
+#	     ::= ccitt(0).data(9).pss(2342).ucl(19200300).oldPSI(102)
+#	     ::= iso(1).memberBody(2).ansi(840).psi(113552).psiDirectory(1)
+#
+# Attribute textEncodedORAddress has been commented out of the object
+# class definition for newPilotPerson as the attribute is not defined.
+# Includes definitions for init.psi 
+#
+# Requires definitions in x500.dxc
+#
+# Removed "must-contain userPassword" from cosineSimpleSecurityObject to
+# make the object class definition conform to the ISOCOR navigator.
+
+set oid-prefix pilotAttributeType = (0.9.2342.19200300.100.1);
+set oid-prefix oldPSIattributeType = (0.9.2342.19200300.102.1);
+
+
+set attribute pilotAttributeType:1 = {
+        name   = cosineUserid
+	ldap-names = uid, userid
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:2 = {
+        name   = cosineTextEncodedORaddress
+	ldap-names = textEncodedORaddress
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:3 = {
+        name   = cosineRfc822Mailbox
+	ldap-names = mail, rfc822mailbox
+        syntax = caseIgnoreIA5String
+};
+
+set attribute pilotAttributeType:4 = {
+        name   = cosineInfo
+	ldap-names = info
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:5 = {
+        name   = cosineFavouriteDrink
+	ldap-names =  drink, favouriteDrink
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:6 = {
+        name   = cosineRoomNumber
+	ldap-names = roomNumber
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:7 = {
+        name   = cosinePhoto
+	ldap-names = photo
+        syntax = pilotPhotoSyntax			# Photo:file
+};
+
+set attribute pilotAttributeType:8 = {
+        name   = cosineUserClass
+	ldap-names = userClass
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:9 = {
+        name   = cosineHost
+	ldap-names = host
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:10 = {
+        name   = cosineManager
+	ldap-names = manager
+        syntax = distinguishedName
+};
+
+set attribute pilotAttributeType:11 = {
+        name   = cosineDocumentIdentifier
+	ldap-names = documentIdentifier
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:12 = {
+        name   = cosineDocumentTitle
+	ldap-names = documentTitle
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:13 = {
+        name   = cosineDocumentVersion
+	ldap-names = documentVersion
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:14 = {
+        name   = cosineDocumentAuthor
+	ldap-names = documentAuthor
+        syntax = distinguishedName
+};
+
+set attribute pilotAttributeType:15 = {
+        name   = cosineDocumentLocation
+	ldap-names = documentLocation
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:20 = {
+        name   = cosineHomePhone
+	ldap-names = homePhone
+        syntax = telephoneNumber
+};
+
+set attribute pilotAttributeType:21 = {
+        name   = cosineSecretary
+	ldap-names = secretary
+        syntax = distinguishedName
+};
+
+set attribute pilotAttributeType:22 = {
+        name   = cosineOtherMailbox
+	ldap-names = otherMailbox
+        syntax = caseIgnoreIA5String			# Mailbox
+};
+
+set attribute pilotAttributeType:23 = {
+        name   = cosineLastModifiedTime
+	ldap-names = lastModifiedTime
+        syntax = uTCTime			 
+};
+
+set attribute pilotAttributeType:24 = {
+        name   = cosineLastModifiedBy
+	ldap-names = lastModifiedBy
+        syntax = distinguishedName
+};
+
+set attribute pilotAttributeType:25 = {
+        name   = cosineDomainComponent
+	ldap-names = dc, domaincomponent
+        syntax = caseIgnoreIA5String
+};
+
+set attribute pilotAttributeType:26 = {
+        name   = cosineDNSRecord
+	ldap-names = DNSRecord
+        syntax = caseIgnoreIA5String
+};
+
+set attribute pilotAttributeType:37 = {
+        name   = cosineAssociatedDomain
+	ldap-names = associatedDomain
+        syntax = caseIgnoreIA5String
+};
+
+set attribute pilotAttributeType:38 = {
+        name   = cosineAssociatedName
+	ldap-names = associatedName
+        syntax = distinguishedName
+};
+
+set attribute pilotAttributeType:39 = {
+        name   = cosineHomePostalAddress
+	ldap-names = homePostalAddress
+        syntax = postalAddress
+};
+
+set attribute pilotAttributeType:40 = {
+        name   = cosinePersonalTitle
+	ldap-names = personalTitle
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:41 = {
+        name   = cosineMobileTelephoneNumber
+	ldap-names = mobile, mobileTelephoneNumber
+        syntax = telephoneNumber
+};
+
+set attribute pilotAttributeType:42 = {
+        name   = cosinePagerTelephoneNumber
+	ldap-names = pager, pagerTelephoneNumber
+        syntax = telephoneNumber
+};
+
+set attribute pilotAttributeType:43 = {
+        name   = cosineFriendlyCountryName
+	ldap-names = co, friendlycountryname
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:44 = {
+        name   = cosineUniqueIdentifier
+#	ldap-names = uniqueIdentifier		# uniqueIdentifier is now a standard attribute (MJM 3/97)
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:45 = {
+        name   = cosineOrganizationalStatus
+	ldap-names = organizationalStatus
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:46 = {
+        name   = cosineJanetMailbox
+	ldap-names = janetMailbox
+        syntax = caseIgnoreIA5String
+};
+
+set attribute pilotAttributeType:47 = {
+        name   = cosineMailPreferenceOption
+	ldap-names = mailPreferenceOption
+        syntax = pilotMailPreferenceSyntax		# MailPreference
+};
+
+set attribute pilotAttributeType:48 = {
+        name   = cosineBuildingName
+	ldap-names = buildingName
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:49 = {
+        name   = cosineDSAQuality
+	ldap-names = dSAQuality
+        syntax = pilotDSAQualitySyntax			# DSAQuality
+};
+
+set attribute pilotAttributeType:50 = {
+        name   = cosineSingleLevelQuality
+	ldap-names = singleLevelQuality
+        syntax = pilotDataQualitySyntax			# DataQuality
+};
+
+set attribute pilotAttributeType:51 = {
+        name   = cosineSubtreeMinimumQuality
+	ldap-names = subtreeMinimumQuality
+        syntax = pilotDataQualitySyntax			# DataQuality
+};
+
+set attribute pilotAttributeType:52 = {
+        name   = cosineSubtreeMaximumQuality
+	ldap-names = subtreeMaximumQuality
+        syntax = pilotDataQualitySyntax			# DataQuality
+};
+
+set attribute pilotAttributeType:53 = {
+        name   = cosinePersonalSignature
+	ldap-names = personalSignature
+        syntax = pilotPhotoSyntax			# Photo:file
+};
+
+set attribute pilotAttributeType:54 = {
+        name   = cosineDITRedirect
+	ldap-names = dITRedirect
+        syntax = distinguishedName
+};
+
+set attribute pilotAttributeType:55 = {
+        name   = cosineAudio
+	ldap-names = audio
+        syntax = audio					# pilotAudioSyntax
+};
+
+set attribute pilotAttributeType:56 = {
+        name   = cosineDocumentPublisher
+	ldap-names = documentPublisher
+        syntax = caseIgnoreString
+};
+
+set attribute pilotAttributeType:57 = {
+        name   = cosineSearchACL
+	ldap-names = sacl
+        syntax = pilotSearchACLSyntax			# SearchACL
+};
+
+set attribute pilotAttributeType:58 = {
+        name   = cosineListACL
+	ldap-names = lacl
+        syntax = pilotListACLSyntax			# ListACL
+};
+
+set attribute pilotAttributeType:59 = {
+        name   = cosineAuthPolicy
+	ldap-names = authPolicy
+        syntax = pilotAuthenticationPolicySyntax	# AuthenticationPolicy
+};
+
+set attribute pilotAttributeType:60 = {
+        name   = cosineJpegPhoto
+	ldap-names = jpegPhoto
+        syntax = jpeg					# pilotJpegSyntax
+};
+
+set attribute oldPSIattributeType:13 = {
+        name   = cosineWhoisIdent
+	ldap-names = whoisIdent
+        syntax = caseIgnoreString
+};
+
+set attribute oldPSIattributeType:10 = {
+        name   = cosineDocumentStore
+	ldap-names = documentStore
+        syntax = DocumentStoreSyntax
+};
+
+set oid-prefix pilotObjectClass = (0.9.2342.19200300.100.4);
+set oid-prefix oldPSIObjectClass = (0.9.2342.19200300.102.3);
+set oid-prefix psiObjectClass = (1.2.840.113552.1.6);
+
+set object-class pilotObjectClass:3 = {
+        name   = cosinePilotObject
+	ldap-names = pilotObject
+        subclass-of top
+        may-contain
+            cosineInfo,
+            cosinePhoto,
+            cosineManager,
+            cosineUniqueIdentifier,
+            cosineLastModifiedTime,
+            cosineLastModifiedBy,
+            cosineDITRedirect,
+            cosineAudio,
+            cosineJpegPhoto
+};
+
+set object-class pilotObjectClass:4 = {
+        name   = cosineNewPilotPerson
+	ldap-names = newPilotPerson
+        subclass-of person
+        may-contain
+            cosineUserid,
+#            cosineTextEncodedORAddress,
+            cosineRfc822Mailbox,
+            cosineFavouriteDrink,
+            cosineRoomNumber,
+            cosineUserClass,
+            cosineHomePhone,
+            cosineHomePostalAddress,
+            cosineSecretary,
+            cosinePersonalTitle,
+            preferredDeliveryMethod,
+            businessCategory,
+            cosineJanetMailbox,
+            cosineOtherMailbox,
+            cosineMobileTelephoneNumber,
+            cosinePagerTelephoneNumber,
+            cosineOrganizationalStatus,
+            cosineMailPreferenceOption,
+            cosinePersonalSignature
+};
+
+set object-class pilotObjectClass:5 = {
+        name   = cosineAccount
+	ldap-names = account
+        subclass-of top
+        must-contain
+            cosineUserid
+        may-contain
+            description,
+            seeAlso,
+            localityName,
+            organizationName,
+            organizationalUnitName,
+            cosineHost
+};
+
+set object-class pilotObjectClass:6 = {
+        name   = cosineDocument
+	ldap-names = document
+        subclass-of top				# , pilotObject
+        must-contain
+            cosineDocumentIdentifier
+        may-contain
+            commonName,
+            description,
+            seeAlso,
+            localityName,
+            organizationName,
+            organizationalUnitName,
+            cosineDocumentTitle,
+            cosineDocumentVersion,
+            cosineDocumentAuthor,
+            cosineDocumentLocation,
+            cosineDocumentStore,
+            cosineDocumentPublisher
+};
+# The following attributes have been removed from the object
+# class definition above as they are undefined.
+#            obsoletesDocument,
+#            obsoletedByDocument,
+#            updatesDocument,
+#            updatedByDocument,
+#            keywords,
+#            subject,
+#            abstract,
+#            documentAuthorCommonName,
+#            documentAuthorSurName,
+#
+
+set object-class pilotObjectClass:7 = {
+        name   = cosineRoom
+	ldap-names = room
+        subclass-of top
+        must-contain
+            commonName
+        may-contain
+            cosineRoomNumber,
+            description,
+            seeAlso,
+            telephoneNumber
+};
+
+set object-class pilotObjectClass:9 = {
+        name   = cosineDocumentSeries
+	ldap-names = documentSeries
+        subclass-of top
+        must-contain
+            commonName
+        may-contain
+            description,
+            seeAlso,
+            telephoneNumber,
+            localityName,
+            organizationName,
+            organizationalUnitName
+};
+
+set object-class pilotObjectClass:13 = {
+        name   = cosineDomain
+	ldap-names = domain
+        subclass-of top
+        must-contain
+            cosineDomainComponent
+        may-contain
+            cosineAssociatedName,
+            organizationName,
+            organizationalAttributeSet
+};
+
+set object-class pilotObjectClass:14 = {
+        name   = cosineRFC822localPart
+	ldap-names = rFC822localPart
+        subclass-of cosineDomain
+        may-contain
+            commonName,
+            surname,
+            description,
+            seeAlso,
+            telephoneNumber,
+            postalAttributeSet,
+            telecommunicationAttributeSet
+};
+
+set object-class pilotObjectClass:15 = {
+        name   = cosineDNSDomain
+	ldap-names = dNSDomain
+        subclass-of cosineDomain
+        may-contain
+            cosineDNSRecord
+};
+
+set object-class pilotObjectClass:17 = {
+        name   = cosineDomainRelatedObject
+	ldap-names = domainRelatedObject
+        subclass-of top
+        must-contain
+            cosineAssociatedDomain
+};
+
+set object-class pilotObjectClass:18 = {
+        name   = cosineFriendlyCountry
+	ldap-names = friendlyCountry
+        subclass-of country
+        must-contain
+            cosineFriendlyCountryName
+};
+
+set object-class pilotObjectClass:19 = {
+        name   = cosineSimpleSecurityObject
+	ldap-names = simpleSecurityObject
+        subclass-of top
+        # must-contain
+            #  userPassword				- commented out as Navigator does not
+	    #						  allow password to be entered.
+};
+
+set object-class pilotObjectClass:20 = {
+        name   = cosinePilotOrganization
+	ldap-names = pilotOrganization
+        subclass-of organization			# , organizationalUnit
+        may-contain
+            cosineBuildingName
+};
+
+set object-class pilotObjectClass:21 = {
+        name   = cosinePilotDSA
+	ldap-names = pilotDSA
+        subclass-of dsa
+        must-contain
+            cosineDSAQuality
+};
+
+set object-class pilotObjectClass:23 = {
+        name   = cosineQualityLabelledData
+	ldap-names = qualityLabelledData
+        subclass-of top
+        must-contain
+            cosineSingleLevelQuality
+        may-contain
+            cosineSubtreeMinimumQuality,
+            cosineSubtreeMaximumQuality
+};
+
+set object-class psiObjectClass:1 = {
+        name   = cosineOnlineDocument
+	ldap-names = onlineDocument
+        subclass-of cosineDocument				# , quipuObject
+        must-contain
+            cosineDocumentStore
+};
+
+schema set name-binding dxserver-nb:60 = {
+	name = domain-top
+	domain allowable-parent top
+	named-by domainComponent
+};
+
+schema set name-binding dxserver-nb:61 = {
+	name = domain-domain
+	domain allowable-parent domain
+	named-by domainComponent
+};
+
+schema set name-binding dxserver-nb:62 = {
+	name = ou-domain
+	organizationalUnit allowable-parent domain
+	named-by organizationalUnitName
+};

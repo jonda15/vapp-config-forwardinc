@@ -1,0 +1,252 @@
+# 
+# Computer Associates
+#
+# config/schema/dxserver.dxc ($Revision: 4.41 $)
+#
+# eTrust Directory DXserver Schema definitions.
+#
+schema set oid-prefix dxserver-attr = (1.3.6.1.4.1.3327.15);
+schema set oid-prefix dxserver-oc = (1.3.6.1.4.1.3327.9);
+schema set oid-prefix dxserver-opattr = (1.3.6.1.4.1.3327.6);
+
+#
+# Attribute Definitions.
+#
+schema set attribute dxserver-attr:1 = {
+  name = dxSizeLimit
+  syntax = integer
+  single-valued
+};
+
+schema set attribute dxserver-attr:2 = {
+  name = dxTimeLimit
+  syntax = integer
+  single-valued
+};
+
+schema set attribute dxserver-attr:3 = {
+  name = dxAllowSearch
+  syntax = caseIgnoreString
+  single-valued
+};
+
+schema set attribute dxserver-attr:4 = {
+  name = dxMemberURL
+  syntax = caseIgnoreString
+  single-valued
+};
+
+#
+# Object Class Definitions.
+#
+schema set object-class dxserver-oc:1 = {
+  name = dxRoleBasedConfig
+  subclass-of top
+  kind = auxiliary
+  may-contain
+    dxSizeLimit,
+    dxTimeLimit,
+    dxAllowSearch
+};
+
+# add to the groupOfNames object class to turn into a dynamc group
+schema set object-class dxserver-oc:2 = {
+  name = dxDynamicGroupOfNames
+  subclass-of top
+  kind = auxiliary
+  must-contain
+    dxMemberURL
+};
+
+# add to the groupOfUniqueNames object class to turn into a dynamc group
+schema set object-class dxserver-oc:3 = {
+  name = dxDynamicGroupOfUniqueNames
+  subclass-of top
+  kind = auxiliary
+  must-contain
+    dxMemberURL
+};
+
+#
+# Operational Attribute Definitions.
+#
+
+schema set attribute dxserver-opattr:1 = {
+  name = dxUpdatedByDisp
+  syntax = generalizedTime
+  single-valued
+  no-user-modification
+};
+
+schema set attribute dxserver-opattr:2 = {
+  name = dxEntryCount
+  syntax = integer
+  no-user-modification
+};
+
+# proxying
+schema set attribute dxserver-opattr:3 = {
+  name = dxProxyRole
+  syntax = distinguishedName
+};
+
+schema set attribute dxserver-opattr:4 = {
+  name = dxProxyUser
+  syntax = distinguishedName
+};
+
+# dynamic access control
+schema set attribute dxserver-opattr:5 = {
+  name = dxDynamicAccess
+  syntax = caseIgnoreString
+};
+
+schema set attribute dxserver-opattr:6 = {
+  name = dxDeleteTimestamp
+  syntax = generalizedTime
+  single-valued
+  no-user-modification
+};
+
+schema set attribute dxserver-opattr:7 = {
+  name = dxServerVersion
+  syntax = caseIgnoreString
+  single-valued
+  no-user-modification
+};
+
+# password policy attributes
+
+schema set attribute dxserver-opattr:8 = {
+  name = dxPwdLoginTime
+  syntax = generalizedTime
+  single-valued
+  no-user-modification
+};
+
+schema set attribute dxserver-opattr:9 = {
+  name = dxPwdLastChange
+  syntax = generalizedTime
+  single-valued
+  no-user-modification
+};
+
+schema set attribute dxserver-opattr:10 = {
+  name = dxPwdHistory
+  syntax = octetString
+  no-user-modification
+};
+
+schema set attribute dxserver-opattr:11 = {
+  name = dxPwdFailedAttempts
+  syntax = integer
+  single-valued
+  no-user-modification
+};
+
+schema set attribute dxserver-opattr:12 = {
+  name = dxPwdFailedTime
+  syntax = generalizedTime
+  single-valued
+  no-user-modification
+};
+
+# support transparent routing of errors
+schema set attribute dxserver-opattr:13 = {
+  name = dxErrorReason
+  syntax = caseIgnoreString
+  single-valued
+  no-user-modification
+};
+
+# add this attribute to an entry to lock (suspend) the account
+schema set attribute dxserver-opattr:14 = {
+  name = dxPwdLocked
+  syntax = boolean
+};
+
+schema set attribute dxserver-opattr:15 = {
+  name = dxPwdGraceLogins
+  syntax = integer
+  single-valued
+  no-user-modification
+};
+
+# add this attribute to an entry to ignore account expiration check
+schema set attribute dxserver-opattr:16 = {
+  name = dxPwdIgnoreExpired
+  syntax = boolean
+};
+
+schema set attribute dxserver-opattr:17 = {
+  name = dxUpdatedByDispHub
+  syntax = generalizedTime
+  single-valued
+  no-user-modification
+};
+
+# this overlay entry is a subordinate of a reference leaf node
+schema set attribute dxserver-opattr:18 = {
+  name = dxAttrOverlayReferenceSubordinate
+  syntax = boolean
+  single-valued
+  no-user-modification
+};
+
+# attribute to hold the newRDN of rename tombstones in DXgrid
+schema set attribute dxserver-opattr:19 = {
+  name = dxAttrRdnValue
+  syntax = distinguishedName
+  single-valued
+  no-user-modification
+};
+
+schema set attribute dxserver-opattr:20 = {
+  name = dxPwdMustChange
+  syntax = boolean
+  single-valued
+  no-user-modification
+};
+
+# add this attribute to an entry to ignore account suspension check
+schema set attribute dxserver-opattr:21 = {
+  name = dxPwdIgnoreSuspended
+  syntax = boolean
+};
+
+schema set attribute dxserver-opattr:22 = {
+  name = dxPwdGraceUseTime
+  syntax = generalizedTime
+  no-user-modification
+};
+
+schema set attribute dxserver-opattr:23 = {
+  name = dxTotalEntryCount
+  syntax = integer
+  no-user-modification
+};
+
+# DXgrid rename attribute
+schema set attribute dxserver-opattr:24 = {
+  name = dxNewSuperior
+  syntax = distinguishedName
+  single-valued
+  no-user-modification
+};
+
+# Dxgrid rename attribute
+schema set attribute dxserver-opattr:25 = {
+  name = dxDeleteOldRDN
+  syntax = boolean
+  single-valued
+  no-user-modification
+};
+
+# add this attribute to an entry to specify a password policy
+schema set attribute dxserver-opattr:26 = {
+  name = dxPwdPolicy
+  syntax = caseIgnoreString
+  single-valued
+};
+
+# next value is 27

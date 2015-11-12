@@ -1,0 +1,18 @@
+# CA Directory DXserver/config/knowledge
+
+set dsa "@hostname@-impd-main" =
+{
+   prefix        = <dc etadb>
+   dsa-name      = <dc etadb><cn @hostname@-impd-main>
+   dsa-password  = "secret"
+   address       = ipv4 "0.0.0.0" port 20394 #, ipv6 "@hostname@" port 20394
+   disp-psap     = DISP
+   cmip-psap     = CMIP
+   snmp-port     = 20394
+   ssld-port     = 20392
+   auth-levels   = clear-password
+   dsp-idle-time = 3600
+   dsa-flags     = multi-write, no-service-while-recovering
+   trust-flags   = allow-check-password, trust-conveyed-originator
+   link-flags    = ssl-encryption-remote
+};

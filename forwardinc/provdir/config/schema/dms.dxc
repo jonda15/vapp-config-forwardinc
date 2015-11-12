@@ -1,0 +1,525 @@
+# 
+# Computer Associates 
+#
+# config/schema/dms.dxc ($Revision: 4.4 $)
+#
+# DMS (Defence Messaging Systems) attributes and object classes
+#
+# Attributes and Object Classes taken from the Defense Message System
+# X.500 Directory Schema (Draft - February 1994).
+#
+# oid-prefix ::= joint-iso-ccitt(2).country(16).us(840).organization(1).
+#                gov(101).dod(2).ds(2)
+#
+# Requires definitions in;
+#       cosine.dxc 	(for cosineRfc822MailBox, cosineHost),
+#       mosaic.dxc 	(for mosaicKMandSigCertificate),
+#	mhs.dxc 	(for mhsDLSubmitPermissions),
+#	attr.dxc 	(for description, organizationalUnitName,
+#			     commonName, localityName, countryName,
+#			     applicationEntity, device, alias)
+#
+# Attribute "sdnsUserSignatureCertificate" has been removed from the
+# may-contain list of the object class "dmsReleaseAuthority" as the 
+# definition of this attribute is unknown.
+#
+# No name bindings are included in this file.
+#
+schema set oid-prefix dms-attr = (2.16.840.1.101.2.2.1);
+
+#
+# Attribute Definitions.
+#
+schema set attribute dms-attr:0 = {
+	name = dmsPreferredDelivery 
+	syntax = dmsDeliveryPreferenceSyntax	# DeliveryPreference
+	single-valued
+};
+
+# DeliveryPreference ATTRIBUTE-SYNTAX
+# 	ENUMERATED { SMTP (0), AUTODIN (1), MHS(2) }
+
+schema set attribute dms-attr:1 = {
+	name = dmsBackpointers 
+	syntax = distinguishedName
+};
+
+
+schema set attribute dms-attr:2 = {
+	name = dmsCreateTimeStamp 
+	syntax = uTCTime
+	single-valued
+};
+
+schema set attribute dms-attr:3 = {
+	name = dmsAlternateRecipient 
+	syntax = distinguishedName
+};
+
+schema set attribute dms-attr:4 = {
+	name = dmsAssociatedOrganization 
+	syntax = distinguishedName
+};
+
+schema set attribute dms-attr:5 = {
+	name = dmsAssociatedMI 
+	syntax = distinguishedName
+};
+
+schema set attribute dms-attr:6 = {
+	name = dmsAssociatedPLA 
+	syntax = distinguishedName
+};
+
+schema set attribute dms-attr:7 = {
+	name = dmsNDNPolicy 
+	syntax = dmsNDNPolicySyntax				# NDNPolicy
+	single-valued
+};
+
+# NDNPolicy ::= ENUMERATED {OWNER(0), ORIGINATOR(1), BOTH(2) }
+
+schema set attribute dms-attr:8 = {
+	name = dmsMIType 
+	syntax = dmsMITypeSyntax
+	single-valued
+};
+
+# dmsMITypeSyntax = ENUMERATED {AIG(0), TYPE(1), CAD(2), TASKFORCE(3) ....}
+
+schema set attribute dms-attr:9 = {
+	name = dmsPlaName 
+	syntax = caseIgnoreString
+	single-valued
+};
+
+schema set attribute dms-attr:11 = {
+	name = dmsPlaTAREFlag 
+	syntax = boolean
+	single-valued
+};
+
+schema set attribute dms-attr:13 = {
+	name = dmsPlaMinimizeOverrideFlag 
+	syntax = boolean
+	single-valued
+};
+
+schema set attribute dms-attr:14 = {
+	name = dmsPlaSectionFlag 
+	syntax = boolean
+	single-valued
+};
+
+schema set attribute dms-attr:15 = {
+	name = dmsPlaDualRouteFlag 
+	syntax = boolean
+	single-valued
+};
+
+schema set attribute dms-attr:16 = {
+	name = dmsPlaServiceOrAgency 
+	syntax = caseIgnoreString
+	single-valued
+};
+
+schema set attribute dms-attr:17 = {
+	name = dmsPlaPublishFlag 
+	syntax = boolean
+	single-valued
+};
+
+schema set attribute dms-attr:19 = {
+	name = dmsDodaac 
+	syntax = caseIgnoreString
+};
+
+schema set attribute dms-attr:20 = {
+	name = dmsPlaExpirationDate 
+	syntax = uTCTime
+	single-valued
+};
+
+schema set attribute dms-attr:21 = {
+	name = dmsPlaLongTitle 
+	syntax = caseIgnoreString
+	single-valued
+};
+
+schema set attribute dms-attr:22 = {
+	name = dmsPlaRIInfo 
+	syntax = dmsRIParametersSyntax				# RIParameters
+};
+
+# RIParameters ATTRIBUTE-SYNTAX
+# 	SET 	{
+# 	       	 routingIndicator			[0] RoutingIndicator,
+# 	       	 rIType					[1] RIType,
+# 		rIDeliveryPreference			[2] DeliveryPreference,
+# 	        	minimizeFlag				[3] BOOLEAN,
+# 		sHD					[5] SpecialHandlingDesig,
+# 		RIClassification				[6] DestinationClassification}
+# 
+# RoutingIndicator ::= PrintableString (SIZE(7))
+# RIType ::= PrintableString (SIZE (1))
+# 	(FROM ("N" - normal - |
+# 		"0" - offline - |
+# 		"P" - part time terminal - |
+# 		"A" - ADI - ))
+# 
+# Classification ::= PrintableString (SIZE (1))
+# 	(FROM ("S" - secret - |
+# 		"C" - confidential - |
+# 		"R" - restricted - |
+# 		"E" - unclassified EFTO - |
+# 		"U" - unclassified - ))
+# 
+# DestinationClassification ::= PrintableString (SIZE (1))
+# 	(FROM "T" - top secret - |
+# 		"S" - secret - |
+# 		"C" - confidential - |
+# 		"R" - restricted - |
+# 		"E" - unclassified EFTO - |
+# 		"U" - unclassified - ))
+# 
+# SpecialHandlingDesig ::= PrintableString 
+
+schema set attribute dms-attr:23 = {
+	name = dmsPlaActionAddresses 
+	syntax = caseIgnoreString
+};
+
+schema set attribute dms-attr:24 = {
+	name = dmsPlaInfoAddresses 
+	syntax = caseIgnoreString
+};
+
+schema set attribute dms-attr:25 = {
+	name = dmsPlaCognizantAuthority 
+	syntax = caseIgnoreString
+	single-valued
+};
+
+schema set attribute dms-attr:26 = {
+	name = dmsPlaLastRecapDate 
+	syntax = uTCTime
+	single-valued
+};
+
+schema set attribute dms-attr:27 = {
+	name = dmsPlaRecapDueDate 
+	syntax = uTCTime
+	single-valued
+};
+
+schema set attribute dms-attr:28 = {
+	name = dmsPlaEffectiveDate 
+	syntax = uTCTime
+	single-valued
+};
+
+schema set attribute dms-attr:29 = {
+	name = dmsPlaAllowableOriginators 
+	syntax = caseIgnoreString
+};
+
+schema set attribute dms-attr:30 = {
+	name = dmsOwningCountry 
+	syntax = printableString
+	single-valued
+};
+
+schema set attribute dms-attr:31 = {
+	name = dmsPlaRemarks 
+	syntax = caseIgnoreString
+};
+
+schema set attribute dms-attr:35 = {
+	name = dmsPlaStateName 
+	syntax = caseIgnoreString
+};
+
+schema set attribute dms-attr:36 = {
+	name = dmsPlaProvinceName 
+	syntax = caseIgnoreString
+};
+
+schema set attribute dms-attr:37 = {
+	name = dmsPlaRegionName 
+	syntax = caseIgnoreString
+};
+
+schema set attribute dms-attr:38 = {
+	name = dmsPlaEntryClassification 
+	syntax = dmsClassificationSyntax				# Classification
+};
+
+schema set attribute dms-attr:39 = {
+	name = dmsPlaNameClassification
+	syntax = dmsClassificationSyntax				# Classification
+};
+
+schema set attribute dms-attr:40 = {
+	name = dmsPlaMinimize 
+	syntax = boolean
+};
+
+schema set attribute dms-attr:41 = {
+	name = dmsPrimarySpelling 
+	syntax = caseIgnoreString
+	single-valued
+};
+
+schema set attribute dms-attr:42 = {
+	name = dmsPlaReplaceFlag 
+	syntax = boolean
+	single-valued
+};
+
+schema set attribute dms-attr:43 = {
+	name = dmsHostOrganizationalPLA 
+	syntax = caseIgnoreString
+	single-valued
+};
+
+schema set attribute dms-attr:45 = {
+	name = dmsReleaseAuthorityName 
+	syntax = caseIgnoreString
+};
+
+
+#
+# Object Class Definitions.
+#
+schema set oid-prefix dms-objectClass = (2.16.840.1.101.2.2.3);
+
+schema set object-class dms-objectClass:0 = {
+	name = dmsEntry 
+	subclass-of top
+						#must-contain createTimeStamp
+};
+
+schema set object-class dms-objectClass:1 = {
+	name = dmsSMTPUser 
+	subclass-of top
+	may-contain
+		cosineRfc822Mailbox
+};
+
+schema set object-class dms-objectClass:2 = {
+	name = dmsPOCOrganizationalUnit 
+	subclass-of organizationalUnit		# mhs-user, dmsSMTPUser, msp-user-sdns, msp-user-mosaic
+	must-contain
+		dmsPreferredDelivery,
+		dmsOwningCountry
+	may-contain
+		dmsAssociatedPLA,
+		dmsAlternateRecipient,
+		dmsBackpointers
+};
+
+schema set object-class dms-objectClass:3 = {
+	name = dmsPOCOrganizationalPerson 
+	subclass-of organizationalPerson	# mhs-user, dmsSMTPUser, msp-user-sdns, msp-user-mosaic
+	must-contain
+		dmsPreferredDelivery,
+		dmsOwningCountry
+	may-contain
+		dmsAssociatedOrganization,
+		dmsAlternateRecipient,
+		dmsBackpointers
+};
+
+schema set object-class dms-objectClass:4 = {
+	name = dmsMI 
+	subclass-of dmsSMTPUser			# msp-user-sdns, mhs-user, msp-user-mosaic, mail-list
+	must-contain
+		commonName,
+		mhsDLSubmitPermissions		# mhs-dl-submit-permissions
+	may-contain
+		dmsNDNPolicy,
+		dmsMIType,
+		description,
+		dmsBackpointers,
+		dmsAlternateRecipient
+};
+
+schema set object-class dms-objectClass:5 = {
+	name = dmsMLA 
+	subclass-of applicationEntity
+};
+
+schema set object-class dms-objectClass:6 = {
+	name = dmsCertificationAuthority 
+	subclass-of dmsSMTPUser				# ca-mosaic, ca-sdns, organizationalRole, mhs-user, 
+							# msp-user-sdns, msp-user-mosaic
+	must-contain
+		dmsPreferredDelivery
+	may-contain
+		dmsBackpointers
+};
+
+schema set object-class dms-objectClass:7 = {
+	name = dmsADIGateway 
+	subclass-of applicationEntity			# msp-user-mosaic, mhs-user
+	may-contain
+		cosineHost
+};
+
+schema set object-class dms-objectClass:8 = {
+	name = dmsPla 
+	subclass-of top
+	must-contain
+		dmsPlaName,
+		dmsPlaServiceOrAgency,
+		dmsPlaPublishFlag,
+							#dmsPlaEffectiveData,
+		dmsOwningCountry
+	may-contain
+		dmsPlaExpirationDate,
+		dmsPlaRemarks
+};
+
+schema set object-class dms-objectClass:9 = {
+	name = dmsOrganizationalPLA 
+	subclass-of dmsPla
+	must-contain
+		dmsPlaMinimize,
+		dmsPlaSectionFlag,
+		dmsPlaDualRouteFlag,
+		dmsPlaMinimizeOverrideFlag,
+		dmsPlaTAREFlag
+	may-contain
+		dmsPlaNameClassification,
+		dmsPlaEntryClassification,
+		localityName,
+		dmsPlaStateName,
+		dmsPlaProvinceName,
+		dmsPlaRegionName,
+		countryName,
+		dmsPlaLongTitle,
+		dmsDodaac,
+		dmsPlaRIInfo,
+		dmsAssociatedOrganization
+};
+
+schema set object-class dms-objectClass:12 = {
+	name = dmsReleaseAuthority 
+	subclass-of top
+	must-contain
+		dmsReleaseAuthorityName
+	may-contain
+		mosaicKMandSigCertificate
+		# sdnsUserSignatureCertificate - unknown attribute
+};
+
+schema set object-class dms-objectClass:13 = {
+	name = dmsPlaCollective 
+	subclass-of dmsPla
+	must-contain
+		dmsPlaCognizantAuthority,
+		dmsPlaLastRecapDate,
+		dmsPlaRecapDueDate
+	may-contain
+		dmsPlaEntryClassification,
+		dmsPlaActionAddresses,
+		dmsPlaInfoAddresses,
+		dmsPlaAllowableOriginators,
+		dmsAssociatedMI
+};
+
+schema set object-class dms-objectClass:14 = {
+	name = dmsComputer 
+	subclass-of device
+};
+
+schema set object-class dms-objectClass:15 = {
+	name = dmsOSIGateway 
+	subclass-of applicationEntity			# mhs-user, msp-user-mosaic
+	may-contain
+		cosineHost
+};
+
+schema set object-class dms-objectClass:16 = {
+	name = dmsAliasOrganizationalUnit 
+	subclass-of alias
+	must-contain
+		organizationalUnitName
+};
+
+schema set object-class dms-objectClass:17 = {
+	name = dmsAliasOrganizationalPerson 
+	subclass-of alias
+	must-contain
+		commonName
+};
+
+schema set object-class dms-objectClass:18 = {
+	name = dmsAliasOrganizationalRole 
+	subclass-of alias
+	must-contain
+		commonName
+};
+
+schema set object-class dms-objectClass:19 = {
+	name = dmsAliasMI 
+	subclass-of alias
+	must-contain
+		commonName
+};
+
+schema set object-class dms-objectClass:20 = {
+	name = dmsTaskForcePLA 
+	subclass-of dmsPla
+	must-contain
+		dmsPlaCognizantAuthority,
+		dmsPlaLastRecapDate,
+		dmsPlaRecapDueDate
+	may-contain
+		dmsPlaEntryClassification,
+								# dmsPlaAddresses,
+		dmsAssociatedMI
+};
+
+schema set object-class dms-objectClass:21 = {
+	name = dmsTenantPLA 
+	subclass-of dmsPla
+	must-contain
+		dmsHostOrganizationalPLA
+	may-contain
+		dmsPlaEntryClassification,
+		dmsPlaTAREFlag
+};
+
+schema set object-class dms-objectClass:22 = {
+	name = dmsAlternateSpellingPLA 
+	subclass-of dmsPla
+	must-contain
+		dmsPlaReplaceFlag,
+		dmsPrimarySpelling
+};
+
+schema set object-class dms-objectClass:23 = {
+	name = dmsCadPLA 
+	subclass-of dmsPla
+	must-contain
+		dmsPlaCognizantAuthority
+	may-contain
+		dmsPlaEntryClassification,
+		dmsAssociatedMI,
+		dmsPlaRIInfo,
+		dmsPlaRecapDueDate
+};
+
+schema set object-class dms-objectClass:24 = {
+	name = dmsPOCOrganizationalRole 
+	subclass-of
+		organizationalRole		# mhs-user, dmsSMTPUser, msp-user-sdns, msp-user-mosaic
+	must-contain
+		dmsPreferredDelivery,
+		dmsOwningCountry
+	may-contain
+		dmsAlternateRecipient,
+		dmsBackpointers
+};
+

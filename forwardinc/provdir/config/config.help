@@ -1,0 +1,40 @@
+# ---------------------------------------------------------------------------- #
+# CA Directory Configuration Help File                                         #
+# ---------------------------------------------------------------------------- #
+
+# Each of the configuration "component" directories has a "directoryName.help"
+# text file that contains information and examples for configuring that 
+# component. The .help files are in the format of actual "template" commands,
+# with some explanatory comments preceded by a "#".
+
+# The 7 component configuration directories are:
+# 	/access      /knowledge  /limits   /logging
+#	/replication /schema     /settings
+
+# The directory /ssld is used by the SSL daemon and contains root CA and DSA
+# personality certificates. See chapter 8 of the DXserver Administrator's Guide
+# for details on configuring SSL.
+
+# These directories configure all dxservers that run on that host.
+# (Each DSA or dxserver process is called a "dxserver".)
+
+# A dxserver is started by the command   "dxserver start serverName" 
+# (or "dxserver start all").  At startup, it expects to find an initialization 
+# file in ./servers called "serverName.dxi".
+
+# At startup, ./servers/serverName.dxi will source config files from the 7 
+# component configuration directories.
+
+# Typically, there will be one file per component directory that is sourced. It
+# will be of type .dxg if it groups a number of individual .dxc files, or .dxc
+# if it contains only "set" commands.
+
+# The distribution comes with an example set of working configuration files.
+# In most cases, the file is called default.dxc, since it can serve as the 
+# default configuration for that component. It is recommended that if changes
+# are required to these files, then these file be copied to a different name and
+# sourced, as future upgrades will undo any changes made to these files.
+
+# You can find detailed documentation on configuration in the DXserver 
+# Administrator's Guide.
+

@@ -1,0 +1,14 @@
+# CA Directory DXserver/config/limits
+
+# size limits
+set max-users = 0;
+set credits = 1024;
+set max-local-ops = 100;
+set max-op-size = 0;
+set multi-write-queue = 20000;
+
+# time limits
+set max-bind-time = none;
+set bind-idle-time = 0;
+set max-op-time = 0;
+

@@ -1,3 +1,0 @@
-
-# BLS notification schema
-source "etaops_notify.dxc";

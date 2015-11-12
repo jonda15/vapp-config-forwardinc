@@ -1,0 +1,49 @@
+#
+# NOTE: This schema file should not be released and appears here only to assist 
+#       QA of this feature.
+#
+#
+# Computer Associates
+#
+# config/schema/acp133.dxc
+# 
+# Allied Communications Publication (ACP) 133 defined attributes and
+# object classes.
+#
+# These definitions were derived from draft-dally-acp133-and-ldap-01.txt
+# published September 2000 (expired March 2001)
+#
+# oid-prefix ::= iso/itu-t(2).country(16).usa(840)
+#            ::= usCompany(1).usGovernment(101)
+#            ::= usDepartmentOfDefense(2).x500DirectoryInformation(2)
+#
+schema set oid-prefix apc133-attr   = (2.16.840.1.101.2.2.1);
+schema set oid-prefix apc133-syntax = (2.16.840.1.101.2.2.2);
+schema set oid-prefix apc133-oc     = (2.16.840.1.101.2.2.3);
+schema set oid-prefix apc133-nb     = (2.16.840.1.101.2.2.4);
+
+#
+# Syntax (alias) definitions
+#
+schema set syntax-alias acp133-syntax:4 = {
+    name = Classification
+    alias-for = enumerated
+};
+
+schema set syntax-alias acp133-syntax:11 = {
+    name = Remarks
+    alias-for = printableStringList
+};
+
+#
+# Attribute Definitions.
+#
+
+#
+# Object Class Definitions.
+#
+
+#
+# Name Bindings.
+#
+

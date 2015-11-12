@@ -1,0 +1,2202 @@
+schema set oid-prefix etrust-admin-SAP-attr = (1.3.6.1.4.1.791.2.3.5.3.5120.1);
+schema set oid-prefix etrust-admin-SAP-oc = (1.3.6.1.4.1.791.2.3.5.3.5120.2);
+schema set oid-prefix etrust-admin-SAP-nb = (1.3.6.1.4.1.791.2.3.5.3.5120.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-SAP-attr:1 = {
+    name = eTSAPDirectoryName
+    ldap-names = eTSAPDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:2 = {
+    name = eTSAPApplicationServer
+    ldap-names = eTSAPApplicationServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:3 = {
+    name = eTSAPSystemNumber
+    ldap-names = eTSAPSystemNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:4 = {
+    name = eTSAPSystemId
+    ldap-names = eTSAPSystemId
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:95 = {
+    name = eTSAPUseLogonId
+    ldap-names = eTSAPUseLogonId
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:96 = {
+    name = eTSAPLogonId
+    ldap-names = eTSAPLogonId
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:146 = {
+    name = eTSAPURL
+    ldap-names = eTSAPURL
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:145 = {
+    name = eTSAPCnxProperties
+    ldap-names = eTSAPCnxProperties
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:5 = {
+    name = eTSAPClientNumber
+    ldap-names = eTSAPClientNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:6 = {
+    name = eTSAPAuthenticationLogon
+    ldap-names = eTSAPAuthenticationLogon
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:80 = {
+    name = eTSAPPassword
+    ldap-names = eTSAPPassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:81 = {
+    name = eTSAPModPwd
+    ldap-names = eTSAPModPwd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:124 = {
+    name = eTSAPForceUpdate
+    ldap-names = eTSAPForceUpdate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:7 = {
+    name = eTSAPApplRelease
+    ldap-names = eTSAPApplRelease
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:8 = {
+    name = eTSAPLicenseNum
+    ldap-names = eTSAPLicenseNum
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:9 = {
+    name = eTSAPLanguage
+    ldap-names = eTSAPLanguage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:10 = {
+    name = eTSAPLanguageText
+    ldap-names = eTSAPLanguageText
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:11 = {
+    name = eTSAPSNCName
+    ldap-names = eTSAPSNCName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:106 = {
+    name = eTSAPCieNameList
+    ldap-names = eTSAPCieNameList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:112 = {
+    name = eTSAPDialogUserOnly
+    ldap-names = eTSAPDialogUserOnly
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:118 = {
+    name = eTSAPContExplOnError
+    ldap-names = eTSAPContExplOnError
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:126 = {
+    name = eTSAPAcctPwdExpired
+    ldap-names = eTSAPAcctPwdExpired
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:128 = {
+    name = eTSAPAcctPwdChkUsr40
+    ldap-names = eTSAPAcctPwdChkUsr40
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:119 = {
+    name = eTSAPNodeCUAStatus
+    ldap-names = eTSAPNodeCUAStatus
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:120 = {
+    name = eTSAPNodeCUAMastersystem
+    ldap-names = eTSAPNodeCUAMastersystem
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:12 = {
+    name = eTSAPAccountContainerName
+    ldap-names = eTSAPAccountContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:13 = {
+    name = eTSAPAccountName
+    ldap-names = eTSAPAccountName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:14 = {
+    name = eTSAPAcctLocked
+    ldap-names = eTSAPAcctLocked
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:156 = {
+    name = eTSAPPasswordDeactivated
+    ldap-names = eTSAPPasswordDeactivated
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:15 = {
+    name = eTSAPTitle
+    ldap-names = eTSAPTitle
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:16 = {
+    name = eTSAPLastName
+    ldap-names = eTSAPLastName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:17 = {
+    name = eTSAPFirstName
+    ldap-names = eTSAPFirstName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:18 = {
+    name = eTSAPAcademicTitle
+    ldap-names = eTSAPAcademicTitle
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:19 = {
+    name = eTSAPNamePrefix
+    ldap-names = eTSAPNamePrefix
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:77 = {
+    name = eTSAPFormOfAddr
+    ldap-names = eTSAPFormOfAddr
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:20 = {
+    name = eTSAPFunction
+    ldap-names = eTSAPFunction
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:21 = {
+    name = eTSAPDepartement
+    ldap-names = eTSAPDepartement
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:22 = {
+    name = eTSAPRoomNumber
+    ldap-names = eTSAPRoomNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:23 = {
+    name = eTSAPFloor
+    ldap-names = eTSAPFloor
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:24 = {
+    name = eTSAPBuilding
+    ldap-names = eTSAPBuilding
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:131 = {
+    name = eTSAPBirthName
+    ldap-names = eTSAPBirthName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:132 = {
+    name = eTSAPInitials
+    ldap-names = eTSAPInitials
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:133 = {
+    name = eTSAPTitleAcad2
+    ldap-names = eTSAPTitleAcad2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:134 = {
+    name = eTSAPPrefix2
+    ldap-names = eTSAPPrefix2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:135 = {
+    name = eTSAPTitleSppl
+    ldap-names = eTSAPTitleSppl
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:136 = {
+    name = eTSAPSecondName
+    ldap-names = eTSAPSecondName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:137 = {
+    name = eTSAPMiddlename
+    ldap-names = eTSAPMiddlename
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:138 = {
+    name = eTSAPNickname
+    ldap-names = eTSAPNickname
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:139 = {
+    name = eTSAPInhouseML
+    ldap-names = eTSAPInhouseML
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:140 = {
+    name = eTSAPInitsSIG
+    ldap-names = eTSAPInitsSIG
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:25 = {
+    name = eTSAPUserLanguage
+    ldap-names = eTSAPUserLanguage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:26 = {
+    name = eTSAPUserLanguageText
+    ldap-names = eTSAPUserLanguageText
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:27 = {
+    name = eTSAPUserPhone
+    ldap-names = eTSAPUserPhone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:28 = {
+    name = eTSAPUserPhoneExt
+    ldap-names = eTSAPUserPhoneExt
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:29 = {
+    name = eTSAPUserFax
+    ldap-names = eTSAPUserFax
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:30 = {
+    name = eTSAPUserFaxExt
+    ldap-names = eTSAPUserFaxExt
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:123 = {
+    name = eTSAPSMTPADD
+    ldap-names = eTSAPSMTPADD
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:127 = {
+    name = eTSAPSMTPADDCOR
+    ldap-names = eTSAPSMTPADDCOR
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:109 = {
+    name = eTSAPUsercompanyKey
+    ldap-names = eTSAPUsercompanyKey
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:31 = {
+    name = eTSAPUsercompanyName
+    ldap-names = eTSAPUsercompanyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:32 = {
+    name = eTSAPUsercompanyStreet
+    ldap-names = eTSAPUsercompanyStreet
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:33 = {
+    name = eTSAPUsercompanyPostal
+    ldap-names = eTSAPUsercompanyPostal
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:34 = {
+    name = eTSAPUsercompanyCity
+    ldap-names = eTSAPUsercompanyCity
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:35 = {
+    name = eTSAPUsercompanyPhone
+    ldap-names = eTSAPUsercompanyPhone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:36 = {
+    name = eTSAPUsercompanyPhoneExt
+    ldap-names = eTSAPUsercompanyPhoneExt
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:37 = {
+    name = eTSAPUsercompanyFax
+    ldap-names = eTSAPUsercompanyFax
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:38 = {
+    name = eTSAPUsercompanyFaxExt
+    ldap-names = eTSAPUsercompanyFaxExt
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:39 = {
+    name = eTSAPUserGroup
+    ldap-names = eTSAPUserGroup
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:40 = {
+    name = eTSAPUserGroupValidFrom
+    ldap-names = eTSAPUserGroupValidFrom
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:41 = {
+    name = eTSAPUserGroupValidTo
+    ldap-names = eTSAPUserGroupValidTo
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:42 = {
+    name = eTSAPAccountingNumber
+    ldap-names = eTSAPAccountingNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:43 = {
+    name = eTSAPCostCenter
+    ldap-names = eTSAPCostCenter
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:44 = {
+    name = eTSAPUserType
+    ldap-names = eTSAPUserType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:45 = {
+    name = eTSAPStartMenu
+    ldap-names = eTSAPStartMenu
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:46 = {
+    name = eTSAPLongonLanguage
+    ldap-names = eTSAPLongonLanguage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:47 = {
+    name = eTSAPOutputDevice
+    ldap-names = eTSAPOutputDevice
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:48 = {
+    name = eTSAPPrintImmediately
+    ldap-names = eTSAPPrintImmediately
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:49 = {
+    name = eTSAPDeleteAfterPrinting
+    ldap-names = eTSAPDeleteAfterPrinting
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:50 = {
+    name = eTSAPPersonnalTimeZone
+    ldap-names = eTSAPPersonnalTimeZone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:51 = {
+    name = eTSAPTestStatus
+    ldap-names = eTSAPTestStatus
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:52 = {
+    name = eTSAPDecimalNotation
+    ldap-names = eTSAPDecimalNotation
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:53 = {
+    name = eTSAPDateFormat
+    ldap-names = eTSAPDateFormat
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:147 = {
+    name = eTSAPUserAlias
+    ldap-names = eTSAPUserAlias
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:144 = {
+    name = eTSAPSNCIsUsed
+    ldap-names = eTSAPSNCIsUsed
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:54 = {
+    name = eTSAPAcctRole
+    ldap-names = eTSAPAcctRole
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:125 = {
+    name = eTSAPAcctRoleGen
+    ldap-names = eTSAPAcctRoleGen
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:111 = {
+    name = eTSAPUserParam
+    ldap-names = eTSAPUserParam
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:55 = {
+    name = eTSAPAuthorizationProfiles
+    ldap-names = eTSAPAuthorizationProfiles
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:122 = {
+    name = eTSAPAuthorizationProfGen
+    ldap-names = eTSAPAuthorizationProfGen
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:121 = {
+    name = eTSAPDaysBefExp
+    ldap-names = eTSAPDaysBefExp
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:129 = {
+    name = eTSAPUserLicense
+    ldap-names = eTSAPUserLicense
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:130 = {
+    name = eTSAPUserLicenseTxt
+    ldap-names = eTSAPUserLicenseTxt
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:142 = {
+    name = eTSAPSystems
+    ldap-names = eTSAPSystems
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:143 = {
+    name = eTSAPUsrGrp
+    ldap-names = eTSAPUsrGrp
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:58 = {
+    name = eTSAPProfileContainerName
+    ldap-names = eTSAPProfileContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:59 = {
+    name = eTSAPProfileName
+    ldap-names = eTSAPProfileName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:60 = {
+    name = eTSAPTitle2
+    ldap-names = eTSAPTitle2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:61 = {
+    name = eTSAPChangeBy
+    ldap-names = eTSAPChangeBy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:62 = {
+    name = eTSAPChangeDate
+    ldap-names = eTSAPChangeDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:63 = {
+    name = eTSAPChangeTime
+    ldap-names = eTSAPChangeTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:64 = {
+    name = eTSAPProfileStatus
+    ldap-names = eTSAPProfileStatus
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:65 = {
+    name = eTSAPProfileSave
+    ldap-names = eTSAPProfileSave
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:66 = {
+    name = eTSAPProfileProfile
+    ldap-names = eTSAPProfileProfile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:150 = {
+    name = eTSAPAuthorizations
+    ldap-names = eTSAPAuthorizations
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:67 = {
+    name = eTSAPRoleContainerName
+    ldap-names = eTSAPRoleContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:68 = {
+    name = eTSAPRoleName
+    ldap-names = eTSAPRoleName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:73 = {
+    name = eTSAPRoleDescLine
+    ldap-names = eTSAPRoleDescLine
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:74 = {
+    name = eTSAPCreateBy
+    ldap-names = eTSAPCreateBy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:75 = {
+    name = eTSAPCreateDat
+    ldap-names = eTSAPCreateDat
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:76 = {
+    name = eTSAPChangeDat
+    ldap-names = eTSAPChangeDat
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:70 = {
+    name = eTSAPTxInherit
+    ldap-names = eTSAPTxInherit
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:71 = {
+    name = eTSAPGrpActMenu
+    ldap-names = eTSAPGrpActMenu
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:72 = {
+    name = eTSAPRoleAccount
+    ldap-names = eTSAPRoleAccount
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:78 = {
+    name = eTSAPCollectiveFlag
+    ldap-names = eTSAPCollectiveFlag
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:79 = {
+    name = eTSAPAgrAgrs
+    ldap-names = eTSAPAgrAgrs
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:56 = {
+    name = eTSAPPolicyContainerName
+    ldap-names = eTSAPPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:57 = {
+    name = eTSAPPolicyName
+    ldap-names = eTSAPPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:82 = {
+    name = eTSAPHVListManagerName
+    ldap-names = eTSAPHVListManagerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:83 = {
+    name = eTSAPHVObjType
+    ldap-names = eTSAPHVObjType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:84 = {
+    name = eTSAPHVObjName
+    ldap-names = eTSAPHVObjName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:85 = {
+    name = eTSAPHVMethod
+    ldap-names = eTSAPHVMethod
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:86 = {
+    name = eTSAPHVParameter
+    ldap-names = eTSAPHVParameter
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:87 = {
+    name = eTSAPHVField
+    ldap-names = eTSAPHVField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:88 = {
+    name = eTSAPHVMaxRow
+    ldap-names = eTSAPHVMaxRow
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:89 = {
+    name = eTSAPHVDescOnly
+    ldap-names = eTSAPHVDescOnly
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:90 = {
+    name = eTSAPHVSelection
+    ldap-names = eTSAPHVSelection
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:91 = {
+    name = eTSAPHVShlp
+    ldap-names = eTSAPHVShlp
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:92 = {
+    name = eTSAPHVDescription
+    ldap-names = eTSAPHVDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:93 = {
+    name = eTSAPHVValue4Field
+    ldap-names = eTSAPHVValue4Field
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:94 = {
+    name = eTSAPHVHV
+    ldap-names = eTSAPHVHV
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:97 = {
+    name = eTSAPLogonName
+    ldap-names = eTSAPLogonName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:98 = {
+    name = eTSAPsaplogonId
+    ldap-names = eTSAPsaplogonId
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:99 = {
+    name = eTSAPCompanyName
+    ldap-names = eTSAPCompanyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:107 = {
+    name = eTSAPCieKeyName
+    ldap-names = eTSAPCieKeyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:100 = {
+    name = eTSAPCietitle
+    ldap-names = eTSAPCietitle
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:101 = {
+    name = eTSAPCieNameText
+    ldap-names = eTSAPCieNameText
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:110 = {
+    name = eTSAPCieName2Text
+    ldap-names = eTSAPCieName2Text
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:102 = {
+    name = eTSAPCieCity
+    ldap-names = eTSAPCieCity
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:103 = {
+    name = eTSAPCiePostCode
+    ldap-names = eTSAPCiePostCode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:104 = {
+    name = eTSAPCieStreet
+    ldap-names = eTSAPCieStreet
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:105 = {
+    name = eTSAPCieHouseNum
+    ldap-names = eTSAPCieHouseNum
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:148 = {
+    name = eTSAPAuthorizationContainerName
+    ldap-names = eTSAPAuthorizationContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:151 = {
+    name = eTSAPTransactionContainerName
+    ldap-names = eTSAPTransactionContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:149 = {
+    name = eTSAPAuthorizationName
+    ldap-names = eTSAPAuthorizationName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:155 = {
+    name = eTSAPAuthorizationObjectFieldValues
+    ldap-names = eTSAPAuthorizationObjectFieldValues
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:154 = {
+    name = eTSAPTransactions
+    ldap-names = eTSAPTransactions
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:152 = {
+    name = eTSAPTransactionName
+    ldap-names = eTSAPTransactionName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SAP-attr:153 = {
+    name = eTSAPTransactionDescription
+    ldap-names = eTSAPTransactionDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-SAP-oc:1 = {
+    name = eTSAPDirectory
+    subclass-of Top
+    must-contain
+        eTSAPDirectoryName,
+        objectclass
+    may-contain
+        eTAgentNamespaceClass,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTSAPApplicationServer,
+        eTSAPSystemNumber,
+        eTSAPSystemId,
+        eTSAPUseLogonId,
+        eTSAPLogonId,
+        eTSAPURL,
+        eTSAPCnxProperties,
+        eTSAPClientNumber,
+        eTSAPAuthenticationLogon,
+        eTSAPPassword,
+        eTSAPModPwd,
+        eTSAPForceUpdate,
+        eTSAPApplRelease,
+        eTSAPLicenseNum,
+        eTSAPLanguage,
+        eTSAPLanguageText,
+        eTSAPSNCName,
+        eTSAPCieNameList,
+        eTSAPDialogUserOnly,
+        eTSAPContExplOnError,
+        eTSAPAcctPwdExpired,
+        eTSAPAcctPwdChkUsr40,
+        eTSAPNodeCUAStatus,
+        eTSAPNodeCUAMastersystem
+};
+
+schema set object-class etrust-admin-SAP-oc:2 = {
+    name = eTSAPNamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL,
+        eTValidateCredentials,
+        eTMetaData,
+        eTOpBindingsMetaData
+};
+
+schema set object-class etrust-admin-SAP-oc:3 = {
+    name = eTSAPAccountContainer
+    subclass-of Top
+    must-contain
+        eTSAPAccountContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SAP-oc:4 = {
+    name = eTSAPAccount
+    subclass-of Top
+    must-contain
+        eTSAPAccountName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTLocked,
+        eTLastLoginDTS,
+        eTSAPAcctLocked,
+        eTSAPPasswordDeactivated,
+        eTSAPTitle,
+        eTSAPLastName,
+        eTSAPFirstName,
+        eTSAPAcademicTitle,
+        eTSAPNamePrefix,
+        eTSAPFormOfAddr,
+        eTSAPFunction,
+        eTSAPDepartement,
+        eTSAPRoomNumber,
+        eTSAPFloor,
+        eTSAPBuilding,
+        eTSAPBirthName,
+        eTSAPInitials,
+        eTSAPTitleAcad2,
+        eTSAPPrefix2,
+        eTSAPTitleSppl,
+        eTSAPSecondName,
+        eTSAPMiddlename,
+        eTSAPNickname,
+        eTSAPInhouseML,
+        eTSAPInitsSIG,
+        eTSAPUserLanguage,
+        eTSAPUserLanguageText,
+        eTSAPUserPhone,
+        eTSAPUserPhoneExt,
+        eTSAPUserFax,
+        eTSAPUserFaxExt,
+        eTSAPSMTPADD,
+        eTSAPSMTPADDCOR,
+        eTSAPUsercompanyKey,
+        eTSAPUsercompanyName,
+        eTSAPUsercompanyStreet,
+        eTSAPUsercompanyPostal,
+        eTSAPUsercompanyCity,
+        eTSAPUsercompanyPhone,
+        eTSAPUsercompanyPhoneExt,
+        eTSAPUsercompanyFax,
+        eTSAPUsercompanyFaxExt,
+        eTSAPUserGroup,
+        eTSAPUserGroupValidFrom,
+        eTSAPUserGroupValidTo,
+        eTSAPAccountingNumber,
+        eTSAPCostCenter,
+        eTSAPUserType,
+        eTSAPStartMenu,
+        eTSAPLongonLanguage,
+        eTSAPOutputDevice,
+        eTSAPPrintImmediately,
+        eTSAPDeleteAfterPrinting,
+        eTSAPPersonnalTimeZone,
+        eTSAPTestStatus,
+        eTSAPDecimalNotation,
+        eTSAPDateFormat,
+        eTSAPUserAlias,
+        eTSAPSNCIsUsed,
+        eTSAPSNCName,
+        eTSAPAcctRole,
+        eTSAPAcctRoleGen,
+        eTSAPUserParam,
+        eTSAPAuthorizationProfiles,
+        eTSAPAuthorizationProfGen,
+        eTSAPDaysBefExp,
+        eTSAPUserLicense,
+        eTSAPUserLicenseTxt,
+        eTSAPSystems,
+        eTSAPUsrGrp
+};
+
+schema set object-class etrust-admin-SAP-oc:7 = {
+    name = eTSAPProfileContainer
+    subclass-of Top
+    must-contain
+        eTSAPProfileContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SAP-oc:8 = {
+    name = eTSAPProfile
+    subclass-of Top
+    must-contain
+        eTSAPProfileName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSAPTitle,
+        eTSAPTitle2,
+        eTSAPChangeBy,
+        eTSAPChangeDate,
+        eTSAPChangeTime,
+        eTSAPProfileStatus,
+        eTSAPProfileSave,
+        eTSAPProfileProfile,
+        eTSAPAuthorizations
+};
+
+schema set object-class etrust-admin-SAP-oc:9 = {
+    name = eTSAPRoleContainer
+    subclass-of Top
+    must-contain
+        eTSAPRoleContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SAP-oc:10 = {
+    name = eTSAPRole
+    subclass-of Top
+    must-contain
+        eTSAPRoleName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSAPTitle,
+        eTSAPRoleDescLine,
+        eTSAPCreateBy,
+        eTSAPCreateDat,
+        eTSAPChangeBy,
+        eTSAPChangeDat,
+        eTSAPTxInherit,
+        eTSAPGrpActMenu,
+        eTSAPRoleAccount,
+        eTSAPCollectiveFlag,
+        eTSAPAgrAgrs,
+        eTSAPAuthorizations
+};
+
+schema set object-class etrust-admin-SAP-oc:5 = {
+    name = eTSAPPolicyContainer
+    subclass-of Top
+    must-contain
+        eTSAPPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SAP-oc:6 = {
+    name = eTSAPPolicy
+    subclass-of Top
+    must-contain
+        eTSAPPolicyName,
+        objectclass
+    may-contain
+        eTSAPAccountName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTLocked,
+        eTSAPAcctLocked,
+        eTSAPPasswordDeactivated,
+        eTSAPTitle,
+        eTSAPLastName,
+        eTSAPFirstName,
+        eTSAPAcademicTitle,
+        eTSAPNamePrefix,
+        eTSAPFormOfAddr,
+        eTSAPFunction,
+        eTSAPDepartement,
+        eTSAPRoomNumber,
+        eTSAPFloor,
+        eTSAPBuilding,
+        eTSAPBirthName,
+        eTSAPInitials,
+        eTSAPTitleAcad2,
+        eTSAPPrefix2,
+        eTSAPTitleSppl,
+        eTSAPSecondName,
+        eTSAPMiddlename,
+        eTSAPNickname,
+        eTSAPInhouseML,
+        eTSAPInitsSIG,
+        eTSAPUserLanguage,
+        eTSAPUserLanguageText,
+        eTSAPUserPhone,
+        eTSAPUserPhoneExt,
+        eTSAPUserFax,
+        eTSAPUserFaxExt,
+        eTSAPSMTPADD,
+        eTSAPSMTPADDCOR,
+        eTSAPUsercompanyKey,
+        eTSAPUsercompanyName,
+        eTSAPUsercompanyStreet,
+        eTSAPUsercompanyPostal,
+        eTSAPUsercompanyCity,
+        eTSAPUsercompanyPhone,
+        eTSAPUsercompanyPhoneExt,
+        eTSAPUsercompanyFax,
+        eTSAPUsercompanyFaxExt,
+        eTSAPUserGroup,
+        eTSAPUserGroupValidFrom,
+        eTSAPUserGroupValidTo,
+        eTSAPAccountingNumber,
+        eTSAPCostCenter,
+        eTSAPUserType,
+        eTSAPStartMenu,
+        eTSAPLongonLanguage,
+        eTSAPOutputDevice,
+        eTSAPPrintImmediately,
+        eTSAPDeleteAfterPrinting,
+        eTSAPPersonnalTimeZone,
+        eTSAPTestStatus,
+        eTSAPDecimalNotation,
+        eTSAPDateFormat,
+        eTSAPUserAlias,
+        eTSAPSNCIsUsed,
+        eTSAPSNCName,
+        eTSAPAcctRole,
+        eTSAPAcctRoleGen,
+        eTSAPUserParam,
+        eTSAPAuthorizationProfiles,
+        eTSAPAuthorizationProfGen,
+        eTSAPDaysBefExp,
+        eTSAPUsrGrp,
+        eTSAPUserLicense,
+        eTSAPUserLicenseTxt
+};
+
+schema set object-class etrust-admin-SAP-oc:11 = {
+    name = eTSAPHVListManager
+    subclass-of Top
+    must-contain
+        eTSAPHVListManagerName,
+        objectclass
+    may-contain
+        eTSAPHVObjType,
+        eTSAPHVObjName,
+        eTSAPHVMethod,
+        eTSAPHVParameter,
+        eTSAPHVField,
+        eTSAPHVMaxRow,
+        eTSAPHVDescOnly,
+        eTSAPHVSelection,
+        eTSAPHVShlp,
+        eTSAPHVDescription,
+        eTSAPHVValue4Field,
+        eTSAPHVHV
+};
+
+schema set object-class etrust-admin-SAP-oc:12 = {
+    name = eTSAPLogon
+    subclass-of Top
+    must-contain
+        eTSAPLogonName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSAPsaplogonId
+};
+
+schema set object-class etrust-admin-SAP-oc:13 = {
+    name = eTSAPCompany
+    subclass-of Top
+    must-contain
+        eTSAPCompanyName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSAPCieKeyName,
+        eTSAPCietitle,
+        eTSAPCieNameText,
+        eTSAPCieName2Text,
+        eTSAPCieCity,
+        eTSAPCiePostCode,
+        eTSAPCieStreet,
+        eTSAPCieHouseNum
+};
+
+schema set object-class etrust-admin-SAP-oc:15 = {
+    name = eTSAPAuthorizationContainer
+    subclass-of Top
+    must-contain
+        eTSAPAuthorizationContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SAP-oc:17 = {
+    name = eTSAPTransactionContainer
+    subclass-of Top
+    must-contain
+        eTSAPTransactionContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SAP-oc:16 = {
+    name = eTSAPAuthorization
+    subclass-of Top
+    must-contain
+        eTSAPAuthorizationName,
+        objectclass
+    may-contain
+        eTSAPAuthorizationObjectFieldValues,
+        eTSAPTransactions,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SAP-oc:18 = {
+    name = eTSAPTransaction
+    subclass-of Top
+    must-contain
+        eTSAPTransactionName,
+        objectclass
+    may-contain
+        eTSAPTransactionDescription,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-SAP-nb:1 = {
+    name = eTSAPDirectory-eTNamespace
+    eTSAPDirectory allowable-parent eTNamespace
+    named-by eTSAPDirectoryName
+};
+
+schema set name-binding etrust-admin-SAP-nb:2 = {
+    name = eTSAPPolicyContainer-eTNamespace
+    eTSAPPolicyContainer allowable-parent eTNamespace
+    named-by eTSAPPolicyContainerName
+};
+
+schema set name-binding etrust-admin-SAP-nb:12 = {
+    name = eTSAPLogon-eTNamespace
+    eTSAPLogon allowable-parent eTNamespace
+    named-by eTSAPLogonName
+};
+
+schema set name-binding etrust-admin-SAP-nb:3 = {
+    name = eTSAPNamespace-eTSAPDirectory
+    eTSAPNamespace allowable-parent eTSAPDirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-SAP-nb:4 = {
+    name = eTSAPAccountContainer-eTSAPDirectory
+    eTSAPAccountContainer allowable-parent eTSAPDirectory
+    named-by eTSAPAccountContainerName
+};
+
+schema set name-binding etrust-admin-SAP-nb:5 = {
+    name = eTSAPProfileContainer-eTSAPDirectory
+    eTSAPProfileContainer allowable-parent eTSAPDirectory
+    named-by eTSAPProfileContainerName
+};
+
+schema set name-binding etrust-admin-SAP-nb:6 = {
+    name = eTSAPRoleContainer-eTSAPDirectory
+    eTSAPRoleContainer allowable-parent eTSAPDirectory
+    named-by eTSAPRoleContainerName
+};
+
+schema set name-binding etrust-admin-SAP-nb:11 = {
+    name = eTSAPHVListManager-eTSAPDirectory
+    eTSAPHVListManager allowable-parent eTSAPDirectory
+    named-by eTSAPHVListManagerName
+};
+
+schema set name-binding etrust-admin-SAP-nb:13 = {
+    name = eTSAPCompany-eTSAPDirectory
+    eTSAPCompany allowable-parent eTSAPDirectory
+    named-by eTSAPCompanyName
+};
+
+schema set name-binding etrust-admin-SAP-nb:15 = {
+    name = eTSAPAuthorizationContainer-eTSAPDirectory
+    eTSAPAuthorizationContainer allowable-parent eTSAPDirectory
+    named-by eTSAPAuthorizationContainerName
+};
+
+schema set name-binding etrust-admin-SAP-nb:16 = {
+    name = eTSAPTransactionContainer-eTSAPDirectory
+    eTSAPTransactionContainer allowable-parent eTSAPDirectory
+    named-by eTSAPTransactionContainerName
+};
+
+schema set name-binding etrust-admin-SAP-nb:7 = {
+    name = eTSAPAccount-eTSAPAccountContainer
+    eTSAPAccount allowable-parent eTSAPAccountContainer
+    named-by eTSAPAccountName
+};
+
+schema set name-binding etrust-admin-SAP-nb:9 = {
+    name = eTSAPProfile-eTSAPProfileContainer
+    eTSAPProfile allowable-parent eTSAPProfileContainer
+    named-by eTSAPProfileName
+};
+
+schema set name-binding etrust-admin-SAP-nb:10 = {
+    name = eTSAPRole-eTSAPRoleContainer
+    eTSAPRole allowable-parent eTSAPRoleContainer
+    named-by eTSAPRoleName
+};
+
+schema set name-binding etrust-admin-SAP-nb:8 = {
+    name = eTSAPPolicy-eTSAPPolicyContainer
+    eTSAPPolicy allowable-parent eTSAPPolicyContainer
+    named-by eTSAPPolicyName
+};
+
+schema set name-binding etrust-admin-SAP-nb:17 = {
+    name = eTSAPAuthorization-eTSAPAuthorizationContainer
+    eTSAPAuthorization allowable-parent eTSAPAuthorizationContainer
+    named-by eTSAPAuthorizationName
+};
+
+schema set name-binding etrust-admin-SAP-nb:18 = {
+    name = eTSAPTransaction-eTSAPTransactionContainer
+    eTSAPTransaction allowable-parent eTSAPTransactionContainer
+    named-by eTSAPTransactionName
+};
+

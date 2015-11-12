@@ -1,0 +1,54 @@
+#
+# Computer Associates
+#
+# config/schema/odmedia.dxc ($Revision: 4.4 $)
+#
+# Multi-media Definitions.
+#
+schema set oid-prefix odmedia-attr = (1.3.6.1.4.1.3327.2.4);
+schema set oid-prefix odmedia-oc = (1.3.6.1.4.1.3327.2.6);
+schema set oid-prefix odmedia-nb = (1.3.6.1.4.1.3327.2.14);
+
+#
+# Attribute Definitions.
+#
+schema set attribute odmedia-attr:1 = {
+	name = odDocumentDOC
+	syntax = octetString
+	};
+
+schema set attribute odmedia-attr:2 = {
+	name = odSpreadSheetXLS
+	syntax = octetString
+	};
+
+schema set attribute odmedia-attr:3 = {
+	name = odSoundWAV
+	syntax = octetString
+	};
+
+schema set attribute odmedia-attr:4 = {
+	name = odMovieAVI
+	syntax = octetString
+	};
+
+schema set attribute odmedia-attr:5 = {
+	name = odMusicMID
+	syntax = octetString
+	};
+
+
+#
+# Object Class Definitions.
+#
+schema set object-class odmedia-oc:0 = {
+	name = odMultimedia
+	subclass-of top
+	may-contain
+		odDocumentDOC,
+		odSpreadsheetXLS,
+		odSoundWAV,
+		odMovieAVI,
+		odMusicMID
+	};
+

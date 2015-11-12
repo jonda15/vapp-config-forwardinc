@@ -1,0 +1,79 @@
+mkdir -p $DXHOME/data
+echo "Creation of Data Folder done..."
+IMPD_DATA_FLDR_CO=$DXHOME/data/${HOSTNAME}-impd-co
+IMPD_DATA_FLDR_INC=$DXHOME/data/${HOSTNAME}-impd-inc
+IMPD_DATA_FLDR_MAIN=$DXHOME/data/${HOSTNAME}-impd-main
+IMPD_DATA_FLDR_NOTIFY=$DXHOME/data/${HOSTNAME}-impd-notify
+IMPD_AUTO_FILE_CO=$DXHOME/config/${HOSTNAME}-impd-co
+IMPD_AUTO_FILE_INC=$DXHOME/config/${HOSTNAME}-impd-inc
+IMPD_AUTO_FILE_MAIN=$DXHOME/config/${HOSTNAME}-impd-main
+IMPD_AUTO_FILE_NOTIFY=$DXHOME/config/autostart/${HOSTNAME}-impd-notify
+IMPS_AUTO_FILE_ROUTER=$DXHOME/config/autostart/${HOSTNAME}-router
+
+# Create DB for Provisioning Directory CO
+if [ ! -d $IMPD_DATA_FLDR_CO ]; then
+  echo "[INFO] Creating IM Provisioning Directory CO data file..."
+  mkdir -p $IMPD_DATA_FLDR_CO
+  $DXHOME/bin/dxnewdb ${HOSTNAME}-impd-co
+fi
+
+# Install for Provisioning Directory CO
+if [ ! -e IMPD_AUTO_FILE_CO ]; then
+  echo "[INFO] Installing IM Provisioning Directory CO DSA..."
+  $DXHOME/bin/dxserver install ${HOSTNAME}-impd-co
+fi
+
+# Create DB for Provisioning Directory INC
+if [ ! -d $IMPD_DATA_FLDR_INC ]; then
+  echo "[INFO] Creating IM Provisioning Directory INC DSA..."
+  mkdir -p $IMPD_DATA_FLDR_INC
+  $DXHOME/bin/dxnewdb ${HOSTNAME}-impd-inc
+fi
+
+# Install for Provisioning Directory INC
+if [ ! -e IMPD_AUTO_FILE_INC ]; then
+  echo "[INFO] Installing IM Provisioning Directory INC DSA..."
+  $DXHOME/bin/dxserver install ${HOSTNAME}-impd-inc
+fi
+
+# Create DB for Provisioning Directory MAIN
+if [ ! -d $IMPD_DATA_FLDR_MAIN ]; then
+  echo "[INFO] Creating IM Provisioning Directory MAIN DSA..."
+  mkdir -p $IMPD_DATA_FLDR_MAIN
+  $DXHOME/bin/dxnewdb ${HOSTNAME}-impd-main
+fi
+
+# Install for Provisioning Directory MAIN
+if [ ! -e IMPD_AUTO_FILE_MAIN ]; then
+  echo "[INFO] Installing IM Provisioning Directory MAIN DSA..."
+  $DXHOME/bin/dxserver install ${HOSTNAME}-impd-main
+fi
+
+# Create DB for Provisioning Directory NOTIFY
+if [ ! -d $IMPD_DATA_FLDR_NOTIFY ]; then
+  echo "[INFO] Creating IM Provisioning Directory NOTIFY DSA..."
+  mkdir -p $IMPD_DATA_FLDR_NOTIFY
+  $DXHOME/bin/dxnewdb ${HOSTNAME}-impd-notify
+fi
+
+# Install for Provisioning Directory NOTIFY
+if [ ! -e IMPD_AUTO_FILE_NOTIFY ]; then
+  echo "[INFO] Installing IM Provisioning Directory NOTIFY DSA..."
+  $DXHOME/bin/dxserver install ${HOSTNAME}-impd-notify
+fi
+
+# Router
+
+if [ ! -e IMPS_AUTO_FILE_ROUTER ]; then
+  echo "[INFO] Installing Router DSA..."
+  $DXHOME/bin/dxserver install ${HOSTNAME}-router
+fi
+
+echo "[INFO] Importing data for Provisioning Directory MAIN dsa..."
+echo "$DXHOME/bin/dxloaddb ${HOSTNAME}-impd-main $DXHOME/impd_main_pop.ldif"
+$DXHOME/bin/dxloaddb ${HOSTNAME}-impd-main $DXHOME/impd_main_pop.ldif
+
+echo "[INFO] Importing data for Provisioning Directory NOTIFY dsa..."
+echo "$DXHOME/bin/dxloaddb ${HOSTNAME}-impd-notify /solution/$CONFIG/ldif/impd_notify_pop.ldif"
+$DXHOME/bin/dxloaddb ${HOSTNAME}-impd-notify /solution/$CONFIG/ldif/impd_notify_pop.ldif
+

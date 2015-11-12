@@ -1,0 +1,10 @@
+#
+# Computer Associates
+#
+# config/schema/samples.dxg ($Revision: 4.3 $)
+#
+# Samples schema definitions.
+#
+source "default.dxg";
+source "unspsc.dxc";
+source "odmedia.dxc";

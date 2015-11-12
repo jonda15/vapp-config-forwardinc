@@ -1,0 +1,807 @@
+schema set oid-prefix etrust-admin-DBZ-attr = (1.3.6.1.4.1.791.2.3.5.3.5450.1);
+schema set oid-prefix etrust-admin-DBZ-oc = (1.3.6.1.4.1.791.2.3.5.3.5450.2);
+schema set oid-prefix etrust-admin-DBZ-nb = (1.3.6.1.4.1.791.2.3.5.3.5450.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-DBZ-attr:1 = {
+    name = eTDBZDirectoryName
+    ldap-names = eTDBZDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:2 = {
+    name = eTDBZVersion
+    ldap-names = eTDBZVersion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:3 = {
+    name = eTDBZDirectoryAlias
+    ldap-names = eTDBZDirectoryAlias
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:4 = {
+    name = eTDBZDirectoryServer
+    ldap-names = eTDBZDirectoryServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:5 = {
+    name = eTDBZDirectoryInstance
+    ldap-names = eTDBZDirectoryInstance
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:6 = {
+    name = eTDBZDirectoryProtocol
+    ldap-names = eTDBZDirectoryProtocol
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:7 = {
+    name = eTDBZDirectoryHost
+    ldap-names = eTDBZDirectoryHost
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:8 = {
+    name = eTDBZDirectoryService
+    ldap-names = eTDBZDirectoryService
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:9 = {
+    name = eTDBZDirectoryDatabase
+    ldap-names = eTDBZDirectoryDatabase
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:10 = {
+    name = eTDBZDirectoryUID
+    ldap-names = eTDBZDirectoryUID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:11 = {
+    name = eTDBZDirectoryPWD
+    ldap-names = eTDBZDirectoryPWD
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:24 = {
+    name = eTDBZSchemas
+    ldap-names = eTDBZSchemas
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:53 = {
+    name = eTDBZTableCreators
+    ldap-names = eTDBZTableCreators
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:54 = {
+    name = eTDBZViewCreators
+    ldap-names = eTDBZViewCreators
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:25 = {
+    name = eTDBZTables
+    ldap-names = eTDBZTables
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:26 = {
+    name = eTDBZIndexes
+    ldap-names = eTDBZIndexes
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:27 = {
+    name = eTDBZViews
+    ldap-names = eTDBZViews
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:28 = {
+    name = eTDBZTablespaces
+    ldap-names = eTDBZTablespaces
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:32 = {
+    name = eTDBZDCSFlag
+    ldap-names = eTDBZDCSFlag
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:34 = {
+    name = eTDBZDatabases
+    ldap-names = eTDBZDatabases
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:35 = {
+    name = eTDBZSubsystems
+    ldap-names = eTDBZSubsystems
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:36 = {
+    name = eTDBZBufferpools
+    ldap-names = eTDBZBufferpools
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:37 = {
+    name = eTDBZStoragegroups
+    ldap-names = eTDBZStoragegroups
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:38 = {
+    name = eTDBZCollections
+    ldap-names = eTDBZCollections
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:39 = {
+    name = eTDBZPackages
+    ldap-names = eTDBZPackages
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:40 = {
+    name = eTDBZPlans
+    ldap-names = eTDBZPlans
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:41 = {
+    name = eTDBZProcedures
+    ldap-names = eTDBZProcedures
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:42 = {
+    name = eTDBZUserDefinedFunctions
+    ldap-names = eTDBZUserDefinedFunctions
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:43 = {
+    name = eTDBZUserDefinedTypes
+    ldap-names = eTDBZUserDefinedTypes
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:12 = {
+    name = eTDBZAccountContainerName
+    ldap-names = eTDBZAccountContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:13 = {
+    name = eTDBZAccountName
+    ldap-names = eTDBZAccountName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:18 = {
+    name = eTDBZDatabaseAuthorities
+    ldap-names = eTDBZDatabaseAuthorities
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:19 = {
+    name = eTDBZSchemaPrivileges
+    ldap-names = eTDBZSchemaPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:20 = {
+    name = eTDBZTablePrivileges
+    ldap-names = eTDBZTablePrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:21 = {
+    name = eTDBZIndexPrivileges
+    ldap-names = eTDBZIndexPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:22 = {
+    name = eTDBZViewPrivileges
+    ldap-names = eTDBZViewPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:23 = {
+    name = eTDBZTablespacePrivileges
+    ldap-names = eTDBZTablespacePrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:33 = {
+    name = eTDBZDCSDatabaseAuthorities
+    ldap-names = eTDBZDCSDatabaseAuthorities
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:44 = {
+    name = eTDBZDCSSubsystemAuthorities
+    ldap-names = eTDBZDCSSubsystemAuthorities
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:45 = {
+    name = eTDBZDCSBufferpoolPrivileges
+    ldap-names = eTDBZDCSBufferpoolPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:46 = {
+    name = eTDBZDCSStoragegroupPrivileges
+    ldap-names = eTDBZDCSStoragegroupPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:47 = {
+    name = eTDBZDCSCollectionPrivileges
+    ldap-names = eTDBZDCSCollectionPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:48 = {
+    name = eTDBZDCSPackagePrivileges
+    ldap-names = eTDBZDCSPackagePrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:49 = {
+    name = eTDBZDCSPlanPrivileges
+    ldap-names = eTDBZDCSPlanPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:50 = {
+    name = eTDBZDCSProdecurePrivileges
+    ldap-names = eTDBZDCSProdecurePrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:51 = {
+    name = eTDBZDCSUserDefinedFunctionPrivileges
+    ldap-names = eTDBZDCSUserDefinedFunctionPrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:52 = {
+    name = eTDBZDCSUserDefinedTypePrivileges
+    ldap-names = eTDBZDCSUserDefinedTypePrivileges
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:16 = {
+    name = eTDBZPolicyContainerName
+    ldap-names = eTDBZPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-DBZ-attr:17 = {
+    name = eTDBZPolicyName
+    ldap-names = eTDBZPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-DBZ-oc:1 = {
+    name = eTDBZDirectory
+    subclass-of Top
+    must-contain
+        eTDBZDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTAgentNamespaceClass,
+        eTDBZVersion,
+        eTDBZDirectoryAlias,
+        eTDBZDirectoryServer,
+        eTDBZDirectoryInstance,
+        eTDBZDirectoryProtocol,
+        eTDBZDirectoryHost,
+        eTDBZDirectoryService,
+        eTDBZDirectoryDatabase,
+        eTDBZDirectoryUID,
+        eTDBZDirectoryPWD,
+        eTDBZSchemas,
+        eTDBZTableCreators,
+        eTDBZViewCreators,
+        eTDBZTables,
+        eTDBZIndexes,
+        eTDBZViews,
+        eTDBZTablespaces,
+        eTDBZDCSFlag,
+        eTDBZDatabases,
+        eTDBZSubsystems,
+        eTDBZBufferpools,
+        eTDBZStoragegroups,
+        eTDBZCollections,
+        eTDBZPackages,
+        eTDBZPlans,
+        eTDBZProcedures,
+        eTDBZUserDefinedFunctions,
+        eTDBZUserDefinedTypes
+};
+
+schema set object-class etrust-admin-DBZ-oc:2 = {
+    name = eTDBZNamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL,
+        eTValidateCredentials
+};
+
+schema set object-class etrust-admin-DBZ-oc:3 = {
+    name = eTDBZAccountContainer
+    subclass-of Top
+    must-contain
+        eTDBZAccountContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-DBZ-oc:4 = {
+    name = eTDBZAccount
+    subclass-of Top
+    must-contain
+        eTDBZAccountName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTDBZDatabaseAuthorities,
+        eTDBZSchemaPrivileges,
+        eTDBZTablePrivileges,
+        eTDBZIndexPrivileges,
+        eTDBZViewPrivileges,
+        eTDBZTablespacePrivileges,
+        eTDBZDCSDatabaseAuthorities,
+        eTDBZDCSSubsystemAuthorities,
+        eTDBZDCSBufferpoolPrivileges,
+        eTDBZDCSStoragegroupPrivileges,
+        eTDBZDCSCollectionPrivileges,
+        eTDBZDCSPackagePrivileges,
+        eTDBZDCSPlanPrivileges,
+        eTDBZDCSProdecurePrivileges,
+        eTDBZDCSUserDefinedFunctionPrivileges,
+        eTDBZDCSUserDefinedTypePrivileges
+};
+
+schema set object-class etrust-admin-DBZ-oc:7 = {
+    name = eTDBZPolicyContainer
+    subclass-of Top
+    must-contain
+        eTDBZPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-DBZ-oc:8 = {
+    name = eTDBZPolicy
+    subclass-of Top
+    must-contain
+        eTDBZPolicyName,
+        objectclass
+    may-contain
+        eTDBZAccountName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTDBZDatabaseAuthorities,
+        eTDBZSchemaPrivileges,
+        eTDBZTablePrivileges,
+        eTDBZIndexPrivileges,
+        eTDBZViewPrivileges,
+        eTDBZTablespacePrivileges,
+        eTDBZDCSDatabaseAuthorities,
+        eTDBZDCSSubsystemAuthorities,
+        eTDBZDCSBufferpoolPrivileges,
+        eTDBZDCSStoragegroupPrivileges,
+        eTDBZDCSCollectionPrivileges,
+        eTDBZDCSPackagePrivileges,
+        eTDBZDCSPlanPrivileges,
+        eTDBZDCSProdecurePrivileges,
+        eTDBZDCSUserDefinedFunctionPrivileges,
+        eTDBZDCSUserDefinedTypePrivileges,
+        eTDBZDCSFlag
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-DBZ-nb:1 = {
+    name = eTDBZDirectory-eTNamespace
+    eTDBZDirectory allowable-parent eTNamespace
+    named-by eTDBZDirectoryName
+};
+
+schema set name-binding etrust-admin-DBZ-nb:2 = {
+    name = eTDBZPolicyContainer-eTNamespace
+    eTDBZPolicyContainer allowable-parent eTNamespace
+    named-by eTDBZPolicyContainerName
+};
+
+schema set name-binding etrust-admin-DBZ-nb:3 = {
+    name = eTDBZNamespace-eTDBZDirectory
+    eTDBZNamespace allowable-parent eTDBZDirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-DBZ-nb:4 = {
+    name = eTDBZAccountContainer-eTDBZDirectory
+    eTDBZAccountContainer allowable-parent eTDBZDirectory
+    named-by eTDBZAccountContainerName
+};
+
+schema set name-binding etrust-admin-DBZ-nb:6 = {
+    name = eTDBZAccount-eTDBZAccountContainer
+    eTDBZAccount allowable-parent eTDBZAccountContainer
+    named-by eTDBZAccountName
+};
+
+schema set name-binding etrust-admin-DBZ-nb:8 = {
+    name = eTDBZPolicy-eTDBZPolicyContainer
+    eTDBZPolicy allowable-parent eTDBZPolicyContainer
+    named-by eTDBZPolicyName
+};
+

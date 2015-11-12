@@ -1,0 +1,186 @@
+# ---------------------------------------------------------------------------- #
+# CA Directory LOGGING Configuration Help File                                 #
+# ---------------------------------------------------------------------------- #
+# 
+# The logging configuration directory configures the log files, and the 
+# tracing information (i.e. diagnostics) that is entered into the trace-log.
+# 
+# There are twelve independent types of log files:
+# 
+# (1) alarm-log    (e.g. democorp_alarm.log)
+# 
+#   This file is always open, and all alarms are always written to it.
+#   Procedures should be in place to monitor this file to ensure that
+#   dxserver is running as expected.
+#   Its default name is serverName_alarm.dxc.
+# 
+# (2) summary-log  (e.g. democorp_summary_20000210.log)
+# 
+#   If "set", this log is automatically rolled over each day. 
+#   It always has the date appended.
+#
+#   It is defined as shown below; the dxserver name is substituted for $s:
+# 
+    set summary-log = "logs/$s_summary.log";
+# 
+# 
+# (3) trace-log   (e.g. democorp_trace.log)
+# 
+#   When "set", diagnostic information is entered into this log. The type and
+#   detail of diagnostic information is controlled by trace level.
+#
+#   The trace options are:
+#   none, error, warn, diag, x500, dsa, summary, stats, query, time, and stack.
+# 
+    set trace = warn;
+    set trace-log = "logs/$s_trace.log";
+# 
+# 
+# (4) stats-log   (e.g. democorp_stats_20000210.log)
+# 
+#   This log is similar to the summary log file.
+#   For every minute that the DSA is active, an entry is added to the statistics
+#   log file. The entry is a one-line summary of operational statistics.
+#
+#   If "set", this log is automatically rolled over each day. 
+#   It always has the date appended.
+#
+#   To generate the statistics log file, execute the following command:
+# 
+    set stats-log = "logs/$s_stats.log";
+# 
+# 
+# (5) query-log   (e.g. democorp_query_20000210.log)
+# 
+#   This log is similar to the summary log file.
+#   This log contains a one line summary of the DSA operations, followed by
+#   a one line summary of the result.
+#
+#   If "set", this log is automatically rolled over each day. 
+#   It always has the date appended.
+#
+#   The query-log-advanced setting can be used to include additional
+#   information in the configured query-log.
+#
+#   Any combination of the following options may be set:
+#       ldap-controls - log the LDAP control attached to requests/responses
+#       ssl           - indicate if request received over SSL
+#       source        - log where the request originated
+#       ldap-error    - for errors, log the LDAP error name and number
+#       update-timer  - log the duration of adds, dels, mods or renames
+#       show-eis      - log the attribute name/s requested rather than a count
+#       all           - enable all of the above
+#       none          - disable advanced query logging
+#
+#   set query-log-advanced = ldap-controls, ssl, source, ldap-error, update-timer, show-eis;
+#
+#   To generate the query log file, execute the following command:
+# 
+    set query-log = "logs/$s_query.log";
+#
+# 
+# (6) connect-log  (e.g. democorp_connect_20000210.log)
+# 
+#   If "set", this log is automatically rolled over each day. 
+#   It always has the date appended.
+#
+#   It is defined as shown below; the dxserver name is substituted for $s:
+# 
+    set connect-log = "logs/$s_connect.log";
+#
+# 
+# (7) update-log  (e.g. democorp_update_20000210.log)
+# 
+#   If "set", this log is automatically rolled over each day. 
+#   It always has the date appended.
+#
+#   It is defined as shown below; the dxserver name is substituted for $s:
+# 
+    set update-log = "logs/$s_update.log";
+#
+# 
+# (8) cert-log  (e.g. democorp_cert_20000210.log)
+# 
+#   If "set", this log is automatically rolled over each day. 
+#   It always has the date appended.
+#
+#   It is defined as shown below; the dxserver name is substituted for $s:
+# 
+    set cert-log = "logs/$s_cert.log";
+#
+# 
+# (9) alert-log  (e.g. democorp_alert_20000210.log)
+# 
+#   If "set", this log is automatically rolled over each day. 
+#   It always has the date appended.
+#
+#   It is defined as shown below; the dxserver name is substituted for $s:
+# 
+    set alert-log = "logs/$s_alert.log";
+# 
+#
+# (10) warn-log  (e.g. democorp_warn_20000210.log)
+# 
+#   If "set", this log is automatically rolled over each day. 
+#   It always has the date appended.
+#   This log contains a one line message indicating an error or warning
+#   condition. These should be monitored to ensure smooth operation of
+#   dxserver.
+#
+#   It is defined as shown below; the dxserver name is substituted for $s:
+# 
+    set warn-log = "logs/$s_warn.log";
+# 
+# 
+# (11) diag-log  (e.g. democorp_diag_20000210.log)
+# 
+#   If "set", this log is automatically rolled over each day. 
+#   It always has the date appended.
+#   This log contains a one line message indicating why a local operation was
+#   refused. This may be useful for streamlining directory applications.
+#
+#   It is defined as shown below; the dxserver name is substituted for $s:
+# 
+    set diag-log = "logs/$s_diag.log";
+# 
+# 
+# (12) time-log  (e.g. democorp_diag_20000210.log)
+# 
+#   If "set", this log is automatically rolled over each day. 
+#   It always has the date appended.
+#   This log contains a one line message showing the duration and request
+#   information of successful operations. These messages can be refined using
+#   configured thresholds:
+#   set time-log-search-threshold = N; - compares and searches
+#   set time-log-update-threshold = N; - adds, modifies, deletes and modify DNs
+#
+#   It is defined as shown below; the dxserver name is substituted for $s:
+# 
+    set time-log = "logs/$s_time.log";
+#
+#
+# (13) snmp-log
+# 
+#   If "set", SNMP traps will be sent to the configured hostname/port
+#
+#   It is defined as shown below
+# 
+#    set snmp-log = udp {hostname} port {port};
+#
+#   Traps enabled by default are:
+#   trap 0 - general alarm
+#   trap 6 - error alarm
+#   trap 7 - warning alarm
+#   trap 8 - informational alarm
+#
+#   A number of traps can be enabled when certain events are detected
+#
+#    set trap-on-update = true;         # trap 1 - details of update request
+#    set auth-trap = true;              # trap 2 - details of bind request
+#    set op-error-trap = true;          # trap 3 - info on update error
+#    set password-suspended-trap = true;# trap 4 - password suspension detected
+#    set multi-write-error-trap = true; # trap 5 - reason MW update failed
+#
+#
+# Details are in the CA Directory Administrator Guide, Chapter 3.
+

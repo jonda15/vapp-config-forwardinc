@@ -1,0 +1,18 @@
+# CA Directory - DXserver/config/limits
+#
+#
+# This is the default file for limits for servers created
+# by DXmanager r12 SP2. As these settings become available in future
+# releases, this file will no longer be sourced.
+#
+
+# size limits
+set max-users = 255;
+set credits = 5;
+set max-op-size = 200;
+
+# time limits
+set max-bind-time = none;
+set bind-idle-time = 3600;
+
+

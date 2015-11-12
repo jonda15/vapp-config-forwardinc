@@ -1,0 +1,116 @@
+# 
+# Computer Associates
+#
+# config/schema/jndi.dxc ($Revision: 4.4 $)
+#
+# Schema for Representing Java(tm) Objects in an LDAP Directory (RFC2713.txt).
+# Requires definitions in x500.dxc
+#
+schema set oid-prefix jndiAttributeType = ( 1.3.6.1.4.1.42.2.27.4.1);
+schema set oid-prefix jndiObjectClass = ( 1.3.6.1.4.1.42.2.27.4.2);
+
+#
+# Attribute Definitions.
+#
+schema set attribute jndiAttributeType:6 = {
+        name   = javaClassName 
+        syntax = caseExactString
+        single-valued
+        description = "Fully qualified name of distinguished Java class or interface"
+};
+
+schema set attribute jndiAttributeType:7 = {
+        name   =  javaCodebase
+        syntax = caseExactIA5String
+        description = "URL(s) specifying the location of class definition"
+};
+
+schema set attribute jndiAttributeType:13 = {
+        name   =  javaClassNames
+        syntax = caseExactString
+        description = "Fully qualified Java class or interface name"
+};
+
+schema set attribute jndiAttributeType:8 = {
+        name   = javaSerializedData 
+        syntax = octetString
+        single-valued
+        description = "Serialized form of a Java object"
+};
+
+schema set attribute jndiAttributeType:10 = {
+        name   =  javaFactory
+        syntax = caseExactString
+        single-valued
+        description = "Fully qualified Java class name of a JNDI object factory"
+};
+
+schema set attribute jndiAttributeType:11 = {
+        name   =  javaReferenceAddress
+        syntax = caseExactString
+        description = "Addresses associated with a JNDI Reference"
+};
+
+schema set attribute jndiAttributeType:12 = {
+        name   =  javaDoc
+        syntax = CaseExactIA5String
+        description = "The Java documentation for the class"
+};
+
+
+#
+# Object Class Definitions.
+#
+schema set object-class jndiObjectClass:1 = {
+        name   = javaContainer
+        subclass-of top
+        kind = structural
+        must-contain
+            commonName
+        description = "Container for a Java object"            
+};
+
+schema set object-class jndiObjectClass:4 = {
+        name   = javaObject
+        subclass-of top
+        kind = abstract
+        must-contain
+            javaClassName
+        may-contain
+            javaClassNames,
+            javaCodebase,
+            javaDoc,
+            description
+        description = "Java object representation"            
+};
+
+schema set object-class jndiObjectClass:5 = {
+        name   = javaSerializedObject
+        subclass-of javaObject
+        kind = auxiliary
+        must-contain
+            javaSerializedData
+        description = "Java serialized object"            
+};
+
+schema set object-class jndiObjectClass:8 = {
+        name   = javaMarshalledObject
+        subclass-of javaObject
+        kind = auxiliary
+        must-contain
+            javaSerializedData
+        description = "Java marshalled object"            
+};
+
+schema set object-class jndiObjectClass:7 = {
+        name   = javaNamingReference
+        subclass-of javaObject
+        kind = auxiliary
+        may-contain
+            javaReferenceAddress,
+            javaFactory
+        description = "JNDI reference"            
+};
+
+
+

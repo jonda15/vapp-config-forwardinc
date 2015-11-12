@@ -1,0 +1,1291 @@
+schema set oid-prefix etrust-admin-ORA-attr = (1.3.6.1.4.1.791.2.3.5.3.5090.1);
+schema set oid-prefix etrust-admin-ORA-oc = (1.3.6.1.4.1.791.2.3.5.3.5090.2);
+schema set oid-prefix etrust-admin-ORA-nb = (1.3.6.1.4.1.791.2.3.5.3.5090.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-ORA-attr:1 = {
+    name = eTORADirectoryName
+    ldap-names = eTORADirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:2 = {
+    name = eTORATableSpace
+    ldap-names = eTORATableSpace
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:3 = {
+    name = eTORAVersion
+    ldap-names = eTORAVersion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:4 = {
+    name = eTORADirectoryServer
+    ldap-names = eTORADirectoryServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:5 = {
+    name = eTORADirectoryDSN
+    ldap-names = eTORADirectoryDSN
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:6 = {
+    name = eTORADirectoryUID
+    ldap-names = eTORADirectoryUID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:7 = {
+    name = eTORADirectoryPWD
+    ldap-names = eTORADirectoryPWD
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:8 = {
+    name = eTORADirectoryConP
+    ldap-names = eTORADirectoryConP
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:9 = {
+    name = eTORADescription
+    ldap-names = eTORADescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:10 = {
+    name = eTORAAccountContainerName
+    ldap-names = eTORAAccountContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:11 = {
+    name = eTORAAccountName
+    ldap-names = eTORAAccountName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:12 = {
+    name = eTORAUsrPolName
+    ldap-names = eTORAUsrPolName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:13 = {
+    name = eTORAUserProfile
+    ldap-names = eTORAUserProfile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:14 = {
+    name = eTORAUserAuth
+    ldap-names = eTORAUserAuth
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:15 = {
+    name = eTORAPasswdExpired
+    ldap-names = eTORAPasswdExpired
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:16 = {
+    name = eTORADefaultTablespace
+    ldap-names = eTORADefaultTablespace
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:17 = {
+    name = eTORATemporaryTablespace
+    ldap-names = eTORATemporaryTablespace
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:18 = {
+    name = eTORAUserLocked
+    ldap-names = eTORAUserLocked
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:19 = {
+    name = eTORAUserPwdConf
+    ldap-names = eTORAUserPwdConf
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:20 = {
+    name = eTORAExternalName
+    ldap-names = eTORAExternalName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:21 = {
+    name = eTORAQuota
+    ldap-names = eTORAQuota
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:22 = {
+    name = eTORAUserRole
+    ldap-names = eTORAUserRole
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:23 = {
+    name = eTORADefaultRole
+    ldap-names = eTORADefaultRole
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:62 = {
+    name = eTORAAdminRole
+    ldap-names = eTORAAdminRole
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:56 = {
+    name = eTORAUserProc
+    ldap-names = eTORAUserProc
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:57 = {
+    name = eTORAAdminProc
+    ldap-names = eTORAAdminProc
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:60 = {
+    name = eTORAUserPkg
+    ldap-names = eTORAUserPkg
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:61 = {
+    name = eTORAAdminPkg
+    ldap-names = eTORAAdminPkg
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:63 = {
+    name = eTORACompoundRoles
+    ldap-names = eTORACompoundRoles
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:64 = {
+    name = eTORAOpenSessions
+    ldap-names = eTORAOpenSessions
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:24 = {
+    name = eTORARoleContainerName
+    ldap-names = eTORARoleContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:25 = {
+    name = eTORARoleName
+    ldap-names = eTORARoleName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:26 = {
+    name = eTORARoleAuth
+    ldap-names = eTORARoleAuth
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:27 = {
+    name = eTORARolePassword
+    ldap-names = eTORARolePassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:28 = {
+    name = eTORARolePwdConf
+    ldap-names = eTORARolePwdConf
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:29 = {
+    name = eTORAGrantedRole
+    ldap-names = eTORAGrantedRole
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:54 = {
+    name = eTORAProcContainerName
+    ldap-names = eTORAProcContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:55 = {
+    name = eTORAProcName
+    ldap-names = eTORAProcName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:58 = {
+    name = eTORAPkgContainerName
+    ldap-names = eTORAPkgContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:59 = {
+    name = eTORAPkgName
+    ldap-names = eTORAPkgName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:30 = {
+    name = eTORAProfileContainerName
+    ldap-names = eTORAProfileContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:31 = {
+    name = eTORAProfileName
+    ldap-names = eTORAProfileName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:32 = {
+    name = eTORACpuPerSession
+    ldap-names = eTORACpuPerSession
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:33 = {
+    name = eTORACpuPerCall
+    ldap-names = eTORACpuPerCall
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:34 = {
+    name = eTORAConnectTime
+    ldap-names = eTORAConnectTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:35 = {
+    name = eTORAIdleTime
+    ldap-names = eTORAIdleTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:36 = {
+    name = eTORASessionsPerUser
+    ldap-names = eTORASessionsPerUser
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:37 = {
+    name = eTORALogicalReadsPerSession
+    ldap-names = eTORALogicalReadsPerSession
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:38 = {
+    name = eTORALogicalReadsPerCall
+    ldap-names = eTORALogicalReadsPerCall
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:39 = {
+    name = eTORAPrivateSGA
+    ldap-names = eTORAPrivateSGA
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:40 = {
+    name = eTORACompositeLimit
+    ldap-names = eTORACompositeLimit
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:41 = {
+    name = eTORAPasswordLifeTime
+    ldap-names = eTORAPasswordLifeTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:42 = {
+    name = eTORAPasswordGraceTime
+    ldap-names = eTORAPasswordGraceTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:43 = {
+    name = eTORAPasswordReuseMax
+    ldap-names = eTORAPasswordReuseMax
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:44 = {
+    name = eTORAPasswordReuseTime
+    ldap-names = eTORAPasswordReuseTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:45 = {
+    name = eTORAPasswordVerifyFunction
+    ldap-names = eTORAPasswordVerifyFunction
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:46 = {
+    name = eTORAFailedLoginAttempts
+    ldap-names = eTORAFailedLoginAttempts
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:47 = {
+    name = eTORAPasswordLockTime
+    ldap-names = eTORAPasswordLockTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:48 = {
+    name = eTOraProfXPWX
+    ldap-names = eTOraProfXPWX
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:49 = {
+    name = eTOraProfXKPH
+    ldap-names = eTOraProfXKPH
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:50 = {
+    name = eTOraProfXEPC
+    ldap-names = eTOraProfXEPC
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:51 = {
+    name = eTOraProfXLAOFL
+    ldap-names = eTOraProfXLAOFL
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:52 = {
+    name = eTORAPolicyContainerName
+    ldap-names = eTORAPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ORA-attr:53 = {
+    name = eTORAPolicyName
+    ldap-names = eTORAPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-ORA-oc:1 = {
+    name = eTORADirectory
+    subclass-of Top
+    must-contain
+        eTORADirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTAgentNamespaceClass,
+        eTORATableSpace,
+        eTORAVersion,
+        eTORADirectoryServer,
+        eTORADirectoryDSN,
+        eTORADirectoryUID,
+        eTORADirectoryPWD,
+        eTORADirectoryConP,
+        eTORADescription
+};
+
+schema set object-class etrust-admin-ORA-oc:2 = {
+    name = eTORANamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL,
+        eTValidateCredentials,
+        eTMetaData,
+        eTOpBindingsMetaData
+};
+
+schema set object-class etrust-admin-ORA-oc:3 = {
+    name = eTORAAccountContainer
+    subclass-of Top
+    must-contain
+        eTORAAccountContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ORA-oc:4 = {
+    name = eTORAAccount
+    subclass-of Top
+    must-contain
+        eTORAAccountName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTORAUsrPolName,
+        eTORAUserProfile,
+        eTORAUserAuth,
+        eTORAPasswdExpired,
+        eTORADefaultTablespace,
+        eTORATemporaryTablespace,
+        eTORAUserLocked,
+        eTORAUserPwdConf,
+        eTORAExternalName,
+        eTORAQuota,
+        eTORAUserRole,
+        eTORADefaultRole,
+        eTORAAdminRole,
+        eTORAUserProc,
+        eTORAAdminProc,
+        eTORAUserPkg,
+        eTORAAdminPkg,
+        eTORACompoundRoles,
+        eTORAOpenSessions,
+        eTLocked
+};
+
+schema set object-class etrust-admin-ORA-oc:5 = {
+    name = eTORARoleContainer
+    subclass-of Top
+    must-contain
+        eTORARoleContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ORA-oc:6 = {
+    name = eTORARole
+    subclass-of Top
+    must-contain
+        eTORARoleName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTORARoleAuth,
+        eTORARolePassword,
+        eTORARolePwdConf,
+        eTORAGrantedRole
+};
+
+schema set object-class etrust-admin-ORA-oc:11 = {
+    name = eTORAProcContainer
+    subclass-of Top
+    must-contain
+        eTORAProcContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ORA-oc:12 = {
+    name = eTORAProc
+    subclass-of Top
+    must-contain
+        eTORAProcName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ORA-oc:13 = {
+    name = eTORAPkgContainer
+    subclass-of Top
+    must-contain
+        eTORAPkgContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ORA-oc:14 = {
+    name = eTORAPkg
+    subclass-of Top
+    must-contain
+        eTORAPkgName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ORA-oc:7 = {
+    name = eTORAProfileContainer
+    subclass-of Top
+    must-contain
+        eTORAProfileContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ORA-oc:8 = {
+    name = eTORAProfile
+    subclass-of Top
+    must-contain
+        eTORAProfileName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTORACpuPerSession,
+        eTORACpuPerCall,
+        eTORAConnectTime,
+        eTORAIdleTime,
+        eTORASessionsPerUser,
+        eTORALogicalReadsPerSession,
+        eTORALogicalReadsPerCall,
+        eTORAPrivateSGA,
+        eTORACompositeLimit,
+        eTORAPasswordLifeTime,
+        eTORAPasswordGraceTime,
+        eTORAPasswordReuseMax,
+        eTORAPasswordReuseTime,
+        eTORAPasswordVerifyFunction,
+        eTORAFailedLoginAttempts,
+        eTORAPasswordLockTime,
+        eTOraProfXPWX,
+        eTOraProfXKPH,
+        eTOraProfXEPC,
+        eTOraProfXLAOFL
+};
+
+schema set object-class etrust-admin-ORA-oc:9 = {
+    name = eTORAPolicyContainer
+    subclass-of Top
+    must-contain
+        eTORAPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ORA-oc:10 = {
+    name = eTORAPolicy
+    subclass-of Top
+    must-contain
+        eTORAPolicyName,
+        objectclass
+    may-contain
+        eTORAAccountName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTORAUsrPolName,
+        eTORAUserProfile,
+        eTORAUserAuth,
+        eTORAPasswdExpired,
+        eTORADefaultTablespace,
+        eTORATemporaryTablespace,
+        eTORAUserLocked,
+        eTORAUserPwdConf,
+        eTORAExternalName,
+        eTORAQuota,
+        eTORAUserRole,
+        eTORADefaultRole,
+        eTORAAdminRole,
+        eTORAUserProc,
+        eTORAAdminProc,
+        eTORAUserPkg,
+        eTORAAdminPkg,
+        eTORACompoundRoles,
+        eTORAOpenSessions
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-ORA-nb:1 = {
+    name = eTORADirectory-eTNamespace
+    eTORADirectory allowable-parent eTNamespace
+    named-by eTORADirectoryName
+};
+
+schema set name-binding etrust-admin-ORA-nb:2 = {
+    name = eTORAPolicyContainer-eTNamespace
+    eTORAPolicyContainer allowable-parent eTNamespace
+    named-by eTORAPolicyContainerName
+};
+
+schema set name-binding etrust-admin-ORA-nb:3 = {
+    name = eTORANamespace-eTORADirectory
+    eTORANamespace allowable-parent eTORADirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-ORA-nb:4 = {
+    name = eTORAAccountContainer-eTORADirectory
+    eTORAAccountContainer allowable-parent eTORADirectory
+    named-by eTORAAccountContainerName
+};
+
+schema set name-binding etrust-admin-ORA-nb:5 = {
+    name = eTORARoleContainer-eTORADirectory
+    eTORARoleContainer allowable-parent eTORADirectory
+    named-by eTORARoleContainerName
+};
+
+schema set name-binding etrust-admin-ORA-nb:12 = {
+    name = eTORAProcContainer-eTORADirectory
+    eTORAProcContainer allowable-parent eTORADirectory
+    named-by eTORAProcContainerName
+};
+
+schema set name-binding etrust-admin-ORA-nb:14 = {
+    name = eTORAPkgContainer-eTORADirectory
+    eTORAPkgContainer allowable-parent eTORADirectory
+    named-by eTORAPkgContainerName
+};
+
+schema set name-binding etrust-admin-ORA-nb:6 = {
+    name = eTORAProfileContainer-eTORADirectory
+    eTORAProfileContainer allowable-parent eTORADirectory
+    named-by eTORAProfileContainerName
+};
+
+schema set name-binding etrust-admin-ORA-nb:7 = {
+    name = eTORAAccount-eTORAAccountContainer
+    eTORAAccount allowable-parent eTORAAccountContainer
+    named-by eTORAAccountName
+};
+
+schema set name-binding etrust-admin-ORA-nb:8 = {
+    name = eTORARole-eTORARoleContainer
+    eTORARole allowable-parent eTORARoleContainer
+    named-by eTORARoleName
+};
+
+schema set name-binding etrust-admin-ORA-nb:11 = {
+    name = eTORAProc-eTORAProcContainer
+    eTORAProc allowable-parent eTORAProcContainer
+    named-by eTORAProcName
+};
+
+schema set name-binding etrust-admin-ORA-nb:13 = {
+    name = eTORAPkg-eTORAPkgContainer
+    eTORAPkg allowable-parent eTORAPkgContainer
+    named-by eTORAPkgName
+};
+
+schema set name-binding etrust-admin-ORA-nb:9 = {
+    name = eTORAProfile-eTORAProfileContainer
+    eTORAProfile allowable-parent eTORAProfileContainer
+    named-by eTORAProfileName
+};
+
+schema set name-binding etrust-admin-ORA-nb:10 = {
+    name = eTORAPolicy-eTORAPolicyContainer
+    eTORAPolicy allowable-parent eTORAPolicyContainer
+    named-by eTORAPolicyName
+};
+

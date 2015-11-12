@@ -1,0 +1,209 @@
+# 
+# Computer Associates 
+#
+# config/schema/nadf.dxc ($Revision: 4.5 $)
+#
+# NADF defined attributes and object classes
+# These definitions where derived from IETF Schema Release 1, 19-Sep-94.
+#
+# All Attributes and Object Classes are EXPERIMENTAL.
+#
+# oid-prefix ::= joint-iso-ccitt(2).mhs(6).nadf(6.5.2)
+#
+# Requires definitions in x500.dxc
+#
+schema set oid-prefix nadfAttributeType = (2.6.6.5.2.4);
+
+#
+# Attribute Definitions.
+#
+schema set attribute nadfAttributeType:1 = {
+        name   = nadfFipsStateNumericCode
+        syntax = numericString
+};
+
+schema set attribute nadfAttributeType:2 = {
+        name   = nadfFipsStateAlphaCode
+        syntax = printableString
+};
+
+schema set attribute nadfAttributeType:3 = {
+        name   = nadfFipsCountyNumericCode
+        syntax = numericString
+};
+
+schema set attribute nadfAttributeType:4 = {
+        name   = nadfFipsPlaceNumericCode
+	ldap-names = fips55
+        syntax = numericString
+};
+
+schema set attribute nadfAttributeType:5 = {
+        name   = nadfAnsiOrgNumericCode
+        syntax = integer
+};
+
+schema set attribute nadfAttributeType:6 = {
+        name   = nadfAddmdName
+	ldap-names = ad
+        syntax = caseIgnoreString
+};
+
+schema set attribute nadfAttributeType:7 = {
+        name   = nadfSearchGuide
+        syntax = guide
+};
+
+schema set attribute nadfAttributeType:8 = {
+        name   = nadfSupplementaryInformation
+        syntax = caseIgnoreString
+};
+
+schema set attribute nadfAttributeType:9 = {
+        name   = nadfNamingLink
+        syntax = distinguishedName
+};
+
+schema set attribute nadfAttributeType:10 = {
+        name   = nadfReciprocalNamingLink
+	ldap-names = reciprocalNamingLink
+        syntax = distinguishedName
+};
+
+schema set attribute nadfAttributeType:15 = {
+        name   = nadfLogicalDSAReference
+        syntax = caseIgnoreString
+};
+
+schema set attribute nadfAttributeType:16 = {
+        name   = nadfMultiMediaInformation
+        syntax = octetString
+};
+
+schema set attribute nadfAttributeType:17 = {
+        name   = nadfEdiNetworkProvider
+        syntax = caseIgnoreString
+};
+
+schema set attribute nadfAttributeType:18 = {
+        name   = nadfEdiCoordinator
+        syntax = distinguishedName
+};
+
+schema set attribute nadfAttributeType:19 = {
+        name   = nadfEdiHScommerce
+        syntax = numericString
+};
+
+
+#
+# Object Class Definitions.
+#
+schema set oid-prefix nadfObjectClass = (2.6.6.5.2.6);
+
+schema set object-class nadfObjectClass:7 = {
+        name   = nadfObject
+        subclass-of top
+        must-contain
+            cosineLastModifiedTime
+        may-contain
+            nadfMultiMediaInformation,
+            nadfSearchGuide,
+            nadfSupplementaryInformation
+};
+
+schema set object-class nadfObjectClass:1 = {
+        name   = nadfUsStateOrEquivalent
+        subclass-of locality				# , nadfObject
+        must-contain
+            localityName,
+            nadfFipsStateNumericCode,
+            nadfFipsStateAlphaCode,
+            stateOrProvinceName
+};
+
+schema set object-class nadfObjectClass:2 = {
+        name   = nadfUsPlace
+        subclass-of locality				# , nadfObject
+        must-contain
+            localityName,
+            nadfFipsPlaceNumericCode
+};
+
+schema set object-class nadfObjectClass:3 = {
+        name   = nadfUsCountyOrEquivalent
+        subclass-of nadfusPlace
+        must-contain
+            nadfFipsCountyNumericCode
+};
+
+schema set object-class nadfObjectClass:5 = {
+        name   = nadfApplicationEntity
+        subclass-of applicationEntity
+        must-contain
+            supportedApplicationContext
+};
+
+schema set object-class nadfObjectClass:6 = {
+        name   = nadfADDMD
+        subclass-of organization			# , nadfObject
+        must-contain
+            nadfAddmdName
+        may-contain
+            organizationName,
+            organizationalAttributeSet
+};
+
+schema set object-class nadfObjectClass:8 = {
+        name   = nadfPublicObject
+        subclass-of top
+        must-contain
+            nadfNamingLink
+};
+
+schema set object-class nadfObjectClass:9 = {
+        name   = nadfProviderObject
+        subclass-of top
+        must-contain
+            nadfReciprocalNamingLink
+};
+
+schema set object-class nadfObjectClass:11 = {
+        name   = nadfFips55Object
+        subclass-of top
+        must-contain
+            nadfFipsPlaceNumericCode
+        may-contain
+            stateOrProvinceName
+};
+
+schema set object-class nadfObjectClass:19 = {
+        name   = nadfNationalObject
+        subclass-of top
+        must-contain
+            countryName
+};
+
+schema set object-class nadfObjectClass:20 = {
+        name   = nadfAnsiOrgObject
+        subclass-of top
+        must-contain
+            nadfAnsiOrgNumericCode
+};
+
+schema set object-class nadfObjectClass:21 = {
+        name   = nadfCaProvinceOrTerritory
+        subclass-of locality					# , nadfObject
+        must-contain
+            stateOrProvinceName
+};
+
+schema set object-class nadfObjectClass:25 = {
+        name   = nadfEDIuser
+        subclass-of EdiUser
+        may-contain
+            nadfEdiNetworkProvider,
+            nadfEdiCoordinator,
+            nadfEdiHScommerce
+};
+

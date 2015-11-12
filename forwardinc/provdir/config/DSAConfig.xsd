@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:dx="http://www.ca.com/Directory/Configuration"
+           xmlns:dxkn="http://www.ca.com/Directory/Configuration/Knowledge"
+           xmlns:dxassoc="http://www.ca.com/Directory/Configuration/Assoc"
+           xmlns:dxoper="http://www.ca.com/Directory/Configuration/Oper"
+           xmlns:dxstack="http://www.ca.com/Directory/Configuration/Stack"
+           xmlns:dxlog="http://www.ca.com/Directory/Configuration/Logging"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.ca.com/Directory/Configuration"
+           targetNamespace="http://www.ca.com/Directory/Configuration"
+           elementFormDefault="qualified"
+           attributeFormDefault="qualified"
+           version="2.0">
+
+    <xs:import namespace="http://www.ca.com/Directory/Configuration/Knowledge" schemaLocation="knowledge.xsd"/>
+    <xs:import namespace="http://www.ca.com/Directory/Configuration/Assoc" schemaLocation="assoc.xsd"/>
+    <xs:import namespace="http://www.ca.com/Directory/Configuration/Oper" schemaLocation="oper.xsd"/>
+    <xs:import namespace="http://www.ca.com/Directory/Configuration/Stack" schemaLocation="stack.xsd"/>
+    <xs:import namespace="http://www.ca.com/Directory/Configuration/Logging" schemaLocation="logging.xsd"/>
+
+    <xs:simpleType name="IpAddress">
+        <xs:annotation><xs:appinfo>
+            <screenDirections group="Connections" introduced="1" required="true">
+                <areaLevels type="Host" level="basic"/>
+            </screenDirections>
+        </xs:appinfo></xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="1024"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="Database">
+        <xs:annotation><xs:documentation>A database name</xs:documentation></xs:annotation>
+        <xs:restriction base="xs:NCName">
+            <xs:maxLength value="32"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="DSAConfig">
+        <xs:annotation><xs:documentation>Root element for the backbone configuration definition</xs:documentation></xs:annotation>
+        <xs:complexType>
+            <xs:annotation><xs:appinfo><structural/></xs:appinfo></xs:annotation>
+            <xs:sequence>
+                <xs:element name="BackboneDefaults" type="dx:BackboneDefaults">
+                    <xs:annotation><xs:documentation>These are the defaults of the entire backbone. Unless they are overridden within the configuration, these values will be used.</xs:documentation></xs:annotation>
+                </xs:element>
+                <xs:element name="NamespacePartitions">
+                    <xs:annotation><xs:documentation>This subtree describes the namespaces within the backbone that are served by one or more DSAs</xs:documentation></xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Partition" type="dx:Partition" minOccurs="0" maxOccurs="unbounded">
+                                <xs:unique name="ContextPrefixConstraint">
+                                    <xs:annotation><xs:documentation>This constraint ensures that the prefix is unique for all partitions.</xs:documentation></xs:annotation>
+                                    <xs:selector xpath="../dx:Partition"/>
+                                    <xs:field xpath="dxkn:ContextPrefix"/>
+                                </xs:unique>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="NetworkTopology">
+                    <xs:annotation><xs:documentation>The topology describes that network layout (or topology) of the backbone, including the hosts that are available for DSAs</xs:documentation></xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Region" type="dx:Region" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Relationship" type="dx:Relationship" minOccurs="0" maxOccurs="unbounded">
+                    <xs:annotation><xs:documentation>Each instance of a DSA needs a namespace-topology relationship that defines it. Without an explicit relationship a DSA instance will not be created</xs:documentation></xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="xmlSchemaVersion" type="xs:positiveInteger">
+                <xs:annotation><xs:documentation>The version of the schema that the configuration file uses. A server can only start or accept the configuration if it supports the configurations schema version or higher.</xs:documentation></xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="version" type="xs:positiveInteger" use="required">
+                <xs:annotation><xs:documentation>The version of the configuration. This is used to make sure that the configuration of the entire backbone is keeped in sync especially if a host is not available when the configuration is pushed out. Version 0 corresponds to the Directory r12 release, Version 1 corresponds to the Directory r12.1 (DXgrid) release and is incompatible with r12.</xs:documentation></xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+
+        <xs:unique name="RelationshipConstraint">
+            <xs:annotation><xs:documentation>This constraint ensures that there is only one DSA defined in the configuration for a given host, namespace and database combination.</xs:documentation></xs:annotation>
+            <xs:selector xpath="dx:Relationship"/>
+            <xs:field xpath="dx:NamespaceReference"/>
+            <xs:field xpath="dx:HostReference"/>
+        </xs:unique>
+    </xs:element>
+
+    <xs:complexType name="Partition">
+        <xs:annotation><xs:appinfo><structural/></xs:appinfo></xs:annotation>
+        <xs:sequence>
+            <xs:element ref="dxkn:ContextPrefix" minOccurs="0">
+                <xs:unique name="ContextPrefixConstraint">
+                    <xs:annotation><xs:documentation>This constraint ensures that the prefix is unique for all partitions.</xs:documentation></xs:annotation>
+                    <xs:selector xpath="../../dx:Partition"/>
+                    <xs:field xpath="dxkn:ContextPrefix"/>
+                </xs:unique>
+            </xs:element>
+            <xs:element ref="dxkn:ReadOnly" minOccurs="0"/>			
+            <xs:element ref="dxkn:DataStoreSize" minOccurs="0"/>         
+            <xs:element ref="dxassoc:MaxPduSize" minOccurs="0"/>         
+            <xs:element ref="dxassoc:PersistentSearch" minOccurs="0"/>         
+            <xs:element ref="dxassoc:BusyForReferral" minOccurs="0"/>         
+            <xs:element ref="dxoper:DisableTransactionLog" minOccurs="0"/>         
+            <xs:element ref="dxoper:DisableTransactionLogFlush" minOccurs="0"/>			
+            <xs:group ref="dx:NamespaceSecurityGroup"/>         
+            <xs:element ref="dxassoc:UseRoles" minOccurs="0"/>         
+            <xs:element ref="dxassoc:RoleSubtree" minOccurs="0"/>         
+            <xs:group ref="dx:PasswordPolicyGroup"/>         
+            <xs:group ref="dx:Osi"/>         
+            <xs:element ref="dxoper:AliasIntegrity" minOccurs="0"/>         
+            <xs:element ref="dxoper:IgnoreNameBindings" minOccurs="0"/>         
+            <xs:element ref="dxoper:MaxOpTime" minOccurs="0"/>         
+            <xs:element ref="dxoper:MaxOpSize" minOccurs="0"/>         
+            <xs:element ref="dxkn:MultiChaining" minOccurs="0"/>         
+            <xs:element ref="dxoper:OpAttrs" minOccurs="0"/>         
+            <xs:element ref="dxoper:ModifyOnAdd" minOccurs="0"/>         
+            <xs:element ref="dxoper:OcParentStorage" minOccurs="0"/>   
+            <xs:element ref="dxoper:ReturnOcParents" minOccurs="0"/>         
+            <xs:element ref="dxoper:MaxCacheIndexSize" minOccurs="0"/>         
+            <xs:element ref="dxoper:CacheNoScan" minOccurs="0"/>         
+            <xs:element ref="dxoper:CacheSearchBias" minOccurs="0"/>         
+            <xs:element ref="dxoper:UseRdnIndex" minOccurs="0"/>			
+            <xs:group ref="dx:NamespaceConnections"/>			
+            <xs:group ref="dx:NamespaceConsole"/>         
+            <xs:group ref="dx:Replication"/>         
+            <xs:element ref="dxkn:SnmpPort" minOccurs="0"/>         
+            <xs:element ref="dxkn:AutoStart" minOccurs="0"/>         
+            <xs:group ref="dx:MonitoringGroup"/>         
+            <xs:group ref="dxlog:LoggingGroupPartitionSettings"/> 		
+        </xs:sequence>
+
+        
+
+        <xs:attribute name="Name" use="required">
+
+            <xs:annotation><xs:documentation>A simple name for the partition that is used within the relationship model as a reference. So that the id is distinguishable from other IDs in the system it will be prefixed by "NSP-"</xs:documentation><xs:appinfo>
+
+                <namePrefix value="NSP-"/>
+
+                <screenDirections group="" introduced="1" level="basic" editable="whenCreating" required="true" />
+
+            </xs:appinfo></xs:annotation>
+
+            <xs:simpleType>
+
+                <xs:restriction base="xs:ID">
+
+                    <xs:minLength value="1"/>
+
+                    <xs:maxLength value="255"/>
+
+                    <xs:pattern value="NSP\-\c+"/>
+
+                </xs:restriction>
+
+            </xs:simpleType>
+
+        </xs:attribute>
+
+    </xs:complexType>
+
+    
+
+    <xs:complexType name="Host">
+
+        <xs:annotation><xs:appinfo><structural/></xs:appinfo></xs:annotation>
+
+        <xs:sequence>
+
+            <xs:element name="Interface" type="dx:IpAddress" maxOccurs="unbounded">
+
+                <xs:annotation><xs:documentation>TODO: The correct syntax type for a TCP/IP name / address should be defined. This should also be unique globally within the configuration.</xs:documentation><xs:appinfo>
+
+                    <screenDirections group="Connections" introduced="1" required="true">
+
+                        <areaLevels type="Host" level="basic"/>
+
+                    </screenDirections>
+
+                </xs:appinfo></xs:annotation>
+
+            </xs:element>
+
+            <xs:element ref="dxkn:IPPreference" minOccurs="0"/>
+
+            <xs:element ref="dxkn:SsldPort" minOccurs="0"/>
+
+            <xs:element ref="dxstack:SslSettings" minOccurs="0"/>			
+
+            <xs:element name="DXadmind" type="dx:DXadmind" minOccurs="0">				
+
+                <xs:annotation><xs:documentation>This must exist, either in the host definition or the system defaults</xs:documentation></xs:annotation>
+
+            </xs:element>			
+
+            <xs:element ref="dxkn:DataStoreLocation"/>         
+
+            <xs:element ref="dxoper:TransactionFileLocation" minOccurs="0"/>         
+
+            <xs:element ref="dxoper:BackupFileLocation" minOccurs="0"/>         
+
+            <xs:element ref="dxassoc:UserThreads" minOccurs="0"/>         
+
+            <xs:group ref="dxlog:LoggingGroupHostSettings"/>		
+
+        </xs:sequence>		
+
+        <xs:attribute name="Name" use="required">			
+
+            <xs:annotation><xs:appinfo>
+
+                <namePrefix value="THOST-"/>
+
+                <screenDirections group="" introduced="1" level="basic" editable="whenCreating" required="true" />            
+
+            </xs:appinfo></xs:annotation>			
+
+            <xs:simpleType>				
+
+                <xs:restriction base="xs:ID">					
+
+                    <xs:pattern value="THOST\-\c+"/>				
+
+                </xs:restriction>			
+
+            </xs:simpleType>		
+
+        </xs:attribute>	
+
+    </xs:complexType>	
+
+    
+
+    <xs:complexType name="Site">
+
+        <xs:annotation><xs:appinfo><structural/></xs:appinfo></xs:annotation>
+
+        <xs:sequence>
+
+            <xs:element name="Host" type="dx:Host" minOccurs="0" maxOccurs="unbounded"/>		
+
+        </xs:sequence>		
+
+        <xs:attribute name="Name" use="required">			
+
+            <xs:annotation><xs:appinfo>
+
+                <namePrefix value="TSITE-"/>               
+
+                <screenDirections group="" introduced="1" level="basic" editable="whenCreating" required="true" />            
+
+            </xs:appinfo></xs:annotation>			
+
+            <xs:simpleType>				
+
+                <xs:restriction base="xs:ID">					
+
+                    <xs:pattern value="TSITE\-\c+"/>				
+
+                </xs:restriction>			
+
+            </xs:simpleType>		
+
+        </xs:attribute>	   
+
+    </xs:complexType>	
+
+    
+
+    <xs:complexType name="Region">      
+
+        <xs:annotation><xs:appinfo><structural/></xs:appinfo></xs:annotation>		
+
+        <xs:sequence>			
+
+            <xs:element name="Site" type="dx:Site" minOccurs="0" maxOccurs="unbounded"/>		
+
+        </xs:sequence>		
+
+        <xs:attribute name="Name" use="required">			
+
+            <xs:annotation><xs:appinfo>               
+
+                <namePrefix value="TREG-"/>               
+
+                <screenDirections group="" introduced="1" level="basic" editable="whenCreating" required="true" />            
+
+            </xs:appinfo></xs:annotation>			
+
+            <xs:simpleType>				
+
+                <xs:restriction base="xs:ID">					
+
+                    <xs:pattern value="TREG\-\c+"/>				
+
+                </xs:restriction>			
+
+            </xs:simpleType>		
+
+        </xs:attribute>	
+
+    </xs:complexType>	
+
+    
+
+    <xs:complexType name="Relationship">      
+
+        <xs:annotation><xs:appinfo><structural/></xs:appinfo></xs:annotation>		
+
+        <xs:sequence>			
+
+            <xs:element name="NamespaceReference">            
+
+                <xs:annotation><xs:appinfo>                  
+
+                    <namePrefix value="NSP-"/>                  
+
+                    <screenDirections group="" introduced="1" editable="whenCreating">                     
+
+                        <areaLevels type="Relationship" level="basic" editable="whenCreating"/>                  
+
+                    </screenDirections>               
+
+                </xs:appinfo></xs:annotation>				
+
+                <xs:simpleType>					
+
+                    <xs:restriction base="xs:IDREF">						
+
+                        <xs:pattern value="NSP\-\c+"/>					
+
+                    </xs:restriction>				
+
+                </xs:simpleType>			
+
+            </xs:element>			
+
+            <xs:element name="HostReference">            
+
+                <xs:annotation><xs:appinfo>                  
+
+                    <namePrefix value="THOST-"/>                  
+
+                    <screenDirections group="" introduced="1" editable="whenCreating">                     
+
+                        <areaLevels type="Relationship" level="basic" editable="whenCreating"/>                  
+
+                    </screenDirections>               
+
+                </xs:appinfo></xs:annotation>				
+
+                <xs:simpleType>					
+
+                    <xs:restriction base="xs:IDREF">						
+
+                        <xs:pattern value="THOST\-\c+"/>					
+
+                    </xs:restriction>				
+
+                </xs:simpleType>			
+
+            </xs:element>			
+
+            <xs:element ref="dxkn:ServerType" minOccurs="0"/>			
+
+            <xs:element ref="dxkn:Unavailable" minOccurs="0"/>			
+
+            <xs:element ref="dxkn:DisplayName" minOccurs="0"/>			
+
+            <xs:element ref="dxkn:DsaName" minOccurs="0"/>         
+
+            <xs:element ref="dxassoc:MaxPduSize" minOccurs="0"/>			
+
+            <xs:group ref="dx:RelationshipSecurityGroup"/>         
+
+            <xs:element ref="dxstack:SslSettings" minOccurs="0"/>			
+
+            <xs:element ref="dxkn:SsldPort" minOccurs="0"/>			
+
+            <xs:element ref="dxkn:DspIdleTime" minOccurs="0"/>         
+
+            <xs:group ref="dxassoc:Connections" />			
+
+            <xs:group ref="dx:Osi"/>         
+
+            <xs:element ref="dxkn:SnmpPort" minOccurs="0">            
+
+                <xs:annotation><xs:appinfo>               
+
+                    <screenDirections group="Monitoring" introduced="1" level="advanced" required="true" />            
+
+                </xs:appinfo></xs:annotation>         
+
+            </xs:element>			
+
+            <xs:group ref="dx:NamespaceConsole"/>			
+
+            <xs:element ref="dxkn:NativePrefix" minOccurs="0"/>			
+
+            <xs:element ref="dxkn:LdapProxyName" minOccurs="0"/>			
+
+            <xs:element ref="dxkn:LdapProxyPassword" minOccurs="0"/>			
+
+            <xs:element ref="dxkn:LimitList" minOccurs="0"/>			
+
+            <xs:element ref="dxkn:LimitSearch" minOccurs="0"/>			
+
+            <xs:element ref="dxassoc:LimitSearchExceptions" minOccurs="0"/>
+
+            <xs:element ref="dxassoc:LimitSearchExceptionsBrowse" minOccurs="0" />			
+
+            <xs:element ref="dxkn:DspLdapProxy" minOccurs="0"/>			
+
+            <xs:group ref="dx:Replication"/>         
+
+            <xs:element ref="dxkn:MultiWriteHub" minOccurs="0"/>			
+
+            <xs:choice>				
+
+                <xs:annotation><xs:documentation>If a port is specified, then that port is used with all interfaces specified for the host. If an address list is specified, then each component interface must exist on the host and a port can optionally be given against each one. If no port is given, then it is inherited in the usual way.</xs:documentation><xs:appinfo>
+
+                    <simpleChoice name="ConnectionChoice" simple="Port"/>               
+
+                </xs:appinfo></xs:annotation>				
+
+                <xs:element ref="dxkn:Port" minOccurs="0"/>				
+
+                <xs:element name="Address" minOccurs="0" maxOccurs="unbounded">					
+
+                    <xs:complexType>						
+
+                        <xs:sequence>							
+
+                            <xs:element name="Interface" type="dx:IpAddress">                        
+
+                                <xs:annotation><xs:appinfo> 
+
+                                    <screenDirections group="Connections" introduced="1" level="basic" required="true" ></screenDirections>                              
+
+                                    <restrictionSearch id="HostReference" field="Interface"/>                           
+
+                                </xs:appinfo></xs:annotation>                     
+
+                            </xs:element>							
+
+                            <xs:element ref="dxkn:Port" minOccurs="0"/>						
+
+                        </xs:sequence>					
+
+                    </xs:complexType>				
+
+                </xs:element>			
+
+            </xs:choice>			
+
+            <xs:element ref="dxkn:AutoStart" minOccurs="0"/>			
+
+            <xs:element name="BindAddress" type="dx:IpAddress" minOccurs="0">            
+
+                <xs:annotation><xs:appinfo>                  
+
+                    <screenDirections group="" introduced="1" level="none">                     
+
+                        <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="always" />                     
+
+                        <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="always" />                     
+
+                        <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="always" />                     
+
+                        <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />                     
+
+                        <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />                     
+
+                        <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />                     
+
+                        <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />                     
+
+                        <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />                  
+
+                    </screenDirections>               
+
+                </xs:appinfo></xs:annotation>         
+
+            </xs:element>			
+
+            <xs:element ref="dxkn:LdapRebind" minOccurs="0"/>         
+
+            <xs:element ref="dxassoc:DisableClientBinds" minOccurs="0"/>			
+
+            <xs:element ref="dxkn:DataStoreSize" minOccurs="0"/>			
+
+            <xs:element ref="dxkn:DataStoreLocation"/>         
+
+            <xs:element ref="dxoper:TransactionFileLocation" minOccurs="0"/>         
+
+            <xs:element ref="dxoper:BackupFileLocation" minOccurs="0"/>         
+
+            <xs:element ref="dxoper:DisableTransactionLog" minOccurs="0"/>         
+
+            <xs:element ref="dxoper:DisableTransactionLogFlush" minOccurs="0"/>         
+
+            <xs:group ref="dx:MonitoringGroup"/>         
+
+            <xs:element ref="dxassoc:UserThreads" minOccurs="0"/>         
+
+            <xs:group ref="dxlog:LoggingGroupAllSettings"/>		
+
+        </xs:sequence>	
+
+    </xs:complexType>   	
+
+    
+
+    <xs:complexType name="BackboneDefaults">
+        <xs:annotation>
+            <xs:documentation>System wide defaults</xs:documentation>
+            <xs:appinfo><structural/></xs:appinfo>		
+        </xs:annotation>
+        <xs:sequence>			
+            <xs:element name="DXadmind" type="dx:DXadmind" minOccurs="0"/>			
+            <xs:element ref="dxkn:DataStoreSize" minOccurs="0"/>			
+            <xs:element ref="dxkn:DataStoreLocation" minOccurs="0"/>         
+            <xs:element ref="dxoper:TransactionFileLocation" minOccurs="0"/>         
+            <xs:element ref="dxoper:BackupFileLocation" minOccurs="0"/>         
+            <xs:element ref="dxassoc:PersistentSearch" minOccurs="0"/>         
+            <xs:element ref="dxassoc:BusyForReferral" minOccurs="0"/>         
+            <xs:element ref="dxassoc:MaxPduSize" minOccurs="0"/>         
+            <xs:group ref="dx:BackboneSecurity"/>         
+            <xs:group ref="dx:PasswordPolicyGroup"/>			
+            <xs:group ref="dx:Replication"/>			
+            <xs:group ref="dx:Osi"/>			
+            <xs:group ref="dx:Console"/>         
+            <xs:element ref="dxassoc:HoldLdapConnections" minOccurs="0"/>         
+            <xs:element ref="dxassoc:TransparentRouting" minOccurs="0"/>         
+            <xs:element ref="dxassoc:AllowNativePrefixReauthentication" minOccurs="0"/>         
+            <xs:element ref="dxassoc:RouteNonCompliantLdapErrorCodes" minOccurs="0"/>         
+            <xs:element ref="dxoper:AliasIntegrity" minOccurs="0"/>         
+            <xs:element ref="dxoper:IgnoreNameBindings" minOccurs="0"/>         
+            <xs:element ref="dxoper:MaxOpTime" minOccurs="0"/>         
+            <xs:element ref="dxoper:MaxOpSize" minOccurs="0"/>         
+            <xs:element ref="dxkn:MultiChaining" minOccurs="0"/>         
+            <xs:element ref="dxoper:OpAttrs" minOccurs="0"/>         
+            <xs:element ref="dxoper:ModifyOnAdd" minOccurs="0"/>         
+            <xs:element ref="dxoper:OcParentStorage" minOccurs="0"/>         
+            <xs:element ref="dxoper:ReturnOcParents" minOccurs="0"/>         
+            <xs:element ref="dxoper:MaxCacheIndexSize" minOccurs="0"/>         
+            <xs:element ref="dxoper:CacheNoScan" minOccurs="0"/>         
+            <xs:element ref="dxoper:CacheSearchBias" minOccurs="0"/>         
+            <xs:element ref="dxoper:UseRdnIndex" minOccurs="0"/>         
+            <xs:element ref="dxassoc:DereferenceAliasOnBind" minOccurs="0"/>			
+            <xs:group ref="dx:DspConnections"/>         
+            <xs:group ref="dxassoc:Connections" />			
+            <xs:element ref="dxkn:AutoStart" minOccurs="0"/>         
+            <xs:element ref="dxassoc:UserThreads" minOccurs="0"/>         
+            <xs:group ref="dx:MonitoringGroup"/>         
+            <xs:group ref="dxlog:LoggingGroupAllSettings"/>		
+        </xs:sequence>	
+    </xs:complexType>	
+
+    <xs:complexType name="DXadmind">		
+        <xs:annotation>
+            <xs:documentation>The configuration of dxadmind. Note that while all items are optional, they all must exist after inheritance flattening.</xs:documentation>
+            <xs:appinfo>            
+                <screenDirections group="DXadmind" introduced="1">               
+                    <areaLevels type="BackboneDefaults" level="standard"/>              
+                    <areaLevels type="Host" level="advanced"/>            
+                </screenDirections>         
+            </xs:appinfo>		
+        </xs:annotation>		
+
+        <xs:sequence>			
+            <xs:element name="Port" type="dxkn:tcpport" minOccurs="0">            
+
+                <xs:annotation><xs:appinfo>               
+
+                     <screenDirections group="DXadmind" introduced="1">                  
+
+                         <areaLevels type="BackboneDefaults" level="standard"/>                  
+
+                         <areaLevels type="Host" level="advanced"/>               
+
+                     </screenDirections>            
+
+                 </xs:appinfo></xs:annotation>         
+
+             </xs:element>			
+
+             <xs:element name="Password" type="dxkn:password" minOccurs="0">            
+
+                 <xs:annotation><xs:appinfo>               
+
+                     <screenDirections group="DXadmind" introduced="1">                 
+
+                         <areaLevels type="BackboneDefaults" level="standard"/>                  
+
+                         <areaLevels type="Host" level="advanced"/>               
+
+                     </screenDirections>            
+
+                 </xs:appinfo></xs:annotation>         
+
+             </xs:element>			
+
+             <xs:element name="TrapPort" type="dxkn:udpport" minOccurs="0">            
+
+                 <xs:annotation><xs:appinfo>               
+
+                     <screenDirections group="DXadmind" introduced="1">                  
+
+                         <areaLevels type="BackboneDefaults" level="standard"/>                  
+
+                         <areaLevels type="Host" level="advanced"/>               
+
+                     </screenDirections>            
+
+                 </xs:appinfo></xs:annotation>         
+
+             </xs:element>			
+
+             <xs:element name="TrustedHost" type="dx:IpAddress" minOccurs="0" maxOccurs="unbounded">            
+
+                 <xs:annotation><xs:appinfo>               
+
+                     <screenDirections group="DXadmind" introduced="1">                  
+
+                         <areaLevels type="BackboneDefaults" level="standard"/>                  
+
+                         <areaLevels type="Host" level="advanced"/>               
+
+                     </screenDirections>            
+
+                 </xs:appinfo></xs:annotation>         
+
+             </xs:element>			
+
+             <xs:element name="SnmpPollInterval" type="dxkn:pollInterval" minOccurs="0">            
+
+                 <xs:annotation><xs:appinfo>               
+
+                     <screenDirections group="DXadmind" introduced="1">                  
+
+                         <areaLevels type="BackboneDefaults" level="none"/>                  
+
+                         <areaLevels type="Host" level="advanced"/>               
+
+                     </screenDirections>            
+
+                 </xs:appinfo></xs:annotation>         
+
+             </xs:element>			
+
+             <xs:element name="TraceRequests" type="xs:boolean" minOccurs="0">				
+
+                 <xs:annotation>					
+
+                     <xs:documentation>Write log messages for all client requests</xs:documentation>               
+
+                     <xs:appinfo>                  
+
+                         <screenDirections group="DXadmind" introduced="1">                     
+
+                             <areaLevels type="BackboneDefaults" level="advanced"/>                     
+
+                             <areaLevels type="Host" level="advanced"/>                  
+
+                         </screenDirections>               
+
+                     </xs:appinfo>				
+
+                 </xs:annotation>			
+
+             </xs:element>			
+
+             <xs:element name="TraceMonitoring" type="xs:boolean" minOccurs="0">				
+
+                 <xs:annotation>					
+
+                     <xs:documentation>Write log messages for monitoring activity. This includes SNMP and config change detection</xs:documentation>               
+
+                     <xs:appinfo>                  
+
+                         <screenDirections group="DXadmind" introduced="1">                     
+
+                             <areaLevels type="BackboneDefaults" level="advanced"/>                     
+
+                             <areaLevels type="Host" level="advanced"/>                  
+
+                         </screenDirections>               
+
+                     </xs:appinfo>				
+
+                 </xs:annotation>			
+
+             </xs:element>			
+
+             <xs:element name="TraceInternal" type="xs:boolean" minOccurs="0">				
+
+                 <xs:annotation>					
+
+                     <xs:documentation>Write log messages for internal processing such as job queues and processing of requests</xs:documentation>               
+
+                     <xs:appinfo>                  
+
+                         <screenDirections group="DXadmind" introduced="1">                     
+
+                             <areaLevels type="BackboneDefaults" level="advanced"/>                     
+
+                             <areaLevels type="Host" level="advanced"/>                  
+
+                         </screenDirections>               
+
+                     </xs:appinfo>				
+
+                 </xs:annotation>			
+
+             </xs:element>			
+
+             <xs:element name="Debug" type="xs:boolean" minOccurs="0">				
+
+                 <xs:annotation>					
+
+                     <xs:documentation>Write low level debug tracing</xs:documentation>               
+
+                     <xs:appinfo>                  
+
+                         <screenDirections group="DXadmind" introduced="1">                     
+
+                             <areaLevels type="BackboneDefaults" level="advanced"/>                     
+
+                             <areaLevels type="Host" level="advanced"/>                  
+
+                         </screenDirections>               
+
+                     </xs:appinfo>				
+
+                 </xs:annotation>			
+
+             </xs:element>		
+
+         </xs:sequence>	
+
+    </xs:complexType>	
+
+     
+
+    <xs:group name="BackboneSecurity">		
+
+         <xs:sequence>			
+             <xs:element ref="dxkn:SsldPort" minOccurs="0"/>			
+             <xs:element ref="dxkn:SslEncryption" minOccurs="0"/>  
+             <xs:element ref="dxoper:PasswordStorage" minOccurs="0"/>
+             <xs:element ref="dxstack:SslSettings" minOccurs="0"/>			
+             <xs:group ref="dx:AuthenticationLevels"/>         
+             <xs:element ref="dxassoc:SslAuthBypassEntryCheck" minOccurs="0"/>         
+             <xs:element ref="dxassoc:TrustSaslProxy" minOccurs="0"/>         
+             <xs:element ref="dxassoc:MemberOf" minOccurs="0"/>         
+             <xs:element ref="dxassoc:ForceEncryptAnon" minOccurs="0"/>         
+             <xs:element ref="dxassoc:ForceEncryptAuth" minOccurs="0"/>         
+             <xs:element ref="dxkn:DsaPassword" minOccurs="0"/>			
+             <xs:element ref="dxkn:AllowCheckPassword" minOccurs="0"/>			
+             <xs:element ref="dxkn:TrustConveyedOriginator" minOccurs="0"/>
+             <xs:element ref="dxkn:TrustAllowUpgrading" minOccurs="0"/>         
+             <xs:element ref="dxkn:TrustAllowDowngrading" minOccurs="0"/> 
+             <xs:element ref="dxkn:TrustDsaTriggeredOperations" minOccurs="0"/>		
+
+         </xs:sequence>	
+
+    </xs:group>	
+
+     
+
+    <xs:group name="AuthenticationLevels">		
+
+         <xs:sequence>			
+
+             <xs:element ref="dxkn:AuthLevelAnonymous" minOccurs="0">            
+
+                 <xs:annotation><xs:appinfo><screenDirections group="Security" introduced="1" level="standard" required="true" /></xs:appinfo></xs:annotation>         
+
+             </xs:element>			
+
+             <xs:element ref="dxkn:AuthLevelClearPassword" minOccurs="0">            
+
+                 <xs:annotation><xs:appinfo><screenDirections group="Security" introduced="1" level="standard" required="true" /></xs:appinfo></xs:annotation>         
+
+             </xs:element>			
+
+             <xs:element ref="dxkn:AuthLevelSslAuth" minOccurs="0">            
+
+                 <xs:annotation><xs:appinfo><screenDirections group="Security" introduced="1" level="standard" required="true" /></xs:appinfo></xs:annotation>         
+
+             </xs:element>		
+
+         </xs:sequence>	
+
+    </xs:group>	
+
+     
+
+    <xs:group name="Osi">		
+
+         <xs:sequence>			
+
+             <xs:element ref="dxkn:Tsap" minOccurs="0"/>			
+
+             <xs:element ref="dxkn:Ssap" minOccurs="0"/>			
+
+             <xs:element ref="dxkn:OsiPsap" minOccurs="0"/>			
+
+             <xs:element ref="dxkn:DispPsap" minOccurs="0"/>			
+
+             <xs:element ref="dxkn:CmipPsap" minOccurs="0"/>			
+
+         </xs:sequence>	
+
+    </xs:group>	
+
+     
+
+    <xs:group name="Console">		
+
+         <xs:sequence>			
+
+             <xs:element ref="dxkn:ConsolePassword" minOccurs="0"/>			
+
+             <xs:element ref="dxkn:RemoteConsoleSsl" minOccurs="0"/>			
+
+             <xs:element name="ConsoleUsers" type="dx:ConsoleUsers" minOccurs="0">            
+
+                 <xs:annotation><xs:appinfo><screenDirections group="Console" introduced="1" level="advanced" /></xs:appinfo></xs:annotation>         
+
+             </xs:element>			
+
+             <xs:element name="ConsoleConnectAlert" type="xs:boolean" minOccurs="0">            
+
+                 <xs:annotation><xs:appinfo>
+
+                     <screenDirections group="Monitoring" introduced="1" level="standard" required="true" >
+
+                         <areaLevels type="Relationship" level="none" editable="never" />                  
+
+                         <areaLevels type="Relationship" subtype="EtdirRouter" level="standard" editable="always" />                  
+
+                         <areaLevels type="Relationship" subtype="EtdirDataMaster" level="standard" editable="always" />                  
+
+                         <areaLevels type="Relationship" subtype="EtdirDataShadow" level="standard" editable="always" />               
+
+                     </screenDirections>            
+
+                 </xs:appinfo></xs:annotation>         
+
+             </xs:element>		
+
+         </xs:sequence>	
+    </xs:group>	
+
+    <xs:group name="DspConnections">		
+         <xs:sequence>			        
+             <xs:element ref="dxkn:IPPreference" minOccurs="0"/>            		
+             <xs:element ref="dxkn:DspIdleTime" minOccurs="0"/>
+         </xs:sequence>	
+    </xs:group>	
+
+    <xs:group name="RelationshipSecurityGroup">		
+         <xs:sequence>			
+             <xs:element ref="dxkn:SslEncryption" minOccurs="0"/>			
+             <xs:group ref="dx:AuthenticationLevels" minOccurs="0"/>         
+             <xs:element ref="dxassoc:ForceEncryptAnon" minOccurs="0"/>         
+             <xs:element ref="dxassoc:ForceEncryptAuth" minOccurs="0"/>			
+             <xs:element ref="dxkn:DsaPassword" minOccurs="0"/>			
+             <xs:element ref="dxkn:AllowCheckPassword" minOccurs="0"/>			
+             <xs:element ref="dxkn:TrustConveyedOriginator" minOccurs="0"/>
+             <xs:element ref="dxkn:NoRoutingAc" minOccurs="0"/>
+             <xs:element ref="dxkn:TrustAllowUpgrading" minOccurs="0"/>
+             <xs:element ref="dxkn:TrustAllowDowngrading" minOccurs="0"/>
+             <xs:element ref="dxkn:TrustDsaTriggeredOperations" minOccurs="0"/>
+         </xs:sequence>	
+    </xs:group>	
+
+    <xs:group name="NamespaceSecurityGroup">		
+         <xs:sequence>			
+             <xs:element ref="dxkn:SslEncryption" minOccurs="0"/>			
+             <xs:group ref="dx:AuthenticationLevels" minOccurs="0"/>         
+             <xs:element ref="dxassoc:SslAuthBypassEntryCheck" minOccurs="0"/> 
+             <xs:element ref="dxassoc:TrustSaslProxy" minOccurs="0"/>         
+             <xs:element ref="dxassoc:MemberOf" minOccurs="0"/>         
+             <xs:element ref="dxassoc:ForceEncryptAnon" minOccurs="0"/>         
+             <xs:element ref="dxassoc:ForceEncryptAuth" minOccurs="0"/>			
+             <xs:element ref="dxkn:DsaPassword" minOccurs="0"/>			
+             <xs:element ref="dxkn:AllowCheckPassword" minOccurs="0"/>			
+             <xs:element ref="dxkn:TrustConveyedOriginator" minOccurs="0"/> 
+             <xs:element ref="dxkn:NoRoutingAc" minOccurs="0"/>         
+             <xs:element ref="dxkn:TrustAllowUpgrading" minOccurs="0"/>         
+             <xs:element ref="dxkn:TrustAllowDowngrading" minOccurs="0"/> 
+             <xs:element ref="dxkn:TrustDsaTriggeredOperations" minOccurs="0"/>	
+         </xs:sequence>	
+    </xs:group>   
+
+    <xs:group name="NamespaceConnections">		
+         <xs:sequence>			
+             <xs:element ref="dxkn:Port" minOccurs="0"/>			
+             <xs:element ref="dxkn:DspIdleTime" minOccurs="0"/>         
+             <xs:group ref="dxassoc:Connections" />         
+             <xs:element ref="dxassoc:HoldLdapConnections" minOccurs="0"/> 
+             <xs:element ref="dxassoc:TransparentRouting" minOccurs="0"/> 
+             <xs:element ref="dxassoc:AllowNativePrefixReauthentication" minOccurs="0"/>         
+             <xs:element ref="dxassoc:RouteNonCompliantLdapErrorCodes" minOccurs="0"/>         
+             <xs:element ref="dxassoc:DereferenceAliasOnBind" minOccurs="0"/>         
+             <xs:element ref="dxassoc:ConcurrentBindUsers" minOccurs="0"/>         		
+         </xs:sequence>	
+    </xs:group>	
+
+    <xs:group name="NamespaceConsole">		
+         <xs:sequence>			
+             <xs:element ref="dxkn:ConsolePort" minOccurs="0"/>			
+             <xs:group ref="dx:Console"/>			
+             <xs:element ref="dxkn:RemoteConsolePort" minOccurs="0"/>		
+         </xs:sequence>	
+    </xs:group>	
+
+    <xs:group name="Replication">		
+         <xs:sequence>			
+             <xs:element ref="dxkn:MultiWriteQueueSize" minOccurs="0"/>			
+             <xs:element ref="dxkn:NoServiceWhileRecovering" minOccurs="0"/>			
+             <xs:element ref="dxkn:ReplicationType" minOccurs="0"/>			
+             <xs:element ref="dxkn:WaitForMultiWrite" minOccurs="0"/>         
+             <xs:element ref="dxkn:MultiWriteGroupCredit" minOccurs="0"/>         
+             <xs:element ref="dxkn:MultiWriteOutstandingOps" minOccurs="0"/>         
+             <xs:element ref="dxassoc:MultiWriteRetryTime" minOccurs="0"/>         
+             <xs:element ref="dxassoc:MultiWriteDspIdleTime" minOccurs="0"/>         
+             <xs:element ref="dxassoc:MultiWriteErrorTrap" minOccurs="0"/>		
+         </xs:sequence>	
+    </xs:group>   
+
+    <xs:group name="PasswordPolicyGroup">		
+         <xs:sequence>			
+             <xs:element ref="dxassoc:PasswordPolicy" minOccurs="0"/>         
+             <xs:element ref="dxassoc:PasswordPolicySettings" minOccurs="0"/>		
+         </xs:sequence>	
+    </xs:group>	
+
+    <xs:complexType name="ConsoleUsers">		
+         <xs:sequence>			
+             <xs:element name="User" type="dxkn:DistinguishedName" maxOccurs="unbounded"> 
+                 <xs:annotation><xs:appinfo><screenDirections group="Console" introduced="1" level="advanced" required="false" /></xs:appinfo></xs:annotation>         
+             </xs:element>		
+         </xs:sequence>	
+    </xs:complexType>   
+
+    <xs:group name="MonitoringGroup">		
+
+         <xs:sequence>			
+
+             <xs:element ref="dxassoc:TrapOnUpdate" minOccurs="0"/>			
+
+             <xs:element ref="dxassoc:TrapOnUpdateVerbose" minOccurs="0"/>         
+
+             <xs:element ref="dxassoc:AuthTrap" minOccurs="0"/>         
+
+             <xs:element ref="dxassoc:OpErrorTrap" minOccurs="0"/>         
+
+             <xs:element ref="dxassoc:PasswordSuspendedTrap" minOccurs="0"/>		
+
+         </xs:sequence>	
+
+    </xs:group>
+
+</xs:schema>

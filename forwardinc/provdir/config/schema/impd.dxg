@@ -1,0 +1,41 @@
+# CA Directory DXserver/config/schema
+
+# Useful schema definitions
+source "x500.dxc";
+source "cosine.dxc";
+source "mhs.dxc";
+source "quipu.dxc";
+source "umich.dxc";
+source "inetop.dxc";
+source "dxserver.dxc";
+source "jndi.dxc";
+source "unspsc.dxc";
+
+source "etrust_cosx.dxc";
+source "etrust_admin.dxc";
+source "etrust_acc.dxc";
+source "etrust_acf.dxc";
+source "etrust_ads.dxc";
+source "etrust_as4.dxc";
+source "etrust_db2.dxc";
+source "etrust_lnd.dxc";
+source "etrust_n16.dxc";
+source "etrust_ora.dxc";
+source "etrust_rac.dxc";
+source "etrust_sap.dxc";
+source "etrust_sql.dxc";
+source "etrust_tss.dxc";
+source "etrust_etc.dxc";
+source "etrust_nis.dxc";
+source "etrust_sdk.dxc";
+source "etrust_pls.dxc";
+source "etrust_rsa.dxc";
+source "etrust_fnd.dxc";
+source "etrust_sbl.dxc";
+source "etrust_dyn.dxc";
+source "etrust_dbz.dxc";
+source "etrust_krb.dxc";
+source "etrust_pps.dxc";
+source "etrust_deprecated.dxc";
+source "impd-notify.dxg";
+set keep-order-of-values = eTConfigParamValue,eTTSSPolicy-Profiles,eTConfigPayload;

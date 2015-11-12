@@ -1,0 +1,93 @@
+#!/bin/sh
+
+ENV_PROP_FILE=/solution/$CONFIG/data/environment.properties
+SIGMA_KEYSTORE_FILE=/solution/$CONFIG/ime/forwardinc/config/sigma.keystore
+# Full path should yield: ../app-config-forwardinc/forwardinc/sigma/ime/forwardinc/config/sigma.keystore
+
+# Set variables from properties file
+valHost=$(grep -Po "(?<=^db.sigma.host=).*" $ENV_PROP_FILE)
+valPort=$(grep -Po "(?<=^db.sigma.port=).*" $ENV_PROP_FILE)
+valName=$(grep -Po "(?<=^db.sigma.name=).*" $ENV_PROP_FILE)
+valUser=$(grep -Po "(?<=^db.sigma.user=).*" $ENV_PROP_FILE)
+valPassword=$(grep -Po "(?<=^db.sigma.password=).*" $ENV_PROP_FILE)
+
+valIMHost=$(grep -Po "(?<=^wp.remote.connection.default.host=).*" $ENV_PROP_FILE)
+valWPuser=$(grep -Po "(?<=^wp.remote.connection.default.username=).*" $ENV_PROP_FILE)
+valWPPassword=$(grep -Po "(?<=^wp.remote.connection.default.password=).*" $ENV_PROP_FILE)
+valJbossAdminUser=$(grep -Po "(?<=^ca.sigma.jboss.admin.user=).*" $ENV_PROP_FILE)
+valJbossAdminPassword=$(grep -Po "(?<=^ca.sigma.jboss.admin.password=).*" $ENV_PROP_FILE)
+valSigmaAdminUser=$(grep -Po "(?<=^ca.sigma.app.admin.user=).*" $ENV_PROP_FILE)
+valSigmaAdminPassword=$(grep -Po "(?<=^ca.sigma.app.admin.password=).*" $ENV_PROP_FILE)
+
+
+# Determining Local Container Internal ip Address for jgroups binding
+container_ip=`ifconfig eth0 | grep 'inet addr' | cut -d: -f2 | cut -d " " -f1`
+	
+echo "Replacing the following values in: ${JBOSS_HOME}/standalone/configuration/sigma-standalone.xml"
+	echo -e "valHost=\t$valHost"
+	echo -e "valPort=\t$valPort"
+	echo -e "valName=\t$valName"
+	echo -e "valUser=\t$valUser"
+	echo -e "valPassword=\t*******"
+	echo -e "container_ip=\t$container_ip"	
+	
+	sed -i "s/@db.sigma.host@/$valHost/g" "${JBOSS_HOME}/standalone/configuration/sigma-standalone.xml"
+	sed -i "s/@db.sigma.port@/$valPort/g" "${JBOSS_HOME}/standalone/configuration/sigma-standalone.xml"
+	sed -i "s/@db.sigma.name@/$valName/g" "${JBOSS_HOME}/standalone/configuration/sigma-standalone.xml"
+	sed -i "s/@db.sigma.user@/$valUser/g" "${JBOSS_HOME}/standalone/configuration/sigma-standalone.xml"
+	sed -i "s/@db.sigma.password@/$valPassword/g" "${JBOSS_HOME}/standalone/configuration/sigma-standalone.xml"
+	sed -i "s/@container-internal-ip-address@/$container_ip/g" "${JBOSS_HOME}/standalone/configuration/sigma-standalone.xml"
+echo "Replacement done."
+
+echo "Replacing Workpoint Client Connection Properties in: ${SIGMA_HOME}/workpoint/jboss-ejb-client.properties"
+	echo -e "valIMHost=\t$valIMHost"
+	echo -e "valWPuser=\t$valWPuser"
+	echo -e "valWPPassword=\t*******"
+	
+	# Replacement in workpoint directory (${SIGMA_HOME}/workpoint/) using temporary file to avoid sed trying to write temporary files to the workpoint directory (this is bound to fail since the directory has root permissions)
+	tmpFile=/tmp/01_setsample_env.tmp
+	echo tmpFile="$tmpFile"
+	fileToEdit=${SIGMA_HOME}/workpoint/jboss-ejb-client.properties
+	echo fileToEdit="${SIGMA_HOME}/workpoint/jboss-ejb-client.properties"
+	rm -rf $tmpFile
+	cp "$fileToEdit" "$tmpFile"
+	echo "replacing "@wp.remote.connection.default.host@" with "$valIMHost" on file "${SIGMA_HOME}/workpoint/jboss-ejb-client.properties""
+	sed -i "s/@wp.remote.connection.default.host@/$valIMHost/g" "$tmpFile"
+	echo "replacing "@wp.remote.connection.default.username@" with "$valWPuser" on file "${SIGMA_HOME}/workpoint/jboss-ejb-client.properties""
+	sed -i "s/@wp.remote.connection.default.username@/$valWPuser/g" "$tmpFile"
+	echo "replacing "@wp.remote.connection.default.password@" with "$valWPPassword" on file "${SIGMA_HOME}/workpoint/jboss-ejb-client.properties""
+	sed -i "s/@wp.remote.connection.default.password@/$valWPPassword/g" "$tmpFile"
+	cp "$tmpFile" "$fileToEdit" 
+	echo Successfully replaced values on file "$fileToEdit"
+	rm -rf $tmpFile
+echo "Replacement of workpoint parameters - done"
+
+echo "Replacing the following values in: $SIGMA_TOOLS_DIR/ImportTool.conf"
+	echo -e "valSigmaAdminUser=\t$valSigmaAdminUser"
+	echo -e "valSigmaAdminPassword=\t*******"
+	sed -i "s/@ca.sigma.app.admin.user@/$valSigmaAdminUser/g" "$SIGMA_TOOLS_DIR/ImportTool.conf"
+	sed -i "s/@ca.sigma.app.admin.password@/$valSigmaAdminPassword/g" "$SIGMA_TOOLS_DIR/ImportTool.conf"
+echo "Replacement done."
+
+# Sigma Key store
+echo -e SIGMA_KEYSTORE_FILE="$SIGMA_KEYSTORE_FILE"
+cp "$SIGMA_KEYSTORE_FILE" "${SIGMA_HOME}"
+echo -e "Copied "$SIGMA_KEYSTORE_FILE" to "${SIGMA_HOME}""
+	
+isEnv=`/opt/verify/parser.sh sample.env.creation $ENV_PROP_FILE`
+if [ "$isEnv" == "YES" ]; then
+
+# Create JBOSS Admin User
+echo "Creating JBoss Admin User: $valJbossAdminUser"
+sh $JBOSS_HOME/bin/add-user.sh -s -u $valJbossAdminUser -p $valJbossAdminPassword
+
+# Create SIGMA Admin User
+echo "Creating SIGMA Admin User: $valSigmaAdminUser"
+sh $JBOSS_HOME/bin/add-user.sh -a -s -ro SigmaAdministrators -u $valSigmaAdminUser -p $valSigmaAdminPassword
+
+echo "To be implemented"
+### TODO ###
+# prep the sigma config dump jason with environment specific IM server details
+### TODO ###
+
+fi

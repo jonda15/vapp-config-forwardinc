@@ -1,0 +1,1634 @@
+schema set oid-prefix etrust-admin-AS4-attr = (1.3.6.1.4.1.791.2.3.5.3.5210.1);
+schema set oid-prefix etrust-admin-AS4-oc = (1.3.6.1.4.1.791.2.3.5.3.5210.2);
+schema set oid-prefix etrust-admin-AS4-nb = (1.3.6.1.4.1.791.2.3.5.3.5210.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-AS4-attr:1 = {
+    name = eTAS4DirectoryName
+    ldap-names = eTAS4DirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:2 = {
+    name = eTAS4Comments
+    ldap-names = eTAS4Comments
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:3 = {
+    name = eTAS4AgentSSL
+    ldap-names = eTAS4AgentSSL
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:4 = {
+    name = eTAS4AS400SSL
+    ldap-names = eTAS4AS400SSL
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:5 = {
+    name = eTAS4SOAPServer
+    ldap-names = eTAS4SOAPServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:111 = {
+    name = eTAS4SOAPServerPort
+    ldap-names = eTAS4SOAPServerPort
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:6 = {
+    name = eTAS4SOAPURL
+    ldap-names = eTAS4SOAPURL
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:7 = {
+    name = eTAS4Manager
+    ldap-names = eTAS4Manager
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:8 = {
+    name = eTAS4ManagerPassword
+    ldap-names = eTAS4ManagerPassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:102 = {
+    name = eTAS4LanguageIdList
+    ldap-names = eTAS4LanguageIdList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:103 = {
+    name = eTAS4CountryIdList
+    ldap-names = eTAS4CountryIdList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:104 = {
+    name = eTAS4CharacterCodeSetIdList
+    ldap-names = eTAS4CharacterCodeSetIdList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:106 = {
+    name = eTAS4PwdSysValList
+    ldap-names = eTAS4PwdSysValList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:107 = {
+    name = eTAS4MgrPwd
+    ldap-names = eTAS4MgrPwd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:9 = {
+    name = eTAS4AccountContainerName
+    ldap-names = eTAS4AccountContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:10 = {
+    name = eTAS4UserProfileName
+    ldap-names = eTAS4UserProfileName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:11 = {
+    name = eTAS4UserIdNumber
+    ldap-names = eTAS4UserIdNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:105 = {
+    name = eTAS4UserDescription
+    ldap-names = eTAS4UserDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:12 = {
+    name = eTAS4TextDescription
+    ldap-names = eTAS4TextDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:13 = {
+    name = eTAS4NoPasswordIndicator
+    ldap-names = eTAS4NoPasswordIndicator
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:110 = {
+    name = eTAS4DocumentPassword
+    ldap-names = eTAS4DocumentPassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:14 = {
+    name = eTAS4PreviousSignOn
+    ldap-names = eTAS4PreviousSignOn
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:15 = {
+    name = eTAS4SignOnAttemptsNotValid
+    ldap-names = eTAS4SignOnAttemptsNotValid
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:16 = {
+    name = eTAS4SetPasswordToExpire
+    ldap-names = eTAS4SetPasswordToExpire
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:17 = {
+    name = eTAS4Status
+    ldap-names = eTAS4Status
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:18 = {
+    name = eTAS4PasswordExpirationInterval
+    ldap-names = eTAS4PasswordExpirationInterval
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:19 = {
+    name = eTAS4UserAddress
+    ldap-names = eTAS4UserAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:20 = {
+    name = eTAS4UserID
+    ldap-names = eTAS4UserID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:21 = {
+    name = eTAS4LastName
+    ldap-names = eTAS4LastName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:22 = {
+    name = eTAS4FirstName
+    ldap-names = eTAS4FirstName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:23 = {
+    name = eTAS4MiddleName
+    ldap-names = eTAS4MiddleName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:24 = {
+    name = eTAS4PreferredName
+    ldap-names = eTAS4PreferredName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:25 = {
+    name = eTAS4FullName
+    ldap-names = eTAS4FullName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:26 = {
+    name = eTAS4Department
+    ldap-names = eTAS4Department
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:27 = {
+    name = eTAS4JobTitle
+    ldap-names = eTAS4JobTitle
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:28 = {
+    name = eTAS4Company
+    ldap-names = eTAS4Company
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:29 = {
+    name = eTAS4TelephoneNumber1
+    ldap-names = eTAS4TelephoneNumber1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:30 = {
+    name = eTAS4TelephoneNumber2
+    ldap-names = eTAS4TelephoneNumber2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:31 = {
+    name = eTAS4FaxTelephoneNumber
+    ldap-names = eTAS4FaxTelephoneNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:32 = {
+    name = eTAS4Location
+    ldap-names = eTAS4Location
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:33 = {
+    name = eTAS4Building
+    ldap-names = eTAS4Building
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:34 = {
+    name = eTAS4Office
+    ldap-names = eTAS4Office
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:35 = {
+    name = eTAS4MailingAddressLine1
+    ldap-names = eTAS4MailingAddressLine1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:36 = {
+    name = eTAS4MailingAddressLine2
+    ldap-names = eTAS4MailingAddressLine2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:37 = {
+    name = eTAS4MailingAddressLine3
+    ldap-names = eTAS4MailingAddressLine3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:38 = {
+    name = eTAS4MailingAddressLine4
+    ldap-names = eTAS4MailingAddressLine4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:39 = {
+    name = eTAS4CcMailAddress
+    ldap-names = eTAS4CcMailAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:40 = {
+    name = eTAS4CcMailComment
+    ldap-names = eTAS4CcMailComment
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:41 = {
+    name = eTAS4MailNotification
+    ldap-names = eTAS4MailNotification
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:42 = {
+    name = eTAS4PriorityMailNotification
+    ldap-names = eTAS4PriorityMailNotification
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:43 = {
+    name = eTAS4SMTPDomain
+    ldap-names = eTAS4SMTPDomain
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:44 = {
+    name = eTAS4SMTPRoute
+    ldap-names = eTAS4SMTPRoute
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:45 = {
+    name = eTAS4SMTPUserId
+    ldap-names = eTAS4SMTPUserId
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:46 = {
+    name = eTAS4GroupMembers
+    ldap-names = eTAS4GroupMembers
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:47 = {
+    name = eTAS4UserClass
+    ldap-names = eTAS4UserClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:48 = {
+    name = eTAS4SpecialAuthorities
+    ldap-names = eTAS4SpecialAuthorities
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:49 = {
+    name = eTAS4SpecialEnvironment
+    ldap-names = eTAS4SpecialEnvironment
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:50 = {
+    name = eTAS4ObjectAuditingValue
+    ldap-names = eTAS4ObjectAuditingValue
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:51 = {
+    name = eTAS4UserActionAuditLevel
+    ldap-names = eTAS4UserActionAuditLevel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:52 = {
+    name = eTAS4CurrentLibraryName
+    ldap-names = eTAS4CurrentLibraryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:53 = {
+    name = eTAS4MaximumAllowedStorage
+    ldap-names = eTAS4MaximumAllowedStorage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:54 = {
+    name = eTAS4StorageUsed
+    ldap-names = eTAS4StorageUsed
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:55 = {
+    name = eTAS4HighestSchedulingPriority
+    ldap-names = eTAS4HighestSchedulingPriority
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:56 = {
+    name = eTAS4AccountingCode
+    ldap-names = eTAS4AccountingCode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:57 = {
+    name = eTAS4JobDescription
+    ldap-names = eTAS4JobDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:58 = {
+    name = eTAS4HomeDirectory
+    ldap-names = eTAS4HomeDirectory
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:59 = {
+    name = eTAS4InitialProgram
+    ldap-names = eTAS4InitialProgram
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:60 = {
+    name = eTAS4InitialMenu
+    ldap-names = eTAS4InitialMenu
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:61 = {
+    name = eTAS4DisplaySignOnInformation
+    ldap-names = eTAS4DisplaySignOnInformation
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:62 = {
+    name = eTAS4LimitDeviceSessions
+    ldap-names = eTAS4LimitDeviceSessions
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:63 = {
+    name = eTAS4AttentionKeyHandlingProgram
+    ldap-names = eTAS4AttentionKeyHandlingProgram
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:64 = {
+    name = eTAS4LimitCapabilities
+    ldap-names = eTAS4LimitCapabilities
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:65 = {
+    name = eTAS4AssistanceLevel
+    ldap-names = eTAS4AssistanceLevel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:66 = {
+    name = eTAS4KeyboardBuffering
+    ldap-names = eTAS4KeyboardBuffering
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:67 = {
+    name = eTAS4UserOptions
+    ldap-names = eTAS4UserOptions
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:68 = {
+    name = eTAS4PrintDevice
+    ldap-names = eTAS4PrintDevice
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:69 = {
+    name = eTAS4PrintCoverPage
+    ldap-names = eTAS4PrintCoverPage
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:70 = {
+    name = eTAS4OutputQueue
+    ldap-names = eTAS4OutputQueue
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:71 = {
+    name = eTAS4MessageQueue
+    ldap-names = eTAS4MessageQueue
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:72 = {
+    name = eTAS4MessageQueueDeliveryMethod
+    ldap-names = eTAS4MessageQueueDeliveryMethod
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:73 = {
+    name = eTAS4MessageQueueSeverity
+    ldap-names = eTAS4MessageQueueSeverity
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:74 = {
+    name = eTAS4MessageNotification
+    ldap-names = eTAS4MessageNotification
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:75 = {
+    name = eTAS4LanguageId
+    ldap-names = eTAS4LanguageId
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:76 = {
+    name = eTAS4CountryId
+    ldap-names = eTAS4CountryId
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:77 = {
+    name = eTAS4CharacterCodeSetId
+    ldap-names = eTAS4CharacterCodeSetId
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:78 = {
+    name = eTAS4CharacterIdentifierControl
+    ldap-names = eTAS4CharacterIdentifierControl
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:79 = {
+    name = eTAS4LocalePathName
+    ldap-names = eTAS4LocalePathName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:80 = {
+    name = eTAS4LocaleJobAttributes
+    ldap-names = eTAS4LocaleJobAttributes
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:81 = {
+    name = eTAS4SortSequenceTable
+    ldap-names = eTAS4SortSequenceTable
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:82 = {
+    name = eTAS4PrimaryGroupName
+    ldap-names = eTAS4PrimaryGroupName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:83 = {
+    name = eTAS4GroupAuthority
+    ldap-names = eTAS4GroupAuthority
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:84 = {
+    name = eTAS4GroupAuthorityType
+    ldap-names = eTAS4GroupAuthorityType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:109 = {
+    name = eTAS4PublicAuthority
+    ldap-names = eTAS4PublicAuthority
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:85 = {
+    name = eTAS4GroupIdNumber
+    ldap-names = eTAS4GroupIdNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:86 = {
+    name = eTAS4GroupMemberIndicator
+    ldap-names = eTAS4GroupMemberIndicator
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:87 = {
+    name = eTAS4Owner
+    ldap-names = eTAS4Owner
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:88 = {
+    name = eTAS4DatePasswordExpires
+    ldap-names = eTAS4DatePasswordExpires
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:89 = {
+    name = eTAS4DaysUntilPasswordExpires
+    ldap-names = eTAS4DaysUntilPasswordExpires
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:90 = {
+    name = eTAS4PasswordChangeDate
+    ldap-names = eTAS4PasswordChangeDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:91 = {
+    name = eTAS4IndirectUser
+    ldap-names = eTAS4IndirectUser
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:92 = {
+    name = eTAS4ManagerCode
+    ldap-names = eTAS4ManagerCode
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:93 = {
+    name = eTAS4NetworkUserId
+    ldap-names = eTAS4NetworkUserId
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:94 = {
+    name = eTAS4ORName
+    ldap-names = eTAS4ORName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:95 = {
+    name = eTAS4DigitalCertificateIndicator
+    ldap-names = eTAS4DigitalCertificateIndicator
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:96 = {
+    name = eTAS4AllowSynchronization
+    ldap-names = eTAS4AllowSynchronization
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:97 = {
+    name = eTAS4GroupContainerName
+    ldap-names = eTAS4GroupContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:98 = {
+    name = eTAS4GroupName
+    ldap-names = eTAS4GroupName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:101 = {
+    name = eTAS4AccountMembers
+    ldap-names = eTAS4AccountMembers
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:99 = {
+    name = eTAS4PolicyContainerName
+    ldap-names = eTAS4PolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-AS4-attr:100 = {
+    name = eTAS4PolicyName
+    ldap-names = eTAS4PolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-AS4-oc:1 = {
+    name = eTAS4Directory
+    subclass-of Top
+    must-contain
+        eTAS4DirectoryName,
+        objectclass
+    may-contain
+        eTAgentNamespaceClass,
+        eTAS4Comments,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTAS4AgentSSL,
+        eTAS4AS400SSL,
+        eTAS4SOAPServer,
+        eTAS4SOAPServerPort,
+        eTAS4SOAPURL,
+        eTAS4Manager,
+        eTAS4ManagerPassword,
+        eTAS4LanguageIdList,
+        eTAS4CountryIdList,
+        eTAS4CharacterCodeSetIdList,
+        eTAS4PwdSysValList,
+        eTAS4MgrPwd
+};
+
+schema set object-class etrust-admin-AS4-oc:2 = {
+    name = eTAS4Namespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL,
+        eTValidateCredentials,
+        eTMetaData,
+        eTOpBindingsMetaData
+};
+
+schema set object-class etrust-admin-AS4-oc:3 = {
+    name = eTAS4AccountContainer
+    subclass-of Top
+    must-contain
+        eTAS4AccountContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-AS4-oc:4 = {
+    name = eTAS4Account
+    subclass-of Top
+    must-contain
+        eTAS4UserProfileName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTAS4UserIdNumber,
+        eTAS4UserDescription,
+        eTAS4TextDescription,
+        eTAS4NoPasswordIndicator,
+        eTAS4DocumentPassword,
+        eTAS4PreviousSignOn,
+        eTAS4SignOnAttemptsNotValid,
+        eTAS4SetPasswordToExpire,
+        eTAS4Status,
+        eTAS4PasswordExpirationInterval,
+        eTAS4UserAddress,
+        eTAS4UserID,
+        eTAS4LastName,
+        eTAS4FirstName,
+        eTAS4MiddleName,
+        eTAS4PreferredName,
+        eTAS4FullName,
+        eTAS4Department,
+        eTAS4JobTitle,
+        eTAS4Company,
+        eTAS4TelephoneNumber1,
+        eTAS4TelephoneNumber2,
+        eTAS4FaxTelephoneNumber,
+        eTAS4Location,
+        eTAS4Building,
+        eTAS4Office,
+        eTAS4MailingAddressLine1,
+        eTAS4MailingAddressLine2,
+        eTAS4MailingAddressLine3,
+        eTAS4MailingAddressLine4,
+        eTAS4CcMailAddress,
+        eTAS4CcMailComment,
+        eTAS4MailNotification,
+        eTAS4PriorityMailNotification,
+        eTAS4SMTPDomain,
+        eTAS4SMTPRoute,
+        eTAS4SMTPUserId,
+        eTAS4GroupMembers,
+        eTAS4UserClass,
+        eTAS4SpecialAuthorities,
+        eTAS4SpecialEnvironment,
+        eTAS4ObjectAuditingValue,
+        eTAS4UserActionAuditLevel,
+        eTAS4CurrentLibraryName,
+        eTAS4MaximumAllowedStorage,
+        eTAS4StorageUsed,
+        eTAS4HighestSchedulingPriority,
+        eTAS4AccountingCode,
+        eTAS4JobDescription,
+        eTAS4HomeDirectory,
+        eTAS4InitialProgram,
+        eTAS4InitialMenu,
+        eTAS4DisplaySignOnInformation,
+        eTAS4LimitDeviceSessions,
+        eTAS4AttentionKeyHandlingProgram,
+        eTAS4LimitCapabilities,
+        eTAS4AssistanceLevel,
+        eTAS4KeyboardBuffering,
+        eTAS4UserOptions,
+        eTAS4PrintDevice,
+        eTAS4PrintCoverPage,
+        eTAS4OutputQueue,
+        eTAS4MessageQueue,
+        eTAS4MessageQueueDeliveryMethod,
+        eTAS4MessageQueueSeverity,
+        eTAS4MessageNotification,
+        eTAS4LanguageId,
+        eTAS4CountryId,
+        eTAS4CharacterCodeSetId,
+        eTAS4CharacterIdentifierControl,
+        eTAS4LocalePathName,
+        eTAS4LocaleJobAttributes,
+        eTAS4SortSequenceTable,
+        eTAS4PrimaryGroupName,
+        eTAS4GroupAuthority,
+        eTAS4GroupAuthorityType,
+        eTAS4PublicAuthority,
+        eTAS4GroupIdNumber,
+        eTAS4GroupMemberIndicator,
+        eTAS4Owner,
+        eTAS4DatePasswordExpires,
+        eTAS4DaysUntilPasswordExpires,
+        eTAS4PasswordChangeDate,
+        eTAS4IndirectUser,
+        eTAS4ManagerCode,
+        eTAS4NetworkUserId,
+        eTAS4ORName,
+        eTAS4DigitalCertificateIndicator,
+        eTAS4AllowSynchronization
+};
+
+schema set object-class etrust-admin-AS4-oc:5 = {
+    name = eTAS4GroupContainer
+    subclass-of Top
+    must-contain
+        eTAS4GroupContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-AS4-oc:6 = {
+    name = eTAS4Group
+    subclass-of Top
+    must-contain
+        eTAS4GroupName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTAS4PrimaryGroupName,
+        eTAS4GroupAuthority,
+        eTAS4GroupAuthorityType,
+        eTAS4PublicAuthority,
+        eTAS4GroupIdNumber,
+        eTAS4GroupMemberIndicator,
+        eTAS4Owner,
+        eTAS4UserIdNumber,
+        eTAS4UserDescription,
+        eTAS4TextDescription,
+        eTAS4NoPasswordIndicator,
+        eTAS4DocumentPassword,
+        eTAS4PreviousSignOn,
+        eTAS4SignOnAttemptsNotValid,
+        eTAS4SetPasswordToExpire,
+        eTAS4Status,
+        eTAS4PasswordExpirationInterval,
+        eTAS4UserID,
+        eTAS4LastName,
+        eTAS4FirstName,
+        eTAS4MiddleName,
+        eTAS4PreferredName,
+        eTAS4FullName,
+        eTAS4Department,
+        eTAS4JobTitle,
+        eTAS4Company,
+        eTAS4TelephoneNumber1,
+        eTAS4TelephoneNumber2,
+        eTAS4FaxTelephoneNumber,
+        eTAS4Location,
+        eTAS4Building,
+        eTAS4Office,
+        eTAS4MailingAddressLine1,
+        eTAS4MailingAddressLine2,
+        eTAS4MailingAddressLine3,
+        eTAS4MailingAddressLine4,
+        eTAS4CcMailAddress,
+        eTAS4CcMailComment,
+        eTAS4MailNotification,
+        eTAS4PriorityMailNotification,
+        eTAS4SMTPDomain,
+        eTAS4SMTPRoute,
+        eTAS4SMTPUserId,
+        eTAS4UserClass,
+        eTAS4SpecialAuthorities,
+        eTAS4SpecialEnvironment,
+        eTAS4ObjectAuditingValue,
+        eTAS4UserActionAuditLevel,
+        eTAS4CurrentLibraryName,
+        eTAS4MaximumAllowedStorage,
+        eTAS4StorageUsed,
+        eTAS4HighestSchedulingPriority,
+        eTAS4AccountingCode,
+        eTAS4JobDescription,
+        eTAS4HomeDirectory,
+        eTAS4InitialProgram,
+        eTAS4InitialMenu,
+        eTAS4DisplaySignOnInformation,
+        eTAS4LimitDeviceSessions,
+        eTAS4AttentionKeyHandlingProgram,
+        eTAS4LimitCapabilities,
+        eTAS4AssistanceLevel,
+        eTAS4KeyboardBuffering,
+        eTAS4UserOptions,
+        eTAS4PrintDevice,
+        eTAS4PrintCoverPage,
+        eTAS4OutputQueue,
+        eTAS4MessageQueue,
+        eTAS4MessageQueueDeliveryMethod,
+        eTAS4MessageQueueSeverity,
+        eTAS4MessageNotification,
+        eTAS4LanguageId,
+        eTAS4CountryId,
+        eTAS4CharacterCodeSetId,
+        eTAS4CharacterIdentifierControl,
+        eTAS4LocalePathName,
+        eTAS4LocaleJobAttributes,
+        eTAS4SortSequenceTable,
+        eTAS4AccountMembers,
+        eTAS4DatePasswordExpires,
+        eTAS4DaysUntilPasswordExpires,
+        eTAS4PasswordChangeDate,
+        eTAS4IndirectUser,
+        eTAS4ManagerCode,
+        eTAS4NetworkUserId,
+        eTAS4ORName,
+        eTAS4DigitalCertificateIndicator,
+        eTAS4AllowSynchronization,
+        eTAS4UserAddress
+};
+
+schema set object-class etrust-admin-AS4-oc:7 = {
+    name = eTAS4PolicyContainer
+    subclass-of Top
+    must-contain
+        eTAS4PolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-AS4-oc:8 = {
+    name = eTAS4Policy
+    subclass-of Top
+    must-contain
+        eTAS4PolicyName,
+        objectclass
+    may-contain
+        eTAS4UserProfileName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTAS4UserIdNumber,
+        eTAS4UserDescription,
+        eTAS4TextDescription,
+        eTAS4NoPasswordIndicator,
+        eTAS4DocumentPassword,
+        eTAS4SetPasswordToExpire,
+        eTAS4Status,
+        eTAS4PasswordExpirationInterval,
+        eTAS4LastName,
+        eTAS4FirstName,
+        eTAS4MiddleName,
+        eTAS4PreferredName,
+        eTAS4FullName,
+        eTAS4Department,
+        eTAS4JobTitle,
+        eTAS4Company,
+        eTAS4TelephoneNumber1,
+        eTAS4TelephoneNumber2,
+        eTAS4FaxTelephoneNumber,
+        eTAS4Location,
+        eTAS4Building,
+        eTAS4Office,
+        eTAS4MailingAddressLine1,
+        eTAS4MailingAddressLine2,
+        eTAS4MailingAddressLine3,
+        eTAS4MailingAddressLine4,
+        eTAS4CcMailAddress,
+        eTAS4CcMailComment,
+        eTAS4MailNotification,
+        eTAS4PriorityMailNotification,
+        eTAS4SMTPDomain,
+        eTAS4SMTPRoute,
+        eTAS4SMTPUserId,
+        eTAS4GroupMembers,
+        eTAS4UserClass,
+        eTAS4SpecialAuthorities,
+        eTAS4SpecialEnvironment,
+        eTAS4ObjectAuditingValue,
+        eTAS4UserActionAuditLevel,
+        eTAS4CurrentLibraryName,
+        eTAS4MaximumAllowedStorage,
+        eTAS4StorageUsed,
+        eTAS4HighestSchedulingPriority,
+        eTAS4AccountingCode,
+        eTAS4JobDescription,
+        eTAS4HomeDirectory,
+        eTAS4InitialProgram,
+        eTAS4InitialMenu,
+        eTAS4DisplaySignOnInformation,
+        eTAS4LimitDeviceSessions,
+        eTAS4AttentionKeyHandlingProgram,
+        eTAS4LimitCapabilities,
+        eTAS4AssistanceLevel,
+        eTAS4KeyboardBuffering,
+        eTAS4UserOptions,
+        eTAS4PrintDevice,
+        eTAS4PrintCoverPage,
+        eTAS4OutputQueue,
+        eTAS4MessageQueue,
+        eTAS4MessageQueueDeliveryMethod,
+        eTAS4MessageQueueSeverity,
+        eTAS4MessageNotification,
+        eTAS4LanguageId,
+        eTAS4CountryId,
+        eTAS4CharacterCodeSetId,
+        eTAS4CharacterIdentifierControl,
+        eTAS4LocalePathName,
+        eTAS4LocaleJobAttributes,
+        eTAS4SortSequenceTable,
+        eTAS4PrimaryGroupName,
+        eTAS4GroupAuthority,
+        eTAS4GroupAuthorityType,
+        eTAS4PublicAuthority,
+        eTAS4GroupIdNumber,
+        eTAS4GroupMemberIndicator,
+        eTAS4Owner,
+        eTAS4DatePasswordExpires,
+        eTAS4DaysUntilPasswordExpires,
+        eTAS4PasswordChangeDate,
+        eTAS4IndirectUser,
+        eTAS4ManagerCode,
+        eTAS4NetworkUserId,
+        eTAS4ORName,
+        eTAS4DigitalCertificateIndicator,
+        eTAS4AllowSynchronization,
+        eTAS4UserAddress,
+        eTAS4UserID
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-AS4-nb:1 = {
+    name = eTAS4Directory-eTNamespace
+    eTAS4Directory allowable-parent eTNamespace
+    named-by eTAS4DirectoryName
+};
+
+schema set name-binding etrust-admin-AS4-nb:2 = {
+    name = eTAS4PolicyContainer-eTNamespace
+    eTAS4PolicyContainer allowable-parent eTNamespace
+    named-by eTAS4PolicyContainerName
+};
+
+schema set name-binding etrust-admin-AS4-nb:3 = {
+    name = eTAS4Namespace-eTAS4Directory
+    eTAS4Namespace allowable-parent eTAS4Directory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-AS4-nb:4 = {
+    name = eTAS4AccountContainer-eTAS4Directory
+    eTAS4AccountContainer allowable-parent eTAS4Directory
+    named-by eTAS4AccountContainerName
+};
+
+schema set name-binding etrust-admin-AS4-nb:5 = {
+    name = eTAS4GroupContainer-eTAS4Directory
+    eTAS4GroupContainer allowable-parent eTAS4Directory
+    named-by eTAS4GroupContainerName
+};
+
+schema set name-binding etrust-admin-AS4-nb:6 = {
+    name = eTAS4Account-eTAS4AccountContainer
+    eTAS4Account allowable-parent eTAS4AccountContainer
+    named-by eTAS4UserProfileName
+};
+
+schema set name-binding etrust-admin-AS4-nb:7 = {
+    name = eTAS4Group-eTAS4GroupContainer
+    eTAS4Group allowable-parent eTAS4GroupContainer
+    named-by eTAS4GroupName
+};
+
+schema set name-binding etrust-admin-AS4-nb:8 = {
+    name = eTAS4Policy-eTAS4PolicyContainer
+    eTAS4Policy allowable-parent eTAS4PolicyContainer
+    named-by eTAS4PolicyName
+};
+

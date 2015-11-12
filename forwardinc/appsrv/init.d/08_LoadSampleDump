@@ -1,0 +1,13 @@
+#!/bin/sh
+
+ENV_PROP_FILE=/solution/$CONFIG/data/environment.properties
+SAMPLE_DUMP_FILE=/solution/$CONFIG/data/sample_dump.sql
+
+echo "Loading Sample Dump"
+
+isEnv=$(grep -Po "(?<=^sample.env.creation=).*" $ENV_PROP_FILE)
+isDumpFile=$(grep -Po "(?<=^sample.env.useDump=).*" $ENV_PROP_FILE)
+
+if [ "$isEnv" == "YES" ] && [ "$isDumpFile" == "YES" ]; then
+	mysql -h database -u caim -pHelloWorld IM_ObjectStore < $SAMPLE_DUMP_FILE
+fi

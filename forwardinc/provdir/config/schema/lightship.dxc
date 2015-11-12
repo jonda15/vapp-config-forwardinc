@@ -1,0 +1,709 @@
+#
+# Spring Tide Networks LDAP Object Class Schema
+# for eTrust Directory
+#
+# Copyright (C) 2001.
+#
+# ALL INFORMATION CONTAINED HEREIN IS SUBJECT TO CHANGE WITHOUT NOTICE.
+#
+# Revision History (most recent first):
+#
+# Date          Notes
+# ----------    ------------------------------------------------------
+# 8/09/01       Initial version.
+# 2/11/01       Updated to add stmServiceList and associated attributes to support IPSS 2.0.
+#               and add attributes for generic config records. Compatible with Lightship V2.0
+#
+
+#
+# eTrust Directory DXservers using this file should also source the files:
+#   - x500.dxc
+#   - dxserver.dxc
+#   - cosine.dxc
+#   - inetop.dxc
+#
+
+#
+# Object Class Prefixes.
+#
+schema set oid-prefix newPrefix0 = (1.3.6.1.4.1.3327.90.1.1);
+schema set oid-prefix newPrefix1 = (1.3.6.1.4.1.3327.90.1.2);
+schema set oid-prefix newPrefix2 = (1.3.6.1.4.1.3327.90.1.3);
+
+
+#
+# Lightship attributes.
+#
+
+#
+# These attributes are used in service and policy records.
+# ========================================================
+#
+
+#
+# stnVersion
+#
+# An integer version number. Every time the record is modified,
+# the version number is incremented.
+#
+schema set attribute newPrefix0:1 = {
+    name   = stnVersion
+    ldap-names = stnVersion
+    syntax = caseIgnoreString
+    single-valued
+};
+
+#
+# These attributes are used in service records.
+# =============================================
+#
+
+#
+# stnConnIdleTimeout
+#
+# The number of minutes a router session associated with service will
+# remain instantiated after the most recent session packet was
+# processed.
+#
+schema set attribute newPrefix0:2 = {
+    name   = stnConnIdleTimeout
+    ldap-names = stnConnIdleTimeout
+    syntax = caseIgnoreString
+    single-valued
+};
+
+#
+# stnPolicyName
+#
+# A multi-valued attribute listing the policies referenced by this
+# service. Each value is a text string in the form
+# "policy cn, version=#, order=#".
+# The version number is the value of the stnVersion attribute of the
+# policy, and the order number specifies the ordering of this policy
+# within the service, from 1 to the number of policies in the service.
+#
+schema set attribute newPrefix0:3 = {
+    name   = stnPolicyName
+    ldap-names = stnPolicyName
+    syntax = caseIgnoreString
+};
+
+#
+# stnServiceEnabled
+#
+# Set to 1 if the service is enabled, 0 if it is not.
+#
+# The following attributes are for support of Web-Based Service
+# Selection. These definitions are preliminary and will most
+# likely change.
+#
+schema set attribute newPrefix0:4 = {
+    name   = stnServiceEnabled
+    ldap-names = stnServiceEnabled
+    syntax = caseIgnoreString
+    single-valued
+};
+
+#
+# stnAccess
+#
+# Specifies whether the service is available for WBSS. A value
+# of "Public" indicates that it is available through WBSS, a value
+# of "Private" indicates it is not.
+#
+schema set attribute newPrefix0:5 = {
+    name   = stnAccess
+    ldap-names = stnAccess
+    syntax = caseIgnoreString
+    single-valued
+};
+
+#
+# stnRegion
+#
+# Specifies the region in which a service is available. Format is TBD.
+#
+schema set attribute newPrefix0:6 = {
+    name   = stnRegion
+    ldap-names = stnRegion
+    syntax = caseIgnoreString
+};
+
+#
+# stnPrice
+#
+# The price of the service in a format suitable for display.
+#
+schema set attribute newPrefix0:7 = {
+    name   = stnPrice
+    ldap-names = stnPrice
+    syntax = caseIgnoreString
+    single-valued
+};
+
+#
+# stnWbssDescription
+#
+# A description of the service suitable for display in a WBSS web page.
+#
+schema set attribute newPrefix0:8 = {
+    name   = stnWbssDescription
+    ldap-names = stnWbssDescription
+    syntax = caseIgnoreString
+    single-valued
+};
+
+#
+# stnServiceType
+# An integer denoting the category of the policy or service in which
+# the attribute appears. The following types are currently recognized:
+# 0: None
+# 1: VPN
+# 2: Firewall
+# 3: IP Filter
+# 4: Forwarding
+# 5: QOS
+# 6: MPLS
+# 7: Proxy Tunnel (for VTI)
+#
+schema set attribute newPrefix0:28 = {
+    name   = stnServiceType
+    ldap-names = stnServiceType
+    syntax = caseIgnoreString
+    single-valued
+};
+
+#
+# stnServiceRecords
+#
+# A binary value encoding any service specific data.
+#
+schema set attribute newPrefix0:29 = {
+    name   = stnServiceRecords
+    ldap-names = stnServiceRecords
+    syntax = octetString
+    single-valued
+};
+
+
+#
+# These attributes are used in policy records.
+# ============================================
+#
+
+#
+# stnPolicyRecords
+#
+# A binary value encoding the policy filter and action parameters.
+#
+schema set attribute newPrefix0:9 = {
+    name   = stnPolicyRecords
+    ldap-names = stnPolicyRecords
+    syntax = octetString
+    single-valued
+};
+
+#
+# These attributes are used in user records.
+# ==========================================
+#
+
+#
+# stnServiceName
+#
+# The cn attribute value of the service assigned to the user.
+#
+schema set attribute newPrefix0:10 = {
+    name   = stnServiceName
+    ldap-names = stnServiceName
+    syntax = caseIgnoreString
+    single-valued
+};
+
+#
+# The following attributes are used for storing values of RADIUS
+# attributes associated with a user or group of users.
+#
+
+#
+# stnRadiusResponse
+#
+# stnRadiusResponse is used in the case where all radius response
+# values are stored as multiple values of a single attribute, where
+# each attribute value is of the form
+# "radius-attrib-name = response-value".
+#
+schema set attribute newPrefix0:11 = {
+    name   = stnRadiusResponse
+    ldap-names = stnRadiusResponse
+    syntax = caseIgnoreString
+};
+
+#
+# The following attributes are used in the case where each radius response
+# value is stored in its own LDAP attribute, and the value of the attribute
+# contains precisely the value to be returned in the response.
+#
+schema set attribute newPrefix0:12 = {
+    name   = radiusIdleTimeout
+    ldap-names = radiusIdleTimeout
+    syntax = caseIgnoreString
+    single-valued
+};
+
+schema set attribute newPrefix0:13 = {
+    name   = radiusSessionTimeout
+    ldap-names = radiusSessionTimeout
+    syntax = caseIgnoreString
+    single-valued
+};
+
+schema set attribute newPrefix0:14 = {
+    name   = radiusServiceType
+    ldap-names = radiusServiceType
+    syntax = caseIgnoreString
+    single-valued
+};
+
+schema set attribute newPrefix0:15 = {
+    name   = radiusReplyMessage
+    ldap-names = radiusReplyMessage
+    syntax = caseIgnoreString
+    single-valued
+};
+
+schema set attribute newPrefix0:16 = {
+    name   = radiusFilterId
+    ldap-names = radiusFilterId
+    syntax = caseIgnoreString
+    single-valued
+};
+
+schema set attribute newPrefix0:17 = {
+    name   = radiusFramedCompression
+    ldap-names = radiusFramedCompression
+    syntax = caseIgnoreString
+    single-valued
+};
+
+schema set attribute newPrefix0:18 = {
+    name   = radiusFramedIpAddress
+    ldap-names = radiusFramedIpAddress
+    syntax = caseIgnoreString
+    single-valued
+};
+
+schema set attribute newPrefix0:19 = {
+    name   = radiusFramedIpNetmask
+    ldap-names = radiusFramedIpNetmask
+    syntax = caseIgnoreString
+    single-valued
+};
+
+schema set attribute newPrefix0:20 = {
+    name   = radiusFramedMtu
+    ldap-names = radiusFramedMtu
+    syntax = caseIgnoreString
+    single-valued
+};
+
+schema set attribute newPrefix0:21 = {
+    name   = radiusFramedProtocol
+    ldap-names = radiusFramedProtocol
+    syntax = caseIgnoreString
+    single-valued
+};
+
+schema set attribute newPrefix0:22 = {
+    name   = radiusFramedRouting
+    ldap-names = radiusFramedRouting
+    syntax = caseIgnoreString
+    single-valued
+};
+
+schema set attribute newPrefix0:23 = {
+    name   = radiusPrimaryDnsServer
+    ldap-names = radiusPrimaryDnsServer
+    syntax = caseIgnoreString
+    single-valued
+};
+
+schema set attribute newPrefix0:24 = {
+    name   = radiusSecondaryDnsServer
+    ldap-names = radiusSecondaryDnsServer
+    syntax = caseIgnoreString
+    single-valued
+};
+
+schema set attribute newPrefix0:25 = {
+    name   = radiusPrimaryNbnsServer
+    ldap-names = radiusPrimaryNbnsServer
+    syntax = caseIgnoreString
+    single-valued
+};
+
+schema set attribute newPrefix0:26 = {
+    name   = radiusSecondaryNbnsServer
+    ldap-names = radiusSecondaryNbnsServer
+    syntax = caseIgnoreString
+    single-valued
+};
+
+
+#
+# These attributes are used in generic config  records.
+# ============================================
+#
+#
+# stnCompiledData
+#
+# A binary value encoding the config record data.
+#
+schema set attribute newPrefix0:30 = {
+    name   = stnCompiledData
+    ldap-names = stnCompiledData
+    syntax = octetString
+    single-valued
+};
+
+#
+# stnRecTag
+#
+# The integer tag value indicating the type of config record.
+#
+schema set attribute newPrefix0:31 = {
+    name   = stnRecTag
+    ldap-names = stnRecTag
+    syntax = caseIgnoreString
+    single-valued
+};
+
+#
+# stnReferences
+#
+# A binary value encoding any service specific data.
+#
+# A multi-valued attribute listing other records referenced by the one
+# containing this attribute. Each value is a text string in the form
+# <param tag>[.<order #>]:<referenced record DN>
+# The param tag is an integer indicating which parameter of this
+# record references the specified DN. In cases where a parameter
+# is a list of references, the same param tag may appear in multiple
+# values, in each case followed by a period (.) and an ordinal number
+# that is used to specify the ordering of the references within the
+# parameter. The ordinal numbers are not guaranteed to be contiguous,
+# but they are guaranteed to be greater than or equal to zero, and unique.
+# The param tag and optional ordinal number are followed by a colon (:)
+# and the distinguished name of the LDAP entry containing the referenced
+# record.
+#
+schema set attribute newPrefix0:32 = {
+    name   = stnReferences
+    ldap-names = stnReferences
+    syntax = caseIgnoreString
+};
+
+#
+# These attributes are used in stnConfigDirInfo records.
+# ============================================
+#
+#
+# stnRecVersions
+#
+# A multi-valued attribute listing all the records stored under a
+# base directory along with each record's edit version. Each time
+# a record is modified, its edit version number is incremented.
+# Each value has the form "<record DN>:<version #>".
+#
+schema set attribute newPrefix0:33 = {
+    name   = stnRecVersions
+    ldap-names = stnRecVersions
+    syntax = caseIgnoreString
+};
+
+
+
+#
+# Lightship object classes.
+#
+
+#
+# stnService contains a list of policies of a single type
+# describing how to treat traffic going through a Spring Tide switch.
+# With the introduction of service lists in IPSS 2.0, the use of
+# stnServiceEnabled, stnConnIdleTimeout, stnAccess, stnRegion, stnPrice,
+# and stnWbssDescription is deprecated. The corresponding values in the
+# stnServiceList object should be used instead.
+#
+schema set object-class newPrefix1:4 = {
+    name = stnServiceList
+    subclass-of top
+    must-contain
+                cn,
+                stnServiceEnabled,
+                stnVersion
+    may-contain
+                o,
+                ou,
+                description,
+                stnCompiledData,
+                stnRecTag,
+                stnReferences,
+                stnConnIdleTimeout,
+                stnAccess,
+                stnRegion,
+                stnPrice,
+                stnWbssDescription
+};
+
+#
+# stnServiceList contains a list of services and other information
+# describing how to treat traffic going through a Spring Tide switch.
+#
+schema set object-class newPrefix1:1 = {
+    name = stnService
+    subclass-of top
+    must-contain
+                cn,
+                stnVersion
+    may-contain
+                o,
+                ou,
+                description,
+                stnCompiledData,
+                stnRecTag,
+                stnPolicyName,
+                stnReferences,
+                stnServiceType,
+                stnServiceRecords,
+                stnServiceEnabled,
+                stnConnIdleTimeout,
+                stnAccess,
+                stnRegion,
+                stnPrice,
+                stnWbssDescription
+};
+
+#
+# stnPolicy contains filter and action information describing how
+# to treat traffic to which a service containing the policy is
+# applied.
+#
+schema set object-class newPrefix1:2 = {
+    name = stnPolicy
+    subclass-of top
+    must-contain
+                cn,
+                stnVersion
+    may-contain
+                o,
+                ou,
+                description,
+                stnCompiledData,
+                stnRecTag,
+                stnPolicyRecords,
+                stnReferences,
+                stnServiceType
+};
+
+#
+# stnUser extends the inetorgperson class to support storing RADIUS
+# attribute values to be applied when authenticating the user.
+# it allows RADIUS servers to use an LDAP directory as a user
+# database.
+#
+schema set object-class newPrefix1:3 = {
+    name = stnUser
+    subclass-of inetorgperson
+    must-contain
+        stnServiceName
+    may-contain
+        stnRadiusResponse,
+        radiusIdleTimeout,
+        radiusSessionTimeout,
+        radiusServiceType,
+        radiusReplyMessage,
+        radiusFilterId,
+        radiusFramedCompression,
+        radiusFramedIpAddress,
+        radiusFramedIpNetmask,
+        radiusFramedMtu,
+        radiusFramedProtocol,
+        radiusFramedRouting,
+        radiusPrimaryDnsServer,
+        radiusSecondaryDnsServer,
+        radiusPrimaryNbnsServer,
+        radiusSecondaryNbnsServer
+};
+
+#
+# stnConfigRecord contains all the data necessary to construct
+# an IPSS configuration record.
+#
+schema set object-class newPrefix1:5 = {
+    name = stnConfigRecord
+    subclass-of top
+    must-contain
+                cn,
+                stnRecTag,
+                stnVersion,
+                stnCompiledData
+    may-contain
+                description,
+                stnReferences
+};
+
+#
+# stnConfigRecType is a grouping entry that acts as a directory
+# for containing all config record entries of a particular type.
+#
+schema set object-class newPrefix1:6 = {
+    name = stnConfigRecType
+    subclass-of top
+    must-contain
+                stnRecTag
+    may-contain
+                description
+};
+
+#
+# stnServiceRecType is a grouping entry that acts as a directory for containing
+# record entries supporting a particular service type
+#
+schema set object-class newPrefix1:7 = {
+    name = stnServiceRecType
+    subclass-of top
+    must-contain
+                stnServiceType
+    may-contain
+                description
+};
+
+#
+# stnConfigDirectory is an entry containing information about a set
+# of service directories (the service list, service, and policy directories,
+# and all there sub-directories and entries). The stnVersion attribute is
+# and integer that is incremented every time any record in any of these
+# directories is created, modified, or deleted. This allows checking for
+# changes using a single query.
+#
+schema set object-class newPrefix1:8 = {
+    name = stnConfigDirInfo
+    subclass-of top
+    must-contain
+                cn,
+                stnVersion
+    may-contain
+                description
+};
+
+
+
+#
+# Lightship name bindings.
+#
+
+# LDAP Directory Hierarchy
+#
+# For LightShip 1.2, each LightShip domain is limited to a single base
+# service directory, but this may be replicated across multiple LDAP
+# servers. Starting with LightShip 2.0, each domain may have multiple
+# base service directories.
+#
+# Under a base service directory, there are at least two
+# subdirectories of interest. Policy records are stored in an
+# organizational unit named StnPolicy. Service records are stored in
+# an organizational unit named StnService. For LigthShip 2.0 and later,
+# Service list records are stored in an organizational unit named
+# StnServiceList. Other configuration records referenced by services
+# and policies are stored in stnConfigRecordType subdirectories under
+# the service type directory that they are used for.
+#
+# The service list directory contains an instance of the stnConfigDirInfo
+# record. The stnVersion attribute of this record is an integer that is
+# incremented every time any entry under the base directory tree is
+# created, modified, or deleted. This allows checking for changes
+# by making a single query.
+#
+# Here is a partial sample directory structure:
+#
+#      c=US
+#      +--l=MA
+#          +--o=springtidenet.com
+#              +--ou=StnPolicy
+#              |   +--cn=policy record name
+#              |   ...
+#              |   +--stnServiceType=1
+#              |   |   +--stnRecTag=75
+#              |   |   |  +--cn=IPSec Pref 1
+#              |   |   |  ...
+#              |   |   +--stnRecTag=87
+#              |   |   |  +--cn=IPSec Action 1
+#              |   |   |  ...
+#              |   ...
+#              |
+#              +--ou=StnService
+#              |   +--cn=service record name
+#              |   ...
+#              |   +--stnServiceType=2
+#              |   |   +--stnRecTag=114
+#              |   |      +--cn=Firewall Options 1
+#              |   |      ...
+#              |   ...
+#              |
+#              +--ou=StnServiceList
+#                  +--cn=ConfigDirInfo     // contains directory version number
+#                  +--cn=service list record name
+#                  ...
+#
+
+schema set name-binding newPrefix2:1 = {
+        name = stnPolicy-ou
+        stnPolicy allowable-parent organizationalUnit
+        named-by commonName
+        };
+
+schema set name-binding newPrefix2:2 = {
+        name = stnService-ou
+        stnService allowable-parent organizationalUnit
+        named-by commonName
+        };
+
+schema set name-binding newPrefix2:3 = {
+        name = stnUser-ou
+        stnUser allowable-parent organizationalUnit
+        named-by uid
+        };
+
+schema set name-binding newPrefix2:4 = {
+        name = stnServiceList-ou
+        stnServiceList allowable-parent organizationalUnit
+        named-by commonName
+        };
+
+schema set name-binding newPrefix2:5 = {
+        name = stnConfigRecType-stnServiceRecType
+        stnConfigRecType allowable-parent stnServiceRecType
+        named-by stnRecTag
+        };
+
+schema set name-binding newPrefix2:6 = {
+        name = stnServiceRecType-ou
+        stnServiceRecType allowable-parent organizationalUnit
+        named-by stnServiceType
+        };
+
+schema set name-binding newPrefix2:7 = {
+        name = stnConfigRecord-stnConfigRecType
+        stnConfigRecord allowable-parent stnConfigRecType
+        named-by commonName
+        };
+
+schema set name-binding newPrefix2:8 = {
+        name = stnConfigDirInfo-ou
+        stnConfigDirInfo allowable-parent organizationalUnit
+        named-by commonName
+        };
+
+
+

@@ -1,0 +1,220 @@
+# 
+# Computer Associates
+#
+# config/schema/e3x.dxc ($Revision: 4.4 $)
+#
+# Attributes for French gastronomique reviews.
+# These definitions where derived from IETF Schema Release 1, 19-Sep-94.
+#
+# These attributes and Object classes are EXPERIMENTAL.
+#
+# oid-prefix ::= ccitt(0).network-operator(3).transpac(2080).e3x(6030532)
+#
+# Attribute Nb-ville has a duplicated attribute id and has
+# been removed (commented out) from this file. Its associated
+# object class (regionGastronomique) has also been removed.
+#
+# Requires definitions in x500.dxc
+schema set oid-prefix e3x-attributeType = (0.3.2080.6030532.4);
+
+#
+# Attribute Definitions.
+#
+schema set attribute e3x-attributeType:7 = {
+        name   = e3xSpecialite
+	ldap-names = Specialty
+        syntax = caseIgnoreString
+};
+
+#schema set attribute e3x-attributeType:7 = {
+#        name   = e3xNb-villes
+#	 ldap-names = Nb-towns
+#        syntax = integer
+#};
+
+schema set attribute e3x-attributeType:8 = {
+        name   = e3xPrix-max
+	ldap-names = Max-price
+        syntax = integer
+};
+
+schema set attribute e3x-attributeType:9 = {
+        name   = e3xPrix-min
+	ldap-names = Min-price
+        syntax = integer
+};
+
+schema set attribute e3x-attributeType:10 = {
+        name   = e3xPrix-med
+	ldap-names = Average-price
+        syntax = integer
+};
+
+schema set attribute e3x-attributeType:11 = {
+        name   = e3xPar-groupe-de
+	ldap-names = MaximumInParty
+        syntax = integer
+};
+
+schema set attribute e3x-attributeType:12 = {
+        name   = e3xQualite-du-service
+	ldap-names = QualityOfService
+        syntax = caseIgnoreString
+};
+
+schema set attribute e3x-attributeType:13 = {
+        name   = e3xCadre
+	ldap-names = Appearance
+        syntax = caseIgnoreString
+};
+
+schema set attribute e3x-attributeType:14 = {
+        name   = e3xTerrasse
+	ldap-names = OutdoorSeating
+        syntax = boolean
+};
+
+schema set attribute e3x-attributeType:15 = {
+        name   = e3xParking
+        syntax = integer
+};
+
+schema set attribute e3x-attributeType:16 = {
+        name   = e3xReservation
+        syntax = boolean
+};
+
+schema set attribute e3x-attributeType:17 = {
+        name   = e3xCasher
+	ldap-names = Kosher
+        syntax = boolean
+};
+
+schema set attribute e3x-attributeType:18 = {
+        name   = e3xA-eviter
+	ldap-names = NotRecommended
+        syntax = boolean
+};
+
+schema set attribute e3x-attributeType:19 = {
+        name   = e3xConseille
+	ldap-names = Recommended
+        syntax = boolean
+};
+
+schema set attribute e3x-attributeType:20 = {
+        name   = e3xAmbiance
+        syntax = caseIgnoreString
+};
+
+schema set attribute e3x-attributeType:21 = {
+        name   = e3xMusique
+	ldap-names = Music
+        syntax = boolean
+};
+
+schema set attribute e3x-attributeType:22 = {
+        name   = e3xVitesse-du-service
+	ldap-names = ServiceSpeed
+        syntax = caseIgnoreString
+};
+
+schema set attribute e3x-attributeType:23 = {
+        name   = e3xRapport-QP
+	ldap-names = QualityPriceRatio
+        syntax = caseIgnoreString
+};
+
+schema set attribute e3x-attributeType:24 = {
+        name   = e3xFerme-les
+	ldap-names = Closed
+        syntax = caseIgnoreString
+};
+
+schema set attribute e3x-attributeType:25 = {
+        name   = e3xRecommande-par
+	ldap-names = RecommendedBy
+        syntax = caseIgnoreString
+};
+
+schema set attribute e3x-attributeType:26 = {
+        name   = e3xCarte-Bleue
+	ldap-names = CreditCardsAccepted
+        syntax = boolean
+};
+
+schema set attribute e3x-attributeType:27 = {
+        name   = e3xTaux-de-frequentation
+        syntax = integer
+};
+
+schema set attribute e3x-attributeType:29 = {
+        name   = e3xMoyen-acces
+	ldap-names = TransportationMeans
+        syntax = caseIgnoreString
+};
+
+schema set attribute e3x-attributeType:30 = {
+        name   = e3xNb-restaurants
+        syntax = integer
+};
+
+
+#
+# Object Class Definitions.
+#
+schema set oid-prefix e3x-objectClass = (0.3.2080.6030532.6);
+
+#schema set object-class e3x-objectClass:3 = {
+#        name   = e3xRegionGastronomique
+#        subclass-of top
+#        must-contain
+#            stateOrProvinceName,
+#            e3xNb-villes
+#        may-contain
+#            description
+#};
+
+schema set object-class e3x-objectClass:4 = {
+        name   = e3xVilleGastronomique
+        subclass-of locality
+        must-contain
+            e3xNb-restaurants
+};
+
+schema set object-class e3x-objectClass:5 = {
+        name   = e3xRestaurant
+        subclass-of top
+        must-contain
+            streetAddress,
+	    telephoneNumber,
+	    description
+	may-contain
+	    e3xSpecialite,
+	    e3xPrix-max,
+	    e3xPrix-min,
+	    e3xPrix-med,
+	    e3xCadre,
+	    e3xQualite-du-service,
+	    e3xTerrasse,
+	    e3xParking,
+	    e3xReservation,
+	    e3xCasher,
+	    e3xAmbiance,
+	    e3xMusique,
+	    e3xPar-groupe-de,
+	    e3xA-eviter,
+	    e3xConseille,
+	    e3xVitesse-du-service,
+	    e3xRapport-QP,
+	    e3xMoyen-acces,
+	    e3xTaux-de-frequentation,
+	    e3xFerme-les,
+	    e3xRecommande-par,
+	    e3xCarte-Bleue,
+	    postalAddress,
+	    facsimileTelephoneNumber
+};
+
+
+

@@ -1,0 +1,196 @@
+schema set oid-prefix etaops-notify-attr = (1.3.6.1.4.1.791.2.3.5.3.5005.1);
+schema set oid-prefix etaops-notify-oc = (1.3.6.1.4.1.791.2.3.5.3.5005.2);
+schema set oid-prefix etaops-notify-nb = (1.3.6.1.4.1.791.2.3.5.3.5005.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+schema set attribute etaops-notify-attr:1 = {
+    name = eTNotifyOpContainerID
+    ldap-names = eTNotifyOpContainerID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etaops-notify-attr:2 = {
+    name = eTNotifyState
+    ldap-names = eTNotifyState
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etaops-notify-attr:3 = {
+    name = eTNotifyOpID
+    ldap-names = eTNotifyOpID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etaops-notify-attr:4 = {
+    name = eTNotifyPayload
+    ldap-names = eTNotifyPayload
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etaops-notify-attr:5 = {
+    name = eTNotifyPayloadStart
+    ldap-names = eTNotifyPayloadStart
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etaops-notify-attr:6 = {
+    name = eTNotifyCreateTimet
+    ldap-names = eTNotifyCreateTimet
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etaops-notify-attr:7 = {
+    name = eTNotifyUpdateTimet
+    ldap-names = eTNotifyUpdateTimet
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etaops-notify-attr:8 = {
+    name = eTNotifyStartState
+    ldap-names = eTNotifyStartState
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etaops-notify-attr:9 = {
+    name = eTNotifyEncrypted
+    ldap-names = eTNotifyEncrypted
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etaops-notify-attr:10 = {
+    name = eTNotifyProvOpDN
+    ldap-names = eTNotifyProvOpDN
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etaops-notify-attr:11 = {
+    name = eTNotifyProvOp
+    ldap-names = eTNotifyProvOp
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etaops-notify-attr:12 = {
+    name = eTNotifySequenceNo
+    ldap-names = eTNotifySequenceNo
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etaops-notify-attr:13 = {
+    name = eTNotifyPriority
+    ldap-names = eTNotifyPriority
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etaops-notify-oc:1 = {
+    name = eTNotifyOpContainer
+    subclass-of Top
+    must-contain
+        eTNotifyOpContainerID,
+        objectclass
+    may-contain
+        eTNotifyPayloadStart,
+        eTNotifyPayload,
+        eTNotifyEncrypted,
+        eTNotifyProvOp,
+        eTNotifyProvOpDN,
+        eTNotifyStartState,
+        eTNotifyState,
+        eTNotifySequenceNo,
+        eTNotifyPriority,
+        eTNotifyCreateTimet,
+        eTNotifyUpdateTimet
+};
+
+schema set object-class etaops-notify-oc:2 = {
+    name = eTNotifyOp
+    subclass-of Top
+    must-contain
+        eTNotifyOpID,
+        objectclass
+    may-contain
+        eTNotifyPayloadStart,
+        eTNotifyPayload,
+        eTNotifyEncrypted,
+        eTNotifyProvOp,
+        eTNotifyProvOpDN,
+        eTNotifyStartState,
+        eTNotifyState,
+        eTNotifySequenceNo,
+        eTNotifyPriority,
+        eTNotifyCreateTimet,
+        eTNotifyUpdateTimet
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etaops-notify-nb:1 = {
+    name = eTNotifyOpContainer-eTEnterprise
+    eTNotifyOpContainer allowable-parent eTEnterprise
+    named-by eTNotifyOpContainerID
+};
+
+schema set name-binding etaops-notify-nb:2 = {
+    name = eTNotifyOpContainer-eTDomainComponent
+    eTNotifyOpContainer allowable-parent eTDomainComponent
+    named-by eTNotifyOpContainerID
+};
+
+schema set name-binding etaops-notify-nb:3 = {
+    name = eTNotifyOp-eTEnterprise
+    eTNotifyOp allowable-parent eTEnterprise
+    named-by eTNotifyOpID
+};
+
+schema set name-binding etaops-notify-nb:4 = {
+    name = eTNotifyOp-eTDomainComponent
+    eTNotifyOp allowable-parent eTDomainComponent
+    named-by eTNotifyOpID
+};
+
+schema set name-binding etaops-notify-nb:5 = {
+    name = eTNotifyOp-eTNotifyOpContainer
+    eTNotifyOp allowable-parent eTNotifyOpContainer
+    named-by eTNotifyOpID
+};

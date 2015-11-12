@@ -1,0 +1,390 @@
+# 
+# Computer Associates 
+#
+# config/schema/entrust.dxc ($Id: entrust.dxc,v 4.15 2011/11/21 01:27:28 john Exp $ )
+#
+# Entrust attributes, object classes and name-bindings
+# Requires definitions in x500.dxc and cosine.dxc
+#
+schema set oid-prefix entrustAttr = (1.2.840.113533.7.68);
+schema set oid-prefix entrustAddrAttr = (1.2.840.113549.1.9);
+schema set oid-prefix entrustRoamingAttr = (1.2.840.113533.7.79);
+
+#
+# Attribute Definitions.
+#
+schema set attribute entrustAttr:2 = {
+        name = ccMailName
+        syntax = caseIgnoreString
+};
+
+schema set attribute entrustAttr:3 = {
+        name = ccMailPostoffice
+        syntax = caseIgnoreString
+};
+
+schema set attribute entrustAttr:4 = {
+        name = ccMailComments
+        syntax = caseIgnoreString
+};
+
+schema set attribute entrustAttr:6 = {
+        name = msMailFullname
+        syntax = caseIgnoreString		
+};
+
+schema set attribute entrustAttr:7 = {
+        name = msMailId
+        syntax = caseIgnoreString
+};
+
+schema set attribute entrustAttr:8 = {
+        name = msMailNetwork
+        syntax = caseIgnoreString
+};
+
+schema set attribute entrustAttr:9 = {
+        name = msMailPostoffice
+        syntax = caseIgnoreString
+};
+
+schema set attribute entrustAttr:10 = {
+        name = attributeCertificate
+        syntax = attributeCertificateSyntax		# attributeCertificate
+};
+
+schema set attribute entrustAttr:12 = {
+        name = qmUserName
+        syntax = caseIgnoreString
+};
+
+schema set attribute entrustAttr:13 = {
+        name = qmMailCenter
+        syntax = caseIgnoreString
+};
+
+schema set attribute entrustAttr:14 = {
+        name = qmZone
+        syntax = caseIgnoreString
+};
+
+schema set attribute entrustAttr:17 = {
+        name = smimetrust
+        syntax = caseIgnoreIA5String
+};
+
+schema set attribute entrustAttr:18 = {
+        name = ssltrust
+        syntax = caseIgnoreIA5String
+};
+
+schema set attribute entrustAttr:19 = {
+        name = objsigntrust
+        syntax = caseIgnoreIA5String
+};
+
+schema set attribute entrustAttr:22 = {
+	name = entrustRoamFileEncInfo
+	syntax = OctetString
+};
+
+schema set attribute entrustAttr:23 = {
+	name = entrustRoamingProfile
+	syntax = OctetString
+};
+
+schema set attribute entrustAttr:24 = {
+	name = entrustRoamingPAB
+	syntax = OctetString
+};
+
+schema set attribute entrustAttr:25 = {
+	name = entrustRoamingRecipList
+	syntax = OctetString
+};
+
+schema set attribute entrustAttr:26 = {
+	name = entrustRoamingSLA
+	syntax = OctetString
+};
+
+schema set attribute entrustAttr:27 = {
+	name = entrustRoamingPRV
+	syntax = OctetString
+};
+
+schema set attribute entrustAttr:28 = {
+	name = entrustRoamingEOP
+	syntax = OctetString
+};
+
+schema set attribute entrustAttr:30 = {
+	name = entrustPolicyCertificate
+	ldap-names = "entrustPolicyCertificate;binary",
+	entrustPolicyCertificate
+	syntax = certificate
+};
+
+# Note: this attribute is also defined in rsa-pkcs9.dxc
+schema set attribute entrustAddrAttr:1 = {
+        name = emailAddress
+	ldap-names = emailAddress, email
+	syntax = caseIgnoreIA5String
+	description = "Email address"
+};
+
+schema set attribute entrustAddrAttr:2 = {
+        name = unstructuredName
+        syntax = caseIgnoreIA5String
+};
+
+schema set attribute entrustAddrAttr:8 = {
+        name = unstructuredAddress
+        syntax = caseIgnoreString
+};
+
+schema set attribute entrustRoamingAttr:0 = {
+        name = entrustRoamingCAPAB
+        syntax = octetString
+};
+
+#
+# Object Class Definitions.
+#
+schema set oid-prefix entrustObjectClass = (1.2.840.113533.7.67);
+
+schema set object-class entrustObjectClass:0 = {
+	name = entrustUser
+	subclass-of top
+	kind = auxiliary
+	may-contain
+		userCertificate
+};
+
+schema set object-class entrustObjectClass:1 = {
+        name = entrustCA
+        subclass-of top
+	kind = auxiliary
+        may-contain
+            cACertificate,
+	    certificateRevocationList,
+	    authorityRevocationList,
+	    crossCertificatePair,
+	    userPassword,
+	    attributeCertificate
+};
+
+schema set object-class entrustObjectClass:2 = {
+        name = ccMailUser
+        subclass-of top
+	kind = auxiliary
+        may-contain
+            ccMailComments,
+	    ccMailName,
+	    ccMailPostOffice
+};
+
+schema set object-class entrustObjectClass:3 = {
+        name = msMailUser
+        subclass-of top
+	kind = auxiliary
+        may-contain
+            msMailFullname,
+	    msMailId,
+	    msMailNetwork,
+	    msMailPostOffice
+};
+
+schema set object-class entrustObjectClass:4 = {
+        name = uniquelyIdentifiedUser
+        subclass-of top
+	kind = auxiliary
+        must-contain
+            serialNumber
+};
+
+schema set object-class entrustObjectClass:5 = {
+        name = simpleAuthObject
+        subclass-of top
+	kind = auxiliary
+        must-contain
+            userPassword
+};
+
+schema set object-class entrustObjectClass:6 = {
+        name = qmMailUser
+        subclass-of top
+	kind = auxiliary
+        may-contain
+            qmUserName,
+	    qmMailCenter,
+	    qmZone
+};
+
+schema set object-class entrustObjectClass:7 = {
+        name = rfc822MailUser
+        subclass-of top
+	kind = auxiliary
+        may-contain
+            cosineRfc822Mailbox
+};
+
+schema set object-class entrustObjectClass:8 = {
+        name = trustTypes
+        subclass-of top
+	kind = auxiliary
+        may-contain
+            smimetrust,
+	    ssltrust,
+	    objsigntrust
+};
+
+schema set object-class entrustObjectClass:9 = {
+        name = emailAddressUser
+        subclass-of top
+	kind = auxiliary
+        may-contain
+            emailAddress
+};
+
+schema set object-class entrustObjectClass:11 = {
+        name = cEPDevice
+        subclass-of top
+	kind = auxiliary
+        may-contain
+            unstructuredName,
+	    unstructuredAddress
+};
+
+schema set object-class entrustObjectClass:12 = {
+        name = pKCS10Device
+        subclass-of top
+	kind = auxiliary
+        may-contain
+            serialNumber
+};
+
+schema set object-class entrustObjectClass:13 = {
+        name = entrustRoamingUser
+        subclass-of top
+	kind = auxiliary
+        may-contain
+		entrustRoamFileEncInfo,
+		entrustRoamingProfile,
+		entrustRoamingPAB,
+		entrustRoamingRecipList,
+		entrustRoamingSLA,
+		entrustRoamingPRV,
+		entrustRoamingEOP,
+		entrustRoamingCAPAB
+};
+
+schema set object-class entrustObjectClass:17 = {
+	name = entrustPolicyObject
+	subclass-of top
+	kind = auxiliary
+	may-contain
+		entrustPolicyCertificate
+};
+
+
+#
+# Name Bindings.
+#
+schema set name-binding (1.2.840.113533.7.999.1) = {
+	name = uniquePerson-o
+	Person allowable-parent organization
+	named-by commonName, serialNumber
+	};
+
+schema set name-binding (1.2.840.113533.7.999.2) = {
+	name = uniquePerson-ou
+	Person allowable-parent organizationalUnit
+	named-by commonName, serialNumber
+	};
+
+schema set name-binding (1.2.840.113533.7.999.3) = {
+	name = uniqueOrgPerson-o
+	organizationalPerson allowable-parent organization
+	named-by commonName, serialNumber optional organizationalUnitName
+	};
+
+schema set name-binding (1.2.840.113533.7.999.4) = {
+	name = uniqueOrgPerson-ou
+	organizationalPerson allowable-parent organizationalUnit
+	named-by commonName, serialNumber optional organizationalUnitName
+	};
+
+schema set name-binding (1.2.840.113533.7.999.5) = {
+	name = uniqueResPerson-loc
+	residentialPerson allowable-parent locality
+	named-by commonName, serialNumber optional streetAddress
+	};
+
+schema set name-binding (1.2.840.113533.7.999.6) = {
+	name = emailOrgPerson-o
+	organizationalPerson allowable-parent organization
+	named-by commonName 
+	optional organizationalUnitName, serialNumber, emailAddress
+	};
+
+schema set name-binding (1.2.840.113533.7.999.7) = {
+	name = emailOrgPerson-ou
+	organizationalPerson allowable-parent organizationalUnit
+	named-by commonName 
+	optional organizationalUnitName, serialNumber, emailAddress
+	};
+
+schema set name-binding (1.2.840.113533.7.999.8) = {
+	name = deviceVPN-o
+	device allowable-parent organization
+	named-by commonName
+	optional serialNumber, unstructuredAddress, unstructuredName
+	};
+
+schema set name-binding (1.2.840.113533.7.999.9) = {
+	name = deviceVPN-ou
+	device allowable-parent organizationalUnit
+	named-by commonName
+	optional serialNumber, unstructuredAddress, unstructuredName
+	};
+
+schema set name-binding (1.2.840.113533.7.999.901) = {
+       	name = cRLDistributionPoint-entrustCA
+	cRLDistributionPoint allowable-parent entrustCA
+	named-by commonName
+};
+
+schema set name-binding (1.2.840.113533.7.999.902) = {
+	name = organization-entrustCA
+	organization allowable-parent entrustCA
+	named-by commonName
+};
+
+schema set name-binding (1.2.840.113533.7.999.903) = {
+	name = organizationalUnit-entrustCA
+	organizationalUnit allowable-parent entrustCA
+	named-by commonName
+};
+
+schema set name-binding (1.2.840.113533.7.999.904) = {
+	name = organizationalRole-entrustCA
+	organizationalRole allowable-parent entrustCA
+	named-by commonName
+};
+
+schema set name-binding (1.2.840.113533.7.999.905) = {
+	name = organizationalPerson-entrustCA
+	organizationalPerson allowable-parent entrustCA
+	named-by commonName
+		optional serialNumber
+};
+
+schema set name-binding (1.2.840.113533.7.999.906) = {
+	name = emailAddressUser-entrustCA
+	emailAddressUser allowable-parent entrustCA
+	named-by commonName
+		optional emailAddress, serialNumber
+};
+
+

@@ -1,0 +1,125 @@
+# 
+# Computer Associates
+#
+# config/schema/inetop.dxc ($Revision: 4.10 $)
+# 
+# InetOrgPerson Definitions.
+#
+schema set oid-prefix inetorgp-attr = (2.16.840.1.113730.3.1);
+schema set oid-prefix inetorgp-oc   = (2.16.840.1.113730.3.2);
+schema set oid-prefix inetorgp-nb   = (2.16.840.1.113730.3.14);
+
+#
+# Attribute Definitions.
+#
+schema set attribute inetorgp-attr:1 = {
+	name = carLicense
+        syntax = caseIgnoreString
+	};
+
+schema set attribute inetorgp-attr:2 = {
+	name = departmentNumber
+        syntax = caseIgnoreString
+	};
+
+schema set attribute inetorgp-attr:3 = {
+	name = employeeNumber
+        syntax = caseIgnoreString
+	  single-valued
+	};
+
+schema set attribute inetorgp-attr:4 = {
+	name = employeeType
+        syntax = caseIgnoreString
+	};
+
+schema set attribute inetorgp-attr:39 = {
+	name = preferredLanguage
+        syntax = caseIgnoreString
+	  single-valued
+	};
+
+schema set attribute inetorgp-attr:40 = {
+	name = userSMIMECertificate
+	ldap-names = usersmimecertificate
+        syntax = CertificateSyntax
+	};
+
+schema set attribute inetorgp-attr:216 = {
+	name = userPKCS12
+        syntax = CertificateSyntax
+	};
+
+schema set attribute inetorgp-attr:241 = {
+	name = displayName
+        syntax = caseIgnoreString
+	  single-valued
+	};
+
+
+#
+# Object Class Definitions.
+#
+schema set object-class inetorgp-oc:2 = {
+	name = inetOrgPerson
+	subclass-of OrganizationalPerson
+	kind = structural
+	may-contain
+		cosineAudio,
+		businessCategory,
+		carLicense,
+		departmentNumber,
+		displayName,
+		employeeNumber,
+		employeeType,
+		givenName,
+		cosineHomePhone,
+		cosineHomePostalAddress,
+		initials,
+		cosineJpegPhoto,
+		umichLabeledURL,
+		umichLabeledURI,
+		cosineManager,
+		cosineMobileTelephoneNumber,
+		cosinePagerTelephoneNumber,
+		cosinePhoto,
+		preferredLanguage,
+		cosineRfc822Mailbox,
+		cosineUserid,
+		cosineRoomNumber,
+		cosineSecretary,
+		uniqueIdentifier,
+		userSMIMECertificate,
+		userPKCS12,
+		userCertificate,
+		organizationName
+	};
+
+
+#
+# Name Bindings.
+#
+schema set name-binding inetorgp-nb:1 = {
+	name = INetOrgPerson-o
+	INetOrgPerson allowable-parent organization
+	named-by commonName optional surname, dnQualifier
+	};
+
+schema set name-binding inetorgp-nb:2 = {
+	name = INetOrgPerson-ou
+	INetOrgPerson allowable-parent organizationalUnit
+	named-by commonName optional surname, dnQualifier
+	};
+
+schema set name-binding inetorgp-nb:3 = {
+	name = INetOrgPerson2-o
+	INetOrgPerson allowable-parent organization
+	named-by cosineUserid
+	};
+
+schema set name-binding inetorgp-nb:4 = {
+	name = INetOrgPerson2-ou
+	INetOrgPerson allowable-parent organizationalUnit
+	named-by cosineUserid
+	};
+

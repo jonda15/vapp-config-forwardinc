@@ -1,5 +1,0 @@
-version: 1
-
-dn: dc=notify,dc=etadb
-objectClass: eTDomainComponent
-dc: notify

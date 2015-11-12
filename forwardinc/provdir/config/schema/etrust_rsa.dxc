@@ -1,0 +1,1147 @@
+schema set oid-prefix etrust-admin-RSA-attr = (1.3.6.1.4.1.791.2.3.5.3.5360.1);
+schema set oid-prefix etrust-admin-RSA-oc = (1.3.6.1.4.1.791.2.3.5.3.5360.2);
+schema set oid-prefix etrust-admin-RSA-nb = (1.3.6.1.4.1.791.2.3.5.3.5360.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-RSA-attr:10 = {
+    name = eTRSADirectoryName
+    ldap-names = eTRSADirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:23 = {
+    name = eTRSAHostName
+    ldap-names = eTRSAHostName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:24 = {
+    name = eTRSADirUser
+    ldap-names = eTRSADirUser
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:25 = {
+    name = eTRSADirUserPass
+    ldap-names = eTRSADirUserPass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:32 = {
+    name = eTRSADirDefPassDuration
+    ldap-names = eTRSADirDefPassDuration
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:34 = {
+    name = eTRSADirPassChangeMode
+    ldap-names = eTRSADirPassChangeMode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:11 = {
+    name = eTRSAAccountContainerName
+    ldap-names = eTRSAAccountContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:12 = {
+    name = eTRSAAccountName
+    ldap-names = eTRSAAccountName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:1 = {
+    name = eTRSAFirstName
+    ldap-names = eTRSAFirstName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:2 = {
+    name = eTRSALastName
+    ldap-names = eTRSALastName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:3 = {
+    name = eTRSAShell
+    ldap-names = eTRSAShell
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:4 = {
+    name = eTRSAUserGroup
+    ldap-names = eTRSAUserGroup
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:5 = {
+    name = eTRSAUserType
+    ldap-names = eTRSAUserType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:6 = {
+    name = eTRSATokenNumber
+    ldap-names = eTRSATokenNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:7 = {
+    name = eTRSAAccAgentHost
+    ldap-names = eTRSAAccAgentHost
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:8 = {
+    name = eTRSARealmName
+    ldap-names = eTRSARealmName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:9 = {
+    name = eTRSARemoteAlias
+    ldap-names = eTRSARemoteAlias
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:33 = {
+    name = eTRSAPassValidity
+    ldap-names = eTRSAPassValidity
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:52 = {
+    name = eTRSAAssignNextSWToken
+    ldap-names = eTRSAAssignNextSWToken
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:13 = {
+    name = eTRSAGrpContainerName
+    ldap-names = eTRSAGrpContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:14 = {
+    name = eTRSAGrpName
+    ldap-names = eTRSAGrpName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:26 = {
+    name = eTRSAGrpUserMember
+    ldap-names = eTRSAGrpUserMember
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:27 = {
+    name = eTRSAGrpSiteName
+    ldap-names = eTRSAGrpSiteName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:28 = {
+    name = eTRSAGrpAgentHost
+    ldap-names = eTRSAGrpAgentHost
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:15 = {
+    name = eTRSATokenContainerName
+    ldap-names = eTRSATokenContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:16 = {
+    name = eTRSATokenSerialNumber
+    ldap-names = eTRSATokenSerialNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:29 = {
+    name = eTRSATokenType
+    ldap-names = eTRSATokenType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:30 = {
+    name = eTRSATokenSeedSize
+    ldap-names = eTRSATokenSeedSize
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:31 = {
+    name = eTRSATokenStatus
+    ldap-names = eTRSATokenStatus
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:38 = {
+    name = eTRSATokenOperation
+    ldap-names = eTRSATokenOperation
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:39 = {
+    name = eTRSATokenLostPassword
+    ldap-names = eTRSATokenLostPassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:40 = {
+    name = eTRSATokenLifeTime
+    ldap-names = eTRSATokenLifeTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:41 = {
+    name = eTRSATokenAutoNotLostFlag
+    ldap-names = eTRSATokenAutoNotLostFlag
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:42 = {
+    name = eTRSATokenKeepPINFlag
+    ldap-names = eTRSATokenKeepPINFlag
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:49 = {
+    name = eTRSATokenClearPINFlag
+    ldap-names = eTRSATokenClearPINFlag
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:43 = {
+    name = eTRSATokenNewSerial
+    ldap-names = eTRSATokenNewSerial
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:44 = {
+    name = eTRSATokenPIN
+    ldap-names = eTRSATokenPIN
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:45 = {
+    name = eTRSATokenAssignStatus
+    ldap-names = eTRSATokenAssignStatus
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:46 = {
+    name = eTRSATokenLostStatus
+    ldap-names = eTRSATokenLostStatus
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:47 = {
+    name = eTRSATokenNewPINStatus
+    ldap-names = eTRSATokenNewPINStatus
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:48 = {
+    name = eTRSATokenAssignedUser
+    ldap-names = eTRSATokenAssignedUser
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:50 = {
+    name = eTRSATokenExpiryStatus
+    ldap-names = eTRSATokenExpiryStatus
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:51 = {
+    name = eTRSATokenReplacementStatus
+    ldap-names = eTRSATokenReplacementStatus
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:17 = {
+    name = eTRSAAgentHostContainerName
+    ldap-names = eTRSAAgentHostContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:18 = {
+    name = eTRSAAgentHostName
+    ldap-names = eTRSAAgentHostName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:19 = {
+    name = eTRSASiteContainerName
+    ldap-names = eTRSASiteContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:20 = {
+    name = eTRSASiteName
+    ldap-names = eTRSASiteName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:21 = {
+    name = eTRSAPolicyContainerName
+    ldap-names = eTRSAPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RSA-attr:22 = {
+    name = eTRSAPolicyName
+    ldap-names = eTRSAPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-RSA-oc:1 = {
+    name = eTRSADirectory
+    subclass-of Top
+    must-contain
+        eTRSADirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTUseAdminCreds,
+        eTAgentNamespaceClass,
+        eTRSAHostName,
+        eTRSADirUser,
+        eTRSADirUserPass,
+        eTRSADirDefPassDuration,
+        eTRSADirPassChangeMode
+};
+
+schema set object-class etrust-admin-RSA-oc:2 = {
+    name = eTRSANamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL
+};
+
+schema set object-class etrust-admin-RSA-oc:3 = {
+    name = eTRSAAccountContainer
+    subclass-of Top
+    must-contain
+        eTRSAAccountContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RSA-oc:4 = {
+    name = eTRSAAccount
+    subclass-of Top
+    must-contain
+        eTRSAAccountName,
+        objectclass
+    may-contain
+        eTSuspensionState,
+        eTPreSuspensionState,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTRSAFirstName,
+        eTRSALastName,
+        eTRSAShell,
+        eTRSAUserGroup,
+        eTRSAUserType,
+        eTRSATokenNumber,
+        eTRSAAccAgentHost,
+        eTRSARealmName,
+        eTRSARemoteAlias,
+        eTRSAPassValidity,
+        eTRSAAssignNextSWToken
+};
+
+schema set object-class etrust-admin-RSA-oc:5 = {
+    name = eTRSAGrpContainer
+    subclass-of Top
+    must-contain
+        eTRSAGrpContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RSA-oc:6 = {
+    name = eTRSAGrp
+    subclass-of Top
+    must-contain
+        eTRSAGrpName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTRSAGrpUserMember,
+        eTRSAGrpSiteName,
+        eTRSAGrpAgentHost
+};
+
+schema set object-class etrust-admin-RSA-oc:7 = {
+    name = eTRSATokenContainer
+    subclass-of Top
+    must-contain
+        eTRSATokenContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RSA-oc:8 = {
+    name = eTRSAToken
+    subclass-of Top
+    must-contain
+        eTRSATokenSerialNumber,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTRSATokenType,
+        eTRSATokenSeedSize,
+        eTRSATokenStatus,
+        eTRSATokenOperation,
+        eTRSATokenLostPassword,
+        eTRSATokenLifeTime,
+        eTRSATokenAutoNotLostFlag,
+        eTRSATokenKeepPINFlag,
+        eTRSATokenClearPINFlag,
+        eTRSATokenNewSerial,
+        eTRSATokenPIN,
+        eTRSATokenAssignStatus,
+        eTRSATokenLostStatus,
+        eTRSATokenNewPINStatus,
+        eTRSATokenAssignedUser,
+        eTRSATokenExpiryStatus,
+        eTRSATokenReplacementStatus
+};
+
+schema set object-class etrust-admin-RSA-oc:9 = {
+    name = eTRSAAgentHostContainer
+    subclass-of Top
+    must-contain
+        eTRSAAgentHostContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RSA-oc:10 = {
+    name = eTRSAAgentHost
+    subclass-of Top
+    must-contain
+        eTRSAAgentHostName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RSA-oc:11 = {
+    name = eTRSASiteContainer
+    subclass-of Top
+    must-contain
+        eTRSASiteContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RSA-oc:12 = {
+    name = eTRSASite
+    subclass-of Top
+    must-contain
+        eTRSASiteName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RSA-oc:13 = {
+    name = eTRSAPolicyContainer
+    subclass-of Top
+    must-contain
+        eTRSAPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RSA-oc:14 = {
+    name = eTRSAPolicy
+    subclass-of Top
+    must-contain
+        eTRSAPolicyName,
+        objectclass
+    may-contain
+        eTRSAAccountName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTRSAFirstName,
+        eTRSALastName,
+        eTRSAShell,
+        eTRSAUserGroup,
+        eTRSAUserType,
+        eTRSATokenNumber,
+        eTRSAAccAgentHost,
+        eTRSARealmName,
+        eTRSARemoteAlias,
+        eTRSAPassValidity,
+        eTRSAAssignNextSWToken
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-RSA-nb:1 = {
+    name = eTRSADirectory-eTNamespace
+    eTRSADirectory allowable-parent eTNamespace
+    named-by eTRSADirectoryName
+};
+
+schema set name-binding etrust-admin-RSA-nb:15 = {
+    name = eTRSAPolicyContainer-eTNamespace
+    eTRSAPolicyContainer allowable-parent eTNamespace
+    named-by eTRSAPolicyContainerName
+};
+
+schema set name-binding etrust-admin-RSA-nb:3 = {
+    name = eTRSANamespace-eTRSADirectory
+    eTRSANamespace allowable-parent eTRSADirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-RSA-nb:4 = {
+    name = eTRSAAccountContainer-eTRSADirectory
+    eTRSAAccountContainer allowable-parent eTRSADirectory
+    named-by eTRSAAccountContainerName
+};
+
+schema set name-binding etrust-admin-RSA-nb:5 = {
+    name = eTRSAGrpContainer-eTRSADirectory
+    eTRSAGrpContainer allowable-parent eTRSADirectory
+    named-by eTRSAGrpContainerName
+};
+
+schema set name-binding etrust-admin-RSA-nb:6 = {
+    name = eTRSATokenContainer-eTRSADirectory
+    eTRSATokenContainer allowable-parent eTRSADirectory
+    named-by eTRSATokenContainerName
+};
+
+schema set name-binding etrust-admin-RSA-nb:7 = {
+    name = eTRSAAgentHostContainer-eTRSADirectory
+    eTRSAAgentHostContainer allowable-parent eTRSADirectory
+    named-by eTRSAAgentHostContainerName
+};
+
+schema set name-binding etrust-admin-RSA-nb:8 = {
+    name = eTRSASiteContainer-eTRSADirectory
+    eTRSASiteContainer allowable-parent eTRSADirectory
+    named-by eTRSASiteContainerName
+};
+
+schema set name-binding etrust-admin-RSA-nb:9 = {
+    name = eTRSAAccount-eTRSAAccountContainer
+    eTRSAAccount allowable-parent eTRSAAccountContainer
+    named-by eTRSAAccountName
+};
+
+schema set name-binding etrust-admin-RSA-nb:10 = {
+    name = eTRSAGrp-eTRSAGrpContainer
+    eTRSAGrp allowable-parent eTRSAGrpContainer
+    named-by eTRSAGrpName
+};
+
+schema set name-binding etrust-admin-RSA-nb:12 = {
+    name = eTRSAToken-eTRSATokenContainer
+    eTRSAToken allowable-parent eTRSATokenContainer
+    named-by eTRSATokenSerialNumber
+};
+
+schema set name-binding etrust-admin-RSA-nb:11 = {
+    name = eTRSAAgentHost-eTRSAAgentHostContainer
+    eTRSAAgentHost allowable-parent eTRSAAgentHostContainer
+    named-by eTRSAAgentHostName
+};
+
+schema set name-binding etrust-admin-RSA-nb:13 = {
+    name = eTRSASite-eTRSASiteContainer
+    eTRSASite allowable-parent eTRSASiteContainer
+    named-by eTRSASiteName
+};
+
+schema set name-binding etrust-admin-RSA-nb:14 = {
+    name = eTRSAPolicy-eTRSAPolicyContainer
+    eTRSAPolicy allowable-parent eTRSAPolicyContainer
+    named-by eTRSAPolicyName
+};
+

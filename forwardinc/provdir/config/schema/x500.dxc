@@ -1,0 +1,913 @@
+# 
+# Computer Associates 
+#
+# config/schema/x500.dxc ($Revision: 4.33 $)
+#
+# X.500 standard attributes, object classes and name-bindings
+# File updated to include 1993 changes to attributes and object classes.
+#
+# oid-prefix ::= joint-iso-ccitt(2).ds(5)
+#
+set oid-prefix attributeType = (2.5.4);
+
+#
+# Attribute Definitions.
+#
+set attribute attributeType:0 = {
+        name = objectClass
+	ldap-names = objectClass, oc
+        syntax = objectIdentifier
+};
+
+set attribute attributeType:1 = {
+        name = aliasedObjectName
+        ldap-names = aliasedObjectName
+        syntax = distinguishedName
+	single-valued
+};
+
+set attribute attributeType:2 = {
+        name = knowledgeInformation
+        syntax = caseIgnoreString
+};
+
+set attribute attributeType:3 = {
+        name = commonName
+	ldap-names = cn
+        syntax = caseIgnoreString
+};
+
+set attribute attributeType:4 = {
+        name = surname
+	ldap-names = sn
+        syntax = caseIgnoreString
+};
+
+set attribute attributeType:5 = {
+        name = serialNumber
+        syntax = printableString
+};
+
+set attribute attributeType:6 = {
+        name = countryName
+	ldap-names = c
+        syntax = caseIgnoreString	# printableString ISO 3166 codes only
+};
+
+set attribute attributeType:7 = {
+        name = localityName
+	ldap-names = l
+        syntax = caseIgnoreString
+};
+
+set attribute attributeType:8 = {
+        name = stateOrProvinceName
+	ldap-names = st
+        syntax = caseIgnoreString
+};
+
+set attribute attributeType:9 = {
+        name = streetAddress
+	ldap-names = street
+        syntax = caseIgnoreString
+};
+
+set attribute attributeType:10 = {
+        name = organizationName
+	ldap-names = o
+        syntax = caseIgnoreString
+};
+
+set attribute attributeType:11 = {
+        name = organizationalUnitName
+	ldap-names = ou, department
+        syntax = caseIgnoreString
+};
+
+set attribute attributeType:12 = {
+        name = title
+        syntax = caseIgnoreString
+};
+
+set attribute attributeType:13 = {
+        name = description
+	ldap-names = description, multiLineDescription
+        syntax = caseIgnoreString
+};
+
+set attribute attributeType:14 = {
+        name = searchGuide
+        syntax = guide
+};
+
+set attribute attributeType:15 = {
+        name = businessCategory
+        syntax = caseIgnoreString
+};
+
+set attribute attributeType:16 = {
+        name = postalAddress
+        syntax = postalAddress
+};
+
+set attribute attributeType:17 = {
+        name = postalCode
+        syntax = caseIgnoreString
+};
+
+set attribute attributeType:18 = {
+        name = postOfficeBox
+        syntax = caseIgnoreString
+};
+
+set attribute attributeType:19 = {
+        name = physicalDeliveryOfficeName
+        syntax = caseIgnoreString
+};
+
+set attribute attributeType:20 = {
+        name = telephoneNumber
+        syntax = telephoneNumber
+};
+
+set attribute attributeType:21 = {
+        name = telexNumber
+        syntax = telexNumber
+};
+
+set attribute attributeType:22 = {
+        name = teletexTerminalIdentifier
+        syntax = teletexTerminalId			# TeletexTerminalIdentifier
+};
+
+set attribute attributeType:23 = {
+        name = facsimileTelephoneNumber
+	ldap-names = facsimileTelephoneNumber, fax
+        syntax = facsimileNumber			# FacsimileTelephoneNumber
+};
+
+set attribute attributeType:24 = {
+        name = x121Address
+        syntax = numericString
+};
+
+set attribute attributeType:25 = {
+        name = internationaliSDNNumber
+        syntax = numericString
+};
+
+set attribute attributeType:26 = {
+        name = registeredAddress
+        syntax = postalAddress
+};
+
+set attribute attributeType:27 = {
+        name = destinationIndicator
+        syntax = printableString			# DestinationString
+};
+
+set attribute attributeType:28 = {
+        name = preferredDeliveryMethod
+        syntax = preferredDelivery			# DeliveryMethod
+};
+
+set attribute attributeType:29 = {
+        name = presentationAddress
+        syntax = presentationAddress
+};
+
+set attribute attributeType:30 = {
+        name = supportedApplicationContext
+        syntax = objectIdentifier			# OID
+};
+
+set attribute attributeType:31 = {
+        name = member
+        syntax = distinguishedName
+};
+
+set attribute attributeType:32 = {
+        name = owner
+        syntax = distinguishedName
+};
+
+set attribute attributeType:33 = {
+        name = roleOccupant
+        syntax = distinguishedName
+};
+
+set attribute attributeType:34 = {
+        name = seeAlso
+        syntax = distinguishedName
+};
+
+set attribute attributeType:35 = {
+        name = userPassword
+        syntax = octetString				# Password
+};
+
+set attribute attributeType:36 = {
+        name = userCertificate
+#	ldap-names = "userCertificate"
+        syntax = CertificateSyntax			# Certificate
+};
+
+set attribute attributeType:37 = {
+        name = cACertificate
+#	ldap-names = "cACertificate"
+        syntax = CertificateSyntax			# Certificate
+};
+
+set attribute attributeType:38 = {
+        name = authorityRevocationList
+#	ldap-names = "authorityRevocationList"
+        syntax = CertificateListSyntax
+};
+
+set attribute attributeType:39 = {
+        name = certificateRevocationList
+#	ldap-names = "certificateRevocationList"
+        syntax = CertificateListSyntax			# CertificateList
+};
+
+set attribute attributeType:40 = {
+        name = crossCertificatePair
+#	ldap-names = "crossCertificatePair"
+        syntax = CertificatePairSyntax			# CertificatePair
+};
+
+set attribute attributeType:41 = {
+        name = name
+        syntax = CaseIgnoreString
+};
+
+set attribute attributeType:42 = {
+        name = givenName
+        syntax = CaseIgnoreString
+};
+
+set attribute attributeType:43 = {
+        name = initials
+        syntax = CaseIgnoreString
+};
+
+set attribute attributeType:44 = {
+        name = generationQualifier
+        syntax = CaseIgnoreString
+};
+
+set attribute attributeType:45 = {
+        name = uniqueIdentifier
+        ldap-names = x500UniqueIdentifier
+        syntax = bitString				# UniqueIdentifier
+};
+
+set attribute attributeType:46 = {
+        name = dnQualifier
+        syntax = PrintableString
+};
+
+set attribute attributeType:47 = {
+        name = enhancedSearchGuide
+        syntax = EnhancedGuideSyntax			# EnhancedGuide
+};
+
+set attribute attributeType:48 = {
+        name = protocolInformation
+        syntax = ProtocolInformationSyntax		# ProtocolInformation
+};
+
+set attribute attributeType:49 = {
+        name = distinguishedName
+	ldap-names = dn
+        syntax = DistinguishedName
+};
+
+set attribute attributeType:50 = {
+        name = uniqueMember
+        syntax = NameAndOptionalUID
+};
+
+set attribute attributeType:51 = {
+        name = houseIdentifier
+        syntax = CaseIgnoreString
+};
+
+set attribute attributeType:52 = {
+	name = supportedAlgorithms
+	ldap-names = supportedAlgorithms
+	syntax = binary
+	description = "Standard LDAP attribute type"
+};
+
+set attribute attributeType:53 = {
+	name = deltaRevocationList
+	syntax = CertificateListSyntax
+};
+
+set attribute attributeType:54 = {
+	name = dmdName
+	ldap-names = dmdName
+	equality = caseIgnoreMatch
+	substr = caseIgnoreSubstringsMatch
+	syntax = directoryString
+};
+
+set attribute attributeType:58 = {
+	name = attributeCertificateAttribute
+	syntax = AttributeCertificateSyntax
+};
+
+# operational attributes
+
+set attribute (2.5.18.1) = {
+	name = createTimestamp
+	syntax = generalizedTime
+	single-valued
+	no-user-modification
+};
+
+set attribute (2.5.18.2) = {
+	name = modifyTimestamp
+	syntax = generalizedTime
+	single-valued
+	no-user-modification
+};
+
+set attribute (2.5.18.3) = {
+	name = creatorsName
+	syntax = DistinguishedName
+	single-valued
+	no-user-modification
+};
+
+set attribute (2.5.18.4) = {
+	name = modifiersName
+	syntax = DistinguishedName
+	single-valued
+	no-user-modification
+};
+
+set attribute (2.5.18.10) = {
+	name = subschemaSubentry
+	syntax = DistinguishedName
+	no-user-modification
+};
+
+
+# DSA specific operational attributes
+
+set attribute (2.5.12.0) = {
+	name = dseType
+	syntax = BitString				# BitString
+	no-user-modification
+};
+
+
+set attr-set (2.5.7.7.1) = {
+        name = telecommunicationAttributeSet
+        facsimileTelephoneNumber,
+        internationaliSDNNumber,
+        telephoneNumber,
+        teletexTerminalIdentifier,
+        telexNumber,
+        preferredDeliveryMethod,
+        destinationIndicator,
+        registeredAddress,
+        x121Address
+};
+
+set attr-set (2.5.7.7.2) = {
+        name = postalAttributeSet
+        physicalDeliveryOfficeName,
+        postalAddress,
+        postalCode,
+        postOfficeBox,
+        streetAddress
+};
+
+set attr-set (2.5.7.7.3) = {
+        name = localeAttributeSet
+        localityName,
+        stateOrProvinceName,
+        streetAddress
+};
+
+set attr-set (2.5.7.7.4) = {
+        name = organizationalAttributeSet
+        description,
+        localeAttributeSet,
+        postalAttributeSet,
+        telecommunicationAttributeSet,
+        businessCategory,
+        seeAlso,
+        searchGuide,
+        userPassword
+};
+
+
+#
+# Object Class Definitions.
+#
+set oid-prefix standardObjectClass = (2.5.6);
+
+set object-class standardObjectClass:0 = {
+        name = top
+        kind = abstract
+        must-contain
+            objectClass
+};
+
+set object-class standardObjectClass:1 = {
+        name = alias
+        subclass-of top
+        must-contain
+            aliasedObjectName
+};
+
+set object-class standardObjectClass:2 = {
+        name = country
+        subclass-of top
+        must-contain
+            c
+        may-contain
+            description,
+            searchGuide
+};
+
+set object-class standardObjectClass:3 = {
+        name = locality
+        subclass-of top
+        may-contain
+            description,
+            searchGuide,
+	    localeAttributeSet,
+            seeAlso
+};
+
+set object-class standardObjectClass:4 = {
+        name = organization
+        subclass-of top
+        must-contain
+            o
+        may-contain
+            organizationalAttributeSet
+};
+
+set object-class standardObjectClass:5 = {
+        name = organizationalUnit
+        subclass-of top
+        must-contain
+            ou
+        may-contain
+            organizationalAttributeSet
+};
+
+set object-class standardObjectClass:6 = {
+        name = person
+        subclass-of top
+        must-contain
+            cn,
+            surname
+        may-contain
+            description,
+            seeAlso,
+            telephoneNumber,
+            userPassword
+};
+
+set object-class standardObjectClass:7 = {
+        name = organizationalPerson
+        subclass-of person
+        may-contain
+            localeAttributeSet,
+            ou,
+            postalAttributeSet,
+            telecommunicationAttributeSet,
+            title
+};
+
+set object-class standardObjectClass:8 = {
+        name = organizationalRole
+        subclass-of top
+        must-contain
+            cn
+        may-contain
+            description,
+            localeAttributeSet,
+            ou,
+            postalAttributeSet,
+            preferredDeliveryMethod,
+            roleOccupant,
+            seeAlso,
+            telecommunicationAttributeSet
+};
+
+set object-class standardObjectClass:9 = {
+        name = groupOfNames
+        subclass-of top
+        must-contain
+            cn
+        may-contain
+            member,
+            description,
+            o,
+            ou,
+            owner,
+            seeAlso,
+            businessCategory
+};
+
+set object-class standardObjectClass:10 = {
+        name = residentialPerson
+        subclass-of person
+        must-contain
+            localityName
+        may-contain
+            localeAttributeSet,
+            postalAttributeSet,
+            preferredDeliveryMethod,
+            telecommunicationAttributeSet,
+            businessCategory
+};
+
+set object-class standardObjectClass:11 = {
+        name = applicationProcess
+        subclass-of top
+        must-contain
+            cn
+        may-contain
+            description,
+            localityName,
+            ou,
+            seeAlso
+};
+
+set object-class standardObjectClass:12 = {
+        name = applicationEntity
+        subclass-of top
+        must-contain
+            cn,
+            presentationAddress
+        may-contain
+            description,
+            localityName,
+            o,
+            ou,
+            seeAlso,
+            supportedApplicationContext
+};
+
+set object-class standardObjectClass:13 = {
+        name = dSA
+        subclass-of applicationEntity
+        may-contain
+            knowledgeInformation
+};
+
+set object-class standardObjectClass:14 = {
+        name = device
+        subclass-of top
+        must-contain
+            cn
+        may-contain
+            description,
+            localityName,
+            o,
+            ou,
+            owner,
+            seeAlso,
+            serialNumber
+};
+
+set object-class standardObjectClass:15 = {
+        name = strongAuthenticationUser
+        subclass-of top
+	kind = auxiliary
+        must-contain
+            userCertificate
+};
+
+set object-class standardObjectClass:16 = {
+        name = certificationAuthority
+        subclass-of top
+	kind = auxiliary
+        must-contain
+            cACertificate,
+            certificateRevocationList,
+            authorityRevocationList
+        may-contain
+            crossCertificatePair
+};
+
+set object-class standardObjectClass:17 = {
+        name = groupOfUniqueNames
+        subclass-of top
+        must-contain
+            commonName
+        may-contain
+            uniqueMember,
+            description,
+	    organizationName,
+	    organizationalUnitName,
+	    owner,
+	    seeAlso,
+	    businessCategory
+};
+
+set object-class standardObjectClass:19 = {
+	name = cRLDistributionPoint
+	subclass-of top
+	must-contain
+	    commonName
+	may-contain
+	    authorityRevocationList,
+	    certificateRevocationList,
+	    deltaRevocationList
+};
+
+set object-class standardObjectClass:21 = {
+	name = pkiUser
+	subclass-of top
+	kind = auxiliary
+	may-contain
+	    userCertificate
+};
+
+set object-class standardObjectClass:22 = {
+	name = pkiCA
+	subclass-of top
+	kind = auxiliary
+	may-contain
+	    cACertificate,
+	    certificateRevocationList,
+	    authorityRevocationList,
+	    crossCertificatePair
+};
+
+set object-class standardObjectClass:23 = {
+	name = deltaCRL
+	subclass-of top
+	kind = auxiliary
+	may-contain
+	    deltaRevocationList
+};
+
+set object-class standardObjectClass:24 = {
+	name = pmiUser
+	subclass-of top
+	kind = auxiliary
+	may-contain
+	    attributeCertificateAttribute
+};
+
+
+#
+# Name Bindings.
+#
+set oid-prefix dxserver-nb = (1.3.6.1.4.1.3327.7);
+set name-binding dxserver-nb:1 = {
+	name = country-top
+	country allowable-parent top
+	named-by countryName
+	};
+
+set name-binding dxserver-nb:2 = {
+	name = o-top
+	organization allowable-parent top
+	named-by organizationName
+	};
+
+set name-binding dxserver-nb:3 = {
+	name = o-country
+	organization allowable-parent country
+	named-by organizationName optional dnQualifier
+	};
+
+set name-binding dxserver-nb:4 = {
+	name = o-loc
+	organization allowable-parent locality
+	named-by organizationName
+	};
+
+set name-binding dxserver-nb:5 = {
+	name = sOP-top
+	locality allowable-parent top
+	named-by stateOrProvinceName
+	};
+
+set name-binding dxserver-nb:6 = {
+	name = sOP-country
+	locality allowable-parent country
+	named-by stateOrProvinceName
+	};
+
+set name-binding dxserver-nb:7 = {
+	name = sOP-locality
+	locality allowable-parent locality
+	named-by stateOrProvinceName
+	};
+
+set name-binding dxserver-nb:8 = {
+	name = sOP-o
+	locality allowable-parent organization
+	named-by stateOrProvinceName
+	};
+
+set name-binding dxserver-nb:9 = {
+	name = sOP-ou
+	locality allowable-parent organizationalUnit
+	named-by stateOrProvinceName
+	};
+
+set name-binding dxserver-nb:10 = {
+	name = loc-top
+	locality allowable-parent top
+	named-by localityName
+	};
+
+set name-binding dxserver-nb:11 = {
+	name = loc-country
+	locality allowable-parent country
+	named-by localityName
+	};
+
+set name-binding dxserver-nb:12 = {
+	name = loc-sOP
+	locality allowable-parent locality
+	named-by localityName
+	};
+
+set name-binding dxserver-nb:13 = {
+	name = loc-o
+	locality allowable-parent organization
+	named-by localityName
+	};
+
+set name-binding dxserver-nb:14 = {
+	name = locality-ou
+	locality allowable-parent organizationalUnit
+	named-by localityName
+	};
+
+set name-binding dxserver-nb:15 = {
+	name = ou-loc
+	organizationalUnit allowable-parent locality
+	named-by organizationalUnitName
+	};
+
+set name-binding dxserver-nb:16 = {
+	name = ou-o
+	organizationalUnit allowable-parent organization
+	named-by organizationalUnitName optional localityName, dnQualifier
+	};
+
+set name-binding dxserver-nb:17 = {
+	name = ou-ou
+	organizationalUnit allowable-parent organizationalUnit
+	named-by organizationalUnitName optional localityName, dnQualifier
+	};
+
+set name-binding dxserver-nb:18 = {
+	name = orgPerson-o
+	organizationalPerson allowable-parent organization
+	named-by commonName optional surname, dnQualifier
+	};
+
+set name-binding dxserver-nb:19 = {
+	name = orgPerson-ou
+	organizationalPerson allowable-parent organizationalUnit
+	named-by commonName optional surname, dnQualifier, organizationalUnitName
+	};
+
+set name-binding dxserver-nb:20 = {
+	name = orgRole-o
+	organizationalRole allowable-parent organization
+	named-by commonName optional surname
+	};
+
+set name-binding dxserver-nb:21 = {
+	name = orgRole-ou
+	organizationalRole allowable-parent organizationalUnit
+	named-by commonName optional surname
+	};
+
+set name-binding dxserver-nb:22 = {
+	name = grpOfNames-loc
+	groupOfNames allowable-parent locality
+	named-by commonName
+	};
+
+set name-binding dxserver-nb:23 = {
+	name = grpOfNames-o
+	groupOfNames allowable-parent organization
+	named-by commonName
+	};
+
+set name-binding dxserver-nb:24 = {
+	name = grpOfNames-ou
+	groupOfNames allowable-parent organizationalUnit
+	named-by commonName
+	};
+
+set name-binding dxserver-nb:25 = {
+	name = dev-o
+	device allowable-parent organization
+	named-by commonName
+	};
+
+set name-binding dxserver-nb:26 = {
+	name = dev-ou
+	device allowable-parent organizationalUnit
+	named-by commonName
+	};
+
+set name-binding dxserver-nb:27 = {
+	name = applProc-o
+	applicationProcess allowable-parent organization
+	named-by commonName
+	};
+
+set name-binding dxserver-nb:28 = {
+	name = applProc-ou
+	applicationProcess allowable-parent organizationalUnit
+	named-by commonName
+	};
+
+set name-binding dxserver-nb:29 = {
+	name = resPerson-loc
+	residentialPerson allowable-parent locality
+	named-by commonName optional surname
+	};
+
+set name-binding dxserver-nb:30 = {
+	name = appEnt-appProc
+	applicationEntity allowable-parent applicationProcess
+	named-by commonName
+	};
+
+set name-binding dxserver-nb:31 = {
+	name = dsa-appProc
+	dsa allowable-parent applicationProcess
+	named-by commonName
+	};
+
+set name-binding dxserver-nb:32 = {
+	name = grpOfUniqueNames-loc
+	groupOfUniqueNames allowable-parent locality
+	named-by commonName
+	};
+
+set name-binding dxserver-nb:33 = {
+	name = grpOfUniqueNames-o
+	groupOfUniqueNames allowable-parent organization
+	named-by commonName
+	};
+
+set name-binding dxserver-nb:34 = {
+	name = grpOfUniqueNames-ou
+	groupOfUniqueNames allowable-parent organizationalUnit
+	named-by commonName
+	};
+
+set name-binding dxserver-nb:35 = {
+	name = cRLDistributionPoint-o
+	cRLDistributionPoint allowable-parent organization
+	named-by commonName
+};
+
+set name-binding dxserver-nb:36 = {
+	name = cRLDistributionPoint-ou
+	cRLDistributionPoint allowable-parent organizationalUnit
+	named-by commonName
+};
+
+set name-binding dxserver-nb:37 = {
+	name = cRLDistributionPoint-or
+	cRLDistributionPoint allowable-parent organizationalRole
+	named-by commonName
+};
+
+set name-binding dxserver-nb:38 = {
+	name = person-o
+	person allowable-parent organization
+	named-by commonName
+};
+
+set name-binding dxserver-nb:39 = {
+	name = person-ou
+	person allowable-parent organizationalUnit
+	named-by commonName
+};
+
+set name-binding dxserver-nb:40 = {
+	name = rperson-o
+	residentialPerson allowable-parent organization
+	named-by commonName
+};
+
+set name-binding dxserver-nb:41 = {
+	name = rperson-ou
+	residentialPerson allowable-parent organizationalUnit
+	named-by commonName
+};

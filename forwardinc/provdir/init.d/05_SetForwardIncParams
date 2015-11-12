@@ -1,0 +1,18 @@
+
+#######################################################################
+# Set DxGrid DB Size
+#######################################################################
+
+find $DXHOME/config -type f -exec sed -i -e "s/@hostname@/$HOSTNAME/g" {} \;
+find $DXHOME/config -type f -name "template*" | while read -r file;
+	do
+    	mv "$file" "${file//template/$HOSTNAME}"
+	done
+
+#######################################################################
+# TODO: FIX ME! The following sets ALL @dbsize@ template strings in ALL 
+#		server definition files.  This is obviously not what we
+#		want -- we want to target the ForwardInc server definition
+#		file only.
+#######################################################################
+find $DXHOME/config/servers -type f -exec sed -i -e "s/@dbsize@/$db_size/g" {} \;

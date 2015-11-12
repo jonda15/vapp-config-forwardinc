@@ -1,0 +1,21 @@
+# CA Directory DXserver/config/logging
+
+# Daily summary log
+set summary-log = "logs/$s.log";
+
+# Trace and diagnostics file
+#set trace = error, warn;
+set trace = full;
+set trace-log = "logs/$s_trace.log";
+
+# Warn log
+set warn-log = "logs/$s_warn.log";
+
+# Diagnostics log
+set diag-log = "logs/$s_diag.log";
+
+# Statistcs log
+set stats-log = "logs/$s_stats.log";
+
+# Time log
+set time-log = "logs/$s_time.log";

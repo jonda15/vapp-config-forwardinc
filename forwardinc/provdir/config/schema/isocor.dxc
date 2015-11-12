@@ -1,0 +1,69 @@
+# 
+# Computer Associates
+#
+# config/schema/isocor.dxc ($Revision: 4.4 $)
+#
+# Additional attribute definitions used by ISOCOR Navigator
+# but not defined in the IETF Schema.
+#
+# oid-prefix ::= ccitt(0).data(9).pss(2342).ucl(19200300).pilot(100)
+#	     ::= ccitt(0).data(9).pss(2342).ucl(19200300).quipu(99)
+#
+# Requires definitions in cosine.dxc (pilotAttributeType)
+# Requires definitions in quipu.dxc  (quipuAttributeType)
+
+
+# **** Additional Cosine definitions ****
+
+schema set attribute pilotAttributeType:27 = {
+	name = cosineMdRecord
+	syntax = caseIgnoreIA5String
+};
+
+schema set attribute pilotAttributeType:28 = {
+	name = cosineMxRecord
+	syntax = caseIgnoreIA5String
+};
+
+schema set attribute pilotAttributeType:29 = {
+	name = cosineNsRecord
+	syntax = caseIgnoreIA5String
+};
+
+schema set attribute pilotAttributeType:30 = {
+	name = cosineSoaRecord
+	syntax = caseIgnoreIA5String
+};
+
+schema set attribute pilotAttributeType:31 = {
+	name = cosineCNameRecord
+	syntax = caseIgnoreIA5String
+};
+
+# **** Additional quipu attributes ****
+
+schema set attribute quipuAttributeType:10 = {
+	name = quipuFtamAddress
+	syntax = presentationAddress
+};
+
+schema set attribute quipuAttributeType:11 = {
+	name = quipuTeletexAddress
+	syntax = presentationAddress
+};
+
+schema set attribute quipuAttributeType:12 = {
+	name = quipuNiftAddress
+	syntax = presentationAddress
+};
+
+schema set attribute quipuAttributeType:13 = {
+	name = quipuFileStore
+	syntax = distinguishedName
+};
+
+schema set attribute quipuAttributeType:14 = {
+	name = quipuFileName
+	syntax = caseIgnoreString
+};
+

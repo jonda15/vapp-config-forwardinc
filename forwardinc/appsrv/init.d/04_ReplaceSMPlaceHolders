@@ -6,34 +6,35 @@ SM_PROP_FILE=/solution/$CONFIG/data/environment.properties
 con_java_version=`java -version 2>&1 |awk 'NR==1{ gsub(/"/,""); print $3 }'`
 echo "Configuring SiteMinder specific settings......"
 cd /opt/verify
-im_sm_integration=`./parser.sh im.sm.integration $SM_PROP_FILE`
+im_sm_integration=$(grep -Po "(?<=^im.sm.integration=).*" $SM_PROP_FILE)
 echo "sm integration is set to $im_sm_integration"
 
 if [ "$im_sm_integration"="YES" ]; then
-    cp -R /opt/sm_jars/${JAVA_VERSION}/{local_policy.jar,US_export_policy.jar} /opt/jdk/jre/lib/security/
+    cp -R /opt/sm_jars/${JAVA_VERSION}/{local_policy.jar,US_export_policy.jar} /opt/jre/lib/security/
 fi
 
 #Reading Values From the Properties File
 
-Validate_SMHeaders_with_PS=`./parser.sh Validate_SMHeaders_with_PS $SM_PROP_FILE`
+Validate_SMHeaders_with_PS=$(grep -Po "(?<=^Validate_SMHeaders_with_PS=).*" $SM_PROP_FILE)
 
-Enabled=`./parser.sh Enabled $SM_PROP_FILE`
+Enabled=$(grep -Po "(?<=^Enabled=).*" $SM_PROP_FILE)
 
-hostname=`./parser.sh hostname $SM_PROP_FILE`
+hostname=$(grep -Po "(?<=hostname=).*" $SM_PROP_FILE)
 
-port1=`./parser.sh port1 $SM_PROP_FILE`
+port1=$(grep -Po "(?<=port1=).*" $SM_PROP_FILE)
 
-port2=`./parser.sh port2 $SM_PROP_FILE`
+port2=$(grep -Po "(?<=port2=).*" $SM_PROP_FILE)
 
-port3=`./parser.sh port3 $SM_PROP_FILE`
+port3=$(grep -Po "(?<=port3=).*" $SM_PROP_FILE)
 
-username=`./parser.sh username $SM_PROP_FILE`
+username=$(grep -Po "(?<=username=).*" $SM_PROP_FILE)
 
-admin_secret=`./parser.sh admin_secret $SM_PROP_FILE`
+admin_secret=$(grep -Po "(?<=admin_secret=).*" $SM_PROP_FILE)
 
-agentname=`./parser.sh agentname $SM_PROP_FILE`
+agentname=$(grep -Po "(?<=agentnamet=).*" $SM_PROP_FILE)
 
-agent_secret=`./parser.sh agent_secret $SM_PROP_FILE`
+
+agent_secret=$(grep -Po "(?<=agent_secret=).*" $SM_PROP_FILE)
 
 
 find $JBOSS_STANDALONE_DIR/deployments/iam_im.ear/policyserver.rar/META-INF/ra.xml -type f -exec sed -i -e "s/@Validate_SMHeaders_with_PS@/$Validate_SMHeaders_with_PS/g" {} \;

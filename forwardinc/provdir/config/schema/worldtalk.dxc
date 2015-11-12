@@ -1,0 +1,39 @@
+#
+# Computer Associates
+#
+# config/schema/worldtalk.dxc ($Revision: 4.4 $)
+#
+# Worldtalk definitions (not complete)
+# This file has been produced to enable CITR interworking
+# tests between the CITR directory synchronization product
+# and DXserver.
+# 
+schema set oid-prefix worldtalk-attr = (1.3.12.2.1001.1.0.3.123.1);
+schema set oid-prefix worldtalk-oc = (1.3.12.2.1001.1.0.3.123.0);
+schema set oid-prefix worldtalk-nb = (1.3.12.2.1001.1.0.3.123.14);
+
+#
+# Attribute Definitions.
+#
+schema set attribute worldtalk-attr:1 = {
+	name = worldtalkOwner
+	syntax = printableString
+	};
+
+schema set attribute worldtalk-attr:2 = {
+	name = worldtalkAlias1
+	syntax = printableString
+	};
+
+
+#
+# Object Class Definitions.
+#
+schema set object-class worldtalk-oc:1 = {
+	name = dcMultimedia
+	subclass-of top
+	may-contain
+		worldtalkOwner,
+		worldtalkAlias1
+	};
+

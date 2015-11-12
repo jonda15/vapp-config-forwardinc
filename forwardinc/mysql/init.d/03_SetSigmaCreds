@@ -1,0 +1,4 @@
+echo "Setting the Sigma Creds ...."
+MYSQL_DB_SIGMAUSER="sigma"
+MYSQL_DB_SIGMAUSER_PW="HelloWorld"
+

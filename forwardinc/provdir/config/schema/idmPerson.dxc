@@ -1,0 +1,284 @@
+
+#########################################################
+## IDMPerson attributes
+#########################################################
+
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.197) = {
+	name = IDMAdminRoles
+	ldap-names = IDMAdminRoles
+	syntax = caseIgnoreString
+	multi-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.198) = {
+	name = IDMDisabled
+	ldap-names = IDMDisabled
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.199) = {
+	name = IDMForgottenQuestions
+	ldap-names = IDMForgottenQuestions
+	syntax = caseIgnoreString
+	multi-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.205) = {
+	name = IDMPasswordData
+	ldap-names = IDMPasswordData
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.210) = {
+	name = IDMIdentityPolicy
+	ldap-names = IDMIdentityPolicy
+	syntax = caseIgnoreString
+	multi-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.211) = {
+	name = IDMCertStatus
+	ldap-names = IDMCertStatus
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.212) = {
+	name = IDMLastCertified
+	ldap-names = IDMLastCertified
+	syntax = caseIgnoreString
+	single-valued
+};
+
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.215) = {
+	name = managerID
+	ldap-names = managerID
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.216) = {
+	name = departmentID
+	ldap-names = departmentID
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.217) = {
+	name = jobFamily
+	ldap-names = jobFamily
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.218) = {
+	name = jobCode
+	ldap-names = jobCode
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.219) = {
+	name = band
+	ldap-names = band
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.220) = {
+	name = QuestionsAnswered
+	ldap-names = QuestionsAnswered
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.221) = {
+	name = IDMDevices
+	ldap-names = IDMDevices
+	syntax = caseIgnoreString
+	multi-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.222) = {
+	name = IDMApprovalDelegation
+	ldap-names = IDMApprovalDelegation
+	syntax = caseIgnoreString
+	multi-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.223) = {
+	name = IDMSelfSubscribing
+	ldap-names = IDMSelfSubscribing
+	syntax = caseIgnoreString
+	multi-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.224) = {
+	name = IDMDynamicGroupMembership
+	ldap-names = IDMDynamicGroupMembership
+	syntax = caseIgnoreString
+	multi-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.225) = {
+	name = IDMNestedGroupMembership
+	ldap-names = IDMNestedGroupMembership
+	syntax = caseIgnoreString
+	multi-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.226) = {
+	name = IDMAdminGroupAdmin
+	ldap-names = IDMAdminGroupAdmin
+	syntax = caseIgnoreString
+	multi-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.227) = {
+	name = country
+	ldap-names = country
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.228) = {
+	name = idmOrganization
+	ldap-names = idmOrganization
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.229) = {
+	name = idmCustom01
+	ldap-names = idmCustom01
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.230) = {
+	name = idmCustom02
+	ldap-names = idmCustom02
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.231) = {
+	name = idmCustom03
+	ldap-names = idmCustom03
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.232) = {
+	name = idmCustom04
+	ldap-names = idmCustom04
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.233) = {
+	name = idmCustom05
+	ldap-names = idmCustom05
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.234) = {
+	name = idmCustom06
+	ldap-names = idmCustom06
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.235) = {
+	name = idmCustom07
+	ldap-names = idmCustom07
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.236) = {
+	name = idmCustom08
+	ldap-names = idmCustom08
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.237) = {
+	name = idmCustom09
+	ldap-names = idmCustom09
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.238) = {
+	name = idmCustom10
+	ldap-names = idmCustom10
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.239) = {
+	name = idmDeviceVendor
+	ldap-names = idmDeviceVendor
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.240) = {
+	name = idmDeviceModel
+	ldap-names = idmDeviceModel
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.241) = {
+	name = idmActCode
+	ldap-names = idmActCode
+	syntax = caseIgnoreString
+	single-valued
+};
+schema set attribute (1.3.6.1.4.1.2552.2.2.3.242) = {
+	name = sigmaAccess
+	ldap-names = sigmaAccess
+	syntax = caseIgnoreString
+	multi-valued
+};
+#########################################################
+## End of idmPerson attributes
+#########################################################
+
+#########################################################
+## idmPerson object class (optional)
+#########################################################
+
+schema set object-class (1.3.6.1.4.1.2552.2.2.3.0) = {
+	name = IDMPerson
+	ldap-names = IDMPerson
+	subclass-of inetOrgPerson
+	may-contain
+		IDMAdminRoles,
+		IDMDisabled,
+		IDMForgottenQuestions,
+		IDMPasswordData,
+		IDMIdentityPolicy,
+		IDMCertStatus,
+		IDMLastCertified,
+		managerID,
+		departmentID,
+		jobFamily,
+		jobCode,
+		band,
+		QuestionsAnswered,
+		IDMDevices,
+		IDMApprovalDelegation,
+		country,
+		idmOrganization,
+		idmCustom01,
+		idmCustom02,
+		idmCustom03,
+		idmCustom04,
+		idmCustom05,
+		idmCustom06,
+		idmCustom07,
+		idmCustom08,
+		idmCustom09,
+		idmCustom10,
+		idmDeviceVendor,
+		idmDeviceModel,
+		idmActCode,
+		sigmaAccess
+};
+
+#########################################################
+## End of idmPerson object class
+#########################################################
+
+#########################################################
+## idmGroup object class (optional)
+#########################################################
+
+schema set object-class (1.3.6.1.4.1.2552.2.2.3.250) = {
+	name = IDMGroup
+	ldap-names = IDMGroup
+	subclass-of groupOfUniqueNames
+	may-contain
+		IDMSelfSubscribing,
+		IDMAdminGroupAdmin,
+		IDMNestedGroupMembership,
+		IDMDynamicGroupMembership
+};
+
+#########################################################
+## End of idmGroup object class
+#########################################################

@@ -1,0 +1,918 @@
+schema set oid-prefix etrust-admin-SQL-attr = (1.3.6.1.4.1.791.2.3.5.3.5290.1);
+schema set oid-prefix etrust-admin-SQL-oc = (1.3.6.1.4.1.791.2.3.5.3.5290.2);
+schema set oid-prefix etrust-admin-SQL-nb = (1.3.6.1.4.1.791.2.3.5.3.5290.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-SQL-attr:1 = {
+    name = eTSQLDirectoryName
+    ldap-names = eTSQLDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:2 = {
+    name = eTSQLPrimaryNTDomain
+    ldap-names = eTSQLPrimaryNTDomain
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:3 = {
+    name = eTSQLServerName
+    ldap-names = eTSQLServerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:4 = {
+    name = eTSQLComments
+    ldap-names = eTSQLComments
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:5 = {
+    name = eTSQLVersion
+    ldap-names = eTSQLVersion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:6 = {
+    name = eTSQLDSN
+    ldap-names = eTSQLDSN
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:7 = {
+    name = eTSQLAdminLogin
+    ldap-names = eTSQLAdminLogin
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:8 = {
+    name = eTSQLAdminPwd
+    ldap-names = eTSQLAdminPwd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:9 = {
+    name = eTSQLFixedServerRole
+    ldap-names = eTSQLFixedServerRole
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:10 = {
+    name = eTSQLLanguage
+    ldap-names = eTSQLLanguage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:11 = {
+    name = eTSQLDBFixedRole
+    ldap-names = eTSQLDBFixedRole
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:42 = {
+    name = eTSQLPwdMgr
+    ldap-names = eTSQLPwdMgr
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:43 = {
+    name = eTSQLAgentDomain
+    ldap-names = eTSQLAgentDomain
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:12 = {
+    name = eTSQLLoginContainerName
+    ldap-names = eTSQLLoginContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:13 = {
+    name = eTSQLLoginName
+    ldap-names = eTSQLLoginName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:14 = {
+    name = eTSQLAuthType
+    ldap-names = eTSQLAuthType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:15 = {
+    name = eTSQLNTDomain
+    ldap-names = eTSQLNTDomain
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:16 = {
+    name = eTSQLAccess
+    ldap-names = eTSQLAccess
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:18 = {
+    name = eTSQLSID
+    ldap-names = eTSQLSID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:19 = {
+    name = eTSQLDefaultDB
+    ldap-names = eTSQLDefaultDB
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:20 = {
+    name = eTSQLDefaultLanguage
+    ldap-names = eTSQLDefaultLanguage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:21 = {
+    name = eTSQLEncryptionOption
+    ldap-names = eTSQLEncryptionOption
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:22 = {
+    name = eTSQLDBUserName
+    ldap-names = eTSQLDBUserName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:23 = {
+    name = eTSQLServerRoleMember
+    ldap-names = eTSQLServerRoleMember
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:24 = {
+    name = eTSQLDatabaseMember
+    ldap-names = eTSQLDatabaseMember
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:25 = {
+    name = eTSQLDBOnly
+    ldap-names = eTSQLDBOnly
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:41 = {
+    name = eTSQLRptDBName
+    ldap-names = eTSQLRptDBName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:44 = {
+    name = eTSQLOpenSessions
+    ldap-names = eTSQLOpenSessions
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:26 = {
+    name = eTSQLDatabaseName
+    ldap-names = eTSQLDatabaseName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:27 = {
+    name = eTSQLDBSize
+    ldap-names = eTSQLDBSize
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:28 = {
+    name = eTSQLDBOwner
+    ldap-names = eTSQLDBOwner
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:29 = {
+    name = eTSQLDBID
+    ldap-names = eTSQLDBID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:30 = {
+    name = eTSQLDBStatus
+    ldap-names = eTSQLDBStatus
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:31 = {
+    name = eTSQLDBCompatibilityLevel
+    ldap-names = eTSQLDBCompatibilityLevel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:32 = {
+    name = eTSQLDBCreationDate
+    ldap-names = eTSQLDBCreationDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:33 = {
+    name = eTSQLLoginMember
+    ldap-names = eTSQLLoginMember
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:34 = {
+    name = eTSQLUserName
+    ldap-names = eTSQLUserName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:35 = {
+    name = eTSQLRoleMember
+    ldap-names = eTSQLRoleMember
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:36 = {
+    name = eTSQLRoleName
+    ldap-names = eTSQLRoleName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:37 = {
+    name = eTSQLRoleDeletable
+    ldap-names = eTSQLRoleDeletable
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:38 = {
+    name = eTSQLUserMember
+    ldap-names = eTSQLUserMember
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:45 = {
+    name = eTSQLRoleType
+    ldap-names = eTSQLRoleType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:39 = {
+    name = eTSQLPolicyContainerName
+    ldap-names = eTSQLPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SQL-attr:40 = {
+    name = eTSQLPolicyName
+    ldap-names = eTSQLPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-SQL-oc:1 = {
+    name = eTSQLDirectory
+    subclass-of Top
+    must-contain
+        eTSQLDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTAgentNamespaceClass,
+        eTSQLPrimaryNTDomain,
+        eTSQLServerName,
+        eTSQLComments,
+        eTSQLVersion,
+        eTSQLDSN,
+        eTSQLAdminLogin,
+        eTSQLAdminPwd,
+        eTSQLFixedServerRole,
+        eTSQLLanguage,
+        eTSQLDBFixedRole,
+        eTSQLPwdMgr,
+        eTSQLAgentDomain
+};
+
+schema set object-class etrust-admin-SQL-oc:2 = {
+    name = eTSQLNamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL,
+        eTValidateCredentials,
+        eTMetaData,
+        eTOpBindingsMetaData
+};
+
+schema set object-class etrust-admin-SQL-oc:3 = {
+    name = eTSQLLoginContainer
+    subclass-of Top
+    must-contain
+        eTSQLLoginContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SQL-oc:1004 = {
+    name = eTSQLLogin
+    subclass-of Top
+    must-contain
+        eTSQLLoginName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTLocked,
+        eTSQLAuthType,
+        eTSQLNTDomain,
+        eTSQLAccess,
+        eTSQLSID,
+        eTSQLDefaultDB,
+        eTSQLDefaultLanguage,
+        eTSQLEncryptionOption,
+        eTSQLDBUserName,
+        eTSQLServerRoleMember,
+        eTSQLDatabaseMember,
+        eTSQLDBOnly,
+        eTSQLRptDBName,
+        eTSQLOpenSessions
+};
+
+schema set object-class etrust-admin-SQL-oc:5 = {
+    name = eTSQLDatabase
+    subclass-of Top
+    must-contain
+        eTSQLDatabaseName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTSQLDBSize,
+        eTSQLDBOwner,
+        eTSQLDBID,
+        eTSQLDBStatus,
+        eTSQLDBCompatibilityLevel,
+        eTSQLDBCreationDate,
+        eTSQLLoginMember
+};
+
+schema set object-class etrust-admin-SQL-oc:6 = {
+    name = eTSQLUser
+    subclass-of Top
+    must-contain
+        eTSQLUserName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSQLRoleMember
+};
+
+schema set object-class etrust-admin-SQL-oc:7 = {
+    name = eTSQLRole
+    subclass-of Top
+    must-contain
+        eTSQLRoleName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSQLRoleDeletable,
+        eTSQLUserMember,
+        eTSQLRoleType
+};
+
+schema set object-class etrust-admin-SQL-oc:8 = {
+    name = eTSQLPolicyContainer
+    subclass-of Top
+    must-contain
+        eTSQLPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SQL-oc:9 = {
+    name = eTSQLPolicy
+    subclass-of Top
+    must-contain
+        eTSQLPolicyName,
+        objectclass
+    may-contain
+        eTSQLLoginName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTSQLAuthType,
+        eTSQLNTDomain,
+        eTSQLAccess,
+        eTSQLSID,
+        eTSQLDefaultDB,
+        eTSQLDefaultLanguage,
+        eTSQLEncryptionOption,
+        eTSQLDBUserName,
+        eTSQLServerRoleMember,
+        eTSQLDatabaseMember
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-SQL-nb:1 = {
+    name = eTSQLDirectory-eTNamespace
+    eTSQLDirectory allowable-parent eTNamespace
+    named-by eTSQLDirectoryName
+};
+
+schema set name-binding etrust-admin-SQL-nb:2 = {
+    name = eTSQLPolicyContainer-eTNamespace
+    eTSQLPolicyContainer allowable-parent eTNamespace
+    named-by eTSQLPolicyContainerName
+};
+
+schema set name-binding etrust-admin-SQL-nb:3 = {
+    name = eTSQLNamespace-eTSQLDirectory
+    eTSQLNamespace allowable-parent eTSQLDirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-SQL-nb:4 = {
+    name = eTSQLLoginContainer-eTSQLDirectory
+    eTSQLLoginContainer allowable-parent eTSQLDirectory
+    named-by eTSQLLoginContainerName
+};
+
+schema set name-binding etrust-admin-SQL-nb:5 = {
+    name = eTSQLDatabase-eTSQLDirectory
+    eTSQLDatabase allowable-parent eTSQLDirectory
+    named-by eTSQLDatabaseName
+};
+
+schema set name-binding etrust-admin-SQL-nb:6 = {
+    name = eTSQLLogin-eTSQLLoginContainer
+    eTSQLLogin allowable-parent eTSQLLoginContainer
+    named-by eTSQLLoginName
+};
+
+schema set name-binding etrust-admin-SQL-nb:7 = {
+    name = eTSQLUser-eTSQLDatabase
+    eTSQLUser allowable-parent eTSQLDatabase
+    named-by eTSQLUserName
+};
+
+schema set name-binding etrust-admin-SQL-nb:8 = {
+    name = eTSQLRole-eTSQLDatabase
+    eTSQLRole allowable-parent eTSQLDatabase
+    named-by eTSQLRoleName
+};
+
+schema set name-binding etrust-admin-SQL-nb:9 = {
+    name = eTSQLPolicy-eTSQLPolicyContainer
+    eTSQLPolicy allowable-parent eTSQLPolicyContainer
+    named-by eTSQLPolicyName
+};
+

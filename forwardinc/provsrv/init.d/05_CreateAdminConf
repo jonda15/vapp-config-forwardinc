@@ -1,10 +1,7 @@
-cp -r $HOMEDIR/data/ $PROVHOME/data/
-
 #Create the imps_services.dat 
 
-chown -R $IMPS_USER:$IMPS_GROUP $PROVHOME/data/
-echo 'im_ps=-s 64 -f ../data/im_ps.conf -h "ldap://localhost:20389 ldap://[IMPS_HOST_NAME]:20389 ldaps://localhost:20390 ldaps://[IMPS_HOST_NAME]:20390"' >>  $PROVHOME/data/imps_services.dat
 
+echo 'im_ps=-s 64 -f ../data/im_ps.conf -h "ldap://localhost:20389 ldap://[IMPS_HOST_NAME]:20389 ldaps://localhost:20390 ldaps://[IMPS_HOST_NAME]:20390"' >>  $PROVHOME/data/imps_services.dat
 
 echo 'include   "/opt/CA/IdentityManager/ProvisioningServer/data/etrust_cosx.schema"' > $PROVHOME/data/etrust_admin.conf
 echo 'include   "/opt/CA/IdentityManager/ProvisioningServer/data/etrust_admin.schema"' >> $PROVHOME/data/etrust_admin.conf

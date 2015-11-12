@@ -1,0 +1,62 @@
+# 
+# Computer Associates 
+#
+# config/schema/edi.dxc ($Revision: 4.4 $)
+#
+# EDI definitions.
+# These definitions where derived from ISOCOR Navigator.
+#
+# oid-prefix ::= joint-iso-ccitt(2).mhs(6).??(7).??(15)
+#
+# Requires x500.dxc (for presentationAddress)
+#
+schema set oid-prefix edi-attr = (2.6.7.15.1);
+schema set oid-prefix edi-oc = (2.6.7.15.0);
+
+#
+# Attribute Definitions.
+#
+schema set attribute edi-attr:0 = {
+	name = ediName
+	syntax = caseExactString
+};
+
+schema set attribute edi-attr:1 = {
+	name = ediRoutingAddress
+	syntax = caseExactString
+};
+
+schema set attribute edi-attr:2 = {
+	name = ediCapabilities
+	syntax = undefined
+};
+
+
+#
+# Object Class Definitions.
+#
+schema set object-class edi-oc:0 = {
+	name = ediUser
+	subclass-of top
+	must-contain
+		ediName
+	may-contain
+		ediRoutingAddress,ediCapabilities
+};
+
+schema set object-class edi-oc:1 = {
+	name = ediUserAgent
+	subclass-of top
+	may-contain
+		ediCapabilities
+};
+
+schema set object-class edi-oc:2 = {
+	name = ediMessageStore
+	subclass-of top
+	must-contain
+		presentationAddress
+	may-contain
+		ediCapabilities
+};
+

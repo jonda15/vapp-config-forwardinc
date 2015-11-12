@@ -3,20 +3,30 @@
 ENV_PROP_FILE=/solution/$CONFIG/data/environment.properties
 PROV_PROP_FILE=$JBOSS_USER_HOME/provisioning.properties
 
-im_version=`/opt/verify/parser.sh im_version $ENV_PROP_FILE`
-im_latest_bld_no=`/opt/verify/parser.sh im_latest_bld_no $ENV_PROP_FILE`
-IM_PS_PASSWORD_PBES=`/opt/verify/parser.sh IM_PS_PASSWORD_PBES $PROV_PROP_FILE`
-IM_PS_PASSWORD=`/opt/verify/parser.sh IM_PS_PASSWORD $PROV_PROP_FILE`
-REPOSITORY_USERNAME=`/opt/verify/parser.sh REPOSITORY_USERNAME $PROV_PROP_FILE`
-REPOSITORY_PASSWORD=`/opt/verify/parser.sh REPOSITORY_PASSWORD $PROV_PROP_FILE`
-wp_username=`/opt/verify/parser.sh remote.connection.default.username $ENV_PROP_FILE`
-wp_password=`/opt/verify/parser.sh remote.connection.default.password $ENV_PROP_FILE`
-wp_host=`/opt/verify/parser.sh remote.connection.default.host $ENV_PROP_FILE`
+im_version=$(grep -Po "(?<=^im_version=).*" $ENV_PROP_FILE)
 
+im_latest_bld_no=$(grep -Po "(?<=^im_latest_bld_no=).*" $ENV_PROP_FILE)
 
-MIN_HEAP=`/opt/verify/parser.sh MIN_HEAP $ENV_PROP_FILE`
-MAX_HEAP=`/opt/verify/parser.sh MAX_HEAP $ENV_PROP_FILE`
-MaxPermSize=`/opt/verify/parser.sh MaxPermSize $ENV_PROP_FILE`
+IM_PS_PASSWORD_PBES=$(grep -Po "(?<=^IM_PS_PASSWORD_PBES=).*" $PROV_PROP_FILE)
+
+IM_PS_PASSWORD=$(grep -Po "(?<=^IM_PS_PASSWORD=).*" $PROV_PROP_FILE)
+
+REPOSITORY_USERNAME=$(grep -Po "(?<=^REPOSITORY_USERNAME=).*" $PROV_PROP_FILE)
+
+REPOSITORY_PASSWORD=$(grep -Po "(?<=^REPOSITORY_PASSWORD=).*" $PROV_PROP_FILE)
+
+wp_username=$(grep -Po "(?<=^remote.connection.default.username=).*" $ENV_PROP_FILE)
+
+wp_password=$(grep -Po "(?<=^remote.connection.default.password=).*" $ENV_PROP_FILE)
+
+wp_host=$(grep -Po "(?<=^remote.connection.default.host=).*" $ENV_PROP_FILE)
+
+MIN_HEAP=$(grep -Po "(?<=^MIN_HEAP=).*" $ENV_PROP_FILE)
+
+MAX_HEAP=$(grep -Po "(?<=^MAX_HEAP=).*" $ENV_PROP_FILE)
+
+MaxPermSize=$(grep -Po "(?<=^MaxPermSize=).*" $ENV_PROP_FILE)
+
 
 
 cd -

@@ -1,0 +1,23 @@
+# ---------------------------------------------------------------------------- #
+# CA Directory LIMITS Configuration Help File                                  #
+# ---------------------------------------------------------------------------- #
+#
+# The limits configuration directory is the main location of commands that set
+# administrative limits. 
+#
+# The available commands are listed below. Details are in the CA Reference Guide.
+
+# size limits
+
+set credits = 1000000;            # max number of concurrent DSA operations per user
+set max-op-size = 10000;          # max number of entries returned for list and search
+set max-users = 255;              # max number of simultaneous users on a DSA
+set multi-write-queue = 20000;    # max number of updates held if peer DSA is unavailable
+
+# time limits (in seconds, 0 or none means unlimited)
+
+set max-bind-time = none;         # max time for a bind
+set max-op-time = 600;            # max time for a single operation
+set multi-write-retry-time = 120; # retry polling interval of multiwrite queues
+set user-idle-time = 3600;        # max idle time for a user
+

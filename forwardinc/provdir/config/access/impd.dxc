@@ -1,0 +1,7 @@
+# CA Directory DXserver/config/access
+
+# static access controls
+set access-controls = false;
+
+# dynamic access controls
+set dynamic-access-control = false;

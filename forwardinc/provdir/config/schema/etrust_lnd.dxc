@@ -1,0 +1,3180 @@
+schema set oid-prefix etrust-admin-LND-attr = (1.3.6.1.4.1.791.2.3.5.3.5060.1);
+schema set oid-prefix etrust-admin-LND-oc = (1.3.6.1.4.1.791.2.3.5.3.5060.2);
+schema set oid-prefix etrust-admin-LND-nb = (1.3.6.1.4.1.791.2.3.5.3.5060.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-LND-attr:1 = {
+    name = eTLNDDirectoryName
+    ldap-names = eTLNDDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:2 = {
+    name = eTLNDDirectoryCertList
+    ldap-names = eTLNDDirectoryCertList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-LND-attr:3 = {
+    name = eTLNDHomeServer
+    ldap-names = eTLNDHomeServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:97 = {
+    name = eTLNDPathIdFile
+    ldap-names = eTLNDPathIdFile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:108 = {
+    name = eTLNDPropogatePasswordToInternet
+    ldap-names = eTLNDPropogatePasswordToInternet
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:112 = {
+    name = eTLNDDirDBHit
+    ldap-names = eTLNDDirDBHit
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:109 = {
+    name = eTLNDDirAuthINIFile
+    ldap-names = eTLNDDirAuthINIFile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:110 = {
+    name = eTLNDDirAuthIDFile
+    ldap-names = eTLNDDirAuthIDFile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:111 = {
+    name = eTLNDDirAuthPassword
+    ldap-names = eTLNDDirAuthPassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:116 = {
+    name = eTLNDDelMailFile
+    ldap-names = eTLNDDelMailFile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:151 = {
+    name = eTLNDDirLDAPPort
+    ldap-names = eTLNDDirLDAPPort
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:152 = {
+    name = eTLNDDirUseTLS
+    ldap-names = eTLNDDirUseTLS
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:153 = {
+    name = eTLNDDirGroupsCreated
+    ldap-names = eTLNDDirGroupsCreated
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:244 = {
+    name = eTLNDDefaultMailTemplate
+    ldap-names = eTLNDDefaultMailTemplate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:245 = {
+    name = eTLNDCustomAttributeInfo
+    ldap-names = eTLNDCustomAttributeInfo
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-LND-attr:4 = {
+    name = eTLNDCountryName
+    ldap-names = eTLNDCountryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:5 = {
+    name = eTLNDFlatCertifierName
+    ldap-names = eTLNDFlatCertifierName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:6 = {
+    name = eTLNDOrganizationName
+    ldap-names = eTLNDOrganizationName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:7 = {
+    name = eTLNDRealOrganizationName
+    ldap-names = eTLNDRealOrganizationName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:9 = {
+    name = eTLNDOrgCertORGCountry
+    ldap-names = eTLNDOrgCertORGCountry
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:12 = {
+    name = eTLNDOrgCertOUName
+    ldap-names = eTLNDOrgCertOUName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:13 = {
+    name = eTLNDOrgCertIDLocation
+    ldap-names = eTLNDOrgCertIDLocation
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:14 = {
+    name = eTLNDOrgCertSecretOUPwd
+    ldap-names = eTLNDOrgCertSecretOUPwd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-LND-attr:15 = {
+    name = eTLNDOrgCertIDType
+    ldap-names = eTLNDOrgCertIDType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:136 = {
+    name = eTLNDOrgCertAltLanguageList
+    ldap-names = eTLNDOrgCertAltLanguageList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-LND-attr:8 = {
+    name = eTLNDOrganizationalUnitName
+    ldap-names = eTLNDOrganizationalUnitName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:17 = {
+    name = eTLNDAccountName
+    ldap-names = eTLNDAccountName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:246 = {
+    name = eTLNDOwners
+    ldap-names = eTLNDOwners
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-LND-attr:18 = {
+    name = eTLNDGroupMembership
+    ldap-names = eTLNDGroupMembership
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-LND-attr:19 = {
+    name = eTLNDLastName
+    ldap-names = eTLNDLastName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:20 = {
+    name = eTLNDFirstName
+    ldap-names = eTLNDFirstName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:21 = {
+    name = eTLNDInitials
+    ldap-names = eTLNDInitials
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:22 = {
+    name = eTLNDUserUniqueOU
+    ldap-names = eTLNDUserUniqueOU
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:113 = {
+    name = eTLNDAccDBHit
+    ldap-names = eTLNDAccDBHit
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:132 = {
+    name = eTLNDAltFullName
+    ldap-names = eTLNDAltFullName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:133 = {
+    name = eTLNDAltFullNameLanguage
+    ldap-names = eTLNDAltFullNameLanguage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:134 = {
+    name = eTLNDAltQualifyingOU
+    ldap-names = eTLNDAltQualifyingOU
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:23 = {
+    name = eTLNDGenerationalQualifier
+    ldap-names = eTLNDGenerationalQualifier
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:24 = {
+    name = eTLNDOfficePhone
+    ldap-names = eTLNDOfficePhone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:25 = {
+    name = eTLNDFaxPhone
+    ldap-names = eTLNDFaxPhone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:118 = {
+    name = eTLNDCellPhone
+    ldap-names = eTLNDCellPhone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:26 = {
+    name = eTLNDPager
+    ldap-names = eTLNDPager
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:27 = {
+    name = eTLNDLocation
+    ldap-names = eTLNDLocation
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:28 = {
+    name = eTLNDComment
+    ldap-names = eTLNDComment
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:29 = {
+    name = eTLNDWebPage
+    ldap-names = eTLNDWebPage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:98 = {
+    name = eTLNDLocalAdmin
+    ldap-names = eTLNDLocalAdmin
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-LND-attr:100 = {
+    name = eTLNDSametimeServer
+    ldap-names = eTLNDSametimeServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:99 = {
+    name = eTLNDCreateReplicaInCluster
+    ldap-names = eTLNDCreateReplicaInCluster
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:30 = {
+    name = eTLNDIDSecurity
+    ldap-names = eTLNDIDSecurity
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:31 = {
+    name = eTLNDLicenseType
+    ldap-names = eTLNDLicenseType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:32 = {
+    name = eTLNDInternetPassword
+    ldap-names = eTLNDInternetPassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:33 = {
+    name = eTLNDExpireMonths
+    ldap-names = eTLNDExpireMonths
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:34 = {
+    name = eTLNDExpiration
+    ldap-names = eTLNDExpiration
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:35 = {
+    name = eTLNDIDFileStorage
+    ldap-names = eTLNDIDFileStorage
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:96 = {
+    name = eTLNDIDFileName
+    ldap-names = eTLNDIDFileName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:101 = {
+    name = eTLNDMinimumPasswordLength
+    ldap-names = eTLNDMinimumPasswordLength
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:102 = {
+    name = eTLNDSpecificAddressBook
+    ldap-names = eTLNDSpecificAddressBook
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:149 = {
+    name = eTLNDInternetOnlyUser
+    ldap-names = eTLNDInternetOnlyUser
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:150 = {
+    name = eTLNDNoIDFileCreation
+    ldap-names = eTLNDNoIDFileCreation
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:36 = {
+    name = eTLNDMailSystem
+    ldap-names = eTLNDMailSystem
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:37 = {
+    name = eTLNDShortName
+    ldap-names = eTLNDShortName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:247 = {
+    name = eTLNDAdditionalShortNames
+    ldap-names = eTLNDAdditionalShortNames
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-LND-attr:38 = {
+    name = eTLNDMailFile
+    ldap-names = eTLNDMailFile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:117 = {
+    name = eTLNDMailTemplate
+    ldap-names = eTLNDMailTemplate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:39 = {
+    name = eTLNDMailBoxCreation
+    ldap-names = eTLNDMailBoxCreation
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:40 = {
+    name = eTLNDInternetMessageStore
+    ldap-names = eTLNDInternetMessageStore
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:41 = {
+    name = eTLNDEncryptIncomingMail
+    ldap-names = eTLNDEncryptIncomingMail
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:42 = {
+    name = eTLNDDirectorySync
+    ldap-names = eTLNDDirectorySync
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:106 = {
+    name = eTLNDMailFileAcl
+    ldap-names = eTLNDMailFileAcl
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:103 = {
+    name = eTLNDSmtpInbound
+    ldap-names = eTLNDSmtpInbound
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:104 = {
+    name = eTLNDSmtpOutbound
+    ldap-names = eTLNDSmtpOutbound
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:105 = {
+    name = eTLNDMailFileQuota
+    ldap-names = eTLNDMailFileQuota
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:107 = {
+    name = eTLNDMailFileThreshold
+    ldap-names = eTLNDMailFileThreshold
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:127 = {
+    name = eTLNDUseObjectStore
+    ldap-names = eTLNDUseObjectStore
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:128 = {
+    name = eTLNDDeleteOldReplicas
+    ldap-names = eTLNDDeleteOldReplicas
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:129 = {
+    name = eTLNDNewMailFolder
+    ldap-names = eTLNDNewMailFolder
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:95 = {
+    name = eTLNDInternetAddress
+    ldap-names = eTLNDInternetAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:138 = {
+    name = eTLNDForwardingAddress
+    ldap-names = eTLNDForwardingAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:119 = {
+    name = eTLNDCompany
+    ldap-names = eTLNDCompany
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:43 = {
+    name = eTLNDStreetAddress
+    ldap-names = eTLNDStreetAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:44 = {
+    name = eTLNDCity
+    ldap-names = eTLNDCity
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:45 = {
+    name = eTLNDState
+    ldap-names = eTLNDState
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:46 = {
+    name = eTLNDPostalCode
+    ldap-names = eTLNDPostalCode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:47 = {
+    name = eTLNDOfficeNumber
+    ldap-names = eTLNDOfficeNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:130 = {
+    name = eTLNDEmployeeID
+    ldap-names = eTLNDEmployeeID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:48 = {
+    name = eTLNDSetupProfile
+    ldap-names = eTLNDSetupProfile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:49 = {
+    name = eTLNDJobTitle
+    ldap-names = eTLNDJobTitle
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:50 = {
+    name = eTLNDDepartment
+    ldap-names = eTLNDDepartment
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:51 = {
+    name = eTLNDManager
+    ldap-names = eTLNDManager
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:120 = {
+    name = eTLNDCheckPassword
+    ldap-names = eTLNDCheckPassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:121 = {
+    name = eTLNDPasswordChangeInterval
+    ldap-names = eTLNDPasswordChangeInterval
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:122 = {
+    name = eTLNDPasswordGracePeriod
+    ldap-names = eTLNDPasswordGracePeriod
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:123 = {
+    name = eTLNDPasswordChangeDate
+    ldap-names = eTLNDPasswordChangeDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:124 = {
+    name = eTLNDPasswordDigest
+    ldap-names = eTLNDPasswordDigest
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:125 = {
+    name = eTLNDHTTPPasswordChangeDate
+    ldap-names = eTLNDHTTPPasswordChangeDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:126 = {
+    name = eTLNDHTTPPasswordForceChange
+    ldap-names = eTLNDHTTPPasswordForceChange
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:131 = {
+    name = eTLNDAssignedPolicy
+    ldap-names = eTLNDAssignedPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:139 = {
+    name = eTLNDCustomAttribute01
+    ldap-names = eTLNDCustomAttribute01
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:140 = {
+    name = eTLNDCustomAttribute02
+    ldap-names = eTLNDCustomAttribute02
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:141 = {
+    name = eTLNDCustomAttribute03
+    ldap-names = eTLNDCustomAttribute03
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:142 = {
+    name = eTLNDCustomAttribute04
+    ldap-names = eTLNDCustomAttribute04
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:143 = {
+    name = eTLNDCustomAttribute05
+    ldap-names = eTLNDCustomAttribute05
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:144 = {
+    name = eTLNDCustomAttribute06
+    ldap-names = eTLNDCustomAttribute06
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:145 = {
+    name = eTLNDCustomAttribute07
+    ldap-names = eTLNDCustomAttribute07
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:146 = {
+    name = eTLNDCustomAttribute08
+    ldap-names = eTLNDCustomAttribute08
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:147 = {
+    name = eTLNDCustomAttribute09
+    ldap-names = eTLNDCustomAttribute09
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:148 = {
+    name = eTLNDCustomAttribute10
+    ldap-names = eTLNDCustomAttribute10
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:154 = {
+    name = eTLNDCustomAttribute11
+    ldap-names = eTLNDCustomAttribute11
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:155 = {
+    name = eTLNDCustomAttribute12
+    ldap-names = eTLNDCustomAttribute12
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:156 = {
+    name = eTLNDCustomAttribute13
+    ldap-names = eTLNDCustomAttribute13
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:157 = {
+    name = eTLNDCustomAttribute14
+    ldap-names = eTLNDCustomAttribute14
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:158 = {
+    name = eTLNDCustomAttribute15
+    ldap-names = eTLNDCustomAttribute15
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:159 = {
+    name = eTLNDCustomAttribute16
+    ldap-names = eTLNDCustomAttribute16
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:160 = {
+    name = eTLNDCustomAttribute17
+    ldap-names = eTLNDCustomAttribute17
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:161 = {
+    name = eTLNDCustomAttribute18
+    ldap-names = eTLNDCustomAttribute18
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:162 = {
+    name = eTLNDCustomAttribute19
+    ldap-names = eTLNDCustomAttribute19
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:163 = {
+    name = eTLNDCustomAttribute20
+    ldap-names = eTLNDCustomAttribute20
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:164 = {
+    name = eTLNDCustomAttribute21
+    ldap-names = eTLNDCustomAttribute21
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:165 = {
+    name = eTLNDCustomAttribute22
+    ldap-names = eTLNDCustomAttribute22
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:166 = {
+    name = eTLNDCustomAttribute23
+    ldap-names = eTLNDCustomAttribute23
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:167 = {
+    name = eTLNDCustomAttribute24
+    ldap-names = eTLNDCustomAttribute24
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:168 = {
+    name = eTLNDCustomAttribute25
+    ldap-names = eTLNDCustomAttribute25
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:169 = {
+    name = eTLNDCustomAttribute26
+    ldap-names = eTLNDCustomAttribute26
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:170 = {
+    name = eTLNDCustomAttribute27
+    ldap-names = eTLNDCustomAttribute27
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:171 = {
+    name = eTLNDCustomAttribute28
+    ldap-names = eTLNDCustomAttribute28
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:172 = {
+    name = eTLNDCustomAttribute29
+    ldap-names = eTLNDCustomAttribute29
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:173 = {
+    name = eTLNDCustomAttribute30
+    ldap-names = eTLNDCustomAttribute30
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:174 = {
+    name = eTLNDCustomAttribute31
+    ldap-names = eTLNDCustomAttribute31
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:175 = {
+    name = eTLNDCustomAttribute32
+    ldap-names = eTLNDCustomAttribute32
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:176 = {
+    name = eTLNDCustomAttribute33
+    ldap-names = eTLNDCustomAttribute33
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:177 = {
+    name = eTLNDCustomAttribute34
+    ldap-names = eTLNDCustomAttribute34
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:178 = {
+    name = eTLNDCustomAttribute35
+    ldap-names = eTLNDCustomAttribute35
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:179 = {
+    name = eTLNDCustomAttribute36
+    ldap-names = eTLNDCustomAttribute36
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:180 = {
+    name = eTLNDCustomAttribute37
+    ldap-names = eTLNDCustomAttribute37
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:181 = {
+    name = eTLNDCustomAttribute38
+    ldap-names = eTLNDCustomAttribute38
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:182 = {
+    name = eTLNDCustomAttribute39
+    ldap-names = eTLNDCustomAttribute39
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:183 = {
+    name = eTLNDCustomAttribute40
+    ldap-names = eTLNDCustomAttribute40
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:184 = {
+    name = eTLNDCustomAttribute41
+    ldap-names = eTLNDCustomAttribute41
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:185 = {
+    name = eTLNDCustomAttribute42
+    ldap-names = eTLNDCustomAttribute42
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:186 = {
+    name = eTLNDCustomAttribute43
+    ldap-names = eTLNDCustomAttribute43
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:187 = {
+    name = eTLNDCustomAttribute44
+    ldap-names = eTLNDCustomAttribute44
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:188 = {
+    name = eTLNDCustomAttribute45
+    ldap-names = eTLNDCustomAttribute45
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:189 = {
+    name = eTLNDCustomAttribute46
+    ldap-names = eTLNDCustomAttribute46
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:190 = {
+    name = eTLNDCustomAttribute47
+    ldap-names = eTLNDCustomAttribute47
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:191 = {
+    name = eTLNDCustomAttribute48
+    ldap-names = eTLNDCustomAttribute48
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:192 = {
+    name = eTLNDCustomAttribute49
+    ldap-names = eTLNDCustomAttribute49
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:193 = {
+    name = eTLNDCustomAttribute50
+    ldap-names = eTLNDCustomAttribute50
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:194 = {
+    name = eTLNDCustomCapabilityAttribute01
+    ldap-names = eTLNDCustomCapabilityAttribute01
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:195 = {
+    name = eTLNDCustomCapabilityAttribute02
+    ldap-names = eTLNDCustomCapabilityAttribute02
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:196 = {
+    name = eTLNDCustomCapabilityAttribute03
+    ldap-names = eTLNDCustomCapabilityAttribute03
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:197 = {
+    name = eTLNDCustomCapabilityAttribute04
+    ldap-names = eTLNDCustomCapabilityAttribute04
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:198 = {
+    name = eTLNDCustomCapabilityAttribute05
+    ldap-names = eTLNDCustomCapabilityAttribute05
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:199 = {
+    name = eTLNDCustomCapabilityAttribute06
+    ldap-names = eTLNDCustomCapabilityAttribute06
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:200 = {
+    name = eTLNDCustomCapabilityAttribute07
+    ldap-names = eTLNDCustomCapabilityAttribute07
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:201 = {
+    name = eTLNDCustomCapabilityAttribute08
+    ldap-names = eTLNDCustomCapabilityAttribute08
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:202 = {
+    name = eTLNDCustomCapabilityAttribute09
+    ldap-names = eTLNDCustomCapabilityAttribute09
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:203 = {
+    name = eTLNDCustomCapabilityAttribute10
+    ldap-names = eTLNDCustomCapabilityAttribute10
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:204 = {
+    name = eTLNDCustomCapabilityAttribute11
+    ldap-names = eTLNDCustomCapabilityAttribute11
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:205 = {
+    name = eTLNDCustomCapabilityAttribute12
+    ldap-names = eTLNDCustomCapabilityAttribute12
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:206 = {
+    name = eTLNDCustomCapabilityAttribute13
+    ldap-names = eTLNDCustomCapabilityAttribute13
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:207 = {
+    name = eTLNDCustomCapabilityAttribute14
+    ldap-names = eTLNDCustomCapabilityAttribute14
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:208 = {
+    name = eTLNDCustomCapabilityAttribute15
+    ldap-names = eTLNDCustomCapabilityAttribute15
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:209 = {
+    name = eTLNDCustomCapabilityAttribute16
+    ldap-names = eTLNDCustomCapabilityAttribute16
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:210 = {
+    name = eTLNDCustomCapabilityAttribute17
+    ldap-names = eTLNDCustomCapabilityAttribute17
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:211 = {
+    name = eTLNDCustomCapabilityAttribute18
+    ldap-names = eTLNDCustomCapabilityAttribute18
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:212 = {
+    name = eTLNDCustomCapabilityAttribute19
+    ldap-names = eTLNDCustomCapabilityAttribute19
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:213 = {
+    name = eTLNDCustomCapabilityAttribute20
+    ldap-names = eTLNDCustomCapabilityAttribute20
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:214 = {
+    name = eTLNDCustomCapabilityAttribute21
+    ldap-names = eTLNDCustomCapabilityAttribute21
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:215 = {
+    name = eTLNDCustomCapabilityAttribute22
+    ldap-names = eTLNDCustomCapabilityAttribute22
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:216 = {
+    name = eTLNDCustomCapabilityAttribute23
+    ldap-names = eTLNDCustomCapabilityAttribute23
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:217 = {
+    name = eTLNDCustomCapabilityAttribute24
+    ldap-names = eTLNDCustomCapabilityAttribute24
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:218 = {
+    name = eTLNDCustomCapabilityAttribute25
+    ldap-names = eTLNDCustomCapabilityAttribute25
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:219 = {
+    name = eTLNDCustomCapabilityAttribute26
+    ldap-names = eTLNDCustomCapabilityAttribute26
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:220 = {
+    name = eTLNDCustomCapabilityAttribute27
+    ldap-names = eTLNDCustomCapabilityAttribute27
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:221 = {
+    name = eTLNDCustomCapabilityAttribute28
+    ldap-names = eTLNDCustomCapabilityAttribute28
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:222 = {
+    name = eTLNDCustomCapabilityAttribute29
+    ldap-names = eTLNDCustomCapabilityAttribute29
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:223 = {
+    name = eTLNDCustomCapabilityAttribute30
+    ldap-names = eTLNDCustomCapabilityAttribute30
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:224 = {
+    name = eTLNDCustomCapabilityAttribute31
+    ldap-names = eTLNDCustomCapabilityAttribute31
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:225 = {
+    name = eTLNDCustomCapabilityAttribute32
+    ldap-names = eTLNDCustomCapabilityAttribute32
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:226 = {
+    name = eTLNDCustomCapabilityAttribute33
+    ldap-names = eTLNDCustomCapabilityAttribute33
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:227 = {
+    name = eTLNDCustomCapabilityAttribute34
+    ldap-names = eTLNDCustomCapabilityAttribute34
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:228 = {
+    name = eTLNDCustomCapabilityAttribute35
+    ldap-names = eTLNDCustomCapabilityAttribute35
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:229 = {
+    name = eTLNDCustomCapabilityAttribute36
+    ldap-names = eTLNDCustomCapabilityAttribute36
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:230 = {
+    name = eTLNDCustomCapabilityAttribute37
+    ldap-names = eTLNDCustomCapabilityAttribute37
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:231 = {
+    name = eTLNDCustomCapabilityAttribute38
+    ldap-names = eTLNDCustomCapabilityAttribute38
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:232 = {
+    name = eTLNDCustomCapabilityAttribute39
+    ldap-names = eTLNDCustomCapabilityAttribute39
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:233 = {
+    name = eTLNDCustomCapabilityAttribute40
+    ldap-names = eTLNDCustomCapabilityAttribute40
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:234 = {
+    name = eTLNDCustomCapabilityAttribute41
+    ldap-names = eTLNDCustomCapabilityAttribute41
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:235 = {
+    name = eTLNDCustomCapabilityAttribute42
+    ldap-names = eTLNDCustomCapabilityAttribute42
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:236 = {
+    name = eTLNDCustomCapabilityAttribute43
+    ldap-names = eTLNDCustomCapabilityAttribute43
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:237 = {
+    name = eTLNDCustomCapabilityAttribute44
+    ldap-names = eTLNDCustomCapabilityAttribute44
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:238 = {
+    name = eTLNDCustomCapabilityAttribute45
+    ldap-names = eTLNDCustomCapabilityAttribute45
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:239 = {
+    name = eTLNDCustomCapabilityAttribute46
+    ldap-names = eTLNDCustomCapabilityAttribute46
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:240 = {
+    name = eTLNDCustomCapabilityAttribute47
+    ldap-names = eTLNDCustomCapabilityAttribute47
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:241 = {
+    name = eTLNDCustomCapabilityAttribute48
+    ldap-names = eTLNDCustomCapabilityAttribute48
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:242 = {
+    name = eTLNDCustomCapabilityAttribute49
+    ldap-names = eTLNDCustomCapabilityAttribute49
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:243 = {
+    name = eTLNDCustomCapabilityAttribute50
+    ldap-names = eTLNDCustomCapabilityAttribute50
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:52 = {
+    name = eTLNDHistory
+    ldap-names = eTLNDHistory
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-LND-attr:53 = {
+    name = eTLNDAdminState
+    ldap-names = eTLNDAdminState
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:54 = {
+    name = eTLNDAccountState
+    ldap-names = eTLNDAccountState
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:55 = {
+    name = eTLNDAccountOperation
+    ldap-names = eTLNDAccountOperation
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:56 = {
+    name = eTLNDNewLastName
+    ldap-names = eTLNDNewLastName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:57 = {
+    name = eTLNDNewFirstName
+    ldap-names = eTLNDNewFirstName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:58 = {
+    name = eTLNDNewInitials
+    ldap-names = eTLNDNewInitials
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:248 = {
+    name = eTLNDNewUserUniqueOU
+    ldap-names = eTLNDNewUserUniqueOU
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:59 = {
+    name = eTLNDNewOrganization
+    ldap-names = eTLNDNewOrganization
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:60 = {
+    name = eTLNDDelFromNAB
+    ldap-names = eTLNDDelFromNAB
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:61 = {
+    name = eTLNDDelFlag
+    ldap-names = eTLNDDelFlag
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:62 = {
+    name = eTLNDAdminp
+    ldap-names = eTLNDAdminp
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:135 = {
+    name = eTLNDNewAltFullNameLanguage
+    ldap-names = eTLNDNewAltFullNameLanguage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:63 = {
+    name = eTLNDGroupContainerName
+    ldap-names = eTLNDGroupContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:64 = {
+    name = eTLNDGroupName
+    ldap-names = eTLNDGroupName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:65 = {
+    name = eTLNDDescription
+    ldap-names = eTLNDDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:66 = {
+    name = eTLNDGroupType
+    ldap-names = eTLNDGroupType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:94 = {
+    name = eTLNDGroupMembers
+    ldap-names = eTLNDGroupMembers
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-LND-attr:67 = {
+    name = eTLNDPolicyContainerName
+    ldap-names = eTLNDPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:68 = {
+    name = eTLNDPolicyName
+    ldap-names = eTLNDPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:114 = {
+    name = eTLNDPolicyDirectory
+    ldap-names = eTLNDPolicyDirectory
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:69 = {
+    name = eTLNDDomainListName
+    ldap-names = eTLNDDomainListName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:70 = {
+    name = eTLNDDominoDomainList
+    ldap-names = eTLNDDominoDomainList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-LND-attr:71 = {
+    name = eTLNDAuthName
+    ldap-names = eTLNDAuthName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:72 = {
+    name = eTLNDAdminIDFile
+    ldap-names = eTLNDAdminIDFile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:73 = {
+    name = eTLNDAdminPassword
+    ldap-names = eTLNDAdminPassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:74 = {
+    name = eTLNDAddCertName
+    ldap-names = eTLNDAddCertName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:75 = {
+    name = eTLNDAddCertOperation
+    ldap-names = eTLNDAddCertOperation
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:76 = {
+    name = eTLNDAddCertOUName
+    ldap-names = eTLNDAddCertOUName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:77 = {
+    name = eTLNDAddCertOUUserUnique
+    ldap-names = eTLNDAddCertOUUserUnique
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:78 = {
+    name = eTLNDAddCertIDLocation
+    ldap-names = eTLNDAddCertIDLocation
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:79 = {
+    name = eTLNDAddCertIDType
+    ldap-names = eTLNDAddCertIDType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:81 = {
+    name = eTLNDAddCertSecretOUPwd
+    ldap-names = eTLNDAddCertSecretOUPwd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-LND-attr:82 = {
+    name = eTLNDAccRefreshName
+    ldap-names = eTLNDAccRefreshName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:83 = {
+    name = eTLNDAccRefreshAccName
+    ldap-names = eTLNDAccRefreshAccName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:84 = {
+    name = eTLNDAccRefreshUOUName
+    ldap-names = eTLNDAccRefreshUOUName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:85 = {
+    name = eTLNDAccRefreshAccState
+    ldap-names = eTLNDAccRefreshAccState
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:115 = {
+    name = eTLNDAccRefreshNewAccState
+    ldap-names = eTLNDAccRefreshNewAccState
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:86 = {
+    name = eTLNDAccRefreshLastName
+    ldap-names = eTLNDAccRefreshLastName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:87 = {
+    name = eTLNDAccRefreshFirstName
+    ldap-names = eTLNDAccRefreshFirstName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:88 = {
+    name = eTLNDAccRefreshInitials
+    ldap-names = eTLNDAccRefreshInitials
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:89 = {
+    name = eTLNDAccRefreshOrganization
+    ldap-names = eTLNDAccRefreshOrganization
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:90 = {
+    name = eTLNDAccRefreshExpires
+    ldap-names = eTLNDAccRefreshExpires
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:91 = {
+    name = eTLNDFolderManagerName
+    ldap-names = eTLNDFolderManagerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-LND-attr:92 = {
+    name = eTLNDFolderPath
+    ldap-names = eTLNDFolderPath
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-LND-attr:93 = {
+    name = eTLNDFileSuffix
+    ldap-names = eTLNDFileSuffix
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-LND-oc:1 = {
+    name = eTLNDDirectory
+    subclass-of Top
+    must-contain
+        eTLNDDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTAgentNamespaceClass,
+        eTLNDDirectoryCertList,
+        eTLNDHomeServer,
+        eTLNDPathIdFile,
+        eTLNDPropogatePasswordToInternet,
+        eTLNDDirDBHit,
+        eTLNDDirAuthINIFile,
+        eTLNDDirAuthIDFile,
+        eTLNDDirAuthPassword,
+        eTLNDDelMailFile,
+        eTLNDDirLDAPPort,
+        eTLNDDirUseTLS,
+        eTLNDDirGroupsCreated,
+        eTLNDDefaultMailTemplate,
+        eTLNDCustomAttributeInfo
+};
+
+schema set object-class etrust-admin-LND-oc:2 = {
+    name = eTLNDNamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL,
+        eTValidateCredentials,
+        eTMetaData,
+        eTOpBindingsMetaData
+};
+
+schema set object-class etrust-admin-LND-oc:3 = {
+    name = eTLNDCountry
+    subclass-of Top
+    must-contain
+        eTLNDCountryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-LND-oc:4 = {
+    name = eTLNDFlatCertifier
+    subclass-of Top
+    must-contain
+        eTLNDFlatCertifierName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-LND-oc:5 = {
+    name = eTLNDOrganization
+    subclass-of Top
+    must-contain
+        eTLNDOrganizationName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTLNDRealOrganizationName,
+        eTLNDOrgCertORGCountry,
+        eTLNDOrgCertOUName,
+        eTLNDOrgCertIDLocation,
+        eTLNDOrgCertSecretOUPwd,
+        eTLNDOrgCertIDType,
+        eTLNDOrgCertAltLanguageList
+};
+
+schema set object-class etrust-admin-LND-oc:6 = {
+    name = eTLNDOrganizationalUnit
+    subclass-of Top
+    must-contain
+        eTLNDOrganizationalUnitName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTLNDRealOrganizationName,
+        eTLNDOrgCertORGCountry,
+        eTLNDOrgCertOUName,
+        eTLNDOrgCertIDLocation,
+        eTLNDOrgCertSecretOUPwd,
+        eTLNDOrgCertIDType,
+        eTLNDOrgCertAltLanguageList
+};
+
+schema set object-class etrust-admin-LND-oc:7 = {
+    name = eTLNDAccount
+    subclass-of Top
+    must-contain
+        eTLNDAccountName,
+        objectclass
+    may-contain
+        eTLNDOwners,
+        eTLNDGroupMembership,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTLNDLastName,
+        eTLNDFirstName,
+        eTLNDInitials,
+        eTLNDUserUniqueOU,
+        eTLNDAccDBHit,
+        eTLNDAltFullName,
+        eTLNDAltFullNameLanguage,
+        eTLNDAltQualifyingOU,
+        eTLNDGenerationalQualifier,
+        eTLNDOfficePhone,
+        eTLNDFaxPhone,
+        eTLNDCellPhone,
+        eTLNDPager,
+        eTLNDLocation,
+        eTLNDComment,
+        eTLNDWebPage,
+        eTLNDLocalAdmin,
+        eTLNDSametimeServer,
+        eTLNDCreateReplicaInCluster,
+        eTLNDIDSecurity,
+        eTLNDLicenseType,
+        eTLNDInternetPassword,
+        eTLNDExpireMonths,
+        eTLNDExpiration,
+        eTLNDIDFileStorage,
+        eTLNDIDFileName,
+        eTLNDMinimumPasswordLength,
+        eTLNDSpecificAddressBook,
+        eTLNDInternetOnlyUser,
+        eTLNDNoIDFileCreation,
+        eTLNDMailSystem,
+        eTLNDHomeServer,
+        eTLNDShortName,
+        eTLNDAdditionalShortNames,
+        eTLNDMailFile,
+        eTLNDMailTemplate,
+        eTLNDMailBoxCreation,
+        eTLNDInternetMessageStore,
+        eTLNDEncryptIncomingMail,
+        eTLNDDirectorySync,
+        eTLNDMailFileAcl,
+        eTLNDSmtpInbound,
+        eTLNDSmtpOutbound,
+        eTLNDMailFileQuota,
+        eTLNDMailFileThreshold,
+        eTLNDUseObjectStore,
+        eTLNDDeleteOldReplicas,
+        eTLNDNewMailFolder,
+        eTLNDInternetAddress,
+        eTLNDForwardingAddress,
+        eTLNDCompany,
+        eTLNDStreetAddress,
+        eTLNDCity,
+        eTLNDState,
+        eTLNDPostalCode,
+        eTLNDCountryName,
+        eTLNDOfficeNumber,
+        eTLNDEmployeeID,
+        eTLNDSetupProfile,
+        eTLNDJobTitle,
+        eTLNDDepartment,
+        eTLNDManager,
+        eTLNDCheckPassword,
+        eTLNDPasswordChangeInterval,
+        eTLNDPasswordGracePeriod,
+        eTLNDPasswordChangeDate,
+        eTLNDPasswordDigest,
+        eTLNDHTTPPasswordChangeDate,
+        eTLNDHTTPPasswordForceChange,
+        eTLNDAssignedPolicy,
+        eTLNDCustomAttribute01,
+        eTLNDCustomAttribute02,
+        eTLNDCustomAttribute03,
+        eTLNDCustomAttribute04,
+        eTLNDCustomAttribute05,
+        eTLNDCustomAttribute06,
+        eTLNDCustomAttribute07,
+        eTLNDCustomAttribute08,
+        eTLNDCustomAttribute09,
+        eTLNDCustomAttribute10,
+        eTLNDCustomAttribute11,
+        eTLNDCustomAttribute12,
+        eTLNDCustomAttribute13,
+        eTLNDCustomAttribute14,
+        eTLNDCustomAttribute15,
+        eTLNDCustomAttribute16,
+        eTLNDCustomAttribute17,
+        eTLNDCustomAttribute18,
+        eTLNDCustomAttribute19,
+        eTLNDCustomAttribute20,
+        eTLNDCustomAttribute21,
+        eTLNDCustomAttribute22,
+        eTLNDCustomAttribute23,
+        eTLNDCustomAttribute24,
+        eTLNDCustomAttribute25,
+        eTLNDCustomAttribute26,
+        eTLNDCustomAttribute27,
+        eTLNDCustomAttribute28,
+        eTLNDCustomAttribute29,
+        eTLNDCustomAttribute30,
+        eTLNDCustomAttribute31,
+        eTLNDCustomAttribute32,
+        eTLNDCustomAttribute33,
+        eTLNDCustomAttribute34,
+        eTLNDCustomAttribute35,
+        eTLNDCustomAttribute36,
+        eTLNDCustomAttribute37,
+        eTLNDCustomAttribute38,
+        eTLNDCustomAttribute39,
+        eTLNDCustomAttribute40,
+        eTLNDCustomAttribute41,
+        eTLNDCustomAttribute42,
+        eTLNDCustomAttribute43,
+        eTLNDCustomAttribute44,
+        eTLNDCustomAttribute45,
+        eTLNDCustomAttribute46,
+        eTLNDCustomAttribute47,
+        eTLNDCustomAttribute48,
+        eTLNDCustomAttribute49,
+        eTLNDCustomAttribute50,
+        eTLNDCustomCapabilityAttribute01,
+        eTLNDCustomCapabilityAttribute02,
+        eTLNDCustomCapabilityAttribute03,
+        eTLNDCustomCapabilityAttribute04,
+        eTLNDCustomCapabilityAttribute05,
+        eTLNDCustomCapabilityAttribute06,
+        eTLNDCustomCapabilityAttribute07,
+        eTLNDCustomCapabilityAttribute08,
+        eTLNDCustomCapabilityAttribute09,
+        eTLNDCustomCapabilityAttribute10,
+        eTLNDCustomCapabilityAttribute11,
+        eTLNDCustomCapabilityAttribute12,
+        eTLNDCustomCapabilityAttribute13,
+        eTLNDCustomCapabilityAttribute14,
+        eTLNDCustomCapabilityAttribute15,
+        eTLNDCustomCapabilityAttribute16,
+        eTLNDCustomCapabilityAttribute17,
+        eTLNDCustomCapabilityAttribute18,
+        eTLNDCustomCapabilityAttribute19,
+        eTLNDCustomCapabilityAttribute20,
+        eTLNDCustomCapabilityAttribute21,
+        eTLNDCustomCapabilityAttribute22,
+        eTLNDCustomCapabilityAttribute23,
+        eTLNDCustomCapabilityAttribute24,
+        eTLNDCustomCapabilityAttribute25,
+        eTLNDCustomCapabilityAttribute26,
+        eTLNDCustomCapabilityAttribute27,
+        eTLNDCustomCapabilityAttribute28,
+        eTLNDCustomCapabilityAttribute29,
+        eTLNDCustomCapabilityAttribute30,
+        eTLNDCustomCapabilityAttribute31,
+        eTLNDCustomCapabilityAttribute32,
+        eTLNDCustomCapabilityAttribute33,
+        eTLNDCustomCapabilityAttribute34,
+        eTLNDCustomCapabilityAttribute35,
+        eTLNDCustomCapabilityAttribute36,
+        eTLNDCustomCapabilityAttribute37,
+        eTLNDCustomCapabilityAttribute38,
+        eTLNDCustomCapabilityAttribute39,
+        eTLNDCustomCapabilityAttribute40,
+        eTLNDCustomCapabilityAttribute41,
+        eTLNDCustomCapabilityAttribute42,
+        eTLNDCustomCapabilityAttribute43,
+        eTLNDCustomCapabilityAttribute44,
+        eTLNDCustomCapabilityAttribute45,
+        eTLNDCustomCapabilityAttribute46,
+        eTLNDCustomCapabilityAttribute47,
+        eTLNDCustomCapabilityAttribute48,
+        eTLNDCustomCapabilityAttribute49,
+        eTLNDCustomCapabilityAttribute50,
+        eTLNDHistory,
+        eTLNDAdminState,
+        eTLNDAccountState,
+        eTLNDAccountOperation,
+        eTLNDNewLastName,
+        eTLNDNewFirstName,
+        eTLNDNewInitials,
+        eTLNDNewUserUniqueOU,
+        eTLNDNewOrganization,
+        eTLNDDelFromNAB,
+        eTLNDDelFlag,
+        eTLNDAdminp,
+        eTLNDNewAltFullNameLanguage
+};
+
+schema set object-class etrust-admin-LND-oc:8 = {
+    name = eTLNDGroupContainer
+    subclass-of Top
+    must-contain
+        eTLNDGroupContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-LND-oc:9 = {
+    name = eTLNDGroup
+    subclass-of Top
+    must-contain
+        eTLNDGroupName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTLNDDescription,
+        eTLNDGroupType,
+        eTLNDGroupMembers
+};
+
+schema set object-class etrust-admin-LND-oc:10 = {
+    name = eTLNDPolicyContainer
+    subclass-of Top
+    must-contain
+        eTLNDPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-LND-oc:11 = {
+    name = eTLNDPolicy
+    subclass-of Top
+    must-contain
+        eTLNDPolicyName,
+        objectclass
+    may-contain
+        eTAccountContainer,
+        eTLNDAccountName,
+        eTLNDOwners,
+        eTLNDGroupMembership,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTLNDLastName,
+        eTLNDFirstName,
+        eTLNDInitials,
+        eTLNDUserUniqueOU,
+        eTLNDPolicyDirectory,
+        eTLNDAltFullName,
+        eTLNDAltFullNameLanguage,
+        eTLNDAltQualifyingOU,
+        eTLNDGenerationalQualifier,
+        eTLNDOfficePhone,
+        eTLNDFaxPhone,
+        eTLNDCellPhone,
+        eTLNDPager,
+        eTLNDLocation,
+        eTLNDComment,
+        eTLNDWebPage,
+        eTLNDLocalAdmin,
+        eTLNDSametimeServer,
+        eTLNDCreateReplicaInCluster,
+        eTLNDIDSecurity,
+        eTLNDLicenseType,
+        eTLNDInternetPassword,
+        eTLNDExpireMonths,
+        eTLNDExpiration,
+        eTLNDIDFileStorage,
+        eTLNDIDFileName,
+        eTLNDMinimumPasswordLength,
+        eTLNDSpecificAddressBook,
+        eTLNDInternetOnlyUser,
+        eTLNDNoIDFileCreation,
+        eTLNDMailSystem,
+        eTLNDHomeServer,
+        eTLNDShortName,
+        eTLNDAdditionalShortNames,
+        eTLNDMailFile,
+        eTLNDMailTemplate,
+        eTLNDMailBoxCreation,
+        eTLNDInternetMessageStore,
+        eTLNDEncryptIncomingMail,
+        eTLNDDirectorySync,
+        eTLNDMailFileAcl,
+        eTLNDSmtpInbound,
+        eTLNDSmtpOutbound,
+        eTLNDMailFileQuota,
+        eTLNDMailFileThreshold,
+        eTLNDUseObjectStore,
+        eTLNDDeleteOldReplicas,
+        eTLNDNewMailFolder,
+        eTLNDInternetAddress,
+        eTLNDForwardingAddress,
+        eTLNDCompany,
+        eTLNDStreetAddress,
+        eTLNDCity,
+        eTLNDState,
+        eTLNDPostalCode,
+        eTLNDCountryName,
+        eTLNDOfficeNumber,
+        eTLNDEmployeeID,
+        eTLNDSetupProfile,
+        eTLNDJobTitle,
+        eTLNDDepartment,
+        eTLNDManager,
+        eTLNDCheckPassword,
+        eTLNDPasswordChangeInterval,
+        eTLNDPasswordGracePeriod,
+        eTLNDPasswordChangeDate,
+        eTLNDPasswordDigest,
+        eTLNDHTTPPasswordChangeDate,
+        eTLNDHTTPPasswordForceChange,
+        eTLNDAssignedPolicy,
+        eTLNDCustomAttribute01,
+        eTLNDCustomAttribute02,
+        eTLNDCustomAttribute03,
+        eTLNDCustomAttribute04,
+        eTLNDCustomAttribute05,
+        eTLNDCustomAttribute06,
+        eTLNDCustomAttribute07,
+        eTLNDCustomAttribute08,
+        eTLNDCustomAttribute09,
+        eTLNDCustomAttribute10,
+        eTLNDCustomAttribute11,
+        eTLNDCustomAttribute12,
+        eTLNDCustomAttribute13,
+        eTLNDCustomAttribute14,
+        eTLNDCustomAttribute15,
+        eTLNDCustomAttribute16,
+        eTLNDCustomAttribute17,
+        eTLNDCustomAttribute18,
+        eTLNDCustomAttribute19,
+        eTLNDCustomAttribute20,
+        eTLNDCustomAttribute21,
+        eTLNDCustomAttribute22,
+        eTLNDCustomAttribute23,
+        eTLNDCustomAttribute24,
+        eTLNDCustomAttribute25,
+        eTLNDCustomAttribute26,
+        eTLNDCustomAttribute27,
+        eTLNDCustomAttribute28,
+        eTLNDCustomAttribute29,
+        eTLNDCustomAttribute30,
+        eTLNDCustomAttribute31,
+        eTLNDCustomAttribute32,
+        eTLNDCustomAttribute33,
+        eTLNDCustomAttribute34,
+        eTLNDCustomAttribute35,
+        eTLNDCustomAttribute36,
+        eTLNDCustomAttribute37,
+        eTLNDCustomAttribute38,
+        eTLNDCustomAttribute39,
+        eTLNDCustomAttribute40,
+        eTLNDCustomAttribute41,
+        eTLNDCustomAttribute42,
+        eTLNDCustomAttribute43,
+        eTLNDCustomAttribute44,
+        eTLNDCustomAttribute45,
+        eTLNDCustomAttribute46,
+        eTLNDCustomAttribute47,
+        eTLNDCustomAttribute48,
+        eTLNDCustomAttribute49,
+        eTLNDCustomAttribute50,
+        eTLNDCustomCapabilityAttribute01,
+        eTLNDCustomCapabilityAttribute02,
+        eTLNDCustomCapabilityAttribute03,
+        eTLNDCustomCapabilityAttribute04,
+        eTLNDCustomCapabilityAttribute05,
+        eTLNDCustomCapabilityAttribute06,
+        eTLNDCustomCapabilityAttribute07,
+        eTLNDCustomCapabilityAttribute08,
+        eTLNDCustomCapabilityAttribute09,
+        eTLNDCustomCapabilityAttribute10,
+        eTLNDCustomCapabilityAttribute11,
+        eTLNDCustomCapabilityAttribute12,
+        eTLNDCustomCapabilityAttribute13,
+        eTLNDCustomCapabilityAttribute14,
+        eTLNDCustomCapabilityAttribute15,
+        eTLNDCustomCapabilityAttribute16,
+        eTLNDCustomCapabilityAttribute17,
+        eTLNDCustomCapabilityAttribute18,
+        eTLNDCustomCapabilityAttribute19,
+        eTLNDCustomCapabilityAttribute20,
+        eTLNDCustomCapabilityAttribute21,
+        eTLNDCustomCapabilityAttribute22,
+        eTLNDCustomCapabilityAttribute23,
+        eTLNDCustomCapabilityAttribute24,
+        eTLNDCustomCapabilityAttribute25,
+        eTLNDCustomCapabilityAttribute26,
+        eTLNDCustomCapabilityAttribute27,
+        eTLNDCustomCapabilityAttribute28,
+        eTLNDCustomCapabilityAttribute29,
+        eTLNDCustomCapabilityAttribute30,
+        eTLNDCustomCapabilityAttribute31,
+        eTLNDCustomCapabilityAttribute32,
+        eTLNDCustomCapabilityAttribute33,
+        eTLNDCustomCapabilityAttribute34,
+        eTLNDCustomCapabilityAttribute35,
+        eTLNDCustomCapabilityAttribute36,
+        eTLNDCustomCapabilityAttribute37,
+        eTLNDCustomCapabilityAttribute38,
+        eTLNDCustomCapabilityAttribute39,
+        eTLNDCustomCapabilityAttribute40,
+        eTLNDCustomCapabilityAttribute41,
+        eTLNDCustomCapabilityAttribute42,
+        eTLNDCustomCapabilityAttribute43,
+        eTLNDCustomCapabilityAttribute44,
+        eTLNDCustomCapabilityAttribute45,
+        eTLNDCustomCapabilityAttribute46,
+        eTLNDCustomCapabilityAttribute47,
+        eTLNDCustomCapabilityAttribute48,
+        eTLNDCustomCapabilityAttribute49,
+        eTLNDCustomCapabilityAttribute50
+};
+
+schema set object-class etrust-admin-LND-oc:12 = {
+    name = eTLNDDomainList
+    subclass-of Top
+    must-contain
+        eTLNDDomainListName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTLNDDominoDomainList
+};
+
+schema set object-class etrust-admin-LND-oc:13 = {
+    name = eTLNDAuth
+    subclass-of Top
+    must-contain
+        eTLNDAuthName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTLNDAdminIDFile,
+        eTLNDAdminPassword,
+        eTLNDDirAuthINIFile
+};
+
+schema set object-class etrust-admin-LND-oc:14 = {
+    name = eTLNDAddCert
+    subclass-of Top
+    must-contain
+        eTLNDAddCertName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTLNDAddCertOperation,
+        eTLNDAddCertOUName,
+        eTLNDAddCertOUUserUnique,
+        eTLNDAddCertIDLocation,
+        eTLNDAddCertIDType,
+        eTLNDAddCertSecretOUPwd
+};
+
+schema set object-class etrust-admin-LND-oc:15 = {
+    name = eTLNDAccRefresh
+    subclass-of Top
+    must-contain
+        eTLNDAccRefreshName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTLNDAccRefreshAccName,
+        eTLNDAccRefreshUOUName,
+        eTLNDAccRefreshAccState,
+        eTLNDAccRefreshNewAccState,
+        eTLNDAccRefreshLastName,
+        eTLNDAccRefreshFirstName,
+        eTLNDAccRefreshInitials,
+        eTLNDAccRefreshOrganization,
+        eTLNDAccRefreshExpires
+};
+
+schema set object-class etrust-admin-LND-oc:16 = {
+    name = eTLNDFolderManager
+    subclass-of Top
+    must-contain
+        eTLNDFolderManagerName,
+        objectclass
+    may-contain
+        eTLNDFolderPath,
+        eTLNDFileSuffix,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-LND-nb:1 = {
+    name = eTLNDDirectory-eTNamespace
+    eTLNDDirectory allowable-parent eTNamespace
+    named-by eTLNDDirectoryName
+};
+
+schema set name-binding etrust-admin-LND-nb:2 = {
+    name = eTLNDPolicyContainer-eTNamespace
+    eTLNDPolicyContainer allowable-parent eTNamespace
+    named-by eTLNDPolicyContainerName
+};
+
+schema set name-binding etrust-admin-LND-nb:3 = {
+    name = eTLNDDomainList-eTNamespace
+    eTLNDDomainList allowable-parent eTNamespace
+    named-by eTLNDDomainListName
+};
+
+schema set name-binding etrust-admin-LND-nb:4 = {
+    name = eTLNDAuth-eTNamespace
+    eTLNDAuth allowable-parent eTNamespace
+    named-by eTLNDAuthName
+};
+
+schema set name-binding etrust-admin-LND-nb:5 = {
+    name = eTLNDAddCert-eTNamespace
+    eTLNDAddCert allowable-parent eTNamespace
+    named-by eTLNDAddCertName
+};
+
+schema set name-binding etrust-admin-LND-nb:7 = {
+    name = eTLNDFolderManager-eTNamespace
+    eTLNDFolderManager allowable-parent eTNamespace
+    named-by eTLNDFolderManagerName
+};
+
+schema set name-binding etrust-admin-LND-nb:8 = {
+    name = eTLNDNamespace-eTLNDDirectory
+    eTLNDNamespace allowable-parent eTLNDDirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-LND-nb:9 = {
+    name = eTLNDCountry-eTLNDDirectory
+    eTLNDCountry allowable-parent eTLNDDirectory
+    named-by eTLNDCountryName
+};
+
+schema set name-binding etrust-admin-LND-nb:10 = {
+    name = eTLNDFlatCertifier-eTLNDDirectory
+    eTLNDFlatCertifier allowable-parent eTLNDDirectory
+    named-by eTLNDFlatCertifierName
+};
+
+schema set name-binding etrust-admin-LND-nb:11 = {
+    name = eTLNDOrganization-eTLNDDirectory
+    eTLNDOrganization allowable-parent eTLNDDirectory
+    named-by eTLNDOrganizationName
+};
+
+schema set name-binding etrust-admin-LND-nb:12 = {
+    name = eTLNDGroupContainer-eTLNDDirectory
+    eTLNDGroupContainer allowable-parent eTLNDDirectory
+    named-by eTLNDGroupContainerName
+};
+
+schema set name-binding etrust-admin-LND-nb:22 = {
+    name = eTLNDAddCert-eTLNDDirectory
+    eTLNDAddCert allowable-parent eTLNDDirectory
+    named-by eTLNDAddCertName
+};
+
+schema set name-binding etrust-admin-LND-nb:21 = {
+    name = eTLNDAccRefresh-eTLNDDirectory
+    eTLNDAccRefresh allowable-parent eTLNDDirectory
+    named-by eTLNDAccRefreshName
+};
+
+schema set name-binding etrust-admin-LND-nb:13 = {
+    name = eTLNDOrganization-eTLNDCountry
+    eTLNDOrganization allowable-parent eTLNDCountry
+    named-by eTLNDOrganizationName
+};
+
+schema set name-binding etrust-admin-LND-nb:14 = {
+    name = eTLNDAccount-eTLNDFlatCertifier
+    eTLNDAccount allowable-parent eTLNDFlatCertifier
+    named-by eTLNDAccountName
+};
+
+schema set name-binding etrust-admin-LND-nb:15 = {
+    name = eTLNDOrganizationalUnit-eTLNDOrganization
+    eTLNDOrganizationalUnit allowable-parent eTLNDOrganization
+    named-by eTLNDOrganizationalUnitName
+};
+
+schema set name-binding etrust-admin-LND-nb:16 = {
+    name = eTLNDAccount-eTLNDOrganization
+    eTLNDAccount allowable-parent eTLNDOrganization
+    named-by eTLNDAccountName
+};
+
+schema set name-binding etrust-admin-LND-nb:17 = {
+    name = eTLNDOrganizationalUnit-eTLNDOrganizationalUnit
+    eTLNDOrganizationalUnit allowable-parent eTLNDOrganizationalUnit
+    named-by eTLNDOrganizationalUnitName
+};
+
+schema set name-binding etrust-admin-LND-nb:18 = {
+    name = eTLNDAccount-eTLNDOrganizationalUnit
+    eTLNDAccount allowable-parent eTLNDOrganizationalUnit
+    named-by eTLNDAccountName
+};
+
+schema set name-binding etrust-admin-LND-nb:19 = {
+    name = eTLNDGroup-eTLNDGroupContainer
+    eTLNDGroup allowable-parent eTLNDGroupContainer
+    named-by eTLNDGroupName
+};
+
+schema set name-binding etrust-admin-LND-nb:20 = {
+    name = eTLNDPolicy-eTLNDPolicyContainer
+    eTLNDPolicy allowable-parent eTLNDPolicyContainer
+    named-by eTLNDPolicyName
+};
+

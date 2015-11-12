@@ -1,0 +1,40 @@
+# CA Directory DXserver/config/servers 
+# 
+# Normally, this file sources one file from each component directory. 
+ 
+# logging and tracing 
+close summary-log; 
+close trace-log; 
+source "../logging/impd.dxc"; 
+ 
+# schema 
+clear schema; 
+source "../schema/impd.dxg"; 
+ 
+# access controls 
+clear access; 
+source "../access/impd.dxc"; 
+ 
+# knowledge 
+clear dsas; 
+source "../knowledge/impd.dxg"; 
+ 
+# operational settings 
+source "../settings/impd.dxc"; 
+source "../settings/impd-inc.dxc"; 
+ 
+# service limits 
+source "../limits/impd.dxc"; 
+
+# ssld
+source "../ssld/impd.dxc";
+
+# multiwrite DISP recovery.
+set multi-write-disp-recovery = true;
+ 
+# grid configuration
+set dxgrid-db-location = "/opt/CA/Directory/dxserver/data/@hostname@-impd-inc";
+set dxgrid-db-size = @dbsize@;
+set disable-transaction-log = false;
+set disable-transaction-log-flush = false;
+set lookup-cache = true;

@@ -6,6 +6,7 @@ ln -s libsi.so.4 libsi.so
 ln -s libxerces-c.so libxerces-c.so.28
 ln -s liblber.so.3 liblber.so
 ln -s libz.so.1 libz.so.1.2.3
+ln -s libz.so libz.so.1
 #ln -s libcurl.so.4 libcurl.so.4.3.0
 ln -s libldap.so.3 libldap.so
 ln -s /opt/CA/SharedComponents/lib/eCSwinc_gcc4.so libeCSwinc.so

@@ -1,0 +1,9 @@
+# ---------------------------------------------------------------------------- #
+# CA Directory REPLICATION Configuration Help File                             #
+# ---------------------------------------------------------------------------- #
+
+The replication configuration directory is used to configure DISP replication.
+An alternative approach to replication is to use Multiwrite replication.
+
+Please see the CA Directory Administrator Guide, Chapter 5 for further details.
+

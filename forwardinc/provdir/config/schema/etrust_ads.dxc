@@ -1,0 +1,3502 @@
+schema set oid-prefix etrust-admin-ADS-attr = (1.3.6.1.4.1.791.2.3.5.3.5190.1);
+schema set oid-prefix etrust-admin-ADS-oc = (1.3.6.1.4.1.791.2.3.5.3.5190.2);
+schema set oid-prefix etrust-admin-ADS-nb = (1.3.6.1.4.1.791.2.3.5.3.5190.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-ADS-attr:1 = {
+    name = eTADSDirectoryName
+    ldap-names = eTADSDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:2 = {
+    name = eTADSDirectoryServer
+    ldap-names = eTADSDirectoryServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:3 = {
+    name = eTADSServerName
+    ldap-names = eTADSServerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:4 = {
+    name = eTADSPortNum
+    ldap-names = eTADSPortNum
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:5 = {
+    name = eTADSAuthDN
+    ldap-names = eTADSAuthDN
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:6 = {
+    name = eTADSAuthPWD
+    ldap-names = eTADSAuthPWD
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:7 = {
+    name = eTADSUserContainer
+    ldap-names = eTADSUserContainer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:8 = {
+    name = eTADSUseSSL
+    ldap-names = eTADSUseSSL
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:9 = {
+    name = eTADS-DefaultContext
+    ldap-names = eTADS-DefaultContext
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:10 = {
+    name = eTADSDCDomain
+    ldap-names = eTADSDCDomain
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:11 = {
+    name = eTADSnetBIOS
+    ldap-names = eTADSnetBIOS
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:12 = {
+    name = eTADSupnSuffixes
+    ldap-names = eTADSupnSuffixes
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:94 = {
+    name = eTADSsettings
+    ldap-names = eTADSsettings
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:16 = {
+    name = eTADScontainers
+    ldap-names = eTADScontainers
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:135 = {
+    name = eTADSbackupDirs
+    ldap-names = eTADSbackupDirs
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:172 = {
+    name = eTADSdcStatus
+    ldap-names = eTADSdcStatus
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:170 = {
+    name = eTADSuseFailover
+    ldap-names = eTADSuseFailover
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:171 = {
+    name = eTADSmaxConnectTime
+    ldap-names = eTADSmaxConnectTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:143 = {
+    name = eTADSdirPayload
+    ldap-names = eTADSdirPayload
+    syntax = octetString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:153 = {
+    name = eTADSobjectCategory
+    ldap-names = eTADSobjectCategory
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:154 = {
+    name = eTADSprimaryServer
+    ldap-names = eTADSprimaryServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:152 = {
+    name = eTADSNoRemoveMemberOfContainer
+    ldap-names = eTADSNoRemoveMemberOfContainer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:240 = {
+    name = eTADSdomainControllerFunctionality
+    ldap-names = eTADSdomainControllerFunctionality
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:241 = {
+    name = eTADSdomainFunctionality
+    ldap-names = eTADSdomainFunctionality
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:242 = {
+    name = eTADSforestFunctionality
+    ldap-names = eTADSforestFunctionality
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:216 = {
+    name = eTADSlockoutDuration
+    ldap-names = eTADSlockoutDuration
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:248 = {
+    name = eTADSconfig
+    ldap-names = eTADSconfig
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:260 = {
+    name = eTADSmsSFU30Domains
+    ldap-names = eTADSmsSFU30Domains
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:274 = {
+    name = eTADSlyncAvailableSIPPool
+    ldap-names = eTADSlyncAvailableSIPPool
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:286 = {
+    name = eTADSlyncAvailableSIPDomain
+    ldap-names = eTADSlyncAvailableSIPDomain
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:288 = {
+    name = eTADSlyncAvailableExtAccessPolicy
+    ldap-names = eTADSlyncAvailableExtAccessPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:289 = {
+    name = eTADSlyncAvailableDialPlanPolicy
+    ldap-names = eTADSlyncAvailableDialPlanPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:290 = {
+    name = eTADSlyncAvailableVoicePolicy
+    ldap-names = eTADSlyncAvailableVoicePolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:291 = {
+    name = eTADSlyncAvailableConferencingPolicy
+    ldap-names = eTADSlyncAvailableConferencingPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:292 = {
+    name = eTADSlyncAvailableClientVersionPolicy
+    ldap-names = eTADSlyncAvailableClientVersionPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:293 = {
+    name = eTADSlyncAvailablePINPolicy
+    ldap-names = eTADSlyncAvailablePINPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:294 = {
+    name = eTADSlyncAvailableArchivingPolicy
+    ldap-names = eTADSlyncAvailableArchivingPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:295 = {
+    name = eTADSlyncAvailableLocationPolicy
+    ldap-names = eTADSlyncAvailableLocationPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:296 = {
+    name = eTADSlyncAvailableClientPolicy
+    ldap-names = eTADSlyncAvailableClientPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:306 = {
+    name = eTADSlyncAvailablePersistentChatPolicy
+    ldap-names = eTADSlyncAvailablePersistentChatPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:307 = {
+    name = eTADSlyncAvailableMobilityPolicy
+    ldap-names = eTADSlyncAvailableMobilityPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:275 = {
+    name = eTADSlyncSIPPool
+    ldap-names = eTADSlyncSIPPool
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:304 = {
+    name = eTADSlyncMaxConnection
+    ldap-names = eTADSlyncMaxConnection
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:305 = {
+    name = eTADSlyncServerFlags
+    ldap-names = eTADSlyncServerFlags
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:13 = {
+    name = eTADSexchange
+    ldap-names = eTADSexchange
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:14 = {
+    name = eTADSexchangeGroups
+    ldap-names = eTADSexchangeGroups
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:15 = {
+    name = eTADSexchangeStores
+    ldap-names = eTADSexchangeStores
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:62 = {
+    name = eTADShomeMTA
+    ldap-names = eTADShomeMTA
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:246 = {
+    name = eTADSexchangelegacyDN
+    ldap-names = eTADSexchangelegacyDN
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:147 = {
+    name = eTADSE2KGatewayServer
+    ldap-names = eTADSE2KGatewayServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:174 = {
+    name = eTADSIMServerName
+    ldap-names = eTADSIMServerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:176 = {
+    name = eTADSIMHostName
+    ldap-names = eTADSIMHostName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:175 = {
+    name = eTADSIMServerDN
+    ldap-names = eTADSIMServerDN
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:271 = {
+    name = eTADSKeepCamCaftFiles
+    ldap-names = eTADSKeepCamCaftFiles
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:229 = {
+    name = eTADSCamCaftTimeout
+    ldap-names = eTADSCamCaftTimeout
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:249 = {
+    name = eTADSmsExchSchemaVersion
+    ldap-names = eTADSmsExchSchemaVersion
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:273 = {
+    name = eTADSmsExchSystemObjectsObjectVersion
+    ldap-names = eTADSmsExchSystemObjectsObjectVersion
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:17 = {
+    name = eTADSAccountName
+    ldap-names = eTADSAccountName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:136 = {
+    name = eTADSobjectClass
+    ldap-names = eTADSobjectClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:18 = {
+    name = eTADSuserPrincipalName
+    ldap-names = eTADSuserPrincipalName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:19 = {
+    name = eTADSsAMAccountName
+    ldap-names = eTADSsAMAccountName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:20 = {
+    name = eTADSunicodePwd
+    ldap-names = eTADSunicodePwd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:73 = {
+    name = eTADSobjectSid
+    ldap-names = eTADSobjectSid
+    syntax = octetString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:21 = {
+    name = eTADSgivenName
+    ldap-names = eTADSgivenName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:22 = {
+    name = eTADSinitials
+    ldap-names = eTADSinitials
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:23 = {
+    name = eTADSsn
+    ldap-names = eTADSsn
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:24 = {
+    name = eTADSdisplayName
+    ldap-names = eTADSdisplayName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:138 = {
+    name = eTADSName
+    ldap-names = eTADSName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:25 = {
+    name = eTADSDescription
+    ldap-names = eTADSDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:26 = {
+    name = eTADSphysicalDeliveryOfficeName
+    ldap-names = eTADSphysicalDeliveryOfficeName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:27 = {
+    name = eTADStelephoneNumber
+    ldap-names = eTADStelephoneNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:95 = {
+    name = eTADSotherTelephone
+    ldap-names = eTADSotherTelephone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:140 = {
+    name = eTADSinfo
+    ldap-names = eTADSinfo
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:28 = {
+    name = eTADSmail
+    ldap-names = eTADSmail
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:29 = {
+    name = eTADSwwwHomePage
+    ldap-names = eTADSwwwHomePage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:96 = {
+    name = eTADSurl
+    ldap-names = eTADSurl
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:30 = {
+    name = eTADSstreetAddress
+    ldap-names = eTADSstreetAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:31 = {
+    name = eTADSpostOfficeBox
+    ldap-names = eTADSpostOfficeBox
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:32 = {
+    name = eTADSl
+    ldap-names = eTADSl
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:33 = {
+    name = eTADSst
+    ldap-names = eTADSst
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:34 = {
+    name = eTADSpostalCode
+    ldap-names = eTADSpostalCode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:35 = {
+    name = eTADSco
+    ldap-names = eTADSco
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:36 = {
+    name = eTADSc
+    ldap-names = eTADSc
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:37 = {
+    name = eTADScountryCode
+    ldap-names = eTADScountryCode
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:38 = {
+    name = eTADShomePhone
+    ldap-names = eTADShomePhone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:39 = {
+    name = eTADSpager
+    ldap-names = eTADSpager
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:40 = {
+    name = eTADSmobile
+    ldap-names = eTADSmobile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:41 = {
+    name = eTADSfacsimileTelephoneNumber
+    ldap-names = eTADSfacsimileTelephoneNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:42 = {
+    name = eTADSipPhone
+    ldap-names = eTADSipPhone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:97 = {
+    name = eTADSotherHomePhone
+    ldap-names = eTADSotherHomePhone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:98 = {
+    name = eTADSotherPager
+    ldap-names = eTADSotherPager
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:99 = {
+    name = eTADSotherMobile
+    ldap-names = eTADSotherMobile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:100 = {
+    name = eTADSotherFacsimileTelephoneNumber
+    ldap-names = eTADSotherFacsimileTelephoneNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:101 = {
+    name = eTADSotherIpPhone
+    ldap-names = eTADSotherIpPhone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:43 = {
+    name = eTADStitle
+    ldap-names = eTADStitle
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:44 = {
+    name = eTADSdepartment
+    ldap-names = eTADSdepartment
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:45 = {
+    name = eTADScompany
+    ldap-names = eTADScompany
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:46 = {
+    name = eTADSmanager
+    ldap-names = eTADSmanager
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:47 = {
+    name = eTADSdirectReports
+    ldap-names = eTADSdirectReports
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:48 = {
+    name = eTADSaccountExpires
+    ldap-names = eTADSaccountExpires
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:49 = {
+    name = eTADSlockoutTime
+    ldap-names = eTADSlockoutTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:50 = {
+    name = eTADSprofilePath
+    ldap-names = eTADSprofilePath
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:51 = {
+    name = eTADSscriptPath
+    ldap-names = eTADSscriptPath
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:52 = {
+    name = eTADShomeDirectory
+    ldap-names = eTADShomeDirectory
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:53 = {
+    name = eTADShomeDrive
+    ldap-names = eTADShomeDrive
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:54 = {
+    name = eTADSuserAccountControl
+    ldap-names = eTADSuserAccountControl
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:193 = {
+    name = eTADSPwdNeverExpireBit
+    ldap-names = eTADSPwdNeverExpireBit
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:55 = {
+    name = eTADSuserAccountControl2
+    ldap-names = eTADSuserAccountControl2
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:56 = {
+    name = eTADSmemberOf
+    ldap-names = eTADSmemberOf
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:57 = {
+    name = eTADSpwdLastSet
+    ldap-names = eTADSpwdLastSet
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:58 = {
+    name = eTADSnTsecurityDescriptor
+    ldap-names = eTADSnTsecurityDescriptor
+    syntax = octetString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:102 = {
+    name = eTADSlogonHours
+    ldap-names = eTADSlogonHours
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:103 = {
+    name = eTADSuserWorkstations
+    ldap-names = eTADSuserWorkstations
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:59 = {
+    name = eTADSprimaryGroupID
+    ldap-names = eTADSprimaryGroupID
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:272 = {
+    name = eTADSprimaryGroupName
+    ldap-names = eTADSprimaryGroupName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:104 = {
+    name = eTADSmsRADIUSCallbackNumber
+    ldap-names = eTADSmsRADIUSCallbackNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:106 = {
+    name = eTADSmsRASSavedCallbackNumber
+    ldap-names = eTADSmsRASSavedCallbackNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:107 = {
+    name = eTADSmsNPCallingStationID
+    ldap-names = eTADSmsNPCallingStationID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:108 = {
+    name = eTADSmsNPSavedCallingStationID
+    ldap-names = eTADSmsNPSavedCallingStationID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:109 = {
+    name = eTADSmsRADIUSServiceType
+    ldap-names = eTADSmsRADIUSServiceType
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:110 = {
+    name = eTADSmsNPAllowDialin
+    ldap-names = eTADSmsNPAllowDialin
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:213 = {
+    name = eTADSuserCertificate
+    ldap-names = eTADSuserCertificate
+    syntax = octetString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:230 = {
+    name = eTADSaltSecurityIdentities
+    ldap-names = eTADSaltSecurityIdentities
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:142 = {
+    name = eTADSpayload
+    ldap-names = eTADSpayload
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:254 = {
+    name = eTADSuidNumber
+    ldap-names = eTADSuidNumber
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:255 = {
+    name = eTADSloginShell
+    ldap-names = eTADSloginShell
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:256 = {
+    name = eTADSunixHomeDirectory
+    ldap-names = eTADSunixHomeDirectory
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:261 = {
+    name = eTADSuid
+    ldap-names = eTADSuid
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:270 = {
+    name = eTADSUniversalGroupOnly
+    ldap-names = eTADSUniversalGroupOnly
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:115 = {
+    name = eTADSemployeeID
+    ldap-names = eTADSemployeeID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:116 = {
+    name = eTADSemployeeNumber
+    ldap-names = eTADSemployeeNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:117 = {
+    name = eTADSemployeeType
+    ldap-names = eTADSemployeeType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:257 = {
+    name = eTADSmsSFU30NisDomain
+    ldap-names = eTADSmsSFU30NisDomain
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:258 = {
+    name = eTADSgidNumber
+    ldap-names = eTADSgidNumber
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:194 = {
+    name = eTADSwts0
+    ldap-names = eTADSwts0
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:195 = {
+    name = eTADSwts1
+    ldap-names = eTADSwts1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:196 = {
+    name = eTADSwts2
+    ldap-names = eTADSwts2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:197 = {
+    name = eTADSwts3
+    ldap-names = eTADSwts3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:198 = {
+    name = eTADSwts4
+    ldap-names = eTADSwts4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:199 = {
+    name = eTADSwts5
+    ldap-names = eTADSwts5
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:200 = {
+    name = eTADSwts6
+    ldap-names = eTADSwts6
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:201 = {
+    name = eTADSwts7
+    ldap-names = eTADSwts7
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:202 = {
+    name = eTADSwts8
+    ldap-names = eTADSwts8
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:203 = {
+    name = eTADSwts9
+    ldap-names = eTADSwts9
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:204 = {
+    name = eTADSwts10
+    ldap-names = eTADSwts10
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:205 = {
+    name = eTADSwts11
+    ldap-names = eTADSwts11
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:206 = {
+    name = eTADSwts12
+    ldap-names = eTADSwts12
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:207 = {
+    name = eTADSwts13
+    ldap-names = eTADSwts13
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:208 = {
+    name = eTADSwts14
+    ldap-names = eTADSwts14
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:209 = {
+    name = eTADSwts15
+    ldap-names = eTADSwts15
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:210 = {
+    name = eTADSwts16
+    ldap-names = eTADSwts16
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:211 = {
+    name = eTADSwts17
+    ldap-names = eTADSwts17
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:212 = {
+    name = eTADSwts18
+    ldap-names = eTADSwts18
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:60 = {
+    name = eTADSmailNickname
+    ldap-names = eTADSmailNickname
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:61 = {
+    name = eTADShomeMDB
+    ldap-names = eTADShomeMDB
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:63 = {
+    name = eTADSmsExchHomeServerName
+    ldap-names = eTADSmsExchHomeServerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:64 = {
+    name = eTADSmsExchUserAccountControl
+    ldap-names = eTADSmsExchUserAccountControl
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:65 = {
+    name = eTADSproxyAddresses
+    ldap-names = eTADSproxyAddresses
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:173 = {
+    name = eTADSProxyAdrUseDefaults
+    ldap-names = eTADSProxyAdrUseDefaults
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:76 = {
+    name = eTADSlegacyExchangeDN
+    ldap-names = eTADSlegacyExchangeDN
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:77 = {
+    name = eTADSsubmissionContLength
+    ldap-names = eTADSsubmissionContLength
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:78 = {
+    name = eTADSdelivContLength
+    ldap-names = eTADSdelivContLength
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:79 = {
+    name = eTADSauthOrig
+    ldap-names = eTADSauthOrig
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:80 = {
+    name = eTADSunauthOrig
+    ldap-names = eTADSunauthOrig
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:81 = {
+    name = eTADSdLMemSubmitPerms
+    ldap-names = eTADSdLMemSubmitPerms
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:82 = {
+    name = eTADSdLMemRejectPerms
+    ldap-names = eTADSdLMemRejectPerms
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:83 = {
+    name = eTADSpublicDelegates
+    ldap-names = eTADSpublicDelegates
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:84 = {
+    name = eTADSaltRecipient
+    ldap-names = eTADSaltRecipient
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:139 = {
+    name = eTADSmsExchRecipLimit
+    ldap-names = eTADSmsExchRecipLimit
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:85 = {
+    name = eTADSmsExchALObjectVersion
+    ldap-names = eTADSmsExchALObjectVersion
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:93 = {
+    name = eTADSmDBUseDefaults
+    ldap-names = eTADSmDBUseDefaults
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:86 = {
+    name = eTADSmDBStorageQuota
+    ldap-names = eTADSmDBStorageQuota
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:87 = {
+    name = eTADSmDBOverQuotaLimit
+    ldap-names = eTADSmDBOverQuotaLimit
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:88 = {
+    name = eTADSmDBOverHardQuotaLimit
+    ldap-names = eTADSmDBOverHardQuotaLimit
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:89 = {
+    name = eTADSgarbageCollPeriod
+    ldap-names = eTADSgarbageCollPeriod
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:90 = {
+    name = eTADSdeletedItemFlags
+    ldap-names = eTADSdeletedItemFlags
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:145 = {
+    name = eTADSdeliverAndRedirect
+    ldap-names = eTADSdeliverAndRedirect
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:146 = {
+    name = eTADSmsExchMailboxSecurityDescriptor
+    ldap-names = eTADSmsExchMailboxSecurityDescriptor
+    syntax = octetString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:148 = {
+    name = eTADSdisplayNamePrintable
+    ldap-names = eTADSdisplayNamePrintable
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:149 = {
+    name = eTADSmsExchHideFromAddressLists
+    ldap-names = eTADSmsExchHideFromAddressLists
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:150 = {
+    name = eTADSshowInAddressBook
+    ldap-names = eTADSshowInAddressBook
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:151 = {
+    name = eTADSautoReplyMessage
+    ldap-names = eTADSautoReplyMessage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:155 = {
+    name = eTADSextensionAttribute1
+    ldap-names = eTADSextensionAttribute1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:156 = {
+    name = eTADSextensionAttribute2
+    ldap-names = eTADSextensionAttribute2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:157 = {
+    name = eTADSextensionAttribute3
+    ldap-names = eTADSextensionAttribute3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:158 = {
+    name = eTADSextensionAttribute4
+    ldap-names = eTADSextensionAttribute4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:159 = {
+    name = eTADSextensionAttribute5
+    ldap-names = eTADSextensionAttribute5
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:160 = {
+    name = eTADSextensionAttribute6
+    ldap-names = eTADSextensionAttribute6
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:161 = {
+    name = eTADSextensionAttribute7
+    ldap-names = eTADSextensionAttribute7
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:162 = {
+    name = eTADSextensionAttribute8
+    ldap-names = eTADSextensionAttribute8
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:163 = {
+    name = eTADSextensionAttribute9
+    ldap-names = eTADSextensionAttribute9
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:164 = {
+    name = eTADSextensionAttribute10
+    ldap-names = eTADSextensionAttribute10
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:165 = {
+    name = eTADSextensionAttribute11
+    ldap-names = eTADSextensionAttribute11
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:166 = {
+    name = eTADSextensionAttribute12
+    ldap-names = eTADSextensionAttribute12
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:167 = {
+    name = eTADSextensionAttribute13
+    ldap-names = eTADSextensionAttribute13
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:168 = {
+    name = eTADSextensionAttribute14
+    ldap-names = eTADSextensionAttribute14
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:169 = {
+    name = eTADSextensionAttribute15
+    ldap-names = eTADSextensionAttribute15
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:177 = {
+    name = eTADSmsExchIMACL
+    ldap-names = eTADSmsExchIMACL
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:178 = {
+    name = eTADSmsExchIMAddress
+    ldap-names = eTADSmsExchIMAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:179 = {
+    name = eTADSmsExchIMMetaPhysicalURL
+    ldap-names = eTADSmsExchIMMetaPhysicalURL
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:180 = {
+    name = eTADSmsExchIMPhysicalURL
+    ldap-names = eTADSmsExchIMPhysicalURL
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:181 = {
+    name = eTADSmsExchIMVirtualServer
+    ldap-names = eTADSmsExchIMVirtualServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:231 = {
+    name = eTADStargetAddress
+    ldap-names = eTADStargetAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:232 = {
+    name = eTADSMailboxRights
+    ldap-names = eTADSMailboxRights
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:253 = {
+    name = eTADSExchangeVersion
+    ldap-names = eTADSExchangeVersion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:233 = {
+    name = eTADSmsRTCSIP-IsMaster
+    ldap-names = eTADSmsRTCSIP-IsMaster
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:234 = {
+    name = eTADSmsRTCSIP-PrimaryHomeServer
+    ldap-names = eTADSmsRTCSIP-PrimaryHomeServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:235 = {
+    name = eTADSmsRTCSIP-PrimaryUserAddress
+    ldap-names = eTADSmsRTCSIP-PrimaryUserAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:236 = {
+    name = eTADSmsRTCSIP-UserEnabled
+    ldap-names = eTADSmsRTCSIP-UserEnabled
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:237 = {
+    name = eTADSmsRTCSIP-TargetHomeServer
+    ldap-names = eTADSmsRTCSIP-TargetHomeServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:238 = {
+    name = eTADSprotocolSettings
+    ldap-names = eTADSprotocolSettings
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:239 = {
+    name = eTADSsecurityProtocol
+    ldap-names = eTADSsecurityProtocol
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:243 = {
+    name = eTADSmsExchMailboxGuid
+    ldap-names = eTADSmsExchMailboxGuid
+    syntax = octetString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:244 = {
+    name = eTADSmsExchPoliciesIncluded
+    ldap-names = eTADSmsExchPoliciesIncluded
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:245 = {
+    name = eTADStextEncodedORAddress
+    ldap-names = eTADStextEncodedORAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:250 = {
+    name = eTADSmsExchRecipientTypeDetails
+    ldap-names = eTADSmsExchRecipientTypeDetails
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:251 = {
+    name = eTADSmsExchMasterAccountSidAccessor
+    ldap-names = eTADSmsExchMasterAccountSidAccessor
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:252 = {
+    name = eTADSmsExchOmaAdminWirelessEnable
+    ldap-names = eTADSmsExchOmaAdminWirelessEnable
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:276 = {
+    name = eTADSlyncUserEnabled
+    ldap-names = eTADSlyncUserEnabled
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:277 = {
+    name = eTADSlyncUserTempEnabled
+    ldap-names = eTADSlyncUserTempEnabled
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:278 = {
+    name = eTADSlyncDisplayName
+    ldap-names = eTADSlyncDisplayName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:279 = {
+    name = eTADSlyncSIPAddress
+    ldap-names = eTADSlyncSIPAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:280 = {
+    name = eTADSlyncTelephony
+    ldap-names = eTADSlyncTelephony
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:281 = {
+    name = eTADSlyncLineURI
+    ldap-names = eTADSlyncLineURI
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:282 = {
+    name = eTADSlyncLineServerURI
+    ldap-names = eTADSlyncLineServerURI
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:283 = {
+    name = eTADSlyncDialPlanPolicy
+    ldap-names = eTADSlyncDialPlanPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:284 = {
+    name = eTADSlyncVoicePolicy
+    ldap-names = eTADSlyncVoicePolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:285 = {
+    name = eTADSlyncRegistrarPool
+    ldap-names = eTADSlyncRegistrarPool
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:287 = {
+    name = eTADSlyncSIPAddressOption
+    ldap-names = eTADSlyncSIPAddressOption
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:297 = {
+    name = eTADSlyncConferencingPolicy
+    ldap-names = eTADSlyncConferencingPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:298 = {
+    name = eTADSlyncClientVersionPolicy
+    ldap-names = eTADSlyncClientVersionPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:299 = {
+    name = eTADSlyncPINPolicy
+    ldap-names = eTADSlyncPINPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:300 = {
+    name = eTADSlyncExternalAccessPolicy
+    ldap-names = eTADSlyncExternalAccessPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:301 = {
+    name = eTADSlyncArchivingPolicy
+    ldap-names = eTADSlyncArchivingPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:302 = {
+    name = eTADSlyncLocationPolicy
+    ldap-names = eTADSlyncLocationPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:303 = {
+    name = eTADSlyncClientPolicy
+    ldap-names = eTADSlyncClientPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:308 = {
+    name = eTADSlyncPersistentChatPolicy
+    ldap-names = eTADSlyncPersistentChatPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:309 = {
+    name = eTADSlyncMobilityPolicy
+    ldap-names = eTADSlyncMobilityPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:70 = {
+    name = eTADSdistinguishedName
+    ldap-names = eTADSdistinguishedName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:182 = {
+    name = eTADSwhenCreated
+    ldap-names = eTADSwhenCreated
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:183 = {
+    name = eTADSwhenChanged
+    ldap-names = eTADSwhenChanged
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:184 = {
+    name = eTADSuSNCreated
+    ldap-names = eTADSuSNCreated
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:185 = {
+    name = eTADSuSNChanged
+    ldap-names = eTADSuSNChanged
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:66 = {
+    name = eTADSContainerName
+    ldap-names = eTADSContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:67 = {
+    name = eTADSrealDN
+    ldap-names = eTADSrealDN
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:68 = {
+    name = eTADSOrgUnitName
+    ldap-names = eTADSOrgUnitName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:186 = {
+    name = eTADSstreet
+    ldap-names = eTADSstreet
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:131 = {
+    name = eTADSDomainName
+    ldap-names = eTADSDomainName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:69 = {
+    name = eTADSGroupName
+    ldap-names = eTADSGroupName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:71 = {
+    name = eTADSmember
+    ldap-names = eTADSmember
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:72 = {
+    name = eTADSgroupType
+    ldap-names = eTADSgroupType
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:144 = {
+    name = eTADSmanagedBy
+    ldap-names = eTADSmanagedBy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:247 = {
+    name = eTADSmanagerWriteMember
+    ldap-names = eTADSmanagerWriteMember
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:259 = {
+    name = eTADSmemberUid
+    ldap-names = eTADSmemberUid
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:74 = {
+    name = eTADSPolicyContainerName
+    ldap-names = eTADSPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:75 = {
+    name = eTADSPolicyName
+    ldap-names = eTADSPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:217 = {
+    name = eTADSPolmsExchIMAddress
+    ldap-names = eTADSPolmsExchIMAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:218 = {
+    name = eTADSPolmsExchIMMetaPhysicalURL
+    ldap-names = eTADSPolmsExchIMMetaPhysicalURL
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:219 = {
+    name = eTADSPolmsExchIMPhysicalURL
+    ldap-names = eTADSPolmsExchIMPhysicalURL
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:220 = {
+    name = eTADSPolmsExchIMVirtualServer
+    ldap-names = eTADSPolmsExchIMVirtualServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:187 = {
+    name = eTADSComputerName
+    ldap-names = eTADSComputerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:192 = {
+    name = eTADSReset
+    ldap-names = eTADSReset
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:228 = {
+    name = eTADSlocalPrinter
+    ldap-names = eTADSlocalPrinter
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:188 = {
+    name = eTADSPrintQueueName
+    ldap-names = eTADSPrintQueueName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:222 = {
+    name = eTADSdriverName
+    ldap-names = eTADSdriverName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:223 = {
+    name = eTADSprintColor
+    ldap-names = eTADSprintColor
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:224 = {
+    name = eTADSprintCollate
+    ldap-names = eTADSprintCollate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:225 = {
+    name = eTADSprintDuplexSupported
+    ldap-names = eTADSprintDuplexSupported
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:226 = {
+    name = eTADSprintStaplingSupported
+    ldap-names = eTADSprintStaplingSupported
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:227 = {
+    name = eTADSprintMaxResolutionSupported
+    ldap-names = eTADSprintMaxResolutionSupported
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:221 = {
+    name = eTADSlocation
+    ldap-names = eTADSlocation
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:191 = {
+    name = eTADSVolumeName
+    ldap-names = eTADSVolumeName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:189 = {
+    name = eTADSuNCName
+    ldap-names = eTADSuNCName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ADS-attr:214 = {
+    name = eTADSkeywords
+    ldap-names = eTADSkeywords
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-ADS-oc:1 = {
+    name = eTADSDirectory
+    subclass-of Top
+    must-contain
+        eTADSDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTUseAdminCreds,
+        eTSawiUseProxy,
+        eTAgentNamespaceClass,
+        eTADSDirectoryServer,
+        eTADSServerName,
+        eTADSPortNum,
+        eTADSAuthDN,
+        eTADSAuthPWD,
+        eTADSUserContainer,
+        eTADSUseSSL,
+        eTADS-DefaultContext,
+        eTADSDCDomain,
+        eTADSnetBIOS,
+        eTADSupnSuffixes,
+        eTADSsettings,
+        eTADScontainers,
+        eTADSbackupDirs,
+        eTADSdcStatus,
+        eTADSuseFailover,
+        eTADSmaxConnectTime,
+        eTADSdirPayload,
+        eTADSobjectCategory,
+        eTADSprimaryServer,
+        eTADSNoRemoveMemberOfContainer,
+        eTADSdomainControllerFunctionality,
+        eTADSdomainFunctionality,
+        eTADSforestFunctionality,
+        eTADSlockoutDuration,
+        eTADSconfig,
+        eTADSmsSFU30Domains,
+        eTADSlyncAvailableSIPPool,
+        eTADSlyncAvailableSIPDomain,
+        eTADSlyncAvailableExtAccessPolicy,
+        eTADSlyncAvailableDialPlanPolicy,
+        eTADSlyncAvailableVoicePolicy,
+        eTADSlyncAvailableConferencingPolicy,
+        eTADSlyncAvailableClientVersionPolicy,
+        eTADSlyncAvailablePINPolicy,
+        eTADSlyncAvailableArchivingPolicy,
+        eTADSlyncAvailableLocationPolicy,
+        eTADSlyncAvailableClientPolicy,
+        eTADSlyncAvailablePersistentChatPolicy,
+        eTADSlyncAvailableMobilityPolicy,
+        eTADSlyncSIPPool,
+        eTADSlyncMaxConnection,
+        eTADSlyncServerFlags,
+        eTADSexchange,
+        eTADSexchangeGroups,
+        eTADSexchangeStores,
+        eTADShomeMTA,
+        eTADSexchangelegacyDN,
+        eTADSE2KGatewayServer,
+        eTADSIMServerName,
+        eTADSIMHostName,
+        eTADSIMServerDN,
+        eTADSKeepCamCaftFiles,
+        eTADSCamCaftTimeout,
+        eTADSmsExchSchemaVersion,
+        eTADSmsExchSystemObjectsObjectVersion
+};
+
+schema set object-class etrust-admin-ADS-oc:2 = {
+    name = eTADSNamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL
+};
+
+schema set object-class etrust-admin-ADS-oc:3 = {
+    name = eTADSAccount
+    subclass-of Top
+    must-contain
+        eTADSAccountName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTSelfChange,
+        eTLocked,
+        eTLastLoginDTS,
+        eTADSobjectClass,
+        eTADSuserPrincipalName,
+        eTADSsAMAccountName,
+        eTADSunicodePwd,
+        eTADSobjectSid,
+        eTADSgivenName,
+        eTADSinitials,
+        eTADSsn,
+        eTADSdisplayName,
+        eTADSName,
+        eTADSDescription,
+        eTADSphysicalDeliveryOfficeName,
+        eTADStelephoneNumber,
+        eTADSotherTelephone,
+        eTADSinfo,
+        eTADSmail,
+        eTADSwwwHomePage,
+        eTADSurl,
+        eTADSstreetAddress,
+        eTADSpostOfficeBox,
+        eTADSl,
+        eTADSst,
+        eTADSpostalCode,
+        eTADSco,
+        eTADSc,
+        eTADScountryCode,
+        eTADShomePhone,
+        eTADSpager,
+        eTADSmobile,
+        eTADSfacsimileTelephoneNumber,
+        eTADSipPhone,
+        eTADSotherHomePhone,
+        eTADSotherPager,
+        eTADSotherMobile,
+        eTADSotherFacsimileTelephoneNumber,
+        eTADSotherIpPhone,
+        eTADStitle,
+        eTADSdepartment,
+        eTADScompany,
+        eTADSmanager,
+        eTADSdirectReports,
+        eTADSaccountExpires,
+        eTADSlockoutTime,
+        eTADSprofilePath,
+        eTADSscriptPath,
+        eTADShomeDirectory,
+        eTADShomeDrive,
+        eTADSuserAccountControl,
+        eTADSPwdNeverExpireBit,
+        eTADSuserAccountControl2,
+        eTADSmemberOf,
+        eTADSpwdLastSet,
+        eTADSnTsecurityDescriptor,
+        eTADSlogonHours,
+        eTADSuserWorkstations,
+        eTADSprimaryGroupID,
+        eTADSprimaryGroupName,
+        eTADSmsRADIUSCallbackNumber,
+        eTADSmsRASSavedCallbackNumber,
+        eTADSmsNPCallingStationID,
+        eTADSmsNPSavedCallingStationID,
+        eTADSmsRADIUSServiceType,
+        eTADSmsNPAllowDialin,
+        eTADSuserCertificate,
+        eTADSaltSecurityIdentities,
+        eTADSpayload,
+        eTADSuidNumber,
+        eTADSloginShell,
+        eTADSunixHomeDirectory,
+        eTADSuid,
+        eTADSUniversalGroupOnly,
+        eTADSemployeeID,
+        eTADSemployeeNumber,
+        eTADSemployeeType,
+        eTADSmsSFU30NisDomain,
+        eTADSgidNumber,
+        eTADSwts0,
+        eTADSwts1,
+        eTADSwts2,
+        eTADSwts3,
+        eTADSwts4,
+        eTADSwts5,
+        eTADSwts6,
+        eTADSwts7,
+        eTADSwts8,
+        eTADSwts9,
+        eTADSwts10,
+        eTADSwts11,
+        eTADSwts12,
+        eTADSwts13,
+        eTADSwts14,
+        eTADSwts15,
+        eTADSwts16,
+        eTADSwts17,
+        eTADSwts18,
+        eTADSmailNickname,
+        eTADShomeMDB,
+        eTADShomeMTA,
+        eTADSmsExchHomeServerName,
+        eTADSmsExchUserAccountControl,
+        eTADSproxyAddresses,
+        eTADSProxyAdrUseDefaults,
+        eTADSlegacyExchangeDN,
+        eTADSsubmissionContLength,
+        eTADSdelivContLength,
+        eTADSauthOrig,
+        eTADSunauthOrig,
+        eTADSdLMemSubmitPerms,
+        eTADSdLMemRejectPerms,
+        eTADSpublicDelegates,
+        eTADSaltRecipient,
+        eTADSmsExchRecipLimit,
+        eTADSmsExchALObjectVersion,
+        eTADSmDBUseDefaults,
+        eTADSmDBStorageQuota,
+        eTADSmDBOverQuotaLimit,
+        eTADSmDBOverHardQuotaLimit,
+        eTADSgarbageCollPeriod,
+        eTADSdeletedItemFlags,
+        eTADSdeliverAndRedirect,
+        eTADSmsExchMailboxSecurityDescriptor,
+        eTADSdisplayNamePrintable,
+        eTADSmsExchHideFromAddressLists,
+        eTADSshowInAddressBook,
+        eTADSautoReplyMessage,
+        eTADSextensionAttribute1,
+        eTADSextensionAttribute2,
+        eTADSextensionAttribute3,
+        eTADSextensionAttribute4,
+        eTADSextensionAttribute5,
+        eTADSextensionAttribute6,
+        eTADSextensionAttribute7,
+        eTADSextensionAttribute8,
+        eTADSextensionAttribute9,
+        eTADSextensionAttribute10,
+        eTADSextensionAttribute11,
+        eTADSextensionAttribute12,
+        eTADSextensionAttribute13,
+        eTADSextensionAttribute14,
+        eTADSextensionAttribute15,
+        eTADSmsExchIMACL,
+        eTADSmsExchIMAddress,
+        eTADSmsExchIMMetaPhysicalURL,
+        eTADSmsExchIMPhysicalURL,
+        eTADSmsExchIMVirtualServer,
+        eTADStargetAddress,
+        eTADSMailboxRights,
+        eTADSExchangeVersion,
+        eTADSmsRTCSIP-IsMaster,
+        eTADSmsRTCSIP-PrimaryHomeServer,
+        eTADSmsRTCSIP-PrimaryUserAddress,
+        eTADSmsRTCSIP-UserEnabled,
+        eTADSmsRTCSIP-TargetHomeServer,
+        eTADSprotocolSettings,
+        eTADSsecurityProtocol,
+        eTADSmsExchMailboxGuid,
+        eTADSmsExchPoliciesIncluded,
+        eTADStextEncodedORAddress,
+        eTADSmsExchRecipientTypeDetails,
+        eTADSmsExchMasterAccountSidAccessor,
+        eTADSmsExchOmaAdminWirelessEnable,
+        eTADSlyncUserEnabled,
+        eTADSlyncUserTempEnabled,
+        eTADSlyncDisplayName,
+        eTADSlyncSIPAddress,
+        eTADSlyncTelephony,
+        eTADSlyncLineURI,
+        eTADSlyncLineServerURI,
+        eTADSlyncDialPlanPolicy,
+        eTADSlyncVoicePolicy,
+        eTADSlyncRegistrarPool,
+        eTADSlyncSIPAddressOption,
+        eTADSlyncConferencingPolicy,
+        eTADSlyncClientVersionPolicy,
+        eTADSlyncPINPolicy,
+        eTADSlyncExternalAccessPolicy,
+        eTADSlyncArchivingPolicy,
+        eTADSlyncLocationPolicy,
+        eTADSlyncClientPolicy,
+        eTADSlyncPersistentChatPolicy,
+        eTADSlyncMobilityPolicy,
+        eTADSdistinguishedName,
+        eTADSwhenCreated,
+        eTADSwhenChanged,
+        eTADSuSNCreated,
+        eTADSuSNChanged
+};
+
+schema set object-class etrust-admin-ADS-oc:4 = {
+    name = eTADSContainer
+    subclass-of Top
+    must-contain
+        eTADSContainerName,
+        objectclass
+    may-contain
+        eTADSrealDN,
+        eTADScontainers,
+        eTContainerName,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTSyncAccounts,
+        eTSubtreeExplored,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ADS-oc:5 = {
+    name = eTADSOrgUnit
+    subclass-of Top
+    must-contain
+        eTADSOrgUnitName,
+        objectclass
+    may-contain
+        eTADSrealDN,
+        eTADScontainers,
+        eTContainerName,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTSyncAccounts,
+        eTSubtreeExplored,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTADSdescription,
+        eTADSstreet,
+        eTADSl,
+        eTADSst,
+        eTADSpostalCode,
+        eTADSco,
+        eTADSc,
+        eTADScountryCode,
+        eTADSmanager,
+        eTADSnTsecurityDescriptor,
+        eTADSobjectClass,
+        eTADSdistinguishedName,
+        eTADSwhenCreated,
+        eTADSwhenChanged,
+        eTADSuSNCreated,
+        eTADSuSNChanged
+};
+
+schema set object-class etrust-admin-ADS-oc:9 = {
+    name = eTADSDomain
+    subclass-of Top
+    must-contain
+        eTADSDomainName,
+        objectclass
+    may-contain
+        eTADSrealDN,
+        eTAgentNamespaceClass,
+        eTADSDirectoryServer,
+        eTADSServerName,
+        eTADSPortNum,
+        eTADSAuthDN,
+        eTADSAuthPWD,
+        eTADSUserContainer,
+        eTADSUseSSL,
+        eTADS-DefaultContext,
+        eTADSDCDomain,
+        eTADSnetBIOS,
+        eTADSupnSuffixes,
+        eTADSsettings,
+        eTADScontainers,
+        eTADSbackupDirs,
+        eTADSdcStatus,
+        eTADSuseFailover,
+        eTADSmaxConnectTime,
+        eTADSdirPayload,
+        eTADSobjectCategory,
+        eTADSprimaryServer,
+        eTADSNoRemoveMemberOfContainer,
+        eTADSdomainControllerFunctionality,
+        eTADSdomainFunctionality,
+        eTADSforestFunctionality,
+        eTADSlockoutDuration,
+        eTContainerName,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTSyncAccounts,
+        eTSubtreeExplored,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ADS-oc:6 = {
+    name = eTADSGroup
+    subclass-of Top
+    must-contain
+        eTADSGroupName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTADSDescription,
+        eTADSmail,
+        eTADSmember,
+        eTADSmemberOf,
+        eTADSgroupType,
+        eTADSobjectSid,
+        eTADSsAMAccountName,
+        eTADSinfo,
+        eTADSmanagedBy,
+        eTADSnTsecurityDescriptor,
+        eTADSmanagerWriteMember,
+        eTADSmemberUid,
+        eTADSmsSFU30NisDomain,
+        eTADSgidNumber,
+        eTADSlegacyExchangeDN,
+        eTADSmailNickname,
+        eTADSdisplayName,
+        eTADSdelivContLength,
+        eTADSauthOrig,
+        eTADSunauthOrig,
+        eTADSdLMemSubmitPerms,
+        eTADSdLMemRejectPerms,
+        eTADSproxyAddresses,
+        eTADSProxyAdrUseDefaults,
+        eTADSdisplayNamePrintable,
+        eTADSmsExchHideFromAddressLists,
+        eTADSextensionAttribute1,
+        eTADSextensionAttribute2,
+        eTADSextensionAttribute3,
+        eTADSextensionAttribute4,
+        eTADSextensionAttribute5,
+        eTADSextensionAttribute6,
+        eTADSextensionAttribute7,
+        eTADSextensionAttribute8,
+        eTADSextensionAttribute9,
+        eTADSextensionAttribute10,
+        eTADSextensionAttribute11,
+        eTADSextensionAttribute12,
+        eTADSextensionAttribute13,
+        eTADSextensionAttribute14,
+        eTADSextensionAttribute15,
+        eTADSobjectClass,
+        eTADSdistinguishedName,
+        eTADSwhenCreated,
+        eTADSwhenChanged,
+        eTADSuSNCreated,
+        eTADSuSNChanged
+};
+
+schema set object-class etrust-admin-ADS-oc:7 = {
+    name = eTADSPolicyContainer
+    subclass-of Top
+    must-contain
+        eTADSPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ADS-oc:8 = {
+    name = eTADSPolicy
+    subclass-of Top
+    must-contain
+        eTADSPolicyName,
+        objectclass
+    may-contain
+        eTAccountContainer,
+        eTADSAccountName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTADSobjectClass,
+        eTADSuserPrincipalName,
+        eTADSsAMAccountName,
+        eTADSunicodePwd,
+        eTADSgivenName,
+        eTADSinitials,
+        eTADSsn,
+        eTADSdisplayName,
+        eTADSName,
+        eTADSDescription,
+        eTADSphysicalDeliveryOfficeName,
+        eTADStelephoneNumber,
+        eTADSotherTelephone,
+        eTADSinfo,
+        eTADSmail,
+        eTADSwwwHomePage,
+        eTADSurl,
+        eTADSstreetAddress,
+        eTADSpostOfficeBox,
+        eTADSl,
+        eTADSst,
+        eTADSpostalCode,
+        eTADSco,
+        eTADSc,
+        eTADScountryCode,
+        eTADShomePhone,
+        eTADSpager,
+        eTADSmobile,
+        eTADSfacsimileTelephoneNumber,
+        eTADSipPhone,
+        eTADSotherHomePhone,
+        eTADSotherPager,
+        eTADSotherMobile,
+        eTADSotherFacsimileTelephoneNumber,
+        eTADSotherIpPhone,
+        eTADStitle,
+        eTADSdepartment,
+        eTADScompany,
+        eTADSmanager,
+        eTADSdirectReports,
+        eTADSaccountExpires,
+        eTADSlockoutTime,
+        eTADSprofilePath,
+        eTADSscriptPath,
+        eTADShomeDirectory,
+        eTADShomeDrive,
+        eTADSuserAccountControl,
+        eTADSPwdNeverExpireBit,
+        eTADSuserAccountControl2,
+        eTADSmemberOf,
+        eTADSpwdLastSet,
+        eTADSnTsecurityDescriptor,
+        eTADSlogonHours,
+        eTADSuserWorkstations,
+        eTADSprimaryGroupID,
+        eTADSmsRADIUSCallbackNumber,
+        eTADSmsRASSavedCallbackNumber,
+        eTADSmsNPCallingStationID,
+        eTADSmsNPSavedCallingStationID,
+        eTADSmsRADIUSServiceType,
+        eTADSmsNPAllowDialin,
+        eTADSpayload,
+        eTADSmsSFU30NisDomain,
+        eTADSuidNumber,
+        eTADSloginShell,
+        eTADSunixHomeDirectory,
+        eTADSgidNumber,
+        eTADSUniversalGroupOnly,
+        eTADSemployeeID,
+        eTADSemployeeNumber,
+        eTADSemployeeType,
+        eTADSwts0,
+        eTADSwts1,
+        eTADSwts2,
+        eTADSwts3,
+        eTADSwts4,
+        eTADSwts5,
+        eTADSwts6,
+        eTADSwts7,
+        eTADSwts8,
+        eTADSwts9,
+        eTADSwts10,
+        eTADSwts11,
+        eTADSwts12,
+        eTADSwts13,
+        eTADSwts14,
+        eTADSwts15,
+        eTADSwts16,
+        eTADSwts17,
+        eTADSwts18,
+        eTADSmailNickname,
+        eTADShomeMDB,
+        eTADShomeMTA,
+        eTADSmsExchHomeServerName,
+        eTADSmsExchUserAccountControl,
+        eTADSproxyAddresses,
+        eTADSProxyAdrUseDefaults,
+        eTADSlegacyExchangeDN,
+        eTADSsubmissionContLength,
+        eTADSdelivContLength,
+        eTADSauthOrig,
+        eTADSunauthOrig,
+        eTADSdLMemSubmitPerms,
+        eTADSdLMemRejectPerms,
+        eTADSpublicDelegates,
+        eTADSaltRecipient,
+        eTADSmsExchRecipLimit,
+        eTADSmsExchALObjectVersion,
+        eTADSmDBUseDefaults,
+        eTADSmDBStorageQuota,
+        eTADSmDBOverQuotaLimit,
+        eTADSmDBOverHardQuotaLimit,
+        eTADSgarbageCollPeriod,
+        eTADSdeletedItemFlags,
+        eTADSdeliverAndRedirect,
+        eTADSmsExchMailboxSecurityDescriptor,
+        eTADSdisplayNamePrintable,
+        eTADSmsExchHideFromAddressLists,
+        eTADSshowInAddressBook,
+        eTADSautoReplyMessage,
+        eTADSextensionAttribute1,
+        eTADSextensionAttribute2,
+        eTADSextensionAttribute3,
+        eTADSextensionAttribute4,
+        eTADSextensionAttribute5,
+        eTADSextensionAttribute6,
+        eTADSextensionAttribute7,
+        eTADSextensionAttribute8,
+        eTADSextensionAttribute9,
+        eTADSextensionAttribute10,
+        eTADSextensionAttribute11,
+        eTADSextensionAttribute12,
+        eTADSextensionAttribute13,
+        eTADSextensionAttribute14,
+        eTADSextensionAttribute15,
+        eTADSPolmsExchIMAddress,
+        eTADSPolmsExchIMMetaPhysicalURL,
+        eTADSPolmsExchIMPhysicalURL,
+        eTADSPolmsExchIMVirtualServer,
+        eTADStargetAddress,
+        eTADSMailboxRights,
+        eTADSExchangeVersion,
+        eTADSmsRTCSIP-IsMaster,
+        eTADSmsRTCSIP-PrimaryHomeServer,
+        eTADSmsRTCSIP-PrimaryUserAddress,
+        eTADSmsRTCSIP-UserEnabled,
+        eTADSmsRTCSIP-TargetHomeServer,
+        eTADSprotocolSettings,
+        eTADSsecurityProtocol,
+        eTADSmsExchRecipientTypeDetails,
+        eTADSmsExchMasterAccountSidAccessor,
+        eTADSmsExchOmaAdminWirelessEnable,
+        eTADSlyncUserEnabled,
+        eTADSlyncUserTempEnabled,
+        eTADSlyncDisplayName,
+        eTADSlyncSIPAddress,
+        eTADSlyncTelephony,
+        eTADSlyncLineURI,
+        eTADSlyncLineServerURI,
+        eTADSlyncDialPlanPolicy,
+        eTADSlyncVoicePolicy,
+        eTADSlyncRegistrarPool,
+        eTADSlyncSIPAddressOption,
+        eTADSlyncConferencingPolicy,
+        eTADSlyncClientVersionPolicy,
+        eTADSlyncPINPolicy,
+        eTADSlyncExternalAccessPolicy,
+        eTADSlyncArchivingPolicy,
+        eTADSlyncLocationPolicy,
+        eTADSlyncClientPolicy,
+        eTADSlyncPersistentChatPolicy,
+        eTADSlyncMobilityPolicy
+};
+
+schema set object-class etrust-admin-ADS-oc:10 = {
+    name = eTADSComputer
+    subclass-of Top
+    must-contain
+        eTADSComputerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTADSsAMAccountName,
+        eTADSuserAccountControl,
+        eTADSReset,
+        eTADSlocalPrinter,
+        eTADSobjectClass,
+        eTADSdistinguishedName,
+        eTADSwhenCreated,
+        eTADSwhenChanged,
+        eTADSuSNCreated,
+        eTADSuSNChanged
+};
+
+schema set object-class etrust-admin-ADS-oc:11 = {
+    name = eTADSPrintQueue
+    subclass-of Top
+    must-contain
+        eTADSPrintQueueName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTADSdescription,
+        eTADSdriverName,
+        eTADSprintColor,
+        eTADSprintCollate,
+        eTADSprintDuplexSupported,
+        eTADSprintStaplingSupported,
+        eTADSprintMaxResolutionSupported,
+        eTADSlocation,
+        eTADSstreet,
+        eTADSl,
+        eTADSst,
+        eTADSpostalCode,
+        eTADSco,
+        eTADSc,
+        eTADScountryCode,
+        eTADSmanager,
+        eTADSnTsecurityDescriptor,
+        eTADSobjectClass,
+        eTADSdistinguishedName,
+        eTADSwhenCreated,
+        eTADSwhenChanged,
+        eTADSuSNCreated,
+        eTADSuSNChanged
+};
+
+schema set object-class etrust-admin-ADS-oc:12 = {
+    name = eTADSVolume
+    subclass-of Top
+    must-contain
+        eTADSVolumeName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTADSnTsecurityDescriptor,
+        eTADSmanagedBy,
+        eTADSuNCName,
+        eTADSkeywords,
+        eTADSDescription,
+        eTADSobjectClass,
+        eTADSdistinguishedName,
+        eTADSwhenCreated,
+        eTADSwhenChanged,
+        eTADSuSNCreated,
+        eTADSuSNChanged
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-ADS-nb:13 = {
+    name = eTADSDirectory-eTNamespace
+    eTADSDirectory allowable-parent eTNamespace
+    named-by eTADSDirectoryName
+};
+
+schema set name-binding etrust-admin-ADS-nb:14 = {
+    name = eTADSPolicyContainer-eTNamespace
+    eTADSPolicyContainer allowable-parent eTNamespace
+    named-by eTADSPolicyContainerName
+};
+
+schema set name-binding etrust-admin-ADS-nb:1 = {
+    name = eTADSNamespace-eTADSDirectory
+    eTADSNamespace allowable-parent eTADSDirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-ADS-nb:2 = {
+    name = eTADSAccount-eTADSDirectory
+    eTADSAccount allowable-parent eTADSDirectory
+    named-by eTADSAccountName
+};
+
+schema set name-binding etrust-admin-ADS-nb:3 = {
+    name = eTADSContainer-eTADSDirectory
+    eTADSContainer allowable-parent eTADSDirectory
+    named-by eTADSContainerName
+};
+
+schema set name-binding etrust-admin-ADS-nb:4 = {
+    name = eTADSOrgUnit-eTADSDirectory
+    eTADSOrgUnit allowable-parent eTADSDirectory
+    named-by eTADSOrgUnitName
+};
+
+schema set name-binding etrust-admin-ADS-nb:101 = {
+    name = eTADSDomain-eTADSDirectory
+    eTADSDomain allowable-parent eTADSDirectory
+    named-by eTADSDomainName
+};
+
+schema set name-binding etrust-admin-ADS-nb:5 = {
+    name = eTADSGroup-eTADSDirectory
+    eTADSGroup allowable-parent eTADSDirectory
+    named-by eTADSGroupName
+};
+
+schema set name-binding etrust-admin-ADS-nb:15 = {
+    name = eTADSComputer-eTADSDirectory
+    eTADSComputer allowable-parent eTADSDirectory
+    named-by eTADSComputerName
+};
+
+schema set name-binding etrust-admin-ADS-nb:19 = {
+    name = eTADSPrintQueue-eTADSDirectory
+    eTADSPrintQueue allowable-parent eTADSDirectory
+    named-by eTADSPrintQueueName
+};
+
+schema set name-binding etrust-admin-ADS-nb:23 = {
+    name = eTADSVolume-eTADSDirectory
+    eTADSVolume allowable-parent eTADSDirectory
+    named-by eTADSVolumeName
+};
+
+schema set name-binding etrust-admin-ADS-nb:6 = {
+    name = eTADSAccount-eTADSContainer
+    eTADSAccount allowable-parent eTADSContainer
+    named-by eTADSAccountName
+};
+
+schema set name-binding etrust-admin-ADS-nb:7 = {
+    name = eTADSContainer-eTADSContainer
+    eTADSContainer allowable-parent eTADSContainer
+    named-by eTADSContainerName
+};
+
+schema set name-binding etrust-admin-ADS-nb:8 = {
+    name = eTADSGroup-eTADSContainer
+    eTADSGroup allowable-parent eTADSContainer
+    named-by eTADSGroupName
+};
+
+schema set name-binding etrust-admin-ADS-nb:16 = {
+    name = eTADSComputer-eTADSContainer
+    eTADSComputer allowable-parent eTADSContainer
+    named-by eTADSComputerName
+};
+
+schema set name-binding etrust-admin-ADS-nb:20 = {
+    name = eTADSPrintQueue-eTADSContainer
+    eTADSPrintQueue allowable-parent eTADSContainer
+    named-by eTADSPrintQueueName
+};
+
+schema set name-binding etrust-admin-ADS-nb:24 = {
+    name = eTADSVolume-eTADSContainer
+    eTADSVolume allowable-parent eTADSContainer
+    named-by eTADSVolumeName
+};
+
+schema set name-binding etrust-admin-ADS-nb:9 = {
+    name = eTADSAccount-eTADSOrgUnit
+    eTADSAccount allowable-parent eTADSOrgUnit
+    named-by eTADSAccountName
+};
+
+schema set name-binding etrust-admin-ADS-nb:10 = {
+    name = eTADSOrgUnit-eTADSOrgUnit
+    eTADSOrgUnit allowable-parent eTADSOrgUnit
+    named-by eTADSOrgUnitName
+};
+
+schema set name-binding etrust-admin-ADS-nb:11 = {
+    name = eTADSGroup-eTADSOrgUnit
+    eTADSGroup allowable-parent eTADSOrgUnit
+    named-by eTADSGroupName
+};
+
+schema set name-binding etrust-admin-ADS-nb:17 = {
+    name = eTADSComputer-eTADSOrgUnit
+    eTADSComputer allowable-parent eTADSOrgUnit
+    named-by eTADSComputerName
+};
+
+schema set name-binding etrust-admin-ADS-nb:21 = {
+    name = eTADSPrintQueue-eTADSOrgUnit
+    eTADSPrintQueue allowable-parent eTADSOrgUnit
+    named-by eTADSPrintQueueName
+};
+
+schema set name-binding etrust-admin-ADS-nb:25 = {
+    name = eTADSVolume-eTADSOrgUnit
+    eTADSVolume allowable-parent eTADSOrgUnit
+    named-by eTADSVolumeName
+};
+
+schema set name-binding etrust-admin-ADS-nb:102 = {
+    name = eTADSAccount-eTADSDomain
+    eTADSAccount allowable-parent eTADSDomain
+    named-by eTADSAccountName
+};
+
+schema set name-binding etrust-admin-ADS-nb:103 = {
+    name = eTADSContainer-eTADSDomain
+    eTADSContainer allowable-parent eTADSDomain
+    named-by eTADSContainerName
+};
+
+schema set name-binding etrust-admin-ADS-nb:104 = {
+    name = eTADSOrgUnit-eTADSDomain
+    eTADSOrgUnit allowable-parent eTADSDomain
+    named-by eTADSOrgUnitName
+};
+
+schema set name-binding etrust-admin-ADS-nb:105 = {
+    name = eTADSDomain-eTADSDomain
+    eTADSDomain allowable-parent eTADSDomain
+    named-by eTADSDomainName
+};
+
+schema set name-binding etrust-admin-ADS-nb:106 = {
+    name = eTADSGroup-eTADSDomain
+    eTADSGroup allowable-parent eTADSDomain
+    named-by eTADSGroupName
+};
+
+schema set name-binding etrust-admin-ADS-nb:18 = {
+    name = eTADSComputer-eTADSDomain
+    eTADSComputer allowable-parent eTADSDomain
+    named-by eTADSComputerName
+};
+
+schema set name-binding etrust-admin-ADS-nb:22 = {
+    name = eTADSPrintQueue-eTADSDomain
+    eTADSPrintQueue allowable-parent eTADSDomain
+    named-by eTADSPrintQueueName
+};
+
+schema set name-binding etrust-admin-ADS-nb:26 = {
+    name = eTADSVolume-eTADSDomain
+    eTADSVolume allowable-parent eTADSDomain
+    named-by eTADSVolumeName
+};
+
+schema set name-binding etrust-admin-ADS-nb:12 = {
+    name = eTADSPolicy-eTADSPolicyContainer
+    eTADSPolicy allowable-parent eTADSPolicyContainer
+    named-by eTADSPolicyName
+};
+
+schema set name-binding etrust-admin-ADS-nb:27 = {
+    name = eTADSPrintQueue-eTADSComputer
+    eTADSPrintQueue allowable-parent eTADSComputer
+    named-by eTADSPrintQueueName
+};
+

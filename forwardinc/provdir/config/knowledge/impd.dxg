@@ -1,0 +1,8 @@
+# CA Directory DXserver/config/knowledge
+
+
+source "@hostname@-impd-main.dxc";
+source "@hostname@-impd-co.dxc";
+source "@hostname@-impd-inc.dxc";
+source "@hostname@-impd-notify.dxc";
+source "@hostname@-router.dxc";

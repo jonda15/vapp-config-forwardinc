@@ -1,0 +1,112 @@
+# 
+# Computer Associates
+#
+# config/schema/unspsc.dxc ($Revision: 4.6 $)
+#
+# UNSPSC objectClass and Attribute Definitions to implement
+# the United Nations Standard Products and Services Catalogue.
+# Please refer to http://www.unspsc.org
+#
+schema set oid-prefix unspsc-attr = (1.3.6.1.4.1.3327.77.4.1);
+schema set oid-prefix unspsc-oc   = (1.3.6.1.4.1.3327.77.4.2);
+schema set oid-prefix unspsc-nb   = (1.3.6.1.4.1.3327.77.4.14);
+
+#
+# Attribute Definitions.
+#
+schema set attribute unspsc-attr:1 = {
+	name = uNSPSCCode
+	syntax = numericString
+	single-valued
+};
+
+schema set attribute unspsc-attr:2 = {
+	name = uNSPSCTitle
+	syntax = caseIgnoreString
+	single-valued
+};
+
+schema set attribute unspsc-attr:3 = {
+	name = uNSPSCContractManager
+	ldap-names = contractmgr
+	syntax = distinguishedName
+};
+
+schema set attribute unspsc-attr:4 = {
+	name = uNSPSCContractID
+	ldap-names = contractid
+	syntax = caseIgnoreString
+};
+
+schema set attribute unspsc-attr:5 = {
+	name = uNSPSCContractAuth
+	ldap-names = contractauth
+	syntax = caseIgnoreString
+};
+
+schema set attribute unspsc-attr:6 = {
+	name = uNSPSCContractSupplier
+	ldap-names = contractsuplr
+	syntax = distinguishedName
+};
+
+schema set attribute unspsc-attr:7 = {
+	name = uNSPSCdateissued
+	syntax = generalizedTime
+	single-valued
+};
+
+schema set attribute unspsc-attr:8 = {
+	name = uNSPSCdatefrom
+	syntax = generalizedTime
+	single-valued
+};
+
+schema set attribute unspsc-attr:9 = {
+	name = uNSPSCdateto
+	syntax = generalizedTime
+	single-valued
+};
+
+
+#
+# Object Class Definitions.
+#
+schema set object-class unspsc-oc:1 = {
+	name = uNSPSC
+	subclass-of top
+	must-contain
+		uNSPSCCode,
+		uNSPSCTitle
+	may-contain
+		uNSPSCContractManager,
+		uNSPSCContractID,
+		uNSPSCContractAuth,
+		uNSPSCContractSupplier,
+		uNSPSCdateissued,
+		uNSPSCdatefrom,
+		uNSPSCdateto
+};
+
+
+#
+# Name Bindings.
+#
+schema set name-binding unspsc-nb:1 = {
+	name = uNSPSC-o
+	uNSPSC allowable-parent organization
+	named-by uNSPSCTitle optional uNSPSCCode, uNSPSCContractID
+};
+
+schema set name-binding unspsc-nb:2 = {
+	name = uNSPSC-ou
+	uNSPSC allowable-parent organizationalUnit
+	named-by uNSPSCTitle optional uNSPSCCode, uNSPSCContractID
+};
+
+schema set name-binding unspsc-nb:3 = {
+	name = uNSPSC-uNSPSC
+	uNSPSC allowable-parent uNSPSC
+	named-by uNSPSCTitle optional uNSPSCCode, uNSPSCContractID
+};
+

@@ -1,0 +1,35 @@
+#!/bin/sh
+# * ----------------------------------------------------------------------
+# *               Proprietary and Confidential Information
+# *
+# * This material contains, and is part of a computer software program
+# * which is, proprietary and confidential information owned by CA INC.
+# * The program, including this material, may not be duplicated, disclosed 
+# * or reproduced in whole or in part for any purpose without the express 
+# * written authorization of CA. All authorized reproductions must be marked
+# * with this legend.
+# *
+# *                          Copyright (c) 2015
+# *                                  CA
+# *                          All rights reserved
+# *
+# * ----------------------------------------------------------------------
+# *
+# * Identity Manager - ForwardInc Demo - MySQL Database Init
+# *
+# * ----------------------------------------------------------------------
+
+
+# Generate psuedo-random MySQL Root password if it hasn't already been done
+echo "Generating psuedo-random password for mysql root account..."
+MYSQL_ROOT_PASSWORD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | sed 1q)
+echo $MYSQL_ROOT_PASSWORD >> ${MYSQL_DATA}/.root_secret
+echo "----- Success! [${MYSQL_ROOT_PASSWORD}]"
+
+MYSQL_INIT_FILE=/solution/$CONFIG/data/my.sql
+
+sed -i "s/@MYSQL_DB_IMUSER@/$MYSQL_DB_IMUSER/g" $MYSQL_INIT_FILE
+sed -i "s/@MYSQL_DB_IMUSER_PW@/$MYSQL_DB_IMUSER_PW/g" $MYSQL_INIT_FILE
+
+sed -i "s/@MYSQL_DB_SIGMAUSER@/$MYSQL_DB_SIGMAUSER/g" $MYSQL_INIT_FILE
+sed -i "s/@MYSQL_DB_SIGMAUSER_PW@/$MYSQL_DB_SIGMAUSER_PW/g" $MYSQL_INIT_FILE

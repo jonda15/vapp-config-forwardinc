@@ -1,0 +1,24 @@
+# Computer Associates DXserver/config/settings
+# $RCSfile: default.dxc,v $ $Revision: 4.20 $
+# This is a read-only default configuration file. If you need to make changes, 
+# copy this file and reference the new file from servers/<dsa>.dxi
+#
+
+# directory information base
+set alias-integrity = true;
+
+# distribution controls
+set multi-casting = true;
+set always-chain-down = false;
+
+# security controls
+set min-auth = none;
+set allow-binds = true;
+set ssl-auth-bypass-entry-check = false;
+
+# multiwrite timer
+# set multi-write-retry-time = 60;	# this is the default value
+
+# general controls
+set op-attrs = true;
+

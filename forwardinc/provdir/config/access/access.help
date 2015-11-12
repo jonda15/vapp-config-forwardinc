@@ -1,0 +1,110 @@
+# ---------------------------------------------------------------------------- #
+# CA Directory ACCESS Configuration Help File                                  #
+# ---------------------------------------------------------------------------- #
+# 
+# Examples of the available Access Control commands are listed below.
+# 
+# You can find details in the CA Directory Administrator Guide, Chapter 6.
+# 
+# See also "Trust Flags" in the knowledge configuration. 
+
+
+#-------------------------------
+# set group = { <name> <users> }
+#-------------------------------
+
+set group = {
+    name = "admin-user-group"
+    users = <c "AU"><o "Democorp"> <ou "Corporate"><ou "Finance"> <cn "Belinda LINDSEY">
+};
+
+set group = {
+    name = "super-user-group"
+    users = <c "AU"><o "Democorp"> <ou "Corporate"><ou "Administration"> <cn "Craig LINK">
+};
+
+# "users" is a list of one or more users in that group
+
+
+#-------------------------------------------------
+# set protected-items = { <acArea> <acOptAttrs> };
+#-------------------------------------------------
+
+set protected-items = {
+    subtree = <countryName "AU"> <organizationName "Democorp"> # <- acArea
+    attrs   = userPassword                                     # <- acOptAttrs
+};
+
+
+#------------------------------------------------------
+# set admin-user = { <acUser> <acArea> <acOptAttrs> };
+#------------------------------------------------------
+
+set admin-user = {
+    group = "admin-user-group"               # <- acUser
+    subtree = <c "AU"><o "Democorp">         # <- acArea
+    <organizationalUnitName "Corporate">
+    <organizationalUnitName "Finance">
+};
+# No acOptAttrs in this example
+
+set reg-user = {
+    user = <c "AU"> <o "Democorp"> <ou "Corporate"> <ou "Finance"> <cn "Brenda STEER">
+
+    subtree = <c "AU"> <o "Democorp"> <ou "Corporate"> <ou "Finance">
+};
+
+#-----------------------------------------------------------
+# set public-user  OR reg-user = { <acArea> <acOptAttrs> };
+#-----------------------------------------------------------
+
+set public-user = {
+    subtree = <c "AU"> <o "Democorp"> <ou "Corporate">
+    <ou "Administration">
+    attrs = telephoneNumber, commonName, surname
+};
+
+set reg-user = {
+    own-entry
+    subtree = <c "AU"><o "Democorp">
+};
+
+
+#-----------
+# super user
+#-----------
+
+set super-user = { user = <c "AU"><o "Democorp"><cn "DSA manager"> };
+
+set super-user = { group = "super-user-group" };
+
+set super-user = { own-entry };
+
+
+#---------------------------------------------------------
+# Roles based privileges
+#
+# You need to also set the following settings:
+#   set role-subtree = <c "AU"><o "DemoCorp"><ou "roles">
+#   set use-roles = true;
+# 
+#---------------------------------------------------------
+set admin-user "project-leaders" = {
+    role = <c "AU"><o "DemoCorp"><ou "roles"><cn "project-leader-group">
+    entry = <c "AU"><o "DemoCorp"><ou "R&D"><listName "Technology SIG">
+    auth-level = ssl-auth
+};
+
+
+#--------------------------------------------------------------
+# Allowing Read and Modify Privileges on a Number of Attributes
+#--------------------------------------------------------------
+set reg-user "self-view" = {
+    user-subtree = <c "AU"><o "DemoCorp">
+    subtree = <c "AU"><o "DemoCorp">
+    attrs = telephoneNumber, commonName, surname, title, mhsORaddress, dcEmail
+    perms = modify 
+};
+
+
+set access-controls = false;

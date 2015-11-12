@@ -1,28 +1,29 @@
 PROV_PROP_FILE=$PROVHOME/provisioning.properties
 
-IM_PD_HOST=`$HOMEDIR/parser.sh IM_PD_HOST $PROV_PROP_FILE`
-IM_PS_HOST=`$HOMEDIR/parser.sh IM_PS_HOST $PROV_PROP_FILE`
-IM_PD_PASSWORD=`$HOMEDIR/parser.sh IM_PD_PASSWORD $PROV_PROP_FILE`
-IM_PS_PASSWORD=`$HOMEDIR/parser.sh IM_PS_PASSWORD $PROV_PROP_FILE`
-REPOSITORY_USERNAME=`$HOMEDIR/parser.sh REPOSITORY_USERNAME $PROV_PROP_FILE`
-REPOSITORY_PASSWORD=`$HOMEDIR/parser.sh REPOSITORY_PASSWORD $PROV_PROP_FILE`
-Operation_Cache_Maximum_Age=`$HOMEDIR/parser.sh Operation_Cache_Maximum_Age $PROV_PROP_FILE`
-Operation_Cache_Maximum_Size=`$HOMEDIR/parser.sh Operation_Cache_Maximum_Size $PROV_PROP_FILE`
-Correlation_Attribute_1=`$HOMEDIR/parser.sh Correlation_Attribute_1 $PROV_PROP_FILE`
-Correlation_Attribute_2=`$HOMEDIR/parser.sh Correlation_Attribute_2 $PROV_PROP_FILE`
-Operations_Folder=`$HOMEDIR/parser.sh Operations_Folder $PROV_PROP_FILE`
-Store_User_Passwords=`$HOMEDIR/parser.sh Store_User_Passwords $PROV_PROP_FILE`
-Child_Operation_Thread_Pool_Size=`$HOMEDIR/parser.sh Child_Operation_Thread_Pool_Size $PROV_PROP_FILE`
-Max_Scope_Filter_Objects=`$HOMEDIR/parser.sh Max_Scope_Filter_Objects $PROV_PROP_FILE`
-Search_Size_Limit=`$HOMEDIR/parser.sh Search_Size_Limit $PROV_PROP_FILE`
-Enabled=`$HOMEDIR/parser.sh Enabled $PROV_PROP_FILE`
-Enable=`$HOMEDIR/parser.sh Enable $PROV_PROP_FILE`
-File_name=`$HOMEDIR/parser.sh File_name $PROV_PROP_FILE`
-Level=`$HOMEDIR/parser.sh Level $PROV_PROP_FILE`
-Metadata_Cache_Maximum_Age=`$HOMEDIR/parser.sh Metadata_Cache_Maximum_Age $PROV_PROP_FILE`
-Metadata_Cache_Maximum_Size=`$HOMEDIR/parser.sh Metadata_Cache_Maximum_Size $PROV_PROP_FILE`
-Trusted_CA_Bundle=`$HOMEDIR/parser.sh Trusted_CA_Bundle $PROV_PROP_FILE`
-DOMAINDC=`$HOMEDIR/parser.sh DOMAINDC $PROV_PROP_FILE`
+IM_PD_HOST=$(grep -Po "(?<=^IM_PD_HOST=).*" $PROV_PROP_FILE)
+IM_PS_HOST=$(grep -Po "(?<=^IM_PS_HOST=).*" $PROV_PROP_FILE)
+IM_PD_PASSWORD=$(grep -Po "(?<=^IM_PD_PASSWORD=).*" $PROV_PROP_FILE)
+IM_PS_PASSWORD=$(grep -Po "(?<=^IM_PS_PASSWORD=).*" $PROV_PROP_FILE)
+REPOSITORY_USERNAME=$(grep -Po "(?<=^REPOSITORY_USERNAME=).*" $PROV_PROP_FILE)
+REPOSITORY_PASSWORD=$(grep -Po "(?<=^REPOSITORY_PASSWORD=).*" $PROV_PROP_FILE)
+Operation_Cache_Maximum_Age=$(grep -Po "(?<=^Operation_Cache_Maximum_Age=).*" $PROV_PROP_FILE)
+Operation_Cache_Maximum_Size=$(grep -Po "(?<=^Operation_Cache_Maximum_Size=).*" $PROV_PROP_FILE)
+Correlation_Attribute_1=$(grep -Po "(?<=^Correlation_Attribute_1=).*" $PROV_PROP_FILE)
+Correlation_Attribute_2=$(grep -Po "(?<=^Correlation_Attribute_2=).*" $PROV_PROP_FILE)
+Operations_Folder=$(grep -Po "(?<=^Operations_Folder=).*" $PROV_PROP_FILE)
+Store_User_Passwords=$(grep -Po "(?<=^Store_User_Passwords=).*" $PROV_PROP_FILE)
+Child_Operation_Thread_Pool_Size=$(grep -Po "(?<=^Child_Operation_Thread_Pool_Size=).*" $PROV_PROP_FILE)
+Max_Scope_Filter_Objects=$(grep -Po "(?<=^Max_Scope_Filter_Objects=).*" $PROV_PROP_FILE)
+Search_Size_Limit=$(grep -Po "(?<=^Search_Size_Limit=).*" $PROV_PROP_FILE)
+Enabled=$(grep -Po "(?<=^Enabled=).*" $PROV_PROP_FILE)
+Enable=$(grep -Po "(?<=^Enable=).*" $PROV_PROP_FILE)
+File_name=$(grep -Po "(?<=^File_name=).*" $PROV_PROP_FILE)
+Level=$(grep -Po "(?<=^Level=).*" $PROV_PROP_FILE)
+Metadata_Cache_Maximum_Age=$(grep -Po "(?<=^Metadata_Cache_Maximum_Age=).*" $PROV_PROP_FILE)
+Metadata_Cache_Maximum_Size=$(grep -Po "(?<=^Metadata_Cache_Maximum_Size=).*" $PROV_PROP_FILE)
+Trusted_CA_Bundle=$(grep -Po "(?<=^Trusted_CA_Bundle=).*" $PROV_PROP_FILE)
+DOMAINDC=$(grep -Po "(?<=^DOMAINDC=).*" $PROV_PROP_FILE)
+
 
 
 im_pd_passwd="$(openssl base64 -d <<< $IM_PD_PASSWORD)"

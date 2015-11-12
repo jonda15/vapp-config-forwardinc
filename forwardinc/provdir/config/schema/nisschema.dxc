@@ -1,0 +1,497 @@
+# 
+# Computer Associates 
+#
+# config/schema/nisschema.dxc ($Revision: 4.12 $)
+#
+# RFC2307 (An Approach for Using LDAP as a Network Information Service)
+#
+# This schema is used as a mechanism for mapping entities related to 
+# TCP/IP and the UNIX system, into X.500 entries so that they may be
+# resolved with LDAP.
+#
+# Example use; 	To get login credentials of a user from a directory
+# 		      PAM -> LDAP
+# 		      NIS -> LDAP
+#
+# Note: The pam_ldap/nis_ldap module(s), will not work with the standard
+# directory configuration.  These two modules expect to read the UserPassword
+# attribute in MD5, SHA, or DES encrypted form.  However, this attribute is
+# stored in the directory in proprietary format.
+# Please contact CA Technical Support for further information.
+# 
+# oid-prefix :: = iso(1).org(3).dod(6).internet(1).directory(1).nisSchema(1)
+# 
+schema set oid-prefix nisSchema = (1.3.6.1.1.1); #nisSchema arc
+schema set oid-prefix nisSchema-attr = (1.3.6.1.1.1.1); 
+schema set oid-prefix nisSchema-oc = (1.3.6.1.1.1.2); 
+schema set oid-prefix nisSchema-nb = (1.3.6.1.1.1.3); 
+
+#
+# Attribute Definitions.
+#
+schema set attribute nisSchema-attr:0 = {
+        name   = uidNumber
+        syntax = integer
+};
+
+schema set attribute nisSchema-attr:1 = {
+        name   = gidNumber
+        syntax = integer
+};
+
+schema set attribute nisSchema-attr:2 = {
+        name   = gecos
+        syntax = caseIgnoreIA5String
+};
+        	  
+schema set attribute nisSchema-attr:3 = {
+        name   = homeDirectory
+        syntax = caseExactIA5String
+};
+        
+schema set attribute nisSchema-attr:4 = {
+        name   = loginShell
+        syntax = caseExactIA5String
+};
+        
+schema set attribute nisSchema-attr:5 = {
+	name   = shadowLastChange
+	syntax = integer
+};
+	
+schema set attribute nisSchema-attr:6 = {
+        name   = shadowMin
+        syntax = integer
+};
+        
+schema set attribute nisSchema-attr:7 = {
+        name   = shadowMax
+        syntax = integer
+};
+        
+schema set attribute nisSchema-attr:8 = {
+        name   = shadowWarning
+        syntax = integer
+};
+
+schema set attribute nisSchema-attr:9 = {
+        name   = shadowInactive
+        syntax = integer
+};
+
+schema set attribute nisSchema-attr:10 = {
+        name   = shadowExpire
+        syntax = integer
+};
+
+schema set attribute nisSchema-attr:11 = {
+        name   = shadowFlag
+        syntax = integer
+};
+
+schema set attribute nisSchema-attr:12 = {
+        name   = memberUid
+        syntax = caseExactIA5String
+};
+
+schema set attribute nisSchema-attr:13 = {
+        name   = memberNisNetgroup
+        syntax = caseExactIA5String
+};
+
+#schema set attribute nisSchema-attr:14 = {
+#        name   = nisNetgroupTriple
+#        syntax = caseIgnoreString #Syntax defined is nisNetgroupTripleSyntax
+#};
+
+schema set attribute nisSchema-attr:15 = {
+        name   = ipServicePort
+        syntax = integer
+};
+
+schema set attribute nisSchema-attr:16 = {
+        name   = ipServiceProtocol
+        syntax = caseIgnoreString #SUP name i.e. Syntax of name
+};
+
+schema set attribute nisSchema-attr:17 = {
+        name   = ipProtocolNumber
+        syntax = integer
+};
+
+schema set attribute nisSchema-attr:18 = {
+        name   = oncRpcNumber
+        syntax = integer
+};
+
+schema set attribute nisSchema-attr:19 = {
+        name   = ipHostNumber
+        syntax = caseIgnoreIA5String
+};
+
+schema set attribute nisSchema-attr:20 = {
+        name   = ipNetworkNumber
+        syntax = caseIgnoreIA5String
+};
+
+schema set attribute nisSchema-attr:21 = {
+        name   = ipNetmaskNumber
+        syntax = caseIgnoreIA5String
+};
+
+schema set attribute nisSchema-attr:22 = {
+        name   = macAddress
+        syntax = caseIgnoreIA5String
+};
+
+#schema set attribute nisSchema-attr:23 = {
+#        name   = bootParameter
+#        syntax = caseIgnoreString #Syntax defined is bootParameterSyntax
+#};
+
+schema set attribute nisSchema-attr:24 = {
+        name   = bootFile
+     	syntax = caseExactIA5String
+};
+
+#NO nisSchema.1.25 defined in RFC
+
+schema set attribute nisSchema-attr:26 = {
+        name   = nisMapName
+        syntax = caseIgnoreString  #SUP name i.e. syntax of name
+};
+
+schema set attribute nisSchema-attr:27 = {
+        name   = nisMapEntry
+        syntax = caseExactIA5String
+};
+
+schema set attribute nisSchema-attr:28 = {
+        name   = nisDomain
+        syntax = caseIgnoreString
+};
+
+
+
+
+#
+# Object Class Definitions.
+#
+schema set object-class nisSchema-oc:0 = {
+        name = posixAccount
+        subclass-of top
+        must-contain
+            commonName,
+	    cosineUserId,
+	    uidNumber,
+	    gidNumber,
+	    homeDirectory
+	may-contain
+	    userPassword,
+	    loginShell,
+	    gecos,
+            description
+};
+          
+schema set object-class nisSchema-oc:1 = {
+	name = shadowAccount
+        subclass-of top
+        must-contain
+            cosineUserId
+        may-contain
+            userPassword,
+            shadowLastChange,
+            shadowMin,
+            shadowMax,
+            shadowWarning,
+            shadowInactive,
+            shadowExpire,
+            shadowFlag,
+            description
+};
+
+schema set object-class nisSchema-oc:2 = {
+        name = posixGroup
+        subclass-of top
+        must-contain
+            commonName,
+            gidNumber
+        may-contain
+            userPassword,
+	      memberUid,
+            description
+};
+
+schema set object-class nisSchema-oc:3 = {
+	name = ipService
+        subclass-of top
+        must-contain
+            commonName,
+            ipServicePort,
+            ipServiceProtocol
+        may-contain
+            description
+};
+
+schema set object-class nisSchema-oc:4 = {
+	name = ipProtocol
+        subclass-of top
+        must-contain
+            commonName,
+            ipProtocolNumber
+        may-contain	
+            description
+};
+
+schema set object-class nisSchema-oc:5 = {
+	name = oncRpc
+        subclass-of top
+        must-contain
+            commonName,
+            oncRpcNumber,
+            description
+        may-contain
+            description	
+};
+
+schema set object-class nisSchema-oc:6 = {
+	name = ipHost
+        subclass-of top
+        must-contain
+            commonName,
+            ipHostNumber
+        may-contain
+            localityName,
+            description,
+            cosineManager	
+};
+
+schema set object-class nisSchema-oc:7 = {
+	name = ipNetwork
+        subclass-of top
+        must-contain
+            commonName,
+            ipNetworkNumber
+        may-contain
+            ipNetmaskNumber,
+            localityName,
+            description,
+            cosineManager	
+};
+
+schema set object-class nisSchema-oc:8 = {
+	name = nisNetgroup
+        subclass-of top
+        must-contain
+            commonName
+        may-contain
+#            nisNetgroupTriple,
+            memberNisNetgroup,
+            description	
+};
+
+schema set object-class nisSchema-oc:9 = {
+	name = nisMap
+	ldap-names = automount
+        subclass-of top
+        must-contain
+	    nisMapName	
+        may-contain
+          description	
+};
+
+schema set object-class nisSchema-oc:10 = {
+	name = nisObject
+        subclass-of top
+        must-contain
+            commonName,
+            nisMapEntry,
+            nisMapName
+        may-contain
+            description	
+};
+
+schema set object-class nisSchema-oc:11 = {
+	name = ieee802Device
+        subclass-of top
+        may-contain	
+	    macAddress
+};
+
+schema set object-class nisSchema-oc:12 = {
+	name = bootableDevices
+	ldap-names = bootableDevice
+        subclass-of top
+        may-contain
+# 	     bootParameter,
+ 	     bootFile
+};
+
+schema set object-class nisSchema-oc:13 = {
+	name = nisDomainObject
+        subclass-of top
+        must-contain
+ 	     nisDomain
+};
+
+#
+# Name Bindings.
+#
+schema set name-binding nisSchema-nb:1 = {
+	name = shadowAccount-o
+	shadowAccount allowable-parent organization
+	named-by cosineUserId
+};
+
+schema set name-binding nisSchema-nb:2 = {
+	name = shadowAccount-ou
+	shadowAccount allowable-parent organizationalUnit
+	named-by cosineUserId
+};
+
+schema set name-binding nisSchema-nb:3 = {
+	name = posixGroup-o
+	posixGroup allowable-parent organization
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:4 = {
+	name = posixGroup-ou
+	posixGroup allowable-parent organizationalUnit
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:5 = {
+	name = ipService-o
+	ipService allowable-parent organization
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:6 = {
+	name = ipService-ou
+	ipService allowable-parent organizationalUnit
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:7 = {
+	name = ipProtocol-o
+	ipProtocol allowable-parent organization
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:8 = {
+	name = ipProtocol-ou
+	ipProtocol allowable-parent organizationalUnit
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:9 = {
+	name = oncRpc-o
+	oncRpc allowable-parent organization
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:10 = {
+	name = oncRpc-ou
+	oncRpc allowable-parent organizationalUnit
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:11 = {
+	name = ipHost-o
+	ipHost allowable-parent organization
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:12 = {
+	name = ipHost-ou
+	ipHost allowable-parent organizationalUnit
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:13 = {
+	name = ipNetwork-o
+	ipNetwork allowable-parent organization
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:14 = {
+	name = ipNetwork-ou
+	ipNetwork allowable-parent organizationalUnit
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:15 = {
+	name = nisNetGroup-o
+	nisNetGroup allowable-parent organization
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:16 = {
+	name = nisNetGroup-ou
+	nisNetGroup allowable-parent organizationalUnit
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:17 = {
+	name = nisMap-o
+	nisMap allowable-parent organization
+	named-by nisMapName
+};
+
+schema set name-binding nisSchema-nb:18 = {
+	name = nisMap-ou
+	nisMap allowable-parent organizationalUnit
+	named-by nisMapName
+};
+
+schema set name-binding nisSchema-nb:19 = {
+	name = nisObject-o
+	nisObject allowable-parent organization
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:20 = {
+	name = nisObject-ou
+	nisObject allowable-parent organizationalUnit
+	named-by commonName
+};
+
+schema set name-binding nisSchema-nb:21 = {
+	name = ieee802Device-o
+	ieee802Device allowable-parent organization
+	named-by macAddress
+};
+
+schema set name-binding nisSchema-nb:22 = {
+	name = ieee802Device-ou
+	ieee802Device allowable-parent organizationalUnit
+	named-by macAddress
+};
+
+schema set name-binding nisSchema-nb:23 = {
+	name = bootableDevices-o
+	bootableDevices allowable-parent organization
+	named-by bootFile
+};
+
+schema set name-binding nisSchema-nb:24 = {
+	name = bootableDevices-ou
+	bootableDevices allowable-parent organizationalUnit
+	named-by bootFile
+};
+
+schema set name-binding nisSchema-nb:25 = {
+	name = nisDomainObject-o
+	nisDomainObject allowable-parent organization
+	named-by nisDomain
+};
+
+schema set name-binding nisSchema-nb:26 = {
+	name = nisDomainObject-ou
+	nisDomainObject allowable-parent organizationalUnit
+	named-by nisDomain
+};
+
+
+

@@ -1,0 +1,6 @@
+# CA Directory DXserver/config/settings
+
+set cache-index = all-attributes;
+                             
+# Define preferred write master
+set write-precedence = @hostname@-impd-inc;

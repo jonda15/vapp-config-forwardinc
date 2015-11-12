@@ -1,0 +1,1430 @@
+schema set oid-prefix etrust-admin-N16-attr = (1.3.6.1.4.1.791.2.3.5.3.5070.1);
+schema set oid-prefix etrust-admin-N16-oc = (1.3.6.1.4.1.791.2.3.5.3.5070.2);
+schema set oid-prefix etrust-admin-N16-nb = (1.3.6.1.4.1.791.2.3.5.3.5070.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-N16-attr:1 = {
+    name = eTN16DirectoryName
+    ldap-names = eTN16DirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:2 = {
+    name = eTN16DirDescription
+    ldap-names = eTN16DirDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:3 = {
+    name = eTN16Version
+    ldap-names = eTN16Version
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:4 = {
+    name = eTN16Type
+    ldap-names = eTN16Type
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:5 = {
+    name = eTN16Processor
+    ldap-names = eTN16Processor
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:6 = {
+    name = eTN16NumProcessor
+    ldap-names = eTN16NumProcessor
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:7 = {
+    name = eTN16DomainController
+    ldap-names = eTN16DomainController
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:8 = {
+    name = eTN16DomainName
+    ldap-names = eTN16DomainName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:94 = {
+    name = eTN16RemoteAgentVersion
+    ldap-names = eTN16RemoteAgentVersion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:9 = {
+    name = eTN16DefaultGroupName
+    ldap-names = eTN16DefaultGroupName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:10 = {
+    name = eTN16Trusted
+    ldap-names = eTN16Trusted
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-N16-attr:11 = {
+    name = eTN16GrpTrusted
+    ldap-names = eTN16GrpTrusted
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-N16-attr:12 = {
+    name = eTN16Trusting
+    ldap-names = eTN16Trusting
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-N16-attr:13 = {
+    name = eTN16GrpTrusting
+    ldap-names = eTN16GrpTrusting
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-N16-attr:14 = {
+    name = eTN16UsrPolPwdMax
+    ldap-names = eTN16UsrPolPwdMax
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:15 = {
+    name = eTN16UsrPolPwdMin
+    ldap-names = eTN16UsrPolPwdMin
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:16 = {
+    name = eTN16UsrPolPwdMinLen
+    ldap-names = eTN16UsrPolPwdMinLen
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:17 = {
+    name = eTN16UsrPolPwdUnic
+    ldap-names = eTN16UsrPolPwdUnic
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:18 = {
+    name = eTN16UsrPolAccLoc
+    ldap-names = eTN16UsrPolAccLoc
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:19 = {
+    name = eTN16UsrPolTimBefRes
+    ldap-names = eTN16UsrPolTimBefRes
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:20 = {
+    name = eTN16UsrPolLocDur
+    ldap-names = eTN16UsrPolLocDur
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:21 = {
+    name = eTN16PromotePDC
+    ldap-names = eTN16PromotePDC
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:71 = {
+    name = eTN16WellKnownUser
+    ldap-names = eTN16WellKnownUser
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-N16-attr:49 = {
+    name = eTN16UnicenterSecurity
+    ldap-names = eTN16UnicenterSecurity
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:72 = {
+    name = eTN16Workstation
+    ldap-names = eTN16Workstation
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-N16-attr:89 = {
+    name = eTN16TerminalServer
+    ldap-names = eTN16TerminalServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:91 = {
+    name = eTN16ExplorationTimeout
+    ldap-names = eTN16ExplorationTimeout
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:92 = {
+    name = eTN16OperationTimeout
+    ldap-names = eTN16OperationTimeout
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:93 = {
+    name = eTN16PwdChangeNotExpired
+    ldap-names = eTN16PwdChangeNotExpired
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:22 = {
+    name = eTN16AccountContainerName
+    ldap-names = eTN16AccountContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:23 = {
+    name = eTN16AccountName
+    ldap-names = eTN16AccountName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:24 = {
+    name = eTN16FullName
+    ldap-names = eTN16FullName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:25 = {
+    name = eTN16FullNameCorrelate
+    ldap-names = eTN16FullNameCorrelate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:26 = {
+    name = eTN16Description
+    ldap-names = eTN16Description
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:27 = {
+    name = eTN16SecurityFlag
+    ldap-names = eTN16SecurityFlag
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:28 = {
+    name = eTN16GroupMembers
+    ldap-names = eTN16GroupMembers
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-N16-attr:73 = {
+    name = eTN16UserPrimaryGroup
+    ldap-names = eTN16UserPrimaryGroup
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:29 = {
+    name = eTN16PromoteFlag
+    ldap-names = eTN16PromoteFlag
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:30 = {
+    name = eTN16ProfilePath
+    ldap-names = eTN16ProfilePath
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:31 = {
+    name = eTN16LogonScript
+    ldap-names = eTN16LogonScript
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:32 = {
+    name = eTN16HomeDrive
+    ldap-names = eTN16HomeDrive
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:33 = {
+    name = eTN16HomePath
+    ldap-names = eTN16HomePath
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:34 = {
+    name = eTN16DialinPermission
+    ldap-names = eTN16DialinPermission
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:35 = {
+    name = eTN16DialinOption
+    ldap-names = eTN16DialinOption
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:36 = {
+    name = eTN16DialinPhone
+    ldap-names = eTN16DialinPhone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:37 = {
+    name = eTN16LogonHoursSunday
+    ldap-names = eTN16LogonHoursSunday
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:38 = {
+    name = eTN16LogonHoursMonday
+    ldap-names = eTN16LogonHoursMonday
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:39 = {
+    name = eTN16LogonHoursTuesday
+    ldap-names = eTN16LogonHoursTuesday
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:40 = {
+    name = eTN16LogonHoursWednesday
+    ldap-names = eTN16LogonHoursWednesday
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:41 = {
+    name = eTN16LogonHoursThursday
+    ldap-names = eTN16LogonHoursThursday
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:42 = {
+    name = eTN16LogonHoursFriday
+    ldap-names = eTN16LogonHoursFriday
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:43 = {
+    name = eTN16LogonHoursSaturday
+    ldap-names = eTN16LogonHoursSaturday
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:44 = {
+    name = eTN16AllWorkstations
+    ldap-names = eTN16AllWorkstations
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:45 = {
+    name = eTN16Workstations
+    ldap-names = eTN16Workstations
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:46 = {
+    name = eTN16AccountExpire
+    ldap-names = eTN16AccountExpire
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:47 = {
+    name = eTN16ExpireDate
+    ldap-names = eTN16ExpireDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:48 = {
+    name = eTN16GlobalAccount
+    ldap-names = eTN16GlobalAccount
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:74 = {
+    name = eTN16TseIsLogonProg
+    ldap-names = eTN16TseIsLogonProg
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:75 = {
+    name = eTN16TseLogonProg
+    ldap-names = eTN16TseLogonProg
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:76 = {
+    name = eTN16TseLogonDir
+    ldap-names = eTN16TseLogonDir
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:77 = {
+    name = eTN16TseIsDrvCnx
+    ldap-names = eTN16TseIsDrvCnx
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:78 = {
+    name = eTN16TseIsPrtCnx
+    ldap-names = eTN16TseIsPrtCnx
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:79 = {
+    name = eTN16TseIsDftPrt
+    ldap-names = eTN16TseIsDftPrt
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:80 = {
+    name = eTN16TseEndDiscSession
+    ldap-names = eTN16TseEndDiscSession
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:81 = {
+    name = eTN16TseActSessionLimit
+    ldap-names = eTN16TseActSessionLimit
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:82 = {
+    name = eTN16TseIdlSessionLimit
+    ldap-names = eTN16TseIdlSessionLimit
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:83 = {
+    name = eTN16TseSessionLimitAction
+    ldap-names = eTN16TseSessionLimitAction
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:84 = {
+    name = eTN16TseSessionRcnx
+    ldap-names = eTN16TseSessionRcnx
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:85 = {
+    name = eTN16TseProfile
+    ldap-names = eTN16TseProfile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:90 = {
+    name = eTN16TseRemoteHome
+    ldap-names = eTN16TseRemoteHome
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:86 = {
+    name = eTN16TseLocalPath
+    ldap-names = eTN16TseLocalPath
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:87 = {
+    name = eTN16TseHomeDrive
+    ldap-names = eTN16TseHomeDrive
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:88 = {
+    name = eTN16TseIsAllowedCnx
+    ldap-names = eTN16TseIsAllowedCnx
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:51 = {
+    name = eTN16GroupContainerName
+    ldap-names = eTN16GroupContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:52 = {
+    name = eTN16GroupName
+    ldap-names = eTN16GroupName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:53 = {
+    name = eTN16GlobalGroup
+    ldap-names = eTN16GlobalGroup
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:54 = {
+    name = eTN16GlbGrpIncluded
+    ldap-names = eTN16GlbGrpIncluded
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-N16-attr:55 = {
+    name = eTN16AccountMembers
+    ldap-names = eTN16AccountMembers
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-N16-attr:56 = {
+    name = eTN16UsergroupRights
+    ldap-names = eTN16UsergroupRights
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:57 = {
+    name = eTN16UsrgrpRightPersist
+    ldap-names = eTN16UsrgrpRightPersist
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:58 = {
+    name = eTN16SharedFolderContainerName
+    ldap-names = eTN16SharedFolderContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:59 = {
+    name = eTN16SharedFolderName
+    ldap-names = eTN16SharedFolderName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:60 = {
+    name = eTN16ShareType
+    ldap-names = eTN16ShareType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:61 = {
+    name = eTN16SharePath
+    ldap-names = eTN16SharePath
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:62 = {
+    name = eTN16ShareDescription
+    ldap-names = eTN16ShareDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:63 = {
+    name = eTN16ShareMaxUses
+    ldap-names = eTN16ShareMaxUses
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:64 = {
+    name = eTN16SharelinkqdAccount
+    ldap-names = eTN16SharelinkqdAccount
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-N16-attr:65 = {
+    name = eTN16PolicyContainerName
+    ldap-names = eTN16PolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:66 = {
+    name = eTN16PolicyName
+    ldap-names = eTN16PolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:67 = {
+    name = eTN16FolderManagerName
+    ldap-names = eTN16FolderManagerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:68 = {
+    name = eTN16FolderPath
+    ldap-names = eTN16FolderPath
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-N16-attr:69 = {
+    name = eTN16GroupManagerName
+    ldap-names = eTN16GroupManagerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-N16-attr:70 = {
+    name = eTN16GroupPath
+    ldap-names = eTN16GroupPath
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-N16-oc:1 = {
+    name = eTN16Directory
+    subclass-of Top
+    must-contain
+        eTN16DirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTAgentNamespaceClass,
+        eTN16DirDescription,
+        eTN16Version,
+        eTN16Type,
+        eTN16Processor,
+        eTN16NumProcessor,
+        eTN16DomainController,
+        eTN16DomainName,
+        eTN16RemoteAgentVersion,
+        eTAccountUnlockable,
+        eTN16DefaultGroupName,
+        eTN16Trusted,
+        eTN16GrpTrusted,
+        eTN16Trusting,
+        eTN16GrpTrusting,
+        eTN16UsrPolPwdMax,
+        eTN16UsrPolPwdMin,
+        eTN16UsrPolPwdMinLen,
+        eTN16UsrPolPwdUnic,
+        eTN16UsrPolAccLoc,
+        eTN16UsrPolTimBefRes,
+        eTN16UsrPolLocDur,
+        eTN16PromotePDC,
+        eTN16WellKnownUser,
+        eTN16UnicenterSecurity,
+        eTN16Workstation,
+        eTN16TerminalServer,
+        eTN16ExplorationTimeout,
+        eTN16OperationTimeout,
+        eTN16PwdChangeNotExpired
+};
+
+schema set object-class etrust-admin-N16-oc:2 = {
+    name = eTN16Namespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL
+};
+
+schema set object-class etrust-admin-N16-oc:3 = {
+    name = eTN16AccountContainer
+    subclass-of Top
+    must-contain
+        eTN16AccountContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-N16-oc:4 = {
+    name = eTN16Account
+    subclass-of Top
+    must-contain
+        eTN16AccountName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTLocked,
+        eTN16FullName,
+        eTN16FullNameCorrelate,
+        eTN16Description,
+        eTN16SecurityFlag,
+        eTN16GroupMembers,
+        eTN16UserPrimaryGroup,
+        eTN16PromoteFlag,
+        eTN16ProfilePath,
+        eTN16LogonScript,
+        eTN16HomeDrive,
+        eTN16HomePath,
+        eTN16DialinPermission,
+        eTN16DialinOption,
+        eTN16DialinPhone,
+        eTN16LogonHoursSunday,
+        eTN16LogonHoursMonday,
+        eTN16LogonHoursTuesday,
+        eTN16LogonHoursWednesday,
+        eTN16LogonHoursThursday,
+        eTN16LogonHoursFriday,
+        eTN16LogonHoursSaturday,
+        eTN16AllWorkstations,
+        eTN16Workstations,
+        eTN16AccountExpire,
+        eTN16ExpireDate,
+        eTN16GlobalAccount,
+        eTN16TseIsLogonProg,
+        eTN16TseLogonProg,
+        eTN16TseLogonDir,
+        eTN16TseIsDrvCnx,
+        eTN16TseIsPrtCnx,
+        eTN16TseIsDftPrt,
+        eTN16TseEndDiscSession,
+        eTN16TseActSessionLimit,
+        eTN16TseIdlSessionLimit,
+        eTN16TseSessionLimitAction,
+        eTN16TseSessionRcnx,
+        eTN16TseProfile,
+        eTN16TseRemoteHome,
+        eTN16TseLocalPath,
+        eTN16TseHomeDrive,
+        eTN16TseIsAllowedCnx
+};
+
+schema set object-class etrust-admin-N16-oc:5 = {
+    name = eTN16GroupContainer
+    subclass-of Top
+    must-contain
+        eTN16GroupContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-N16-oc:6 = {
+    name = eTN16Group
+    subclass-of Top
+    must-contain
+        eTN16GroupName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTN16Description,
+        eTN16GlobalGroup,
+        eTN16GlbGrpIncluded,
+        eTN16PromoteFlag,
+        eTN16AccountMembers,
+        eTN16UsergroupRights,
+        eTN16UsrgrpRightPersist
+};
+
+schema set object-class etrust-admin-N16-oc:7 = {
+    name = eTN16SharedFolderContainer
+    subclass-of Top
+    must-contain
+        eTN16SharedFolderContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-N16-oc:8 = {
+    name = eTN16SharedFolder
+    subclass-of Top
+    must-contain
+        eTN16SharedFolderName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTN16ShareType,
+        eTN16SharePath,
+        eTN16ShareDescription,
+        eTN16ShareMaxUses,
+        eTN16SharelinkqdAccount
+};
+
+schema set object-class etrust-admin-N16-oc:9 = {
+    name = eTN16PolicyContainer
+    subclass-of Top
+    must-contain
+        eTN16PolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-N16-oc:10 = {
+    name = eTN16Policy
+    subclass-of Top
+    must-contain
+        eTN16PolicyName,
+        objectclass
+    may-contain
+        eTN16AccountName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTN16FullName,
+        eTN16Description,
+        eTN16SecurityFlag,
+        eTN16GroupMembers,
+        eTN16UserPrimaryGroup,
+        eTN16PromoteFlag,
+        eTN16ProfilePath,
+        eTN16LogonScript,
+        eTN16HomeDrive,
+        eTN16HomePath,
+        eTN16DialinPermission,
+        eTN16DialinOption,
+        eTN16DialinPhone,
+        eTN16LogonHoursSunday,
+        eTN16LogonHoursMonday,
+        eTN16LogonHoursTuesday,
+        eTN16LogonHoursWednesday,
+        eTN16LogonHoursThursday,
+        eTN16LogonHoursFriday,
+        eTN16LogonHoursSaturday,
+        eTN16AllWorkstations,
+        eTN16Workstations,
+        eTN16AccountExpire,
+        eTN16ExpireDate,
+        eTN16GlobalAccount,
+        eTN16TseIsLogonProg,
+        eTN16TseLogonProg,
+        eTN16TseLogonDir,
+        eTN16TseIsDrvCnx,
+        eTN16TseIsPrtCnx,
+        eTN16TseIsDftPrt,
+        eTN16TseEndDiscSession,
+        eTN16TseActSessionLimit,
+        eTN16TseIdlSessionLimit,
+        eTN16TseSessionLimitAction,
+        eTN16TseSessionRcnx,
+        eTN16TseProfile,
+        eTN16TseRemoteHome,
+        eTN16TseLocalPath,
+        eTN16TseHomeDrive,
+        eTN16TseIsAllowedCnx
+};
+
+schema set object-class etrust-admin-N16-oc:12 = {
+    name = eTN16FolderManager
+    subclass-of Top
+    must-contain
+        eTN16FolderManagerName,
+        objectclass
+    may-contain
+        eTN16FolderPath
+};
+
+schema set object-class etrust-admin-N16-oc:13 = {
+    name = eTN16GroupManager
+    subclass-of Top
+    must-contain
+        eTN16GroupManagerName,
+        objectclass
+    may-contain
+        eTN16GroupPath
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-N16-nb:1 = {
+    name = eTN16Directory-eTNamespace
+    eTN16Directory allowable-parent eTNamespace
+    named-by eTN16DirectoryName
+};
+
+schema set name-binding etrust-admin-N16-nb:2 = {
+    name = eTN16PolicyContainer-eTNamespace
+    eTN16PolicyContainer allowable-parent eTNamespace
+    named-by eTN16PolicyContainerName
+};
+
+schema set name-binding etrust-admin-N16-nb:3 = {
+    name = eTN16Namespace-eTN16Directory
+    eTN16Namespace allowable-parent eTN16Directory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-N16-nb:4 = {
+    name = eTN16AccountContainer-eTN16Directory
+    eTN16AccountContainer allowable-parent eTN16Directory
+    named-by eTN16AccountContainerName
+};
+
+schema set name-binding etrust-admin-N16-nb:5 = {
+    name = eTN16GroupContainer-eTN16Directory
+    eTN16GroupContainer allowable-parent eTN16Directory
+    named-by eTN16GroupContainerName
+};
+
+schema set name-binding etrust-admin-N16-nb:6 = {
+    name = eTN16SharedFolderContainer-eTN16Directory
+    eTN16SharedFolderContainer allowable-parent eTN16Directory
+    named-by eTN16SharedFolderContainerName
+};
+
+schema set name-binding etrust-admin-N16-nb:7 = {
+    name = eTN16FolderManager-eTN16Directory
+    eTN16FolderManager allowable-parent eTN16Directory
+    named-by eTN16FolderManagerName
+};
+
+schema set name-binding etrust-admin-N16-nb:8 = {
+    name = eTN16GroupManager-eTN16Directory
+    eTN16GroupManager allowable-parent eTN16Directory
+    named-by eTN16GroupManagerName
+};
+
+schema set name-binding etrust-admin-N16-nb:9 = {
+    name = eTN16Account-eTN16AccountContainer
+    eTN16Account allowable-parent eTN16AccountContainer
+    named-by eTN16AccountName
+};
+
+schema set name-binding etrust-admin-N16-nb:10 = {
+    name = eTN16Group-eTN16GroupContainer
+    eTN16Group allowable-parent eTN16GroupContainer
+    named-by eTN16GroupName
+};
+
+schema set name-binding etrust-admin-N16-nb:11 = {
+    name = eTN16SharedFolder-eTN16SharedFolderContainer
+    eTN16SharedFolder allowable-parent eTN16SharedFolderContainer
+    named-by eTN16SharedFolderName
+};
+
+schema set name-binding etrust-admin-N16-nb:12 = {
+    name = eTN16Policy-eTN16PolicyContainer
+    eTN16Policy allowable-parent eTN16PolicyContainer
+    named-by eTN16PolicyName
+};
+

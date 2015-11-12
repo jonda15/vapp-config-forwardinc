@@ -1,0 +1,3 @@
+echo " Creating the sym link to the properties file... "
+ln -s /solution/$CONFIG/../common/data/provisioning.properties $DXHOME/provisioning.properties
+

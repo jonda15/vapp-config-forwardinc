@@ -1,0 +1,15 @@
+#######################################################################
+# This script renames template files based on this nodes' hostname
+#	Note: This was moved from SetProvDirParams
+#######################################################################
+
+find $DXHOME/config -type f -exec sed -i -e "s/@hostname@/$HOSTNAME/g" {} \;
+echo "hostname substitution done..."
+
+find $DXHOME/config -type f -name "template*" | while read -r file
+do
+  echo  "$file"
+  target=$(echo $file | sed -e "s/template/$HOSTNAME/g")
+  mv $file $target
+done
+

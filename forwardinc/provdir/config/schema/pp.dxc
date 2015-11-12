@@ -1,0 +1,61 @@
+# 
+# Computer Associates 
+#
+# config/schema/pp.dxc ($Revision: 4.4 $)
+#
+# PP defined attributes and object classes
+# These definitions where derived from IETF Schema Release 1, 19-Sep-94.
+#
+# All Attributes and Object Classes are EXPERIMENTAL.
+#
+# oid-prefix ::= ccitt(0).data(9).pss(2342).ucl(19200300).pp(103)
+#
+# Requires mhs.dxc (for mhsRoutedUA, mhsDLMembers)
+#
+schema set oid-prefix ppAttributeType = (0.9.2342.19200300.103.1);
+
+#
+# Attribute Definitions.
+#
+schema set attribute ppAttributeType:3 = {
+        name   = ppDl-policy
+        syntax = ppDlPolicySyntax			# DlPolicy
+};
+
+schema set attribute ppAttributeType:10 = {
+        name   = pPchannel
+	ldap-names = channel
+        syntax = caseIgnoreString
+};
+
+schema set attribute ppAttributeType:11 = {
+        name   = pPchannelSpecificInformation
+	ldap-names = pPChanInfo
+        syntax = caseIgnoreIA5String
+};
+
+
+#
+# Object Class Definitions.
+#
+schema set oid-prefix ppObjectClass = (0.9.2342.19200300.103.3);
+
+schema set object-class ppObjectClass:1 = {
+        name   = ppDistributionList
+        subclass-of mhsDistributionList			# , quipuObject
+        must-contain
+            mhsDLMembers,
+            owner
+        may-contain
+            ppDl-policy
+};
+
+schema set object-class ppObjectClass:10 = {
+        name   = ppUa
+        subclass-of mhsRoutedUA
+        must-contain
+            pPchannel
+        may-contain
+            pPchannelSpecificInformation
+};
+

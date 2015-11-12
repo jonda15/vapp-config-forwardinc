@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:dxkn="http://www.ca.com/Directory/Configuration/Knowledge" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ca.com/Directory/Configuration/Knowledge" elementFormDefault="qualified" attributeFormDefault="qualified" version="1.0">
+   <xs:simpleType name="password">
+      <xs:annotation><xs:appinfo><screenDirections secret="true"/></xs:appinfo></xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:whiteSpace value="preserve"/>
+         <xs:minLength value="1"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="DistinguishedName">
+      <xs:annotation>
+         <xs:documentation>Need to make sure that xml sensitive characters are supported.
+
+			Some possible references:
+
+			xmlns:if="http://xmled.info/ns/X.500/4/InformationFramework" 
+
+			see also http://www.ietf.org/internet-drafts/draft-legg-xed-protocols-03.txt
+         </xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+         <xs:whiteSpace value="preserve"/>
+         <xs:pattern value="^((((\*|[A-Za-z][-A-Za-z0-9]*))|([0-9]+(\.[0-9]+)+))=([^,+]|(\\\\,)|(\\\\\+))*)((\+ *)(((\*|[A-Za-z][-A-Za-z0-9]*))|([0-9]+(\.[0-9]+)+))=([^,+]|(\\\\,)|(\\\\\+))*)*(, *((((\*|[A-Za-z][-A-Za-z0-9]*))|([0-9]+(\.[0-9]+)+))=([^,+]|(\\\\,)|(\\\\\+))*)(\+(((\*|[A-Za-z][-A-Za-z0-9]*))|([0-9]+(\.[0-9]+)+))=([^,+]|(\\\\,)|(\\\\\+))*)*)*$">
+            <xs:annotation>
+               <xs:appinfo><messageKeyBase value="dn"/></xs:appinfo>
+            </xs:annotation>
+         </xs:pattern>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="octetstring">
+      <xs:restriction base="xs:string">
+         <xs:whiteSpace value="preserve"/>
+         <xs:minLength value="1"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="port">
+      <xs:annotation>
+         <xs:documentation>An IP Port used for network communications</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:int">
+         <xs:minInclusive value="1"/>
+         <xs:maxInclusive value="65535"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="pollInterval">
+      <xs:annotation>
+         <xs:documentation>Snmp poll interval</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:positiveInteger">
+         <xs:minInclusive value="120"/>
+         <xs:maxInclusive value="7200"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="tcpport">
+      <xs:annotation>
+         <xs:documentation>An TCP-IP Port used for network communications</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="dxkn:port">
+         <xs:annotation>
+            <xs:appinfo><specialRestriction type="tcpport"/></xs:appinfo>
+         </xs:annotation>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="udpport">
+      <xs:annotation>
+         <xs:documentation>A UDP Port used for network communications</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="dxkn:port">
+         <xs:annotation>
+            <xs:appinfo><specialRestriction type="udpport"/></xs:appinfo>
+         </xs:annotation>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:element name="ContextPrefix" type="dxkn:DistinguishedName">
+      <xs:annotation><xs:appinfo>
+            <screenDirections group="" introduced="1">
+               <areaLevels type="Partition" level="basic" editable="whenCreating"/>
+            </screenDirections>
+         </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="NativePrefix" type="dxkn:DistinguishedName">
+         <xs:annotation><xs:appinfo>
+         <screenDirections group="" introduced="1" level="basic" required="false">
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="basic" editable="always" />
+            <areaLevels type="Relationship" subtype="Nexor" level="basic" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="basic" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="basic" editable="always" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="basic" editable="always" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+</xs:element>
+   <xs:element name="DisplayName" type="xs:token">
+      <xs:annotation>
+         <xs:documentation>The display name of the DSA - This is used in the GUI to label the server. 
+This is only set for external directory servers - either old style configurations or other vendors Directory servers
+         </xs:documentation>
+         <xs:appinfo>
+            <screenDirections group="" introduced="1" level="basic" required="true">
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="basic" editable="always" />
+               <areaLevels type="Relationship" subtype="Nexor" level="basic" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="basic" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="basic" editable="always" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="basic" editable="always" />
+            </screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="DsaName" type="dxkn:DistinguishedName">
+      <xs:annotation>
+         <xs:documentation>
+            The name of the DSA. This is used for mutual authentication within the DSP protocol between X.500 servers. It has not real meaning for LDAP servers but must be set for the system to work.
+            For CA Directory servers managed by DXmanager, this is not set in the configuration file but is constructed from the NamespaceName + HostName ( + DatabaseName). 
+            For Legacy CA Directory servers and External X.500 Servers this must be set to the distinguished name of the directory server.
+            For LDAP servers this is constructed from NamespaceName + HostName ( + DisplayName)
+         </xs:documentation>
+         <xs:appinfo>
+            <screenDirections group="" introduced="1" level="basic" required="true">
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="basic" editable="always" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="basic" editable="always" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="basic" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="basic" editable="always" />
+               <areaLevels type="Relationship" subtype="Nexor" level="basic" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+            </screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="DsaPassword" type="dxkn:password">
+      <xs:annotation>
+         <xs:documentation>The password for DSP connections to this DSA</xs:documentation>
+         <xs:appinfo>
+            <screenDirections group="Security" introduced="1" level="advanced" required="true">
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="Nexor" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+            </screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="LdapProxyName" type="dxkn:DistinguishedName">
+      <xs:annotation>
+         <xs:documentation>The name of the proxy user known to the LDAP directory to connet as</xs:documentation>
+         <xs:appinfo>
+            <screenDirections group="Connections" introduced="1" level="basic" required="true">
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="basic" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="basic" editable="always" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="basic" editable="always" />
+            </screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="LdapProxyPassword" type="dxkn:password">
+      <xs:annotation>
+         <xs:documentation>The proxy user's password for LDAP DSA-DSA connections</xs:documentation>
+         <xs:appinfo>
+            <screenDirections group="Connections" introduced="1" level="basic" required="true">
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="basic" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="basic" editable="always" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="basic" editable="always" />
+            </screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="Port" type="dxkn:tcpport">
+      <xs:annotation>
+         <xs:documentation>Port used for LDAP / DAP / DSP comms</xs:documentation>
+         <xs:appinfo>
+            <screenDirections group="Connections" introduced="1" level="basic" required="true" ></screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="OsiPsap" type="dxkn:octetstring">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="OSI" introduced="1" level="advanced" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="Nexor" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="Ssap" type="dxkn:octetstring">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="OSI" introduced="1" level="advanced" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="Nexor" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="Tsap" type="dxkn:octetstring">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="OSI" introduced="1" level="advanced" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="Nexor" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="DispPsap" type="dxkn:octetstring">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="OSI" introduced="1" level="advanced" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="Nexor" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="CmipPsap" type="dxkn:octetstring">
+      <xs:annotation><xs:appinfo>
+         <deprecated/>
+         <screenDirections group="OSI" introduced="1" level="advanced" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="Nexor" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="SnmpPort" type="dxkn:udpport">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Monitoring" introduced="1" level="basic" required="true" />
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="ConsolePort" type="dxkn:tcpport">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Console" introduced="1" level="basic" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="basic" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="basic" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="basic" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="RemoteConsolePort" type="dxkn:tcpport">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Console" introduced="1" level="basic" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="basic" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="basic" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="basic" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="RemoteConsoleSsl" type="xs:boolean">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Console" introduced="1" level="basic" required="true" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="basic" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="basic" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="basic" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="ConsolePassword" type="dxkn:password">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Console" introduced="1" level="standard" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="standard" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="standard" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="standard" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="SsldPort" type="dxkn:tcpport">
+      <xs:annotation>
+         <xs:documentation>While the ssld port needs to be specified in this configuration, it also needs to be specified in the SSLD configuration and they must match. In the future SSLD will read this configuration instead.</xs:documentation>
+         <xs:appinfo>
+            <deprecated/>
+            <screenDirections group="Security" introduced="1" level="standard" >
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+            </screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="DspIdleTime">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Connections" introduced="1" level="advanced" required="true" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="always" />
+            <areaLevels type="Relationship" subtype="Nexor" level="none" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="advanced" editable="always" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+      <xs:simpleType>
+         <xs:restriction base="xs:unsignedInt"/>
+      </xs:simpleType>
+   </xs:element>
+   <xs:element name="AuthLevelAnonymous" type="xs:boolean">
+         <xs:annotation><xs:appinfo>
+            <screenDirections group="Security" introduced="1" level="standard" >
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="Nexor" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="standard" editable="always" />
+            </screenDirections>
+         </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="AuthLevelClearPassword" type="xs:boolean">
+         <xs:annotation><xs:appinfo>
+            <screenDirections group="Security" introduced="1" level="standard" >
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="Nexor" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="standard" editable="always" />
+            </screenDirections>
+         </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="AuthLevelSslAuth" type="xs:boolean">
+         <xs:annotation><xs:appinfo>
+            <screenDirections group="Security" introduced="1" level="standard" >
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="Nexor" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="standard" editable="always" />
+            </screenDirections>
+         </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="ReadOnly" type="xs:boolean" default="false">
+      <xs:annotation>
+         <xs:documentation>Is the partition read-only or can writes be sent to it? This can only be put against a partition since a deployed partition in a muliwrite set needs to be marked shadow for replication purposes</xs:documentation>
+         <xs:appinfo>
+            <screenDirections group="" introduced="1" level="basic" required="true" />
+         </xs:appinfo>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="NoRoutingAc" type="xs:boolean">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Security" introduced="1" level="advanced" required="true" />
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="LimitSearch" type="xs:boolean">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Performance" introduced="1" level="standard" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="standard" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="standard" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="LimitList" type="xs:boolean">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Performance" introduced="1" level="standard" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="standard" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="standard" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="AllowCheckPassword" type="xs:boolean">
+      <xs:annotation>
+         <xs:appinfo>
+            <screenDirections group="Security" introduced="1" level="advanced" required="true">
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="Nexor" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="advanced" editable="always" />
+            </screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="TrustConveyedOriginator" type="xs:boolean" default="true">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Security" introduced="1" level="advanced" required="true" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="TrustAllowUpgrading" type="xs:boolean" default="false">
+      <xs:annotation>
+         <xs:documentation>This has been re-instated as automatically determinining this causes more problems that it solves.</xs:documentation>
+         <xs:appinfo>
+            <screenDirections group="Security" introduced="1" level="advanced" required="true" >
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="Nexor" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="advanced" editable="always" />
+            </screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="TrustAllowDowngrading" type="xs:boolean" default="false">
+      <xs:annotation>
+         <xs:documentation>This has been re-instated as automatically determinining this causes more problems that it solves.</xs:documentation>
+         <xs:appinfo>
+            <screenDirections group="Security" introduced="1" level="advanced" required="true" >
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="Nexor" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="advanced" editable="always" />
+            </screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="TrustDsaTriggeredOperations" type="xs:boolean">
+      <xs:annotation>
+         <xs:documentation>Should the CA Directory DSAs in the backbone trust internal operations forwared to it from this DSA</xs:documentation>
+         <xs:appinfo>
+            <screenDirections group="Security" introduced="1" level="advanced" required="true" >
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+            </screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="Unavailable" type="xs:boolean" default="false">
+      <xs:annotation>
+         <xs:appinfo>
+            <screenDirections group="" introduced="1" level="advanced" required="true" />
+         </xs:appinfo>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="ServerType">
+      <xs:annotation>
+         <xs:appinfo>
+            <screenDirections group="" introduced="1" level="none" required="true">
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+      <xs:simpleType>
+         <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="EtdirRelay"/>
+            <xs:enumeration value="EtdirRouter"/>
+            <xs:enumeration value="EtdirDataMaster"/>
+            <xs:enumeration value="EtdirDataShadow"/>
+            <xs:enumeration value="EtdirLegacyConfiguration"/>
+            <xs:enumeration value="GenericX500"/>
+            <xs:enumeration value="GenericLdapV3"/>
+            <xs:enumeration value="GenericLdapV2"/>
+            <xs:enumeration value="MsActiveDirectory"/>
+            <xs:enumeration value="Nexor"/>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+   <xs:element name="SslEncryption">
+      <xs:annotation>
+         <xs:appinfo>
+            <screenDirections group="Security" introduced="1" level="standard" required="true" />
+         </xs:appinfo>
+      </xs:annotation>
+      <xs:simpleType>
+         <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="Off"/>
+            <xs:enumeration value="Remote"/>
+            <xs:enumeration value="All"/>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+   <xs:element name="DspLdapProxy" type="xs:boolean">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Security" introduced="1" level="advanced" required="false" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="advanced" editable="always" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="NoServiceWhileRecovering" type="xs:boolean">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Replication" introduced="1" level="advanced" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="MultiWriteQueueSize" type="xs:positiveInteger">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Replication" introduced="1" level="advanced" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="MultiWriteHub" type="xs:boolean">
+         <xs:annotation><xs:appinfo>
+            <screenDirections group="Replication" introduced="2" level="advanced" >
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+            </screenDirections>
+         </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="MultiWriteGroupCredit" type="xs:positiveInteger">
+         <xs:annotation><xs:appinfo>
+            <screenDirections group="Replication" introduced="2" level="advanced" >
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+            </screenDirections>
+         </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="MultiWriteOutstandingOps" type="xs:positiveInteger">
+         <xs:annotation><xs:appinfo>
+            <screenDirections group="Replication" introduced="2" level="advanced" >
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+            </screenDirections>
+         </xs:appinfo></xs:annotation>
+   </xs:element>
+
+   <xs:element name="ReplicationType">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Replication" introduced="1" level="advanced" required="true" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="Nexor" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="advanced" editable="always" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+      <xs:simpleType>
+         <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="MultiWrite"/>
+            <xs:enumeration value="MultiWriteSerial"/>
+            <xs:enumeration value="MultiWriteDisp"/>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+   <xs:element name="WaitForMultiWrite" type="xs:boolean">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Replication" introduced="1" level="advanced" >
+            <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="EtdirDataMaster" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="EtdirDataShadow" level="advanced" editable="always" />
+            <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+            <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+   </xs:element>
+   <xs:element name="AutoStart" type="xs:boolean">
+      <xs:annotation>
+         <xs:documentation>Should the DSA automatically start when the host is started</xs:documentation>
+         <xs:appinfo>
+            <screenDirections group="" introduced="1" level="standard" >
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="standard" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+            </screenDirections>
+         </xs:appinfo>
+   </xs:annotation>
+   </xs:element>
+   <xs:element name="LdapRebind" type="xs:boolean">
+      <xs:annotation>
+         <xs:documentation>Allow overlapping binds to be sent over a single connection to this LDAP server</xs:documentation>
+         <xs:appinfo>
+            <screenDirections group="Connections" introduced="1" level="advanced" >
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="advanced" editable="always" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="advanced" editable="always" />
+            </screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="DataStoreLocation" default="data">
+      <xs:annotation>
+         <xs:documentation>The path under which the datastrore directory and files will be created for data directories</xs:documentation>
+         <xs:appinfo>
+            <screenDirections group="" introduced="1">
+               <areaLevels type="Host" level="basic" editable="whenCreating"/>
+               <areaLevels type="BackboneDefaults" level="basic" editable="whenCreating"/>
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="standard" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="standard" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+            </screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+      <xs:simpleType>
+         <xs:restriction base="xs:string">
+            <xs:whiteSpace value="preserve"/>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+   <xs:element name="DataStoreSize" default="500">
+      <xs:annotation>
+         <xs:documentation>The size of the datastore in MB</xs:documentation>
+         <xs:appinfo>
+            <screenDirections group="" introduced="1" required="true">
+               <areaLevels type="Partition" level="basic" editable="whenCreating" />
+               <areaLevels type="BackboneDefaults" level="standard" editable="whenCreating"/>
+               <areaLevels type="Relationship" subtype="EtdirRouter" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataMaster" level="standard" editable="never" />
+               <areaLevels type="Relationship" subtype="EtdirDataShadow" level="standard" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericX500" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="Nexor" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV3" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="GenericLdapV2" level="none" editable="never" />
+               <areaLevels type="Relationship" subtype="MsActiveDirectory" level="none" editable="never" />
+            </screenDirections>
+         </xs:appinfo>
+      </xs:annotation>
+      <xs:simpleType>
+         <xs:restriction base="xs:nonNegativeInteger">
+            <xs:whiteSpace value="collapse"/>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+
+   <xs:element name="MultiChaining" type="xs:boolean" default="true">
+         <xs:annotation><xs:appinfo>
+            <screenDirections group="" introduced="2" level="advanced" >
+               <areaLevels type="Relationship" level="none" editable="never" />
+            </screenDirections>
+         </xs:appinfo></xs:annotation>
+   </xs:element>
+
+   <xs:element name="IPPreference" default="IPPreference_Default">
+      <xs:annotation><xs:appinfo>
+         <screenDirections group="Connections" introduced="2" level="advanced" required="true" >
+              <areaLevels type="BackboneDefaults" level="advanced" editable="always" />
+              <areaLevels type="Host" level="advanced" editable="always" />
+              <areaLevels type="Relationship" level="none" editable="never" />
+         </screenDirections>
+      </xs:appinfo></xs:annotation>
+      <xs:simpleType>
+         <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="IPPreference_Default"/>
+            <xs:enumeration value="IPPreference_IPv4"/>
+            <xs:enumeration value="IPPreference_IPv6"/>
+         </xs:restriction>
+      </xs:simpleType>
+   </xs:element>
+
+</xs:schema>

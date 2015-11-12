@@ -1,0 +1,106 @@
+# ---------------------------------------------------------------------------- #
+# CA Directory SETTINGS Configuration Help File                                #
+# ---------------------------------------------------------------------------- #
+
+The settings configuration directory is the main location of a wide range
+of "set" commands.
+
+Available commands, with examples, are listed below.
+
+#
+# precedence
+#
+# Since the following command requires the dxserver "east" to be defined, this
+# config file must be sourced from the /servers/name.dxi file after /knowledge.
+#
+set precedence east, west;  
+
+#
+# aliases
+#
+set alias-integrity = true;
+
+#
+# distribution controls
+#
+set multi-casting = true;
+set always-chain-down = false;
+
+#
+# security controls
+#
+set min-auth = none;  # OR clear-password OR ssl-auth
+set allow-binds = true;
+set ssl-auth-bypass-entry-check = false;
+set force-encrypt-anon = true; # accept only SSL encrypted anonymous links.
+set force-encrypt-auth = true; # accept only SSL encrypted authenticated links.
+
+#
+# general controls
+#
+set op-attrs = true;
+
+#
+# password policy - see CA Directory Administors Guide for complete list of
+#                   password policy settings
+#
+set password-policy = false;
+
+#
+# schema controls
+#
+# prune-oc-parents   
+#   Setting this causes parent objectclasses to be stripped when entries are
+# added. e.g. Consider adding a democorp entry with the classes:
+#   top
+#   person
+#   organizationalPerson
+#   inetOrgPerson
+# 
+# This control will cause the parent (top-person-organizationalPerson) classes
+# to be removed. This will result in the directory entry only holding the
+# inetOrgPerson class.
+# 
+#
+# add-oc-parents   
+#   Setting this causes parent objectclasses to be added when entries are
+# added. e.g. Consider adding a democorp entry with the classes:
+#   inetOrgPerson
+# 
+# This control will cause the parent (top-person-organizationalPerson) classes
+# to be added. This will result in the directory entry holding the following
+# classes:
+#   top
+#   person
+#   organizationalPerson
+#   inetOrgPerson
+# 
+#
+# return-oc-parents   
+#   Setting this causes parent objectclasses to be added, if necessary, 
+# when entries are searched. e.g. Consider searching for a democorp entry 
+# containing just the inetOrgPerson class.
+# 
+# This control will cause the parent (top-person-organizationalPerson) classes
+# to be included in the search result. Thus the search result will contain the
+# classes:
+#   top
+#   person
+#   organizationalPerson
+#   inetOrgPerson
+# 
+set prune-oc-parents = true;
+set add-oc-parents = true;
+set return-oc-parents = true;
+
+#
+# password storage
+#   This may be set to sha-1, md5, ssha-1, smd5, crypt, sha-512 or ssha-512
+set password-storage = ssha-512;
+
+#
+# Details are in the CA Directory Administrator Guide.
+#
+# Other more specific set commands may be found in 
+# /limits, /logging, /knowledge, /access, or /replication.
+

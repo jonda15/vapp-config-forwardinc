@@ -1,0 +1,291 @@
+# 
+# Computer Associates
+#
+# config/schema/quipu.dxc ($Revision: 4.4 $)
+#
+# Quipu defined attributes and object classes.
+# These definitions where derived from IETF Schema Release 1, 19-Sep-94.
+#
+# All Attributes and Object Classes are EXPERIMENTAL
+#
+# oid-prefix ::= ccitt(0).data(9).pss(2342).ucl(19200300).quipu(99)
+#
+# Requires definitions in cosine.dxc (e.g. cosineManager, cosineListACL etc.)
+#
+schema set oid-prefix quipuAttributeType = (0.9.2342.19200300.99.1);
+schema set oid-prefix quipuObjectClass   = (0.9.2342.19200300.99.3);
+
+#
+# Attribute Definitions.
+#
+schema set attribute quipuAttributeType:1 = {
+        name   = quipuTreeStructure
+        syntax = quipuSchemaSyntax			# Schema
+};
+
+schema set attribute quipuAttributeType:2 = {
+        name   = quipuAccessControlList
+	ldap-names = acl
+        syntax = quipuAclSyntax				# Acl
+};
+
+schema set attribute quipuAttributeType:3 = {
+        name   = quipuEDBinfo
+        syntax = quipuEdbinfoSyntax			# Edbinfo
+};
+
+schema set attribute quipuAttributeType:4 = {
+        name   = quipuMasterDSA
+        syntax = distinguishedName
+};
+
+schema set attribute quipuAttributeType:5 = {
+        name   = quipuSlaveDSA
+        syntax = distinguishedName
+};
+
+schema set attribute quipuAttributeType:8 = {
+        name   = quipuFriendlyCountryName
+        syntax = caseIgnoreString
+};
+
+schema set attribute quipuAttributeType:15 = {
+        name   = quipuControl
+        syntax = caseIgnoreIA5String
+};
+
+schema set attribute quipuAttributeType:16 = {
+        name   = quipuVersion
+        syntax = caseIgnoreIA5String
+};
+
+schema set attribute quipuAttributeType:17 = {
+        name   = quipuProtectedPassword
+        syntax = quipuProtectedPasswordSyntax		# ProtectedPassword
+};
+
+schema set attribute quipuAttributeType:18 = {
+        name   = quipuEntrySecurityPolicy
+        syntax = quipuSecurityPolicySyntax		# SecurityPolicy
+};
+
+schema set attribute quipuAttributeType:19 = {
+        name   = quipuDsaDefaultSecurityPolicy
+        syntax = quipuSecurityPolicySyntax		# SecurityPolicy
+};
+
+schema set attribute quipuAttributeType:20 = {
+        name   = quipuDsaPermittedSecurityPolicy
+        syntax = quipuSecurityPolicySyntax		# SecurityPolicy
+};
+
+schema set attribute quipuAttributeType:21 = {
+        name   = quipuInheritedAttribute
+	ldap-names = iattr
+        syntax = quipuInheritedAttributeSyntax		# InheritedAttribute
+};
+
+schema set attribute quipuAttributeType:22 = {
+        name   = quipuExecVector
+        syntax = printableString
+};
+
+schema set attribute quipuAttributeType:23 = {
+        name   = quipuRelayDSA
+        syntax = distinguishedName
+};
+
+schema set attribute quipuAttributeType:24 = {
+        name   = quipuAudio
+        syntax = quipuAudioSyntax			# Audio:file
+};
+
+schema set attribute quipuAttributeType:25 = {
+        name   = quipuSubordinateReference
+        syntax = quipuAccessPointSyntax			# AccessPoint
+};
+
+schema set attribute quipuAttributeType:26 = {
+        name   = quipuCrossReference
+        syntax = quipuAccessPointSyntax			# AccessPoint
+};
+
+schema set attribute quipuAttributeType:27 = {
+        name   = quipuNonSpecificSubordinateReference
+	ldap-names = NSSR
+        syntax = quipuAccessPointSyntax			# AccessPoint
+};
+
+schema set attribute quipuAttributeType:28 = {
+        name   = quipuListenAddress
+        syntax = presentationAddress
+};
+
+schema set attribute quipuAttributeType:29 = {
+        name   = quipuCachedEDB
+        syntax = distinguishedName
+};
+
+schema set attribute quipuAttributeType:30 = {
+        name   = quipuMasterEntries
+        syntax = integer
+};
+
+schema set attribute quipuAttributeType:31 = {
+        name   = quipuSlaveEntries
+        syntax = integer
+};
+
+schema set attribute quipuAttributeType:32 = {
+        name   = quipuCacheEntries
+        syntax = integer
+};
+
+schema set attribute quipuAttributeType:33 = {
+        name   = quipuDSAControl
+        syntax = quipuDSAControlSyntax			# DSAControl
+};
+
+schema set attribute quipuAttributeType:34 = {
+        name   = quipuOpenCall
+        syntax = quipuCallSyntax			# Call
+};
+
+schema set attribute quipuAttributeType:35 = {
+        name   = quipuUsageRate
+        syntax = integer
+};
+
+schema set attribute quipuAttributeType:62 = {
+        name   = quipuDelegatedSubtree
+        syntax = distinguishedName
+};
+
+schema set attribute quipuAttributeType:63 = {
+        name   = quipuDelegatingDSA
+        syntax = distinguishedName
+};
+
+schema set attribute quipuAttributeType:64 = {
+        name   = quipuDelegate
+        syntax = quipuDelegateSyntax			# Delegate
+};
+
+schema set attribute quipuAttributeType:73 = {
+        name   = quipuDSASMUXControl
+        syntax = quipuDSASMUXInfoSyntax			# DSASMUXInfo
+};
+
+schema set attribute quipuAttributeType:74 = {
+        name   = quipuApplSMUXControl
+        syntax = quipuApplSMUXInfoSyntax		# ApplSMUXInfo
+};
+
+schema set attribute quipuAttributeType:75 = {
+        name   = quipuAssocListControl
+        syntax = quipuAssocListSMUXInfoSyntax		# AssocListSMUXInfo
+};
+
+schema set attribute quipuAttributeType:76 = {
+        name   = quipuFullSMUXControl
+        syntax = quipuFullSMUXInfoSyntax		# FullSMUXInfo
+};
+
+
+#
+# Object Class Definitions.
+#
+schema set object-class quipuObjectClass:1 = {
+        name   = quipuDSA
+        subclass-of dSA
+        must-contain
+            acl,
+            quipueDBinfo,				# edbinfo - undefined
+            cosineManager,
+            quipuVersion
+        may-contain
+            description,
+            cosineLastModifiedBy,
+            cosineLastModifiedTime,
+            quipuDsaDefaultSecurityPolicy,
+            quipuDsaPermittedSecurityPolicy,
+            quipuRelayDSA,
+            quipuListenAddress,
+            cosineInfo,
+            cosineDSAQuality,
+            userPassword
+};
+
+schema set object-class quipuObjectClass:2 = {
+        name   = quipuObject
+        subclass-of top
+        must-contain
+            acl
+        may-contain
+            cosineLastModifiedBy,
+            cosineLastModifiedTime,
+            quipuEntrySecurityPolicy,
+            cosineAuthPolicy
+};
+
+schema set object-class quipuObjectClass:3 = {
+        name   = quipuFriendlyCountry
+        subclass-of country
+        must-contain
+            quipuFriendlyCountryName
+};
+
+schema set object-class quipuObjectClass:6 = {
+        name   = quipuNonLeafObject
+        subclass-of quipuObject
+        must-contain
+            quipuMasterDSA
+        may-contain
+            quipuSlaveDSA,
+            quipuTreeStructure,
+            quipuInheritedAttribute,
+            cosineSearchACL,
+            cosineListACL
+};
+
+schema set object-class quipuObjectClass:7 = {
+        name   = quipuSecurityUser
+        subclass-of quipuObject
+        must-contain
+            quipuProtectedPassword
+};
+
+schema set object-class quipuObjectClass:8 = {
+        name   = quipuISODEApplicationEntity
+        subclass-of applicationEntity
+        must-contain
+            quipuExecVector
+        may-contain
+            quipuListenAddress
+};
+
+schema set object-class quipuObjectClass:9 = {
+        name   = quipuExternalNonLeafObject
+        subclass-of quipuObject
+        may-contain
+            quipuSubordinateReference,
+#            nssr,
+            quipuCrossReference
+};
+
+schema set object-class quipuObjectClass:63 = {
+        name   = quipuDelegateProcess
+        subclass-of applicationProcess				# , quipuObject
+        must-contain
+            cosineManager,
+            quipuDelegatedSubtree,
+            quipuDelegatingDSA
+};
+
+schema set object-class quipuObjectClass:64 = {
+        name   = quipuDelegatedSubtree
+        subclass-of quipuNonLeafObject
+        must-contain
+            quipuDelegate
+};
+

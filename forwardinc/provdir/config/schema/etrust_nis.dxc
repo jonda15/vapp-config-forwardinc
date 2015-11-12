@@ -1,0 +1,1558 @@
+schema set oid-prefix etrust-admin-NIS-attr = (1.3.6.1.4.1.791.2.3.5.3.5160.1);
+schema set oid-prefix etrust-admin-NIS-oc = (1.3.6.1.4.1.791.2.3.5.3.5160.2);
+schema set oid-prefix etrust-admin-NIS-nb = (1.3.6.1.4.1.791.2.3.5.3.5160.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-NIS-attr:1 = {
+    name = eTNISDirectoryName
+    ldap-names = eTNISDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:2 = {
+    name = eTNISComments
+    ldap-names = eTNISComments
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:3 = {
+    name = eTNISHost
+    ldap-names = eTNISHost
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:4 = {
+    name = eTNISSystemType
+    ldap-names = eTNISSystemType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:5 = {
+    name = eTNISPlatform
+    ldap-names = eTNISPlatform
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:6 = {
+    name = eTNISVersion
+    ldap-names = eTNISVersion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:7 = {
+    name = eTNISType
+    ldap-names = eTNISType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:8 = {
+    name = eTNISDomainName
+    ldap-names = eTNISDomainName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:16 = {
+    name = eTNISUnicenterSec
+    ldap-names = eTNISUnicenterSec
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:17 = {
+    name = eTNISUnicenterUser
+    ldap-names = eTNISUnicenterUser
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:76 = {
+    name = eTNISAllowBlankPassword
+    ldap-names = eTNISAllowBlankPassword
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:117 = {
+    name = eTNISDisableFileSyncCheck
+    ldap-names = eTNISDisableFileSyncCheck
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:77 = {
+    name = eTNISExcludeSysAcc
+    ldap-names = eTNISExcludeSysAcc
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:78 = {
+    name = eTNISExcludeMinUid
+    ldap-names = eTNISExcludeMinUid
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:79 = {
+    name = eTNISExcludeMaxUid
+    ldap-names = eTNISExcludeMaxUid
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:95 = {
+    name = eTNISDirHomeDirDeletion
+    ldap-names = eTNISDirHomeDirDeletion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:65 = {
+    name = eTNISAscii8bit
+    ldap-names = eTNISAscii8bit
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:88 = {
+    name = eTNISHomeDirDeletion
+    ldap-names = eTNISHomeDirDeletion
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:89 = {
+    name = eTNISHomeDirConfirmation
+    ldap-names = eTNISHomeDirConfirmation
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:102 = {
+    name = eTNISExploreTimeout
+    ldap-names = eTNISExploreTimeout
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:103 = {
+    name = eTNISOperationTimeout
+    ldap-names = eTNISOperationTimeout
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:104 = {
+    name = eTNISUseUTF8encoding
+    ldap-names = eTNISUseUTF8encoding
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:105 = {
+    name = eTNISUnixCharacterSet
+    ldap-names = eTNISUnixCharacterSet
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:106 = {
+    name = eTNISDefaultPrimaryGroup
+    ldap-names = eTNISDefaultPrimaryGroup
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:108 = {
+    name = eTNISSecurityMode
+    ldap-names = eTNISSecurityMode
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:116 = {
+    name = eTNISRemoteAgentVersion
+    ldap-names = eTNISRemoteAgentVersion
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:9 = {
+    name = eTNISAccountContainerName
+    ldap-names = eTNISAccountContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:10 = {
+    name = eTNISAccountName
+    ldap-names = eTNISAccountName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:11 = {
+    name = eTNISFullName
+    ldap-names = eTNISFullName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:80 = {
+    name = eTNISFullNameCorrelate
+    ldap-names = eTNISFullNameCorrelate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:12 = {
+    name = eTNISUid
+    ldap-names = eTNISUid
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:13 = {
+    name = eTNISInitProg
+    ldap-names = eTNISInitProg
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:14 = {
+    name = eTNISHomeDir
+    ldap-names = eTNISHomeDir
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:81 = {
+    name = eTNISHomeDirCreation
+    ldap-names = eTNISHomeDirCreation
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:82 = {
+    name = eTNISHomeDirLocation
+    ldap-names = eTNISHomeDirLocation
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:83 = {
+    name = eTNISRemoteServer
+    ldap-names = eTNISRemoteServer
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:84 = {
+    name = eTNISRemoteOptions
+    ldap-names = eTNISRemoteOptions
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:85 = {
+    name = eTNISRemoteDirectory
+    ldap-names = eTNISRemoteDirectory
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:90 = {
+    name = eTNISRemoteHomeDirCreation
+    ldap-names = eTNISRemoteHomeDirCreation
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:86 = {
+    name = eTNISMailAliasValue
+    ldap-names = eTNISMailAliasValue
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:87 = {
+    name = eTNISMailAliasStatus
+    ldap-names = eTNISMailAliasStatus
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:15 = {
+    name = eTNISPrimaryGroup
+    ldap-names = eTNISPrimaryGroup
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:18 = {
+    name = eTNISGroupMembers
+    ldap-names = eTNISGroupMembers
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:68 = {
+    name = eTNISNetGroupMembers
+    ldap-names = eTNISNetGroupMembers
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:70 = {
+    name = eTNISMasterDirectory
+    ldap-names = eTNISMasterDirectory
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:71 = {
+    name = eTNISMasterDirectoryType
+    ldap-names = eTNISMasterDirectoryType
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:94 = {
+    name = eTNISAccHomeDirDeletion
+    ldap-names = eTNISAccHomeDirDeletion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:96 = {
+    name = eTNISAccountClean
+    ldap-names = eTNISAccountClean
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:98 = {
+    name = eTNISNextFreeMinUID
+    ldap-names = eTNISNextFreeMinUID
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:99 = {
+    name = eTNISNextFreeMaxUID
+    ldap-names = eTNISNextFreeMaxUID
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:19 = {
+    name = eTNISHPGenPwr
+    ldap-names = eTNISHPGenPwr
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:20 = {
+    name = eTNISHPGenChars
+    ldap-names = eTNISHPGenChars
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:21 = {
+    name = eTNISHPGenLetters
+    ldap-names = eTNISHPGenLetters
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:22 = {
+    name = eTNISHPPickPw
+    ldap-names = eTNISHPPickPw
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:23 = {
+    name = eTNISHPFRestrict
+    ldap-names = eTNISHPFRestrict
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:24 = {
+    name = eTNISHPNullPasswd
+    ldap-names = eTNISHPNullPasswd
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:25 = {
+    name = eTNISHPMaxLength
+    ldap-names = eTNISHPMaxLength
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:26 = {
+    name = eTNISHPPasswdAging
+    ldap-names = eTNISHPPasswdAging
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:27 = {
+    name = eTNISHPMinChange
+    ldap-names = eTNISHPMinChange
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:28 = {
+    name = eTNISHPPassExpires
+    ldap-names = eTNISHPPassExpires
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:29 = {
+    name = eTNISHPPwdWarnTime
+    ldap-names = eTNISHPPwdWarnTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:30 = {
+    name = eTNISHPPassLifeTime
+    ldap-names = eTNISHPPassLifeTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:31 = {
+    name = eTNISHPExpireDate
+    ldap-names = eTNISHPExpireDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:32 = {
+    name = eTNISHPMaxLLogin
+    ldap-names = eTNISHPMaxLLogin
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:33 = {
+    name = eTNISHPMaxTries
+    ldap-names = eTNISHPMaxTries
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:34 = {
+    name = eTNISHPBootAuth
+    ldap-names = eTNISHPBootAuth
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:35 = {
+    name = eTNISHPLoginTimes
+    ldap-names = eTNISHPLoginTimes
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:72 = {
+    name = eTNISHPPwdOptionList
+    ldap-names = eTNISHPPwdOptionList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:73 = {
+    name = eTNISHPPwdExpirationTime
+    ldap-names = eTNISHPPwdExpirationTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:74 = {
+    name = eTNISHPPwdMinimumTime
+    ldap-names = eTNISHPPwdMinimumTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:75 = {
+    name = eTNISHPPwdForceChange
+    ldap-names = eTNISHPPwdForceChange
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:36 = {
+    name = eTNISIBMPhysMem
+    ldap-names = eTNISIBMPhysMem
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:37 = {
+    name = eTNISIBMDataSeg
+    ldap-names = eTNISIBMDataSeg
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:38 = {
+    name = eTNISIBMCoreSize
+    ldap-names = eTNISIBMCoreSize
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:39 = {
+    name = eTNISIBMFileSize
+    ldap-names = eTNISIBMFileSize
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:40 = {
+    name = eTNISIBMStackSize
+    ldap-names = eTNISIBMStackSize
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:41 = {
+    name = eTNISIBMCpuTime
+    ldap-names = eTNISIBMCpuTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:42 = {
+    name = eTNISIBMNoSysRest
+    ldap-names = eTNISIBMNoSysRest
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:43 = {
+    name = eTNISIBMChangeNext
+    ldap-names = eTNISIBMChangeNext
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:44 = {
+    name = eTNISIBMChangeOnly
+    ldap-names = eTNISIBMChangeOnly
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:45 = {
+    name = eTNISIBMAuditClass
+    ldap-names = eTNISIBMAuditClass
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:46 = {
+    name = eTNISIBMValidTty
+    ldap-names = eTNISIBMValidTty
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:47 = {
+    name = eTNISIBMSUGroup
+    ldap-names = eTNISIBMSUGroup
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:48 = {
+    name = eTNISIBMPrimMethod
+    ldap-names = eTNISIBMPrimMethod
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:49 = {
+    name = eTNISIBMSecMethod
+    ldap-names = eTNISIBMSecMethod
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:50 = {
+    name = eTNISIBMTrustPath
+    ldap-names = eTNISIBMTrustPath
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:51 = {
+    name = eTNISIBMUmask
+    ldap-names = eTNISIBMUmask
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:52 = {
+    name = eTNISIBMRlogin
+    ldap-names = eTNISIBMRlogin
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:53 = {
+    name = eTNISIBMSUtoUser
+    ldap-names = eTNISIBMSUtoUser
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:54 = {
+    name = eTNISSUNMinChange
+    ldap-names = eTNISSUNMinChange
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:55 = {
+    name = eTNISSUNMaxChange
+    ldap-names = eTNISSUNMaxChange
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:56 = {
+    name = eTNISSUNWarning
+    ldap-names = eTNISSUNWarning
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:57 = {
+    name = eTNISSUNMaxInac
+    ldap-names = eTNISSUNMaxInac
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:58 = {
+    name = eTNISSUNExpireDate
+    ldap-names = eTNISSUNExpireDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:97 = {
+    name = eTNISSUNExpireDatePicker
+    ldap-names = eTNISSUNExpireDatePicker
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:101 = {
+    name = eTNISSUNPasswordExpired
+    ldap-names = eTNISSUNPasswordExpired
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:59 = {
+    name = eTNISGroupContainerName
+    ldap-names = eTNISGroupContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:60 = {
+    name = eTNISGroupName
+    ldap-names = eTNISGroupName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:61 = {
+    name = eTNISGroupID
+    ldap-names = eTNISGroupID
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:62 = {
+    name = eTNISAccountMembers
+    ldap-names = eTNISAccountMembers
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:107 = {
+    name = eTNISPrimaryMembers
+    ldap-names = eTNISPrimaryMembers
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:66 = {
+    name = eTNISNetGroupContainerName
+    ldap-names = eTNISNetGroupContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:67 = {
+    name = eTNISNetGroupName
+    ldap-names = eTNISNetGroupName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:69 = {
+    name = eTNISNetAccountMembers
+    ldap-names = eTNISNetAccountMembers
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:93 = {
+    name = eTNISNetNetgroupMembers
+    ldap-names = eTNISNetNetgroupMembers
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:63 = {
+    name = eTNISPolicyContainerName
+    ldap-names = eTNISPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:64 = {
+    name = eTNISPolicyName
+    ldap-names = eTNISPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-NIS-attr:100 = {
+    name = eTNISUIDMode
+    ldap-names = eTNISUIDMode
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-NIS-oc:1 = {
+    name = eTNISDirectory
+    subclass-of Top
+    must-contain
+        eTNISDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTAgentNamespaceClass,
+        eTNISComments,
+        eTNISHost,
+        eTNISSystemType,
+        eTNISPlatform,
+        eTNISVersion,
+        eTNISType,
+        eTNISDomainName,
+        eTNISUnicenterSec,
+        eTNISUnicenterUser,
+        eTNISAllowBlankPassword,
+        eTNISDisableFileSyncCheck,
+        eTNISExcludeSysAcc,
+        eTNISExcludeMinUid,
+        eTNISExcludeMaxUid,
+        eTNISDirHomeDirDeletion,
+        eTNISAscii8bit,
+        eTNISHomeDirDeletion,
+        eTNISHomeDirConfirmation,
+        eTNISExploreTimeout,
+        eTNISOperationTimeout,
+        eTNISUseUTF8encoding,
+        eTNISUnixCharacterSet,
+        eTNISDefaultPrimaryGroup,
+        eTNISSecurityMode,
+        eTNISRemoteAgentVersion
+};
+
+schema set object-class etrust-admin-NIS-oc:2 = {
+    name = eTNISNamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL
+};
+
+schema set object-class etrust-admin-NIS-oc:3 = {
+    name = eTNISAccountContainer
+    subclass-of Top
+    must-contain
+        eTNISAccountContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-NIS-oc:4 = {
+    name = eTNISAccount
+    subclass-of Top
+    must-contain
+        eTNISAccountName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTNISFullName,
+        eTNISFullNameCorrelate,
+        eTNISUid,
+        eTNISInitProg,
+        eTNISHomeDir,
+        eTNISHomeDirCreation,
+        eTNISHomeDirLocation,
+        eTNISRemoteServer,
+        eTNISRemoteOptions,
+        eTNISRemoteDirectory,
+        eTNISRemoteHomeDirCreation,
+        eTNISMailAliasValue,
+        eTNISMailAliasStatus,
+        eTNISPrimaryGroup,
+        eTNISGroupMembers,
+        eTNISNetGroupMembers,
+        eTNISMasterDirectory,
+        eTNISMasterDirectoryType,
+        eTNISAccHomeDirDeletion,
+        eTNISAccountClean,
+        eTNISNextFreeMinUID,
+        eTNISNextFreeMaxUID,
+        eTNISHPGenPwr,
+        eTNISHPGenChars,
+        eTNISHPGenLetters,
+        eTNISHPPickPw,
+        eTNISHPFRestrict,
+        eTNISHPNullPasswd,
+        eTNISHPMaxLength,
+        eTNISHPPasswdAging,
+        eTNISHPMinChange,
+        eTNISHPPassExpires,
+        eTNISHPPwdWarnTime,
+        eTNISHPPassLifeTime,
+        eTNISHPExpireDate,
+        eTNISHPMaxLLogin,
+        eTNISHPMaxTries,
+        eTNISHPBootAuth,
+        eTNISHPLoginTimes,
+        eTNISHPPwdOptionList,
+        eTNISHPPwdExpirationTime,
+        eTNISHPPwdMinimumTime,
+        eTNISHPPwdForceChange,
+        eTNISIBMPhysMem,
+        eTNISIBMDataSeg,
+        eTNISIBMCoreSize,
+        eTNISIBMFileSize,
+        eTNISIBMStackSize,
+        eTNISIBMCpuTime,
+        eTNISIBMNoSysRest,
+        eTNISIBMChangeNext,
+        eTNISIBMChangeOnly,
+        eTNISIBMAuditClass,
+        eTNISIBMValidTty,
+        eTNISIBMSUGroup,
+        eTNISIBMPrimMethod,
+        eTNISIBMSecMethod,
+        eTNISIBMTrustPath,
+        eTNISIBMUmask,
+        eTNISIBMRlogin,
+        eTNISIBMSUtoUser,
+        eTNISSUNMinChange,
+        eTNISSUNMaxChange,
+        eTNISSUNWarning,
+        eTNISSUNMaxInac,
+        eTNISSUNExpireDate,
+        eTNISSUNExpireDatePicker,
+        eTNISSUNPasswordExpired
+};
+
+schema set object-class etrust-admin-NIS-oc:5 = {
+    name = eTNISGroupContainer
+    subclass-of Top
+    must-contain
+        eTNISGroupContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-NIS-oc:6 = {
+    name = eTNISGroup
+    subclass-of Top
+    must-contain
+        eTNISGroupName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTNISGroupID,
+        eTNISAccountMembers,
+        eTNISPrimaryMembers
+};
+
+schema set object-class etrust-admin-NIS-oc:9 = {
+    name = eTNISNetGroupContainer
+    subclass-of Top
+    must-contain
+        eTNISNetGroupContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-NIS-oc:10 = {
+    name = eTNISNetGroup
+    subclass-of Top
+    must-contain
+        eTNISNetGroupName,
+        objectclass
+    may-contain
+        eTNISNetAccountMembers,
+        eTNISNetNetgroupMembers,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-NIS-oc:7 = {
+    name = eTNISPolicyContainer
+    subclass-of Top
+    must-contain
+        eTNISPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-NIS-oc:8 = {
+    name = eTNISPolicy
+    subclass-of Top
+    must-contain
+        eTNISPolicyName,
+        objectclass
+    may-contain
+        eTNISAccountName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTNISFullName,
+        eTNISUid,
+        eTNISInitProg,
+        eTNISHomeDir,
+        eTNISHomeDirCreation,
+        eTNISRemoteHomeDirCreation,
+        eTNISHomeDirLocation,
+        eTNISRemoteServer,
+        eTNISRemoteOptions,
+        eTNISRemoteDirectory,
+        eTNISMailAliasValue,
+        eTNISMailAliasStatus,
+        eTNISPrimaryGroup,
+        eTNISGroupMembers,
+        eTNISNetGroupMembers,
+        eTNISMasterDirectory,
+        eTNISMasterDirectoryType,
+        eTNISAccHomeDirDeletion,
+        eTNISNextFreeMinUID,
+        eTNISNextFreeMaxUID,
+        eTNISUIDMode,
+        eTNISHPGenPwr,
+        eTNISHPGenChars,
+        eTNISHPGenLetters,
+        eTNISHPPickPw,
+        eTNISHPFRestrict,
+        eTNISHPNullPasswd,
+        eTNISHPMaxLength,
+        eTNISHPPasswdAging,
+        eTNISHPMinChange,
+        eTNISHPPassExpires,
+        eTNISHPPwdWarnTime,
+        eTNISHPPassLifeTime,
+        eTNISHPExpireDate,
+        eTNISHPMaxLLogin,
+        eTNISHPMaxTries,
+        eTNISHPBootAuth,
+        eTNISHPLoginTimes,
+        eTNISHPPwdOptionList,
+        eTNISHPPwdExpirationTime,
+        eTNISHPPwdMinimumTime,
+        eTNISHPPwdForceChange,
+        eTNISIBMPhysMem,
+        eTNISIBMDataSeg,
+        eTNISIBMCoreSize,
+        eTNISIBMFileSize,
+        eTNISIBMStackSize,
+        eTNISIBMCpuTime,
+        eTNISIBMNoSysRest,
+        eTNISIBMChangeNext,
+        eTNISIBMChangeOnly,
+        eTNISIBMAuditClass,
+        eTNISIBMValidTty,
+        eTNISIBMSUGroup,
+        eTNISIBMPrimMethod,
+        eTNISIBMSecMethod,
+        eTNISIBMTrustPath,
+        eTNISIBMUmask,
+        eTNISIBMRlogin,
+        eTNISIBMSUtoUser,
+        eTNISSUNMinChange,
+        eTNISSUNMaxChange,
+        eTNISSUNWarning,
+        eTNISSUNMaxInac,
+        eTNISSUNExpireDate,
+        eTNISSUNExpireDatePicker,
+        eTNISSUNPasswordExpired
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-NIS-nb:1 = {
+    name = eTNISDirectory-eTNamespace
+    eTNISDirectory allowable-parent eTNamespace
+    named-by eTNISDirectoryName
+};
+
+schema set name-binding etrust-admin-NIS-nb:2 = {
+    name = eTNISPolicyContainer-eTNamespace
+    eTNISPolicyContainer allowable-parent eTNamespace
+    named-by eTNISPolicyContainerName
+};
+
+schema set name-binding etrust-admin-NIS-nb:3 = {
+    name = eTNISNamespace-eTNISDirectory
+    eTNISNamespace allowable-parent eTNISDirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-NIS-nb:4 = {
+    name = eTNISAccountContainer-eTNISDirectory
+    eTNISAccountContainer allowable-parent eTNISDirectory
+    named-by eTNISAccountContainerName
+};
+
+schema set name-binding etrust-admin-NIS-nb:5 = {
+    name = eTNISGroupContainer-eTNISDirectory
+    eTNISGroupContainer allowable-parent eTNISDirectory
+    named-by eTNISGroupContainerName
+};
+
+schema set name-binding etrust-admin-NIS-nb:9 = {
+    name = eTNISNetGroupContainer-eTNISDirectory
+    eTNISNetGroupContainer allowable-parent eTNISDirectory
+    named-by eTNISNetGroupContainerName
+};
+
+schema set name-binding etrust-admin-NIS-nb:6 = {
+    name = eTNISAccount-eTNISAccountContainer
+    eTNISAccount allowable-parent eTNISAccountContainer
+    named-by eTNISAccountName
+};
+
+schema set name-binding etrust-admin-NIS-nb:7 = {
+    name = eTNISGroup-eTNISGroupContainer
+    eTNISGroup allowable-parent eTNISGroupContainer
+    named-by eTNISGroupName
+};
+
+schema set name-binding etrust-admin-NIS-nb:10 = {
+    name = eTNISNetGroup-eTNISNetGroupContainer
+    eTNISNetGroup allowable-parent eTNISNetGroupContainer
+    named-by eTNISNetGroupName
+};
+
+schema set name-binding etrust-admin-NIS-nb:8 = {
+    name = eTNISPolicy-eTNISPolicyContainer
+    eTNISPolicy allowable-parent eTNISPolicyContainer
+    named-by eTNISPolicyName
+};
+

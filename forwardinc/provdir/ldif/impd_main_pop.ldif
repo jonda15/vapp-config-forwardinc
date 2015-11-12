@@ -1,0 +1,10 @@
+version: 1
+dn: eTNamespaceName=CommonObjects,dc=etadb
+objectClass: eTNamespace
+eTNamespaceName: CommonObjects
+eTNamespaceType: CommonObjects
+
+dn: eTDSAContainerName=DSAs,eTNamespaceName=CommonObjects,dc=etadb
+objectClass: eTDSAContainer
+eTDSAContainerName: DSAs
+userPassword:: @passwd@

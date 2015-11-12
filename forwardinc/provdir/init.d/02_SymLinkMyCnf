@@ -1,0 +1,3 @@
+echo "`date -u` [DEBUG] CA Directory - Copying configuration to container"
+cp -r /solution/$CONFIG/config $DXHOME/
+

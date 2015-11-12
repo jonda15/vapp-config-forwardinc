@@ -1,0 +1,6 @@
+# CA Directory DXserver/config/settings
+
+# jonda15 -- included forwardinc
+
+# Define preferred write master
+set write-precedence = @hostname@-impd-main,@hostname@-impd-inc,@hostname@-impd-co,@hostname@-impd-notify;

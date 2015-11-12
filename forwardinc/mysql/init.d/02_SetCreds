@@ -1,0 +1,5 @@
+# TODO Need to have a common place for these as IM-Server also uses these for DB Connection
+echo "Setting the Creds ...."
+MYSQL_DB_IMUSER="caim"
+MYSQL_DB_IMUSER_PW="HelloWorld"
+

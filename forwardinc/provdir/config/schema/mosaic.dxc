@@ -1,0 +1,68 @@
+# 
+# Computer Associates 
+#
+# config/schema/mosaic.dxc ($Revision: 4.4 $)
+#
+# Mosaic definitions.
+# These definitions where derived from ISOCOR Navigator.
+#
+schema set oid-prefix mosaic-attr = (2.16.840.1.101.2.1.5);
+
+#
+# Attribute Definitions.
+#
+schema set attribute mosaic-attr:4 = {
+	name = mosaicKeyManagementCertificate
+	syntax = undefined
+};
+
+schema set attribute mosaic-attr:5 = {
+	name = mosaicKMandSigCertificate
+	syntax = undefined
+};
+
+schema set attribute mosaic-attr:6 = {
+	name = mosaicUserSignatureCertificate
+	syntax = undefined
+};
+
+schema set attribute mosaic-attr:7 = {
+	name = mosaicCASignatureCertificate
+	syntax = undefined
+};
+
+schema set attribute mosaic-attr:11 = {
+	name = mosaicMlReceiptPolicy
+	syntax = undefined
+};
+
+schema set attribute mosaic-attr:12 = {
+	name = mosaicMlMembership
+	syntax = undefined
+};
+
+schema set attribute mosaic-attr:13 = {
+	name = mosaicMlAdministrator
+	syntax = undefined
+};
+
+schema set attribute mosaic-attr:14 = {
+	name = mosaicMlId
+	syntax = undefined
+};
+
+schema set attribute mosaic-attr:45 = {
+	name = mosaicCertificateRevocationList
+	syntax = undefined
+};
+
+schema set attribute mosaic-attr:46 = {
+	name = mosaicKRL
+	syntax = undefined
+};
+
+schema set attribute mosaic-attr:47 = {
+	name = mosaicMlExemptedAddressProcessor
+	syntax = undefined
+};
+

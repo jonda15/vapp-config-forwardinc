@@ -1,0 +1,1790 @@
+schema set oid-prefix etrust-admin-ETC-attr = (1.3.6.1.4.1.791.2.3.5.3.5170.1);
+schema set oid-prefix etrust-admin-ETC-oc = (1.3.6.1.4.1.791.2.3.5.3.5170.2);
+schema set oid-prefix etrust-admin-ETC-nb = (1.3.6.1.4.1.791.2.3.5.3.5170.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-ETC-attr:1 = {
+    name = eTETCDirectoryName
+    ldap-names = eTETCDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:2 = {
+    name = eTETCComments
+    ldap-names = eTETCComments
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:3 = {
+    name = eTETCHost
+    ldap-names = eTETCHost
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:4 = {
+    name = eTETCSystemType
+    ldap-names = eTETCSystemType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:5 = {
+    name = eTETCPlatform
+    ldap-names = eTETCPlatform
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:6 = {
+    name = eTETCVersion
+    ldap-names = eTETCVersion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:7 = {
+    name = eTETCType
+    ldap-names = eTETCType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:8 = {
+    name = eTETCDomainName
+    ldap-names = eTETCDomainName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:9 = {
+    name = eTETCTrusted
+    ldap-names = eTETCTrusted
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:17 = {
+    name = eTETCUnicenterSec
+    ldap-names = eTETCUnicenterSec
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:18 = {
+    name = eTETCUnicenterUser
+    ldap-names = eTETCUnicenterUser
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:102 = {
+    name = eTETCAllowBlankPassword
+    ldap-names = eTETCAllowBlankPassword
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:136 = {
+    name = eTETCDisableFileSyncCheck
+    ldap-names = eTETCDisableFileSyncCheck
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:103 = {
+    name = eTETCExcludeSysAcc
+    ldap-names = eTETCExcludeSysAcc
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:104 = {
+    name = eTETCExcludeMinUid
+    ldap-names = eTETCExcludeMinUid
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:105 = {
+    name = eTETCExcludeMaxUid
+    ldap-names = eTETCExcludeMaxUid
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:66 = {
+    name = eTETCAscii8bit
+    ldap-names = eTETCAscii8bit
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:108 = {
+    name = eTETCDirHomeDirDeletion
+    ldap-names = eTETCDirHomeDirDeletion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:119 = {
+    name = eTETCExploreTimeout
+    ldap-names = eTETCExploreTimeout
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:120 = {
+    name = eTETCOperationTimeout
+    ldap-names = eTETCOperationTimeout
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:121 = {
+    name = eTETCUseUTF8encoding
+    ldap-names = eTETCUseUTF8encoding
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:122 = {
+    name = eTETCUnixCharacterSet
+    ldap-names = eTETCUnixCharacterSet
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:123 = {
+    name = eTETCDefaultPrimaryGroup
+    ldap-names = eTETCDefaultPrimaryGroup
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:127 = {
+    name = eTETCSecurityMode
+    ldap-names = eTETCSecurityMode
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:128 = {
+    name = eTETCDefaultSkeletonDir
+    ldap-names = eTETCDefaultSkeletonDir
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:133 = {
+    name = eTETCRemoteAgentVersion
+    ldap-names = eTETCRemoteAgentVersion
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:10 = {
+    name = eTETCAccountContainerName
+    ldap-names = eTETCAccountContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:11 = {
+    name = eTETCAccountName
+    ldap-names = eTETCAccountName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:12 = {
+    name = eTETCFullName
+    ldap-names = eTETCFullName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:106 = {
+    name = eTETCFullNameCorrelate
+    ldap-names = eTETCFullNameCorrelate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:13 = {
+    name = eTETCUid
+    ldap-names = eTETCUid
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:14 = {
+    name = eTETCInitProg
+    ldap-names = eTETCInitProg
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:15 = {
+    name = eTETCHomeDir
+    ldap-names = eTETCHomeDir
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:115 = {
+    name = eTETCHomeDirCreation
+    ldap-names = eTETCHomeDirCreation
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:129 = {
+    name = eTETCSkeletonDir
+    ldap-names = eTETCSkeletonDir
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:16 = {
+    name = eTETCPrimaryGroup
+    ldap-names = eTETCPrimaryGroup
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:19 = {
+    name = eTETCGroupMembers
+    ldap-names = eTETCGroupMembers
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:101 = {
+    name = eTETCMasterDirectory
+    ldap-names = eTETCMasterDirectory
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:112 = {
+    name = eTETCNextFreeMinUID
+    ldap-names = eTETCNextFreeMinUID
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:113 = {
+    name = eTETCNextFreeMaxUID
+    ldap-names = eTETCNextFreeMaxUID
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:116 = {
+    name = eTETCAccHomeDirDeletion
+    ldap-names = eTETCAccHomeDirDeletion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:117 = {
+    name = eTETCAccountClean
+    ldap-names = eTETCAccountClean
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:126 = {
+    name = eTETCAccountPwdOption
+    ldap-names = eTETCAccountPwdOption
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:134 = {
+    name = eTETCHomeDirExists
+    ldap-names = eTETCHomeDirExists
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:20 = {
+    name = eTETCHPGenPwr
+    ldap-names = eTETCHPGenPwr
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:21 = {
+    name = eTETCHPGenChars
+    ldap-names = eTETCHPGenChars
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:22 = {
+    name = eTETCHPGenLetters
+    ldap-names = eTETCHPGenLetters
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:23 = {
+    name = eTETCHPPickPw
+    ldap-names = eTETCHPPickPw
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:24 = {
+    name = eTETCHPFRestrict
+    ldap-names = eTETCHPFRestrict
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:25 = {
+    name = eTETCHPNullPasswd
+    ldap-names = eTETCHPNullPasswd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:26 = {
+    name = eTETCHPMaxLength
+    ldap-names = eTETCHPMaxLength
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:27 = {
+    name = eTETCHPPasswdAging
+    ldap-names = eTETCHPPasswdAging
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:28 = {
+    name = eTETCHPMinChange
+    ldap-names = eTETCHPMinChange
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:29 = {
+    name = eTETCHPPassExpires
+    ldap-names = eTETCHPPassExpires
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:30 = {
+    name = eTETCHPPwdWarnTime
+    ldap-names = eTETCHPPwdWarnTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:31 = {
+    name = eTETCHPPassLifeTime
+    ldap-names = eTETCHPPassLifeTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:32 = {
+    name = eTETCHPExpireDate
+    ldap-names = eTETCHPExpireDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:33 = {
+    name = eTETCHPMaxLLogin
+    ldap-names = eTETCHPMaxLLogin
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:34 = {
+    name = eTETCHPMaxTries
+    ldap-names = eTETCHPMaxTries
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:35 = {
+    name = eTETCHPBootAuth
+    ldap-names = eTETCHPBootAuth
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:36 = {
+    name = eTETCHPLoginTimes
+    ldap-names = eTETCHPLoginTimes
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:109 = {
+    name = eTETCHPPwdAgeStatus
+    ldap-names = eTETCHPPwdAgeStatus
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:97 = {
+    name = eTETCHPPwdOptionList
+    ldap-names = eTETCHPPwdOptionList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:98 = {
+    name = eTETCHPPwdExpirationTime
+    ldap-names = eTETCHPPwdExpirationTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:99 = {
+    name = eTETCHPPwdMinimumTime
+    ldap-names = eTETCHPPwdMinimumTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:100 = {
+    name = eTETCHPPwdForceChange
+    ldap-names = eTETCHPPwdForceChange
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:37 = {
+    name = eTETCIBMPhysMem
+    ldap-names = eTETCIBMPhysMem
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:38 = {
+    name = eTETCIBMDataSeg
+    ldap-names = eTETCIBMDataSeg
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:39 = {
+    name = eTETCIBMCoreSize
+    ldap-names = eTETCIBMCoreSize
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:40 = {
+    name = eTETCIBMFileSize
+    ldap-names = eTETCIBMFileSize
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:41 = {
+    name = eTETCIBMStackSize
+    ldap-names = eTETCIBMStackSize
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:42 = {
+    name = eTETCIBMCpuTime
+    ldap-names = eTETCIBMCpuTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:43 = {
+    name = eTETCIBMNoSysRest
+    ldap-names = eTETCIBMNoSysRest
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:44 = {
+    name = eTETCIBMChangeNext
+    ldap-names = eTETCIBMChangeNext
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:45 = {
+    name = eTETCIBMChangeOnly
+    ldap-names = eTETCIBMChangeOnly
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:46 = {
+    name = eTETCIBMAuditClass
+    ldap-names = eTETCIBMAuditClass
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:47 = {
+    name = eTETCIBMValidTty
+    ldap-names = eTETCIBMValidTty
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:48 = {
+    name = eTETCIBMSUGroup
+    ldap-names = eTETCIBMSUGroup
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:49 = {
+    name = eTETCIBMPrimMethod
+    ldap-names = eTETCIBMPrimMethod
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:50 = {
+    name = eTETCIBMSecMethod
+    ldap-names = eTETCIBMSecMethod
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:51 = {
+    name = eTETCIBMTrustPath
+    ldap-names = eTETCIBMTrustPath
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:52 = {
+    name = eTETCIBMUmask
+    ldap-names = eTETCIBMUmask
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:53 = {
+    name = eTETCIBMRlogin
+    ldap-names = eTETCIBMRlogin
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:54 = {
+    name = eTETCIBMSUtoUser
+    ldap-names = eTETCIBMSUtoUser
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:67 = {
+    name = eTETCIBMAdminUser
+    ldap-names = eTETCIBMAdminUser
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:68 = {
+    name = eTETCIBMAdmGroups
+    ldap-names = eTETCIBMAdmGroups
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:69 = {
+    name = eTETCIBMRoles
+    ldap-names = eTETCIBMRoles
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:70 = {
+    name = eTETCIBMExpires
+    ldap-names = eTETCIBMExpires
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:71 = {
+    name = eTETCIBMAccountLocked
+    ldap-names = eTETCIBMAccountLocked
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:72 = {
+    name = eTETCIBMLogin
+    ldap-names = eTETCIBMLogin
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:73 = {
+    name = eTETCIBMLoginTimes
+    ldap-names = eTETCIBMLoginTimes
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:74 = {
+    name = eTETCIBMLoginRetries
+    ldap-names = eTETCIBMLoginRetries
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:75 = {
+    name = eTETCIBMSystem
+    ldap-names = eTETCIBMSystem
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:76 = {
+    name = eTETCIBMPwdWarmTime
+    ldap-names = eTETCIBMPwdWarmTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:77 = {
+    name = eTETCIBMPwdChecks
+    ldap-names = eTETCIBMPwdChecks
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:78 = {
+    name = eTETCIBMDictionList
+    ldap-names = eTETCIBMDictionList
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:79 = {
+    name = eTETCIBMHistSize
+    ldap-names = eTETCIBMHistSize
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:80 = {
+    name = eTETCIBMHistExpire
+    ldap-names = eTETCIBMHistExpire
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:81 = {
+    name = eTETCIBMMaxExpired
+    ldap-names = eTETCIBMMaxExpired
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:82 = {
+    name = eTETCIBMMaxAge
+    ldap-names = eTETCIBMMaxAge
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:83 = {
+    name = eTETCIBMMinAge
+    ldap-names = eTETCIBMMinAge
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:84 = {
+    name = eTETCIBMMinLen
+    ldap-names = eTETCIBMMinLen
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:85 = {
+    name = eTETCIBMMinAlpha
+    ldap-names = eTETCIBMMinAlpha
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:86 = {
+    name = eTETCIBMMinOther
+    ldap-names = eTETCIBMMinOther
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:87 = {
+    name = eTETCIBMMaxRepeats
+    ldap-names = eTETCIBMMaxRepeats
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:88 = {
+    name = eTETCIBMMinDiff
+    ldap-names = eTETCIBMMinDiff
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:89 = {
+    name = eTETCIBMRegistry
+    ldap-names = eTETCIBMRegistry
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:90 = {
+    name = eTETCIBMHardFileSize
+    ldap-names = eTETCIBMHardFileSize
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:91 = {
+    name = eTETCIBMHardCpuTime
+    ldap-names = eTETCIBMHardCpuTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:92 = {
+    name = eTETCIBMHardDataSeg
+    ldap-names = eTETCIBMHardDataSeg
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:93 = {
+    name = eTETCIBMHardStackSize
+    ldap-names = eTETCIBMHardStackSize
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:94 = {
+    name = eTETCIBMHardCoreSize
+    ldap-names = eTETCIBMHardCoreSize
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:55 = {
+    name = eTETCSUNMinChange
+    ldap-names = eTETCSUNMinChange
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:56 = {
+    name = eTETCSUNMaxChange
+    ldap-names = eTETCSUNMaxChange
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:57 = {
+    name = eTETCSUNWarning
+    ldap-names = eTETCSUNWarning
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:58 = {
+    name = eTETCSUNMaxInac
+    ldap-names = eTETCSUNMaxInac
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:59 = {
+    name = eTETCSUNExpireDate
+    ldap-names = eTETCSUNExpireDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:107 = {
+    name = eTETCSUNExpireDatePicker
+    ldap-names = eTETCSUNExpireDatePicker
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:118 = {
+    name = eTETCSUNPasswordExpired
+    ldap-names = eTETCSUNPasswordExpired
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:60 = {
+    name = eTETCGroupContainerName
+    ldap-names = eTETCGroupContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:61 = {
+    name = eTETCGroupName
+    ldap-names = eTETCGroupName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:130 = {
+    name = eTETCNextFreeMinGID
+    ldap-names = eTETCNextFreeMinGID
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:131 = {
+    name = eTETCNextFreeMaxGID
+    ldap-names = eTETCNextFreeMaxGID
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:62 = {
+    name = eTETCGroupID
+    ldap-names = eTETCGroupID
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:132 = {
+    name = eTETCGIDUpdateAccounts
+    ldap-names = eTETCGIDUpdateAccounts
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:63 = {
+    name = eTETCAccountMembers
+    ldap-names = eTETCAccountMembers
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:124 = {
+    name = eTETCPrimaryMembers
+    ldap-names = eTETCPrimaryMembers
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:110 = {
+    name = eTETCAIXGroupAdministrative
+    ldap-names = eTETCAIXGroupAdministrative
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:111 = {
+    name = eTETCAIXGroupAdministrators
+    ldap-names = eTETCAIXGroupAdministrators
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:125 = {
+    name = eTETCServerList
+    ldap-names = eTETCServerList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:135 = {
+    name = eTETCGIDOpperation
+    ldap-names = eTETCGIDOpperation
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:64 = {
+    name = eTETCPolicyContainerName
+    ldap-names = eTETCPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:65 = {
+    name = eTETCPolicyName
+    ldap-names = eTETCPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:114 = {
+    name = eTETCUIDMode
+    ldap-names = eTETCUIDMode
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:95 = {
+    name = eTETCObjectName
+    ldap-names = eTETCObjectName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ETC-attr:96 = {
+    name = eTETCObjectList
+    ldap-names = eTETCObjectList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-ETC-oc:1 = {
+    name = eTETCDirectory
+    subclass-of Top
+    must-contain
+        eTETCDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTAgentNamespaceClass,
+        eTETCComments,
+        eTETCHost,
+        eTETCSystemType,
+        eTETCPlatform,
+        eTETCVersion,
+        eTETCType,
+        eTETCDomainName,
+        eTETCTrusted,
+        eTETCUnicenterSec,
+        eTETCUnicenterUser,
+        eTETCAllowBlankPassword,
+        eTETCDisableFileSyncCheck,
+        eTETCExcludeSysAcc,
+        eTETCExcludeMinUid,
+        eTETCExcludeMaxUid,
+        eTETCAscii8bit,
+        eTETCDirHomeDirDeletion,
+        eTETCExploreTimeout,
+        eTETCOperationTimeout,
+        eTETCUseUTF8encoding,
+        eTETCUnixCharacterSet,
+        eTETCDefaultPrimaryGroup,
+        eTETCSecurityMode,
+        eTETCDefaultSkeletonDir,
+        eTETCRemoteAgentVersion
+};
+
+schema set object-class etrust-admin-ETC-oc:2 = {
+    name = eTETCNamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL
+};
+
+schema set object-class etrust-admin-ETC-oc:3 = {
+    name = eTETCAccountContainer
+    subclass-of Top
+    must-contain
+        eTETCAccountContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ETC-oc:4 = {
+    name = eTETCAccount
+    subclass-of Top
+    must-contain
+        eTETCAccountName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTETCFullName,
+        eTETCFullNameCorrelate,
+        eTETCUid,
+        eTETCInitProg,
+        eTETCHomeDir,
+        eTETCHomeDirCreation,
+        eTETCSkeletonDir,
+        eTETCPrimaryGroup,
+        eTETCGroupMembers,
+        eTETCMasterDirectory,
+        eTETCNextFreeMinUID,
+        eTETCNextFreeMaxUID,
+        eTETCAccHomeDirDeletion,
+        eTETCAccountClean,
+        eTETCAccountPwdOption,
+        eTETCHomeDirExists,
+        eTETCHPGenPwr,
+        eTETCHPGenChars,
+        eTETCHPGenLetters,
+        eTETCHPPickPw,
+        eTETCHPFRestrict,
+        eTETCHPNullPasswd,
+        eTETCHPMaxLength,
+        eTETCHPPasswdAging,
+        eTETCHPMinChange,
+        eTETCHPPassExpires,
+        eTETCHPPwdWarnTime,
+        eTETCHPPassLifeTime,
+        eTETCHPExpireDate,
+        eTETCHPMaxLLogin,
+        eTETCHPMaxTries,
+        eTETCHPBootAuth,
+        eTETCHPLoginTimes,
+        eTETCHPPwdAgeStatus,
+        eTETCHPPwdOptionList,
+        eTETCHPPwdExpirationTime,
+        eTETCHPPwdMinimumTime,
+        eTETCHPPwdForceChange,
+        eTETCIBMPhysMem,
+        eTETCIBMDataSeg,
+        eTETCIBMCoreSize,
+        eTETCIBMFileSize,
+        eTETCIBMStackSize,
+        eTETCIBMCpuTime,
+        eTETCIBMNoSysRest,
+        eTETCIBMChangeNext,
+        eTETCIBMChangeOnly,
+        eTETCIBMAuditClass,
+        eTETCIBMValidTty,
+        eTETCIBMSUGroup,
+        eTETCIBMPrimMethod,
+        eTETCIBMSecMethod,
+        eTETCIBMTrustPath,
+        eTETCIBMUmask,
+        eTETCIBMRlogin,
+        eTETCIBMSUtoUser,
+        eTETCIBMAdminUser,
+        eTETCIBMAdmGroups,
+        eTETCIBMRoles,
+        eTETCIBMExpires,
+        eTETCIBMAccountLocked,
+        eTETCIBMLogin,
+        eTETCIBMLoginTimes,
+        eTETCIBMLoginRetries,
+        eTETCIBMSystem,
+        eTETCIBMPwdWarmTime,
+        eTETCIBMPwdChecks,
+        eTETCIBMDictionList,
+        eTETCIBMHistSize,
+        eTETCIBMHistExpire,
+        eTETCIBMMaxExpired,
+        eTETCIBMMaxAge,
+        eTETCIBMMinAge,
+        eTETCIBMMinLen,
+        eTETCIBMMinAlpha,
+        eTETCIBMMinOther,
+        eTETCIBMMaxRepeats,
+        eTETCIBMMinDiff,
+        eTETCIBMRegistry,
+        eTETCIBMHardFileSize,
+        eTETCIBMHardCpuTime,
+        eTETCIBMHardDataSeg,
+        eTETCIBMHardStackSize,
+        eTETCIBMHardCoreSize,
+        eTETCSUNMinChange,
+        eTETCSUNMaxChange,
+        eTETCSUNWarning,
+        eTETCSUNMaxInac,
+        eTETCSUNExpireDate,
+        eTETCSUNExpireDatePicker,
+        eTETCSUNPasswordExpired
+};
+
+schema set object-class etrust-admin-ETC-oc:5 = {
+    name = eTETCGroupContainer
+    subclass-of Top
+    must-contain
+        eTETCGroupContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ETC-oc:6 = {
+    name = eTETCGroup
+    subclass-of Top
+    must-contain
+        eTETCGroupName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTETCNextFreeMinGID,
+        eTETCNextFreeMaxGID,
+        eTETCGroupID,
+        eTETCGIDUpdateAccounts,
+        eTETCAccountMembers,
+        eTETCPrimaryMembers,
+        eTETCAIXGroupAdministrative,
+        eTETCAIXGroupAdministrators,
+        eTETCServerList,
+        eTETCGIDOpperation
+};
+
+schema set object-class etrust-admin-ETC-oc:7 = {
+    name = eTETCPolicyContainer
+    subclass-of Top
+    must-contain
+        eTETCPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ETC-oc:8 = {
+    name = eTETCPolicy
+    subclass-of Top
+    must-contain
+        eTETCPolicyName,
+        objectclass
+    may-contain
+        eTETCAccountName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTETCFullName,
+        eTETCUid,
+        eTETCInitProg,
+        eTETCHomeDir,
+        eTETCHomeDirCreation,
+        eTETCSkeletonDir,
+        eTETCPrimaryGroup,
+        eTETCGroupMembers,
+        eTETCMasterDirectory,
+        eTETCNextFreeMinUID,
+        eTETCNextFreeMaxUID,
+        eTETCUIDMode,
+        eTETCAccHomeDirDeletion,
+        eTETCAccountClean,
+        eTETCAccountPwdOption,
+        eTETCHPGenPwr,
+        eTETCHPGenChars,
+        eTETCHPGenLetters,
+        eTETCHPPickPw,
+        eTETCHPFRestrict,
+        eTETCHPNullPasswd,
+        eTETCHPMaxLength,
+        eTETCHPPasswdAging,
+        eTETCHPMinChange,
+        eTETCHPPassExpires,
+        eTETCHPPwdWarnTime,
+        eTETCHPPassLifeTime,
+        eTETCHPExpireDate,
+        eTETCHPMaxLLogin,
+        eTETCHPMaxTries,
+        eTETCHPBootAuth,
+        eTETCHPLoginTimes,
+        eTETCHPPwdAgeStatus,
+        eTETCHPPwdOptionList,
+        eTETCHPPwdExpirationTime,
+        eTETCHPPwdMinimumTime,
+        eTETCHPPwdForceChange,
+        eTETCIBMPhysMem,
+        eTETCIBMDataSeg,
+        eTETCIBMCoreSize,
+        eTETCIBMFileSize,
+        eTETCIBMStackSize,
+        eTETCIBMCpuTime,
+        eTETCIBMNoSysRest,
+        eTETCIBMChangeNext,
+        eTETCIBMChangeOnly,
+        eTETCIBMAuditClass,
+        eTETCIBMValidTty,
+        eTETCIBMSUGroup,
+        eTETCIBMPrimMethod,
+        eTETCIBMSecMethod,
+        eTETCIBMTrustPath,
+        eTETCIBMUmask,
+        eTETCIBMRlogin,
+        eTETCIBMSUtoUser,
+        eTETCIBMAdminUser,
+        eTETCIBMAdmGroups,
+        eTETCIBMRoles,
+        eTETCIBMExpires,
+        eTETCIBMAccountLocked,
+        eTETCIBMLogin,
+        eTETCIBMLoginTimes,
+        eTETCIBMLoginRetries,
+        eTETCIBMSystem,
+        eTETCIBMPwdWarmTime,
+        eTETCIBMPwdChecks,
+        eTETCIBMDictionList,
+        eTETCIBMHistSize,
+        eTETCIBMHistExpire,
+        eTETCIBMMaxExpired,
+        eTETCIBMMaxAge,
+        eTETCIBMMinAge,
+        eTETCIBMMinLen,
+        eTETCIBMMinAlpha,
+        eTETCIBMMinOther,
+        eTETCIBMMaxRepeats,
+        eTETCIBMMinDiff,
+        eTETCIBMRegistry,
+        eTETCIBMHardFileSize,
+        eTETCIBMHardCpuTime,
+        eTETCIBMHardDataSeg,
+        eTETCIBMHardStackSize,
+        eTETCIBMHardCoreSize,
+        eTETCSUNMinChange,
+        eTETCSUNMaxChange,
+        eTETCSUNWarning,
+        eTETCSUNMaxInac,
+        eTETCSUNExpireDate,
+        eTETCSUNExpireDatePicker,
+        eTETCSUNPasswordExpired
+};
+
+schema set object-class etrust-admin-ETC-oc:9 = {
+    name = eTETCObject
+    subclass-of Top
+    must-contain
+        eTETCObjectName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTETCObjectList
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-ETC-nb:1 = {
+    name = eTETCDirectory-eTNamespace
+    eTETCDirectory allowable-parent eTNamespace
+    named-by eTETCDirectoryName
+};
+
+schema set name-binding etrust-admin-ETC-nb:2 = {
+    name = eTETCPolicyContainer-eTNamespace
+    eTETCPolicyContainer allowable-parent eTNamespace
+    named-by eTETCPolicyContainerName
+};
+
+schema set name-binding etrust-admin-ETC-nb:3 = {
+    name = eTETCNamespace-eTETCDirectory
+    eTETCNamespace allowable-parent eTETCDirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-ETC-nb:4 = {
+    name = eTETCAccountContainer-eTETCDirectory
+    eTETCAccountContainer allowable-parent eTETCDirectory
+    named-by eTETCAccountContainerName
+};
+
+schema set name-binding etrust-admin-ETC-nb:5 = {
+    name = eTETCGroupContainer-eTETCDirectory
+    eTETCGroupContainer allowable-parent eTETCDirectory
+    named-by eTETCGroupContainerName
+};
+
+schema set name-binding etrust-admin-ETC-nb:9 = {
+    name = eTETCObject-eTETCDirectory
+    eTETCObject allowable-parent eTETCDirectory
+    named-by eTETCObjectName
+};
+
+schema set name-binding etrust-admin-ETC-nb:6 = {
+    name = eTETCAccount-eTETCAccountContainer
+    eTETCAccount allowable-parent eTETCAccountContainer
+    named-by eTETCAccountName
+};
+
+schema set name-binding etrust-admin-ETC-nb:7 = {
+    name = eTETCGroup-eTETCGroupContainer
+    eTETCGroup allowable-parent eTETCGroupContainer
+    named-by eTETCGroupName
+};
+
+schema set name-binding etrust-admin-ETC-nb:8 = {
+    name = eTETCPolicy-eTETCPolicyContainer
+    eTETCPolicy allowable-parent eTETCPolicyContainer
+    named-by eTETCPolicyName
+};
+

@@ -1,0 +1,88 @@
+# ---------------------------------------------------------------------------- #
+# CA Directory SCHEMA Configuration Help File                                  #
+# ---------------------------------------------------------------------------- #
+#
+# The schema configuration directory contains many industry standard schema
+# definition files.
+#
+# The default.dxg file contains a useful set of these standards.
+#
+# Details of this complex topic are in the CA Directory Administrator Guide.
+#
+# The following example modified from inetop.dxc shows the syntax of 
+# available commands:
+#
+schema set oid-prefix inetorgp-attr = (2.16.840.1.113730.3.1);
+schema set oid-prefix inetorgp-oc   = (2.16.840.1.113730.3.2);
+schema set oid-prefix inetorgp-nb   = (2.16.840.1.113730.3.14);
+
+#
+# Attribute Definitions.
+#
+schema set attribute inetorgp-attr:1 = {
+	name = carLicense
+        syntax = caseIgnoreString
+	description = "Car Licence Number"
+};
+
+schema set attribute inetorgp-attr:3 = {
+	name = employeeNumber
+        syntax = caseIgnoreString
+	single-valued
+};
+
+schema set attribute inetorgp-attr:40 = {
+	name = userSMIMECertificate
+	ldap-names = usersmimecertificate
+        syntax = CertificateSyntax
+};
+
+schema set attr-set (2.16.840.1.113730.3.15) = {
+        name = localeAttributeSet
+        localityName,
+        stateOrProvinceName,
+        streetAddress
+};
+
+
+#
+# Object Class Definitions.
+#
+schema set object-class inetorgp-oc:2 = {
+	name = inetOrgPerson
+	subclass-of OrganizationalPerson
+	kind = structural
+        must contain
+		# nothing in this example
+	may-contain
+        	localeAttributeSet
+		cosineAudio,
+		businessCategory,
+		carLicense,
+		departmentNumber,
+		displayName,
+		employeeNumber,
+		givenName,
+		initials,
+		cosineJpegPhoto,
+		userSMIMECertificate,
+		userCertificate
+	description = "Inet Organizational Person"
+};
+
+
+#
+# Name Bindings.
+#
+schema set name-binding inetorgp-nb:1 = {
+	name = INetOrgPerson-o
+	INetOrgPerson allowable-parent organization
+	named-by commonName optional surname, dnQualifier
+};
+
+schema set name-binding inetorgp-nb:2 = {
+	name = INetOrgPerson-ou
+	INetOrgPerson allowable-parent organizationalUnit
+	named-by commonName optional surname, dnQualifier
+};
+

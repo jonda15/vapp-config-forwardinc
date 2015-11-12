@@ -1,0 +1,585 @@
+schema set oid-prefix etrust-admin-SDK-attr = (1.3.6.1.4.1.791.2.3.5.3.5130.1);
+schema set oid-prefix etrust-admin-SDK-oc = (1.3.6.1.4.1.791.2.3.5.3.5130.2);
+schema set oid-prefix etrust-admin-SDK-nb = (1.3.6.1.4.1.791.2.3.5.3.5130.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-SDK-attr:1 = {
+    name = eTSDKDirectoryName
+    ldap-names = eTSDKDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:16 = {
+    name = eTSDKPath
+    ldap-names = eTSDKPath
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:2 = {
+    name = eTSDKComments
+    ldap-names = eTSDKComments
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:3 = {
+    name = eTSDKIpAddress
+    ldap-names = eTSDKIpAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:4 = {
+    name = eTSDKHost
+    ldap-names = eTSDKHost
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:5 = {
+    name = eTSDKAccountContainerName
+    ldap-names = eTSDKAccountContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:6 = {
+    name = eTSDKAccountName
+    ldap-names = eTSDKAccountName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:7 = {
+    name = eTSDKCity
+    ldap-names = eTSDKCity
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:8 = {
+    name = eTSDKEmployeeId
+    ldap-names = eTSDKEmployeeId
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:9 = {
+    name = eTSDKEncrypt
+    ldap-names = eTSDKEncrypt
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:10 = {
+    name = eTSDKGroupMembers
+    ldap-names = eTSDKGroupMembers
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:11 = {
+    name = eTSDKGroupContainerName
+    ldap-names = eTSDKGroupContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:12 = {
+    name = eTSDKGroupName
+    ldap-names = eTSDKGroupName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:13 = {
+    name = eTSDKDescription
+    ldap-names = eTSDKDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:14 = {
+    name = eTSDKPolicyContainerName
+    ldap-names = eTSDKPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SDK-attr:15 = {
+    name = eTSDKPolicyName
+    ldap-names = eTSDKPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-SDK-oc:1 = {
+    name = eTSDKDirectory
+    subclass-of Top
+    must-contain
+        eTSDKDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTUseAdminCreds,
+        eTAgentNamespaceClass,
+        eTSDKPath,
+        eTSDKComments,
+        eTSDKIpAddress,
+        eTSDKHost
+};
+
+schema set object-class etrust-admin-SDK-oc:2 = {
+    name = eTSDKNamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL,
+        eTDirRelativeFormat,
+        eTMetaData
+};
+
+schema set object-class etrust-admin-SDK-oc:3 = {
+    name = eTSDKAccountContainer
+    subclass-of Top
+    must-contain
+        eTSDKAccountContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SDK-oc:4 = {
+    name = eTSDKAccount
+    subclass-of Top
+    must-contain
+        eTSDKAccountName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTSDKCity,
+        eTSDKEmployeeId,
+        eTSDKEncrypt,
+        eTSDKGroupMembers
+};
+
+schema set object-class etrust-admin-SDK-oc:5 = {
+    name = eTSDKGroupContainer
+    subclass-of Top
+    must-contain
+        eTSDKGroupContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SDK-oc:6 = {
+    name = eTSDKGroup
+    subclass-of Top
+    must-contain
+        eTSDKGroupName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSDKDescription
+};
+
+schema set object-class etrust-admin-SDK-oc:7 = {
+    name = eTSDKPolicyContainer
+    subclass-of Top
+    must-contain
+        eTSDKPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SDK-oc:8 = {
+    name = eTSDKPolicy
+    subclass-of Top
+    must-contain
+        eTSDKPolicyName,
+        objectclass
+    may-contain
+        eTSDKAccountName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTSDKCity,
+        eTSDKEmployeeId,
+        eTSDKEncrypt,
+        eTSDKGroupMembers
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-SDK-nb:1 = {
+    name = eTSDKDirectory-eTNamespace
+    eTSDKDirectory allowable-parent eTNamespace
+    named-by eTSDKDirectoryName
+};
+
+schema set name-binding etrust-admin-SDK-nb:2 = {
+    name = eTSDKPolicyContainer-eTNamespace
+    eTSDKPolicyContainer allowable-parent eTNamespace
+    named-by eTSDKPolicyContainerName
+};
+
+schema set name-binding etrust-admin-SDK-nb:3 = {
+    name = eTSDKNamespace-eTSDKDirectory
+    eTSDKNamespace allowable-parent eTSDKDirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-SDK-nb:4 = {
+    name = eTSDKAccountContainer-eTSDKDirectory
+    eTSDKAccountContainer allowable-parent eTSDKDirectory
+    named-by eTSDKAccountContainerName
+};
+
+schema set name-binding etrust-admin-SDK-nb:5 = {
+    name = eTSDKGroupContainer-eTSDKDirectory
+    eTSDKGroupContainer allowable-parent eTSDKDirectory
+    named-by eTSDKGroupContainerName
+};
+
+schema set name-binding etrust-admin-SDK-nb:6 = {
+    name = eTSDKAccount-eTSDKAccountContainer
+    eTSDKAccount allowable-parent eTSDKAccountContainer
+    named-by eTSDKAccountName
+};
+
+schema set name-binding etrust-admin-SDK-nb:7 = {
+    name = eTSDKGroup-eTSDKGroupContainer
+    eTSDKGroup allowable-parent eTSDKGroupContainer
+    named-by eTSDKGroupName
+};
+
+schema set name-binding etrust-admin-SDK-nb:8 = {
+    name = eTSDKPolicy-eTSDKPolicyContainer
+    eTSDKPolicy allowable-parent eTSDKPolicyContainer
+    named-by eTSDKPolicyName
+};
+

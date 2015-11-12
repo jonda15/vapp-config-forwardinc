@@ -1,0 +1,86 @@
+# 
+# Computer Associates
+#
+# config/schema/thorn.dxc ($Revision: 4.4 $)
+#
+# Thorn Project defined attributes and object classes
+# These defintions where derived from IETF Schema Release 1, 19-Sep-94.
+#
+# All Attributes and Object Classes are EXPERIMENTAL.
+#
+# oid-prefix ::= ccitt(0).data(9).pss(2342).ucl(19200300).thorn(110)
+#
+schema set oid-prefix thornSystemAttributeType = (0.9.2342.19200300.110.2);
+
+#
+# Attribute Definitions.
+#
+schema set attribute thornSystemAttributeType:1 = {
+        name   = thornACL
+        syntax = thornACLSyntax				# ACL
+};
+
+schema set attribute thornSystemAttributeType:2 = {
+        name   = thornTimeStamp
+        syntax = uTCTime
+};
+
+schema set attribute thornSystemAttributeType:3 = {
+        name   = thornRuleDescription
+        syntax = thornRDTypeSyntax			# RDType
+};
+
+schema set attribute thornSystemAttributeType:4 = {
+        name   = thornObjectDescription
+        syntax = thornODTypeSyntax			# ODType
+};
+
+schema set attribute thornSystemAttributeType:5 = {
+        name   = thornAttributeDescription
+        syntax = thornADTypeSyntax			# ADType
+};
+
+schema set attribute thornSystemAttributeType:6 = {
+        name   = thornRule
+        syntax = objectIdentifier			# OID
+};
+
+schema set attribute thornSystemAttributeType:7 = {
+        name   = thornKnowledgeReference
+        syntax = thornKnowledgeReferenceSyntax		# KnowledgeReference
+};
+
+#
+# Object Class Definitions.
+#
+schema set oid-prefix thornSystemObjectClass = (0.9.2342.19200300.110.7);
+
+schema set object-class thornSystemObjectClass:1 = {
+        name   = thornSchema
+        subclass-of top
+        must-contain
+            thornTimeStamp,
+            thornRuleDescription,
+            thornObjectDescription,
+            thornAttributeDescription,
+	    commonName
+};
+
+schema set object-class thornSystemObjectClass:2 = {
+        name   = thornKnowledgeManagement
+        subclass-of top
+        must-contain
+            thornKnowledgeReference
+        may-contain
+            knowledgeInformation
+};
+
+schema set object-class thornSystemObjectClass:3 = {
+        name   = thornSystemObject
+        subclass-of top
+        must-contain
+            thornRule
+        may-contain
+            thornACL
+};
+

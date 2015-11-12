@@ -1,0 +1,2701 @@
+schema set oid-prefix etrust-admin-SBL-attr = (1.3.6.1.4.1.791.2.3.5.3.5420.1);
+schema set oid-prefix etrust-admin-SBL-oc = (1.3.6.1.4.1.791.2.3.5.3.5420.2);
+schema set oid-prefix etrust-admin-SBL-nb = (1.3.6.1.4.1.791.2.3.5.3.5420.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-SBL-attr:1 = {
+    name = eTSBLDirectoryName
+    ldap-names = eTSBLDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:2 = {
+    name = eTSBLDirDescription
+    ldap-names = eTSBLDirDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:3 = {
+    name = eTSBLHostName
+    ldap-names = eTSBLHostName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:4 = {
+    name = eTSBLServerName
+    ldap-names = eTSBLServerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:140 = {
+    name = eTSBLServerName75
+    ldap-names = eTSBLServerName75
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:5 = {
+    name = eTSBLTransportProtocol
+    ldap-names = eTSBLTransportProtocol
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:6 = {
+    name = eTSBLEncryption
+    ldap-names = eTSBLEncryption
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:7 = {
+    name = eTSBLCompression
+    ldap-names = eTSBLCompression
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:8 = {
+    name = eTSBLPort
+    ldap-names = eTSBLPort
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:54 = {
+    name = eTSBLApplication
+    ldap-names = eTSBLApplication
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:55 = {
+    name = eTSBLLanguage
+    ldap-names = eTSBLLanguage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:9 = {
+    name = eTSBLDirUser
+    ldap-names = eTSBLDirUser
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:10 = {
+    name = eTSBLDirUserPwd
+    ldap-names = eTSBLDirUserPwd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:63 = {
+    name = eTSBLDirUserViewMode
+    ldap-names = eTSBLDirUserViewMode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:84 = {
+    name = eTSBLUserBO
+    ldap-names = eTSBLUserBO
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:85 = {
+    name = eTSBLUserBC
+    ldap-names = eTSBLUserBC
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:86 = {
+    name = eTSBLUserIDField
+    ldap-names = eTSBLUserIDField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:87 = {
+    name = eTSBLUserFirstNameField
+    ldap-names = eTSBLUserFirstNameField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:88 = {
+    name = eTSBLUserLastNameField
+    ldap-names = eTSBLUserLastNameField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:89 = {
+    name = eTSBLUserPasswordField
+    ldap-names = eTSBLUserPasswordField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:90 = {
+    name = eTSBLUserConfirmPasswordField
+    ldap-names = eTSBLUserConfirmPasswordField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:91 = {
+    name = eTSBLUserMVGField
+    ldap-names = eTSBLUserMVGField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:92 = {
+    name = eTSBLUserCustomFieldConf
+    ldap-names = eTSBLUserCustomFieldConf
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:93 = {
+    name = eTSBLPositionBO
+    ldap-names = eTSBLPositionBO
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:94 = {
+    name = eTSBLPositionBC
+    ldap-names = eTSBLPositionBC
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:95 = {
+    name = eTSBLPositionNameField
+    ldap-names = eTSBLPositionNameField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:200 = {
+    name = eTSBLPosParentPosNameField
+    ldap-names = eTSBLPosParentPosNameField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:201 = {
+    name = eTSBLPosDivisionNameField
+    ldap-names = eTSBLPosDivisionNameField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:96 = {
+    name = eTSBLPosCustomFieldConf
+    ldap-names = eTSBLPosCustomFieldConf
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:97 = {
+    name = eTSBLOrganizationBO
+    ldap-names = eTSBLOrganizationBO
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:98 = {
+    name = eTSBLOrganizationBC
+    ldap-names = eTSBLOrganizationBC
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:99 = {
+    name = eTSBLOrganizationNameField
+    ldap-names = eTSBLOrganizationNameField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:100 = {
+    name = eTSBLOrgCustomFieldConf
+    ldap-names = eTSBLOrgCustomFieldConf
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:101 = {
+    name = eTSBLResponsibilityBO
+    ldap-names = eTSBLResponsibilityBO
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:102 = {
+    name = eTSBLResponsibilityBC
+    ldap-names = eTSBLResponsibilityBC
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:103 = {
+    name = eTSBLResponsibilityNameField
+    ldap-names = eTSBLResponsibilityNameField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:104 = {
+    name = eTSBLRespCustomFieldConf
+    ldap-names = eTSBLRespCustomFieldConf
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:135 = {
+    name = eTSBLLovBO
+    ldap-names = eTSBLLovBO
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:136 = {
+    name = eTSBLLovBC
+    ldap-names = eTSBLLovBC
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:137 = {
+    name = eTSBLLovNameField
+    ldap-names = eTSBLLovNameField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:138 = {
+    name = eTSBLLovTypeField
+    ldap-names = eTSBLLovTypeField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:139 = {
+    name = eTSBLLovDisplayValueField
+    ldap-names = eTSBLLovDisplayValueField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:146 = {
+    name = eTSBLDivisionBO
+    ldap-names = eTSBLDivisionBO
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:147 = {
+    name = eTSBLDivisionBC
+    ldap-names = eTSBLDivisionBC
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:148 = {
+    name = eTSBLDivisionNameField
+    ldap-names = eTSBLDivisionNameField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:202 = {
+    name = eTSBLDivParentDivNameField
+    ldap-names = eTSBLDivParentDivNameField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:149 = {
+    name = eTSBLDivCustomFieldConf
+    ldap-names = eTSBLDivCustomFieldConf
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:141 = {
+    name = eTSBLAccountDeletionBehavior
+    ldap-names = eTSBLAccountDeletionBehavior
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:161 = {
+    name = eTSBLEnableCreateUserPosition
+    ldap-names = eTSBLEnableCreateUserPosition
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:174 = {
+    name = eTSBLViewBO
+    ldap-names = eTSBLViewBO
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:175 = {
+    name = eTSBLViewBC
+    ldap-names = eTSBLViewBC
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:176 = {
+    name = eTSBLViewNameField
+    ldap-names = eTSBLViewNameField
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:177 = {
+    name = eTSBLViewCustomFieldConf
+    ldap-names = eTSBLViewCustomFieldConf
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:204 = {
+    name = eTSBLDirSimulateUserSuspension
+    ldap-names = eTSBLDirSimulateUserSuspension
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:11 = {
+    name = eTSBLUserContainerName
+    ldap-names = eTSBLUserContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:12 = {
+    name = eTSBLUserID
+    ldap-names = eTSBLUserID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:56 = {
+    name = eTSBLUserCategory
+    ldap-names = eTSBLUserCategory
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:13 = {
+    name = eTSBLUserType
+    ldap-names = eTSBLUserType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:14 = {
+    name = eTSBLUserFirstName
+    ldap-names = eTSBLUserFirstName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:15 = {
+    name = eTSBLUserLastName
+    ldap-names = eTSBLUserLastName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:62 = {
+    name = eTSBLUserMiddleName
+    ldap-names = eTSBLUserMiddleName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:57 = {
+    name = eTSBLUserLastLoggedIn
+    ldap-names = eTSBLUserLastLoggedIn
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:16 = {
+    name = eTSBLUserPosition
+    ldap-names = eTSBLUserPosition
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:17 = {
+    name = eTSBLPrimaryUserPosition
+    ldap-names = eTSBLPrimaryUserPosition
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:18 = {
+    name = eTSBLUserResponsibility
+    ldap-names = eTSBLUserResponsibility
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:19 = {
+    name = eTSBLUserPrimaryResponsibility
+    ldap-names = eTSBLUserPrimaryResponsibility
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:20 = {
+    name = eTSBLUserOrganization
+    ldap-names = eTSBLUserOrganization
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:21 = {
+    name = eTSBLUserPrimaryOrganization
+    ldap-names = eTSBLUserPrimaryOrganization
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:22 = {
+    name = eTSBLUserUserList
+    ldap-names = eTSBLUserUserList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:23 = {
+    name = eTSBLUserPhone
+    ldap-names = eTSBLUserPhone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:24 = {
+    name = eTSBLUserFax
+    ldap-names = eTSBLUserFax
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:25 = {
+    name = eTSBLUserMobilePhone
+    ldap-names = eTSBLUserMobilePhone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:26 = {
+    name = eTSBLUserPager
+    ldap-names = eTSBLUserPager
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:27 = {
+    name = eTSBLUserEmail
+    ldap-names = eTSBLUserEmail
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:28 = {
+    name = eTSBLUserExtension
+    ldap-names = eTSBLUserExtension
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:64 = {
+    name = eTSBLUserCustomField1
+    ldap-names = eTSBLUserCustomField1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:65 = {
+    name = eTSBLUserCustomField2
+    ldap-names = eTSBLUserCustomField2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:66 = {
+    name = eTSBLUserCustomField3
+    ldap-names = eTSBLUserCustomField3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:67 = {
+    name = eTSBLUserCustomField4
+    ldap-names = eTSBLUserCustomField4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:68 = {
+    name = eTSBLUserCustomField5
+    ldap-names = eTSBLUserCustomField5
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:69 = {
+    name = eTSBLUserCustomField6
+    ldap-names = eTSBLUserCustomField6
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:70 = {
+    name = eTSBLUserCustomField7
+    ldap-names = eTSBLUserCustomField7
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:71 = {
+    name = eTSBLUserCustomField8
+    ldap-names = eTSBLUserCustomField8
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:72 = {
+    name = eTSBLUserCustomField9
+    ldap-names = eTSBLUserCustomField9
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:73 = {
+    name = eTSBLUserCustomField10
+    ldap-names = eTSBLUserCustomField10
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:74 = {
+    name = eTSBLUserCustomField11
+    ldap-names = eTSBLUserCustomField11
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:75 = {
+    name = eTSBLUserCustomField12
+    ldap-names = eTSBLUserCustomField12
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:76 = {
+    name = eTSBLUserCustomField13
+    ldap-names = eTSBLUserCustomField13
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:77 = {
+    name = eTSBLUserCustomField14
+    ldap-names = eTSBLUserCustomField14
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:78 = {
+    name = eTSBLUserCustomField15
+    ldap-names = eTSBLUserCustomField15
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:79 = {
+    name = eTSBLUserCustomField16
+    ldap-names = eTSBLUserCustomField16
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:80 = {
+    name = eTSBLUserCustomField17
+    ldap-names = eTSBLUserCustomField17
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:81 = {
+    name = eTSBLUserCustomField18
+    ldap-names = eTSBLUserCustomField18
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:82 = {
+    name = eTSBLUserCustomField19
+    ldap-names = eTSBLUserCustomField19
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:83 = {
+    name = eTSBLUserCustomField20
+    ldap-names = eTSBLUserCustomField20
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:180 = {
+    name = eTSBLUserCapabilityCustomField1
+    ldap-names = eTSBLUserCapabilityCustomField1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:181 = {
+    name = eTSBLUserCapabilityCustomField2
+    ldap-names = eTSBLUserCapabilityCustomField2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:182 = {
+    name = eTSBLUserCapabilityCustomField3
+    ldap-names = eTSBLUserCapabilityCustomField3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:183 = {
+    name = eTSBLUserCapabilityCustomField4
+    ldap-names = eTSBLUserCapabilityCustomField4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:184 = {
+    name = eTSBLUserCapabilityCustomField5
+    ldap-names = eTSBLUserCapabilityCustomField5
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:185 = {
+    name = eTSBLUserCapabilityCustomField6
+    ldap-names = eTSBLUserCapabilityCustomField6
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:186 = {
+    name = eTSBLUserCapabilityCustomField7
+    ldap-names = eTSBLUserCapabilityCustomField7
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:187 = {
+    name = eTSBLUserCapabilityCustomField8
+    ldap-names = eTSBLUserCapabilityCustomField8
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:188 = {
+    name = eTSBLUserCapabilityCustomField9
+    ldap-names = eTSBLUserCapabilityCustomField9
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:189 = {
+    name = eTSBLUserCapabilityCustomField10
+    ldap-names = eTSBLUserCapabilityCustomField10
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:190 = {
+    name = eTSBLUserCapabilityCustomField11
+    ldap-names = eTSBLUserCapabilityCustomField11
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:191 = {
+    name = eTSBLUserCapabilityCustomField12
+    ldap-names = eTSBLUserCapabilityCustomField12
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:192 = {
+    name = eTSBLUserCapabilityCustomField13
+    ldap-names = eTSBLUserCapabilityCustomField13
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:193 = {
+    name = eTSBLUserCapabilityCustomField14
+    ldap-names = eTSBLUserCapabilityCustomField14
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:194 = {
+    name = eTSBLUserCapabilityCustomField15
+    ldap-names = eTSBLUserCapabilityCustomField15
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:195 = {
+    name = eTSBLUserCapabilityCustomField16
+    ldap-names = eTSBLUserCapabilityCustomField16
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:196 = {
+    name = eTSBLUserCapabilityCustomField17
+    ldap-names = eTSBLUserCapabilityCustomField17
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:197 = {
+    name = eTSBLUserCapabilityCustomField18
+    ldap-names = eTSBLUserCapabilityCustomField18
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:198 = {
+    name = eTSBLUserCapabilityCustomField19
+    ldap-names = eTSBLUserCapabilityCustomField19
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:199 = {
+    name = eTSBLUserCapabilityCustomField20
+    ldap-names = eTSBLUserCapabilityCustomField20
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:145 = {
+    name = eTSBLUserCreatePosition
+    ldap-names = eTSBLUserCreatePosition
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:29 = {
+    name = eTSBLPositionContainerName
+    ldap-names = eTSBLPositionContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:30 = {
+    name = eTSBLPositionName
+    ldap-names = eTSBLPositionName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:31 = {
+    name = eTSBLPositionType
+    ldap-names = eTSBLPositionType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:32 = {
+    name = eTSBLParentPosition
+    ldap-names = eTSBLParentPosition
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:205 = {
+    name = eTSBLPosDivision
+    ldap-names = eTSBLPosDivision
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:35 = {
+    name = eTSBLPosPrimaryFirstName
+    ldap-names = eTSBLPosPrimaryFirstName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:36 = {
+    name = eTSBLPosPrimaryLastName
+    ldap-names = eTSBLPosPrimaryLastName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:105 = {
+    name = eTSBLPosCustomField1
+    ldap-names = eTSBLPosCustomField1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:106 = {
+    name = eTSBLPosCustomField2
+    ldap-names = eTSBLPosCustomField2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:107 = {
+    name = eTSBLPosCustomField3
+    ldap-names = eTSBLPosCustomField3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:108 = {
+    name = eTSBLPosCustomField4
+    ldap-names = eTSBLPosCustomField4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:109 = {
+    name = eTSBLPosCustomField5
+    ldap-names = eTSBLPosCustomField5
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:110 = {
+    name = eTSBLPosCustomField6
+    ldap-names = eTSBLPosCustomField6
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:111 = {
+    name = eTSBLPosCustomField7
+    ldap-names = eTSBLPosCustomField7
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:112 = {
+    name = eTSBLPosCustomField8
+    ldap-names = eTSBLPosCustomField8
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:113 = {
+    name = eTSBLPosCustomField9
+    ldap-names = eTSBLPosCustomField9
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:114 = {
+    name = eTSBLPosCustomField10
+    ldap-names = eTSBLPosCustomField10
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:37 = {
+    name = eTSBLResponsibilityContainerName
+    ldap-names = eTSBLResponsibilityContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:38 = {
+    name = eTSBLResponsibilityName
+    ldap-names = eTSBLResponsibilityName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:39 = {
+    name = eTSBLRespDescription
+    ldap-names = eTSBLRespDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:40 = {
+    name = eTSBLRespOrganization
+    ldap-names = eTSBLRespOrganization
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:179 = {
+    name = eTSBLRespView
+    ldap-names = eTSBLRespView
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:178 = {
+    name = eTSBLRespPrimaryOrganization
+    ldap-names = eTSBLRespPrimaryOrganization
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:41 = {
+    name = eTSBLRespWebAccess
+    ldap-names = eTSBLRespWebAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:115 = {
+    name = eTSBLRespCustomField1
+    ldap-names = eTSBLRespCustomField1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:116 = {
+    name = eTSBLRespCustomField2
+    ldap-names = eTSBLRespCustomField2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:117 = {
+    name = eTSBLRespCustomField3
+    ldap-names = eTSBLRespCustomField3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:118 = {
+    name = eTSBLRespCustomField4
+    ldap-names = eTSBLRespCustomField4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:119 = {
+    name = eTSBLRespCustomField5
+    ldap-names = eTSBLRespCustomField5
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:120 = {
+    name = eTSBLRespCustomField6
+    ldap-names = eTSBLRespCustomField6
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:121 = {
+    name = eTSBLRespCustomField7
+    ldap-names = eTSBLRespCustomField7
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:122 = {
+    name = eTSBLRespCustomField8
+    ldap-names = eTSBLRespCustomField8
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:123 = {
+    name = eTSBLRespCustomField9
+    ldap-names = eTSBLRespCustomField9
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:124 = {
+    name = eTSBLRespCustomField10
+    ldap-names = eTSBLRespCustomField10
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:42 = {
+    name = eTSBLOrganizationContainerName
+    ldap-names = eTSBLOrganizationContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:43 = {
+    name = eTSBLOrganizationName
+    ldap-names = eTSBLOrganizationName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:44 = {
+    name = eTSBLOrganizationType
+    ldap-names = eTSBLOrganizationType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:45 = {
+    name = eTSBLOrgParentOrganization
+    ldap-names = eTSBLOrgParentOrganization
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:46 = {
+    name = eTSBLOrgLocation
+    ldap-names = eTSBLOrgLocation
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:47 = {
+    name = eTSBLOrgPartnerFlag
+    ldap-names = eTSBLOrgPartnerFlag
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:125 = {
+    name = eTSBLOrgCustomField1
+    ldap-names = eTSBLOrgCustomField1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:126 = {
+    name = eTSBLOrgCustomField2
+    ldap-names = eTSBLOrgCustomField2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:127 = {
+    name = eTSBLOrgCustomField3
+    ldap-names = eTSBLOrgCustomField3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:128 = {
+    name = eTSBLOrgCustomField4
+    ldap-names = eTSBLOrgCustomField4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:129 = {
+    name = eTSBLOrgCustomField5
+    ldap-names = eTSBLOrgCustomField5
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:130 = {
+    name = eTSBLOrgCustomField6
+    ldap-names = eTSBLOrgCustomField6
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:131 = {
+    name = eTSBLOrgCustomField7
+    ldap-names = eTSBLOrgCustomField7
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:132 = {
+    name = eTSBLOrgCustomField8
+    ldap-names = eTSBLOrgCustomField8
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:133 = {
+    name = eTSBLOrgCustomField9
+    ldap-names = eTSBLOrgCustomField9
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:134 = {
+    name = eTSBLOrgCustomField10
+    ldap-names = eTSBLOrgCustomField10
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:50 = {
+    name = eTSBLPolicyContainerName
+    ldap-names = eTSBLPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:51 = {
+    name = eTSBLPolicyName
+    ldap-names = eTSBLPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:58 = {
+    name = eTSBLLOVContainerName
+    ldap-names = eTSBLLOVContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:59 = {
+    name = eTSBLLOVValueName
+    ldap-names = eTSBLLOVValueName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:60 = {
+    name = eTSBLLOVValueType
+    ldap-names = eTSBLLOVValueType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:61 = {
+    name = eTSBLLOVDisplayValue
+    ldap-names = eTSBLLOVDisplayValue
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:142 = {
+    name = eTSBLDivisionContainerName
+    ldap-names = eTSBLDivisionContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:143 = {
+    name = eTSBLDivisionName
+    ldap-names = eTSBLDivisionName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:144 = {
+    name = eTSBLDivParentDivision
+    ldap-names = eTSBLDivParentDivision
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:151 = {
+    name = eTSBLDivCustomField1
+    ldap-names = eTSBLDivCustomField1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:152 = {
+    name = eTSBLDivCustomField2
+    ldap-names = eTSBLDivCustomField2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:153 = {
+    name = eTSBLDivCustomField3
+    ldap-names = eTSBLDivCustomField3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:154 = {
+    name = eTSBLDivCustomField4
+    ldap-names = eTSBLDivCustomField4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:155 = {
+    name = eTSBLDivCustomField5
+    ldap-names = eTSBLDivCustomField5
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:156 = {
+    name = eTSBLDivCustomField6
+    ldap-names = eTSBLDivCustomField6
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:157 = {
+    name = eTSBLDivCustomField7
+    ldap-names = eTSBLDivCustomField7
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:158 = {
+    name = eTSBLDivCustomField8
+    ldap-names = eTSBLDivCustomField8
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:159 = {
+    name = eTSBLDivCustomField9
+    ldap-names = eTSBLDivCustomField9
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:160 = {
+    name = eTSBLDivCustomField10
+    ldap-names = eTSBLDivCustomField10
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:162 = {
+    name = eTSBLViewContainerName
+    ldap-names = eTSBLViewContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:163 = {
+    name = eTSBLViewName
+    ldap-names = eTSBLViewName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:164 = {
+    name = eTSBLViewCustomField1
+    ldap-names = eTSBLViewCustomField1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:165 = {
+    name = eTSBLViewCustomField2
+    ldap-names = eTSBLViewCustomField2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:166 = {
+    name = eTSBLViewCustomField3
+    ldap-names = eTSBLViewCustomField3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:167 = {
+    name = eTSBLViewCustomField4
+    ldap-names = eTSBLViewCustomField4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:168 = {
+    name = eTSBLViewCustomField5
+    ldap-names = eTSBLViewCustomField5
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:169 = {
+    name = eTSBLViewCustomField6
+    ldap-names = eTSBLViewCustomField6
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:170 = {
+    name = eTSBLViewCustomField7
+    ldap-names = eTSBLViewCustomField7
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:171 = {
+    name = eTSBLViewCustomField8
+    ldap-names = eTSBLViewCustomField8
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:172 = {
+    name = eTSBLViewCustomField9
+    ldap-names = eTSBLViewCustomField9
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-SBL-attr:173 = {
+    name = eTSBLViewCustomField10
+    ldap-names = eTSBLViewCustomField10
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-SBL-oc:1 = {
+    name = eTSBLDirectory
+    subclass-of Top
+    must-contain
+        eTSBLDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTUseAdminCreds,
+        eTAgentNamespaceClass,
+        eTSBLDirDescription,
+        eTSBLHostName,
+        eTSBLServerName,
+        eTSBLServerName75,
+        eTSBLTransportProtocol,
+        eTSBLEncryption,
+        eTSBLCompression,
+        eTSBLPort,
+        eTSBLApplication,
+        eTSBLLanguage,
+        eTSBLDirUser,
+        eTSBLDirUserPwd,
+        eTSBLDirUserViewMode,
+        eTSBLUserBO,
+        eTSBLUserBC,
+        eTSBLUserIDField,
+        eTSBLUserFirstNameField,
+        eTSBLUserLastNameField,
+        eTSBLUserPasswordField,
+        eTSBLUserConfirmPasswordField,
+        eTSBLUserMVGField,
+        eTSBLUserCustomFieldConf,
+        eTSBLPositionBO,
+        eTSBLPositionBC,
+        eTSBLPositionNameField,
+        eTSBLPosParentPosNameField,
+        eTSBLPosDivisionNameField,
+        eTSBLPosCustomFieldConf,
+        eTSBLOrganizationBO,
+        eTSBLOrganizationBC,
+        eTSBLOrganizationNameField,
+        eTSBLOrgCustomFieldConf,
+        eTSBLResponsibilityBO,
+        eTSBLResponsibilityBC,
+        eTSBLResponsibilityNameField,
+        eTSBLRespCustomFieldConf,
+        eTSBLLovBO,
+        eTSBLLovBC,
+        eTSBLLovNameField,
+        eTSBLLovTypeField,
+        eTSBLLovDisplayValueField,
+        eTSBLDivisionBO,
+        eTSBLDivisionBC,
+        eTSBLDivisionNameField,
+        eTSBLDivParentDivNameField,
+        eTSBLDivCustomFieldConf,
+        eTSBLAccountDeletionBehavior,
+        eTSBLEnableCreateUserPosition,
+        eTSBLViewBO,
+        eTSBLViewBC,
+        eTSBLViewNameField,
+        eTSBLViewCustomFieldConf,
+        eTSBLDirSimulateUserSuspension
+};
+
+schema set object-class etrust-admin-SBL-oc:2 = {
+    name = eTSBLNamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL,
+        eTValidateCredentials
+};
+
+schema set object-class etrust-admin-SBL-oc:3 = {
+    name = eTSBLUserContainer
+    subclass-of Top
+    must-contain
+        eTSBLUserContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SBL-oc:4 = {
+    name = eTSBLUser
+    subclass-of Top
+    must-contain
+        eTSBLUserID,
+        objectclass
+    may-contain
+        eTSuspensionState,
+        eTPreSuspensionState,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTSBLUserCategory,
+        eTSBLUserType,
+        eTSBLUserFirstName,
+        eTSBLUserLastName,
+        eTSBLUserMiddleName,
+        eTSBLUserLastLoggedIn,
+        eTSBLUserPosition,
+        eTSBLPrimaryUserPosition,
+        eTSBLUserResponsibility,
+        eTSBLUserPrimaryResponsibility,
+        eTSBLUserOrganization,
+        eTSBLUserPrimaryOrganization,
+        eTSBLUserUserList,
+        eTSBLUserPhone,
+        eTSBLUserFax,
+        eTSBLUserMobilePhone,
+        eTSBLUserPager,
+        eTSBLUserEmail,
+        eTSBLUserExtension,
+        eTSBLUserCustomField1,
+        eTSBLUserCustomField2,
+        eTSBLUserCustomField3,
+        eTSBLUserCustomField4,
+        eTSBLUserCustomField5,
+        eTSBLUserCustomField6,
+        eTSBLUserCustomField7,
+        eTSBLUserCustomField8,
+        eTSBLUserCustomField9,
+        eTSBLUserCustomField10,
+        eTSBLUserCustomField11,
+        eTSBLUserCustomField12,
+        eTSBLUserCustomField13,
+        eTSBLUserCustomField14,
+        eTSBLUserCustomField15,
+        eTSBLUserCustomField16,
+        eTSBLUserCustomField17,
+        eTSBLUserCustomField18,
+        eTSBLUserCustomField19,
+        eTSBLUserCustomField20,
+        eTSBLUserCapabilityCustomField1,
+        eTSBLUserCapabilityCustomField2,
+        eTSBLUserCapabilityCustomField3,
+        eTSBLUserCapabilityCustomField4,
+        eTSBLUserCapabilityCustomField5,
+        eTSBLUserCapabilityCustomField6,
+        eTSBLUserCapabilityCustomField7,
+        eTSBLUserCapabilityCustomField8,
+        eTSBLUserCapabilityCustomField9,
+        eTSBLUserCapabilityCustomField10,
+        eTSBLUserCapabilityCustomField11,
+        eTSBLUserCapabilityCustomField12,
+        eTSBLUserCapabilityCustomField13,
+        eTSBLUserCapabilityCustomField14,
+        eTSBLUserCapabilityCustomField15,
+        eTSBLUserCapabilityCustomField16,
+        eTSBLUserCapabilityCustomField17,
+        eTSBLUserCapabilityCustomField18,
+        eTSBLUserCapabilityCustomField19,
+        eTSBLUserCapabilityCustomField20,
+        eTSBLUserCreatePosition
+};
+
+schema set object-class etrust-admin-SBL-oc:5 = {
+    name = eTSBLPositionContainer
+    subclass-of Top
+    must-contain
+        eTSBLPositionContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SBL-oc:6 = {
+    name = eTSBLPosition
+    subclass-of Top
+    must-contain
+        eTSBLPositionName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSBLPositionType,
+        eTSBLParentPosition,
+        eTSBLPosDivision,
+        eTSBLPosPrimaryFirstName,
+        eTSBLPosPrimaryLastName,
+        eTSBLPosCustomField1,
+        eTSBLPosCustomField2,
+        eTSBLPosCustomField3,
+        eTSBLPosCustomField4,
+        eTSBLPosCustomField5,
+        eTSBLPosCustomField6,
+        eTSBLPosCustomField7,
+        eTSBLPosCustomField8,
+        eTSBLPosCustomField9,
+        eTSBLPosCustomField10
+};
+
+schema set object-class etrust-admin-SBL-oc:7 = {
+    name = eTSBLResponsibilityContainer
+    subclass-of Top
+    must-contain
+        eTSBLResponsibilityContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SBL-oc:8 = {
+    name = eTSBLResponsibility
+    subclass-of Top
+    must-contain
+        eTSBLResponsibilityName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSBLRespDescription,
+        eTSBLRespOrganization,
+        eTSBLRespView,
+        eTSBLRespPrimaryOrganization,
+        eTSBLRespWebAccess,
+        eTSBLRespCustomField1,
+        eTSBLRespCustomField2,
+        eTSBLRespCustomField3,
+        eTSBLRespCustomField4,
+        eTSBLRespCustomField5,
+        eTSBLRespCustomField6,
+        eTSBLRespCustomField7,
+        eTSBLRespCustomField8,
+        eTSBLRespCustomField9,
+        eTSBLRespCustomField10
+};
+
+schema set object-class etrust-admin-SBL-oc:9 = {
+    name = eTSBLOrganizationContainer
+    subclass-of Top
+    must-contain
+        eTSBLOrganizationContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SBL-oc:10 = {
+    name = eTSBLOrganization
+    subclass-of Top
+    must-contain
+        eTSBLOrganizationName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSBLOrganizationType,
+        eTSBLOrgParentOrganization,
+        eTSBLOrgLocation,
+        eTSBLOrgPartnerFlag,
+        eTSBLOrgCustomField1,
+        eTSBLOrgCustomField2,
+        eTSBLOrgCustomField3,
+        eTSBLOrgCustomField4,
+        eTSBLOrgCustomField5,
+        eTSBLOrgCustomField6,
+        eTSBLOrgCustomField7,
+        eTSBLOrgCustomField8,
+        eTSBLOrgCustomField9,
+        eTSBLOrgCustomField10
+};
+
+schema set object-class etrust-admin-SBL-oc:13 = {
+    name = eTSBLPolicyContainer
+    subclass-of Top
+    must-contain
+        eTSBLPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SBL-oc:14 = {
+    name = eTSBLPolicy
+    subclass-of Top
+    must-contain
+        eTSBLPolicyName,
+        objectclass
+    may-contain
+        eTSBLUserID,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTSBLUserCategory,
+        eTSBLUserType,
+        eTSBLUserFirstName,
+        eTSBLUserLastName,
+        eTSBLUserMiddleName,
+        eTSBLUserLastLoggedIn,
+        eTSBLUserPosition,
+        eTSBLPrimaryUserPosition,
+        eTSBLUserResponsibility,
+        eTSBLUserPrimaryResponsibility,
+        eTSBLUserOrganization,
+        eTSBLUserPrimaryOrganization,
+        eTSBLUserUserList,
+        eTSBLUserPhone,
+        eTSBLUserFax,
+        eTSBLUserMobilePhone,
+        eTSBLUserPager,
+        eTSBLUserEmail,
+        eTSBLUserExtension,
+        eTSBLUserCustomField1,
+        eTSBLUserCustomField2,
+        eTSBLUserCustomField3,
+        eTSBLUserCustomField4,
+        eTSBLUserCustomField5,
+        eTSBLUserCustomField6,
+        eTSBLUserCustomField7,
+        eTSBLUserCustomField8,
+        eTSBLUserCustomField9,
+        eTSBLUserCustomField10,
+        eTSBLUserCustomField11,
+        eTSBLUserCustomField12,
+        eTSBLUserCustomField13,
+        eTSBLUserCustomField14,
+        eTSBLUserCustomField15,
+        eTSBLUserCustomField16,
+        eTSBLUserCustomField17,
+        eTSBLUserCustomField18,
+        eTSBLUserCustomField19,
+        eTSBLUserCustomField20,
+        eTSBLUserCapabilityCustomField1,
+        eTSBLUserCapabilityCustomField2,
+        eTSBLUserCapabilityCustomField3,
+        eTSBLUserCapabilityCustomField4,
+        eTSBLUserCapabilityCustomField5,
+        eTSBLUserCapabilityCustomField6,
+        eTSBLUserCapabilityCustomField7,
+        eTSBLUserCapabilityCustomField8,
+        eTSBLUserCapabilityCustomField9,
+        eTSBLUserCapabilityCustomField10,
+        eTSBLUserCapabilityCustomField11,
+        eTSBLUserCapabilityCustomField12,
+        eTSBLUserCapabilityCustomField13,
+        eTSBLUserCapabilityCustomField14,
+        eTSBLUserCapabilityCustomField15,
+        eTSBLUserCapabilityCustomField16,
+        eTSBLUserCapabilityCustomField17,
+        eTSBLUserCapabilityCustomField18,
+        eTSBLUserCapabilityCustomField19,
+        eTSBLUserCapabilityCustomField20,
+        eTSBLUserCreatePosition
+};
+
+schema set object-class etrust-admin-SBL-oc:15 = {
+    name = eTSBLLOVContainer
+    subclass-of Top
+    must-contain
+        eTSBLLOVContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SBL-oc:16 = {
+    name = eTSBLLOVValue
+    subclass-of Top
+    must-contain
+        eTSBLLOVValueName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSBLLOVValueType,
+        eTSBLLOVDisplayValue
+};
+
+schema set object-class etrust-admin-SBL-oc:17 = {
+    name = eTSBLDivisionContainer
+    subclass-of Top
+    must-contain
+        eTSBLDivisionContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SBL-oc:18 = {
+    name = eTSBLDivision
+    subclass-of Top
+    must-contain
+        eTSBLDivisionName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSBLDivParentDivision,
+        eTSBLDivCustomField1,
+        eTSBLDivCustomField2,
+        eTSBLDivCustomField3,
+        eTSBLDivCustomField4,
+        eTSBLDivCustomField5,
+        eTSBLDivCustomField6,
+        eTSBLDivCustomField7,
+        eTSBLDivCustomField8,
+        eTSBLDivCustomField9,
+        eTSBLDivCustomField10
+};
+
+schema set object-class etrust-admin-SBL-oc:19 = {
+    name = eTSBLViewContainer
+    subclass-of Top
+    must-contain
+        eTSBLViewContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-SBL-oc:20 = {
+    name = eTSBLView
+    subclass-of Top
+    must-contain
+        eTSBLViewName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSBLViewCustomField1,
+        eTSBLViewCustomField2,
+        eTSBLViewCustomField3,
+        eTSBLViewCustomField4,
+        eTSBLViewCustomField5,
+        eTSBLViewCustomField6,
+        eTSBLViewCustomField7,
+        eTSBLViewCustomField8,
+        eTSBLViewCustomField9,
+        eTSBLViewCustomField10
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-SBL-nb:1 = {
+    name = eTSBLDirectory-eTNamespace
+    eTSBLDirectory allowable-parent eTNamespace
+    named-by eTSBLDirectoryName
+};
+
+schema set name-binding etrust-admin-SBL-nb:2 = {
+    name = eTSBLPolicyContainer-eTNamespace
+    eTSBLPolicyContainer allowable-parent eTNamespace
+    named-by eTSBLPolicyContainerName
+};
+
+schema set name-binding etrust-admin-SBL-nb:3 = {
+    name = eTSBLNamespace-eTSBLDirectory
+    eTSBLNamespace allowable-parent eTSBLDirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-SBL-nb:4 = {
+    name = eTSBLUserContainer-eTSBLDirectory
+    eTSBLUserContainer allowable-parent eTSBLDirectory
+    named-by eTSBLUserContainerName
+};
+
+schema set name-binding etrust-admin-SBL-nb:6 = {
+    name = eTSBLPositionContainer-eTSBLDirectory
+    eTSBLPositionContainer allowable-parent eTSBLDirectory
+    named-by eTSBLPositionContainerName
+};
+
+schema set name-binding etrust-admin-SBL-nb:8 = {
+    name = eTSBLResponsibilityContainer-eTSBLDirectory
+    eTSBLResponsibilityContainer allowable-parent eTSBLDirectory
+    named-by eTSBLResponsibilityContainerName
+};
+
+schema set name-binding etrust-admin-SBL-nb:10 = {
+    name = eTSBLOrganizationContainer-eTSBLDirectory
+    eTSBLOrganizationContainer allowable-parent eTSBLDirectory
+    named-by eTSBLOrganizationContainerName
+};
+
+schema set name-binding etrust-admin-SBL-nb:15 = {
+    name = eTSBLLOVContainer-eTSBLDirectory
+    eTSBLLOVContainer allowable-parent eTSBLDirectory
+    named-by eTSBLLOVContainerName
+};
+
+schema set name-binding etrust-admin-SBL-nb:17 = {
+    name = eTSBLDivisionContainer-eTSBLDirectory
+    eTSBLDivisionContainer allowable-parent eTSBLDirectory
+    named-by eTSBLDivisionContainerName
+};
+
+schema set name-binding etrust-admin-SBL-nb:19 = {
+    name = eTSBLViewContainer-eTSBLDirectory
+    eTSBLViewContainer allowable-parent eTSBLDirectory
+    named-by eTSBLViewContainerName
+};
+
+schema set name-binding etrust-admin-SBL-nb:5 = {
+    name = eTSBLUser-eTSBLUserContainer
+    eTSBLUser allowable-parent eTSBLUserContainer
+    named-by eTSBLUserID
+};
+
+schema set name-binding etrust-admin-SBL-nb:7 = {
+    name = eTSBLPosition-eTSBLPositionContainer
+    eTSBLPosition allowable-parent eTSBLPositionContainer
+    named-by eTSBLPositionName
+};
+
+schema set name-binding etrust-admin-SBL-nb:9 = {
+    name = eTSBLResponsibility-eTSBLResponsibilityContainer
+    eTSBLResponsibility allowable-parent eTSBLResponsibilityContainer
+    named-by eTSBLResponsibilityName
+};
+
+schema set name-binding etrust-admin-SBL-nb:11 = {
+    name = eTSBLOrganization-eTSBLOrganizationContainer
+    eTSBLOrganization allowable-parent eTSBLOrganizationContainer
+    named-by eTSBLOrganizationName
+};
+
+schema set name-binding etrust-admin-SBL-nb:14 = {
+    name = eTSBLPolicy-eTSBLPolicyContainer
+    eTSBLPolicy allowable-parent eTSBLPolicyContainer
+    named-by eTSBLPolicyName
+};
+
+schema set name-binding etrust-admin-SBL-nb:16 = {
+    name = eTSBLLOVValue-eTSBLLOVContainer
+    eTSBLLOVValue allowable-parent eTSBLLOVContainer
+    named-by eTSBLLOVValueName
+};
+
+schema set name-binding etrust-admin-SBL-nb:18 = {
+    name = eTSBLDivision-eTSBLDivisionContainer
+    eTSBLDivision allowable-parent eTSBLDivisionContainer
+    named-by eTSBLDivisionName
+};
+
+schema set name-binding etrust-admin-SBL-nb:20 = {
+    name = eTSBLView-eTSBLViewContainer
+    eTSBLView allowable-parent eTSBLViewContainer
+    named-by eTSBLViewName
+};
+

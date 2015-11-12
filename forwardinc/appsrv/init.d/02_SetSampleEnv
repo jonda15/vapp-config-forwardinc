@@ -7,12 +7,12 @@ echo "Configuring Data Source values"
 for val in os tp archive audit rs wf
 do
 echo "Replacing $val";
-	valHost=`/opt/verify/parser.sh db.$val.host $ENV_PROP_FILE`
-	valPort=`/opt/verify/parser.sh db.$val.port $ENV_PROP_FILE`
-	valName=`/opt/verify/parser.sh db.$val.name $ENV_PROP_FILE`
-	valUser=`/opt/verify/parser.sh db.$val.user $ENV_PROP_FILE`
-	valPassword=`/opt/verify/parser.sh db.$val.password.encoded $ENV_PROP_FILE`
-	isProv=`/opt/verify/parser.sh ime.with.prov $ENV_PROP_FILE`
+	valHost=$(grep -Po "(?<=^db.$val.host=).*" $ENV_PROP_FILE)
+	valPort=$(grep -Po "(?<=^db.$val.port=).*" $ENV_PROP_FILE)
+	valName=$(grep -Po "(?<=^db.$val.name=).*" $ENV_PROP_FILE)
+	valUser=$(grep -Po "(?<=^db.$val.user=).*" $ENV_PROP_FILE)
+	valPassword=$(grep -Po "(?<=^db.$val.password.encoded=).*" $ENV_PROP_FILE)
+	isProv=$(grep -Po "(?<=^ime.with.prov=).*" $ENV_PROP_FILE)
 	sed -i "s/@db.$val.host@/$valHost/g" "${JBOSS_HOME}/standalone/configuration/caim-standalone-config.xml"
 	sed -i "s/@db.$val.port@/$valPort/g" "${JBOSS_HOME}/standalone/configuration/caim-standalone-config.xml"
 	sed -i "s/@db.$val.name@/$valName/g" "${JBOSS_HOME}/standalone/configuration/caim-standalone-config.xml"
@@ -23,36 +23,37 @@ done
 echo "Configuration of Data source is done";
 
 echo "Configuring the SMTP properties";
-	smtpHost=`/opt/verify/parser.sh mail.smtp.host $ENV_PROP_FILE`
-	smtpPort=`/opt/verify/parser.sh mail.smtp.port $ENV_PROP_FILE`
+	smtpHost=$(grep -Po "(?<=^mail.smtp.host=).*" $ENV_PROP_FILE)
+  	smtpPort=$(grep -Po "(?<=^mail.smtp.port=).*" $ENV_PROP_FILE)
 	sed -i "s/@mail.smtp.host@/$smtpHost/g" "${JBOSS_HOME}/standalone/configuration/caim-standalone-config.xml"
 	sed -i "s/@mail.smtp.port@/$smtpPort/g" "${JBOSS_HOME}/standalone/configuration/caim-standalone-config.xml"
 echo "Configuration of SMTP properties is done";
 sed -i "s/workpoint.stored.procedure = true/workpoint.stored.procedure = false/g"  ${JBOSS_HOME}/standalone/deployments/iam_im.ear/config/workpoint-server.properties
 
-isEnv=`/opt/verify/parser.sh sample.env.creation $ENV_PROP_FILE`
+isEnv=$(grep -Po "(?<=^sample.env.creation=).*" $ENV_PROP_FILE)
+isDumpFile=$(grep -Po "(?<=^sample.env.useDump=).*" $ENV_PROP_FILE)
 
-if [ "$isEnv" == "YES" ]; then
+if [ "$isEnv" == "YES" ]&& [ "$isDumpFile" == "NO" ]; then
 
-        provDirHost=`/opt/verify/parser.sh ca.prov.dir.hostname $ENV_PROP_FILE`
-
-        provDirPort=`/opt/verify/parser.sh ca.prov.dir.port $ENV_PROP_FILE`
-
-        provDirUser=`/opt/verify/parser.sh ca.prov.dir.username $ENV_PROP_FILE`
+    provDirHost=$(grep -Po "(?<=^ca.prov.dir.hostname=).*" $ENV_PROP_FILE)
+        
+	provDirPort=$(grep -Po "(?<=^ca.prov.dir.port=).*" $ENV_PROP_FILE)
+       
+	provDirUser=$(grep -Po "(?<=^ca.prov.dir.username=).*" $ENV_PROP_FILE)
+       
+	ldapDirHost=$(grep -Po "(?<=^ca.dir.hostname=).*" $ENV_PROP_FILE)	
 		
-		ldapDirHost=`/opt/verify/parser.sh ca.dir.hostname $ENV_PROP_FILE`
-
-        ldapDirPort=`/opt/verify/parser.sh ca.dir.port $ENV_PROP_FILE`
-
-        fwHost=`/opt/verify/parser.sh iam.framework.basehost $ENV_PROP_FILE`
-
-        IM_PS_PASSWORD=`/opt/verify/parser.sh IM_PS_PASSWORD $PROV_PROP_FILE`
-		
-		sample_env=`/opt/verify/parser.sh sample.env $ENV_PROP_FILE`
+	ldapDirPort=$(grep -Po "(?<=^ca.dir.port=).*" $ENV_PROP_FILE)
+        
+	fwHost=$(grep -Po "(?<=^iam.framework.basehost=).*" $ENV_PROP_FILE)
+        
+	IM_PS_PASSWORD=$(grep -Po "(?<=^IM_PS_PASSWORD=).*" $PROV_PROP_FILE)
+      
+	sample_env=$(grep -Po "(?<=^sample.env=).*" $ENV_PROP_FILE)
 		echo "sample_env is  $sample_env"
 		
         #im_ps_passwd="$(openssl base64 -d <<< $IM_PS_PASSWORD)"
-		im_ps_passwd="$(java -cp /opt/utils/base64util.jar:/opt/utils/cacommons.jar DecodeBase64AsUTF8 $IM_PS_PASSWORD)"
+	im_ps_passwd="$(java -cp /opt/utils/base64util.jar:/opt/utils/cacommons.jar DecodeBase64AsUTF8 $IM_PS_PASSWORD)"
 	echo "Default IME YES";
 	cp -f /solution/$CONFIG/ime/$sample_env/* ${JBOSS_HOME}/standalone/deployments/iam_im.ear/user_console.war/META-INF/
 	if [ "$isProv" == "true" ]; then

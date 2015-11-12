@@ -1,0 +1,32 @@
+PROP_FILE=/solution/$CONFIG/data/ig.properties
+
+SDB_DB_NAME=$(grep -Po "(?<=^db.sdb.name=).*" $PROP_FILE)
+T_DB_NAME=$(grep -Po "(?<=^db.ticketdb.name=).*" $PROP_FILE)
+G_DB_NAME=$(grep -Po "(?<=^db.reportdb.name=).*" $PROP_FILE)
+WPDS_DB_NAME=$(grep -Po "(?<=^db.wpds.name=).*" $PROP_FILE)
+
+if [ $IG_DB_VENDOR == oracle ]
+   then
+     
+   . $JBOSS_HOME/bin/dbutil.sh -ven oracle -d $ORC_SRV -h $IG_DB_HOST -cs -u $SDB_DB_NAME -p $IG_DBS_PASSWORDS -su $IG_DB_USER -sp $IG_DB_PASSWORD
+   . $JBOSS_HOME/bin/dbutil.sh -ven oracle -d $ORC_SRV -h $IG_DB_HOST -dc -u $SDB_DB_NAME -p $IG_DBS_PASSWORDS -su $IG_DB_USER -sp $IG_DB_PASSWORD
+   
+   . $JBOSS_HOME/bin/dbutil.sh -ven oracle -d $ORC_SRV -h $IG_DB_HOST -cs -u $T_DB_NAME -p $IG_DBS_PASSWORDS -su $IG_DB_USER -sp $IG_DB_PASSWORD
+   . $JBOSS_HOME/bin/dbutil.sh -ven oracle -d $ORC_SRV -h $IG_DB_HOST -dc_tms -u $T_DB_NAME -p $IG_DBS_PASSWORDS -su $IG_DB_USER -sp $IG_DB_PASSWORD
+   
+   . $JBOSS_HOME/bin/dbutil.sh -ven oracle -d $ORC_SRV -h $IG_DB_HOST -cs -u $G_DB_NAME -p $IG_DBS_PASSWORDS -su $IG_DB_USER -sp $IG_DB_PASSWORD
+   . $JBOSS_HOME/bin/dbutil.sh -ven oracle -d $ORC_SRV -h $IG_DB_HOST -dc_i2 -u $G_DB_NAME -p $IG_DBS_PASSWORDS -su $IG_DB_USER -sp $IG_DB_PASSWORD
+   
+   . $JBOSS_HOME/bin/dbutil.sh -ven oracle -d $ORC_SRV -h $IG_DB_HOST -cs -u $WPDS_DB_NAME -p $IG_DBS_PASSWORDS -su $IG_DB_USER -sp $IG_DB_PASSWORD > test.log
+   #java -cp "$JBOSS_HOME/bin/dbutil-jar-with-dependencies.jar" com.eurekify.dbutil.DockerDBUtil oracle $IG_DB_HOST $IG_DB_PORT $ORC_SRV $SDB_DB_NAME $SDB_PASSWORD $JBOSS_CONFIGURATION_DIR/connector.xml $IM_SERVER $IM_PORT $IM_LOGIN $IM_PASSWORD $IM_SECURE 
+   
+   else
+ 
+   . $JBOSS_HOME/bin/dbutil.sh -dc -d $SDB_DB_NAME -h $IG_DB_HOST -u $IG_DB_USER -p $IG_DB_PASSWORD
+   . $JBOSS_HOME/bin/dbutil.sh -dc_tms -d $T_DB_NAME -h $IG_DB_HOST -u $IG_DB_USER -p $IG_DB_PASSWORD
+   . $JBOSS_HOME/bin/dbutil.sh -dc_i2 -d $G_DB_NAME -h $IG_DB_HOST -u $IG_DB_USER -p $IG_DB_PASSWORD
+   . $JBOSS_HOME/bin/dbutil.sh -dc_wp -d $WPDS_DB_NAME -h $IG_DB_HOST -u $IG_DB_USER -p $IG_DB_PASSWORD > test.log
+   #java -cp "$JBOSS_HOME/bin/dbutil-jar-with-dependencies.jar" com.eurekify.dbutil.DockerDBUtil mssql $IG_DB_HOST $SQL_PORT $SDB_DB_NAME $IG_DB_USER $IG_DB_PASSWORD $JBOSS_CONFIGURATION_DIR/connector.xml $IM_SERVER $IM_PORT $IM_LOGIN $IM_PASSWORD $IM_SECURE
+
+fi
+

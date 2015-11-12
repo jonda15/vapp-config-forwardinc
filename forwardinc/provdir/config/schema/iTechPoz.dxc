@@ -1,0 +1,176 @@
+#
+# iTechPoz - iTechnology rePOZitory 
+#
+# oid (CA/security/iTechnology/rePOZitory) (1.3.6.1.4.1.791.2.3.5.5.1);
+#
+
+# rePOZitory.attr(4)
+schema set oid-prefix poz-at = (1.3.6.1.4.1.791.2.3.5.5.1.4);
+# rePOZitory.objectClass(6)
+schema set oid-prefix poz-oc = (1.3.6.1.4.1.791.2.3.5.5.1.6);
+# rePOZitory.nameBinding(7)
+schema set oid-prefix poz-nb = (1.3.6.1.4.1.791.2.3.5.5.1.7);
+
+#
+# Attribute Definitions.
+#
+
+#
+# this is our label/tagging attribute instead
+# of using objectClass
+schema set attribute poz-at:0 = {
+        name = pozClass
+        ldap-names = pozClass
+        syntax = CaseExactString
+	single-valued
+};
+
+#
+# this is our link id that links an object to
+# a parent object
+schema set attribute poz-at:1 = {
+        name = pozLink
+        ldap-names = pozLink
+        syntax = CaseExactString
+	single-valued
+};
+
+#
+# this is our unique id for each object
+schema set attribute poz-at:2 = {
+        name = pozId
+        ldap-names = pozId
+        syntax = CaseExactString
+	single-valued
+};
+
+#
+# this is our generation id for each object
+schema set attribute poz-at:3 = {
+        name = pozGeneration
+        ldap-names = pozGeneration
+        syntax = CaseExactString
+	single-valued
+};
+
+#
+# this is our location of each object, in '/' format
+schema set attribute poz-at:4 = {
+        name = pozLocation
+        ldap-names = pozLocation
+        syntax = CaseIgnoreString
+	single-valued
+};
+
+#
+# this is our product instance for each object
+schema set attribute poz-at:5 = {
+        name = pozLabel
+        ldap-names = pozLabel
+        syntax = CaseExactString
+	single-valued
+};
+
+#
+# this is our pzfilter 
+schema set attribute poz-at:6 = {
+        name = pzFilter
+        ldap-names = pzFilter
+        syntax = CaseIgnoreString
+};
+
+set keep-order-of-values = pzFilter;
+
+#
+# Object Class Definitions.
+#
+
+#
+# base itech poz objectClass
+schema set object-class poz-oc:0 = {
+        name = poz
+	subclass-of top
+        kind = abstract
+};
+
+#
+# root of the repository
+schema set object-class poz-oc:1 = {
+        name = pozRoot
+        subclass-of poz
+	must-contain
+		cn
+};
+
+#
+# extended objectClass support
+schema set object-class poz-oc:2 = {
+        name = pozObject
+        subclass-of poz
+        must-contain
+		cn,
+		pozClass,
+		pozId,
+		pozGeneration
+	may-contain
+		pozLink,
+		pozLocation,
+		pozLabel,
+		pzfilter,
+#
+# auto-register-attributes allow us to add new types
+# to pozObject's without having to add new schema
+		auto-register-attributes,
+		all-attributes
+};
+
+#
+# extended objectClass support
+schema set object-class poz-oc:3 = {
+        name = pozFolder
+        subclass-of poz
+        must-contain
+		cn,
+		pozClass,
+		pozId,
+		pozGeneration
+	may-contain
+		pozLink,
+		pozLocation,
+		pozLabel,
+	        pzFilter,
+#
+# auto-register-attributes allow us to add new types
+# to pozFolder's without having to add new schema
+		auto-register-attributes,
+		all-attributes
+};
+
+
+#
+# Name Bindings.
+#
+
+schema set name-binding poz-nb:0 = {
+    name = pozPoz-o
+    pozRoot allowable-parent organization
+    named-by commonName
+};
+
+schema set name-binding poz-nb:1 = {
+    name = pozFolder-pozRoot
+    pozFolder allowable-parent pozRoot
+    named-by commonName optional pozId
+};
+
+schema set name-binding poz-nb:2 = {
+    name = pozFolder-pozFolder
+    pozFolder allowable-parent pozFolder
+    named-by commonName optional pozId
+};
+
+schema set name-binding poz-nb:3 = {
+    name = pozObject-pozFolder
+    pozObject allowable-parent pozFolder
+    named-by commonName optional pozId
+};

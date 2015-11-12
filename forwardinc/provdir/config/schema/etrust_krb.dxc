@@ -1,0 +1,941 @@
+schema set oid-prefix etrust-admin-KRB-attr = (1.3.6.1.4.1.791.2.3.5.3.5460.1);
+schema set oid-prefix etrust-admin-KRB-oc = (1.3.6.1.4.1.791.2.3.5.3.5460.2);
+schema set oid-prefix etrust-admin-KRB-nb = (1.3.6.1.4.1.791.2.3.5.3.5460.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-KRB-attr:1 = {
+    name = eTKRBDirectoryName
+    ldap-names = eTKRBDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:2 = {
+    name = eTKRBComments
+    ldap-names = eTKRBComments
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:3 = {
+    name = eTKRBHost
+    ldap-names = eTKRBHost
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:14 = {
+    name = eTKRBPort
+    ldap-names = eTKRBPort
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:15 = {
+    name = eTKRBRealm
+    ldap-names = eTKRBRealm
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:4 = {
+    name = eTKRBAdmin
+    ldap-names = eTKRBAdmin
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:5 = {
+    name = eTKRBAdminPassword
+    ldap-names = eTKRBAdminPassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:42 = {
+    name = eTKRBAdminPasswd
+    ldap-names = eTKRBAdminPasswd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:35 = {
+    name = eTKRBExploreTimeout
+    ldap-names = eTKRBExploreTimeout
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:36 = {
+    name = eTKRBOperationTimeout
+    ldap-names = eTKRBOperationTimeout
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:11 = {
+    name = eTKRBPasswordPolicyMembers
+    ldap-names = eTKRBPasswordPolicyMembers
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:17 = {
+    name = eTKRBEncSalts
+    ldap-names = eTKRBEncSalts
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:18 = {
+    name = eTKRBDisablePrincipalOption
+    ldap-names = eTKRBDisablePrincipalOption
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:19 = {
+    name = eTKRBUseKeytab
+    ldap-names = eTKRBUseKeytab
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:20 = {
+    name = eTKRBKeytabFile
+    ldap-names = eTKRBKeytabFile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:56 = {
+    name = eTKRBSSHServer
+    ldap-names = eTKRBSSHServer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:57 = {
+    name = eTKRBSSHUser
+    ldap-names = eTKRBSSHUser
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:58 = {
+    name = eTKRBSSHPrivateKeyFile
+    ldap-names = eTKRBSSHPrivateKeyFile
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:59 = {
+    name = eTKRBSSHPassword
+    ldap-names = eTKRBSSHPassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:28 = {
+    name = eTKRBAccountContainerName
+    ldap-names = eTKRBAccountContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:6 = {
+    name = eTKRBAccountName
+    ldap-names = eTKRBAccountName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:7 = {
+    name = eTKRBFullName
+    ldap-names = eTKRBFullName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:55 = {
+    name = eTKRBFullNameCorrelate
+    ldap-names = eTKRBFullNameCorrelate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:8 = {
+    name = eTKRBUid
+    ldap-names = eTKRBUid
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:9 = {
+    name = eTKRBPwd
+    ldap-names = eTKRBPwd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:10 = {
+    name = eTKRBRandomPwd
+    ldap-names = eTKRBRandomPwd
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:32 = {
+    name = eTKRBUserPasswordPolicy
+    ldap-names = eTKRBUserPasswordPolicy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:12 = {
+    name = eTKRBUserExpireDateTime
+    ldap-names = eTKRBUserExpireDateTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:13 = {
+    name = eTKRBPasswordExpireDateTime
+    ldap-names = eTKRBPasswordExpireDateTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:33 = {
+    name = eTKRBMaxTicketLife
+    ldap-names = eTKRBMaxTicketLife
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:34 = {
+    name = eTKRBMaxTicketRenewLife
+    ldap-names = eTKRBMaxTicketRenewLife
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:43 = {
+    name = eTKRBAllowPostdated
+    ldap-names = eTKRBAllowPostdated
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:44 = {
+    name = eTKRBAllowForwardable
+    ldap-names = eTKRBAllowForwardable
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:45 = {
+    name = eTKRBAllowRenewable
+    ldap-names = eTKRBAllowRenewable
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:46 = {
+    name = eTKRBAllowProxiable
+    ldap-names = eTKRBAllowProxiable
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:47 = {
+    name = eTKRBAllowDupSkey
+    ldap-names = eTKRBAllowDupSkey
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:48 = {
+    name = eTKRBRequiresPreauth
+    ldap-names = eTKRBRequiresPreauth
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:49 = {
+    name = eTKRBRequiresHWAuth
+    ldap-names = eTKRBRequiresHWAuth
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:50 = {
+    name = eTKRBAllowSvr
+    ldap-names = eTKRBAllowSvr
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:51 = {
+    name = eTKRBAllowTGSReq
+    ldap-names = eTKRBAllowTGSReq
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:52 = {
+    name = eTKRBAllowTix
+    ldap-names = eTKRBAllowTix
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:53 = {
+    name = eTKRBNeedChange
+    ldap-names = eTKRBNeedChange
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:54 = {
+    name = eTKRBPasswordChangingService
+    ldap-names = eTKRBPasswordChangingService
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:31 = {
+    name = eTKRBPasswordPolicyContainerName
+    ldap-names = eTKRBPasswordPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:26 = {
+    name = eTKRBPasswordPolicyName
+    ldap-names = eTKRBPasswordPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:25 = {
+    name = eTKRBMaxPasswordLife
+    ldap-names = eTKRBMaxPasswordLife
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:37 = {
+    name = eTKRBMinPasswordLife
+    ldap-names = eTKRBMinPasswordLife
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:38 = {
+    name = eTKRBMinPasswordLength
+    ldap-names = eTKRBMinPasswordLength
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:39 = {
+    name = eTKRBMinPasswordClass
+    ldap-names = eTKRBMinPasswordClass
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:40 = {
+    name = eTKRBKeysKept
+    ldap-names = eTKRBKeysKept
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:41 = {
+    name = eTKRBRefCount
+    ldap-names = eTKRBRefCount
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:30 = {
+    name = eTKRBPolicyContainerName
+    ldap-names = eTKRBPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-KRB-attr:29 = {
+    name = eTKRBPolicyName
+    ldap-names = eTKRBPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-KRB-oc:1 = {
+    name = eTKRBDirectory
+    subclass-of Top
+    must-contain
+        eTKRBDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTUseAdminCreds,
+        eTAgentNamespaceClass,
+        eTKRBComments,
+        eTKRBHost,
+        eTKRBPort,
+        eTKRBRealm,
+        eTKRBAdmin,
+        eTKRBAdminPassword,
+        eTKRBAdminPasswd,
+        eTKRBExploreTimeout,
+        eTKRBOperationTimeout,
+        eTKRBPasswordPolicyMembers,
+        eTKRBEncSalts,
+        eTKRBDisablePrincipalOption,
+        eTKRBUseKeytab,
+        eTKRBKeytabFile,
+        eTKRBSSHServer,
+        eTKRBSSHUser,
+        eTKRBSSHPrivateKeyFile,
+        eTKRBSSHPassword
+};
+
+schema set object-class etrust-admin-KRB-oc:2 = {
+    name = eTKRBNamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL,
+        eTValidateCredentials,
+        eTMetaData,
+        eTOpBindingsMetaData
+};
+
+schema set object-class etrust-admin-KRB-oc:3 = {
+    name = eTKRBAccountContainer
+    subclass-of Top
+    must-contain
+        eTKRBAccountContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-KRB-oc:4 = {
+    name = eTKRBAccount
+    subclass-of Top
+    must-contain
+        eTKRBAccountName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTKRBFullName,
+        eTKRBFullNameCorrelate,
+        eTKRBUid,
+        eTKRBPwd,
+        eTKRBRandomPwd,
+        eTKRBUserPasswordPolicy,
+        eTKRBPasswordPolicyMembers,
+        eTKRBUserExpireDateTime,
+        eTKRBPasswordExpireDateTime,
+        eTKRBMaxTicketLife,
+        eTKRBMaxTicketRenewLife,
+        eTKRBEncSalts,
+        eTKRBAllowPostdated,
+        eTKRBAllowForwardable,
+        eTKRBAllowRenewable,
+        eTKRBAllowProxiable,
+        eTKRBAllowDupSkey,
+        eTKRBRequiresPreauth,
+        eTKRBRequiresHWAuth,
+        eTKRBAllowSvr,
+        eTKRBAllowTGSReq,
+        eTKRBAllowTix,
+        eTKRBNeedChange,
+        eTKRBPasswordChangingService
+};
+
+schema set object-class etrust-admin-KRB-oc:5 = {
+    name = eTKRBPasswordPolicyContainer
+    subclass-of Top
+    must-contain
+        eTKRBPasswordPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-KRB-oc:6 = {
+    name = eTKRBPasswordPolicy
+    subclass-of Top
+    must-contain
+        eTKRBPasswordPolicyName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDescription,
+        eTKRBMaxPasswordLife,
+        eTKRBMinPasswordLife,
+        eTKRBMinPasswordLength,
+        eTKRBMinPasswordClass,
+        eTKRBKeysKept,
+        eTKRBRefCount
+};
+
+schema set object-class etrust-admin-KRB-oc:7 = {
+    name = eTKRBPolicyContainer
+    subclass-of Top
+    must-contain
+        eTKRBPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-KRB-oc:8 = {
+    name = eTKRBPolicy
+    subclass-of Top
+    must-contain
+        eTKRBPolicyName,
+        objectclass
+    may-contain
+        eTKRBAccountName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTKRBFullName,
+        eTKRBUid,
+        eTKRBPwd,
+        eTKRBRandomPwd,
+        eTKRBUserPasswordPolicy,
+        eTKRBPasswordPolicyMembers,
+        eTKRBUserExpireDateTime,
+        eTKRBPasswordExpireDateTime,
+        eTKRBMaxTicketLife,
+        eTKRBMaxTicketRenewLife,
+        eTKRBEncSalts,
+        eTKRBAllowPostdated,
+        eTKRBAllowForwardable,
+        eTKRBAllowRenewable,
+        eTKRBAllowProxiable,
+        eTKRBAllowDupSkey,
+        eTKRBRequiresPreauth,
+        eTKRBRequiresHWAuth,
+        eTKRBAllowSvr,
+        eTKRBAllowTGSReq,
+        eTKRBAllowTix,
+        eTKRBNeedChange,
+        eTKRBPasswordChangingService
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-KRB-nb:1 = {
+    name = eTKRBDirectory-eTNamespace
+    eTKRBDirectory allowable-parent eTNamespace
+    named-by eTKRBDirectoryName
+};
+
+schema set name-binding etrust-admin-KRB-nb:2 = {
+    name = eTKRBPolicyContainer-eTNamespace
+    eTKRBPolicyContainer allowable-parent eTNamespace
+    named-by eTKRBPolicyContainerName
+};
+
+schema set name-binding etrust-admin-KRB-nb:3 = {
+    name = eTKRBNamespace-eTKRBDirectory
+    eTKRBNamespace allowable-parent eTKRBDirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-KRB-nb:4 = {
+    name = eTKRBAccountContainer-eTKRBDirectory
+    eTKRBAccountContainer allowable-parent eTKRBDirectory
+    named-by eTKRBAccountContainerName
+};
+
+schema set name-binding etrust-admin-KRB-nb:5 = {
+    name = eTKRBPasswordPolicyContainer-eTKRBDirectory
+    eTKRBPasswordPolicyContainer allowable-parent eTKRBDirectory
+    named-by eTKRBPasswordPolicyContainerName
+};
+
+schema set name-binding etrust-admin-KRB-nb:6 = {
+    name = eTKRBAccount-eTKRBAccountContainer
+    eTKRBAccount allowable-parent eTKRBAccountContainer
+    named-by eTKRBAccountName
+};
+
+schema set name-binding etrust-admin-KRB-nb:7 = {
+    name = eTKRBPasswordPolicy-eTKRBPasswordPolicyContainer
+    eTKRBPasswordPolicy allowable-parent eTKRBPasswordPolicyContainer
+    named-by eTKRBPasswordPolicyName
+};
+
+schema set name-binding etrust-admin-KRB-nb:8 = {
+    name = eTKRBPolicy-eTKRBPolicyContainer
+    eTKRBPolicy allowable-parent eTKRBPolicyContainer
+    named-by eTKRBPolicyName
+};
+

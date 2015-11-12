@@ -1,0 +1,17 @@
+# CA Directory - DXserver/config/settings
+#
+# This is a the default file for settings for servers created
+# by DXmanager r12 SP2. As these settings become available in future
+# releases, this file will no longer be sourced.
+#
+
+# directory information base
+set alias-integrity = true;
+
+# security controls
+set allow-binds = true;
+set ssl-auth-bypass-entry-check = false;
+
+# general controls
+set op-attrs = true;
+

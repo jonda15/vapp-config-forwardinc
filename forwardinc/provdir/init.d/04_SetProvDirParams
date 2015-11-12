@@ -1,0 +1,18 @@
+PROP_FILE=$DXHOME/provisioning.properties
+LDIF_FILE=/solution/$CONFIG/ldif/impd_main_pop.ldif
+LDIF_NEW_FILE=$DXHOME/impd_main_pop.ldif
+
+echo "`date -u` [DEBUG] Copying IMPD Main DSA LDIF file [$LDIF_FILE] to [$LDIF_NEW_FILE]" 
+cp $LDIF_FILE $LDIF_NEW_FILE
+
+#######################################################################
+#replacing the place holder in impd-main ldif
+#######################################################################
+
+db_size=$(grep -Po "(?<=^DXGRID_DB_SIZE=).*" $PROP_FILE)
+impd_passwd=$(grep -Po "(?<=^IM_PD_PASSWORD=).*" $PROP_FILE)
+impd_passwd="${impd_passwd%"${impd_passwd##*[![:space:]]}"}"
+
+sed -i "s/@passwd@/$impd_passwd/g" $LDIF_NEW_FILE 
+
+find $DXHOME/config/servers -type f -exec sed -i -e "s/@dbsize@/$db_size/g" {} \;

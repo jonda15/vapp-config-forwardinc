@@ -1,0 +1,31 @@
+schema set oid-prefix etrust-admin-COSX-attr = (1.3.6.1.4.1.791.2.3.5.3.5001.1);
+schema set oid-prefix etrust-admin-COSX-oc = (1.3.6.1.4.1.791.2.3.5.3.5001.2);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+

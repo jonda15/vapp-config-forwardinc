@@ -1,0 +1,1586 @@
+schema set oid-prefix etrust-admin-EIAM-attr = (1.3.6.1.4.1.791.2.3.5.3.5380.1);
+schema set oid-prefix etrust-admin-EIAM-oc = (1.3.6.1.4.1.791.2.3.5.3.5380.2);
+schema set oid-prefix etrust-admin-EIAM-nb = (1.3.6.1.4.1.791.2.3.5.3.5380.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-EIAM-attr:1 = {
+    name = eTEIAMDirectoryName
+    ldap-names = eTEIAMDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:2 = {
+    name = eTEIAMComments
+    ldap-names = eTEIAMComments
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:3 = {
+    name = eTEIAMIpAddress
+    ldap-names = eTEIAMIpAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:4 = {
+    name = eTEIAMApplication
+    ldap-names = eTEIAMApplication
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:5 = {
+    name = eTEIAMLocale
+    ldap-names = eTEIAMLocale
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:6 = {
+    name = eTEIAMUserName
+    ldap-names = eTEIAMUserName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:7 = {
+    name = eTEIAMUserPassword
+    ldap-names = eTEIAMUserPassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:8 = {
+    name = eTEIAMDirUserAttrList
+    ldap-names = eTEIAMDirUserAttrList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:9 = {
+    name = eTEIAMAccountContainerName
+    ldap-names = eTEIAMAccountContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:86 = {
+    name = eTEIAMFolderList
+    ldap-names = eTEIAMFolderList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:10 = {
+    name = eTEIAMAccountName
+    ldap-names = eTEIAMAccountName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:11 = {
+    name = eTEIAMDescription
+    ldap-names = eTEIAMDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:12 = {
+    name = eTEIAMEncryptedPassword
+    ldap-names = eTEIAMEncryptedPassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:13 = {
+    name = eTEIAMSuspendedDate
+    ldap-names = eTEIAMSuspendedDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:14 = {
+    name = eTEIAMEnableDate
+    ldap-names = eTEIAMEnableDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:15 = {
+    name = eTEIAMDisableDate
+    ldap-names = eTEIAMDisableDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:16 = {
+    name = eTEIAMSuspendStatus
+    ldap-names = eTEIAMSuspendStatus
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:17 = {
+    name = eTEIAMCity
+    ldap-names = eTEIAMCity
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:18 = {
+    name = eTEIAMStateLocalityProvince
+    ldap-names = eTEIAMStateLocalityProvince
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:19 = {
+    name = eTEIAMPostalCode
+    ldap-names = eTEIAMPostalCode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:20 = {
+    name = eTEIAMCountry
+    ldap-names = eTEIAMCountry
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:21 = {
+    name = eTEIAMFullName
+    ldap-names = eTEIAMFullName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:22 = {
+    name = eTEIAMAccountFolder
+    ldap-names = eTEIAMAccountFolder
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:23 = {
+    name = eTEIAMFirstName
+    ldap-names = eTEIAMFirstName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:24 = {
+    name = eTEIAMMiddleName
+    ldap-names = eTEIAMMiddleName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:25 = {
+    name = eTEIAMLastName
+    ldap-names = eTEIAMLastName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:26 = {
+    name = eTEIAMStreetAddress
+    ldap-names = eTEIAMStreetAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:27 = {
+    name = eTEIAMTitle
+    ldap-names = eTEIAMTitle
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:28 = {
+    name = eTEIAMCompany
+    ldap-names = eTEIAMCompany
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:29 = {
+    name = eTEIAMDepartment
+    ldap-names = eTEIAMDepartment
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:30 = {
+    name = eTEIAMEmailAddress
+    ldap-names = eTEIAMEmailAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:31 = {
+    name = eTEIAMOffice
+    ldap-names = eTEIAMOffice
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:32 = {
+    name = eTEIAMTelephone
+    ldap-names = eTEIAMTelephone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:33 = {
+    name = eTEIAMMobilePhone
+    ldap-names = eTEIAMMobilePhone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:34 = {
+    name = eTEIAMFAXNumber
+    ldap-names = eTEIAMFAXNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:35 = {
+    name = eTEIAMAccountPath
+    ldap-names = eTEIAMAccountPath
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:36 = {
+    name = eTEIAMAccountValue
+    ldap-names = eTEIAMAccountValue
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:37 = {
+    name = eTEIAMAccountValueName
+    ldap-names = eTEIAMAccountValueName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:38 = {
+    name = eTEIAMEncrypt
+    ldap-names = eTEIAMEncrypt
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:39 = {
+    name = eTEIAMGroupMembers
+    ldap-names = eTEIAMGroupMembers
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:40 = {
+    name = eTEIAMGroupsGlobal
+    ldap-names = eTEIAMGroupsGlobal
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:41 = {
+    name = eTEIAMGroupsApplication
+    ldap-names = eTEIAMGroupsApplication
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:42 = {
+    name = eTEIAMUserAttrList
+    ldap-names = eTEIAMUserAttrList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:43 = {
+    name = eTEIAMGroupContainerName
+    ldap-names = eTEIAMGroupContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:44 = {
+    name = eTEIAMGroupName
+    ldap-names = eTEIAMGroupName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:45 = {
+    name = eTEIAMGroupDescription
+    ldap-names = eTEIAMGroupDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:46 = {
+    name = eTEIAMGroupPath
+    ldap-names = eTEIAMGroupPath
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:47 = {
+    name = eTEIAMCalendarContainerName
+    ldap-names = eTEIAMCalendarContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:48 = {
+    name = eTEIAMCalendarName
+    ldap-names = eTEIAMCalendarName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:49 = {
+    name = eTEIAMCalendarDescription
+    ldap-names = eTEIAMCalendarDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:50 = {
+    name = eTEIAMCalendarFolder
+    ldap-names = eTEIAMCalendarFolder
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:51 = {
+    name = eTEIAMInclTimeBlockList
+    ldap-names = eTEIAMInclTimeBlockList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:52 = {
+    name = eTEIAMExclTimeBlockList
+    ldap-names = eTEIAMExclTimeBlockList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:53 = {
+    name = eTEIAMEffectiveStartDate
+    ldap-names = eTEIAMEffectiveStartDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:54 = {
+    name = eTEIAMEffectiveStopDate
+    ldap-names = eTEIAMEffectiveStopDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:55 = {
+    name = eTEIAMEffectiveStartTime
+    ldap-names = eTEIAMEffectiveStartTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:56 = {
+    name = eTEIAMEffectiveStopTime
+    ldap-names = eTEIAMEffectiveStopTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:57 = {
+    name = eTEIAMFolderContainerName
+    ldap-names = eTEIAMFolderContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:58 = {
+    name = eTEIAMFolderName
+    ldap-names = eTEIAMFolderName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:59 = {
+    name = eTEIAMFldName
+    ldap-names = eTEIAMFldName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:60 = {
+    name = eTEIAMFldFolder
+    ldap-names = eTEIAMFldFolder
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:61 = {
+    name = eTEIAMResourceContainerName
+    ldap-names = eTEIAMResourceContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:62 = {
+    name = eTEIAMResourceName
+    ldap-names = eTEIAMResourceName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:63 = {
+    name = eTEIAMRclassNamedaList
+    ldap-names = eTEIAMRclassNamedaList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:64 = {
+    name = eTEIAMRclassActList
+    ldap-names = eTEIAMRclassActList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:65 = {
+    name = eTEIAMRclassBestMatch
+    ldap-names = eTEIAMRclassBestMatch
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:66 = {
+    name = eTEIAMAccessPolicyContainerName
+    ldap-names = eTEIAMAccessPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:67 = {
+    name = eTEIAMAccessPolicyName
+    ldap-names = eTEIAMAccessPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:68 = {
+    name = eTEIAMAccessPolicyDescription
+    ldap-names = eTEIAMAccessPolicyDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:69 = {
+    name = eTEIAMACPFolder
+    ldap-names = eTEIAMACPFolder
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:70 = {
+    name = eTEIAMAcpResClass
+    ldap-names = eTEIAMAcpResClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:71 = {
+    name = eTEIAMAcpCal
+    ldap-names = eTEIAMAcpCal
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:72 = {
+    name = eTEIAMAcpResList
+    ldap-names = eTEIAMAcpResList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:73 = {
+    name = eTEIAMAcpIdentList
+    ldap-names = eTEIAMAcpIdentList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:74 = {
+    name = eTEIAMAcpFiltList
+    ldap-names = eTEIAMAcpFiltList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:85 = {
+    name = eTEIAMAcpObligationList
+    ldap-names = eTEIAMAcpObligationList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:75 = {
+    name = eTEIAMAcpDisabled
+    ldap-names = eTEIAMAcpDisabled
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:82 = {
+    name = eTEIAMAcpDeny
+    ldap-names = eTEIAMAcpDeny
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:83 = {
+    name = eTEIAMAcpPredeployment
+    ldap-names = eTEIAMAcpPredeployment
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:84 = {
+    name = eTEIAMAcpRegex
+    ldap-names = eTEIAMAcpRegex
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:76 = {
+    name = eTEIAMActionsInclud
+    ldap-names = eTEIAMActionsInclud
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:78 = {
+    name = eTEIAMResourceClassMembers
+    ldap-names = eTEIAMResourceClassMembers
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:79 = {
+    name = eTEIAMCalendarMembers
+    ldap-names = eTEIAMCalendarMembers
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:80 = {
+    name = eTEIAMPolicyContainerName
+    ldap-names = eTEIAMPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-EIAM-attr:81 = {
+    name = eTEIAMPolicyName
+    ldap-names = eTEIAMPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-EIAM-oc:1 = {
+    name = eTEIAMDirectory
+    subclass-of Top
+    must-contain
+        eTEIAMDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTUseAdminCreds,
+        eTAgentNamespaceClass,
+        eTEIAMComments,
+        eTEIAMIpAddress,
+        eTEIAMApplication,
+        eTEIAMLocale,
+        eTEIAMUserName,
+        eTEIAMUserPassword,
+        eTEIAMDirUserAttrList
+};
+
+schema set object-class etrust-admin-EIAM-oc:2 = {
+    name = eTEIAMNamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL,
+        eTValidateCredentials
+};
+
+schema set object-class etrust-admin-EIAM-oc:3 = {
+    name = eTEIAMAccountContainer
+    subclass-of Top
+    must-contain
+        eTEIAMAccountContainerName,
+        objectclass
+    may-contain
+        eTEIAMFolderList,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-EIAM-oc:4 = {
+    name = eTEIAMAccount
+    subclass-of Top
+    must-contain
+        eTEIAMAccountName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTEIAMComments,
+        eTEIAMDescription,
+        eTEIAMEncryptedPassword,
+        eTEIAMSuspendedDate,
+        eTEIAMEnableDate,
+        eTEIAMDisableDate,
+        eTEIAMSuspendStatus,
+        eTEIAMCity,
+        eTEIAMStateLocalityProvince,
+        eTEIAMPostalCode,
+        eTEIAMCountry,
+        eTEIAMFullName,
+        eTEIAMAccountFolder,
+        eTEIAMFirstName,
+        eTEIAMMiddleName,
+        eTEIAMLastName,
+        eTEIAMStreetAddress,
+        eTEIAMTitle,
+        eTEIAMCompany,
+        eTEIAMDepartment,
+        eTEIAMEmailAddress,
+        eTEIAMOffice,
+        eTEIAMTelephone,
+        eTEIAMMobilePhone,
+        eTEIAMFAXNumber,
+        eTEIAMAccountPath,
+        eTEIAMAccountValue,
+        eTEIAMAccountValueName,
+        eTEIAMEncrypt,
+        eTEIAMGroupMembers,
+        eTEIAMGroupsGlobal,
+        eTEIAMGroupsApplication,
+        eTEIAMUserAttrList
+};
+
+schema set object-class etrust-admin-EIAM-oc:5 = {
+    name = eTEIAMGroupContainer
+    subclass-of Top
+    must-contain
+        eTEIAMGroupContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-EIAM-oc:6 = {
+    name = eTEIAMGroup
+    subclass-of Top
+    must-contain
+        eTEIAMGroupName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTEIAMGroupDescription,
+        eTEIAMGroupPath
+};
+
+schema set object-class etrust-admin-EIAM-oc:7 = {
+    name = eTEIAMCalendarContainer
+    subclass-of Top
+    must-contain
+        eTEIAMCalendarContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-EIAM-oc:8 = {
+    name = eTEIAMCalendar
+    subclass-of Top
+    must-contain
+        eTEIAMCalendarName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTEIAMCalendarDescription,
+        eTEIAMCalendarFolder,
+        eTEIAMInclTimeBlockList,
+        eTEIAMExclTimeBlockList,
+        eTEIAMEffectiveStartDate,
+        eTEIAMEffectiveStopDate,
+        eTEIAMEffectiveStartTime,
+        eTEIAMEffectiveStopTime
+};
+
+schema set object-class etrust-admin-EIAM-oc:9 = {
+    name = eTEIAMFolderContainer
+    subclass-of Top
+    must-contain
+        eTEIAMFolderContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-EIAM-oc:10 = {
+    name = eTEIAMFolder
+    subclass-of Top
+    must-contain
+        eTEIAMFolderName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTEIAMFldName,
+        eTEIAMFldFolder
+};
+
+schema set object-class etrust-admin-EIAM-oc:11 = {
+    name = eTEIAMResourceContainer
+    subclass-of Top
+    must-contain
+        eTEIAMResourceContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-EIAM-oc:12 = {
+    name = eTEIAMResource
+    subclass-of Top
+    must-contain
+        eTEIAMResourceName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTEIAMRclassNamedaList,
+        eTEIAMRclassActList,
+        eTEIAMRclassBestMatch
+};
+
+schema set object-class etrust-admin-EIAM-oc:13 = {
+    name = eTEIAMAccessPolicyContainer
+    subclass-of Top
+    must-contain
+        eTEIAMAccessPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-EIAM-oc:14 = {
+    name = eTEIAMAccessPolicy
+    subclass-of Top
+    must-contain
+        eTEIAMAccessPolicyName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTEIAMAccessPolicyDescription,
+        eTEIAMACPFolder,
+        eTEIAMAcpResClass,
+        eTEIAMAcpCal,
+        eTEIAMAcpResList,
+        eTEIAMAcpIdentList,
+        eTEIAMAcpFiltList,
+        eTEIAMAcpObligationList,
+        eTEIAMAcpDisabled,
+        eTEIAMAcpDeny,
+        eTEIAMAcpPredeployment,
+        eTEIAMAcpRegex,
+        eTEIAMActionsInclud,
+        eTEIAMResourceClassMembers,
+        eTEIAMCalendarMembers
+};
+
+schema set object-class etrust-admin-EIAM-oc:15 = {
+    name = eTEIAMPolicyContainer
+    subclass-of Top
+    must-contain
+        eTEIAMPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-EIAM-oc:16 = {
+    name = eTEIAMPolicy
+    subclass-of Top
+    must-contain
+        eTEIAMPolicyName,
+        objectclass
+    may-contain
+        eTEIAMAccountName,
+        eTAccountContainer,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTEIAMComments,
+        eTEIAMDescription,
+        eTEIAMEncryptedPassword,
+        eTEIAMSuspendedDate,
+        eTEIAMEnableDate,
+        eTEIAMDisableDate,
+        eTEIAMSuspendStatus,
+        eTEIAMCity,
+        eTEIAMStateLocalityProvince,
+        eTEIAMPostalCode,
+        eTEIAMCountry,
+        eTEIAMFullName,
+        eTEIAMAccountFolder,
+        eTEIAMFirstName,
+        eTEIAMMiddleName,
+        eTEIAMLastName,
+        eTEIAMStreetAddress,
+        eTEIAMTitle,
+        eTEIAMCompany,
+        eTEIAMDepartment,
+        eTEIAMEmailAddress,
+        eTEIAMOffice,
+        eTEIAMTelephone,
+        eTEIAMMobilePhone,
+        eTEIAMFAXNumber,
+        eTEIAMAccountPath,
+        eTEIAMAccountValue,
+        eTEIAMAccountValueName,
+        eTEIAMEncrypt,
+        eTEIAMGroupMembers,
+        eTEIAMGroupsGlobal,
+        eTEIAMGroupsApplication,
+        eTEIAMUserAttrList
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-EIAM-nb:1 = {
+    name = eTEIAMDirectory-eTNamespace
+    eTEIAMDirectory allowable-parent eTNamespace
+    named-by eTEIAMDirectoryName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:2 = {
+    name = eTEIAMPolicyContainer-eTNamespace
+    eTEIAMPolicyContainer allowable-parent eTNamespace
+    named-by eTEIAMPolicyContainerName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:3 = {
+    name = eTEIAMNamespace-eTEIAMDirectory
+    eTEIAMNamespace allowable-parent eTEIAMDirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:4 = {
+    name = eTEIAMAccountContainer-eTEIAMDirectory
+    eTEIAMAccountContainer allowable-parent eTEIAMDirectory
+    named-by eTEIAMAccountContainerName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:5 = {
+    name = eTEIAMGroupContainer-eTEIAMDirectory
+    eTEIAMGroupContainer allowable-parent eTEIAMDirectory
+    named-by eTEIAMGroupContainerName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:6 = {
+    name = eTEIAMCalendarContainer-eTEIAMDirectory
+    eTEIAMCalendarContainer allowable-parent eTEIAMDirectory
+    named-by eTEIAMCalendarContainerName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:7 = {
+    name = eTEIAMFolderContainer-eTEIAMDirectory
+    eTEIAMFolderContainer allowable-parent eTEIAMDirectory
+    named-by eTEIAMFolderContainerName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:8 = {
+    name = eTEIAMResourceContainer-eTEIAMDirectory
+    eTEIAMResourceContainer allowable-parent eTEIAMDirectory
+    named-by eTEIAMResourceContainerName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:9 = {
+    name = eTEIAMAccessPolicyContainer-eTEIAMDirectory
+    eTEIAMAccessPolicyContainer allowable-parent eTEIAMDirectory
+    named-by eTEIAMAccessPolicyContainerName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:17 = {
+    name = eTEIAMAccountContainer-eTEIAMAccountContainer
+    eTEIAMAccountContainer allowable-parent eTEIAMAccountContainer
+    named-by eTEIAMAccountContainerName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:10 = {
+    name = eTEIAMAccount-eTEIAMAccountContainer
+    eTEIAMAccount allowable-parent eTEIAMAccountContainer
+    named-by eTEIAMAccountName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:11 = {
+    name = eTEIAMGroup-eTEIAMGroupContainer
+    eTEIAMGroup allowable-parent eTEIAMGroupContainer
+    named-by eTEIAMGroupName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:12 = {
+    name = eTEIAMCalendar-eTEIAMCalendarContainer
+    eTEIAMCalendar allowable-parent eTEIAMCalendarContainer
+    named-by eTEIAMCalendarName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:13 = {
+    name = eTEIAMFolder-eTEIAMFolderContainer
+    eTEIAMFolder allowable-parent eTEIAMFolderContainer
+    named-by eTEIAMFolderName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:14 = {
+    name = eTEIAMResource-eTEIAMResourceContainer
+    eTEIAMResource allowable-parent eTEIAMResourceContainer
+    named-by eTEIAMResourceName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:15 = {
+    name = eTEIAMAccessPolicy-eTEIAMAccessPolicyContainer
+    eTEIAMAccessPolicy allowable-parent eTEIAMAccessPolicyContainer
+    named-by eTEIAMAccessPolicyName
+};
+
+schema set name-binding etrust-admin-EIAM-nb:16 = {
+    name = eTEIAMPolicy-eTEIAMPolicyContainer
+    eTEIAMPolicy allowable-parent eTEIAMPolicyContainer
+    named-by eTEIAMPolicyName
+};
+

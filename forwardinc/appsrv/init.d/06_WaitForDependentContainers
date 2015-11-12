@@ -58,8 +58,8 @@ _checkDBConn()
 _checkCADirConn()
 {
 	_print_and_log "[Checking CA Directory usersotre]"
-	host=`/opt/verify/parser.sh ca.dir.hostname $PROP_FILE`
-	port=`/opt/verify/parser.sh ca.dir.port $PROP_FILE`
+	host=$(grep -Po "(?<=^ca.dir.hostname=).*" $PROP_FILE)
+	port=$(grep -Po "(?<=^ca.dir.port=).*" $PROP_FILE)
 
 	host="${host%"${host##*[![:space:]]}"}"
 	port="${port%"${port##*[![:space:]]}"}"
@@ -88,10 +88,13 @@ _checkCADirConn()
 _checkProvSrvConn()
 {
 	 _print_and_log "[Checking Provisioning Server]"
-        provhost=`/opt/verify/parser.sh IM_PS_HOST $PROV_PROP_FILE`
-        provport=`/opt/verify/parser.sh IM_PS_ROUTER_PORT $PROV_PROP_FILE`
-        provuser=`/opt/verify/parser.sh REPOSITORY_USERNAME $PROV_PROP_FILE`
-        provpasswd=`/opt/verify/parser.sh REPOSITORY_PASSWORD $PROV_PROP_FILE`
+    provhost=$(grep -Po "(?<=^IM_PS_HOST=).*" $PROV_PROP_FILE)
+        
+	provport=$(grep -Po "(?<=^IM_PS_ROUTER_PORT=).*" $PROV_PROP_FILE)
+       
+	provuser=$(grep -Po "(?<=^REPOSITORY_USERNAME=).*" $PROV_PROP_FILE)
+        
+	provpasswd=$(grep -Po "(?<=^REPOSITORY_PASSWORD=).*" $PROV_PROP_FILE)
 
 
         provhost="${provhost%"${provhost##*[![:space:]]}"}"
@@ -129,15 +132,17 @@ _checkConnSrvConn()
 {
 
 	 _print_and_log "[Checking Java Connector Server]"
-	jcshost=`/opt/verify/parser.sh IM_CONNECTOR_SERVER $PROV_PROP_FILE`
-	jcsport=`/opt/verify/parser.sh IM_CONNECTOR_SERVER_LDAP_PORT $PROV_PROP_FILE`
+	jcshost=$(grep -Po "(?<=^IM_CONNECTOR_SERVER=).*" $PROV_PROP_FILE)
+
+	jcsport=$(grep -Po "(?<=^IM_CONNECTOR_SERVER_LDAP_PORT=).*" $PROV_PROP_FILE)
 
 	jcshost="${jcshost%"${jcshost##*[![:space:]]}"}"
 	jcsport="${jcsport%"${jcsport##*[![:space:]]}"}"
-
+echo $jcshost
+echo $jcsport
         while [ "$i" -le "$TIME_OUT" ]; do
                 _print_and_log "checking connection ..."
-		curl -u uid=admin,ou=system:firewall "ldap://$jcshost:$jcsport"
+		curl -u uid=admin,ou=system:HelloWorld "ldap://$jcshost:$jcsport"
                 if [ $? -eq 0 ]; then
                         _print_and_log "[Connector Server Host - $jcsport:$jcsport]"
                         _print_and_log "[Success]"
@@ -188,8 +193,9 @@ fi
 
 #####################Mail Server Check################
 #Provide the mail smtp host name and port
-emailhost=`/opt/verify/parser.sh mail.smtp.host $PROP_FILE`
-emailport=`/opt/verify/parser.sh mail.smtp.port $PROP_FILE`
+emailhost=$(grep -Po "(?<=^mail.smtp.host=).*" $PROP_FILE)
+
+emailport=$(grep -Po "(?<=^mail.smtp.port=).*" $PROP_FILE)
 
 emailhost="${emailhost%"${emailhost##*[![:space:]]}"}"
 emailport="${emailport%"${emailport##*[![:space:]]}"}"

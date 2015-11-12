@@ -1,0 +1,15 @@
+# CA Directory DXserver/config/settings
+
+set cache-index-all-except = eTEncryptedPassword,eTPassword,eTFailedLogin,eTPasswordClue,eTAudio,eTPicture,eTVideo,eTSelfAuthAnswer0,eTSelfAuthAnswer1,eTSelfAuthAnswer10,eTSelfAuthAnswer11,eTSelfAuthAnswer12,eTSelfAuthAnswer13,eTSelfAuthAnswer14,eTSelfAuthAnswer15,eTSelfAuthAnswer16,
+                             eTSelfAdminPassword,eTWebiSelfRegActorPassword,eTWFSelfRegActorPassword,modifiersName,creatorsName,eTWebiSelfRegUserTemplate,eTWebiSelfRegActor,eTWFSelfRegUserTemplate,eTWFSelfRegActor,eTSelfAuthQuestion5,eTSelfAuthQuestion6,eTSelfAuthQuestion7,
+                             eTSelfAuthQuestion8,eTSelfAuthQuestion9,eTExitAuthPassword,eTIMForgottenPasswordControlData,eTIMForgottenPasswordTracking,eTIMPasswordData,eTPreviousPassword,eTPSAgentChangePassword,eTSelfAuthQuestion4,eTSelfAuthQuestion40,eTSelfAuthQuestion41,
+                             eTSelfAuthQuestion42,eTSelfAuthQuestion43,eTSelfAuthQuestion44,eTClientIdleTimeout,eTSelfAuthQuestion45,eTSelfAuthQuestion46,eTSelfAuthQuestion47,eTSelfAuthQuestion48,eTSelfAuthQuestion49,eTSelfAuthQuestion29,eTSelfAuthQuestion3,eTSelfAuthQuestion30,
+                             eTSelfAuthQuestion31,eTSelfAuthQuestion32,eTSelfAuthQuestion33,eTSelfAuthQuestion34,eTSelfAuthQuestion35,eTSelfAuthQuestion36,eTSelfAuthQuestion37,eTSelfAuthQuestion38,eTSelfAuthQuestion39,eTSelfAuthQuestion18,eTSelfAuthQuestion19,eTSelfAuthQuestion2,
+                             eTSelfAuthQuestion20,eTSelfAuthQuestion21,eTSelfAuthQuestion22,eTSelfAuthQuestion23,eTSelfAuthQuestion24,eTSelfAuthQuestion25,eTSelfAuthQuestion26,eTSelfAuthQuestion27,eTSelfAuthQuestion28,eTSelfAuthAnswer8,eTSelfAuthAnswer9,eTSelfAuthQuestion0,
+                             eTSelfAuthQuestion1,eTSelfAuthQuestion10,eTSelfAuthQuestion11,eTSelfAuthQuestion12,eTSelfAuthQuestion13,eTSelfAuthQuestion14,eTSelfAuthQuestion15,eTSelfAuthQuestion16,eTSelfAuthQuestion17,eTSelfAuthAnswer40,eTSelfAuthAnswer41,eTSelfAuthAnswer42,
+                             eTSelfAuthAnswer43,eTSelfAuthAnswer44,eTSelfAuthAnswer45,eTSelfAuthAnswer46,eTSelfAuthAnswer47,eTSelfAuthAnswer48,eTSelfAuthAnswer49,eTSelfAuthAnswer5,eTSelfAuthAnswer6,eTSelfAuthAnswer7,eTSelfAuthAnswer29,eTSelfAuthAnswer3,eTSelfAuthAnswer30,
+                             eTSelfAuthAnswer31,eTSelfAuthAnswer32,eTSelfAuthAnswer33,eTSelfAuthAnswer34,eTSelfAuthAnswer35,eTSelfAuthAnswer36,eTSelfAuthAnswer37,eTSelfAuthAnswer38,eTSelfAuthAnswer39,eTSelfAuthAnswer4,eTSelfAuthAnswer17,eTSelfAuthAnswer18,eTSelfAuthAnswer19,
+                             eTSelfAuthAnswer2,eTSelfAuthAnswer20,eTSelfAuthAnswer21,eTSelfAuthAnswer22,eTSelfAuthAnswer23,eTSelfAuthAnswer24,eTSelfAuthAnswer25,eTSelfAuthAnswer26,eTSelfAuthAnswer27,eTSelfAuthAnswer28;
+                             
+# Define preferred write master
+set write-precedence = @hostname@-impd-co;

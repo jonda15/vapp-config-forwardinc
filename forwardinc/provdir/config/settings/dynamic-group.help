@@ -1,0 +1,27 @@
+# ---------------------------------------------------------------------------- #
+# CA Directory DYNAMIC-GROUP Configuration Help File                           #
+# ---------------------------------------------------------------------------- #
+
+The settings configuration directory is used to store dynamic-group
+definitions.
+
+An example dynamic group definition is given below.
+
+# Clear any previously defined dynamic groups.
+clear dynamic-group;
+
+# Set a dynamic group definition with 
+#    a label of: managers
+# Note: The url-attr must be a MUST or MAY contain attribute of the object
+#       class. The url-attr must have a string syntax.
+# Note: The member-attr must have a distinguishedName syntax.
+set dynamic-group managers = {
+    object-class = dxDynamicGroupOfNames
+    url-attr = dxMemberURL
+    member-attr = member
+};
+
+#
+# Further details can be found in the CA Directory Administrator Guide.
+#
+

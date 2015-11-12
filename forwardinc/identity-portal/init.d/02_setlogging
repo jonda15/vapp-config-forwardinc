@@ -1,0 +1,29 @@
+#!/bin/sh
+
+
+# If there is not a CA specific startup script in place, simply start vanilla
+# JBOSS in standalone mode.  Otherwise, execute the startup script.
+# Check for logs volume / maintain if required
+if [ ! -h $JBOSS_STANDALONE_LOG_DIR ]; then
+    echo "[INFO] Configuring JBoss to log to SIGMA centralized logging container..."
+
+    if [ ! -d $SIGMA_LOG_ROOT_DIR ]; then
+      echo "[WARN] The SIGMA centralized logging container volume was not found at [${SIGMA_LOG_ROOT_DIR}].  JBOSS Logs will be sent to [${JBOSS_STANDALONE_LOG_DIR}]"
+      mkdir -p $JBOSS_STANDALONE_LOG_DIR
+    else
+      THIS_SIGMA_LOG_DIR=${SIGMA_LOG_ROOT_DIR}/app_server/${HOSTNAME}
+
+      if [ -d $JBOSS_STANDALONE_LOG_DIR ]; then
+        echo "-----Removing existing logging directory [${JBOSS_STANDALONE_LOG_DIR}]..."
+        rm -Rf $JBOSS_STANDALONE_LOG_DIR
+      fi
+
+      if [ ! -d $THIS_SIGMA_LOG_DIR ]; then
+        echo "-----Creating SIGMA logging volume directory [${SIGMA_LOG_ROOT_DIR}]..."
+        mkdir -p $THIS_SIGMA_LOG_DIR
+      fi
+
+      echo "-----Creating JBoss logging symbolic link..."
+      ln -s $THIS_SIGMA_LOG_DIR $JBOSS_STANDALONE_LOG_DIR
+    fi
+fi

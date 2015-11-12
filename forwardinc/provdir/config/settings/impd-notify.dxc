@@ -1,0 +1,6 @@
+# CA Directory DXserver/config/settings
+
+set cache-index = eTNotifyOpContainerID,eTNotifyOpID,eTNotifySequenceNo,eTNotifyStartState,eTNotifyState,dc;
+                             
+# Define preferred write master
+set write-precedence = @hostname@-impd-notify;

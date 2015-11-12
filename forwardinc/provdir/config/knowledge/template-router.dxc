@@ -1,0 +1,17 @@
+# CA Directory DXserver/config/knowledge
+
+set dsa "@hostname@-router" =
+{
+   prefix        = <>
+   dsa-name      = <cn @hostname@-router>
+   dsa-password  = "secret"
+   address       = ipv4 "localhost" port 20391
+   disp-psap     = DISP
+   cmip-psap     = CMIP
+   snmp-port     = 20391
+   ssld-port     = 20392
+   auth-levels   = anonymous, clear-password
+   dsp-idle-time = 3600
+   trust-flags   = allow-check-password, trust-conveyed-originator, trust-dsa-triggered-operations
+   link-flags    = ssl-encryption-remote
+};

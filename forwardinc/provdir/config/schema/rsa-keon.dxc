@@ -1,0 +1,54 @@
+#
+# Computer Associates
+#
+# config/schema/rsa-keon.dxc ($Revision: 4.1 $)
+# All Attributes and Object Classes are EXPERIMENTAL.
+#
+schema set oid-prefix rsaKeonAttributeType = (1.3.6.1.4.1.3327.999.1);
+schema set oid-prefix rsaKeonObjectClass = (1.3.6.1.4.1.3327.999.2);
+schema set oid-prefix rsaKeonNameBinding = (1.3.6.1.4.1.3327.999.3);
+
+#
+# Attribute Definitions.
+#
+schema set attribute rsaKeonAttributeType:1 = {
+	name = rsaCredential
+	syntax = caseignorestring
+};
+
+#
+# Object Class Definitions.
+#
+schema set object-class rsaKeonObjectClass:1 = {
+	name = rsaPerson
+	subclass-of inetOrgPerson
+	may-contain
+		rsaCredential
+	};
+
+#
+# Name Bindings.
+#
+schema set name-binding rsaKeonNameBinding:1 = {
+	name = rsaPerson-o
+	rsaPerson allowable-parent organization
+	named-by commonName optional surname, dnQualifier
+};
+
+schema set name-binding rsaKeonNameBinding:2 = {
+	name = rsaPerson-ou
+	rsaPerson allowable-parent organizationalUnit
+	named-by commonName optional surname, dnQualifier
+};
+
+schema set name-binding rsaKeonNameBinding:3 = {
+	name = rsaPerson2-o
+	rsaPerson allowable-parent organization
+	named-by cosineUserid
+};
+
+schema set name-binding rsaKeonNameBinding:4 = {
+	name = rsaPerson2-ou
+	rsaPErson allowable-parent organizationalUnit
+	named-by cosineUserid
+};

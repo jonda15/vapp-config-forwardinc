@@ -1,0 +1,3847 @@
+schema set oid-prefix etrust-admin-ACF-attr = (1.3.6.1.4.1.791.2.3.5.3.5020.1);
+schema set oid-prefix etrust-admin-ACF-oc = (1.3.6.1.4.1.791.2.3.5.3.5020.2);
+schema set oid-prefix etrust-admin-ACF-nb = (1.3.6.1.4.1.791.2.3.5.3.5020.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-ACF-attr:1 = {
+    name = eTACFDirectoryName
+    ldap-names = eTACFDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:2 = {
+    name = eTACFExpirePswd
+    ldap-names = eTACFExpirePswd
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:3 = {
+    name = eTACFLidAction
+    ldap-names = eTACFLidAction
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:4 = {
+    name = eTACFDateFormat
+    ldap-names = eTACFDateFormat
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:5 = {
+    name = eTACFVersion
+    ldap-names = eTACFVersion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:210 = {
+    name = eTACFSystemInfoName
+    ldap-names = eTACFSystemInfoName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:244 = {
+    name = eTACFacf2AuthProgramExtract
+    ldap-names = eTACFacf2AuthProgramExtract
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:245 = {
+    name = eTACFacf2CountBatchInvalid
+    ldap-names = eTACFacf2CountBatchInvalid
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:246 = {
+    name = eTACFacf2MaxAttempts
+    ldap-names = eTACFacf2MaxAttempts
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:247 = {
+    name = eTACFacf2MixedCaseVowels
+    ldap-names = eTACFacf2MixedCaseVowels
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:248 = {
+    name = eTACFacf2PswdChgByUser
+    ldap-names = eTACFacf2PswdChgByUser
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:249 = {
+    name = eTACFacf2PswdForceChange
+    ldap-names = eTACFacf2PswdForceChange
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:250 = {
+    name = eTACFacf2PswdReqExcptStcRes
+    ldap-names = eTACFacf2PswdReqExcptStcRes
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:251 = {
+    name = eTACFacf2RequireAlphaChar
+    ldap-names = eTACFacf2RequireAlphaChar
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:252 = {
+    name = eTACFacf2RequireNumericChar
+    ldap-names = eTACFacf2RequireNumericChar
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:253 = {
+    name = eTACFacf2ReqVerifyTSOLogon
+    ldap-names = eTACFacf2ReqVerifyTSOLogon
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:255 = {
+    name = eTACFacf2SupportedNonAlpha
+    ldap-names = eTACFacf2SupportedNonAlpha
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:256 = {
+    name = eTACFacf2UIDstring
+    ldap-names = eTACFacf2UIDstring
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:258 = {
+    name = eTACFsecDateFormat
+    ldap-names = eTACFsecDateFormat
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:259 = {
+    name = eTACFsecExpireWarningDays
+    ldap-names = eTACFsecExpireWarningDays
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:260 = {
+    name = eTACFsecLDS
+    ldap-names = eTACFsecLDS
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:261 = {
+    name = eTACFsecLogonInvalidCount
+    ldap-names = eTACFsecLogonInvalidCount
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:262 = {
+    name = eTACFsecMode
+    ldap-names = eTACFsecMode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:263 = {
+    name = eTACFsecPreventUserIdAsPswd
+    ldap-names = eTACFsecPreventUserIdAsPswd
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:264 = {
+    name = eTACFsecPswdChkAllNumeric
+    ldap-names = eTACFsecPswdChkAllNumeric
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:265 = {
+    name = eTACFsecPswdChkReserved
+    ldap-names = eTACFsecPswdChkReserved
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:266 = {
+    name = eTACFsecPswdHistory
+    ldap-names = eTACFsecPswdHistory
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:267 = {
+    name = eTACFsecPswdMinLength
+    ldap-names = eTACFsecPswdMinLength
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:268 = {
+    name = eTACFsecPswdRepeatingChars
+    ldap-names = eTACFsecPswdRepeatingChars
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:269 = {
+    name = eTACFsecRequireNationalChar
+    ldap-names = eTACFsecRequireNationalChar
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:270 = {
+    name = eTACFsecVersion
+    ldap-names = eTACFsecVersion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:254 = {
+    name = eTACFacf2SecAuthEnabled
+    ldap-names = eTACFacf2SecAuthEnabled
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:234 = {
+    name = eTACFUserDefName
+    ldap-names = eTACFUserDefName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:271 = {
+    name = eTACFuserdef
+    ldap-names = eTACFuserdef
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:272 = {
+    name = eTACFudef-type
+    ldap-names = eTACFudef-type
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:273 = {
+    name = eTACFudef-length
+    ldap-names = eTACFudef-length
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:274 = {
+    name = eTACFudef-mixed
+    ldap-names = eTACFudef-mixed
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:275 = {
+    name = eTACFudef-single
+    ldap-names = eTACFudef-single
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:276 = {
+    name = eTACFudef-changable
+    ldap-names = eTACFudef-changable
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:235 = {
+    name = eTACFXREFSourceContainerName
+    ldap-names = eTACFXREFSourceContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:236 = {
+    name = eTACFXREFSourceName
+    ldap-names = eTACFXREFSourceName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:238 = {
+    name = eTACFGroupRecord
+    ldap-names = eTACFGroupRecord
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:239 = {
+    name = eTACFSourceRecord
+    ldap-names = eTACFSourceRecord
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:240 = {
+    name = eTACFIncludedTerminals
+    ldap-names = eTACFIncludedTerminals
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:241 = {
+    name = eTACFSysid
+    ldap-names = eTACFSysid
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:242 = {
+    name = eTACFRecordID
+    ldap-names = eTACFRecordID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:6 = {
+    name = eTACFLidContainerName
+    ldap-names = eTACFLidContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:7 = {
+    name = eTACFRuleContainerName
+    ldap-names = eTACFRuleContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:8 = {
+    name = eTACFLidName
+    ldap-names = eTACFLidName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:9 = {
+    name = eTACFUserDefFields
+    ldap-names = eTACFUserDefFields
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:237 = {
+    name = eTACFSecAuthids
+    ldap-names = eTACFSecAuthids
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:10 = {
+    name = eTACFUsingLid
+    ldap-names = eTACFUsingLid
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:11 = {
+    name = eTACFFullName
+    ldap-names = eTACFFullName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:12 = {
+    name = eTACFUserCancelled
+    ldap-names = eTACFUserCancelled
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:13 = {
+    name = eTACFPhone
+    ldap-names = eTACFPhone
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:14 = {
+    name = eTACFAccessZoneName
+    ldap-names = eTACFAccessZoneName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:15 = {
+    name = eTACFUserIdentificationString
+    ldap-names = eTACFUserIdentificationString
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:16 = {
+    name = eTACFTargetNodes
+    ldap-names = eTACFTargetNodes
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:17 = {
+    name = eTACFPP-TRC
+    ldap-names = eTACFPP-TRC
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:18 = {
+    name = eTACFPP-TRCV
+    ldap-names = eTACFPP-TRCV
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:19 = {
+    name = eTACFActiveDate
+    ldap-names = eTACFActiveDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:20 = {
+    name = eTACFLidExpireDate
+    ldap-names = eTACFLidExpireDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:21 = {
+    name = eTACFAccessShiftName
+    ldap-names = eTACFAccessShiftName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:22 = {
+    name = eTACFAccessSourceName
+    ldap-names = eTACFAccessSourceName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:23 = {
+    name = eTACFPasswordForExtract
+    ldap-names = eTACFPasswordForExtract
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:24 = {
+    name = eTACFExpirePassword
+    ldap-names = eTACFExpirePassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:25 = {
+    name = eTACFMinDaysBeforePswdChange
+    ldap-names = eTACFMinDaysBeforePswdChange
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:26 = {
+    name = eTACFMaxDaysBetweenPswdChange
+    ldap-names = eTACFMaxDaysBetweenPswdChange
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:27 = {
+    name = eTACFSynchronizedLogonNode
+    ldap-names = eTACFSynchronizedLogonNode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:28 = {
+    name = eTACFDDBHomeNode
+    ldap-names = eTACFDDBHomeNode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:229 = {
+    name = eTACFLocalZeroMaximumDays
+    ldap-names = eTACFLocalZeroMaximumDays
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:230 = {
+    name = eTACFLocalZeroMinimumDays
+    ldap-names = eTACFLocalZeroMinimumDays
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:231 = {
+    name = eTACFMixedCasePassword
+    ldap-names = eTACFMixedCasePassword
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:233 = {
+    name = eTACFTemporaryPassword
+    ldap-names = eTACFTemporaryPassword
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:243 = {
+    name = eTACFUpperCaseNewPassword
+    ldap-names = eTACFUpperCaseNewPassword
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:285 = {
+    name = eTACFAllowPassPhrase
+    ldap-names = eTACFAllowPassPhrase
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:281 = {
+    name = eTACFExpirePassphrase
+    ldap-names = eTACFExpirePassphrase
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:284 = {
+    name = eTACFPasswordPhrase
+    ldap-names = eTACFPasswordPhrase
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:282 = {
+    name = eTACFMaxDaysBetweenPWPhraseChange
+    ldap-names = eTACFMaxDaysBetweenPWPhraseChange
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:29 = {
+    name = eTACFPswdViolations
+    ldap-names = eTACFPswdViolations
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:30 = {
+    name = eTACFInvalidPswdDate
+    ldap-names = eTACFInvalidPswdDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:31 = {
+    name = eTACFRecentPswdViolations
+    ldap-names = eTACFRecentPswdViolations
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:32 = {
+    name = eTACFSecurityViolations
+    ldap-names = eTACFSecurityViolations
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:33 = {
+    name = eTACFAccessCount
+    ldap-names = eTACFAccessCount
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:34 = {
+    name = eTACFAccessDate
+    ldap-names = eTACFAccessDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:35 = {
+    name = eTACFAccessTime
+    ldap-names = eTACFAccessTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:36 = {
+    name = eTACFAccessSource
+    ldap-names = eTACFAccessSource
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:37 = {
+    name = eTACFInvalidPswdTime
+    ldap-names = eTACFInvalidPswdTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:38 = {
+    name = eTACFPswdEntrySource
+    ldap-names = eTACFPswdEntrySource
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:39 = {
+    name = eTACFPswdChgDateTime
+    ldap-names = eTACFPswdChgDateTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:40 = {
+    name = eTACFUserWhoSetCancel
+    ldap-names = eTACFUserWhoSetCancel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:41 = {
+    name = eTACFCancelDate
+    ldap-names = eTACFCancelDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:42 = {
+    name = eTACFLastUpdatedDate
+    ldap-names = eTACFLastUpdatedDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:288 = {
+    name = eTACFCreationTOD
+    ldap-names = eTACFCreationTOD
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:278 = {
+    name = eTACFCummulativePswdViolations
+    ldap-names = eTACFCummulativePswdViolations
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:286 = {
+    name = eTACFPassPhraseVios
+    ldap-names = eTACFPassPhraseVios
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:287 = {
+    name = eTACFPassPhraseVioDate
+    ldap-names = eTACFPassPhraseVioDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:283 = {
+    name = eTACFPWPhraseChgDateTime
+    ldap-names = eTACFPWPhraseChgDateTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:280 = {
+    name = eTACFNumberofPreviousPWPhrases
+    ldap-names = eTACFNumberofPreviousPWPhrases
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:43 = {
+    name = eTACFACF2SecurityPriv
+    ldap-names = eTACFACF2SecurityPriv
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:44 = {
+    name = eTACFACF2AccountPriv
+    ldap-names = eTACFACF2AccountPriv
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:45 = {
+    name = eTACFACF2AuditPriv
+    ldap-names = eTACFACF2AuditPriv
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:46 = {
+    name = eTACFACF2LeaderPriv
+    ldap-names = eTACFACF2LeaderPriv
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:47 = {
+    name = eTACFStoreACF2Rules
+    ldap-names = eTACFStoreACF2Rules
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:48 = {
+    name = eTACFACF2RefreshPriv
+    ldap-names = eTACFACF2RefreshPriv
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:49 = {
+    name = eTACFACF2ConsultPriv
+    ldap-names = eTACFACF2ConsultPriv
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:50 = {
+    name = eTACFRestrictedLogonid
+    ldap-names = eTACFRestrictedLogonid
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:51 = {
+    name = eTACFAllowJOBFROMStmtUsage
+    ldap-names = eTACFAllowJOBFROMStmtUsage
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:52 = {
+    name = eTACFSubmitJobThruAPFOnly
+    ldap-names = eTACFSubmitJobThruAPFOnly
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:53 = {
+    name = eTACFAuthSubmissionPgm
+    ldap-names = eTACFAuthSubmissionPgm
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:54 = {
+    name = eTACFAutomaticDump
+    ldap-names = eTACFAutomaticDump
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:55 = {
+    name = eTACFGenerateDumps
+    ldap-names = eTACFGenerateDumps
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:56 = {
+    name = eTACFLogAccessOutsideShift
+    ldap-names = eTACFLogAccessOutsideShift
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:57 = {
+    name = eTACFMusassLid
+    ldap-names = eTACFMusassLid
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:58 = {
+    name = eTACFUseProtectedPrograms
+    ldap-names = eTACFUseProtectedPrograms
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:59 = {
+    name = eTACFAccessRuleMustValidate
+    ldap-names = eTACFAccessRuleMustValidate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:60 = {
+    name = eTACFCPFTargetUsage
+    ldap-names = eTACFCPFTargetUsage
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:61 = {
+    name = eTACFACF2DynamicPrivileges
+    ldap-names = eTACFACF2DynamicPrivileges
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:62 = {
+    name = eTACFStepMustComplete
+    ldap-names = eTACFStepMustComplete
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:63 = {
+    name = eTACFInheritSecurity
+    ldap-names = eTACFInheritSecurity
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:64 = {
+    name = eTACFMaintPrivilege
+    ldap-names = eTACFMaintPrivilege
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:65 = {
+    name = eTACFNonCancelPrivilege
+    ldap-names = eTACFNonCancelPrivilege
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:66 = {
+    name = eTACFReadAccessToAll
+    ldap-names = eTACFReadAccessToAll
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:67 = {
+    name = eTACFRsrcRuleMustValidate
+    ldap-names = eTACFRsrcRuleMustValidate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:68 = {
+    name = eTACFValidateRestrictAccess
+    ldap-names = eTACFValidateRestrictAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:69 = {
+    name = eTACFBypassTapeLabelProcessing
+    ldap-names = eTACFBypassTapeLabelProcessing
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:70 = {
+    name = eTACFBypassTapeLabelLimited
+    ldap-names = eTACFBypassTapeLabelLimited
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:71 = {
+    name = eTACFGroupName
+    ldap-names = eTACFGroupName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:72 = {
+    name = eTACFScopeList
+    ldap-names = eTACFScopeList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:73 = {
+    name = eTACFRuleKeyPrefix
+    ldap-names = eTACFRuleKeyPrefix
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:74 = {
+    name = eTACFSMSDefaultValues
+    ldap-names = eTACFSMSDefaultValues
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:277 = {
+    name = eTACFRestrictedAccess
+    ldap-names = eTACFRestrictedAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:75 = {
+    name = eTACFBatchJobAuthority
+    ldap-names = eTACFBatchJobAuthority
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:76 = {
+    name = eTACFCICSAccess
+    ldap-names = eTACFCICSAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:77 = {
+    name = eTACFGeneralIDMSAccess
+    ldap-names = eTACFGeneralIDMSAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:78 = {
+    name = eTACFGeneralIMSAccess
+    ldap-names = eTACFGeneralIMSAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:79 = {
+    name = eTACFStartedTaskAccess
+    ldap-names = eTACFStartedTaskAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:80 = {
+    name = eTACFGeneralTSOAccess
+    ldap-names = eTACFGeneralTSOAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:81 = {
+    name = eTACFGeneralVAXAccess
+    ldap-names = eTACFGeneralVAXAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:82 = {
+    name = eTACFGeneralVMAccess
+    ldap-names = eTACFGeneralVMAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:83 = {
+    name = eTACFGeneralVM-ESAAccess
+    ldap-names = eTACFGeneralVM-ESAAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:84 = {
+    name = eTACFOMVSAccess
+    ldap-names = eTACFOMVSAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:85 = {
+    name = eTACFMonitorLogon
+    ldap-names = eTACFMonitorLogon
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:86 = {
+    name = eTACFTraceAllEvents
+    ldap-names = eTACFTraceAllEvents
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:87 = {
+    name = eTACFMonitorLogonSecurityAlert
+    ldap-names = eTACFMonitorLogonSecurityAlert
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:88 = {
+    name = eTACFTraceTSOCommands
+    ldap-names = eTACFTraceTSOCommands
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:89 = {
+    name = eTACFMaxVio
+    ldap-names = eTACFMaxVio
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:232 = {
+    name = eTACFExcludeFromSysplex
+    ldap-names = eTACFExcludeFromSysplex
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:90 = {
+    name = eTACFCICSOpClass
+    ldap-names = eTACFCICSOpClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:91 = {
+    name = eTACFCICSOpId
+    ldap-names = eTACFCICSOpId
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:92 = {
+    name = eTACFCICSPriority
+    ldap-names = eTACFCICSPriority
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:93 = {
+    name = eTACFACF2CICSSecurity
+    ldap-names = eTACFACF2CICSSecurity
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:94 = {
+    name = eTACFIdleTime
+    ldap-names = eTACFIdleTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:95 = {
+    name = eTACFCICSRsrcAccessKey
+    ldap-names = eTACFCICSRsrcAccessKey
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:96 = {
+    name = eTACFCICSSecKey1-3
+    ldap-names = eTACFCICSSecKey1-3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:97 = {
+    name = eTACFCICSSecKeyLast5
+    ldap-names = eTACFCICSSecKeyLast5
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:98 = {
+    name = eTACFCICSOPT
+    ldap-names = eTACFCICSOPT
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:211 = {
+    name = eTACFCICSMultipleSignons
+    ldap-names = eTACFCICSMultipleSignons
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:99 = {
+    name = eTACFTSODefaultProcedure
+    ldap-names = eTACFTSODefaultProcedure
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:100 = {
+    name = eTACFTSODefaultRegionSize
+    ldap-names = eTACFTSODefaultRegionSize
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:101 = {
+    name = eTACFTSORegionSizeMax
+    ldap-names = eTACFTSORegionSizeMax
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:102 = {
+    name = eTACFTSODefaultPerformance
+    ldap-names = eTACFTSODefaultPerformance
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:103 = {
+    name = eTACFTSODefaultTime
+    ldap-names = eTACFTSODefaultTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:104 = {
+    name = eTACFPCFControl
+    ldap-names = eTACFPCFControl
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:105 = {
+    name = eTACFTSOCommandListModule
+    ldap-names = eTACFTSOCommandListModule
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:106 = {
+    name = eTACFTSOPrefix
+    ldap-names = eTACFTSOPrefix
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:107 = {
+    name = eTACFTSODelChar
+    ldap-names = eTACFTSODelChar
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:108 = {
+    name = eTACFTSOLineDelChar
+    ldap-names = eTACFTSOLineDelChar
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:109 = {
+    name = eTACFTSOHoldClass
+    ldap-names = eTACFTSOHoldClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:110 = {
+    name = eTACFTSOSubmitClass
+    ldap-names = eTACFTSOSubmitClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:111 = {
+    name = eTACFTSOMsgClass
+    ldap-names = eTACFTSOMsgClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:112 = {
+    name = eTACFTSOSysoutClass
+    ldap-names = eTACFTSOSysoutClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:113 = {
+    name = eTACFTSOSysoutDest
+    ldap-names = eTACFTSOSysoutDest
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:114 = {
+    name = eTACFTSOMailIndexRecordPtr
+    ldap-names = eTACFTSOMailIndexRecordPtr
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:115 = {
+    name = eTACFTSODefaultUnit
+    ldap-names = eTACFTSODefaultUnit
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:116 = {
+    name = eTACFTSODefaultAccount
+    ldap-names = eTACFTSODefaultAccount
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:117 = {
+    name = eTACFSpecifyTSOAcctNum
+    ldap-names = eTACFSpecifyTSOAcctNum
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:118 = {
+    name = eTACFSpecifyTSOPerformance
+    ldap-names = eTACFSpecifyTSOPerformance
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:119 = {
+    name = eTACFSpecifyTSOLogonSize
+    ldap-names = eTACFSpecifyTSOLogonSize
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:120 = {
+    name = eTACFSpecifyTSOOutputDest
+    ldap-names = eTACFSpecifyTSOOutputDest
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:121 = {
+    name = eTACFSpecifyTSOProcedure
+    ldap-names = eTACFSpecifyTSOProcedure
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:122 = {
+    name = eTACFSpecifyTSOLogonTime
+    ldap-names = eTACFSpecifyTSOLogonTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:123 = {
+    name = eTACFSpecifyTSOMsgClass
+    ldap-names = eTACFSpecifyTSOMsgClass
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:124 = {
+    name = eTACFSpecifyTSORecover
+    ldap-names = eTACFSpecifyTSORecover
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:125 = {
+    name = eTACFSpecifyTSOLogonUnit
+    ldap-names = eTACFSpecifyTSOLogonUnit
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:126 = {
+    name = eTACFTSOAccountPriv
+    ldap-names = eTACFTSOAccountPriv
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:127 = {
+    name = eTACFBypassTSOCmdList
+    ldap-names = eTACFBypassTSOCmdList
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:128 = {
+    name = eTACFTSOSubmitAuthority
+    ldap-names = eTACFTSOSubmitAuthority
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:129 = {
+    name = eTACFMountDevices
+    ldap-names = eTACFMountDevices
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:130 = {
+    name = eTACFTSOOperator
+    ldap-names = eTACFTSOOperator
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:131 = {
+    name = eTACFTSORecover
+    ldap-names = eTACFTSORecover
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:132 = {
+    name = eTACFValidateTSOAccount
+    ldap-names = eTACFValidateTSOAccount
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:133 = {
+    name = eTACFBypassCmdLimiting
+    ldap-names = eTACFBypassCmdLimiting
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:134 = {
+    name = eTACFTSOFullScreenLogon
+    ldap-names = eTACFTSOFullScreenLogon
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:135 = {
+    name = eTACFReceiveTSOMailMsgs
+    ldap-names = eTACFReceiveTSOMailMsgs
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:136 = {
+    name = eTACFPrefixTSOMessages
+    ldap-names = eTACFPrefixTSOMessages
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:137 = {
+    name = eTACFTSOMsgPause
+    ldap-names = eTACFTSOMsgPause
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:138 = {
+    name = eTACFTSOAccountRequired
+    ldap-names = eTACFTSOAccountRequired
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:139 = {
+    name = eTACFValidateTSOProcedure
+    ldap-names = eTACFValidateTSOProcedure
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:140 = {
+    name = eTACFTSOConsole
+    ldap-names = eTACFTSOConsole
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:141 = {
+    name = eTACFReceiveTSOMessages
+    ldap-names = eTACFReceiveTSOMessages
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:142 = {
+    name = eTACFTSOModalMsgs
+    ldap-names = eTACFTSOModalMsgs
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:143 = {
+    name = eTACFReceiveTSONotices
+    ldap-names = eTACFReceiveTSONotices
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:144 = {
+    name = eTACFPromptForMissingParms
+    ldap-names = eTACFPromptForMissingParms
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:145 = {
+    name = eTACFTSOProcedureRequired
+    ldap-names = eTACFTSOProcedureRequired
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:146 = {
+    name = eTACFWriteToProgrammer
+    ldap-names = eTACFWriteToProgrammer
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:147 = {
+    name = eTACFUnicenterTNGSync
+    ldap-names = eTACFUnicenterTNGSync
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:148 = {
+    name = eTACFIDMSSignonClist
+    ldap-names = eTACFIDMSSignonClist
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:149 = {
+    name = eTACFIDMSClistVersion
+    ldap-names = eTACFIDMSClistVersion
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:150 = {
+    name = eTACFMusassID
+    ldap-names = eTACFMusassID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:151 = {
+    name = eTACFIDMSMusassOpts10-2
+    ldap-names = eTACFIDMSMusassOpts10-2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:152 = {
+    name = eTACFIDMSMusassStartPgm
+    ldap-names = eTACFIDMSMusassStartPgm
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:153 = {
+    name = eTACFMusassDefaultLid
+    ldap-names = eTACFMusassDefaultLid
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:154 = {
+    name = eTACFIDMSMusassUpdateAuth
+    ldap-names = eTACFIDMSMusassUpdateAuth
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:155 = {
+    name = eTACFMusassInfoCall
+    ldap-names = eTACFMusassInfoCall
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:156 = {
+    name = eTACFStats
+    ldap-names = eTACFStats
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:157 = {
+    name = eTACFVMDefaultAccount
+    ldap-names = eTACFVMDefaultAccount
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:158 = {
+    name = eTACFVMNoSpoolFoundAction
+    ldap-names = eTACFVMNoSpoolFoundAction
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:159 = {
+    name = eTACFVMSyntaxErrorAction
+    ldap-names = eTACFVMSyntaxErrorAction
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:160 = {
+    name = eTACFVMAutologAll
+    ldap-names = eTACFVMAutologAll
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:161 = {
+    name = eTACFVMAutologNoPswd
+    ldap-names = eTACFVMAutologNoPswd
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:162 = {
+    name = eTACFVMAutologOnly
+    ldap-names = eTACFVMAutologOnly
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:163 = {
+    name = eTACFVMDiagnose84
+    ldap-names = eTACFVMDiagnose84
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:164 = {
+    name = eTACFVMBypassDialValidation
+    ldap-names = eTACFVMBypassDialValidation
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:165 = {
+    name = eTACFVMGroupLogonId
+    ldap-names = eTACFVMGroupLogonId
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:166 = {
+    name = eTACFVMPVMAccess
+    ldap-names = eTACFVMPVMAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:167 = {
+    name = eTACFVMSRFAccess
+    ldap-names = eTACFVMSRFAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:168 = {
+    name = eTACFVMValidateAccounting
+    ldap-names = eTACFVMValidateAccounting
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:169 = {
+    name = eTACFVMSAFDiagnose
+    ldap-names = eTACFVMSAFDiagnose
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:170 = {
+    name = eTACFVMSRFAccessFromVSE
+    ldap-names = eTACFVMSRFAccessFromVSE
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:291 = {
+    name = eTACFVMIdleTermProcessing
+    ldap-names = eTACFVMIdleTermProcessing
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:290 = {
+    name = eTACFAllowESM
+    ldap-names = eTACFAllowESM
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:289 = {
+    name = eTACFVMD4DiagnoseCMSFileLevel
+    ldap-names = eTACFVMD4DiagnoseCMSFileLevel
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:212 = {
+    name = eTACFLinuxName
+    ldap-names = eTACFLinuxName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:213 = {
+    name = eTACFLotusName
+    ldap-names = eTACFLotusName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:214 = {
+    name = eTACFNovellName
+    ldap-names = eTACFNovellName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:215 = {
+    name = eTACFLDAPDirectorySync
+    ldap-names = eTACFLDAPDirectorySync
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:216 = {
+    name = eTACFHomeDirectory
+    ldap-names = eTACFHomeDirectory
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:217 = {
+    name = eTACFShellProgram
+    ldap-names = eTACFShellProgram
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:218 = {
+    name = eTACFNumericUserID
+    ldap-names = eTACFNumericUserID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:219 = {
+    name = eTACFMaxCPUTime
+    ldap-names = eTACFMaxCPUTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:220 = {
+    name = eTACFMaxAddrSpaceSize
+    ldap-names = eTACFMaxAddrSpaceSize
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:221 = {
+    name = eTACFMaxFilesPerProcess
+    ldap-names = eTACFMaxFilesPerProcess
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:222 = {
+    name = eTACFMaxProcesses
+    ldap-names = eTACFMaxProcesses
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:223 = {
+    name = eTACFMaxPthreadsCreated
+    ldap-names = eTACFMaxPthreadsCreated
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:224 = {
+    name = eTACFMaxDataSpacePages
+    ldap-names = eTACFMaxDataSpacePages
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:279 = {
+    name = eTACFLDAPNodeList
+    ldap-names = eTACFLDAPNodeList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:292 = {
+    name = eTACFCustomAttribute001
+    ldap-names = eTACFCustomAttribute001
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:293 = {
+    name = eTACFCustomAttribute002
+    ldap-names = eTACFCustomAttribute002
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:294 = {
+    name = eTACFCustomAttribute003
+    ldap-names = eTACFCustomAttribute003
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:295 = {
+    name = eTACFCustomAttribute004
+    ldap-names = eTACFCustomAttribute004
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:296 = {
+    name = eTACFCustomAttribute005
+    ldap-names = eTACFCustomAttribute005
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:297 = {
+    name = eTACFCustomAttribute006
+    ldap-names = eTACFCustomAttribute006
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:298 = {
+    name = eTACFCustomAttribute007
+    ldap-names = eTACFCustomAttribute007
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:299 = {
+    name = eTACFCustomAttribute008
+    ldap-names = eTACFCustomAttribute008
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:300 = {
+    name = eTACFCustomAttribute009
+    ldap-names = eTACFCustomAttribute009
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:301 = {
+    name = eTACFCustomAttribute010
+    ldap-names = eTACFCustomAttribute010
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:302 = {
+    name = eTACFCustomAttribute011
+    ldap-names = eTACFCustomAttribute011
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:303 = {
+    name = eTACFCustomAttribute012
+    ldap-names = eTACFCustomAttribute012
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:304 = {
+    name = eTACFCustomAttribute013
+    ldap-names = eTACFCustomAttribute013
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:305 = {
+    name = eTACFCustomAttribute014
+    ldap-names = eTACFCustomAttribute014
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:306 = {
+    name = eTACFCustomAttribute015
+    ldap-names = eTACFCustomAttribute015
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:307 = {
+    name = eTACFCustomAttribute016
+    ldap-names = eTACFCustomAttribute016
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:308 = {
+    name = eTACFCustomAttribute017
+    ldap-names = eTACFCustomAttribute017
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:309 = {
+    name = eTACFCustomAttribute018
+    ldap-names = eTACFCustomAttribute018
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:310 = {
+    name = eTACFCustomAttribute019
+    ldap-names = eTACFCustomAttribute019
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:311 = {
+    name = eTACFCustomAttribute020
+    ldap-names = eTACFCustomAttribute020
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:312 = {
+    name = eTACFCustomAttributeName001
+    ldap-names = eTACFCustomAttributeName001
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:313 = {
+    name = eTACFCustomAttributeName002
+    ldap-names = eTACFCustomAttributeName002
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:314 = {
+    name = eTACFCustomAttributeName003
+    ldap-names = eTACFCustomAttributeName003
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:315 = {
+    name = eTACFCustomAttributeName004
+    ldap-names = eTACFCustomAttributeName004
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:316 = {
+    name = eTACFCustomAttributeName005
+    ldap-names = eTACFCustomAttributeName005
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:317 = {
+    name = eTACFCustomAttributeName006
+    ldap-names = eTACFCustomAttributeName006
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:318 = {
+    name = eTACFCustomAttributeName007
+    ldap-names = eTACFCustomAttributeName007
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:319 = {
+    name = eTACFCustomAttributeName008
+    ldap-names = eTACFCustomAttributeName008
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:320 = {
+    name = eTACFCustomAttributeName009
+    ldap-names = eTACFCustomAttributeName009
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:321 = {
+    name = eTACFCustomAttributeName010
+    ldap-names = eTACFCustomAttributeName010
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:322 = {
+    name = eTACFCustomAttributeName011
+    ldap-names = eTACFCustomAttributeName011
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:323 = {
+    name = eTACFCustomAttributeName012
+    ldap-names = eTACFCustomAttributeName012
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:324 = {
+    name = eTACFCustomAttributeName013
+    ldap-names = eTACFCustomAttributeName013
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:325 = {
+    name = eTACFCustomAttributeName014
+    ldap-names = eTACFCustomAttributeName014
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:326 = {
+    name = eTACFCustomAttributeName015
+    ldap-names = eTACFCustomAttributeName015
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:327 = {
+    name = eTACFCustomAttributeName016
+    ldap-names = eTACFCustomAttributeName016
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:328 = {
+    name = eTACFCustomAttributeName017
+    ldap-names = eTACFCustomAttributeName017
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:329 = {
+    name = eTACFCustomAttributeName018
+    ldap-names = eTACFCustomAttributeName018
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:330 = {
+    name = eTACFCustomAttributeName019
+    ldap-names = eTACFCustomAttributeName019
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:331 = {
+    name = eTACFCustomAttributeName020
+    ldap-names = eTACFCustomAttributeName020
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:171 = {
+    name = eTACFACF2RuleTypeName
+    ldap-names = eTACFACF2RuleTypeName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:172 = {
+    name = eTACFACF2RuleKeyName
+    ldap-names = eTACFACF2RuleKeyName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:173 = {
+    name = eTACFRulePrefix
+    ldap-names = eTACFRulePrefix
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:174 = {
+    name = eTACFRuleOwner
+    ldap-names = eTACFRuleOwner
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:175 = {
+    name = eTACFRuleResourceOwner
+    ldap-names = eTACFRuleResourceOwner
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:176 = {
+    name = eTACFRecordName
+    ldap-names = eTACFRecordName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:177 = {
+    name = eTACFRuleDescription
+    ldap-names = eTACFRuleDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:178 = {
+    name = eTACFRuleMode
+    ldap-names = eTACFRuleMode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:179 = {
+    name = eTACFPDSDecompMember
+    ldap-names = eTACFPDSDecompMember
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:180 = {
+    name = eTACFDoNotSort
+    ldap-names = eTACFDoNotSort
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:225 = {
+    name = eTACFNo32KRules
+    ldap-names = eTACFNo32KRules
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:226 = {
+    name = eTACFChangePermission
+    ldap-names = eTACFChangePermission
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:227 = {
+    name = eTACFRChangePermission
+    ldap-names = eTACFRChangePermission
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:182 = {
+    name = eTACFACF2RuleLineName
+    ldap-names = eTACFACF2RuleLineName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:184 = {
+    name = eTACFUIDIndex
+    ldap-names = eTACFUIDIndex
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:185 = {
+    name = eTACFPermissionDescription
+    ldap-names = eTACFPermissionDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:186 = {
+    name = eTACFPermissionExpireDate
+    ldap-names = eTACFPermissionExpireDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:187 = {
+    name = eTACFInputSource
+    ldap-names = eTACFInputSource
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:188 = {
+    name = eTACFAccessShift
+    ldap-names = eTACFAccessShift
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:189 = {
+    name = eTACFVolumeMask
+    ldap-names = eTACFVolumeMask
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:190 = {
+    name = eTACFProgramMask
+    ldap-names = eTACFProgramMask
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:191 = {
+    name = eTACFLibraryMask
+    ldap-names = eTACFLibraryMask
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:192 = {
+    name = eTACFDDNameMask
+    ldap-names = eTACFDDNameMask
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:193 = {
+    name = eTACFAlternativeRuleKey
+    ldap-names = eTACFAlternativeRuleKey
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:194 = {
+    name = eTACFAccessRead
+    ldap-names = eTACFAccessRead
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:195 = {
+    name = eTACFAccessWrite
+    ldap-names = eTACFAccessWrite
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:196 = {
+    name = eTACFAccessAllocate
+    ldap-names = eTACFAccessAllocate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:197 = {
+    name = eTACFAccessExecute
+    ldap-names = eTACFAccessExecute
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:198 = {
+    name = eTACFResourceRead
+    ldap-names = eTACFResourceRead
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:199 = {
+    name = eTACFResourceAdd
+    ldap-names = eTACFResourceAdd
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:200 = {
+    name = eTACFResourceUpdate
+    ldap-names = eTACFResourceUpdate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:201 = {
+    name = eTACFResourceDelete
+    ldap-names = eTACFResourceDelete
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:202 = {
+    name = eTACFResourceExecute
+    ldap-names = eTACFResourceExecute
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:203 = {
+    name = eTACFRequestPswdValidation
+    ldap-names = eTACFRequestPswdValidation
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:204 = {
+    name = eTACFResourceAccess
+    ldap-names = eTACFResourceAccess
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:205 = {
+    name = eTACFEXPRESSNRecordValidation
+    ldap-names = eTACFEXPRESSNRecordValidation
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:206 = {
+    name = eTACFSequenceNumber
+    ldap-names = eTACFSequenceNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:228 = {
+    name = eTACFResourceService
+    ldap-names = eTACFResourceService
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:208 = {
+    name = eTACFPolicyContainerName
+    ldap-names = eTACFPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-ACF-attr:209 = {
+    name = eTACFPolicyName
+    ldap-names = eTACFPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-ACF-oc:1 = {
+    name = eTACFDirectory
+    subclass-of Top
+    must-contain
+        eTACFDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTZOSLDAPIPAddress,
+        eTZOSLDAPPort,
+        eTZOSLDAPSuffix,
+        eTZOSLDAPUseSSL,
+        eTSelfAdminID,
+        eTSelfAdminPassword,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTUseAdminCreds,
+        eTSawiUseProxy,
+        eTACFExpirePswd,
+        eTACFLidAction,
+        eTACFDateFormat,
+        eTACFVersion
+};
+
+schema set object-class etrust-admin-ACF-oc:13 = {
+    name = eTACFSystemInfo
+    subclass-of Top
+    must-contain
+        eTACFSystemInfoName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTACFacf2AuthProgramExtract,
+        eTACFacf2CountBatchInvalid,
+        eTACFacf2MaxAttempts,
+        eTACFacf2MixedCaseVowels,
+        eTACFacf2PswdChgByUser,
+        eTACFacf2PswdForceChange,
+        eTACFacf2PswdReqExcptStcRes,
+        eTACFacf2RequireAlphaChar,
+        eTACFacf2RequireNumericChar,
+        eTACFacf2ReqVerifyTSOLogon,
+        eTACFacf2SupportedNonAlpha,
+        eTACFacf2UIDstring,
+        eTACFsecDateFormat,
+        eTACFsecExpireWarningDays,
+        eTACFsecLDS,
+        eTACFsecLogonInvalidCount,
+        eTACFsecMode,
+        eTACFsecPreventUserIdAsPswd,
+        eTACFsecPswdChkAllNumeric,
+        eTACFsecPswdChkReserved,
+        eTACFsecPswdHistory,
+        eTACFsecPswdMinLength,
+        eTACFsecPswdRepeatingChars,
+        eTACFsecRequireNationalChar,
+        eTACFsecVersion,
+        eTACFacf2SecAuthEnabled
+};
+
+schema set object-class etrust-admin-ACF-oc:14 = {
+    name = eTACFUserDef
+    subclass-of Top
+    must-contain
+        eTACFUserDefName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTACFuserdef,
+        eTACFudef-type,
+        eTACFudef-length,
+        eTACFudef-mixed,
+        eTACFudef-single,
+        eTACFudef-changable
+};
+
+schema set object-class etrust-admin-ACF-oc:15 = {
+    name = eTACFXREFSourceContainer
+    subclass-of Top
+    must-contain
+        eTACFXREFSourceContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ACF-oc:16 = {
+    name = eTACFXREFSource
+    subclass-of Top
+    must-contain
+        eTACFXREFSourceName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTACFGroupRecord,
+        eTACFSourceRecord,
+        eTACFIncludedTerminals,
+        eTACFSysid,
+        eTACFRecordID
+};
+
+schema set object-class etrust-admin-ACF-oc:2 = {
+    name = eTACFLidContainer
+    subclass-of Top
+    must-contain
+        eTACFLidContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ACF-oc:3 = {
+    name = eTACFRuleContainer
+    subclass-of Top
+    must-contain
+        eTACFRuleContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ACF-oc:4 = {
+    name = eTACFLid
+    subclass-of Top
+    must-contain
+        eTACFLidName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTSelfChange,
+        eTLastLoginDTS,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTACFUserDefFields,
+        eTACFSecAuthids,
+        eTACFUsingLid,
+        eTACFFullName,
+        eTACFUserCancelled,
+        eTACFPhone,
+        eTACFAccessZoneName,
+        eTACFUserIdentificationString,
+        eTACFTargetNodes,
+        eTACFPP-TRC,
+        eTACFPP-TRCV,
+        eTACFActiveDate,
+        eTACFLidExpireDate,
+        eTACFAccessShiftName,
+        eTACFAccessSourceName,
+        eTACFPasswordForExtract,
+        eTACFExpirePassword,
+        eTACFMinDaysBeforePswdChange,
+        eTACFMaxDaysBetweenPswdChange,
+        eTACFSynchronizedLogonNode,
+        eTACFDDBHomeNode,
+        eTACFLocalZeroMaximumDays,
+        eTACFLocalZeroMinimumDays,
+        eTACFMixedCasePassword,
+        eTACFTemporaryPassword,
+        eTACFUpperCaseNewPassword,
+        eTACFAllowPassPhrase,
+        eTACFExpirePassphrase,
+        eTACFPasswordPhrase,
+        eTACFMaxDaysBetweenPWPhraseChange,
+        eTACFPswdViolations,
+        eTACFInvalidPswdDate,
+        eTACFRecentPswdViolations,
+        eTACFSecurityViolations,
+        eTACFAccessCount,
+        eTACFAccessDate,
+        eTACFAccessTime,
+        eTACFAccessSource,
+        eTACFInvalidPswdTime,
+        eTACFPswdEntrySource,
+        eTACFPswdChgDateTime,
+        eTACFUserWhoSetCancel,
+        eTACFCancelDate,
+        eTACFLastUpdatedDate,
+        eTACFCreationTOD,
+        eTACFCummulativePswdViolations,
+        eTACFPassPhraseVios,
+        eTACFPassPhraseVioDate,
+        eTACFPWPhraseChgDateTime,
+        eTACFNumberofPreviousPWPhrases,
+        eTACFACF2SecurityPriv,
+        eTACFACF2AccountPriv,
+        eTACFACF2AuditPriv,
+        eTACFACF2LeaderPriv,
+        eTACFStoreACF2Rules,
+        eTACFACF2RefreshPriv,
+        eTACFACF2ConsultPriv,
+        eTACFRestrictedLogonid,
+        eTACFAllowJOBFROMStmtUsage,
+        eTACFSubmitJobThruAPFOnly,
+        eTACFAuthSubmissionPgm,
+        eTACFAutomaticDump,
+        eTACFGenerateDumps,
+        eTACFLogAccessOutsideShift,
+        eTACFMusassLid,
+        eTACFUseProtectedPrograms,
+        eTACFAccessRuleMustValidate,
+        eTACFCPFTargetUsage,
+        eTACFACF2DynamicPrivileges,
+        eTACFStepMustComplete,
+        eTACFInheritSecurity,
+        eTACFMaintPrivilege,
+        eTACFNonCancelPrivilege,
+        eTACFReadAccessToAll,
+        eTACFRsrcRuleMustValidate,
+        eTACFValidateRestrictAccess,
+        eTACFBypassTapeLabelProcessing,
+        eTACFBypassTapeLabelLimited,
+        eTACFGroupName,
+        eTACFScopeList,
+        eTACFRuleKeyPrefix,
+        eTACFSMSDefaultValues,
+        eTACFRestrictedAccess,
+        eTACFBatchJobAuthority,
+        eTACFCICSAccess,
+        eTACFGeneralIDMSAccess,
+        eTACFGeneralIMSAccess,
+        eTACFStartedTaskAccess,
+        eTACFGeneralTSOAccess,
+        eTACFGeneralVAXAccess,
+        eTACFGeneralVMAccess,
+        eTACFGeneralVM-ESAAccess,
+        eTACFOMVSAccess,
+        eTACFMonitorLogon,
+        eTACFTraceAllEvents,
+        eTACFMonitorLogonSecurityAlert,
+        eTACFTraceTSOCommands,
+        eTACFMaxVio,
+        eTACFExcludeFromSysplex,
+        eTACFCICSOpClass,
+        eTACFCICSOpId,
+        eTACFCICSPriority,
+        eTACFACF2CICSSecurity,
+        eTACFIdleTime,
+        eTACFCICSRsrcAccessKey,
+        eTACFCICSSecKey1-3,
+        eTACFCICSSecKeyLast5,
+        eTACFCICSOPT,
+        eTACFCICSMultipleSignons,
+        eTACFTSODefaultProcedure,
+        eTACFTSODefaultRegionSize,
+        eTACFTSORegionSizeMax,
+        eTACFTSODefaultPerformance,
+        eTACFTSODefaultTime,
+        eTACFPCFControl,
+        eTACFTSOCommandListModule,
+        eTACFTSOPrefix,
+        eTACFTSODelChar,
+        eTACFTSOLineDelChar,
+        eTACFTSOHoldClass,
+        eTACFTSOSubmitClass,
+        eTACFTSOMsgClass,
+        eTACFTSOSysoutClass,
+        eTACFTSOSysoutDest,
+        eTACFTSOMailIndexRecordPtr,
+        eTACFTSODefaultUnit,
+        eTACFTSODefaultAccount,
+        eTACFSpecifyTSOAcctNum,
+        eTACFSpecifyTSOPerformance,
+        eTACFSpecifyTSOLogonSize,
+        eTACFSpecifyTSOOutputDest,
+        eTACFSpecifyTSOProcedure,
+        eTACFSpecifyTSOLogonTime,
+        eTACFSpecifyTSOMsgClass,
+        eTACFSpecifyTSORecover,
+        eTACFSpecifyTSOLogonUnit,
+        eTACFTSOAccountPriv,
+        eTACFBypassTSOCmdList,
+        eTACFTSOSubmitAuthority,
+        eTACFMountDevices,
+        eTACFTSOOperator,
+        eTACFTSORecover,
+        eTACFValidateTSOAccount,
+        eTACFBypassCmdLimiting,
+        eTACFTSOFullScreenLogon,
+        eTACFReceiveTSOMailMsgs,
+        eTACFPrefixTSOMessages,
+        eTACFTSOMsgPause,
+        eTACFTSOAccountRequired,
+        eTACFValidateTSOProcedure,
+        eTACFTSOConsole,
+        eTACFReceiveTSOMessages,
+        eTACFTSOModalMsgs,
+        eTACFReceiveTSONotices,
+        eTACFPromptForMissingParms,
+        eTACFTSOProcedureRequired,
+        eTACFWriteToProgrammer,
+        eTACFUnicenterTNGSync,
+        eTACFIDMSSignonClist,
+        eTACFIDMSClistVersion,
+        eTACFMusassID,
+        eTACFIDMSMusassOpts10-2,
+        eTACFIDMSMusassStartPgm,
+        eTACFMusassDefaultLid,
+        eTACFIDMSMusassUpdateAuth,
+        eTACFMusassInfoCall,
+        eTACFStats,
+        eTACFVMDefaultAccount,
+        eTACFVMNoSpoolFoundAction,
+        eTACFVMSyntaxErrorAction,
+        eTACFVMAutologAll,
+        eTACFVMAutologNoPswd,
+        eTACFVMAutologOnly,
+        eTACFVMDiagnose84,
+        eTACFVMBypassDialValidation,
+        eTACFVMGroupLogonId,
+        eTACFVMPVMAccess,
+        eTACFVMSRFAccess,
+        eTACFVMValidateAccounting,
+        eTACFVMSAFDiagnose,
+        eTACFVMSRFAccessFromVSE,
+        eTACFVMIdleTermProcessing,
+        eTACFAllowESM,
+        eTACFVMD4DiagnoseCMSFileLevel,
+        eTACFLinuxName,
+        eTACFLotusName,
+        eTACFNovellName,
+        eTACFLDAPDirectorySync,
+        eTACFHomeDirectory,
+        eTACFShellProgram,
+        eTACFNumericUserID,
+        eTACFMaxCPUTime,
+        eTACFMaxAddrSpaceSize,
+        eTACFMaxFilesPerProcess,
+        eTACFMaxProcesses,
+        eTACFMaxPthreadsCreated,
+        eTACFMaxDataSpacePages,
+        eTACFLDAPNodeList,
+        eTACFCustomAttribute001,
+        eTACFCustomAttribute002,
+        eTACFCustomAttribute003,
+        eTACFCustomAttribute004,
+        eTACFCustomAttribute005,
+        eTACFCustomAttribute006,
+        eTACFCustomAttribute007,
+        eTACFCustomAttribute008,
+        eTACFCustomAttribute009,
+        eTACFCustomAttribute010,
+        eTACFCustomAttribute011,
+        eTACFCustomAttribute012,
+        eTACFCustomAttribute013,
+        eTACFCustomAttribute014,
+        eTACFCustomAttribute015,
+        eTACFCustomAttribute016,
+        eTACFCustomAttribute017,
+        eTACFCustomAttribute018,
+        eTACFCustomAttribute019,
+        eTACFCustomAttribute020,
+        eTACFCustomAttributeName001,
+        eTACFCustomAttributeName002,
+        eTACFCustomAttributeName003,
+        eTACFCustomAttributeName004,
+        eTACFCustomAttributeName005,
+        eTACFCustomAttributeName006,
+        eTACFCustomAttributeName007,
+        eTACFCustomAttributeName008,
+        eTACFCustomAttributeName009,
+        eTACFCustomAttributeName010,
+        eTACFCustomAttributeName011,
+        eTACFCustomAttributeName012,
+        eTACFCustomAttributeName013,
+        eTACFCustomAttributeName014,
+        eTACFCustomAttributeName015,
+        eTACFCustomAttributeName016,
+        eTACFCustomAttributeName017,
+        eTACFCustomAttributeName018,
+        eTACFCustomAttributeName019,
+        eTACFCustomAttributeName020
+};
+
+schema set object-class etrust-admin-ACF-oc:5 = {
+    name = eTACFACF2RuleType
+    subclass-of Top
+    must-contain
+        eTACFACF2RuleTypeName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ACF-oc:6 = {
+    name = eTACFACF2RuleKey
+    subclass-of Top
+    must-contain
+        eTACFACF2RuleKeyName,
+        objectclass
+    may-contain
+        eTACFRulePrefix,
+        eTACFRuleOwner,
+        eTACFRuleResourceOwner,
+        eTACFRecordName,
+        eTACFRuleDescription,
+        eTACFRuleMode,
+        eTACFPDSDecompMember,
+        eTACFDoNotSort,
+        eTACFNo32KRules,
+        eTACFChangePermission,
+        eTACFRChangePermission,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ACF-oc:8 = {
+    name = eTACFACF2RuleLine
+    subclass-of Top
+    must-contain
+        eTACFACF2RuleLineName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTACFUIDIndex,
+        eTACFPermissionDescription,
+        eTACFPermissionExpireDate,
+        eTACFActiveDate,
+        eTACFInputSource,
+        eTACFAccessShift,
+        eTACFVolumeMask,
+        eTACFProgramMask,
+        eTACFLibraryMask,
+        eTACFDDNameMask,
+        eTACFAlternativeRuleKey,
+        eTACFAccessRead,
+        eTACFAccessWrite,
+        eTACFAccessAllocate,
+        eTACFAccessExecute,
+        eTACFResourceRead,
+        eTACFResourceAdd,
+        eTACFResourceUpdate,
+        eTACFResourceDelete,
+        eTACFResourceExecute,
+        eTACFRequestPswdValidation,
+        eTACFResourceAccess,
+        eTACFEXPRESSNRecordValidation,
+        eTACFSequenceNumber,
+        eTACFResourceService
+};
+
+schema set object-class etrust-admin-ACF-oc:11 = {
+    name = eTACFPolicyContainer
+    subclass-of Top
+    must-contain
+        eTACFPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-ACF-oc:12 = {
+    name = eTACFPolicy
+    subclass-of Top
+    must-contain
+        eTACFPolicyName,
+        objectclass
+    may-contain
+        eTACFLidName,
+        eTACFFullName,
+        eTACFPhone,
+        eTACFUserDefFields,
+        eTACFSecAuthids,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTACFUsingLid,
+        eTACFUserCancelled,
+        eTACFAccessZoneName,
+        eTACFUserIdentificationString,
+        eTACFTargetNodes,
+        eTACFPP-TRC,
+        eTACFPP-TRCV,
+        eTACFActiveDate,
+        eTACFLidExpireDate,
+        eTACFAccessShiftName,
+        eTACFAccessSourceName,
+        eTACFPasswordForExtract,
+        eTACFExpirePassword,
+        eTACFMinDaysBeforePswdChange,
+        eTACFMaxDaysBetweenPswdChange,
+        eTACFSynchronizedLogonNode,
+        eTACFDDBHomeNode,
+        eTACFLocalZeroMaximumDays,
+        eTACFLocalZeroMinimumDays,
+        eTACFMixedCasePassword,
+        eTACFTemporaryPassword,
+        eTACFUpperCaseNewPassword,
+        eTACFAllowPassPhrase,
+        eTACFExpirePassphrase,
+        eTACFPasswordPhrase,
+        eTACFMaxDaysBetweenPWPhraseChange,
+        eTACFACF2SecurityPriv,
+        eTACFACF2AccountPriv,
+        eTACFACF2AuditPriv,
+        eTACFACF2LeaderPriv,
+        eTACFStoreACF2Rules,
+        eTACFACF2RefreshPriv,
+        eTACFACF2ConsultPriv,
+        eTACFRestrictedLogonid,
+        eTACFAllowJOBFROMStmtUsage,
+        eTACFSubmitJobThruAPFOnly,
+        eTACFAuthSubmissionPgm,
+        eTACFAutomaticDump,
+        eTACFGenerateDumps,
+        eTACFLogAccessOutsideShift,
+        eTACFMusassLid,
+        eTACFUseProtectedPrograms,
+        eTACFAccessRuleMustValidate,
+        eTACFCPFTargetUsage,
+        eTACFACF2DynamicPrivileges,
+        eTACFStepMustComplete,
+        eTACFInheritSecurity,
+        eTACFMaintPrivilege,
+        eTACFNonCancelPrivilege,
+        eTACFReadAccessToAll,
+        eTACFRsrcRuleMustValidate,
+        eTACFValidateRestrictAccess,
+        eTACFBypassTapeLabelProcessing,
+        eTACFBypassTapeLabelLimited,
+        eTACFGroupName,
+        eTACFScopeList,
+        eTACFRuleKeyPrefix,
+        eTACFSMSDefaultValues,
+        eTACFRestrictedAccess,
+        eTACFBatchJobAuthority,
+        eTACFCICSAccess,
+        eTACFGeneralIDMSAccess,
+        eTACFGeneralIMSAccess,
+        eTACFStartedTaskAccess,
+        eTACFGeneralTSOAccess,
+        eTACFGeneralVAXAccess,
+        eTACFGeneralVMAccess,
+        eTACFGeneralVM-ESAAccess,
+        eTACFOMVSAccess,
+        eTACFMonitorLogon,
+        eTACFTraceAllEvents,
+        eTACFMonitorLogonSecurityAlert,
+        eTACFTraceTSOCommands,
+        eTACFMaxVio,
+        eTACFExcludeFromSysplex,
+        eTACFCICSOpClass,
+        eTACFCICSOpId,
+        eTACFCICSPriority,
+        eTACFACF2CICSSecurity,
+        eTACFIdleTime,
+        eTACFCICSRsrcAccessKey,
+        eTACFCICSSecKey1-3,
+        eTACFCICSSecKeyLast5,
+        eTACFCICSOPT,
+        eTACFCICSMultipleSignons,
+        eTACFTSODefaultProcedure,
+        eTACFTSODefaultRegionSize,
+        eTACFTSORegionSizeMax,
+        eTACFTSODefaultPerformance,
+        eTACFTSODefaultTime,
+        eTACFPCFControl,
+        eTACFTSOCommandListModule,
+        eTACFTSOPrefix,
+        eTACFTSODelChar,
+        eTACFTSOLineDelChar,
+        eTACFTSOHoldClass,
+        eTACFTSOSubmitClass,
+        eTACFTSOMsgClass,
+        eTACFTSOSysoutClass,
+        eTACFTSOSysoutDest,
+        eTACFTSOMailIndexRecordPtr,
+        eTACFTSODefaultUnit,
+        eTACFTSODefaultAccount,
+        eTACFSpecifyTSOAcctNum,
+        eTACFSpecifyTSOPerformance,
+        eTACFSpecifyTSOLogonSize,
+        eTACFSpecifyTSOOutputDest,
+        eTACFSpecifyTSOProcedure,
+        eTACFSpecifyTSOLogonTime,
+        eTACFSpecifyTSOMsgClass,
+        eTACFSpecifyTSORecover,
+        eTACFSpecifyTSOLogonUnit,
+        eTACFTSOAccountPriv,
+        eTACFBypassTSOCmdList,
+        eTACFTSOSubmitAuthority,
+        eTACFMountDevices,
+        eTACFTSOOperator,
+        eTACFTSORecover,
+        eTACFValidateTSOAccount,
+        eTACFBypassCmdLimiting,
+        eTACFTSOFullScreenLogon,
+        eTACFReceiveTSOMailMsgs,
+        eTACFPrefixTSOMessages,
+        eTACFTSOMsgPause,
+        eTACFTSOAccountRequired,
+        eTACFValidateTSOProcedure,
+        eTACFTSOConsole,
+        eTACFReceiveTSOMessages,
+        eTACFTSOModalMsgs,
+        eTACFReceiveTSONotices,
+        eTACFPromptForMissingParms,
+        eTACFTSOProcedureRequired,
+        eTACFWriteToProgrammer,
+        eTACFUnicenterTNGSync,
+        eTACFIDMSSignonClist,
+        eTACFIDMSClistVersion,
+        eTACFMusassID,
+        eTACFIDMSMusassOpts10-2,
+        eTACFIDMSMusassStartPgm,
+        eTACFMusassDefaultLid,
+        eTACFIDMSMusassUpdateAuth,
+        eTACFMusassInfoCall,
+        eTACFStats,
+        eTACFVMDefaultAccount,
+        eTACFVMNoSpoolFoundAction,
+        eTACFVMSyntaxErrorAction,
+        eTACFVMAutologAll,
+        eTACFVMAutologNoPswd,
+        eTACFVMAutologOnly,
+        eTACFVMDiagnose84,
+        eTACFVMBypassDialValidation,
+        eTACFVMGroupLogonId,
+        eTACFVMPVMAccess,
+        eTACFVMSRFAccess,
+        eTACFVMValidateAccounting,
+        eTACFVMSAFDiagnose,
+        eTACFVMSRFAccessFromVSE,
+        eTACFVMIdleTermProcessing,
+        eTACFAllowESM,
+        eTACFVMD4DiagnoseCMSFileLevel,
+        eTACFLinuxName,
+        eTACFLotusName,
+        eTACFNovellName,
+        eTACFLDAPDirectorySync,
+        eTACFHomeDirectory,
+        eTACFShellProgram,
+        eTACFNumericUserID,
+        eTACFMaxCPUTime,
+        eTACFMaxAddrSpaceSize,
+        eTACFMaxFilesPerProcess,
+        eTACFMaxProcesses,
+        eTACFMaxPthreadsCreated,
+        eTACFMaxDataSpacePages,
+        eTACFLDAPNodeList,
+        eTACFCustomAttribute001,
+        eTACFCustomAttribute002,
+        eTACFCustomAttribute003,
+        eTACFCustomAttribute004,
+        eTACFCustomAttribute005,
+        eTACFCustomAttribute006,
+        eTACFCustomAttribute007,
+        eTACFCustomAttribute008,
+        eTACFCustomAttribute009,
+        eTACFCustomAttribute010,
+        eTACFCustomAttribute011,
+        eTACFCustomAttribute012,
+        eTACFCustomAttribute013,
+        eTACFCustomAttribute014,
+        eTACFCustomAttribute015,
+        eTACFCustomAttribute016,
+        eTACFCustomAttribute017,
+        eTACFCustomAttribute018,
+        eTACFCustomAttribute019,
+        eTACFCustomAttribute020,
+        eTACFCustomAttributeName001,
+        eTACFCustomAttributeName002,
+        eTACFCustomAttributeName003,
+        eTACFCustomAttributeName004,
+        eTACFCustomAttributeName005,
+        eTACFCustomAttributeName006,
+        eTACFCustomAttributeName007,
+        eTACFCustomAttributeName008,
+        eTACFCustomAttributeName009,
+        eTACFCustomAttributeName010,
+        eTACFCustomAttributeName011,
+        eTACFCustomAttributeName012,
+        eTACFCustomAttributeName013,
+        eTACFCustomAttributeName014,
+        eTACFCustomAttributeName015,
+        eTACFCustomAttributeName016,
+        eTACFCustomAttributeName017,
+        eTACFCustomAttributeName018,
+        eTACFCustomAttributeName019,
+        eTACFCustomAttributeName020
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-ACF-nb:11 = {
+    name = eTACFDirectory-eTNamespace
+    eTACFDirectory allowable-parent eTNamespace
+    named-by eTACFDirectoryName
+};
+
+schema set name-binding etrust-admin-ACF-nb:12 = {
+    name = eTACFPolicyContainer-eTNamespace
+    eTACFPolicyContainer allowable-parent eTNamespace
+    named-by eTACFPolicyContainerName
+};
+
+schema set name-binding etrust-admin-ACF-nb:13 = {
+    name = eTACFSystemInfo-eTACFDirectory
+    eTACFSystemInfo allowable-parent eTACFDirectory
+    named-by eTACFSystemInfoName
+};
+
+schema set name-binding etrust-admin-ACF-nb:15 = {
+    name = eTACFUserDef-eTACFDirectory
+    eTACFUserDef allowable-parent eTACFDirectory
+    named-by eTACFUserDefName
+};
+
+schema set name-binding etrust-admin-ACF-nb:16 = {
+    name = eTACFXREFSourceContainer-eTACFDirectory
+    eTACFXREFSourceContainer allowable-parent eTACFDirectory
+    named-by eTACFXREFSourceContainerName
+};
+
+schema set name-binding etrust-admin-ACF-nb:1 = {
+    name = eTACFLidContainer-eTACFDirectory
+    eTACFLidContainer allowable-parent eTACFDirectory
+    named-by eTACFLidContainerName
+};
+
+schema set name-binding etrust-admin-ACF-nb:2 = {
+    name = eTACFRuleContainer-eTACFDirectory
+    eTACFRuleContainer allowable-parent eTACFDirectory
+    named-by eTACFRuleContainerName
+};
+
+schema set name-binding etrust-admin-ACF-nb:17 = {
+    name = eTACFXREFSource-eTACFXREFSourceContainer
+    eTACFXREFSource allowable-parent eTACFXREFSourceContainer
+    named-by eTACFXREFSourceName
+};
+
+schema set name-binding etrust-admin-ACF-nb:3 = {
+    name = eTACFLid-eTACFLidContainer
+    eTACFLid allowable-parent eTACFLidContainer
+    named-by eTACFLidName
+};
+
+schema set name-binding etrust-admin-ACF-nb:4 = {
+    name = eTACFACF2RuleType-eTACFRuleContainer
+    eTACFACF2RuleType allowable-parent eTACFRuleContainer
+    named-by eTACFACF2RuleTypeName
+};
+
+schema set name-binding etrust-admin-ACF-nb:5 = {
+    name = eTACFACF2RuleKey-eTACFACF2RuleType
+    eTACFACF2RuleKey allowable-parent eTACFACF2RuleType
+    named-by eTACFACF2RuleKeyName
+};
+
+schema set name-binding etrust-admin-ACF-nb:14 = {
+    name = eTACFACF2RuleLine-eTACFACF2RuleKey
+    eTACFACF2RuleLine allowable-parent eTACFACF2RuleKey
+    named-by eTACFACF2RuleLineName
+};
+
+schema set name-binding etrust-admin-ACF-nb:10 = {
+    name = eTACFPolicy-eTACFPolicyContainer
+    eTACFPolicy allowable-parent eTACFPolicyContainer
+    named-by eTACFPolicyName
+};
+

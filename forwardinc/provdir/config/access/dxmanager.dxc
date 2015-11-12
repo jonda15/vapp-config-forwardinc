@@ -1,0 +1,12 @@
+# CA Directory - DXserver/config/access
+#
+# This is the default file for access controls for servers created
+# by DXmanager r12 SP2. As these settings become available in future
+# releases, this file will no longer be sourced.
+#
+
+#
+# static access controls
+#
+set access-controls = false;
+

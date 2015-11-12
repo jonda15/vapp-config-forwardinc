@@ -1,0 +1,68 @@
+# 
+# Computer Associates 
+# 
+# config/schema/umich.dxc ($Revision: 4.5 $)
+#
+# University of Michigan defined attributes and object classes
+# These defintions where derived from IETF Schema Release 1, 19-Sep-94.
+#
+# All Attributes and Object Classes are EXPERIMENTAL.
+#
+# oid-prefix ::= iso(1).identifiedOrganization(3).dod(6).internet(1).private(4).
+#		 enterprises(1).umich(250)
+#
+schema set oid-prefix umichAttributeType = (1.3.6.1.4.1.250.1);
+
+#
+# Attribute Definitions.
+#
+schema set attribute umichAttributeType:32 = {
+        name   = umichKerberosName
+	ldap-names = krbName
+        syntax = caseIgnoreIA5String
+};
+
+schema set attribute umichAttributeType:33 = {
+        name   = umichExtendedAccessControlList
+	ldap-names = xacl
+        syntax = umichXAclSyntax				# XAcl
+};
+
+schema set attribute umichAttributeType:34 = {
+        name   = umichParentDNID
+        syntax = integer
+};
+
+schema set attribute umichAttributeType:41 = {
+        name   = umichLabeledURL
+        syntax = caseExactString
+};
+
+schema set attribute umichAttributeType:57 = {
+        name   = umichLabeledURI
+	ldap-names = labeledUri, labeledurl
+        syntax = caseExactString
+};
+
+
+#
+# Object Class Definitions.
+#
+schema set oid-prefix umichObjectClass = (1.3.6.1.4.1.250.3);
+
+schema set object-class umichObjectClass:10 = {
+        name   = umichKerberosSecurityObject
+        subclass-of top
+        must-contain
+            krbName
+};
+
+schema set object-class umichObjectClass:15 = {
+        name   = umichLabeledURIObject
+	ldap-names = labeledURIObject
+        subclass-of top
+        may-contain
+            umichLabeledURI,
+	    umichLabeledURL
+};
+

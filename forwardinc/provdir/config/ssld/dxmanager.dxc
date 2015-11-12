@@ -1,0 +1,11 @@
+# CA Directory - DXserver/config/ssld
+#
+# This is a the default file for ssl configuration for servers created
+# by DXmanager r12 SP2. As these settings become available in future
+# releases, this file will no longer be sourced.
+#
+
+set ssl = {
+   cert-dir = "config/ssld/personalities"
+   ca-file = "config/ssld/trusted.pem"    
+};

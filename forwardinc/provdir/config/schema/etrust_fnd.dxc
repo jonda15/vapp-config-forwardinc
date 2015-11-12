@@ -1,0 +1,976 @@
+schema set oid-prefix etrust-admin-FND-attr = (1.3.6.1.4.1.791.2.3.5.3.5330.1);
+schema set oid-prefix etrust-admin-FND-oc = (1.3.6.1.4.1.791.2.3.5.3.5330.2);
+schema set oid-prefix etrust-admin-FND-nb = (1.3.6.1.4.1.791.2.3.5.3.5330.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-FND-attr:100 = {
+    name = eTFNDDirectoryName
+    ldap-names = eTFNDDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:101 = {
+    name = eTFNDDirectoryComments
+    ldap-names = eTFNDDirectoryComments
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:102 = {
+    name = eTFNDDirectoryDsn
+    ldap-names = eTFNDDirectoryDsn
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:103 = {
+    name = eTFNDDirectoryUserId
+    ldap-names = eTFNDDirectoryUserId
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:104 = {
+    name = eTFNDDirectoryPassword
+    ldap-names = eTFNDDirectoryPassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:105 = {
+    name = eTFNDDirectoryDsnList
+    ldap-names = eTFNDDirectoryDsnList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-FND-attr:420 = {
+    name = eTFNDResponsibilityList
+    ldap-names = eTFNDResponsibilityList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-FND-attr:106 = {
+    name = eTFNDDirOraTns
+    ldap-names = eTFNDDirOraTns
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:107 = {
+    name = eTFNDDirOraNlsLang
+    ldap-names = eTFNDDirOraNlsLang
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:108 = {
+    name = eTFNDDirFndSecurityContext
+    ldap-names = eTFNDDirFndSecurityContext
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:109 = {
+    name = eTFNDDirFndPassword
+    ldap-names = eTFNDDirFndPassword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:110 = {
+    name = eTFNDDirFndPasswordMod
+    ldap-names = eTFNDDirFndPasswordMod
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:111 = {
+    name = eTFNDDirectoryPasswordMod
+    ldap-names = eTFNDDirectoryPasswordMod
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:112 = {
+    name = eTFNDDirFndUserId
+    ldap-names = eTFNDDirFndUserId
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:114 = {
+    name = eTFNDDirFndAppDbName
+    ldap-names = eTFNDDirFndAppDbName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:115 = {
+    name = eTFNDDirFndAdminDbName
+    ldap-names = eTFNDDirFndAdminDbName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:113 = {
+    name = eTFNDUseAolOnly
+    ldap-names = eTFNDUseAolOnly
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:300 = {
+    name = eTFNDAccountContainerName
+    ldap-names = eTFNDAccountContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:400 = {
+    name = eTFNDUserName
+    ldap-names = eTFNDUserName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:401 = {
+    name = eTFNDWhoLastUpdateDate
+    ldap-names = eTFNDWhoLastUpdateDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:422 = {
+    name = eTFNDWhoLastUpdateTime
+    ldap-names = eTFNDWhoLastUpdateTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:402 = {
+    name = eTFNDWhoLastUpdatedBy
+    ldap-names = eTFNDWhoLastUpdatedBy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:403 = {
+    name = eTFNDWhoCreationDate
+    ldap-names = eTFNDWhoCreationDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:423 = {
+    name = eTFNDWhoCreationTime
+    ldap-names = eTFNDWhoCreationTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:404 = {
+    name = eTFNDWhoCreatedBy
+    ldap-names = eTFNDWhoCreatedBy
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:405 = {
+    name = eTFNDWhoLastUpdateLogin
+    ldap-names = eTFNDWhoLastUpdateLogin
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:406 = {
+    name = eTFNDSessionNumber
+    ldap-names = eTFNDSessionNumber
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:410 = {
+    name = eTFNDStartDate
+    ldap-names = eTFNDStartDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:411 = {
+    name = eTFNDEndDate
+    ldap-names = eTFNDEndDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:412 = {
+    name = eTFNDDescription
+    ldap-names = eTFNDDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:407 = {
+    name = eTFNDLastLogonDate
+    ldap-names = eTFNDLastLogonDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:424 = {
+    name = eTFNDLastLogonTime
+    ldap-names = eTFNDLastLogonTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:408 = {
+    name = eTFNDPasswordDate
+    ldap-names = eTFNDPasswordDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:425 = {
+    name = eTFNDPasswordTime
+    ldap-names = eTFNDPasswordTime
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:409 = {
+    name = eTFNDPasswordAccessesLeft
+    ldap-names = eTFNDPasswordAccessesLeft
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:413 = {
+    name = eTFNDPasswordLifespanAccesses
+    ldap-names = eTFNDPasswordLifespanAccesses
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:414 = {
+    name = eTFNDPasswordLifespanDays
+    ldap-names = eTFNDPasswordLifespanDays
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:421 = {
+    name = eTFNDPasswordExpirationMode
+    ldap-names = eTFNDPasswordExpirationMode
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:415 = {
+    name = eTFNDEmployee
+    ldap-names = eTFNDEmployee
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:416 = {
+    name = eTFNDEmailAddress
+    ldap-names = eTFNDEmailAddress
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:417 = {
+    name = eTFNDFax
+    ldap-names = eTFNDFax
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:418 = {
+    name = eTFNDCustomer
+    ldap-names = eTFNDCustomer
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:419 = {
+    name = eTFNDSupplier
+    ldap-names = eTFNDSupplier
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:500 = {
+    name = eTFNDPolicyContainerName
+    ldap-names = eTFNDPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:600 = {
+    name = eTFNDPolicyName
+    ldap-names = eTFNDPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:700 = {
+    name = eTFNDApplContainerName
+    ldap-names = eTFNDApplContainerName
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:800 = {
+    name = eTFNDApplShortName
+    ldap-names = eTFNDApplShortName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:801 = {
+    name = eTFNDApplName
+    ldap-names = eTFNDApplName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:802 = {
+    name = eTFNDApplDescription
+    ldap-names = eTFNDApplDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:900 = {
+    name = eTFNDRespKey
+    ldap-names = eTFNDRespKey
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:902 = {
+    name = eTFNDRespName
+    ldap-names = eTFNDRespName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-FND-attr:901 = {
+    name = eTFNDRespDescription
+    ldap-names = eTFNDRespDescription
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-FND-oc:1 = {
+    name = eTFNDDirectory
+    subclass-of Top
+    must-contain
+        eTFNDDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTFNDDirectoryComments,
+        eTFNDDirectoryDsn,
+        eTFNDDirectoryUserId,
+        eTFNDDirectoryPassword,
+        eTFNDDirectoryDsnList,
+        eTFNDResponsibilityList,
+        eTFNDDirOraTns,
+        eTFNDDirOraNlsLang,
+        eTFNDDirFndSecurityContext,
+        eTFNDDirFndPassword,
+        eTFNDDirFndPasswordMod,
+        eTFNDDirectoryPasswordMod,
+        eTFNDDirFndUserId,
+        eTFNDDirFndAppDbName,
+        eTFNDDirFndAdminDbName,
+        eTFNDUseAolOnly,
+        eTAgentNamespaceClass
+};
+
+schema set object-class etrust-admin-FND-oc:2 = {
+    name = eTFNDNamespace
+    subclass-of Top
+    must-contain
+        eTNamespaceName,
+        objectclass
+    may-contain
+        eTAgentPluginDLL,
+        eTValidateCredentials
+};
+
+schema set object-class etrust-admin-FND-oc:3 = {
+    name = eTFNDAccountContainer
+    subclass-of Top
+    must-contain
+        eTFNDAccountContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-FND-oc:4 = {
+    name = eTFNDAccount
+    subclass-of Top
+    must-contain
+        eTFNDUserName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTSelfChange,
+        eTLocked,
+        eTLastLoginDTS,
+        eTFNDWhoLastUpdateDate,
+        eTFNDWhoLastUpdateTime,
+        eTFNDWhoLastUpdatedBy,
+        eTFNDWhoCreationDate,
+        eTFNDWhoCreationTime,
+        eTFNDWhoCreatedBy,
+        eTFNDWhoLastUpdateLogin,
+        eTFNDSessionNumber,
+        eTFNDStartDate,
+        eTFNDEndDate,
+        eTFNDDescription,
+        eTFNDLastLogonDate,
+        eTFNDLastLogonTime,
+        eTFNDPasswordDate,
+        eTFNDPasswordTime,
+        eTFNDPasswordAccessesLeft,
+        eTFNDPasswordLifespanAccesses,
+        eTFNDPasswordLifespanDays,
+        eTFNDPasswordExpirationMode,
+        eTFNDEmployee,
+        eTFNDEmailAddress,
+        eTFNDFax,
+        eTFNDCustomer,
+        eTFNDSupplier,
+        eTFNDResponsibilityList
+};
+
+schema set object-class etrust-admin-FND-oc:5 = {
+    name = eTFNDPolicyContainer
+    subclass-of Top
+    must-contain
+        eTFNDPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-FND-oc:6 = {
+    name = eTFNDPolicy
+    subclass-of Top
+    must-contain
+        eTFNDPolicyName,
+        objectclass
+    may-contain
+        eTFNDUserName,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTFNDWhoLastUpdateDate,
+        eTFNDWhoLastUpdateTime,
+        eTFNDWhoLastUpdatedBy,
+        eTFNDWhoCreationDate,
+        eTFNDWhoCreationTime,
+        eTFNDWhoCreatedBy,
+        eTFNDWhoLastUpdateLogin,
+        eTFNDSessionNumber,
+        eTFNDStartDate,
+        eTFNDEndDate,
+        eTFNDDescription,
+        eTFNDLastLogonDate,
+        eTFNDLastLogonTime,
+        eTFNDPasswordDate,
+        eTFNDPasswordTime,
+        eTFNDPasswordAccessesLeft,
+        eTFNDPasswordLifespanAccesses,
+        eTFNDPasswordLifespanDays,
+        eTFNDPasswordExpirationMode,
+        eTFNDEmployee,
+        eTFNDEmailAddress,
+        eTFNDFax,
+        eTFNDCustomer,
+        eTFNDSupplier,
+        eTFNDResponsibilityList
+};
+
+schema set object-class etrust-admin-FND-oc:7 = {
+    name = eTFNDApplContainer
+    subclass-of Top
+    must-contain
+        eTFNDApplContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-FND-oc:8 = {
+    name = eTFNDAppl
+    subclass-of Top
+    must-contain
+        eTFNDApplShortName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTFNDApplName,
+        eTFNDApplDescription,
+        eTFNDResponsibilityList
+};
+
+schema set object-class etrust-admin-FND-oc:9 = {
+    name = eTFNDResp
+    subclass-of Top
+    must-contain
+        eTFNDRespKey,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTFNDRespName,
+        eTFNDRespDescription
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-FND-nb:1 = {
+    name = eTFNDDirectory-eTNamespace
+    eTFNDDirectory allowable-parent eTNamespace
+    named-by eTFNDDirectoryName
+};
+
+schema set name-binding etrust-admin-FND-nb:2 = {
+    name = eTFNDPolicyContainer-eTNamespace
+    eTFNDPolicyContainer allowable-parent eTNamespace
+    named-by eTFNDPolicyContainerName
+};
+
+schema set name-binding etrust-admin-FND-nb:3 = {
+    name = eTFNDNamespace-eTFNDDirectory
+    eTFNDNamespace allowable-parent eTFNDDirectory
+    named-by eTNamespaceName
+};
+
+schema set name-binding etrust-admin-FND-nb:4 = {
+    name = eTFNDAccountContainer-eTFNDDirectory
+    eTFNDAccountContainer allowable-parent eTFNDDirectory
+    named-by eTFNDAccountContainerName
+};
+
+schema set name-binding etrust-admin-FND-nb:7 = {
+    name = eTFNDApplContainer-eTFNDDirectory
+    eTFNDApplContainer allowable-parent eTFNDDirectory
+    named-by eTFNDApplContainerName
+};
+
+schema set name-binding etrust-admin-FND-nb:5 = {
+    name = eTFNDAccount-eTFNDAccountContainer
+    eTFNDAccount allowable-parent eTFNDAccountContainer
+    named-by eTFNDUserName
+};
+
+schema set name-binding etrust-admin-FND-nb:6 = {
+    name = eTFNDPolicy-eTFNDPolicyContainer
+    eTFNDPolicy allowable-parent eTFNDPolicyContainer
+    named-by eTFNDPolicyName
+};
+
+schema set name-binding etrust-admin-FND-nb:8 = {
+    name = eTFNDAppl-eTFNDApplContainer
+    eTFNDAppl allowable-parent eTFNDApplContainer
+    named-by eTFNDApplShortName
+};
+
+schema set name-binding etrust-admin-FND-nb:9 = {
+    name = eTFNDResp-eTFNDAppl
+    eTFNDResp allowable-parent eTFNDAppl
+    named-by eTFNDRespKey
+};
+

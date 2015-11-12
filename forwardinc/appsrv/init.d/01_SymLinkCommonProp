@@ -1,2 +1,2 @@
-o "Creating Symlink for the provisioning properties ..."
+echo "Creating Symlink for the provisioning properties ..."
 ln -s /solution/$CONFIG/../common/data/provisioning.properties $JBOSS_USER_HOME/provisioning.properties

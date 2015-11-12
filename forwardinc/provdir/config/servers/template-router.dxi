@@ -1,0 +1,33 @@
+# CA Directory DXserver/config/servers 
+# 
+ 
+# logging and tracing 
+close summary-log; 
+close trace-log; 
+source "../logging/router.dxc"; 
+ 
+# schema 
+clear schema;
+source "../schema/impd.dxg"; 
+ 
+# access controls
+clear access; 
+source "../access/impd.dxc";
+ 
+# knowledge 
+clear dsas; 
+source "../knowledge/@hostname@-impd-main.dxc";
+source "../knowledge/@hostname@-impd-co.dxc";
+source "../knowledge/@hostname@-impd-inc.dxc";
+source "../knowledge/@hostname@-impd-notify.dxc";
+source "../knowledge/external-router.dxc";
+
+# operational settings 
+source "../settings/impd.dxc"; 
+source "../settings/router.dxc"; 
+ 
+# service limits 
+source "../limits/impd.dxc"; 
+
+# ssld
+source "../ssld/impd.dxc";

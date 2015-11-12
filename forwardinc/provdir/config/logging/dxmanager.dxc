@@ -1,0 +1,16 @@
+# CA Directory - DXserver/config/logging
+#
+# This is a the default file for logging for servers created
+# by DXmanager r12 SP2. As these settings become available in future
+# releases, this file will no longer be sourced.
+#
+
+# DSA trace log - Used for debugging
+set trace-log = "logs/$s_trace.log";
+set trace = error;
+
+# Daily warning, statistics, diagnostic & summary logs
+set warn-log = "logs/$s_warn.log";
+set stats-log = "logs/$s_stats.log";
+set diag-log = "logs/$s_diag.log";
+

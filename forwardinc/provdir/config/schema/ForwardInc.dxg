@@ -1,0 +1,6 @@
+# Computer Associates config/schema/ForwardInc.dxg 
+# 
+# Create for the Demo ForwardInc User Store (burjo18)
+
+source "default.dxg";
+source "idmPerson.dxc";

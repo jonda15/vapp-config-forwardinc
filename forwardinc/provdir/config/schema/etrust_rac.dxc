@@ -1,0 +1,3215 @@
+schema set oid-prefix etrust-admin-RAC-attr = (1.3.6.1.4.1.791.2.3.5.3.5110.1);
+schema set oid-prefix etrust-admin-RAC-oc = (1.3.6.1.4.1.791.2.3.5.3.5110.2);
+schema set oid-prefix etrust-admin-RAC-nb = (1.3.6.1.4.1.791.2.3.5.3.5110.3);
+
+#
+#
+# eTrust Directory Schema: Attribute Type Definitions
+#
+#
+
+
+#
+# All date values are represented as YYYDDD, where YYY is year - 1900
+# and DDD is the Julian day.
+# For example, Dec. 31, 1999 is "99365" and Jan. 1, 2000 is "100001".
+#
+# All time values are represented as hundredths of a second since midnight.
+# For example, 12:01 AM is "6000"
+#
+
+schema set attribute etrust-admin-RAC-attr:1 = {
+    name = eTRACDirectoryName
+    ldap-names = eTRACDirectoryName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:2 = {
+    name = eTRACUserAction
+    ldap-names = eTRACUserAction
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:3 = {
+    name = eTRACDateFormat
+    ldap-names = eTRACDateFormat
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:176 = {
+    name = eTRACVersion
+    ldap-names = eTRACVersion
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:177 = {
+    name = eTRACPSWDHistory
+    ldap-names = eTRACPSWDHistory
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:178 = {
+    name = eTRACPSWDExpire
+    ldap-names = eTRACPSWDExpire
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:179 = {
+    name = eTRACPSWDWarnDays
+    ldap-names = eTRACPSWDWarnDays
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:180 = {
+    name = eTRACPSWDThresh
+    ldap-names = eTRACPSWDThresh
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:181 = {
+    name = eTRACSecurityAddCreator
+    ldap-names = eTRACSecurityAddCreator
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:182 = {
+    name = eTRACSecurityGroupList
+    ldap-names = eTRACSecurityGroupList
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:183 = {
+    name = eTRACSecurityInactUsers
+    ldap-names = eTRACSecurityInactUsers
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:250 = {
+    name = eTRACSetConnectGroupOwner
+    ldap-names = eTRACSetConnectGroupOwner
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:184 = {
+    name = eTRACSysInfoName
+    ldap-names = eTRACSysInfoName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:4 = {
+    name = eTRACAccountContainerName
+    ldap-names = eTRACAccountContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:5 = {
+    name = eTRACuserid
+    ldap-names = eTRACuserid
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:6 = {
+    name = eTRACProgrammerName
+    ldap-names = eTRACProgrammerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:7 = {
+    name = eTRACDatasetModel
+    ldap-names = eTRACDatasetModel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:8 = {
+    name = eTRACLogonTime
+    ldap-names = eTRACLogonTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:9 = {
+    name = eTRACLogonDays
+    ldap-names = eTRACLogonDays
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:10 = {
+    name = eTRACDefaultGroup
+    ldap-names = eTRACDefaultGroup
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:11 = {
+    name = eTRACLastAccessDate
+    ldap-names = eTRACLastAccessDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:12 = {
+    name = eTRACLastAccessTime
+    ldap-names = eTRACLastAccessTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:13 = {
+    name = eTRACAuthorizationDate
+    ldap-names = eTRACAuthorizationDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:14 = {
+    name = eTRACPasswordChangeDate
+    ldap-names = eTRACPasswordChangeDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:15 = {
+    name = eTRACOwner
+    ldap-names = eTRACOwner
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:16 = {
+    name = eTRACInstallationData
+    ldap-names = eTRACInstallationData
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:17 = {
+    name = eTRACRevokeDate
+    ldap-names = eTRACRevokeDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:18 = {
+    name = eTRACResumeDate
+    ldap-names = eTRACResumeDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:19 = {
+    name = eTRACPasswordInterval
+    ldap-names = eTRACPasswordInterval
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:20 = {
+    name = eTRACNoPassword
+    ldap-names = eTRACNoPassword
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:21 = {
+    name = eTRACOperations
+    ldap-names = eTRACOperations
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:22 = {
+    name = eTRACAuditor
+    ldap-names = eTRACAuditor
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:23 = {
+    name = eTRACSpecial
+    ldap-names = eTRACSpecial
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:24 = {
+    name = eTRACAdsp
+    ldap-names = eTRACAdsp
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:25 = {
+    name = eTRACUaudit
+    ldap-names = eTRACUaudit
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:26 = {
+    name = eTRACRevoke
+    ldap-names = eTRACRevoke
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:27 = {
+    name = eTRACOidCard
+    ldap-names = eTRACOidCard
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:28 = {
+    name = eTRACUseridPermissions
+    ldap-names = eTRACUseridPermissions
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:29 = {
+    name = eTRACUseridComponent
+    ldap-names = eTRACUseridComponent
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:30 = {
+    name = eTRACPrimaryLanguage
+    ldap-names = eTRACPrimaryLanguage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:31 = {
+    name = eTRACSecondaryLanguage
+    ldap-names = eTRACSecondaryLanguage
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:32 = {
+    name = eTRACTsoSecurityLabel
+    ldap-names = eTRACTsoSecurityLabel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:33 = {
+    name = eTRACTsoDestination
+    ldap-names = eTRACTsoDestination
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:34 = {
+    name = eTRACTsoDefaultUnit
+    ldap-names = eTRACTsoDefaultUnit
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:35 = {
+    name = eTRACTsoUserdata
+    ldap-names = eTRACTsoUserdata
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:36 = {
+    name = eTRACTsoAccountNumber
+    ldap-names = eTRACTsoAccountNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:37 = {
+    name = eTRACTsoDefaultCommand
+    ldap-names = eTRACTsoDefaultCommand
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:38 = {
+    name = eTRACTsoDefaultLogonProc
+    ldap-names = eTRACTsoDefaultLogonProc
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:39 = {
+    name = eTRACTsoMaximumRegionSize
+    ldap-names = eTRACTsoMaximumRegionSize
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:40 = {
+    name = eTRACTsoLogonSize
+    ldap-names = eTRACTsoLogonSize
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:41 = {
+    name = eTRACTsoHoldClass
+    ldap-names = eTRACTsoHoldClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:42 = {
+    name = eTRACTsoJobClass
+    ldap-names = eTRACTsoJobClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:43 = {
+    name = eTRACTsoMessageClass
+    ldap-names = eTRACTsoMessageClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:44 = {
+    name = eTRACTsoDefaultSysoutClass
+    ldap-names = eTRACTsoDefaultSysoutClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:45 = {
+    name = eTRACuseridsegtso
+    ldap-names = eTRACuseridsegtso
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:46 = {
+    name = eTRACDfpDataApplication
+    ldap-names = eTRACDfpDataApplication
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:47 = {
+    name = eTRACDfpDataClass
+    ldap-names = eTRACDfpDataClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:48 = {
+    name = eTRACDfpManagementClass
+    ldap-names = eTRACDfpManagementClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:49 = {
+    name = eTRACDfpStorageClass
+    ldap-names = eTRACDfpStorageClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:50 = {
+    name = eTRACuseridsegdfp
+    ldap-names = eTRACuseridsegdfp
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:51 = {
+    name = eTRACTerminalTimeout
+    ldap-names = eTRACTerminalTimeout
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:52 = {
+    name = eTRACOperatorReSignon
+    ldap-names = eTRACOperatorReSignon
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:53 = {
+    name = eTRACOperatorPriority
+    ldap-names = eTRACOperatorPriority
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:54 = {
+    name = eTRACOperatorIdentification
+    ldap-names = eTRACOperatorIdentification
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:55 = {
+    name = eTRACUseridOPCLASS
+    ldap-names = eTRACUseridOPCLASS
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:56 = {
+    name = eTRACuseridsegcics
+    ldap-names = eTRACuseridsegcics
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:57 = {
+    name = eTRACConnectGroupName
+    ldap-names = eTRACConnectGroupName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:58 = {
+    name = eTRACConnectGroupAuthority
+    ldap-names = eTRACConnectGroupAuthority
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:59 = {
+    name = eTRACConnectGroupUACC
+    ldap-names = eTRACConnectGroupUACC
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:60 = {
+    name = eTRACUseridCategory
+    ldap-names = eTRACUseridCategory
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:61 = {
+    name = eTRACSecurityLevel
+    ldap-names = eTRACSecurityLevel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:62 = {
+    name = eTRACSecurityLabel
+    ldap-names = eTRACSecurityLabel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:63 = {
+    name = eTRACOmvsUid
+    ldap-names = eTRACOmvsUid
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:64 = {
+    name = eTRACOmvsHome
+    ldap-names = eTRACOmvsHome
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:65 = {
+    name = eTRACOmvsInitialProgram
+    ldap-names = eTRACOmvsInitialProgram
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:170 = {
+    name = eTRACOmvsASSizeMax
+    ldap-names = eTRACOmvsASSizeMax
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:171 = {
+    name = eTRACOmvsCPUTimeMax
+    ldap-names = eTRACOmvsCPUTimeMax
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:172 = {
+    name = eTRACOmvsFileProcMax
+    ldap-names = eTRACOmvsFileProcMax
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:173 = {
+    name = eTRACOmvsMMAPAreaMax
+    ldap-names = eTRACOmvsMMAPAreaMax
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:174 = {
+    name = eTRACOmvsProcUserMax
+    ldap-names = eTRACOmvsProcUserMax
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:175 = {
+    name = eTRACOmvsThreadsMax
+    ldap-names = eTRACOmvsThreadsMax
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:66 = {
+    name = eTRACuseridsegomvs
+    ldap-names = eTRACuseridsegomvs
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:67 = {
+    name = eTRACStorageKeyword
+    ldap-names = eTRACStorageKeyword
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:68 = {
+    name = eTRACLogCommandResponseKeyword
+    ldap-names = eTRACLogCommandResponseKeyword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:69 = {
+    name = eTRACMGIDKeyword
+    ldap-names = eTRACMGIDKeyword
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:70 = {
+    name = eTRACDOMKeyword
+    ldap-names = eTRACDOMKeyword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:71 = {
+    name = eTRACKEYKeyword
+    ldap-names = eTRACKEYKeyword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:72 = {
+    name = eTRACCMDSYSKeyword
+    ldap-names = eTRACCMDSYSKeyword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:73 = {
+    name = eTRACUDKeyword
+    ldap-names = eTRACUDKeyword
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:74 = {
+    name = eTRACMscopeSystems
+    ldap-names = eTRACMscopeSystems
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:75 = {
+    name = eTRACAltGroupKeyword
+    ldap-names = eTRACAltGroupKeyword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:76 = {
+    name = eTRACAutoKeyword
+    ldap-names = eTRACAutoKeyword
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:77 = {
+    name = eTRACAuthKeyword
+    ldap-names = eTRACAuthKeyword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:78 = {
+    name = eTRACLevelKeyword
+    ldap-names = eTRACLevelKeyword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:79 = {
+    name = eTRACMformKeyword
+    ldap-names = eTRACMformKeyword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:80 = {
+    name = eTRACMonitorKeyword
+    ldap-names = eTRACMonitorKeyword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:81 = {
+    name = eTRACRoutcodeKeyword
+    ldap-names = eTRACRoutcodeKeyword
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:82 = {
+    name = eTRACuseridsegoperparm
+    ldap-names = eTRACuseridsegoperparm
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:83 = {
+    name = eTRACUseridCLAUTH
+    ldap-names = eTRACUseridCLAUTH
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:84 = {
+    name = eTRACWorkAccountNumber
+    ldap-names = eTRACWorkAccountNumber
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:85 = {
+    name = eTRACBuilding
+    ldap-names = eTRACBuilding
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:86 = {
+    name = eTRACDepartment
+    ldap-names = eTRACDepartment
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:87 = {
+    name = eTRACRoom
+    ldap-names = eTRACRoom
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:88 = {
+    name = eTRACWorkUserName
+    ldap-names = eTRACWorkUserName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:89 = {
+    name = eTRACAddressLine1
+    ldap-names = eTRACAddressLine1
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:90 = {
+    name = eTRACAddressLine2
+    ldap-names = eTRACAddressLine2
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:91 = {
+    name = eTRACAddressLine3
+    ldap-names = eTRACAddressLine3
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:92 = {
+    name = eTRACAddressLine4
+    ldap-names = eTRACAddressLine4
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:93 = {
+    name = eTRACuseridsegappc
+    ldap-names = eTRACuseridsegappc
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:185 = {
+    name = eTRACRestricted
+    ldap-names = eTRACRestricted
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:186 = {
+    name = eTRACLotusName
+    ldap-names = eTRACLotusName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:187 = {
+    name = eTRACNovellName
+    ldap-names = eTRACNovellName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:190 = {
+    name = eTRACOMVSMemoryLimit
+    ldap-names = eTRACOMVSMemoryLimit
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:191 = {
+    name = eTRACOMVSSharedMemoryLimit
+    ldap-names = eTRACOMVSSharedMemoryLimit
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:193 = {
+    name = eTRACReceiveHardCopyMessages
+    ldap-names = eTRACReceiveHardCopyMessages
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:194 = {
+    name = eTRACReceiveConsoleIDZeroMessages
+    ldap-names = eTRACReceiveConsoleIDZeroMessages
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:195 = {
+    name = eTRACReceiveUnknownConsoleIDMessages
+    ldap-names = eTRACReceiveUnknownConsoleIDMessages
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:196 = {
+    name = eTRACResourceSecurityLevelKeys
+    ldap-names = eTRACResourceSecurityLevelKeys
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:197 = {
+    name = eTRACTransactionSecurityLevelKeys
+    ldap-names = eTRACTransactionSecurityLevelKeys
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:198 = {
+    name = eTRACPassPhrase
+    ldap-names = eTRACPassPhrase
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:199 = {
+    name = eTRACPassPhraseInterval
+    ldap-names = eTRACPassPhraseInterval
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:200 = {
+    name = eTRACPassPhraseChangeDate
+    ldap-names = eTRACPassPhraseChangeDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:201 = {
+    name = eTRACCustomAttribute001
+    ldap-names = eTRACCustomAttribute001
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:202 = {
+    name = eTRACCustomAttribute002
+    ldap-names = eTRACCustomAttribute002
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:203 = {
+    name = eTRACCustomAttribute003
+    ldap-names = eTRACCustomAttribute003
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:204 = {
+    name = eTRACCustomAttribute004
+    ldap-names = eTRACCustomAttribute004
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:205 = {
+    name = eTRACCustomAttribute005
+    ldap-names = eTRACCustomAttribute005
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:206 = {
+    name = eTRACCustomAttribute006
+    ldap-names = eTRACCustomAttribute006
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:207 = {
+    name = eTRACCustomAttribute007
+    ldap-names = eTRACCustomAttribute007
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:208 = {
+    name = eTRACCustomAttribute008
+    ldap-names = eTRACCustomAttribute008
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:209 = {
+    name = eTRACCustomAttribute009
+    ldap-names = eTRACCustomAttribute009
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:210 = {
+    name = eTRACCustomAttribute010
+    ldap-names = eTRACCustomAttribute010
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:211 = {
+    name = eTRACCustomAttribute011
+    ldap-names = eTRACCustomAttribute011
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:212 = {
+    name = eTRACCustomAttribute012
+    ldap-names = eTRACCustomAttribute012
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:213 = {
+    name = eTRACCustomAttribute013
+    ldap-names = eTRACCustomAttribute013
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:214 = {
+    name = eTRACCustomAttribute014
+    ldap-names = eTRACCustomAttribute014
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:215 = {
+    name = eTRACCustomAttribute015
+    ldap-names = eTRACCustomAttribute015
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:216 = {
+    name = eTRACCustomAttribute016
+    ldap-names = eTRACCustomAttribute016
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:217 = {
+    name = eTRACCustomAttribute017
+    ldap-names = eTRACCustomAttribute017
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:218 = {
+    name = eTRACCustomAttribute018
+    ldap-names = eTRACCustomAttribute018
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:219 = {
+    name = eTRACCustomAttribute019
+    ldap-names = eTRACCustomAttribute019
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:220 = {
+    name = eTRACCustomAttribute020
+    ldap-names = eTRACCustomAttribute020
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:221 = {
+    name = eTRACCustomAttributeName001
+    ldap-names = eTRACCustomAttributeName001
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:222 = {
+    name = eTRACCustomAttributeName002
+    ldap-names = eTRACCustomAttributeName002
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:223 = {
+    name = eTRACCustomAttributeName003
+    ldap-names = eTRACCustomAttributeName003
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:224 = {
+    name = eTRACCustomAttributeName004
+    ldap-names = eTRACCustomAttributeName004
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:225 = {
+    name = eTRACCustomAttributeName005
+    ldap-names = eTRACCustomAttributeName005
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:226 = {
+    name = eTRACCustomAttributeName006
+    ldap-names = eTRACCustomAttributeName006
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:227 = {
+    name = eTRACCustomAttributeName007
+    ldap-names = eTRACCustomAttributeName007
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:228 = {
+    name = eTRACCustomAttributeName008
+    ldap-names = eTRACCustomAttributeName008
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:229 = {
+    name = eTRACCustomAttributeName009
+    ldap-names = eTRACCustomAttributeName009
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:230 = {
+    name = eTRACCustomAttributeName010
+    ldap-names = eTRACCustomAttributeName010
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:231 = {
+    name = eTRACCustomAttributeName011
+    ldap-names = eTRACCustomAttributeName011
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:232 = {
+    name = eTRACCustomAttributeName012
+    ldap-names = eTRACCustomAttributeName012
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:233 = {
+    name = eTRACCustomAttributeName013
+    ldap-names = eTRACCustomAttributeName013
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:234 = {
+    name = eTRACCustomAttributeName014
+    ldap-names = eTRACCustomAttributeName014
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:235 = {
+    name = eTRACCustomAttributeName015
+    ldap-names = eTRACCustomAttributeName015
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:236 = {
+    name = eTRACCustomAttributeName016
+    ldap-names = eTRACCustomAttributeName016
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:237 = {
+    name = eTRACCustomAttributeName017
+    ldap-names = eTRACCustomAttributeName017
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:238 = {
+    name = eTRACCustomAttributeName018
+    ldap-names = eTRACCustomAttributeName018
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:239 = {
+    name = eTRACCustomAttributeName019
+    ldap-names = eTRACCustomAttributeName019
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:240 = {
+    name = eTRACCustomAttributeName020
+    ldap-names = eTRACCustomAttributeName020
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:94 = {
+    name = eTRACUserPermissionContainerName
+    ldap-names = eTRACUserPermissionContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:95 = {
+    name = eTRACPermissionClass
+    ldap-names = eTRACPermissionClass
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:96 = {
+    name = eTRACPermissionEntry
+    ldap-names = eTRACPermissionEntry
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:97 = {
+    name = eTRACPermissionOwner
+    ldap-names = eTRACPermissionOwner
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:98 = {
+    name = eTRACPermissionCreateDate
+    ldap-names = eTRACPermissionCreateDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:99 = {
+    name = eTRACPermissionLastReferenceDate
+    ldap-names = eTRACPermissionLastReferenceDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:100 = {
+    name = eTRACPermissionLastChangeDate
+    ldap-names = eTRACPermissionLastChangeDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:101 = {
+    name = eTRACPermissionAlterCount
+    ldap-names = eTRACPermissionAlterCount
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:102 = {
+    name = eTRACPermissionControlCount
+    ldap-names = eTRACPermissionControlCount
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:103 = {
+    name = eTRACPermissionUpdateCount
+    ldap-names = eTRACPermissionUpdateCount
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:104 = {
+    name = eTRACPermissionReadCount
+    ldap-names = eTRACPermissionReadCount
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:105 = {
+    name = eTRACPermissionUACC
+    ldap-names = eTRACPermissionUACC
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:106 = {
+    name = eTRACPermissionAuditAccess
+    ldap-names = eTRACPermissionAuditAccess
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:107 = {
+    name = eTRACPermissionAuditLevel
+    ldap-names = eTRACPermissionAuditLevel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:108 = {
+    name = eTRACPermissionGroupID
+    ldap-names = eTRACPermissionGroupID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:109 = {
+    name = eTRACPermissionDatasetType
+    ldap-names = eTRACPermissionDatasetType
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:110 = {
+    name = eTRACPermissionLevel
+    ldap-names = eTRACPermissionLevel
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:111 = {
+    name = eTRACPermissionDeviceName
+    ldap-names = eTRACPermissionDeviceName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:112 = {
+    name = eTRACPermissionGlobalAuditAccess
+    ldap-names = eTRACPermissionGlobalAuditAccess
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:113 = {
+    name = eTRACPermissionGlobalAuditLevel
+    ldap-names = eTRACPermissionGlobalAuditLevel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:114 = {
+    name = eTRACPermissionInstallData
+    ldap-names = eTRACPermissionInstallData
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:115 = {
+    name = eTRACPermissionWarning
+    ldap-names = eTRACPermissionWarning
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:116 = {
+    name = eTRACPermissionSecLevel
+    ldap-names = eTRACPermissionSecLevel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:117 = {
+    name = eTRACPermissionSingleDS
+    ldap-names = eTRACPermissionSingleDS
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:118 = {
+    name = eTRACPermissionAuto
+    ldap-names = eTRACPermissionAuto
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:119 = {
+    name = eTRACPermissionTVTOC
+    ldap-names = eTRACPermissionTVTOC
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:120 = {
+    name = eTRACPermissionNotifyID
+    ldap-names = eTRACPermissionNotifyID
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:121 = {
+    name = eTRACPermissionLogonDays
+    ldap-names = eTRACPermissionLogonDays
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:122 = {
+    name = eTRACPermissionZoneDirect
+    ldap-names = eTRACPermissionZoneDirect
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:123 = {
+    name = eTRACPermissionZoneOffset
+    ldap-names = eTRACPermissionZoneOffset
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:124 = {
+    name = eTRACPermissionApplData
+    ldap-names = eTRACPermissionApplData
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:125 = {
+    name = eTRACPermissionRetention
+    ldap-names = eTRACPermissionRetention
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:126 = {
+    name = eTRACPermissionErase
+    ldap-names = eTRACPermissionErase
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:127 = {
+    name = eTRACPermissionSecLabel
+    ldap-names = eTRACPermissionSecLabel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:128 = {
+    name = eTRACTapeVolName
+    ldap-names = eTRACTapeVolName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:129 = {
+    name = eTRACPermissionCategory
+    ldap-names = eTRACPermissionCategory
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:130 = {
+    name = eTRACPermissionDLFRetain
+    ldap-names = eTRACPermissionDLFRetain
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:131 = {
+    name = eTRACPermissionDLFJobname
+    ldap-names = eTRACPermissionDLFJobname
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:132 = {
+    name = eTRACPermissionMember
+    ldap-names = eTRACPermissionMember
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:133 = {
+    name = eTRACPermissionSessionCONVSEC
+    ldap-names = eTRACPermissionSessionCONVSEC
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:134 = {
+    name = eTRACPermissionSessionKeyInterval
+    ldap-names = eTRACPermissionSessionKeyInterval
+    equality = caseExactMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:135 = {
+    name = eTRACPermissionSessionKey
+    ldap-names = eTRACPermissionSessionKey
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:136 = {
+    name = eTRACPermissionSessionLocked
+    ldap-names = eTRACPermissionSessionLocked
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:137 = {
+    name = eTRACPermissionStartTime
+    ldap-names = eTRACPermissionStartTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:138 = {
+    name = eTRACPermissionEndTime
+    ldap-names = eTRACPermissionEndTime
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:139 = {
+    name = eTRACTapeVolInternalName
+    ldap-names = eTRACTapeVolInternalName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:140 = {
+    name = eTRACTapeVolInternalVolumes
+    ldap-names = eTRACTapeVolInternalVolumes
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:141 = {
+    name = eTRACTapeVolCreateName
+    ldap-names = eTRACTapeVolCreateName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:142 = {
+    name = eTRACTapeVolCreateDate
+    ldap-names = eTRACTapeVolCreateDate
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:143 = {
+    name = eTRACTapeVolSequence
+    ldap-names = eTRACTapeVolSequence
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:144 = {
+    name = eTRACTapeVolDiscrete
+    ldap-names = eTRACTapeVolDiscrete
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:145 = {
+    name = eTRACDFPResOwner
+    ldap-names = eTRACDFPResOwner
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:169 = {
+    name = eTRACPermissionRefresh
+    ldap-names = eTRACPermissionRefresh
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:188 = {
+    name = eTRACPermissionNoSet
+    ldap-names = eTRACPermissionNoSet
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:146 = {
+    name = eTRACGroupContainerName
+    ldap-names = eTRACGroupContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:147 = {
+    name = eTRACgroupid
+    ldap-names = eTRACgroupid
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:148 = {
+    name = eTRACSubGroupName
+    ldap-names = eTRACSubGroupName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:149 = {
+    name = eTRACSuperiorGroup
+    ldap-names = eTRACSuperiorGroup
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:151 = {
+    name = eTRACGroupUserAccess
+    ldap-names = eTRACGroupUserAccess
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:152 = {
+    name = eTRACOmvsGroupid
+    ldap-names = eTRACOmvsGroupid
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:153 = {
+    name = eTRACGroupNoTermUAC
+    ldap-names = eTRACGroupNoTermUAC
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:154 = {
+    name = eTRACGroupUseridAuthority
+    ldap-names = eTRACGroupUseridAuthority
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:155 = {
+    name = eTRACGroupUseridAccess
+    ldap-names = eTRACGroupUseridAccess
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:156 = {
+    name = eTRACGroupUseridUACC
+    ldap-names = eTRACGroupUseridUACC
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:157 = {
+    name = eTRACGroupUseridRevokeDate
+    ldap-names = eTRACGroupUseridRevokeDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:158 = {
+    name = eTRACGroupUseridResumeDate
+    ldap-names = eTRACGroupUseridResumeDate
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:159 = {
+    name = eTRACGroupUseridOwner
+    ldap-names = eTRACGroupUseridOwner
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:160 = {
+    name = eTRACGroupUseridADSP
+    ldap-names = eTRACGroupUseridADSP
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:161 = {
+    name = eTRACGroupUseridSpecial
+    ldap-names = eTRACGroupUseridSpecial
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:162 = {
+    name = eTRACGroupUseridAuditor
+    ldap-names = eTRACGroupUseridAuditor
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:189 = {
+    name = eTRACGroupUseridOperations
+    ldap-names = eTRACGroupUseridOperations
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:192 = {
+    name = eTRACUniversalGroup
+    ldap-names = eTRACUniversalGroup
+    equality = caseExactMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:150 = {
+    name = eTRACGroupUserid
+    ldap-names = eTRACGroupUserid
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:163 = {
+    name = eTRACPermissionContainerName
+    ldap-names = eTRACPermissionContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:164 = {
+    name = eTRACPermissionUser
+    ldap-names = eTRACPermissionUser
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:165 = {
+    name = eTRACPermissionUser-AccessLevel
+    ldap-names = eTRACPermissionUser-AccessLevel
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:166 = {
+    name = eTRACPolicyContainerName
+    ldap-names = eTRACPolicyContainerName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:167 = {
+    name = eTRACPolicyName
+    ldap-names = eTRACPolicyName
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    single-valued
+};
+
+schema set attribute etrust-admin-RAC-attr:168 = {
+    name = eTRACConnectGroupInfo
+    ldap-names = eTRACConnectGroupInfo
+    equality = caseIgnoreMatch
+    syntax = directoryString
+    multi-valued
+};
+
+#
+#
+# eTrust Directory Schema: Object Class Definitions
+#
+#
+
+schema set object-class etrust-admin-RAC-oc:1 = {
+    name = eTRACDirectory
+    subclass-of Top
+    must-contain
+        eTRACDirectoryName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTZOSLDAPIPAddress,
+        eTZOSLDAPPort,
+        eTZOSLDAPSuffix,
+        eTZOSLDAPUseSSL,
+        eTSelfAdminID,
+        eTSelfAdminPassword,
+        eTDirectoryName,
+        eTDirectoryType,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTDefaultPolicy,
+        eTDefaultPolicyDN,
+        eTCorrelationPolicyDN,
+        eTAccountDeletable,
+        eTAccountForcedDeletable,
+        eTAccountResumable,
+        eTPwdPropDisabled,
+        eTLog,
+        eTLogDestination,
+        eTLogETSeverity,
+        eTLogWindowsSeverity,
+        eTLogStdoutSeverity,
+        eTLogFileSeverity,
+        eTLogUnicenterSeverity,
+        eTLogWindowsEventSeverity,
+        eTLogAuditSeverity,
+        eTCustomUserUpdate,
+        eTUserUpdateMap,
+        eTDefaultUserUpdateMap,
+        eTSyncAccounts,
+        eTExitReference,
+        eTRelocateAccounts,
+        eTDirectoryGroupDN,
+        eTPolicyDN,
+        eTSubtreeExplored,
+        eTPSAgentInstalled,
+        eTHostingDirectoryDN,
+        eTUseAdminCreds,
+        eTSawiUseProxy,
+        eTRACUserAction,
+        eTRACDateFormat,
+        eTRACVersion,
+        eTRACPSWDHistory,
+        eTRACPSWDExpire,
+        eTRACPSWDWarnDays,
+        eTRACPSWDThresh,
+        eTRACSecurityAddCreator,
+        eTRACSecurityGroupList,
+        eTRACSecurityInactUsers,
+        eTRACSetConnectGroupOwner
+};
+
+schema set object-class etrust-admin-RAC-oc:16 = {
+    name = eTRACSysInfo
+    subclass-of Top
+    must-contain
+        eTRACSysInfoName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RAC-oc:2 = {
+    name = eTRACAccountContainer
+    subclass-of Top
+    must-contain
+        eTRACAccountContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RAC-oc:3 = {
+    name = eTRACAccount
+    subclass-of Top
+    must-contain
+        eTRACuserid,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTAccountName,
+        eTAccountStatus,
+        eTPolicyName,
+        eTPassword,
+        eTSyncPassword,
+        eTSuspended,
+        eTSuspendedDate,
+        eTSuspendedNode,
+        eTSuspendedReason,
+        eTSuspendedTime,
+        eTSuspendedUserName,
+        eTSuspendedUserid,
+        eTPolicyDN,
+        eTSyncAccounts,
+        eTDeleteUserAndAccounts,
+        eTSyncUserDN,
+        eTSyncPolicyDN,
+        eTGlobalUserDN,
+        eTPropagatePassword,
+        eTRelocateAccounts,
+        eTForcedDelete,
+        eTPSAgentChangeInProgress,
+        eTPSAgentChangePassword,
+        eTIsPwdSync,
+        eTExceptionAccount,
+        eTAddPolicyDN,
+        eTDeletePolicyDN,
+        eTAccountChanges,
+        eTPlanSynopsis,
+        eTPrereqAccountDN,
+        eTGlobalUserAttribute,
+        eTTestPassword,
+        eTSelfChange,
+        eTLastLoginDTS,
+        eTRACProgrammerName,
+        eTRACDatasetModel,
+        eTRACLogonTime,
+        eTRACLogonDays,
+        eTRACDefaultGroup,
+        eTRACLastAccessDate,
+        eTRACLastAccessTime,
+        eTRACAuthorizationDate,
+        eTRACPasswordChangeDate,
+        eTRACOwner,
+        eTRACInstallationData,
+        eTRACRevokeDate,
+        eTRACResumeDate,
+        eTRACPasswordInterval,
+        eTRACNoPassword,
+        eTRACOperations,
+        eTRACAuditor,
+        eTRACSpecial,
+        eTRACAdsp,
+        eTRACUaudit,
+        eTRACRevoke,
+        eTRACOidCard,
+        eTRACUseridPermissions,
+        eTRACUseridComponent,
+        eTRACPrimaryLanguage,
+        eTRACSecondaryLanguage,
+        eTRACTsoSecurityLabel,
+        eTRACTsoDestination,
+        eTRACTsoDefaultUnit,
+        eTRACTsoUserdata,
+        eTRACTsoAccountNumber,
+        eTRACTsoDefaultCommand,
+        eTRACTsoDefaultLogonProc,
+        eTRACTsoMaximumRegionSize,
+        eTRACTsoLogonSize,
+        eTRACTsoHoldClass,
+        eTRACTsoJobClass,
+        eTRACTsoMessageClass,
+        eTRACTsoDefaultSysoutClass,
+        eTRACuseridsegtso,
+        eTRACDfpDataApplication,
+        eTRACDfpDataClass,
+        eTRACDfpManagementClass,
+        eTRACDfpStorageClass,
+        eTRACuseridsegdfp,
+        eTRACTerminalTimeout,
+        eTRACOperatorReSignon,
+        eTRACOperatorPriority,
+        eTRACOperatorIdentification,
+        eTRACUseridOPCLASS,
+        eTRACuseridsegcics,
+        eTRACConnectGroupName,
+        eTRACConnectGroupAuthority,
+        eTRACConnectGroupUACC,
+        eTRACUseridCategory,
+        eTRACSecurityLevel,
+        eTRACSecurityLabel,
+        eTRACOmvsUid,
+        eTRACOmvsHome,
+        eTRACOmvsInitialProgram,
+        eTRACOmvsASSizeMax,
+        eTRACOmvsCPUTimeMax,
+        eTRACOmvsFileProcMax,
+        eTRACOmvsMMAPAreaMax,
+        eTRACOmvsProcUserMax,
+        eTRACOmvsThreadsMax,
+        eTRACuseridsegomvs,
+        eTRACStorageKeyword,
+        eTRACLogCommandResponseKeyword,
+        eTRACMGIDKeyword,
+        eTRACDOMKeyword,
+        eTRACKEYKeyword,
+        eTRACCMDSYSKeyword,
+        eTRACUDKeyword,
+        eTRACMscopeSystems,
+        eTRACAltGroupKeyword,
+        eTRACAutoKeyword,
+        eTRACAuthKeyword,
+        eTRACLevelKeyword,
+        eTRACMformKeyword,
+        eTRACMonitorKeyword,
+        eTRACRoutcodeKeyword,
+        eTRACuseridsegoperparm,
+        eTRACUseridCLAUTH,
+        eTRACWorkAccountNumber,
+        eTRACBuilding,
+        eTRACDepartment,
+        eTRACRoom,
+        eTRACWorkUserName,
+        eTRACAddressLine1,
+        eTRACAddressLine2,
+        eTRACAddressLine3,
+        eTRACAddressLine4,
+        eTRACuseridsegappc,
+        eTRACRestricted,
+        eTRACLotusName,
+        eTRACNovellName,
+        eTRACOMVSMemoryLimit,
+        eTRACOMVSSharedMemoryLimit,
+        eTRACReceiveHardCopyMessages,
+        eTRACReceiveConsoleIDZeroMessages,
+        eTRACReceiveUnknownConsoleIDMessages,
+        eTRACResourceSecurityLevelKeys,
+        eTRACTransactionSecurityLevelKeys,
+        eTRACPassPhrase,
+        eTRACPassPhraseInterval,
+        eTRACPassPhraseChangeDate,
+        eTRACCustomAttribute001,
+        eTRACCustomAttribute002,
+        eTRACCustomAttribute003,
+        eTRACCustomAttribute004,
+        eTRACCustomAttribute005,
+        eTRACCustomAttribute006,
+        eTRACCustomAttribute007,
+        eTRACCustomAttribute008,
+        eTRACCustomAttribute009,
+        eTRACCustomAttribute010,
+        eTRACCustomAttribute011,
+        eTRACCustomAttribute012,
+        eTRACCustomAttribute013,
+        eTRACCustomAttribute014,
+        eTRACCustomAttribute015,
+        eTRACCustomAttribute016,
+        eTRACCustomAttribute017,
+        eTRACCustomAttribute018,
+        eTRACCustomAttribute019,
+        eTRACCustomAttribute020,
+        eTRACCustomAttributeName001,
+        eTRACCustomAttributeName002,
+        eTRACCustomAttributeName003,
+        eTRACCustomAttributeName004,
+        eTRACCustomAttributeName005,
+        eTRACCustomAttributeName006,
+        eTRACCustomAttributeName007,
+        eTRACCustomAttributeName008,
+        eTRACCustomAttributeName009,
+        eTRACCustomAttributeName010,
+        eTRACCustomAttributeName011,
+        eTRACCustomAttributeName012,
+        eTRACCustomAttributeName013,
+        eTRACCustomAttributeName014,
+        eTRACCustomAttributeName015,
+        eTRACCustomAttributeName016,
+        eTRACCustomAttributeName017,
+        eTRACCustomAttributeName018,
+        eTRACCustomAttributeName019,
+        eTRACCustomAttributeName020
+};
+
+schema set object-class etrust-admin-RAC-oc:4 = {
+    name = eTRACUserPermissionContainer
+    subclass-of Top
+    must-contain
+        eTRACUserPermissionContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RAC-oc:5 = {
+    name = eTRACUserPermissionResClass
+    subclass-of Top
+    must-contain
+        eTRACPermissionClass,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RAC-oc:6 = {
+    name = eTRACUserResProfile
+    subclass-of Top
+    must-contain
+        eTRACPermissionEntry,
+        objectclass
+    may-contain
+        eTRACPermissionClass,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTRACPermissionOwner,
+        eTRACPermissionCreateDate,
+        eTRACPermissionLastReferenceDate,
+        eTRACPermissionLastChangeDate,
+        eTRACPermissionAlterCount,
+        eTRACPermissionControlCount,
+        eTRACPermissionUpdateCount,
+        eTRACPermissionReadCount,
+        eTRACPermissionUACC,
+        eTRACPermissionAuditAccess,
+        eTRACPermissionAuditLevel,
+        eTRACPermissionGroupID,
+        eTRACPermissionDatasetType,
+        eTRACPermissionLevel,
+        eTRACPermissionDeviceName,
+        eTRACPermissionGlobalAuditAccess,
+        eTRACPermissionGlobalAuditLevel,
+        eTRACPermissionInstallData,
+        eTRACPermissionWarning,
+        eTRACPermissionSecLevel,
+        eTRACPermissionSingleDS,
+        eTRACPermissionAuto,
+        eTRACPermissionTVTOC,
+        eTRACPermissionNotifyID,
+        eTRACPermissionLogonDays,
+        eTRACPermissionZoneDirect,
+        eTRACPermissionZoneOffset,
+        eTRACPermissionApplData,
+        eTRACPermissionRetention,
+        eTRACPermissionErase,
+        eTRACPermissionSecLabel,
+        eTRACTapeVolName,
+        eTRACPermissionCategory,
+        eTRACPermissionDLFRetain,
+        eTRACPermissionDLFJobname,
+        eTRACPermissionMember,
+        eTRACPermissionSessionCONVSEC,
+        eTRACPermissionSessionKeyInterval,
+        eTRACPermissionSessionKey,
+        eTRACPermissionSessionLocked,
+        eTRACPermissionStartTime,
+        eTRACPermissionEndTime,
+        eTRACTapeVolInternalName,
+        eTRACTapeVolInternalVolumes,
+        eTRACTapeVolCreateName,
+        eTRACTapeVolCreateDate,
+        eTRACTapeVolSequence,
+        eTRACTapeVolDiscrete,
+        eTRACDFPResOwner,
+        eTRACPermissionRefresh,
+        eTRACPermissionNoSet
+};
+
+schema set object-class etrust-admin-RAC-oc:7 = {
+    name = eTRACGroupContainer
+    subclass-of Top
+    must-contain
+        eTRACGroupContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RAC-oc:8 = {
+    name = eTRACGroup
+    subclass-of Top
+    must-contain
+        eTRACgroupid,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTRACSubGroupName,
+        eTRACSuperiorGroup,
+        eTRACGroupUserAccess,
+        eTRACOmvsGroupid,
+        eTRACGroupNoTermUAC,
+        eTRACOwner,
+        eTRACInstallationData,
+        eTRACDatasetModel,
+        eTRACDfpDataApplication,
+        eTRACDfpDataClass,
+        eTRACDfpManagementClass,
+        eTRACDfpStorageClass,
+        eTRACGroupUseridAuthority,
+        eTRACGroupUseridAccess,
+        eTRACGroupUseridUACC,
+        eTRACGroupUseridRevokeDate,
+        eTRACGroupUseridResumeDate,
+        eTRACGroupUseridOwner,
+        eTRACGroupUseridADSP,
+        eTRACGroupUseridSpecial,
+        eTRACGroupUseridAuditor,
+        eTRACGroupUseridOperations,
+        eTRACUniversalGroup
+};
+
+schema set object-class etrust-admin-RAC-oc:9 = {
+    name = eTRACGroupUser
+    subclass-of Top
+    must-contain
+        eTRACGroupUserid,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTRACSubGroupName,
+        eTRACSuperiorGroup,
+        eTRACGroupUserAccess,
+        eTRACOmvsGroupid,
+        eTRACGroupNoTermUAC,
+        eTRACOwner,
+        eTRACInstallationData,
+        eTRACDatasetModel,
+        eTRACDfpDataApplication,
+        eTRACDfpDataClass,
+        eTRACDfpManagementClass,
+        eTRACDfpStorageClass,
+        eTRACGroupUseridAuthority,
+        eTRACGroupUseridAccess,
+        eTRACGroupUseridUACC,
+        eTRACGroupUseridRevokeDate,
+        eTRACGroupUseridResumeDate,
+        eTRACGroupUseridOwner,
+        eTRACGroupUseridADSP,
+        eTRACGroupUseridSpecial,
+        eTRACGroupUseridAuditor,
+        eTRACGroupUseridOperations,
+        eTRACUniversalGroup
+};
+
+schema set object-class etrust-admin-RAC-oc:10 = {
+    name = eTRACPermissionContainer
+    subclass-of Top
+    must-contain
+        eTRACPermissionContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RAC-oc:11 = {
+    name = eTRACPermissionResClass
+    subclass-of Top
+    must-contain
+        eTRACPermissionClass,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RAC-oc:12 = {
+    name = eTRACResProfile
+    subclass-of Top
+    must-contain
+        eTRACPermissionEntry,
+        objectclass
+    may-contain
+        eTRACPermissionClass,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTRACPermissionOwner,
+        eTRACPermissionCreateDate,
+        eTRACPermissionLastReferenceDate,
+        eTRACPermissionLastChangeDate,
+        eTRACPermissionAlterCount,
+        eTRACPermissionControlCount,
+        eTRACPermissionUpdateCount,
+        eTRACPermissionReadCount,
+        eTRACPermissionUACC,
+        eTRACPermissionAuditAccess,
+        eTRACPermissionAuditLevel,
+        eTRACPermissionGroupID,
+        eTRACPermissionDatasetType,
+        eTRACPermissionLevel,
+        eTRACPermissionDeviceName,
+        eTRACPermissionGlobalAuditAccess,
+        eTRACPermissionGlobalAuditLevel,
+        eTRACPermissionInstallData,
+        eTRACPermissionWarning,
+        eTRACPermissionSecLevel,
+        eTRACPermissionSingleDS,
+        eTRACPermissionAuto,
+        eTRACPermissionTVTOC,
+        eTRACPermissionNotifyID,
+        eTRACPermissionLogonDays,
+        eTRACPermissionZoneDirect,
+        eTRACPermissionZoneOffset,
+        eTRACPermissionApplData,
+        eTRACPermissionRetention,
+        eTRACPermissionErase,
+        eTRACPermissionSecLabel,
+        eTRACTapeVolName,
+        eTRACPermissionCategory,
+        eTRACPermissionDLFRetain,
+        eTRACPermissionDLFJobname,
+        eTRACPermissionMember,
+        eTRACPermissionSessionCONVSEC,
+        eTRACPermissionSessionKeyInterval,
+        eTRACPermissionSessionKey,
+        eTRACPermissionSessionLocked,
+        eTRACPermissionStartTime,
+        eTRACPermissionEndTime,
+        eTRACTapeVolInternalName,
+        eTRACTapeVolInternalVolumes,
+        eTRACTapeVolCreateName,
+        eTRACTapeVolCreateDate,
+        eTRACTapeVolSequence,
+        eTRACTapeVolDiscrete,
+        eTRACDFPResOwner,
+        eTRACPermissionRefresh,
+        eTRACPermissionNoSet
+};
+
+schema set object-class etrust-admin-RAC-oc:13 = {
+    name = eTRACResUser
+    subclass-of Top
+    must-contain
+        eTRACPermissionUser,
+        objectclass
+    may-contain
+        eTRACPermissionUser-AccessLevel,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RAC-oc:14 = {
+    name = eTRACPolicyContainer
+    subclass-of Top
+    must-contain
+        eTRACPolicyContainerName,
+        objectclass
+    may-contain
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry
+};
+
+schema set object-class etrust-admin-RAC-oc:15 = {
+    name = eTRACPolicy
+    subclass-of Top
+    must-contain
+        eTRACPolicyName,
+        objectclass
+    may-contain
+        eTRACuserid,
+        eTRACConnectGroupInfo,
+        eTCreateDate,
+        eTCreateTime,
+        eTCreateNode,
+        eTCreateUserName,
+        eTCreateUserid,
+        eTUpdateDate,
+        eTUpdateTime,
+        eTUpdateNode,
+        eTUpdateUserName,
+        eTUpdateUserid,
+        eTDescription,
+        eTComments,
+        eTExploreUpdateEtrust,
+        eTExploreCorrelateUsers,
+        eTExploreCreateUsers,
+        eTExploreCreateUsersForceNotifications,
+        eTExploreReportAdditions,
+        eTExploreReportDeletions,
+        eTExploreUpdateUsers,
+        eTCheckPermission,
+        eTCheckDelete,
+        eTUseOperationID,
+        eTID,
+        eTDBOnly,
+        eTAgentOnly,
+        eTAllowPartialResult,
+        eTModAttr,
+        eTModDescendents,
+        eTDeleteEntry,
+        eTPolicyName,
+        eTNamespaceType,
+        eTNamespaceSubType,
+        eTPropagateChanges,
+        eTAccountDirectory,
+        eTStrongSync,
+        eTSyncAccounts,
+        eTExitReference,
+        eTwfBusinessApprover,
+        eTwfTechnicalApprover,
+        eTwfUserBusinessApprover,
+        eTwfUserTechnicalApprover,
+        eTForcedDelete,
+        eTPassword,
+        eTSuspended,
+        eTAccountStatus,
+        eTRelocateAccounts,
+        eTAccountDN,
+        eTDirectoryDN,
+        eTRoleDN,
+        eTRACProgrammerName,
+        eTRACDatasetModel,
+        eTRACLogonTime,
+        eTRACLogonDays,
+        eTRACDefaultGroup,
+        eTRACLastAccessDate,
+        eTRACLastAccessTime,
+        eTRACAuthorizationDate,
+        eTRACPasswordChangeDate,
+        eTRACOwner,
+        eTRACInstallationData,
+        eTRACRevokeDate,
+        eTRACResumeDate,
+        eTRACPasswordInterval,
+        eTRACNoPassword,
+        eTRACOperations,
+        eTRACAuditor,
+        eTRACSpecial,
+        eTRACAdsp,
+        eTRACUaudit,
+        eTRACRevoke,
+        eTRACOidCard,
+        eTRACUseridPermissions,
+        eTRACUseridComponent,
+        eTRACPrimaryLanguage,
+        eTRACSecondaryLanguage,
+        eTRACTsoSecurityLabel,
+        eTRACTsoDestination,
+        eTRACTsoDefaultUnit,
+        eTRACTsoUserdata,
+        eTRACTsoAccountNumber,
+        eTRACTsoDefaultCommand,
+        eTRACTsoDefaultLogonProc,
+        eTRACTsoMaximumRegionSize,
+        eTRACTsoLogonSize,
+        eTRACTsoHoldClass,
+        eTRACTsoJobClass,
+        eTRACTsoMessageClass,
+        eTRACTsoDefaultSysoutClass,
+        eTRACuseridsegtso,
+        eTRACDfpDataApplication,
+        eTRACDfpDataClass,
+        eTRACDfpManagementClass,
+        eTRACDfpStorageClass,
+        eTRACuseridsegdfp,
+        eTRACTerminalTimeout,
+        eTRACOperatorReSignon,
+        eTRACOperatorPriority,
+        eTRACOperatorIdentification,
+        eTRACUseridOPCLASS,
+        eTRACuseridsegcics,
+        eTRACConnectGroupName,
+        eTRACConnectGroupAuthority,
+        eTRACConnectGroupUACC,
+        eTRACUseridCategory,
+        eTRACSecurityLevel,
+        eTRACSecurityLabel,
+        eTRACOmvsUid,
+        eTRACOmvsHome,
+        eTRACOmvsInitialProgram,
+        eTRACOmvsASSizeMax,
+        eTRACOmvsCPUTimeMax,
+        eTRACOmvsFileProcMax,
+        eTRACOmvsMMAPAreaMax,
+        eTRACOmvsProcUserMax,
+        eTRACOmvsThreadsMax,
+        eTRACuseridsegomvs,
+        eTRACStorageKeyword,
+        eTRACLogCommandResponseKeyword,
+        eTRACMGIDKeyword,
+        eTRACDOMKeyword,
+        eTRACKEYKeyword,
+        eTRACCMDSYSKeyword,
+        eTRACUDKeyword,
+        eTRACMscopeSystems,
+        eTRACAltGroupKeyword,
+        eTRACAutoKeyword,
+        eTRACAuthKeyword,
+        eTRACLevelKeyword,
+        eTRACMformKeyword,
+        eTRACMonitorKeyword,
+        eTRACRoutcodeKeyword,
+        eTRACuseridsegoperparm,
+        eTRACUseridCLAUTH,
+        eTRACWorkAccountNumber,
+        eTRACBuilding,
+        eTRACDepartment,
+        eTRACRoom,
+        eTRACWorkUserName,
+        eTRACAddressLine1,
+        eTRACAddressLine2,
+        eTRACAddressLine3,
+        eTRACAddressLine4,
+        eTRACuseridsegappc,
+        eTRACRestricted,
+        eTRACLotusName,
+        eTRACNovellName,
+        eTRACOMVSMemoryLimit,
+        eTRACOMVSSharedMemoryLimit,
+        eTRACReceiveHardCopyMessages,
+        eTRACReceiveConsoleIDZeroMessages,
+        eTRACReceiveUnknownConsoleIDMessages,
+        eTRACResourceSecurityLevelKeys,
+        eTRACTransactionSecurityLevelKeys,
+        eTRACPassPhrase,
+        eTRACPassPhraseInterval,
+        eTRACPassPhraseChangeDate,
+        eTRACCustomAttribute001,
+        eTRACCustomAttribute002,
+        eTRACCustomAttribute003,
+        eTRACCustomAttribute004,
+        eTRACCustomAttribute005,
+        eTRACCustomAttribute006,
+        eTRACCustomAttribute007,
+        eTRACCustomAttribute008,
+        eTRACCustomAttribute009,
+        eTRACCustomAttribute010,
+        eTRACCustomAttribute011,
+        eTRACCustomAttribute012,
+        eTRACCustomAttribute013,
+        eTRACCustomAttribute014,
+        eTRACCustomAttribute015,
+        eTRACCustomAttribute016,
+        eTRACCustomAttribute017,
+        eTRACCustomAttribute018,
+        eTRACCustomAttribute019,
+        eTRACCustomAttribute020,
+        eTRACCustomAttributeName001,
+        eTRACCustomAttributeName002,
+        eTRACCustomAttributeName003,
+        eTRACCustomAttributeName004,
+        eTRACCustomAttributeName005,
+        eTRACCustomAttributeName006,
+        eTRACCustomAttributeName007,
+        eTRACCustomAttributeName008,
+        eTRACCustomAttributeName009,
+        eTRACCustomAttributeName010,
+        eTRACCustomAttributeName011,
+        eTRACCustomAttributeName012,
+        eTRACCustomAttributeName013,
+        eTRACCustomAttributeName014,
+        eTRACCustomAttributeName015,
+        eTRACCustomAttributeName016,
+        eTRACCustomAttributeName017,
+        eTRACCustomAttributeName018,
+        eTRACCustomAttributeName019,
+        eTRACCustomAttributeName020
+};
+
+#
+#
+# eTrust Directory Schema: Name Bindings
+#
+#
+
+schema set name-binding etrust-admin-RAC-nb:1 = {
+    name = eTRACDirectory-eTNamespace
+    eTRACDirectory allowable-parent eTNamespace
+    named-by eTRACDirectoryName
+};
+
+schema set name-binding etrust-admin-RAC-nb:2 = {
+    name = eTRACPolicyContainer-eTNamespace
+    eTRACPolicyContainer allowable-parent eTNamespace
+    named-by eTRACPolicyContainerName
+};
+
+schema set name-binding etrust-admin-RAC-nb:16 = {
+    name = eTRACSysInfo-eTRACDirectory
+    eTRACSysInfo allowable-parent eTRACDirectory
+    named-by eTRACSysInfoName
+};
+
+schema set name-binding etrust-admin-RAC-nb:3 = {
+    name = eTRACAccountContainer-eTRACDirectory
+    eTRACAccountContainer allowable-parent eTRACDirectory
+    named-by eTRACAccountContainerName
+};
+
+schema set name-binding etrust-admin-RAC-nb:4 = {
+    name = eTRACGroupContainer-eTRACDirectory
+    eTRACGroupContainer allowable-parent eTRACDirectory
+    named-by eTRACGroupContainerName
+};
+
+schema set name-binding etrust-admin-RAC-nb:5 = {
+    name = eTRACPermissionContainer-eTRACDirectory
+    eTRACPermissionContainer allowable-parent eTRACDirectory
+    named-by eTRACPermissionContainerName
+};
+
+schema set name-binding etrust-admin-RAC-nb:6 = {
+    name = eTRACAccount-eTRACAccountContainer
+    eTRACAccount allowable-parent eTRACAccountContainer
+    named-by eTRACuserid
+};
+
+schema set name-binding etrust-admin-RAC-nb:7 = {
+    name = eTRACUserPermissionContainer-eTRACAccount
+    eTRACUserPermissionContainer allowable-parent eTRACAccount
+    named-by eTRACUserPermissionContainerName
+};
+
+schema set name-binding etrust-admin-RAC-nb:8 = {
+    name = eTRACUserPermissionResClass-eTRACUserPermissionContainer
+    eTRACUserPermissionResClass allowable-parent eTRACUserPermissionContainer
+    named-by eTRACPermissionClass
+};
+
+schema set name-binding etrust-admin-RAC-nb:9 = {
+    name = eTRACUserResProfile-eTRACUserPermissionResClass
+    eTRACUserResProfile allowable-parent eTRACUserPermissionResClass
+    named-by eTRACPermissionEntry
+};
+
+schema set name-binding etrust-admin-RAC-nb:10 = {
+    name = eTRACGroup-eTRACGroupContainer
+    eTRACGroup allowable-parent eTRACGroupContainer
+    named-by eTRACgroupid
+};
+
+schema set name-binding etrust-admin-RAC-nb:11 = {
+    name = eTRACGroupUser-eTRACGroup
+    eTRACGroupUser allowable-parent eTRACGroup
+    named-by eTRACGroupUserid
+};
+
+schema set name-binding etrust-admin-RAC-nb:12 = {
+    name = eTRACPermissionResClass-eTRACPermissionContainer
+    eTRACPermissionResClass allowable-parent eTRACPermissionContainer
+    named-by eTRACPermissionClass
+};
+
+schema set name-binding etrust-admin-RAC-nb:13 = {
+    name = eTRACResProfile-eTRACPermissionResClass
+    eTRACResProfile allowable-parent eTRACPermissionResClass
+    named-by eTRACPermissionEntry
+};
+
+schema set name-binding etrust-admin-RAC-nb:14 = {
+    name = eTRACResUser-eTRACResProfile
+    eTRACResUser allowable-parent eTRACResProfile
+    named-by eTRACPermissionUser
+};
+
+schema set name-binding etrust-admin-RAC-nb:15 = {
+    name = eTRACPolicy-eTRACPolicyContainer
+    eTRACPolicy allowable-parent eTRACPolicyContainer
+    named-by eTRACPolicyName
+};
+

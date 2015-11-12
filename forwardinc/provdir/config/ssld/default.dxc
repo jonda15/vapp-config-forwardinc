@@ -1,0 +1,26 @@
+# CA Directory - DXserver/config/ssld
+
+# This is a read-only default configuration file. If you need to make changes, 
+# copy this file and reference the new file from servers/<dsa>.dxi
+#
+
+# default CA Directory ssl configuration
+# - 'dxcertgen certs' can be used to create a basic set of certificates
+
+set ssl = {
+   # folder containing DSA personality certs
+   cert-dir = "config/ssld/personalities"
+
+   # trusted root CA that signed DSA certificates
+   ca-file = "config/ssld/trusted.pem"    
+
+   # SSL options
+#  cipher = "ALL:!EXPORT40:!ADH" # supported ciphers - syntax on OpenSSL website
+#  protocol = tls                # enable TLS only (default of fips set)
+#  fips = true                   # enables FIPS 140-2 compliant encryption
+
+   # HSM options
+#  pin = "<str>"                 # HSM pin
+#  lib = "<str>"                 # path to PKCS11 library supplied by HSM vendor
+#  slot = <num>                  # slot to use for HSM based encryption
+};

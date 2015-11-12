@@ -1,0 +1,20 @@
+# CA Directory DXserver/config/settings
+
+# directory information base
+set alias-integrity = true;
+
+# distribution controls
+set multi-casting = true;
+set always-chain-down = false;
+
+# security controls
+set min-auth = clear-password;
+set allow-binds = true;
+set ssl-auth-bypass-entry-check = false;
+
+# general controls
+set op-attrs = false;
+
+
+set password-storage = sha-512;
+set prune-oc-parents = true;
