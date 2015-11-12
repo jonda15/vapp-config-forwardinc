@@ -1,8 +1,0 @@
-echo "`date -u` [DEBUG] CA Directory - Copying configuration to container"
-cp -r /solution/$CONFIG/config $DXHOME/
-
-echo "`date -u` [DEBUG] CA Directory - Copying properties parser"
-cp /solution/$CONFIG/config/parser.sh $DXHOME
-
-echo "`date -u` [DEBUG] CA Directory - Setting execute permission on parser"
-chmod +x $DXHOME/parser.sh

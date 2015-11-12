@@ -1,17 +1,27 @@
 
 PROP_FILE=/solution${CONFIG}/data/jcs_external.properties
 
-jcs_jmsCredentials_password=`${JCS_HOME_DIR}/parser.sh jcs_jmsCredentials_password $PROP_FILE`
+jcs_jmsCredentials_password=$(grep -Po "(?<=^jcs_jmsCredentials_password=).*" $PROP_FILE)
+
 encryptPWD=${jcs_jmsCredentials_password:5}
-proxyCCSManager_enabled=`${JCS_HOME_DIR}/parser.sh proxyCCSManager_enabled $PROP_FILE`
-proxyConnectionConfig_proxyServerHostname=`${JCS_HOME_DIR}/parser.sh proxyConnectionConfig_proxyServerHostname $PROP_FILE`
-proxyConnectionConfig_proxyServerUseSsl=`${JCS_HOME_DIR}/parser.sh proxyConnectionConfig_proxyServerUseSsl $PROP_FILE`
-httpProxyConfiguration_enabled=`${JCS_HOME_DIR}/parser.sh httpProxyConfiguration_enabled $PROP_FILE`
-endpointManagementService_managementVisible=`${JCS_HOME_DIR}/parser.sh endpointManagementService_managementVisible $PROP_FILE`
-standaloneConfiguration_enabled=`${JCS_HOME_DIR}/parser.sh standaloneConfiguration_enabled $PROP_FILE`
-standaloneConfiguration_domain=`${JCS_HOME_DIR}/parser.sh standaloneConfiguration_domain $PROP_FILE`
-connectorPersister_enabled=`${JCS_HOME_DIR}/parser.sh connectorPersister_enabled $PROP_FILE`
-jcs_fips_enabled=`${JCS_HOME_DIR}/parser.sh jcs_fips_enabled $PROP_FILE`
+
+proxyCCSManager_enabled=$(grep -Po "(?<=^proxyCCSManager_enabled=).*" $PROP_FILE)
+
+proxyConnectionConfig_proxyServerHostname=$(grep -Po "(?<=^proxyConnectionConfig_proxyServerHostname=).*" $PROP_FILE)
+
+proxyConnectionConfig_proxyServerUseSsl=$(grep -Po "(?<=^proxyConnectionConfig_proxyServerUseSsl=).*" $PROP_FILE)
+
+httpProxyConfiguration_enabled=$(grep -Po "(?<=^httpProxyConfiguration_enabled=).*" $PROP_FILE)
+
+endpointManagementService_managementVisible=$(grep -Po "(?<=^endpointManagementService_managementVisible=).*" $PROP_FILE)
+
+standaloneConfiguration_enabled=$(grep -Po "(?<=^standaloneConfiguration_enabled=).*" $PROP_FILE)
+
+standaloneConfiguration_domain=$(grep -Po "(?<=^standaloneConfiguration_domain=).*" $PROP_FILE)
+
+connectorPersister_enabled=$(grep -Po "(?<=^connectorPersister_enabled=).*" $PROP_FILE)
+
+jcs_fips_enabled=$(grep -Po "(?<=^jcs_fips_enabled=).*" $PROP_FILE)
 
 # copy user config override folder into jcs/conf/override/
 cp -r /solution${CONFIG}/config/override/* $JCS_HOME_DIR/conf/override/ 

@@ -1,4 +1,0 @@
-/opt/CA/IdentityManager/ProvisioningServer/bin/imps start im_ps
-sleep 10
-cd $HOMEDIR/imps_ldif_utility
-sh PostPopulateIMPSLdifs.sh

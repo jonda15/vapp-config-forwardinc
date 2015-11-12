@@ -1,5 +1,0 @@
-cat $PROVHOME/.profile >> $PROVHOME/.bash_profile
-. /etc/.profile_imps
-echo "test -r /etc/profile.CA && { CA_SECTION=all; export CA_SECTION; . /etc/profile.CA; } # Added by Computer Associates" >> /etc/profile
-. /etc/profile
-

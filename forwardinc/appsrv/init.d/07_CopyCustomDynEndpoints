@@ -1,2 +1,0 @@
-# copy dyn endpoint jars into user_console.war/WEB-INF/lib
-cp -r /solution${CONFIG}/custom/dyn/* $JBOSS_STANDALONE_DIR/deployments/iam_im.ear/user_console.war/WEB-INF/lib

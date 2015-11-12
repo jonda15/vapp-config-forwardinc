@@ -1,3 +1,0 @@
-echo "Creating Symlink for the provisioning properties ..."
-ln -s /solution/$CONFIG/../common/data/provisioning.properties $PROVHOME/provisioning.properties
-

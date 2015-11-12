@@ -1,5 +1,0 @@
-echo "/opt/CA/SharedComponents/EnterpriseCommonServices" >> /etc/.ecspath
-$HOMEDIR/CreateIMPSRegistry.sh
-sleep 5
-cd $HOMEDIR/imps_ldif_utility
-sh PrePopulateIMPSLdifs.sh

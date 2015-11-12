@@ -1,5 +1,0 @@
-set ssl = {
-    cert-dir = "/opt/CA/Directory/dxserver/config/ssld/personalities"
-    ca-file = "/opt/CA/Directory/dxserver/config/ssld/impd_trusted.pem"
-    fips = false
-};

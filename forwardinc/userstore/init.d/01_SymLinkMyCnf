@@ -1,1 +1,0 @@
-ln -s /solution/$CONFIG/config $DXHOME/config
