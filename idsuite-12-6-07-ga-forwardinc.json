@@ -383,15 +383,6 @@
                     "containerPort": 8443
                   }
                 ],
-                "readinessProbe": {
-                  "exec": {
-                    "command": [
-                      "echo",
-                      "test"
-                    ]
-                  },
-                  "initialDelaySeconds": 300
-                },
                 "volumeMounts": [
                   {
                     "mountPath": "/solution",
