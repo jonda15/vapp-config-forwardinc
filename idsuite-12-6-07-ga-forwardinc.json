@@ -268,7 +268,7 @@
                     "value": "${IG_DB_VENDOR}"
                   }
                 ],
-                "image": "store.vapp-security.solutions/identityportal/identity-portal-server:latest",
+                "image": "store.vapp-security.solutions/imag/identity-portal-server:latest",
                 "name": "identity-portal-server",
                 "ports": [
                   {
